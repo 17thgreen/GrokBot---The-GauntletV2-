@@ -64,3 +64,7 @@ See `CONSTITUTIONAL_AMENDMENT_FORWARD_AND_CROSS_VENUE.md`.
 Research → Validation → Historical Sealed Holdout → Cross-Venue Replication → Forward Shadow → Paper → Micro Capital.
 
 Historical holdout ≠ production proof. Forward sealed window + cross-venue are mandatory before capital. Conductor cannot waive.
+
+---
+
+Freeze record: see `INSTITUTIONAL_LOCK_2026-09-11.md` (institutional baseline before `gauntlet-v2.0-alpha`).
