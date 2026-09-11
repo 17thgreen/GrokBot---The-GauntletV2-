@@ -224,3 +224,15 @@ Also listed on UI pages (pre-open / adjacent): later 5m windows e.g. `btc-updown
 - Legal permissibility of Global Polymarket trading for a specific US person.
 
 *End of discovery report. No fabricated contracts. Inventory claims limited to observed public evidence dated 2026-09-11.*
+
+---
+
+## US operator constraint (2026-09-11)
+
+**Pointer (do not reinterpret inventory above):** operable hard constraint for execution / cockpit / capital is filed at  
+`governance/US_LAWFUL_VENUE_CONSTRAINT_2026-09-11.md` (`RETROACTIVE: NO`; does not rewrite `gauntlet-v2.0-alpha`).
+
+**Adapter priority for US operators (execution path):**  
+**Kalshi** (primary; CFTC-regulated; live 15m BTC/ETH Up-Down) → **Polymarket US** (watchlist when short crypto binaries exist) → **Polymarket Global** (research / oracle study only; **not** an execution venue). Binance / fapi / Vision remain Layer-3 external predictors only — never the PM trading venue.
+
+Inventory findings in §§1–7 above are unchanged; this section only states the US-lawful execution ordering.
