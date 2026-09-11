@@ -4,8 +4,11 @@
 |-------|-------|
 | **Date** | 2026-09-11 |
 | **Tag** | `gauntlet-v2.0-alpha` |
-| **Status** | `MIRROR_COMPLETE_AWAITING_TAG` |
-| **Mirror tip** | `5da5afcf9cb8f9f5316e2207d65ff52b136d850d` |
+| **Status** | `CONFIRMED` / `TAGGED` |
+| **Tagged commit** | `05433c8bbcbbcacc263bd3d95020001e6fbadd15` |
+| **Annotated tag object** | `b858b772dc51ba8e86b092f227d172709ee0cc0e` |
+| **Confirmation timestamp** | `2026-09-11T01:28:22Z` (tagger) · Governor confirm relayed 2026-09-11 |
+| **Prior mirror tip (content)** | `5da5afcf9cb8f9f5316e2207d65ff52b136d850d` |
 | **Canonical repo** | `17thgreen/GrokBot---The-GauntletV2-` |
 | **Freeze record** | `governance/INSTITUTIONAL_LOCK_2026-09-11.md` |
 
@@ -19,6 +22,12 @@ Distinguish two learning tracks frozen at this baseline:
 | **Institution-learning** | Whether asymmetric authority, gated routing, evidence tags, dataset seals, and Archivist memory function as designed | Process integrity, non-waived vetoes, recoverable memory — even when alpha dies |
 
 Gauntlet-OS remains a **future extraction** only after rules earn place under this baseline.
+
+---
+
+## Immutability
+
+**Do not move or recreate** tag `gauntlet-v2.0-alpha`. Future governance evolution requires a **new version/tag** plus an amendment record (`AMENDMENT_RULE.md`).
 
 ---
 
@@ -40,17 +49,13 @@ Gauntlet-OS remains a **future extraction** only after rules earn place under th
 - [x] `archive/edges/`, `archive/cemetery/`, `archive/tests/` (MD + sha256 pointers), `archive/datasets/`, `archive/audit/`
 
 ### Data & seals (do not mutate under this checklist)
-- [x] Registered provenance under `data/` (e.g. DATA-PROV-001, DATA-PROV-TRADES-001) — **local only; not in GitHub**
+- [x] Registered provenance under `data/` — **local only; not in GitHub**
 - [x] Clock audits / seal locks as filed — raw series immutable
 - [x] Staged progression doctrine: OHLCV → trades → L2
 
 ### Harness & execution (measurement surface)
-- [x] Examiner harness under `harness/` (outputs are evidence; do not rewrite for narrative)
+- [x] Examiner harness under `harness/`
 - [x] Execution / verdict rubrics under `execution/`
-
-### Out of scope for silent change
-- Cycle 4 research data, Examiner harness outputs, and raw market data are **not** to be interrupted or modified to “fit” the tag.
-- Material rule changes after tag → amendment, not quiet edit.
 
 ---
 
@@ -58,8 +63,8 @@ Gauntlet-OS remains a **future extraction** only after rules earn place under th
 
 | # | Criterion | Status |
 |---|-----------|--------|
-| 1 | GitHub mirror of this lab baseline complete on `17thgreen/GrokBot---The-GauntletV2-` | **MET** (2026-09-11; tip `5da5afcf`) |
-| 2 | Annotated tag `gauntlet-v2.0-alpha` exists pointing at that freeze commit | **BLOCKED** — GitHub MCP has no create_tag; Cursor cloud agent usage exhausted |
-| 3 | Human Governor confirms | **AWAITING** |
+| 1 | GitHub mirror complete | **MET** (content tip `5da5afcf`) |
+| 2 | Annotated tag `gauntlet-v2.0-alpha` @ `05433c8` | **MET** (verified 2026-09-11) |
+| 3 | Human Governor confirms | **MET** (Logan 2026-09-11) |
 
-Until criterion 2+3 clear, treat `INSTITUTIONAL_LOCK_2026-09-11.md` as the binding freeze text. Status becomes `TAGGED` only after the annotated tag exists.
+Binding freeze text: `INSTITUTIONAL_LOCK_2026-09-11.md`.
