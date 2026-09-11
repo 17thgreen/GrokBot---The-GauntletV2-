@@ -31,7 +31,7 @@ Why this input could move \(P(\text{YES} \mid \mathcal{I}_t)\). Economic / infor
 - DATA-* refs:
 - Fields / columns:
 
-## TRANSFORM / NORMALIZATION
+## TRANSFORMA / NORMALIZATION
 Missingness, winsorization, venue quirks — explicit. No silent cleaning of raw.
 
 ## EXPECTED SIGN / USE IN FORECAST
