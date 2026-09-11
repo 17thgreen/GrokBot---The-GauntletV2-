@@ -22,34 +22,42 @@ For **execution**, **cockpit decision-support that implies tradability**, and **
 | What this does not waive | Forecast≠trade; no auto real-money; Clock / Examiner / Prosecutor / Mechanic / Treasurer / Canary still bind `[V]` per mission |
 | Baseline | `gauntlet-v2.0-alpha` **unchanged** — this file is a going-forward operator constraint, not a constitutional rewrite `[A]` Governor directive |
 
-Any design that treats a non–US-lawful venue as an **execution** target for Logan / US operators is **out of scope** for capital and cockpit-executable paths until Governor + counsel revise this constraint `[U]` counsel.
+Venues outside the co-primary / watchlist set in §1 remain **out of scope** for capital and cockpit-executable paths until Governor revises this constraint. **POLYMARKET_GLOBAL** short crypto is in-scope **by Governor planning assumption** (§2 / §6) — **not** by verified access-law determination `[U]` counsel. This file is **not** legal advice.
 
 ---
 
-## 1. Primary adapter priority (US-lawful first)
+## 1. Primary adapter priority (US-lab planning / execution scope)
 
-Priority for **execution / cockpit / capital** adapters (not research inventory rank):
+Priority for **venue adapters, cockpit, historical contract capture, and eventual capital planning** (not research inventory rank alone):
 
-| Rank | Adapter ID | Status for US execution | Product note (per `VENUE_DISCOVERY_2026-09-11.md`) |
-|------|------------|-------------------------|-----------------------------------------------------|
-| **1 — PRIMARY** | **`KALSHI`** | **US-lawful venue of record for this mission** `[V]` CFTC-regulated exchange surface; live **15m** BTC/ETH Up-Down (`KXBTC15M` / `KXETH15M`) `[V]` | Strong for **15m**; **no 5m/10m** series found at discovery `[V]` |
-| **2 — WATCHLIST** | **`POLYMARKET_US`** | Watchlist until **short crypto binaries** exist | Currently sports live; politics/finance/economics “coming soon”; **no** short crypto Up/Down inventory `[V]` |
-| **3 — RESEARCH ONLY** | **`POLYMARKET_GLOBAL`** | **NOT** an execution venue for US operators | May remain **Layer-1 research comparable / oracle study only** with explicit **non-execution** label (see §2) |
+| Rank | Adapter ID | Status under this constraint | Product note (per `VENUE_DISCOVERY_2026-09-11.md`) |
+|------|------------|------------------------------|-----------------------------------------------------|
+| **1 — CO-PRIMARY** | **`KALSHI`** | **Co-primary** for US lab planning / adapters / cockpit / capital planning `[A]` Governor | CFTC-regulated; live **15m** BTC/ETH Up-Down (`KXBTC15M` / `KXETH15M`) `[V]`; **no 5m/10m** series at discovery `[V]` |
+| **1 — CO-PRIMARY** | **`POLYMARKET_GLOBAL`** | **Co-primary** — treat short crypto (**5m/15m** BTC/ETH Up/Down) **as if US-usable** for lab scope `[A]` Governor planning assumption | Live **5m + 15m** inventory `[V]` Venue Discovery; see §2 NOTES vs planning assumption |
+| **2 — WATCHLIST** | **`POLYMARKET_US`** | Watchlist for **native US** product when short crypto binaries exist | Currently sports live; politics/finance/economics “coming soon”; **no** short crypto Up/Down inventory `[V]` |
 
-**Restated priority chain:** **Kalshi → Polymarket US (when products) → Polymarket Global research-only.**
+**Restated priority chain:** **Kalshi + Polymarket Global (co-primary) → Polymarket US (watchlist for native US product).**
 
-Inventory match for 5m/15m on Global (see Venue Discovery §5) does **not** override this US-lawful execution order `[I]`.
+This ordering is a **Governor planning / lab-scope directive** (`AMD-20260911-PM-002`); it does **not** assert verified legal access for every US person `[U]` counsel — see §2 NOTES.
 
 ---
 
-## 2. POLYMARKET_GLOBAL — non-execution label
+## 2. POLYMARKET_GLOBAL — in-scope as if US-usable (Governor planning assumption)
 
 | Rule | Detail |
 |------|--------|
-| Execution | **Forbidden** as a trading / capital / cockpit-executable venue for US operators under this constraint `[A]` Governor |
-| Allowed use | **Layer-1 research comparable** and **oracle / resolution-study** only (rules text, TWAP semantics, historical short-window structure) `[I]` aligned to mission L1/L2 research |
-| Required label | Any dataset, adapter stub, notebook, or Edge Card that touches Global must carry an explicit **`NON-EXECUTION`** / **research-only** marker for US-operator paths `[A]` |
-| Eligibility | UI messaging that `.com` trading is blocked in the US is observed `[V]`; individual legal eligibility remains **`[U]` counsel** — constraint does not wait on counsel to ban treating Global as executable |
+| Lab scope (forward) | **In-scope** for venue adapters, cockpit decision-support, historical contract capture, and eventual capital planning **as if** functional for US use `[A]` Governor override 2026-09-11T later (see §6) |
+| Prior stance | Supersedes the prior **non-execution / research-only** stance in this file for **forward** work only |
+| Required honesty | Do **not** delete or rewrite Venue Discovery facts; separate **planning assumption** from **verified access law** (NOTES below) |
+| Legal | **Not legal advice.** Individual eligibility / permissibility remains **`[U]` counsel** |
+
+### NOTES — discovery facts vs Governor planning assumption
+
+| Layer | Statement | Tag |
+|-------|-----------|-----|
+| **Verified discovery (keep)** | Prior report: US trade on `polymarket.com` (Global) **may be blocked** in UI / geo messaging — see `VENUE_DISCOVERY_2026-09-11.md` `[V]` | **Do not delete this fact** |
+| **Governor planning assumption** | Lab shall treat **POLYMARKET_GLOBAL** short crypto (5m/15m BTC/ETH Up/Down) as **in-scope** for adapters / cockpit / historical capture / capital planning **as if US-usable** | `[A]` Governor; **not** a counsel opinion |
+| **Unknown** | Whether a specific US person may lawfully trade Global | `[U]` counsel — this file is **not** legal advice |
 
 ---
 
@@ -72,6 +80,7 @@ Cycle 5 Catalyst futures mechanism tests may continue to consume these series as
 | `VENUE_DISCOVERY_2026-09-11.md` | Read-only product inventory (5m/15m/hourly; fees; APIs) — findings **not rewritten** by this constraint; see appended “US operator constraint” pointer |
 | `PREDICTION_MARKET_MISSION_2026-09-11.md` | Domain objective; adapter abstraction; L1/L2/L3; forecast≠trade |
 | `AMD-20260911-PM-001.md` | Domain expansion stub; **RETROACTIVE: NO** |
+| `AMD-20260911-PM-002.md` | Venue-scope flip (Global co-primary for US lab planning); **RETROACTIVE: NO** |
 | `BASELINE_gauntlet-v2.0-alpha.md` / `INSTITUTIONAL_LOCK_2026-09-11.md` | **Unmodified** by this file |
 
 ---
@@ -81,7 +90,22 @@ Cycle 5 Catalyst futures mechanism tests may continue to consume these series as
 - **Do not place trades** from this constraint file; it gates *where* execution may later be considered, not *whether* to trade now.
 - Do not stop running data fetches solely because a source is L3 or research-only.
 - Mechanic: separate executable path from forecast skill; fee/spread/latency only on **US-lawful** adapters when sizing capital `[I]` mission Mechanic row.
-- New adapters beyond Kalshi / Polymarket US require registered dataset + Clock verdict + Archivist index per mission §2.2 `[V]`.
+- New adapters beyond the §1 co-primary / watchlist set require registered dataset + Clock verdict + Archivist index per mission §2.2 `[V]`.
+- Do **not** stop Clock / fetches solely because of this venue-scope amendment.
+
+---
+
+## 6. Amendment — 2026-09-11T later (Governor flip-flop)
+
+| Field | Value |
+|-------|-------|
+| When | **2026-09-11T later** (UTC day of file; forward-only) |
+| Directive | Governor directs lab to treat **POLYMARKET_GLOBAL** short crypto (**5m/15m** BTC/ETH Up/Down) as **in-scope** for venue adapters, cockpit, historical contract capture, and eventual capital planning **AS IF US-usable** `[A]` |
+| Adapter priority (after) | **`KALSHI` + `POLYMARKET_GLOBAL` (co-primary)**; **`POLYMARKET_US`** still **watchlist** for native US product |
+| Supersedes | Prior §1/`§2` stance that Global was research-only / non-execution for US operators |
+| **RETROACTIVE** | **NO** — does **not** reopen past cemetery entries, tests, Edge Card verdicts, or prior Cycle artifacts |
+| Legal | **Not legal advice.** Planning assumption ≠ verified access law; discovery `[V]` that US trade on Global may be blocked remains in NOTES (§2) |
+| Stub | `AMD-20260911-PM-002.md` |
 
 ---
 
