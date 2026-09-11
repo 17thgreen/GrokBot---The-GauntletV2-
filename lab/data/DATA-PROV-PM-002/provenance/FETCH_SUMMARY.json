@@ -1,0 +1,36 @@
+{
+  "DATA_ID": "DATA-PROV-PM-002",
+  "fetched_at_utc": "2026-09-11T20:57:21Z",
+  "parent": "DATA-PROV-PM-001",
+  "auth": "none_public",
+  "trades_placed": 0,
+  "prototype": {
+    "phase": "prototype_20_20",
+    "fetched_at_utc": "2026-09-11T20:57:21Z",
+    "kalshi": {
+      "n_attempted": 20,
+      "n_http_ok": 18,
+      "n_ge1_intra": 18,
+      "hit_rate_ge1_intra": 0.9,
+      "mean_intra_points": 13.5,
+      "mean_checkpoints_hit": 4.5
+    },
+    "polymarket": {
+      "n_attempted": 20,
+      "n_http_ok": 20,
+      "n_ge1_intra": 20,
+      "hit_rate_ge1_intra": 1.0,
+      "mean_intra_points": 10.0,
+      "mean_checkpoints_hit": 4.5
+    },
+    "kalshi_checkpoint_rows": 90,
+    "poly_checkpoint_rows": 90
+  },
+  "totals": {
+    "contracts_attempted": 240,
+    "kalshi_attempted": 120,
+    "poly_attempted": 120,
+    "checkpoint_rows": 1140
+  },
+  "merged_at_utc": "2026-09-11T21:17:30Z"
+}
