@@ -1,0 +1,22 @@
+{
+  "edges": 12,
+  "strategies": 0,
+  "tests": 3,
+  "cemetery": 3,
+  "deployments": 0,
+  "datasets": 2,
+  "red_team": 0,
+  "overrides": 0,
+  "next_seq": {
+    "EDGE": 3,
+    "STRAT": 1,
+    "TEST": 4,
+    "CEM": 4,
+    "DEP": 1,
+    "DATA": 1,
+    "RT": 1,
+    "OVR": 1,
+    "QUERY": 3
+  },
+  "updated_utc": "2026-09-11T00:06:18Z"
+}
