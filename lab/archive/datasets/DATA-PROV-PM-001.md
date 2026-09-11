@@ -57,7 +57,8 @@
 - US Global trading eligibility remains `[U]` counsel — capture allowed under Governor co-primary planning assumption
 
 ## Status history
-1. **PENDING_CLOCK** ← current (2026-09-11) — provisional sample on disk; awaiting Clock DATA VERDICT
+1. PENDING_CLOCK (provisional sample on disk)
+2. **CONDITIONAL** ← current (2026-09-11T20:53:10Z) — Clock APPROVED_WITH_LIMITATIONS; label-only CLEARED; market-relative Examiner **BLOCKED** (no books/mid/independent oracle)
 
 ## Clock DATA VERDICT
 - **Verdict:** CONDITIONAL (APPROVED_WITH_LIMITATIONS) — issued 2026-09-11T20:53:10Z
@@ -67,3 +68,14 @@
 - **Required remediation:** L2 oracle replay DATA-*; optional mid/path DATA-*; Archivist IDs; not sealed holdout
 - **Full:** `/workspace/lab/data/DATA-PROV-PM-001/provenance/DATA_VERDICT_DATA-PROV-PM-001.md`
 - **Coverage:** `/workspace/lab/data/DATA-PROV-PM-001/provenance/USABLE_COVERAGE_DATA-PROV-PM-001.md`
+
+## Clock DATA VERDICT
+- **Verdict:** CONDITIONAL
+- **Quality:** APPROVED_WITH_LIMITATIONS
+- **Issued:** 2026-09-11T20:53:10Z
+- **Label-only Examiner route:** CLEARED under Clock gates
+- **Market-relative Examiner (books/mid/independent oracle):** **BLOCKED** / UNTESTED_BLOCKED
+- **Trading:** FORBIDDEN
+- **Usable coverage freeze:** `governance/PM001_COVERAGE_FROZEN_2026-09-11.md` · provenance `USABLE_COVERAGE_DATA-PROV-PM-001.md`
+- **Full verdict:** `/workspace/lab/data/DATA-PROV-PM-001/provenance/DATA_VERDICT_DATA-PROV-PM-001.md`
+- **Archive audit:** `archive/audit/2026-09-11-Clock-DATA-VERDICT-DATA-PROV-PM-001.md`
