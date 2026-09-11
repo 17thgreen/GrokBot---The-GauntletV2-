@@ -24,13 +24,121 @@
       "mean_checkpoints_hit": 4.5
     },
     "kalshi_checkpoint_rows": 90,
-    "poly_checkpoint_rows": 90
+    "poly_checkpoint_rows": 90,
+    "ids_kalshi": [
+      "PROV-KALSHI-KXBTC15M-26SEP111645-45",
+      "PROV-KALSHI-KXBTC15M-26SEP110015-15",
+      "PROV-KALSHI-KXBTC15M-26SEP100745-45",
+      "PROV-KALSHI-KXBTC15M-26SEP091300-00",
+      "PROV-KALSHI-KXBTC15M-26SEP082030-30",
+      "PROV-KALSHI-KXBTC15M-26SEP080345-45",
+      "PROV-KALSHI-KXBTC15M-26SEP071115-15",
+      "PROV-KALSHI-KXBTC15M-26SEP061845-45",
+      "PROV-KALSHI-KXBTC15M-26SEP060200-00",
+      "PROV-KALSHI-KXBTC15M-26SEP050930-30",
+      "PROV-KALSHI-KXETH15M-26SEP111645-45",
+      "PROV-KALSHI-KXETH15M-26SEP110015-15",
+      "PROV-KALSHI-KXETH15M-26SEP100745-45",
+      "PROV-KALSHI-KXETH15M-26SEP091300-00",
+      "PROV-KALSHI-KXETH15M-26SEP082030-30",
+      "PROV-KALSHI-KXETH15M-26SEP080345-45",
+      "PROV-KALSHI-KXETH15M-26SEP071115-15",
+      "PROV-KALSHI-KXETH15M-26SEP061845-45",
+      "PROV-KALSHI-KXETH15M-26SEP060200-00",
+      "PROV-KALSHI-KXETH15M-26SEP050930-30"
+    ],
+    "ids_poly": [
+      "PROV-POLYGLOBAL-btc-updown-5m-1789158900",
+      "PROV-POLYGLOBAL-btc-updown-5m-1789102800",
+      "PROV-POLYGLOBAL-btc-updown-5m-1789046400",
+      "PROV-POLYGLOBAL-btc-updown-5m-1788990300",
+      "PROV-POLYGLOBAL-btc-updown-5m-1788933900",
+      "PROV-POLYGLOBAL-eth-updown-5m-1789158900",
+      "PROV-POLYGLOBAL-eth-updown-5m-1789102800",
+      "PROV-POLYGLOBAL-eth-updown-5m-1789046700",
+      "PROV-POLYGLOBAL-eth-updown-5m-1788990600",
+      "PROV-POLYGLOBAL-eth-updown-5m-1788934200",
+      "PROV-POLYGLOBAL-btc-updown-15m-1789157700",
+      "PROV-POLYGLOBAL-btc-updown-15m-1789101900",
+      "PROV-POLYGLOBAL-btc-updown-15m-1789046100",
+      "PROV-POLYGLOBAL-btc-updown-15m-1788989400",
+      "PROV-POLYGLOBAL-btc-updown-15m-1788933600",
+      "PROV-POLYGLOBAL-eth-updown-15m-1789157700",
+      "PROV-POLYGLOBAL-eth-updown-15m-1789101900",
+      "PROV-POLYGLOBAL-eth-updown-15m-1789046100",
+      "PROV-POLYGLOBAL-eth-updown-15m-1788990300",
+      "PROV-POLYGLOBAL-eth-updown-15m-1788933600"
+    ]
+  },
+  "extend": {
+    "phase": "extend_120_120_minus_proto_overlap",
+    "kalshi_additional": {
+      "n_attempted": 100,
+      "n_http_ok": 98,
+      "n_ge1_intra": 98,
+      "hit_rate_ge1_intra": 0.98,
+      "mean_intra_points": 14.7,
+      "mean_checkpoints_hit": 4.9
+    },
+    "polymarket_additional": {
+      "n_attempted": 100,
+      "n_http_ok": 100,
+      "n_ge1_intra": 100,
+      "hit_rate_ge1_intra": 1.0,
+      "mean_intra_points": 10.0,
+      "mean_checkpoints_hit": 4.5
+    },
+    "n_kalshi_additional": 100,
+    "n_poly_additional": 100
   },
   "totals": {
     "contracts_attempted": 240,
     "kalshi_attempted": 120,
     "poly_attempted": 120,
-    "checkpoint_rows": 1140
+    "checkpoint_rows": 1140,
+    "kalshi": {
+      "n_attempted": 120,
+      "n_http_ok": 120,
+      "n_ge1_intra": 120,
+      "hit_rate_ge1_intra": 1.0,
+      "mean_intra_points": 15.0,
+      "mean_checkpoints_hit": 5.0
+    },
+    "polymarket": {
+      "n_attempted": 120,
+      "n_http_ok": 120,
+      "n_ge1_intra": 120,
+      "hit_rate_ge1_intra": 1.0,
+      "mean_intra_points": 10.0,
+      "mean_checkpoints_hit": 4.5
+    }
+  },
+  "checkpoint_hit_table": [
+    {"venue": "KALSHI", "time_remaining_sec": 840, "attempted": 120, "hit": 120, "hit_rate": 1.0},
+    {"venue": "KALSHI", "time_remaining_sec": 600, "attempted": 120, "hit": 120, "hit_rate": 1.0},
+    {"venue": "KALSHI", "time_remaining_sec": 300, "attempted": 120, "hit": 120, "hit_rate": 1.0},
+    {"venue": "KALSHI", "time_remaining_sec": 60, "attempted": 120, "hit": 120, "hit_rate": 1.0},
+    {"venue": "KALSHI", "time_remaining_sec": 0, "attempted": 120, "hit": 120, "hit_rate": 1.0},
+    {"venue": "POLYMARKET_GLOBAL", "time_remaining_sec": 0, "attempted": 120, "hit": 120, "hit_rate": 1.0},
+    {"venue": "POLYMARKET_GLOBAL", "time_remaining_sec": 60, "attempted": 120, "hit": 120, "hit_rate": 1.0},
+    {"venue": "POLYMARKET_GLOBAL", "time_remaining_sec": 180, "attempted": 60, "hit": 60, "hit_rate": 1.0},
+    {"venue": "POLYMARKET_GLOBAL", "time_remaining_sec": 240, "attempted": 60, "hit": 60, "hit_rate": 1.0},
+    {"venue": "POLYMARKET_GLOBAL", "time_remaining_sec": 300, "attempted": 60, "hit": 60, "hit_rate": 1.0},
+    {"venue": "POLYMARKET_GLOBAL", "time_remaining_sec": 600, "attempted": 60, "hit": 60, "hit_rate": 1.0},
+    {"venue": "POLYMARKET_GLOBAL", "time_remaining_sec": 840, "attempted": 60, "hit": 60, "hit_rate": 1.0}
+  ],
+  "checkpoints_15m": [840, 600, 300, 60, 0],
+  "checkpoints_5m": [240, 180, 60, 0],
+  "construction": {
+    "kalshi": "1m candlestick yes_bid.close / yes_ask.close / price.close at end_period_ts == CLOSE-remaining; implied_p=mid if bid>0 and ask>0 else last",
+    "polymarket": "CLOB prices-history last print p with OPEN<=t<=decision_time<=CLOSE; yes_bid/yes_ask=[U]; implied_p=last",
+    "forbidden": "LAST_PRICE_DOLLARS, OUTCOME_PRICES, post-CLOSE prints, interpolation, invented bids"
+  },
+  "retry_429": {
+    "n_retried": 4,
+    "n_recovered": 4,
+    "note": "Initial misses were HTTP 429 after 8 retries, not empty history. Recovered with 3s pacing. Soft rate-limit blocker only.",
+    "tickers": ["KXBTC15M-26SEP082030-30", "KXETH15M-26SEP110015-15", "KXETH15M-26SEP060445-45", "KXETH15M-26SEP042230-30"]
   },
   "merged_at_utc": "2026-09-11T21:17:30Z"
 }
