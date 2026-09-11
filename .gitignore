@@ -1,0 +1,13 @@
+# Market data (hashed locally; too large for git)
+lab/data/
+**/DATA-PROV-*/raw/
+**/DATA-PROV-*/slices/
+**/DATA-PROV-*/sealed/
+
+# Python
+**/__pycache__/
+**/.venv/
+**/*.pyc
+
+# OS
+.DS_Store
