@@ -57,16 +57,16 @@ Every Binary Examiner package that leaves `HYPOTHESIS` must report **each** row 
 
 Let \(y=1\) if resolved YES, else \(0\) (VOID excluded per §0).
 
-**Brier (model):** \(\frac{1}{N}\sum_i (p_{t_i}-y_i)^2\)  
-**Brier (market):** \(\frac{1}{N}\sum_i (m_{t_i}-y_i)^2\)  
+**Brier (model):** \(\\frac{1}{N}\\sum_i (p_{t_i}-y_i)^2\)  
+**Brier (market):** \(\\frac{1}{N}\\sum_i (m_{t_i}-y_i)^2\)  
 **ΔBrier:** `Brier_model − Brier_market` (lower model Brier than market ⇒ ΔBrier \(< 0\) = skill). Write this sentence on every report.
 
-**Log loss (model):** \(\frac{1}{N}\sum_i -\big[y_i\log p_{t_i}+(1-y_i)\log(1-p_{t_i})\big]\) (clip \(p\) only if declared).  
+**Log loss (model):** \(\\frac{1}{N}\\sum_i -\\big[y_i\\log p_{t_i}+(1-y_i)\\log(1-p_{t_i})\\big]\) (clip \(p\) only if declared).  
 **ΔLogLoss:** `LogLoss_model − LogLoss_market` (same lower-is-better convention).
 
-**Gross edge (YES side):** \(e^{\mathrm{gross}}_{\mathrm{YES}}(t)=p_t-m_t\)  
-**Net edge (YES side):** \(e^{\mathrm{net}}_{\mathrm{YES}}(t)=p_t-m_t-c_{\mathrm{YES}}\)  
-**NO side:** \(m_t-p_t-c_{\mathrm{NO}}\).
+**Gross edge (YES side):** \(e^{\\mathrm{gross}}_{\\mathrm{YES}}(t)=p_t-m_t\)  
+**Net edge (YES side):** \(e^{\\mathrm{net}}_{\\mathrm{YES}}(t)=p_t-m_t-c_{\\mathrm{YES}}\)  
+**NO side:** \(m_t-p_t-c_{\\mathrm{NO}}\).
 
 **EV_gross / EV_net:** mean of the pre-registered side’s edge over **acted** events (or over all events — declare). Paper economics only.
 
