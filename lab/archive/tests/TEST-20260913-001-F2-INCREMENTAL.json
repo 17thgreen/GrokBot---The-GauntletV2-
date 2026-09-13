@@ -1,0 +1,18 @@
+{
+  "TEST_ID": "TEST-20260913-001",
+  "package": "F2-INCREMENTAL",
+  "feature": "FEAT-20260912-005",
+  "map": "FEAT-20260912-005/evaluate_close_window/2026-09-12-patch2",
+  "incumbent": "PM-003 T-1m mid",
+  "trading": "FORBIDDEN",
+  "invented_numbers": false,
+  "overall_verdict": "REDUNDANT / FAIL-INSUFFICIENT",
+  "overall_reason": "ETH headline lacks both-delta skill (not NO_EDGE). USED_RESEARCH; holdout closed; no trading.",
+  "run_utc": "2026-09-13T17:53:52Z",
+  "clock": {"missing_sec_rate_btc": 0.0, "missing_sec_rate_eth": 0.0, "n_60_60": 1208, "n_pre_close_last": 1208},
+  "headline": {
+    "BTC_k30": {"N": 219, "Brier_model": 0.0410958904109589, "Brier_market": 0.1492059497716895, "delta_Brier": -0.10811005936073059, "LogLoss_model": 0.37860303378016524, "LogLoss_market": 0.4643524658457488, "delta_LogLoss": -0.08574943206558355, "verdict": "INCREMENTAL_RESEARCH"},
+    "ETH_k30": {"N": 178, "Brier_model": 0.07865168539325842, "Brier_market": 0.126928125, "delta_Brier": -0.04827643960674158, "LogLoss_model": 0.7245009327400105, "LogLoss_market": 0.40060116197628337, "delta_LogLoss": 0.3238997707637271, "verdict": "REDUNDANT / FAIL-INSUFFICIENT"}
+  },
+  "sign_convention": "delta = model - market; negative = skill"
+}
