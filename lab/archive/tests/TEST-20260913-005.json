@@ -1,0 +1,10 @@
+{
+  "TEST_ID": "TEST-20260913-005",
+  "package": "CBVEL-INCREMENTAL",
+  "verdict": "REDUNDANT / FAIL-INSUFFICIENT",
+  "invented_numbers": false,
+  "trading": "FORBIDDEN",
+  "join_verdict": "CONDITIONAL",
+  "join_policy": "B",
+  "full": "/workspace/lab/archive/tests/TEST-20260913-005-CBVEL-INCREMENTAL.json"
+}
