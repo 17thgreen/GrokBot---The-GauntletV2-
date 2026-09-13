@@ -1,3 +1,5 @@
-# DRAFT-FEAT-20260913-001 — W2C sibling mid
+# DRAFT-FEAT-20260913-001 — SUPERSEDED
 
-See full card at archive path; stub for sync if missing body.
+Promoted to **`FEAT-20260913-001`** on TEST-20260913-002 filing (2026-09-13T19:17:54Z).
+
+See `archive/features/FEAT-20260913-001.md`. STATUS INACTIVE — REDUNDANT / FAIL-INSUFFICIENT.
