@@ -1,0 +1,21 @@
+# Audit pointer
+
+- TEST: `TEST-20260913-003`
+- Package: `W2E-INCREMENTAL` vs `MKT-KALSHI-15M-MID`
+- Feature: `DRAFT-FEAT-20260913-002`
+- Gate: `DRAFT-ABST-20260913-002`
+- Verdict: `REDUNDANT / FAIL-INSUFFICIENT`
+- invented_numbers: false
+- Trading: FORBIDDEN
+- L3 ≠ oracle; join CONDITIONAL
+- EXPIRATION_VALUE: not used
+- Φ(z): not used
+- sibling blend: not used
+- CF / Poly: not used
+- SHA256 verified: `90e38c2f23e224def13db05924f6470a1e738778882f6b0cc17ed708b3143765`
+- L3: DATA-PROV-L3-001 completed-bar join only (F1 reuse)
+- Headlines: `KALSHI|15m|BTC|T-5m|mid`, `KALSHI|15m|ETH|T-5m|mid`
+- Artifacts: `/workspace/lab/harness/examiner/out/TEST-20260913-003-W2E-INCREMENTAL.json`
+- Archive: `/workspace/lab/archive/tests/TEST-20260913-003-W2E-INCREMENTAL.json`
+- DATA: PM-003 + PM-001 FLOOR_STRIKE/RESOLUTION + L3-001
+- Purpose: W2-E strike vs mid incrementality (USED_RESEARCH; not validation)
