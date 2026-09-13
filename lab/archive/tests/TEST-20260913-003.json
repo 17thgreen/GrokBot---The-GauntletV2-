@@ -1,0 +1,11 @@
+{
+  "TEST_ID": "TEST-20260913-003",
+  "package": "W2E-INCREMENTAL",
+  "verdict": "REDUNDANT / FAIL-INSUFFICIENT",
+  "invented_numbers": false,
+  "trading": "FORBIDDEN",
+  "L3_is_oracle": false,
+  "join_verdict": "CONDITIONAL",
+  "EXPIRATION_VALUE_used": false,
+  "full": "/workspace/lab/archive/tests/TEST-20260913-003-W2E-INCREMENTAL.json"
+}
