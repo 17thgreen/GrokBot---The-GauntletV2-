@@ -8,6 +8,8 @@
 **Sequence position:** after DATA → CONTRACT REGISTRY → ORACLE → HISTORICAL PRICE STATE (`TRACK_B_ORDERS_2026-09-11.md`)  
 **Does not:** fetch market data · invent fills · auto-trade · require a cockpit · reuse futures Examiner as a binary scoreboard without this spec
 
+**Patched 2026-09-13:** AMD-20260913-001 (legal scored \(p_t\)); AMD-20260913-006 (named ECE). Baseline `gauntlet-v2.0-alpha` **unchanged**. `RETROACTIVE: NO`.
+
 Companion mission metrics: `PREDICTION_MARKET_MISSION_2026-09-11.md` §6.5. This file is the **operable required list** for Track B. League snapshot table: `archive/templates/STRATEGY_LEAGUE.md`.
 
 ---
@@ -29,6 +31,18 @@ Futures TESTs TEST-20260911-003/004/005 **skipped** the binary scoreboard `[V]`.
 
 ---
 
+## 0.1 Legal scored \(p_t\) (AMD-20260913-001)
+
+| Item | Rule |
+|------|------|
+| **Scored range** | A scored \(p_t\) submitted to the Binary Examiner **must** lie in \((\varepsilon, 1-\varepsilon)\) unless Clock has recorded an **algebraic lock** (Map 1) |
+| **Raw 0/1** | Legal as unit-test predicates and diagnostics — **not** Examiner inputs |
+| **ε-clip** | Numerical hygiene only. **Not** a model of remainder-window uncertainty. Turning \(1\) into \(0.9999\) still asserts near-certainty |
+| **Failed map** | Stays failed. A materially different uncertainty map = **new** Feature Card (explicit lineage, independent evaluation) |
+| **No rehab** | Does **not** rehabilitate TEST-20260913-001 or FEAT-005. `RETROACTIVE: NO` |
+| **Same-\(t\) incumbent** | Claim that \(p_t\) beats \(m_t\) is `UNTESTED` unless mid timestamp = decision timestamp, or Clock recorded why that mid is blocked and named the legal substitute. F2 vs T−1m is **not** a same-\(t\) beat |
+| **Learned \(p_t\)** | Not licensed by this AMD; see packet §1.4 / `archive/templates/FEATURE_LEARNED_PT.md` |
+
 ## 1. Required metrics (Logan list)
 
 Every Binary Examiner package that leaves `HYPOTHESIS` must report **each** row below or mark it **`UNTESTED`**.
@@ -47,11 +61,27 @@ Every Binary Examiner package that leaves `HYPOTHESIS` must report **each** row 
 | 10 | **gap** | `gap` = \(p_t - m_t\) (mean, and distribution) | Forecast-minus-market at \(t\). Report signed mean and \|gap\|. Abstention uses \|gap\| vs costs | `UNTESTED` |
 | 11 | **gross / net EV** | `EV_gross`, `EV_net` | Gross: edge from \(p_t-m_t\) under the pre-registered action rule (no costs). Net: after cost stack \(c\). **Not** live P&L. **Not** fabricated fills | `UNTESTED` |
 | 12 | **abstention** | `abstention_rate` (+ coverage) | Fraction of candidate \(t\) where \|gap\| ≤ \(c\) (or risk veto) → **NO TRADE**. First-class. Report metrics on **scored** vs **all-including-abstain** if both exist | `UNTESTED` |
-| 13 | **cost sensitivity** | `cost_sensitivity` | Repeat net EV / abstention at pre-registered \(c\), \(2c\), \(3c\) (or declared grid). Each cost leg tagged `[V]`/`[I]`/`[H]`/`[A]`/`[U]` | `UNTESTED` |
+| 13 | **cost sensitivity** | `cost_sensitivity` | Repeat net EV / abstention at pre-registered \(c\), \(2c\), \(3c\) (or declared grid). Each cost leg tagged `[V]\[I]\[H]\[A]\[U]` | `UNTESTED` |
 
 **If a metric was not computed: write `UNTESTED`. Do not infer it from a cousin. Do not leave the cell empty.**
 
 ---
+
+## 1.1 ECE / calibration (AMD-20260913-006)
+
+Filed with AMD-20260913-001. **Do not invent a new estimator. Do not import a calibrator. No power theater.**
+
+| Item | Binding |
+|------|---------|
+| **Estimator** | `expected_calibration_error` in `harness/examiner/src/pm002_market_baseline.py` |
+| **Bins** | `RELIABILITY_BINS` = [0.02,0.50), [0.50,0.55), [0.55,0.60), [0.60,0.70), [0.70,0.80), [0.80,0.90), [0.90,0.98) — same bins already used on TEST-006/007 |
+| **Formula** | Weighted mean |obs_rate − mean_m| over bins with n ≥ `MIN_N_FOR_BIN_RATE_CI` = 20 |
+| **UNTESTED when** | N < `MIN_N_FOR_ECE` = 100 **or** `powered_bin_count` < `MIN_POWERED_BINS_FOR_CAL` = 2 |
+| **Default comparison** | Model ECE vs market ECE on the **same cell**, same estimator, same bins |
+| **Power rule** | Minimum **DISPLAY** rule, not a published-power claim. Thin → `UNTESTED`. Never a pass. Never a silent skip on promote |
+| **Honesty** | N ≥ 100 does **not** prove statistical power |
+
+When N cannot support the display rule, report calibration as `UNTESTED` with reason — not a one-bin theater plot, not a silent omit on promote.
 
 ## 2. Sign conventions & formulae (frozen for reports)
 
@@ -132,7 +162,10 @@ Implement against the first-milestone resolved sample — **after** that sample 
 | `archive/templates/CONTRACT_REGISTRY.md` | Sample universe ledger |
 | `archive/templates/STRATEGY_LEAGUE.md` | League metric snapshot (must use this list) |
 | `archive/templates/FEATURE.md` | Forecast-input reuse of dead Edges |
+| `AMD-20260913-001.md` | Legal scored \(p_t\); same-\(t\) incumbent |
+| `AMD-20260913-006.md` | Named ECE estimator; display/power rule |
+| `GOVERNOR_PACKET_2026-09-13.md` | Stamp source |
 
 ---
 
-*End BINARY EXAMINER SPEC — 2026-09-11. Required metrics: N, WR, CI, Brier, logloss, calibration, market Brier/logloss, Δ vs market, avg market price, gap, gross/net EV, abstention, cost sensitivity. Missing = UNTESTED. RETROACTIVE: NO.*
+*End BINARY EXAMINER SPEC — 2026-09-11; patched 2026-09-13 (AMD-001 legal p_t; AMD-006 expected_calibration_error). Required metrics: N, WR, CI, Brier, logloss, calibration/ECE, market Brier/logloss, Δ vs market, avg market price, gap, gross/net EV, abstention, cost sensitivity. Missing = UNTESTED. RETROACTIVE: NO.*
