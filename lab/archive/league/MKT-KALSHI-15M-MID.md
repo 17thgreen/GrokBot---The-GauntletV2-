@@ -1,0 +1,5 @@
+# MKT-KALSHI-15M-MID
+**STATE:** INCUMBENT_BENCHMARK  
+**TEST:** TEST-20260911-007  
+**DATA:** DATA-PROV-PM-003  
+Not a strategy. See `archive/league/STRATEGY_LEAGUE.md`.
