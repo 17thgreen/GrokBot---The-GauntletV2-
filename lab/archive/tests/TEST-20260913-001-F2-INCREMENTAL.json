@@ -4,15 +4,148 @@
   "feature": "FEAT-20260912-005",
   "map": "FEAT-20260912-005/evaluate_close_window/2026-09-12-patch2",
   "incumbent": "PM-003 T-1m mid",
+  "purpose": "f2_map2_incrementality_vs_t1m_mid",
   "trading": "FORBIDDEN",
   "invented_numbers": false,
   "overall_verdict": "REDUNDANT / FAIL-INSUFFICIENT",
-  "overall_reason": "ETH headline lacks both-delta skill (not NO_EDGE). USED_RESEARCH; holdout closed; no trading.",
+  "overall_reason": "ETH headline lacks both-Δ skill REDUNDANT / FAIL-INSUFFICIENT (not NO_EDGE). USED_RESEARCH; holdout closed; no trading.",
   "run_utc": "2026-09-13T17:53:52Z",
-  "clock": {"missing_sec_rate_btc": 0.0, "missing_sec_rate_eth": 0.0, "n_60_60": 1208, "n_pre_close_last": 1208},
+  "data": {
+    "cf_dataset_id": "DATA-PROV-CF-001",
+    "cf_verdict": "CLEARED",
+    "pm003": "DATA-PROV-PM-003",
+    "pm001": "DATA-PROV-PM-001",
+    "slice_use": "USED_RESEARCH"
+  },
+  "clock": {
+    "missing_sec_rate_btc": 0.0,
+    "missing_sec_rate_eth": 0.0,
+    "n_60_60": 1208,
+    "n_pre_close_last": 1208
+  },
   "headline": {
-    "BTC_k30": {"N": 219, "Brier_model": 0.0410958904109589, "Brier_market": 0.1492059497716895, "delta_Brier": -0.10811005936073059, "LogLoss_model": 0.37860303378016524, "LogLoss_market": 0.4643524658457488, "delta_LogLoss": -0.08574943206558355, "verdict": "INCREMENTAL_RESEARCH"},
-    "ETH_k30": {"N": 178, "Brier_model": 0.07865168539325842, "Brier_market": 0.126928125, "delta_Brier": -0.04827643960674158, "LogLoss_model": 0.7245009327400105, "LogLoss_market": 0.40060116197628337, "delta_LogLoss": 0.3238997707637271, "verdict": "REDUNDANT / FAIL-INSUFFICIENT"}
+    "BTC_k30": {
+      "cell": "KALSHI|15m|BTC|CLOSE-k30|mid_T-1m",
+      "N": 219,
+      "Brier_model": 0.0410958904109589,
+      "Brier_market": 0.1492059497716895,
+      "delta_Brier": -0.10811005936073059,
+      "LogLoss_model": 0.37860303378016524,
+      "LogLoss_market": 0.4643524658457488,
+      "delta_LogLoss": -0.08574943206558355,
+      "mean_m": 0.4463470319634703,
+      "mean_p": 0.4703196347031963,
+      "ECE": 0.04109589041095889,
+      "verdict": "INCREMENTAL_RESEARCH",
+      "exclusions": {
+        "near_deg": 329,
+        "last_fallback": 56
+      },
+      "mean_K": 78872.88392694063,
+      "y_rate": 0.4657534246575342
+    },
+    "ETH_k30": {
+      "cell": "KALSHI|15m|ETH|CLOSE-k30|mid_T-1m",
+      "N": 178,
+      "Brier_model": 0.07865168539325842,
+      "Brier_market": 0.126928125,
+      "delta_Brier": -0.04827643960674158,
+      "LogLoss_model": 0.7245009327400105,
+      "LogLoss_market": 0.40060116197628337,
+      "delta_LogLoss": 0.3238997707637271,
+      "mean_m": 0.5239634831460674,
+      "mean_p": 0.5280898876404494,
+      "ECE": 0.07865168539325841,
+      "verdict": "REDUNDANT / FAIL-INSUFFICIENT",
+      "exclusions": {
+        "last_fallback": 58,
+        "near_deg": 368
+      },
+      "mean_K": 2479.3102808988765,
+      "y_rate": 0.5393258426966292
+    }
+  },
+  "annex": {
+    "BTC_k10": {
+      "cell": "KALSHI|15m|BTC|CLOSE-k10|mid_T-1m",
+      "N": 219,
+      "Brier_model": 0.1187214611872146,
+      "Brier_market": 0.1492059497716895,
+      "delta_Brier": -0.03048448858447489,
+      "LogLoss_model": 1.093553199253179,
+      "LogLoss_market": 0.4643524658457488,
+      "delta_LogLoss": 0.6292007334074303,
+      "mean_m": 0.4463470319634703,
+      "mean_p": 0.4383561643835616,
+      "ECE": 0.1187214611872146,
+      "verdict": "REDUNDANT / FAIL-INSUFFICIENT",
+      "exclusions": {
+        "near_deg": 329,
+        "last_fallback": 56
+      },
+      "mean_K": 78872.88392694063,
+      "y_rate": 0.4657534246575342
+    },
+    "BTC_k50": {
+      "cell": "KALSHI|15m|BTC|CLOSE-k50|mid_T-1m",
+      "N": 219,
+      "Brier_model": 0.0091324200913242,
+      "Brier_market": 0.1492059497716895,
+      "delta_Brier": -0.1400735296803653,
+      "LogLoss_model": 0.08421178917362927,
+      "LogLoss_market": 0.4643524658457488,
+      "delta_LogLoss": -0.38014067667211954,
+      "mean_m": 0.4463470319634703,
+      "mean_p": 0.4657534246575342,
+      "ECE": 0.009132420091324185,
+      "verdict": "INCREMENTAL_RESEARCH",
+      "exclusions": {
+        "near_deg": 329,
+        "last_fallback": 56
+      },
+      "mean_K": 78872.88392694063,
+      "y_rate": 0.4657534246575342
+    },
+    "ETH_k10": {
+      "cell": "KALSHI|15m|ETH|CLOSE-k10|mid_T-1m",
+      "N": 178,
+      "Brier_model": 0.12921348314606743,
+      "Brier_market": 0.126928125,
+      "delta_Brier": 0.0022853581460674233,
+      "LogLoss_model": 1.1901872434298026,
+      "LogLoss_market": 0.40060116197628337,
+      "delta_LogLoss": 0.7895860814535193,
+      "mean_m": 0.5239634831460674,
+      "mean_p": 0.5112359550561798,
+      "ECE": 0.1292134831460674,
+      "verdict": "REDUNDANT / FAIL-INSUFFICIENT",
+      "exclusions": {
+        "last_fallback": 58,
+        "near_deg": 368
+      },
+      "mean_K": 2479.3102808988765,
+      "y_rate": 0.5393258426966292
+    },
+    "ETH_k50": {
+      "cell": "KALSHI|15m|ETH|CLOSE-k50|mid_T-1m",
+      "N": 178,
+      "Brier_model": 0.0,
+      "Brier_market": 0.126928125,
+      "delta_Brier": -0.126928125,
+      "LogLoss_model": 0.00010000500033334732,
+      "LogLoss_market": 0.40060116197628337,
+      "delta_LogLoss": -0.40050115697595,
+      "mean_m": 0.5239634831460674,
+      "mean_p": 0.5393258426966292,
+      "ECE": 0.0,
+      "verdict": "INCREMENTAL_RESEARCH",
+      "exclusions": {
+        "last_fallback": 58,
+        "near_deg": 368
+      },
+      "mean_K": 2479.3102808988765,
+      "y_rate": 0.5393258426966292
+    }
   },
   "sign_convention": "delta = model - market; negative = skill"
 }
