@@ -1,9 +1,10 @@
 # DATASET_USE_LEDGER (active)
 
 **Template:** `archive/templates/DATASET_USE_LEDGER.md`  
+**Status:** ACTIVE — empty (headers only) as of 2026-09-11  
 **Maintainer:** Archivist  
 
-**Hard rule:** Once a slice is used for hypothesis tuning, it cannot later be called sealed validation.
+**Hard rule:** Once a slice is used for hypothesis tuning, it cannot later be called sealed validation. See template.
 
 ---
 
@@ -13,3 +14,5 @@
 | DATA-PROV-PM-003 | SLICE-PM003-KALSHI-REMAIN-1208 | 2026-09-04 | 2026-09-11 | Examiner TEST-20260911-007 | MARKET_BASELINE (used) | YES | NO | NO | NO | 2026-09-11 | Conductor | USED_RESEARCH — not holdout |
 | DATA-PROV-PM-003 | SLICE-PM003-KALSHI-REMAIN-1208 | 2026-09-04 | 2026-09-11 | Conductor fetch | reconstruct remaining Kalshi 15m m_t | NO | NO | NO | NO | 2026-09-11 | Conductor | CAPTURED_PENDING_CLOCK |
 | DATA-PROV-PM-002 | SLICE-PM002-BOUNDED-240 | 2026-09-04 | 2026-09-11 | Examiner TEST-20260911-006 | MARKET_BASELINE (used) | YES | NO | NO | NO | 2026-09-11 | Conductor | USED_RESEARCH — not holdout |
+| DATA-PROV-PM-002 | SLICE-PM002-BOUNDED-240 | 2026-07-13 (approx; parent PM-001 post-cutoff) | 2026-09-11 | Conductor fetch | reconstruct decision-time \(m_t\) at remaining-time checkpoints | NO | NO | NO | NO | 2026-09-11 | Conductor | CAPTURED_PENDING_CLOCK |
+
