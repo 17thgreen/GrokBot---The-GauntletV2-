@@ -15,10 +15,11 @@
 
 | Path | Access |
 |------|--------|
-| raw/ | hour payloads (no secrets) — **not in git** |
-| derived/ | 1Hz close-minute ticks + pre_close_last — **not in git** |
+| raw/ | hour payloads (no secrets) |
+| derived/ | 1Hz close-minute ticks + pre_close_last |
 | Examiner | after Clock DATA VERDICT |
 | Trading | Forbidden |
+
 
 ## Clock
 - **DATA VERDICT:** CLEARED (2026-09-13T17:53:52Z)
