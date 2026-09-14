@@ -17,6 +17,7 @@
 ## Measurement kernels (Clock-joinable shape, still UNTESTED)
 
 1. **BRTI-constituent velocity (Coinbase 1m) vs Kalshi same-t mid.**  
+   **DEAD** TEST-20260913-005 / FEAT-20260913-005. Do not reopen.  
    Object: `Δ = g(v_CB,t) − m_t` or `p_t = clip(m_t + λ v_CB,t)`. Incumbent = Kalshi mid at `decision_time`. Not Binance last. Not F1 moneyness.  
    Data hole: entitled Coinbase (or other BRTI-constituent) 1m known at t, joined to PM-003.  
    Nearest dead card: W2-A (CF print, not Coinbase velocity).
@@ -26,6 +27,7 @@
    This is a **cut**, not a new Feature. Overlaps leftover **W2-D** (one new time cell, declared before peek).
 
 3. **Implied variance vs short realized var as a silence rule.**  
+   **DEAD** TEST-20260913-006 / FEAT-20260913-006 (T-3m unsigned iv−c·rv). Do not retune annex.  
    Compare `m_t(1−m_t)` to a 30–90s realized-var known at t. Output may be “abstain / emit mid,” not a new direction.  
    Nearest dead card: F2 last-minute remainder (different object: Map 2 0/1, not a var gate).
 
