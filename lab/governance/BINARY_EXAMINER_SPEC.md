@@ -61,7 +61,7 @@ Every Binary Examiner package that leaves `HYPOTHESIS` must report **each** row 
 | 10 | **gap** | `gap` = \(p_t - m_t\) (mean, and distribution) | Forecast-minus-market at \(t\). Report signed mean and \|gap\|. Abstention uses \|gap\| vs costs | `UNTESTED` |
 | 11 | **gross / net EV** | `EV_gross`, `EV_net` | Gross: edge from \(p_t-m_t\) under the pre-registered action rule (no costs). Net: after cost stack \(c\). **Not** live P&L. **Not** fabricated fills | `UNTESTED` |
 | 12 | **abstention** | `abstention_rate` (+ coverage) | Fraction of candidate \(t\) where \|gap\| ≤ \(c\) (or risk veto) → **NO TRADE**. First-class. Report metrics on **scored** vs **all-including-abstain** if both exist | `UNTESTED` |
-| 13 | **cost sensitivity** | `cost_sensitivity` | Repeat net EV / abstention at pre-registered \(c\), \(2c\), \(3c\) (or declared grid). Each cost leg tagged `[V]\[I]\[H]\[A]\[U]` | `UNTESTED` |
+| 13 | **cost sensitivity** | `cost_sensitivity` | Repeat net EV / abstention at pre-registered \(c\), \(2c\), \(3c\) (or declared grid). Each cost leg tagged `[V]`/`[I]`/`[H]`/`[A]`/`[U]` | `UNTESTED` |
 
 **If a metric was not computed: write `UNTESTED`. Do not infer it from a cousin. Do not leave the cell empty.**
 
@@ -153,7 +153,7 @@ Implement against the first-milestone resolved sample — **after** that sample 
 
 ## 6. Pointers
 
-| Doc | Role |
+| Document | Role |
 |-----|------|
 | `TRACK_B_ORDERS_2026-09-11.md` | Sequence; first milestone; no cockpit; no new science family |
 | `PREDICTION_MARKET_MISSION_2026-09-11.md` | Domain formulae; L1/L2/L3 |
