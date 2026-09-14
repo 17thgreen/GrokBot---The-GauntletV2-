@@ -1,3 +1,5 @@
+**SUPERSEDED** by FEAT-20260913-007.md (INACTIVE after TEST-20260913-007 invert kill).
+
 # DRAFT-FEAT-20260913-007 — W2-B Poly last vs Kalshi mid at L
 
 - **FEATURE_ID:** (Archivist-assigned on commission)
