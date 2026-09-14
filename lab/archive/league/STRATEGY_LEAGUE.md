@@ -17,7 +17,7 @@ Incumbent benchmark is **not** a Gauntlet strategy. A challenger must beat \(m_t
 | STATE | **INCUMBENT_BENCHMARK** (not CHAMPION-of-strategy) |
 | TEST | TEST-20260911-007 |
 | DATA | DATA-PROV-PM-003 (1208; not PM-002 union) |
-| Cells | `KALSHI\|15m\|{BTC,ETH}|{T-14m,T-10m,T-5m}|mid` |
+| Cells | `KALSHI\|15m\|{BTC,ETH}\|{T-14m,T-10m,T-5m}\|mid` |
 | N | 604 / 604 / 604 / 604 / 569 / 545 |
 | Brier_market | 0.2347 / 0.2329 / 0.1982 / 0.1982 / 0.1413 / 0.1342 |
 | LogLoss_market | 0.6626 / 0.6589 / 0.5820 / 0.5796 / 0.4347 / 0.4158 |
