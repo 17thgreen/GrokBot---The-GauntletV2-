@@ -1,0 +1,72 @@
+# FEAT-(Archivist-assign) — F3 Kalshi last−mid disagreement
+
+Feature Card — FEATURE WAVE 001 · Family **F3** (Kalshi microstructure) · Tape Reader.
+
+- **FEATURE_ID:** (Archivist-assigned — **not** FEAT-20260912-002; that ID is F1-B / Statistician on disk)
+- **NAME:** Kalshi last−mid disagreement at decision candle
+- **STATUS:** HYPOTHESIS
+- **PROVENANCE:** The Tape Reader · 2026-09-12 UTC · FEATURE WAVE 001 F3 · informal: F3_LASTMID_01 · companion F3_SPREAD_01 · DATA-PROV-PM-003; MKT-KALSHI-15M-MID / TEST-20260911-007 · distinct from FEAT-20260912-001/002 (F1) · EDGE-005/006 frozen · no Binance · no Funding/OI
+- **CONFIDENCE:** 30 / 100 originator belief [H] — UNTESTED; not a validity grade
+- **FAMILY:** F3
+- **WAVE:** FEATURE_WAVE_001_2026-09-12
+
+## DEFINITION
+Same universe / excludes as F3 spread card.
+
+\( m_t = (\mathrm{yes\_bid}_t + \mathrm{yes\_ask}_t)/2 \) (`implied_p_method=mid` only).
+
+\( \ell_t = \) checkpoint `last` (candle `price.close_dollars`).
+
+**Feature:** \( \delta_t = \ell_t - m_t \)
+
+Missing last/mid → drop. **Not bundled:** 1m high−low range/path (separate; do not silently add).
+
+## MECHANISM
+WHO: aggressive takers printing last vs resting quote mid. WHAT: signed last−mid disagreement. WHY INCREMENTAL: last locates recent trade relative to quote average — not identical to \(m_t\) level. WHY DISAPPEAR: last glued to mid; discrete tick grid; near-deg excluded. [H]
+
+## CONTRACT / UNIVERSE SCOPE
+Identical six cells; no pooling. Primary: **`KALSHI|15m|BTC|T-5m|mid`**.
+
+## DECISION-TIME / KNOWABILITY
+Same as mid+last checkpoint fields; no post-t; no expiration_value; no L2/L3.
+
+## DATA LAYER
+L1 PM · **DATA-PROV-PM-003** USED_RESEARCH · fields: `last`, `yes_bid`, `yes_ask`, `implied_p_method`
+
+## TRANSFORMS / NORMALIZATION
+Headline: raw \(\delta_t\). No silent winsorization.
+
+## EXPECTED SIGN / USE IN FORECAST
+
+### FROZEN NO-FIT FORECAST MAP (headline — immutable; no MLE on PM-003)
+\[
+p_t = \mathrm{clip}\big(m_t + \kappa\, \delta_t;\ \varepsilon;\ 1-\varepsilon\big)
+\]
+Frozen: \(\kappa = 1.0\), \(\varepsilon = 10^{-4}\).
+
+**Forbidden:** fit \(\kappa\) or logit \(\alpha,\beta,\gamma\) on PM-003 then score same slice.
+Do not ensemble with F3 spread until each survives atomic ablation.
+
+Same \((\kappa,\varepsilon)\) on all six cells; report separately.
+
+### Robustness only (not headline)
+\(\kappa \in \{0.5, 2.0\}\). Placebo: sign-flip \(\delta_t\).
+
+Claim [H]: incremental Brier **and** logloss vs \(p_t=m_t\).
+
+## FAILURE REGIME
+Tick-glued last≡mid; thin ETH prints; silent range bundling.
+
+## FALSIFICATION
+Frozen map fails to improve Brier and logloss vs mid-only on each cell → REDUNDANT / FAIL-INSUFFICIENT. Holdout closed. Shuffle-\(\delta_t\) matching/beating kills claim.
+
+## LEAKAGE & REDUNDANCY CONTROLS
+- Ablation vs \(m_t\) alone (mandatory)
+- Cross-report vs F3 spread once both measured (not combined headline)
+- Not F1/F2; no EDGE-005/006 rewrite
+
+## Evidence notes
+Checkpoint last/bid/ask [V]. Incremental [H] UNTESTED. TRADE FORBIDDEN.
+
+## CONDUCTOR LOCK (2026-09-12)
+**[V]** FROZEN NO-FIT MAP locked: \(p_t=\mathrm{clip}(m_t+1.0\cdot\delta_t,\ 10^{-4},\ 1-10^{-4})\). Ready for Examiner incrementality once FEATURE_ID assigned and Conductor routes.
