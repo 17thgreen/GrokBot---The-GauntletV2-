@@ -144,3 +144,6 @@ Gate is not alpha. Do not reopen decision-time mid as incumbent after a sheet. D
 - Kind: NEW DRAFT abstention / eligibility (007-class) — **not DEV_FAIL**  
 - Leaves `DRAFT-ABST-20260913-004` unchanged  
 - Next: Feature Card under this gate (not this seat); Examiner stays dark
+
+## Compose result — TEST-20260913-007 (2026-09-13T23:40:23Z)
+Composed with FEAT-20260913-007. Package **REDUNDANT / FAIL-INSUFFICIENT** (BTC PROMISING both-Δ; ETH invert both Δ≥0). No BTC-only promote. Incumbent m_L; Δ vs decision-time mid UNTESTED.
