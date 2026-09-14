@@ -21,3 +21,8 @@ Next: finish DATA-PROV-PM-005 last-print fetch, then Clock same-t join. Examiner
 ## Governor Hold B (2026-09-13)
 
 Stays **NEEDS_DATA**. Clock CONDITIONAL is inventory. 45s lag ≠ same-t. Not READY. Not TEST-005. Cap stands.
+
+
+## Option 1 incumbent (2026-09-13T21:56Z)
+Clock **CLEARED** `DATA_VERDICT_W2B_INCUMBENT_AT_OBS` — m_L at Poly obs_time, 254/240. Wave 005 join still does not cover decision-time same-t.
+Door stays **NEEDS_DATA**. Cartographer Wave 006 gate next. Examiner dark on Poly last until a new lift.
