@@ -1,0 +1,6 @@
+# DRAFT-FEAT-20260914-008 — SUPERSEDED
+
+Promoted to **`FEAT-20260914-008`** on TEST-20260914-001 filing (2026-09-14T01:05:59Z).
+
+See `archive/features/FEAT-20260914-008.md`. STATUS INACTIVE — REDUNDANT / FAIL-INSUFFICIENT (N_wick < 80).
+No cemetery. No θ/W/λ retune.
