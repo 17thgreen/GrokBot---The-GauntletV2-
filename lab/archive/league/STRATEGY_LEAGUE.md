@@ -17,7 +17,7 @@ Incumbent benchmark is **not** a Gauntlet strategy. A challenger must beat \(m_t
 | STATE | **INCUMBENT_BENCHMARK** (not CHAMPION-of-strategy) |
 | TEST | TEST-20260911-007 |
 | DATA | DATA-PROV-PM-003 (1208; not PM-002 union) |
-| Cells | `KALSHI\|15m\|{BTC,ETH}\|{T-14m,T-10m,T-5m}\|mid` |
+| Cells | `KALSHI\|15m\|{BTC,ETH}|{T-14m,T-10m,T-5m}|mid` |
 | N | 604 / 604 / 604 / 604 / 569 / 545 |
 | Brier_market | 0.2347 / 0.2329 / 0.1982 / 0.1982 / 0.1413 / 0.1342 |
 | LogLoss_market | 0.6626 / 0.6589 / 0.5820 / 0.5796 / 0.4347 / 0.4158 |
@@ -29,11 +29,13 @@ Thin T−14m bins [0.70,0.98) remain UNTESTED. Do not pool.
 
 ## Challengers
 
+F4 closed: TEST-20260914-001 REDUNDANT / FAIL-INSUFFICIENT (N_wick BTC 12 / ETH 10 < 80; Sep-12 PM-004; lock B). No cemetery. No θ/W/λ retune.
+
 Wave 007 closed: CB-VEL TEST-20260913-005 REDUNDANT / FAIL-INSUFFICIENT (both T-14m Δ>0; speak 604/604; Policy B). Wave 008 CLOSED: W2-D TEST-20260913-006 REDUNDANT / FAIL-INSUFFICIENT (BTC both Δ≥0; ETH ΔLogLoss≥0; rem=180). No cemetery. No retune.
 
 Wave 005 HELD: W2-B Clock CONDITIONAL (254/240, ~45s lag ≠ same-t) — NEEDS_DATA, not a TEST, Governor Pick B. Wave 004 closed: W2-A TEST-20260913-004 REDUNDANT / FAIL-INSUFFICIENT (both T-14m Δ>0; speak 604/604; Join CONDITIONAL / Policy B). No cemetery. No retune.
 
-Wave 006 **W2-B** HELD leftover after Wave 008 close — Clock legal incumbent (mid at Poly obs_time) in flight; Examiner dark on Poly last. No challenger. No cemetery.
+Wave 006 closed: W2-B last-at-L TEST-20260913-007 REDUNDANT / FAIL-INSUFFICIENT (BTC both-Δ skill N=254; ETH invert N=240). No BTC-only rescue. No cemetery. No retune.
 
 Wave 003 closed: W2-E TEST-20260913-003 REDUNDANT / FAIL-INSUFFICIENT (both T-5m Δ>0; speak 51 BTC / 38 ETH). Wave 002 closed: W2-C TEST-20260913-002 REDUNDANT / FAIL-INSUFFICIENT (ETH T-14m invert; BTC T-10m not a promote). 
 
