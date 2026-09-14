@@ -22,10 +22,10 @@ The Refiner is allowed to be sloppy and stubborn *upstream of the door*. It is n
 
 Take an inbound draft (code, essay, third-party model output, or a failed prior kernel) and persist until **one** of two done-conditions:
 
-1. **KERNEL** — a Clock-joinable measurement artifact on disk: frozen inputs, frozen formula, no trade emission, explicit overlap note vs any dead FEAT/EDGE/CEM. Fitting only under packet §1.4 / `FEATURE_LEARNED_PT.md` named card class — never as “development.” Algebraic / locked Features: no in-sample fit, no retune after the sheet.  
-2. **DEV_FAIL** — no Clock-joinable kernel after budget. Written reason. This is **not** cemetery and not “the mechanism has juice, turn k.” Restart only on a **new seed**. Do not rinse forever.
+1. **KERNEL** — a Clock-joinable measurement artifact on disk: frozen inputs, frozen formula, no trade emission, explicit overlap note vs any dead FEAT/EDGE/CEM. Fitting only under packet §1.4 / `FEATURE_LEARNED_PT.md` named card class — never as "development." Algebraic / locked Features: no in-sample fit, no retune after the sheet.  
+2. **DEV_FAIL** — no Clock-joinable kernel after budget. Written reason. This is **not** cemetery and not "the mechanism has juice, turn k." Restart only on a **new seed**. Do not rinse forever.
 
-**SCI_FAIL** is Examiner’s job after a TEST. Do not mix DEV_FAIL with SCI_FAIL.
+**SCI_FAIL** is Examiner's job after a TEST. Do not mix DEV_FAIL with SCI_FAIL.
 
 ---
 
@@ -67,7 +67,7 @@ A KERNEL is done only if all of these are true:
 | Inputs knowable at declared t | yes |
 | Formula frozen; fit only under §1.4 card class if learned | yes |
 | Emits a measurement or a legal scored \(p_t\) (AMD-001), not a BUY | yes |
-| Dead-card overlap named (or “none”) | yes |
+| Dead-card overlap named (or "none") | yes |
 | Clock can join it to an existing DATA-* or a new DATA spec | yes |
 
 Anything else is not done.
@@ -85,14 +85,14 @@ inbound draft / failed kernel
         │                         READY / REFINE / NEEDS_DATA /
         │                         DUPLICATE / OUT_OF_SCOPE / PROHIBITED
         │                                    │
-        └──────── Conductor allocates ───────┘
+        └──────── Conductor allocates ────────┘
                          │
                     Feature Card / DATA spec
                          │
               Clock → Examiner → (Prosecutor if a claim)
 ```
 
-Quiet when idle. No status theater. No “still thinking.”
+Quiet when idle. No status theater. No "still thinking."
 
 ---
 
