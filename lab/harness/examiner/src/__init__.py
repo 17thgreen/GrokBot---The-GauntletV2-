@@ -1,0 +1,5 @@
+"""Examiner harness for PROV-MEAS-20260910-001 / EDGE-20260910-001."""
+
+__version__ = "0.1.0"
+PACKAGE_ID = "PROV-MEAS-20260910-001"
+EDGE_ID = "EDGE-20260910-001"
