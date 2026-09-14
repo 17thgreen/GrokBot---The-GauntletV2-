@@ -1,0 +1,105 @@
+{
+  "package_id": "PROV-MEAS-EDGE-003",
+  "edge_id": "EDGE-20260910-003",
+  "signal_module": "range_expansion_snapback",
+  "status": "HARNESS_READY_PRIMARY_LOCKED",
+  "measurement_default": "UNTESTED",
+  "locked_utc": "2026-09-10",
+  "edge_card_path": "/workspace/lab/archive/edges/EDGE-20260910-003.md",
+  "edge_card_note": "Cycle 2 activation card (Universal Atomic). Primary cell pre-registered [V].",
+  "economics_source": "PROV-MEAS-20260910-001",
+  "cemetery_citation": "CEM-20260910-001",
+  "cemetery_note": "Opposite activity conditioning vs failed low-RV continuation — NOT a parameter rescue of EDGE-001",
+  "evidence_tags": {
+    "economics": "[A]",
+    "epsilon": "[A]",
+    "splits": "[A]",
+    "range_normalization": "[A]",
+    "r_t": "[A/V card]: close-to-close log return"
+  },
+  "assumptions_[A]": {
+    "range_t": "(high-low)/close — card definition lock [A]",
+    "r_t": "log(close[t]/close[t-1]) per Edge Card SIGNAL",
+    "epsilon": "small=5e-05 / 2x_small=1e-04 reused from PROV-MEAS-20260910-001",
+    "C_base_bps": 7.0,
+    "contrast": "non-extreme = range below trailing median (p=0.5) with |r|>ε; same fade position for gap",
+    "warmup_bars": 624,
+    "splits": "60/20/20 research/validation/holdout post-warmup (SEAL_LOCK)"
+  },
+  "bar_size_minutes": 5,
+  "instruments": ["BTC", "ETH"],
+  "warmup_bars": 624,
+  "L_max": 576,
+  "splits": {
+    "research_frac": 0.60,
+    "validation_frac": 0.20,
+    "holdout_frac": 0.20,
+    "research_time_half": 0.50,
+    "holdout_sealed_by_default": true
+  },
+  "parameter_grid": {
+    "p": [0.9, 0.95, 0.99],
+    "L": [288, 576],
+    "h": [1, 2, 3],
+    "epsilon": {
+      "small": 0.00005,
+      "2x_small": 0.0001,
+      "note": "[A] absolute |r_t| thresholds; small=0.5bps, 2x=1.0bps — same as PROV-MEAS-001"
+    },
+    "contrast_median_q": 0.5
+  },
+  "primary_cell": {
+    "p": 0.95,
+    "L": 288,
+    "h": 1,
+    "epsilon": "small",
+    "epsilon_value": 0.00005,
+    "range_definition": "(high-low)/close",
+    "position": "-Sign(r_t)",
+    "locked": true,
+    "locked_by": "Statistician",
+    "locked_utc": "2026-09-10",
+    "audit": "/workspace/lab/archive/audit/2026-09-10-EDGE-003-Cycle2-activation.md"
+  },
+  "primary_cell_status": "LOCKED",
+  "costs_bps": {
+    "fees_rt": 4.0,
+    "spread_rt": 2.0,
+    "slippage_rt": 1.0,
+    "C_base": 7.0,
+    "stress_multiples": [1, 2, 3],
+    "latency_stress_add_bps": [1.0, 3.0],
+    "funding": 0.0,
+    "tag": "[A]"
+  },
+  "min_gates": {
+    "research_signals": 200,
+    "validation_signals": 50,
+    "holdout_signals": 50,
+    "research_distinct_utc_days": 20,
+    "concentration_kill_frac": 0.05
+  },
+  "stats": {
+    "newey_west_lag_equals_h": true,
+    "placebo_seed": 20260910,
+    "grid_p_stability_min_keep_sign": 2
+  },
+  "kill_tests": [
+    "gross mean fade <= 0 on RESEARCH primary",
+    "net @1x C_base=7bps <= 0",
+    "fade vs non-extreme contrast CI covers 0",
+    "effect on <=5% of RESEARCH days",
+    "p-grid: fewer than 2 of 3 p keep gap/fade sign",
+    "placebos match or beat real",
+    "VALIDATION (if reached): net@1x<=0 or contrast CI covers 0"
+  ],
+  "clock_verdicts_allowed": ["APPROVED", "CONDITIONAL"],
+  "non_claims": [
+    "OHLCV range-snapback does NOT validate OF / MM-inventory mechanism",
+    "Provisional net ≠ executable alpha",
+    "Assumed 7 bps ≠ any venue true cost",
+    "NOT a rescue of CEM-20260910-001 / EDGE-20260910-001",
+    "Holdout remains SEALED"
+  ],
+  "cemetery_do_not_rerun": ["EDGE-20260910-001", "CEM-20260910-001"]
+}

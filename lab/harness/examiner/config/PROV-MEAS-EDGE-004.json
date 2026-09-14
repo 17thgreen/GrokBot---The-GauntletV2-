@@ -1,0 +1,115 @@
+{
+  "package_id": "PROV-MEAS-EDGE-004",
+  "edge_id": "EDGE-20260910-004",
+  "signal_module": "btc_lead_eth_response",
+  "status": "HARNESS_READY_PRIMARY_LOCKED",
+  "measurement_default": "UNTESTED",
+  "locked_utc": "2026-09-10",
+  "edge_card_path": "/workspace/lab/archive/edges/EDGE-20260910-004.md",
+  "edge_card_note": "Cycle 3 activation card (Universal Atomic). Cross-asset BTC lead → ETH response. Primary cell pre-registered [V].",
+  "economics_source": "PROV-MEAS-20260910-001",
+  "cemetery_citations": [
+    "CEM-20260910-001",
+    "CEM-20260910-002"
+  ],
+  "cemetery_citation": "CEM-20260910-001;CEM-20260910-002",
+  "cemetery_note": "Cross-asset lead/lag — NOT a rescue of EDGE-001 NO_EDGE or EDGE-003 COST_KILLED",
+  "evidence_tags": {
+    "economics": "[A]",
+    "splits": "[A]",
+    "r_t": "[A/V card]: close-to-close log return",
+    "alignment": "[A]: exchange event open_time_ms identical expected on DATA-PROV-001"
+  },
+  "assumptions_[A]": {
+    "r_t": "log(close[t]/close[t-1]) per Edge Card SIGNAL",
+    "C_base_bps": 7.0,
+    "warmup_bars": 624,
+    "splits": "60/20/20 research/validation/holdout post-warmup (SEAL_LOCK)",
+    "position": "Sign(r_BTC_t) on ETH; flat at close t+h",
+    "kappa_gate": "|r_ETH_t| <= kappa * |r_BTC_t|"
+  },
+  "bar_size_minutes": 5,
+  "instruments": ["BTC", "ETH"],
+  "trade_instrument": "ETH",
+  "lead_instrument": "BTC",
+  "warmup_bars": 624,
+  "L_max": 576,
+  "splits": {
+    "research_frac": 0.60,
+    "validation_frac": 0.20,
+    "holdout_frac": 0.20,
+    "research_time_half": 0.50,
+    "holdout_sealed_by_default": true
+  },
+  "parameter_grid": {
+    "p": [0.80, 0.90, 0.95],
+    "L": [288, 576],
+    "h": [1, 2],
+    "kappa": [0.35, 0.50, 0.75]
+  },
+  "primary_cell": {
+    "p": 0.90,
+    "L": 288,
+    "h": 1,
+    "kappa": 0.50,
+    "r_definition": "close_to_close_log",
+    "position": "Sign(r_BTC_t) on ETH",
+    "locked": true,
+    "locked_by": "Statistician",
+    "locked_utc": "2026-09-10",
+    "audit": "/workspace/lab/archive/audit/2026-09-10-EDGE-004-Cycle3-activation.md"
+  },
+  "primary_cell_status": "LOCKED",
+  "costs_bps": {
+    "fees_rt": 4.0,
+    "spread_rt": 2.0,
+    "slippage_rt": 1.0,
+    "C_base": 7.0,
+    "stress_multiples": [1, 2, 3],
+    "latency_stress_add_bps": [1.0, 3.0],
+    "funding": 0.0,
+    "tag": "[A]"
+  },
+  "min_gates": {
+    "research_signals": 200,
+    "validation_signals": 50,
+    "holdout_signals": 50,
+    "research_distinct_utc_days": 20,
+    "concentration_kill_frac": 0.05
+  },
+  "stats": {
+    "newey_west_lag_equals_h": true,
+    "placebo_seed": 20260910,
+    "grid_p_stability_min_keep_sign": 2
+  },
+  "controls": [
+    "reverse_ETH_to_BTC",
+    "timestamp_shuffle_BTC_vs_ETH",
+    "kappa_ablation_diagnostic"
+  ],
+  "kill_tests": [
+    "mean gross ETH sign-aligned forward <= 0 on RESEARCH primary",
+    "net @1x C_base=7bps <= 0",
+    "reverse ETH->BTC matches or beats BTC->ETH within CI noise",
+    "timestamp-shuffle matches or beats",
+    "effect on <=5% of RESEARCH days",
+    "p-grid: fewer than 2 of 3 p keep sign",
+    "VALIDATION (if reached): net@1x<=0"
+  ],
+  "clock_verdicts_allowed": ["APPROVED", "CONDITIONAL"],
+  "non_claims": [
+    "Cross-asset OHLCV lead/lag does NOT validate microstructure OF mechanism",
+    "Provisional net ≠ executable alpha",
+    "Assumed 7 bps ≠ any venue true cost",
+    "NOT a rescue of CEM-20260910-001 / EDGE-20260910-001",
+    "NOT a rescue of CEM-20260910-002 / EDGE-20260910-003",
+    "Holdout remains SEALED",
+    "kappa ablation is diagnostic only — not alternate headline"
+  ],
+  "cemetery_do_not_rerun": [
+    "EDGE-20260910-001",
+    "CEM-20260910-001",
+    "EDGE-20260910-003",
+    "CEM-20260910-002"
+  ]
+}

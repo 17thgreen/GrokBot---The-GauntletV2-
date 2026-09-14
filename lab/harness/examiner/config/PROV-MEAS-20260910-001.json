@@ -1,0 +1,72 @@
+{
+  "package_id": "PROV-MEAS-20260910-001",
+  "edge_id": "EDGE-20260910-001",
+  "status": "HARNESS_DEFINED",
+  "measurement_default": "UNTESTED",
+  "locked_utc": "2026-09-10",
+  "evidence_tags": {
+    "economics": "[A]",
+    "epsilon": "[A]",
+    "splits": "[A]"
+  },
+  "bar_size_minutes": 5,
+  "instruments": ["BTC", "ETH"],
+  "warmup_bars": 624,
+  "W_max": 48,
+  "L_max": 576,
+  "splits": {
+    "research_frac": 0.60,
+    "validation_frac": 0.20,
+    "holdout_frac": 0.20,
+    "research_time_half": 0.50,
+    "holdout_sealed_by_default": true
+  },
+  "parameter_grid": {
+    "W": [12, 24, 48],
+    "Q_lo": [0.25, 0.33, 0.40],
+    "L": [288, 576],
+    "h": [1, 2, 3],
+    "epsilon": {
+      "small": 0.00005,
+      "2x_small": 0.0001,
+      "note": "[A] absolute return thresholds; small=0.5bps, 2x=1.0bps — not tick-derived from venue"
+    },
+    "Q_hi_contrast": [0.70, 0.80]
+  },
+  "primary_cell": {
+    "W": 24,
+    "Q_lo": 0.33,
+    "L": 288,
+    "h": 1,
+    "epsilon": "small",
+    "Q_hi_default": 0.80
+  },
+  "costs_bps": {
+    "fees_rt": 4.0,
+    "spread_rt": 2.0,
+    "slippage_rt": 1.0,
+    "C_base": 7.0,
+    "stress_multiples": [1, 2, 3],
+    "latency_stress_add_bps": [1.0, 3.0],
+    "funding": 0.0,
+    "tag": "[A]"
+  },
+  "min_gates": {
+    "research_signals": 200,
+    "validation_signals": 50,
+    "holdout_signals": 50,
+    "research_distinct_utc_days": 20,
+    "concentration_kill_frac": 0.05
+  },
+  "stats": {
+    "newey_west_lag_equals_h": true,
+    "placebo_seed": 20260910,
+    "grid_w_stability_min_keep_sign": 2
+  },
+  "clock_verdicts_allowed": ["APPROVED", "CONDITIONAL"],
+  "non_claims": [
+    "OHLCV conditional autocorr does NOT validate OF mechanism",
+    "Provisional net ≠ executable alpha",
+    "Assumed 7 bps ≠ any venue true cost"
+  ]
+}

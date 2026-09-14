@@ -1,0 +1,34 @@
+{
+  "package_id": "PROV-MEAS-EDGE-20260911-002",
+  "edge_id": "EDGE-20260911-002",
+  "test_id": "TEST-20260911-002",
+  "data_family": "DATA-PROV-TRADES-001",
+  "ohlcv_controls": "DATA-PROV-001",
+  "clock_verdict_required": ["APPROVED", "CONDITIONAL"],
+  "primary_cell_status": "LOCKED",
+  "primary_cell": {
+    "p": 0.95,
+    "W": "1m",
+    "K": 3,
+    "C_star": 0.50,
+    "P_star": 0.67,
+    "V_min": 0,
+    "L_size": 2000,
+    "L": 288,
+    "alpha": 0.50,
+    "delta_exec_ms": 500,
+    "h": "5m",
+    "locked": true
+  },
+  "costs_bps": {"C_base": 7.0, "tag": "[A]"},
+  "cemetery_citations": ["CEM-20260910-001", "CEM-20260910-002", "CEM-20260910-003"],
+  "not_rewrite_of": ["EDGE-20260910-005", "EDGE-20260910-006"],
+  "min_gates": {
+    "research_signals": 200,
+    "research_distinct_utc_days": 20,
+    "validation_signals": 50,
+    "concentration_kill_frac": 0.05
+  },
+  "holdout_sealed": true,
+  "l2_proxy": false
+}
