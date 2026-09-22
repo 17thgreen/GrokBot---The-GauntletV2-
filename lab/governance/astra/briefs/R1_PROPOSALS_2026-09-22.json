@@ -1,0 +1,60 @@
+{
+  "packet": "R1",
+  "date": "2026-09-22",
+  "owner": "Deep Research",
+  "reviewer": "Conductor",
+  "proposals": [
+    {
+      "id": "R1-P1",
+      "title": "Pin Examiner fee + book algebra to published Kalshi formulas",
+      "source": "https://docs.kalshi.com/getting_started/orderbook_responses.md ; https://kalshi.com/docs/kalshi-fee-schedule.pdf ; https://kalshi.com/fee-schedule",
+      "measurement_kernel": "Reconstruct YES/NO asks from bids-only book (ask_YES=1-best_NO_bid). Fee on fill: round_up(M*rate*C*P*(1-P)) with rate in {0.07 taker, 0 or 0.0175 maker, series overrides}. Joinable to Collector orderbook+trades; refuse completed-profit claims without fee channel.",
+      "dead_overlap": "Hardens Q1-Q6 inherited fee model docs/tests only; does not retune Q6 allocator or Q7 paircheck.",
+      "cost_to_try": "4-8 person-hours; public fee PDF + one orderbook fixture; no paid data",
+      "recommend": "try",
+      "why": "Lowest-cost venue ground truth; every bakeoff is fee-blind without it."
+    },
+    {
+      "id": "R1-P2",
+      "title": "Challenger kernel: binary A-S / Feil-Nendel settlement-aware quotes",
+      "source": "https://arxiv.org/html/2607.17991 ; https://github.com/tfrmma/prediction-market-maker",
+      "measurement_kernel": "Bernoulli variance sigma^2=p(1-p); reservation r=p_fair - q*gamma*p(1-p)*(T-t); running inventory penalty + terminal Phi=-gamma_T*q^2*p(1-p). Pre-settlement metrics: skew vs q, width vs p(1-p), inventory path. Clock-joinable on Collector L2.",
+      "dead_overlap": "Not Q6 paired NFL allocator; not Q7 pair-cost filter. Partial concept overlap with Q2 inventory/completion (negative for profit max) — treat as new challenger line.",
+      "cost_to_try": "20-40 hours offline sim on non-NFL binary or single-game YES/NO; public tape; kits not required for intensity first pass",
+      "recommend": "try",
+      "why": "Clearest reconstructable LOB-PM theory; fair-game displacement if single-market inventory beats paired NFL under same capital."
+    },
+    {
+      "id": "R1-P3",
+      "title": "Sportsbook fair + paired hedge + odds-staleness adverse gate",
+      "source": "https://github.com/kachence/polymm ; https://kacho.io/why-my-polymarket-arbitrage-bot-lost-money",
+      "measurement_kernel": "De-vig to p_fair; quote iff edge>=min_edge; on fill hedge opposite so YES+NO cost<1; adverse markout edge_at_quote vs edge_at_fill vs odds_age_sec; EDGE_LOST cancel. Polymarket venue mismatch — algebra only.",
+      "dead_overlap": "High overlap with Q6/Q7 combined pair acquisition economics — do not silent-retune. Use as measurement/Adversary gate or post-Q7 external-odds arm. Author wallet P&L is not Astra evidence.",
+      "cost_to_try": "15-25 hours measurement-only markout join; optional paid odds API if Scout approves; full bot port deferred",
+      "recommend": "try",
+      "why": "Only OSS sports MM with honest adverse-selection autopsy; stress-tests queue/pair assumptions without inventing EV."
+    },
+    {
+      "id": "R1-P4",
+      "title": "RFQ combo maker edge: fill vs independent-leg product vs resolution",
+      "source": "https://github.com/jsteng19/kalshi-combos-research",
+      "measurement_kernel": "Independent-leg price = product of per-leg 1-min TOB mids at fill minute; compare fill-model and fill-resolution; slice by price band, same-game vs decorrelated, leg count. Read-only crawl first.",
+      "dead_overlap": "None with Q1-Q6 game-book allocator. Distinct RFQ structure; pin combo maker-fee overrides from fee schedule/changelog.",
+      "cost_to_try": "30-60 hours bounded crawl+Polars; needs read-only Kalshi API via Collector/Mechanic (not chat); Parquet disk",
+      "recommend": "defer",
+      "why": "Strongest non-NFL displacement candidate but RFQ ops/credentials out of week-1 Deep Research scope; Scout+Collector first."
+    },
+    {
+      "id": "R1-P5",
+      "title": "Adopt spencerfletcher measurement rails into Astra sim/collector",
+      "source": "https://github.com/spencerfletcher/market-maker",
+      "measurement_kernel": "Exact Decimal fee with venue rounding; refuse quotes whose maker credit floors to zero; book freshness from content/transaction-time not WS ping; queue-attribution instrument vs assumed early queue (3300/10000).",
+      "dead_overlap": "Critiques Q1 queue assumption and fee-table approximations; does not replace Q6. Live launcher out of scope (NO LIVE ORDERS).",
+      "cost_to_try": "12-20 hours port fee-floor + freshness + queue-attribution tests; no withheld production constants",
+      "recommend": "try",
+      "why": "Hardens incumbent evidence quality before shadow; cheap vs new strategy waves."
+    }
+  ],
+  "sources_scanned_count": 25,
+  "notes": "Skipped: Homerun, ImMike arb, DRADIS, kalshi-15m crypto (Gauntlet idle), naive Kalshi MM forks, LMSR AMMs, openpx SDK-only. No invented Astra P&L/fill/win rates. Fee-schedule HTML page returned SPA shell; PDF + docs.kalshi.com used as primary fee citations. GitHub MCP + WebSearch/WebFetch used; no auth blockers on public repos. R1 artifacts: briefs/R1_DEEP_RESEARCH_2026-09-22.md and this JSON."
+}
