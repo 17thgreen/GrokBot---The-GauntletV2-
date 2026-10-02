@@ -8,7 +8,7 @@
   "trading": "FORBIDDEN",
   "invented_numbers": false,
   "overall_verdict": "REDUNDANT / FAIL-INSUFFICIENT",
-  "overall_reason": "ETH headline lacks both-Δ skill REDUNDANT / FAIL-INSUFFICIENT (not NO_EDGE). USED_RESEARCH; holdout closed; no trading.",
+  "overall_reason": "ETH headline lacks both-\u0394 skill REDUNDANT / FAIL-INSUFFICIENT (not NO_EDGE). USED_RESEARCH; holdout closed; no trading.",
   "run_utc": "2026-09-13T17:53:52Z",
   "data": {
     "cf_dataset_id": "DATA-PROV-CF-001",
