@@ -12,8 +12,16 @@
   "grok_fees": "src/lib/linewright/fees.ts",
   "grok_micro": "src/lib/linewright/micro.ts",
   "grok_config": "src/lib/linewright/config.ts",
-  "rates": {"taker": 0.07, "maker": 0.0175, "per_contract_cap": 0.035},
-  "queue_defaults": {"queue_ahead_contracts": 3300, "fill_participation": 0.5, "astra_stress_queue": 10000},
+  "rates": {
+    "taker": 0.07,
+    "maker": 0.0175,
+    "per_contract_cap": 0.035
+  },
+  "queue_defaults": {
+    "queue_ahead_contracts": 3300,
+    "fill_participation": 0.5,
+    "astra_stress_queue": 10000
+  },
   "MICRO_V1": {
     "id": "micro-tape-v1",
     "hash": "micro-tape-v1.0.0:taker0.07:maker0.0175:ls0.15:fav0.85:nflInplay3.25h:thin500:skipBlock",
@@ -25,5 +33,200 @@
     "surviveRoi": 0,
     "skipBlockTrades": true
   },
-  "leave_alone": ["HX_SPREAD_V1", "weather cheap YES lottery", "directional pickers", "Q6/Q7 retune"]
+  "leave_alone": [
+    "HX_SPREAD_V1",
+    "weather cheap YES lottery",
+    "directional pickers",
+    "Q6/Q7 retune"
+  ],
+  "capital_structure_probe": {
+    "status": "FROZEN",
+    "packet": "packets/CAPITAL_STRUCTURE_PROBE_FREEZE_KERNEL_2026-09-22.md",
+    "packet_sha256": "27e6b041f592bd7d475c94d8fa22f392b869b0d116b48e264a6df8b048373caa",
+    "C_total_usd": 5000,
+    "N_events": 31,
+    "slice_usd": 161,
+    "residual_usd": 9,
+    "residual_policy": "non_trading_residual_bucket",
+    "soft_policy": "borrow_unused_event_id_FIFO",
+    "arms": [
+      "A1_shared_pool",
+      "A2_shared_soft_reserve",
+      "A3_hard_equal_slices"
+    ],
+    "promotion_scoreboard": "shared_account_only",
+    "forbidden": "sum_of_N_independent_wallets_vs_one_5k",
+    "strategy_pointer": "Q6-000",
+    "shadow_freeze_sha256": "b55ff36cb161c824a3d1b490795c8ac6891f01489456f61da311ac863366af48",
+    "tape_manifest_sha256": "375ea6e2c9125a411d5444a88115213542d5b19c874d73a2bed0b9355fd6277d",
+    "q7_verification_sha256": "eb1586bf13b1631951a4f177293350cb89fc7948a50fbb7044f4f05313ebc06f",
+    "q7_paircheck_effects_sha256": "5d87ea610f22482c980868d8a31a228ca1931368d9eeab73add4256d2e117fdf",
+    "q7_selection": "NO_NEW_SELECTION",
+    "primary_stress": "q3300_d0.25",
+    "go": "Conductor 2026-09-22 post Q7 verify+analyze",
+    "fee_queue_bind": "R1-P1_feebook + R1-P5_rails only",
+    "forbid_inherited_q7_fee_literals": true
+  },
+  "fee_sensitivity_000_r1p1": {
+    "status": "SUPERSEDED",
+    "superseded_by": "R2-P1",
+    "see": "packets/R2-P1_FEEBOOK_RAILS_HYGIENE_000_FREEZE_2026-09-22.md",
+    "canonical_sha256": "ddcd4427f67fb0ed8d12a7a6a49aabea3b25b356bcb64a7d84d5c4590d08b563",
+    "do_not_implement": true,
+    "superseded_at": "2026-09-22T22:59:24.143631+00:00"
+  },
+  "R2-P1": {
+    "id": "R2-P1",
+    "status": "FROZEN_CANONICAL",
+    "admit": "Conductor R2 triage ADMIT now",
+    "packet": "packets/R2-P1_FEEBOOK_RAILS_HYGIENE_000_FREEZE_2026-09-22.md",
+    "packet_sha256": "ddcd4427f67fb0ed8d12a7a6a49aabea3b25b356bcb64a7d84d5c4590d08b563",
+    "bundle": "packets/R2-P1_FEEBOOK_RAILS_HYGIENE_000/",
+    "empty_results": "packets/R2-P1_FEEBOOK_RAILS_HYGIENE_000/results.json",
+    "outputs": [
+      "fee_delta_vs_inherited_model",
+      "freshness_gap_sec",
+      "queue_bin_mismatch_rate"
+    ],
+    "strategy_pointer": "Q6-000",
+    "fee_source": "kalshi_feebook_lab_20260922@22371178cb2663250b4762f328069571c48cb551",
+    "rails_source": "kalshi_rails_lab_20260922@6a28e0d6254327ea4e6451c781bec56215ac6cac",
+    "shadow_freeze_sha256": "b55ff36cb161c824a3d1b490795c8ac6891f01489456f61da311ac863366af48",
+    "tape_manifest_sha256": "375ea6e2c9125a411d5444a88115213542d5b19c874d73a2bed0b9355fd6277d",
+    "forbid_inherited_q7_fee_literals": true,
+    "no_signal_retune": true,
+    "pnl": null,
+    "results": null,
+    "supersedes": "fee_sensitivity_000_r1p1",
+    "cite": [
+      "briefs/R2_DEEP_RESEARCH_2026-09-22.md#R2-P1",
+      "briefs/R2_PROPOSALS_2026-09-22.json",
+      "briefs/R2_CONDUCTOR_TRIAGE_2026-09-22.md"
+    ],
+    "frozen_at": "2026-09-22T22:58:42.402280+00:00",
+    "sole_maximize_twin": true
+  },
+  "queue_fragility_000_r1p5": {
+    "status": "FROZEN",
+    "packet": "packets/QUEUE_FRAGILITY_000_R1P5_FREEZE_2026-09-22.md",
+    "packet_sha256": "e01d684abefd2d919ac6546f85619a246ce73098c04f7b24c84451ff49b00308",
+    "bundle": "packets/QUEUE_FRAGILITY_000_R1P5/",
+    "empty_results": "packets/QUEUE_FRAGILITY_000_R1P5/results.json",
+    "knob": "queue_fill_stress_only",
+    "arms": [
+      "QF0_q3300_measured",
+      "QF1_q10000_stress",
+      "QF2_front_optimistic"
+    ],
+    "outputs": [
+      "fill_rate_delta_vs_q3300",
+      "adverse_queue_exposure",
+      "participation_stress_gap"
+    ],
+    "strategy_pointer": "Q6-000",
+    "fee_fixed": "kalshi_feebook_lab_20260922@22371178cb2663250b4762f328069571c48cb551",
+    "rails_source": "kalshi_rails_lab_20260922@6a28e0d6254327ea4e6451c781bec56215ac6cac",
+    "shadow_freeze_sha256": "b55ff36cb161c824a3d1b490795c8ac6891f01489456f61da311ac863366af48",
+    "tape_manifest_sha256": "375ea6e2c9125a411d5444a88115213542d5b19c874d73a2bed0b9355fd6277d",
+    "forbid_capital_A2_A3": true,
+    "forbid_000_retune": true,
+    "prior_r2p1_merge": "25ec0538",
+    "pnl": null,
+    "results": null,
+    "frozen_at": "2026-09-22T23:11:03.331014+00:00"
+  },
+  "R2-P1_fixture_join_000": {
+    "status": "FROZEN",
+    "pick": "A",
+    "packet": "packets/R2-P1_FIXTURE_JOIN_000_FREEZE_2026-09-22.md",
+    "packet_sha256": "e9bac91ca908b2ba704d966f0cf48cb181070ac11de1d117b93512bd2719ae1c",
+    "bundle": "packets/R2-P1_FIXTURE_JOIN_000/",
+    "empty_results": "packets/R2-P1_FIXTURE_JOIN_000/results.json",
+    "why_not_B": "Q6-000 fill ledgers already present; Board risk #1 fee-pin closer",
+    "primary_fixture": "nfl_factorial_lab_20260921/results/q3300_d0.25_000_fills.jsonl.gz",
+    "outputs_null": [
+      "fee_delta_vs_inherited_model",
+      "freshness_gap_sec",
+      "queue_bin_mismatch_rate",
+      "results",
+      "pnl"
+    ],
+    "strategy_pointer": "Q6-000",
+    "fee_source": "kalshi_feebook_lab_20260922@22371178cb2663250b4762f328069571c48cb551",
+    "rails_source": "kalshi_rails_lab_20260922@6a28e0d6254327ea4e6451c781bec56215ac6cac",
+    "forbid_000_retune": true,
+    "forbid_capital_A2_A3": true,
+    "deferred": "B_queue_fragility_fixture_join",
+    "prior_qf_merge": "c33af159",
+    "frozen_at": "2026-09-22T23:27:12.377517+00:00"
+  },
+  "QF_fixture_join_000": {
+    "status": "FROZEN",
+    "pick": "B",
+    "packet": "packets/QF_FIXTURE_JOIN_000_FREEZE_2026-09-22.md",
+    "packet_sha256": "d95adb9b7e8aba852134c96b8f0f7d35a76bbf68254b8808f82f99ec82bb6ca4",
+    "bundle": "packets/QF_FIXTURE_JOIN_000/",
+    "empty_results": "packets/QF_FIXTURE_JOIN_000/results.json",
+    "arms": [
+      "QF0",
+      "QF1",
+      "QF2"
+    ],
+    "outputs_null": [
+      "fill_rate_delta_vs_q3300",
+      "adverse_queue_exposure",
+      "participation_stress_gap",
+      "results",
+      "pnl"
+    ],
+    "strategy_pointer": "Q6-000",
+    "fee_fixed": "kalshi_feebook_lab_20260922@22371178cb2663250b4762f328069571c48cb551",
+    "rails_source": "kalshi_rails_lab_20260922@6a28e0d6254327ea4e6451c781bec56215ac6cac",
+    "primary_fixture": "nfl_factorial_lab_20260921/results/q3300_d0.25_000_fills.jsonl.gz",
+    "forbid_000_retune": true,
+    "forbid_capital_A2_A3": true,
+    "prior_A": "R2-P1_fixture_join",
+    "frozen_at": "2026-09-22T23:43:00.722525+00:00"
+  },
+  "examiner_fee_queue_honesty_000": {
+    "status": "FROZEN",
+    "packet": "packets/EXAMINER_FEE_QUEUE_HONESTY_000_FREEZE_2026-09-22.md",
+    "packet_sha256": "4799642e54cf233a925697e00c5a9e29f5cb39070962a2e011f0fbe090c169f2",
+    "bundle": "packets/EXAMINER_FEE_QUEUE_HONESTY_000/",
+    "empty_results": "packets/EXAMINER_FEE_QUEUE_HONESTY_000/results.json",
+    "strategy_pointer": "Q6-000",
+    "fee_source": "kalshi_feebook_lab_20260922@22371178cb2663250b4762f328069571c48cb551",
+    "rails_source": "kalshi_rails_lab_20260922@6a28e0d6254327ea4e6451c781bec56215ac6cac",
+    "consumes_joins": [
+      "kalshi_r2p1_hygiene_000_lab_20260922",
+      "kalshi_queue_fragility_000_lab_20260922"
+    ],
+    "production_fills_present_at_freeze": true,
+    "production_fills_path": "nfl_factorial_lab_20260921/results/q3300_d0.25_000_fills.jsonl.gz",
+    "production_fills_sha256": "9d56f5d3c599e092606be9f4a1ad41ae8baabff4921d3d722adf0b57ac944a3f",
+    "outputs_null": [
+      "fee_delta_vs_inherited_model",
+      "freshness_gap_sec",
+      "queue_bin_mismatch_rate",
+      "fill_rate_delta_vs_q3300",
+      "adverse_queue_exposure",
+      "participation_stress_gap",
+      "results",
+      "pnl"
+    ],
+    "forbid_000_retune": true,
+    "forbid_capital_A2_A3": true,
+    "prior_qf_join_merge": "7026be51",
+    "frozen_at": "2026-09-22T23:56:29.261094+00:00"
+  },
+  "R3-P3": {
+    "status": "FROZEN_MAXIMIZE_NEXT",
+    "packet": "packets/R3-P3_FL_MAKER_TAKER_BANDS_FREEZE_KERNEL_2026-09-22.md",
+    "packet_sha256": "0ed697149136acb3aa840aeeb79d11c8f6ef80f37ce4dd692a3cb690212206a7",
+    "bundle": "packets/r3_p3_fl_maker_taker/",
+    "collector_stub": "packets/R3-P3_COLLECTOR_STUB_2026-09-22.md",
+    "pnl": null,
+    "results": null,
+    "kicked_at": "2026-09-23T00:12:00.364598+00:00"
+  }
 }
