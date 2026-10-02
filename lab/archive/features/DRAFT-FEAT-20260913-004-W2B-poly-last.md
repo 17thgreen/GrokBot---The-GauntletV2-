@@ -52,7 +52,7 @@ else:
     p_t = clip(m_t + λ * b_clip, ε, 1-ε)
 ```
 
-AMD-001: scored \(p_t \in (\varepsilon,1-\varepsilon)\). ε-clip is hygiene. No raw 0/1.
+AMD-001: scored \(p_t ∈ (\varepsilon,1-\varepsilon)\). ε-clip is hygiene. No raw 0/1.
 
 ## MECHANISM
 
