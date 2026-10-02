@@ -21,4 +21,4 @@ Follow-vs-fade needs Kalshi same-t mid on the live PM-006 span. Historical Poly 
 Trade API key use · orders · Examiner · treating last as mid · CF
 
 ## Ops note (2026-09-14 pulse)
-Default `PM008_POLL_S=2.0` drew Kalshi HTTP 429s. Running capture uses `PM008_POLL_S=8.0`. Still public-only; no Trade key.
+Default \`PM008_POLL_S=2.0\` drew Kalshi HTTP 429s. Running capture uses \`PM008_POLL_S=8.0\`. Still public-only; no Trade key.
