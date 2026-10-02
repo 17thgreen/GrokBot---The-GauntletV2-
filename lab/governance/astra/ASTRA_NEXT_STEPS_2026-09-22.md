@@ -97,7 +97,7 @@ Status: `PENDING_FUTURE_WINDOWS_NO_HOLDOUT_RESULTS`.
 Freeze of reservation: `2026-09-21T15:29:51Z`.
 
 | Fact | Value |
-|---|---|---|
+|---|---|
 | First reserved kickoff | `2026_03_PHI_CHI` / `KXNFLGAME-26SEP28PHICHI` · kickoff **2026-09-29T00:15:00Z** (**2026-09-28 20:15 ET**) |
 | First full T−7d window start | **2026-09-22T00:15:00Z** = **2026-09-21 20:15 ET** |
 | Docs’ stated first window | Same (`FORWARD_PROTOCOL` / `FORWARD_HANDOFF` / measurement README) |
