@@ -31,7 +31,7 @@ Triple-tape overlap 79/asset. Headline kill is N<80. Do not score a thin live mo
 1. Keep PM-006 / PM-008 / CB-002 running.
 2. Hourly PM-009 skip-existing catch-up while Starter 3-day window holds (Sep-12 ages off ~2026-09-15T03:46Z; already on disk).
 3. Join spec already on disk — Clock only after N plausible **and** all three live tapes cover the same closed windows.
-4. Do **not** reopen CB-VEL (FAIL-005) as a standalone card.
+4. Do **not** reopen CB-VEL (TEST-005) as a standalone card.
 5. Squeeze / compression remains intake-only until follow-vs-fade is blocked or signed.
 
 ## Forbidden
