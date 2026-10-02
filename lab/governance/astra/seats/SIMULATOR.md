@@ -16,3 +16,6 @@ Historical engines, factorial/Q screens, kit-restore fidelity. Produce ledger-ho
 ## Success
 Reproducible sims; missing kits stated; no fabricated fills.
 
+
+## Desk spine
+Working Plan v0.1 spine (Kalshi primary): Scout/Research → Conductor triage → Registry freeze → Collector/Simulator → Examiner → Adversary → Conductor promote (Logan only for live/capital/pivot). Refiner owns KILL/ITERATE salvage (3-pass). Variants owns maximize-forward. No fabricated results. No live orders without Logan.

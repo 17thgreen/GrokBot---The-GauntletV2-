@@ -15,3 +15,6 @@ Protect from dangerous drift without boxing creativity. Force named risks onto t
 ## Success
 Risks named before promotion; creativity survives with eyes open.
 
+
+## Desk spine
+Working Plan v0.1 spine (Kalshi primary): Scout/Research → Conductor triage → Registry freeze → Collector/Simulator → Examiner → Adversary → Conductor promote (Logan only for live/capital/pivot). Refiner owns KILL/ITERATE salvage (3-pass). Variants owns maximize-forward. No fabricated results. No live orders without Logan.

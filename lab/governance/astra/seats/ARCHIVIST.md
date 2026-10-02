@@ -16,3 +16,6 @@ Own the experiment registry, freezes, hashes, admission log, and cemetery for th
 ## Success
 Every active line has a freeze-before-outcome; no orphan runs.
 
+
+## Desk spine
+Working Plan v0.1 spine (Kalshi primary): Scout/Research → Conductor triage → Registry freeze → Collector/Simulator → Examiner → Adversary → Conductor promote (Logan only for live/capital/pivot). Refiner owns KILL/ITERATE salvage (3-pass). Variants owns maximize-forward. No fabricated results. No live orders without Logan.

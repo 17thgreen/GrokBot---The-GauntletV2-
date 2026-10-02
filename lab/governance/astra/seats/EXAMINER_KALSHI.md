@@ -16,3 +16,6 @@ Deterministic scorecards and bakeoffs for Kalshi strategies. Distinct from Exami
 ## Success
 Clear, artifact-backed verdicts; displacement only via bakeoff.
 
+
+## Desk spine
+Working Plan v0.1 spine (Kalshi primary): Scout/Research → Conductor triage → Registry freeze → Collector/Simulator → Examiner → Adversary → Conductor promote (Logan only for live/capital/pivot). Refiner owns KILL/ITERATE salvage (3-pass). Variants owns maximize-forward. No fabricated results. No live orders without Logan.
