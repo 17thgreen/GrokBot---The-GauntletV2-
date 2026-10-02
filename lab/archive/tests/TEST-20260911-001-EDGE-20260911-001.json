@@ -1,0 +1,241 @@
+{
+  "TEST_ID": "TEST-20260911-001",
+  "edge_id": "EDGE-20260911-001",
+  "package_id": "PROV-MEAS-EDGE-20260911-001",
+  "MEASUREMENT": "FAIL",
+  "verdict": "FAIL",
+  "holdout": "SEALED",
+  "holdout_sealed": true,
+  "invented_numbers": false,
+  "delta_exec_ms": 500,
+  "C_base_bps": 7.0,
+  "C_base_tag": "[A]",
+  "cemetery_citations": [
+    "CEM-20260910-001",
+    "CEM-20260910-002",
+    "CEM-20260910-003"
+  ],
+  "cemetery_citation": "CEM-20260910-001;CEM-20260910-002;CEM-20260910-003",
+  "validation_ran": false,
+  "l2_proxy": false,
+  "primary_cell": {
+    "W_trade_ms": 60000,
+    "L": 288,
+    "Q_star": 0.8,
+    "N_min": 20,
+    "delta_exec_ms": 500,
+    "h_bars": 1
+  },
+  "forward_return_assumption_[A]": "entry=next_bar_open after decision close_time; exit=open[entry_idx+h]; \u0394_exec>0 mandatory",
+  "instruments": [
+    {
+      "symbol": "BTCUSDT",
+      "research": {
+        "signal_count": 72208,
+        "distinct_utc_days": 1241,
+        "mean_gross_bps": -0.3558900808057344,
+        "mean_net_1x": -7.355890080805734,
+        "mean_net_2x": -14.355890080805734,
+        "mean_net_3x": -21.355890080805736,
+        "hit_rate": 0.48893474407267895,
+        "nw_ci_low": -0.504525794163305,
+        "nw_ci_high": -0.2072543674481638,
+        "concentration_day_frac": 1.0
+      },
+      "placebo_scrambled_aggressor": {
+        "signal_count": 72088,
+        "distinct_utc_days": 1241,
+        "mean_gross_bps": 0.08303731646836904,
+        "mean_net_1x": -6.916962683531631,
+        "mean_net_2x": -13.916962683531631,
+        "mean_net_3x": -20.91696268353163,
+        "hit_rate": 0.5011374986128065,
+        "nw_ci_low": -0.046383378433431266,
+        "nw_ci_high": 0.21245801137016934,
+        "concentration_day_frac": 1.0
+      },
+      "ohlcv_nested": {
+        "signal_count": 72212,
+        "distinct_utc_days": 1241,
+        "mean_gross_bps": -0.6595171564565908,
+        "mean_net_1x": -7.659517156456591,
+        "mean_net_2x": -14.659517156456591,
+        "mean_net_3x": -21.65951715645659,
+        "hit_rate": 0.44891430787126796,
+        "nw_ci_low": -0.8666132753981037,
+        "nw_ci_high": -0.4524210375150779,
+        "concentration_day_frac": 1.0
+      },
+      "placebo_beats": true,
+      "ohlcv_redundant": false,
+      "delta_exec_sensitivity": {
+        "100": {
+          "signal_count": 72208,
+          "distinct_utc_days": 1241,
+          "mean_gross_bps": -0.3558900808057344,
+          "mean_net_1x": -7.355890080805734,
+          "mean_net_2x": -14.355890080805734,
+          "mean_net_3x": -21.355890080805736,
+          "hit_rate": 0.48893474407267895,
+          "nw_ci_low": -0.504525794163305,
+          "nw_ci_high": -0.2072543674481638,
+          "concentration_day_frac": 1.0
+        },
+        "500": {
+          "signal_count": 72208,
+          "distinct_utc_days": 1241,
+          "mean_gross_bps": -0.3558900808057344,
+          "mean_net_1x": -7.355890080805734,
+          "mean_net_2x": -14.355890080805734,
+          "mean_net_3x": -21.355890080805736,
+          "hit_rate": 0.48893474407267895,
+          "nw_ci_low": -0.504525794163305,
+          "nw_ci_high": -0.2072543674481638,
+          "concentration_day_frac": 1.0
+        },
+        "1000": {
+          "signal_count": 72208,
+          "distinct_utc_days": 1241,
+          "mean_gross_bps": -0.3558900808057344,
+          "mean_net_1x": -7.355890080805734,
+          "mean_net_2x": -14.355890080805734,
+          "mean_net_3x": -21.355890080805736,
+          "hit_rate": 0.48893474407267895,
+          "nw_ci_low": -0.504525794163305,
+          "nw_ci_high": -0.2072543674481638,
+          "concentration_day_frac": 1.0
+        },
+        "5000": {
+          "signal_count": 72208,
+          "distinct_utc_days": 1241,
+          "mean_gross_bps": -0.3558900808057344,
+          "mean_net_1x": -7.355890080805734,
+          "mean_net_2x": -14.355890080805734,
+          "mean_net_3x": -21.355890080805736,
+          "hit_rate": 0.48893474407267895,
+          "nw_ci_low": -0.504525794163305,
+          "nw_ci_high": -0.2072543674481638,
+          "concentration_day_frac": 1.0
+        }
+      },
+      "verdict": "FAIL",
+      "reasons": [
+        "mean gross <= 0 after \u0394_exec (gross=-0.3558900808057344)",
+        "net@1\u00d7 <= 0 after \u0394_exec (net_1x=-7.355890080805734)",
+        "placebo matches or beats primary within CI noise"
+      ],
+      "validation": null,
+      "validation_ran": false
+    },
+    {
+      "symbol": "ETHUSDT",
+      "research": {
+        "signal_count": 72199,
+        "distinct_utc_days": 1241,
+        "mean_gross_bps": -0.16748402913327684,
+        "mean_net_1x": -7.167484029133277,
+        "mean_net_2x": -14.167484029133277,
+        "mean_net_3x": -21.167484029133277,
+        "hit_rate": 0.491571905428053,
+        "nw_ci_low": -0.34564097860710946,
+        "nw_ci_high": 0.01067292034055578,
+        "concentration_day_frac": 1.0
+      },
+      "placebo_scrambled_aggressor": {
+        "signal_count": 72236,
+        "distinct_utc_days": 1241,
+        "mean_gross_bps": 0.0403172767377826,
+        "mean_net_1x": -6.959682723262217,
+        "mean_net_2x": -13.959682723262217,
+        "mean_net_3x": -20.95968272326222,
+        "hit_rate": 0.5027963896118279,
+        "nw_ci_low": -0.12124807009855115,
+        "nw_ci_high": 0.20188262357411635,
+        "concentration_day_frac": 1.0
+      },
+      "ohlcv_nested": {
+        "signal_count": 71979,
+        "distinct_utc_days": 1241,
+        "mean_gross_bps": -0.6191802116949122,
+        "mean_net_1x": -7.619180211694912,
+        "mean_net_2x": -14.619180211694912,
+        "mean_net_3x": -21.61918021169491,
+        "hit_rate": 0.45663318467886466,
+        "nw_ci_low": -0.896052330536725,
+        "nw_ci_high": -0.34230809285309954,
+        "concentration_day_frac": 1.0
+      },
+      "placebo_beats": true,
+      "ohlcv_redundant": false,
+      "delta_exec_sensitivity": {
+        "100": {
+          "signal_count": 72199,
+          "distinct_utc_days": 1241,
+          "mean_gross_bps": -0.16748402913327684,
+          "mean_net_1x": -7.167484029133277,
+          "mean_net_2x": -14.167484029133277,
+          "mean_net_3x": -21.167484029133277,
+          "hit_rate": 0.491571905428053,
+          "nw_ci_low": -0.34564097860710946,
+          "nw_ci_high": 0.01067292034055578,
+          "concentration_day_frac": 1.0
+        },
+        "500": {
+          "signal_count": 72199,
+          "distinct_utc_days": 1241,
+          "mean_gross_bps": -0.16748402913327684,
+          "mean_net_1x": -7.167484029133277,
+          "mean_net_2x": -14.167484029133277,
+          "mean_net_3x": -21.167484029133277,
+          "hit_rate": 0.491571905428053,
+          "nw_ci_low": -0.34564097860710946,
+          "nw_ci_high": 0.01067292034055578,
+          "concentration_day_frac": 1.0
+        },
+        "1000": {
+          "signal_count": 72199,
+          "distinct_utc_days": 1241,
+          "mean_gross_bps": -0.16748402913327684,
+          "mean_net_1x": -7.167484029133277,
+          "mean_net_2x": -14.167484029133277,
+          "mean_net_3x": -21.167484029133277,
+          "hit_rate": 0.491571905428053,
+          "nw_ci_low": -0.34564097860710946,
+          "nw_ci_high": 0.01067292034055578,
+          "concentration_day_frac": 1.0
+        },
+        "5000": {
+          "signal_count": 72199,
+          "distinct_utc_days": 1241,
+          "mean_gross_bps": -0.16748402913327684,
+          "mean_net_1x": -7.167484029133277,
+          "mean_net_2x": -14.167484029133277,
+          "mean_net_3x": -21.167484029133277,
+          "hit_rate": 0.491571905428053,
+          "nw_ci_low": -0.34564097860710946,
+          "nw_ci_high": 0.01067292034055578,
+          "concentration_day_frac": 1.0
+        }
+      },
+      "verdict": "FAIL",
+      "reasons": [
+        "mean gross <= 0 after \u0394_exec (gross=-0.16748402913327684)",
+        "net@1\u00d7 <= 0 after \u0394_exec (net_1x=-7.167484029133277)",
+        "placebo matches or beats primary within CI noise"
+      ],
+      "validation": null,
+      "validation_ran": false
+    }
+  ],
+  "stress_schedule": {
+    "GROSS_C0_DIAGNOSTIC": 0.0,
+    "C_1x": 7.0,
+    "C_2x": 14.0,
+    "C_3x": 21.0,
+    "LATENCY_STRESS_+1bp_[A]": 8.0,
+    "LATENCY_STRESS_+3bp_[A]": 10.0
+  },
+  "data_trades": "/workspace/lab/data/DATA-PROV-TRADES-001",
+  "data_ohlcv": "/workspace/lab/data/DATA-PROV-001",
+  "scope_cut_max_days": null
+}
