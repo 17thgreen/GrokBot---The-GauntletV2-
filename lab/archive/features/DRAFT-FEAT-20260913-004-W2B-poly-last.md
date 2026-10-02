@@ -52,7 +52,7 @@ else:
     p_t = clip(m_t + λ * b_clip, ε, 1-ε)
 ```
 
-AMD-001: scored \(p_t ∈ (\varepsilon,1-\varepsilon)\). ε-clip is hygiene. No raw 0/1.
+AMD-001: scored \(p_t \in (\varepsilon,1-\varepsilon)\). ε-clip is hygiene. No raw 0/1.
 
 ## MECHANISM
 
@@ -82,7 +82,7 @@ Not sibling-asset (BTC↔ETH on one venue). Not CF−mid. Not L3-strike.
 - L2/L3: not used
 - Fields: Kalshi `implied_p` + `implied_p_method==mid`; Poly `last`, `obs_time`; Clock match keys
 
-## TRANSFORMS / NORMALIZATION
+## TRANSFORMATION / NORMALIZATION
 
 - Missing either print → ABSTAIN, never impute last or mid
 - clip basis to \(\pm c\); clip \(p_t\) to \((\varepsilon,1-\varepsilon)\)
