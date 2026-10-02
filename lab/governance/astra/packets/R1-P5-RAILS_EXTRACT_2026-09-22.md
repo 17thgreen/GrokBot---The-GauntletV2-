@@ -3,7 +3,7 @@
 **Owner:** R&D Variants (freeze / pin ownership)  
 **Implementer:** Simulator (+ Collector freshness hooks) after R1-P1  
 **Reviewer:** Examiner (Kalshi) / Adversary spot-check  
-**Status:** QUEUED — depends on R1-P1 fee algebra  
+**Status:** MERGED — squash 6a28e0d6…; stand down until next Conductor pin  
 **Cite:** `SIBLING_DEATHMATCH_REVIEW_2026-09-22.md`; `briefs/R1_DEEP_RESEARCH_2026-09-22.md` §R1-P5  
 **Hard rules:** Measurement rails only. Not a strategy. No live launcher / no live orders. No Q6/Q7 retune. Do **not** reopen HX spread picker.
 
