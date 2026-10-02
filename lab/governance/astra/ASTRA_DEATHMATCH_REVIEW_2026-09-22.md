@@ -51,3 +51,4 @@ Handoff notes first schedule-only window start **2026-09-22T00:15Z** — missing
 ## ALMANAC
 
 Remains parked until explicit reopen. Examiner NO_SCORE stands.
+
