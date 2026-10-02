@@ -50,7 +50,7 @@
 - exclude `implied_p ≤ 0.02` or `≥ 0.98` (near-deg)
 - VOID/DISPUTED out of scored N
 - L3 = L3-002 Sep-12 + L3-001 Sep-11 bars for lookback/edges under lock B; L3 ≠ CF settlement oracle
-- Missing W=5 chain or incomplete Wσ → ABSTAIN (p:=m), not "no wick"
+- Missing W=5 chain or incomplete Wσ → ABSTAIN (p:=m), not “no wick”
 - **NOT** policy A. **NOT** PM-003. **NOT** F1-always-speak. **NOT** W2-B.
 
 **Sign convention:** ΔBrier = Brier_model − Brier_market; ΔLogLoss = LogLoss_model − LogLoss_market; **negative = skill** vs mid.
@@ -115,23 +115,86 @@ Neither headline improves both Brier and LogLoss vs mid on full cell (BTC=REDUND
 - λ=0 must give ΔBrier=0 and ΔLogLoss=0 (identity vs mid).
 
 ## Filter / join stats
-See full JSON in local harness out; N scored=191; n_speak=22; n_off_wick=169; policy B; join CONDITIONAL+EDGE_CLEARED; coverage 855/855; pm003_used false; theta_w_search false; policy_A_used false.
+```json
+{
+  "candidates": 192,
+  "excluded_not_sep12": 885,
+  "excluded_not_t5m": 768,
+  "excluded_method_not_mid": 0,
+  "excluded_near_deg": 1,
+  "excluded_void_or_other": 0,
+  "excluded_no_y": 0,
+  "excluded_no_label": 0,
+  "excluded_no_k": 0,
+  "excluded_wrong_venue": 0,
+  "scored": 191,
+  "n_speak": 22,
+  "n_abstain": 0,
+  "n_off_wick": 169,
+  "n_allow": 191,
+  "n_l3_001_source": 0,
+  "n_l3_002_source": 191,
+  "lookahead": 0,
+  "policy": "B",
+  "join_verdict": "CONDITIONAL+EDGE_CLEARED",
+  "coverage_named": "855/855",
+  "per_cell": {
+    "KALSHI|15m|BTC|T-5m|mid": {
+      "candidates": 96,
+      "scored": 96,
+      "speak": 12,
+      "abstain": 0,
+      "off_wick": 84,
+      "excluded_method_not_mid": 0,
+      "excluded_near_deg": 0,
+      "excluded_void": 0,
+      "excluded_no_y": 0
+    },
+    "KALSHI|15m|ETH|T-5m|mid": {
+      "candidates": 96,
+      "scored": 95,
+      "speak": 10,
+      "abstain": 0,
+      "off_wick": 85,
+      "excluded_method_not_mid": 0,
+      "excluded_near_deg": 1,
+      "excluded_void": 0,
+      "excluded_no_y": 0
+    }
+  },
+  "pm003_used": false,
+  "theta_w_search": false,
+  "policy_A_used": false
+}
+```
 
 ## Integrity
+
 - checkpoints.ndjson sha256: `03b48e17cc1f018701a84dc2dfcf42427d4cd1de117dfdb9e19e8e4fe63cddf1`
 - L3-002 BTC csv sha256: `b982e79e27a8ca5fdb2b2122788e210db10414e44287e7604be0d159388950f8`
 - L3-002 ETH csv sha256: `47db79a2f741929cef6a23838cb5dad24ffb606899023afcf10de8f7bdb57f62`
 - sha256_recorded: `True`
-- Join verdict: **CONDITIONAL** (L3-002) + **CLEARED** (L3-001 edges); policy **B**
-- PM-003 / Policy A / CF / F1-always-speak / W2-B: **not used**
+- venues: `['KALSHI']`
+- Join verdict: **CONDITIONAL** (L3-002) + **CLEARED** (L3-001 edges)
+- Join policy: **B** (bar_end < decision_time)
+- Policy A (bar_end ≤ t): **not used**
+- PM-003: **not used**
+- CF / EXPIRATION_VALUE / incomplete-bar / F1-always-speak / W2-B: **not used**
+- L3 = external predictor ≠ settlement oracle
+- No θ/W/λ retune; no gate retune; no pool; no T-14m
 
 ## Overall package verdict
-**`REDUNDANT / FAIL-INSUFFICIENT`** — Neither headline improves both Brier and LogLoss vs mid on full cell. USED_RESEARCH; holdout closed; no trading. Sep-12 PM-004; lock B; L3 ≠ oracle; no PM-003; θ/W frozen; Governor SIGN F4.
+**`REDUNDANT / FAIL-INSUFFICIENT`** — Neither headline improves both Brier and LogLoss vs mid on full cell (BTC=REDUNDANT / FAIL-INSUFFICIENT; ETH=REDUNDANT / FAIL-INSUFFICIENT). REDUNDANT / FAIL-INSUFFICIENT (not NO_EDGE; not Champion). USED_RESEARCH; holdout closed; no trading. Sep-12 PM-004; lock B; L3 ≠ oracle; no PM-003; θ/W frozen no search; Governor SIGN F4.
+
+FAIL-INSUFFICIENT ≠ NO_EDGE. This is **not** a Champion / strategy PASS. No trading authorization. Holdout closed. Stamp: Sep-12 PM-004; lock B; L3 ≠ oracle; no PM-003; θ/W frozen; Governor SIGN F4.
 
 ## Artifacts
-- `lab/harness/examiner/out/TEST-20260914-001-F4-WICK-INCREMENTAL.md`
-- `lab/archive/tests/TEST-20260914-001-F4-WICK-INCREMENTAL.md`
+- `/workspace/lab/harness/examiner/out/TEST-20260914-001-F4-WICK-INCREMENTAL.md`
+- `/workspace/lab/harness/examiner/out/TEST-20260914-001-F4-WICK-INCREMENTAL.json`
+- `/workspace/lab/archive/tests/TEST-20260914-001-F4-WICK-INCREMENTAL.md`
+- `/workspace/lab/archive/tests/TEST-20260914-001-F4-WICK-INCREMENTAL.json`
 
 ## Blockers
-- KALSHI|15m|BTC|T-5m|mid: N_wick=12 < 80; skill fail ΔLogLoss>0
+- KALSHI|15m|BTC|T-5m|mid: N_wick=12 < 80
+- KALSHI|15m|BTC|T-5m|mid: skill fail ΔBrier=-0.0001071900816802529 ΔLogLoss=0.0036484550551017514
 - KALSHI|15m|ETH|T-5m|mid: N_wick=10 < 80
