@@ -63,4 +63,4 @@ All 1208 PM-003 close minutes have 60/60 locked seconds present on the entitled 
 
 ## Examiner gate
 
-**OPEN** for `TEST-20260913-001` F2-INCREMENTAL (Map 2) under CLEARED tape + PM-003 T−1m mid + PM-001 FLOOR_STRIKE/RESOLUTION. Gate used; result filed TEST-20260913-001.
+**OPEN** for `TEST-20260913-001` F2-INCREMENTAL (Map 2) under CLEARED tape + PM-003 T−1m mid + PM-001 FLOOR_STRIKE/RESOLUTION.
