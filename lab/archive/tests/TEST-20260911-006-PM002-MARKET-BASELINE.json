@@ -1,0 +1,3127 @@
+{
+  "TEST_ID": "TEST-20260911-006",
+  "package": "PM002-MARKET-BASELINE",
+  "purpose": "market_baseline_m_t_calibration",
+  "strategy": null,
+  "model_p_t": null,
+  "trading": "FORBIDDEN",
+  "invented_numbers": false,
+  "overall_verdict": "FAIL-INSUFFICIENT",
+  "overall_reason": "All six primary cells underpowered for named calibration (thin reliability bins / ECE). Descriptive WR/Brier/LogLoss/mean(m_t) are MEASURED where N>0; powered calibration claim not supported. NOT NO_EDGE.",
+  "run_utc": "2026-09-11T21:32:23Z",
+  "authority": [
+    "governance/EXAMINER_ORDER_PM002_MARKET_BASELINE.md",
+    "governance/PM002_COVERAGE_FROZEN_2026-09-11.md",
+    "governance/BINARY_EXAMINER_SPEC.md",
+    "data/DATA-PROV-PM-002/provenance/DATA_VERDICT_DATA-PROV-PM-002.md"
+  ],
+  "data": {
+    "dataset_id": "DATA-PROV-PM-002",
+    "checkpoints": "/workspace/lab/data/DATA-PROV-PM-002/derived/checkpoints.ndjson",
+    "checkpoints_sha256": "affbbbd0b07c765d3f7c0af5e6b23564d3973ec82f27fe7d48b84bc4ded89dc0",
+    "labels_kalshi": "/workspace/lab/data/DATA-PROV-PM-001/normalized/kalshi_15m_btc_eth_resolved.ndjson",
+    "labels_poly": "/workspace/lab/data/DATA-PROV-PM-001/normalized/polymarket_global_5m_15m_btc_eth_resolved.ndjson",
+    "m_t_source": "DATA-PROV-PM-002 derived checkpoints.implied_p (mid)",
+    "forbidden_m_t": [
+      "LAST_PRICE_DOLLARS",
+      "OUTCOME_PRICES"
+    ]
+  },
+  "primary_cell_order": [
+    "KALSHI|15m|BTC|T-14m|mid",
+    "KALSHI|15m|ETH|T-14m|mid",
+    "KALSHI|15m|BTC|T-10m|mid",
+    "KALSHI|15m|ETH|T-10m|mid",
+    "KALSHI|15m|BTC|T-5m|mid",
+    "KALSHI|15m|ETH|T-5m|mid"
+  ],
+  "primary_cells": {
+    "KALSHI|15m|BTC|T-14m|mid": {
+      "N": 60,
+      "N_unit": "scored decision-events (checkpoint \u00d7 contract after filters)",
+      "contract_count": 60,
+      "distinct_utc_days": 8,
+      "span_utc": {
+        "min": "2026-09-04",
+        "max": "2026-09-11"
+      },
+      "WR": 0.6333333333333333,
+      "WR_definition": "mid>0.5\u21d2YES; mid<0.5\u21d2NO; mid==0.5 excluded",
+      "N_WR": 60,
+      "N_tie_excluded": 0,
+      "CI": {
+        "low": 0.5068276736679673,
+        "high": 0.7437926115379172,
+        "level": 0.95
+      },
+      "CI_method": "Wilson",
+      "Brier_model": "UNTESTED",
+      "LogLoss_model": "UNTESTED",
+      "Calibration": {
+        "reliability_table": {
+          "bins": [
+            {
+              "bin": "[0.02,0.50)",
+              "n": 36,
+              "mean_m": 0.4191666666666667,
+              "obs_rate": 0.2777777777777778,
+              "CI": {
+                "low": 0.15848170025813796,
+                "high": 0.43992800216345146,
+                "level": 0.95
+              },
+              "CI_method": "Wilson"
+            },
+            {
+              "bin": "[0.50,0.55)",
+              "n": 8,
+              "mean_m": 0.5225,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=8 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.55,0.60)",
+              "n": 8,
+              "mean_m": 0.58,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=8 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.60,0.70)",
+              "n": 7,
+              "mean_m": 0.6364285714285715,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=7 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.70,0.80)",
+              "n": 1,
+              "mean_m": 0.725,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=1 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.80,0.90)",
+              "n": 0,
+              "mean_m": "UNTESTED",
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=0 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.90,0.98)",
+              "n": 0,
+              "mean_m": "UNTESTED",
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=0 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            }
+          ],
+          "powered_bin_count": 1,
+          "min_n_per_bin": 20,
+          "pooling": false
+        },
+        "ECE": "UNTESTED",
+        "note": "powered calibration underpowered: N=60, powered_bins=1 (need \u22652 bins with n\u226520 and/or N\u2265100 for ECE); thin bins UNTESTED, not pooled"
+      },
+      "Brier_market": 0.23489166666666667,
+      "LogLoss_market": 0.6629584711378346,
+      "LogLoss_eps": 1e-15,
+      "\u0394Brier": "UNTESTED",
+      "\u0394LogLoss": "UNTESTED",
+      "gap": "UNTESTED",
+      "EV_gross": "UNTESTED",
+      "EV_net": "UNTESTED",
+      "abstention_rate": "UNTESTED",
+      "cost_sensitivity": "UNTESTED",
+      "mean(m_t)": 0.48483333333333334,
+      "underpowered_calibration": true,
+      "cell_verdict": "FAIL-INSUFFICIENT",
+      "contract_ids_scored": [
+        "PROV-KALSHI-KXBTC15M-26SEP041945-45",
+        "PROV-KALSHI-KXBTC15M-26SEP042230-30",
+        "PROV-KALSHI-KXBTC15M-26SEP050115-15",
+        "PROV-KALSHI-KXBTC15M-26SEP050400-00",
+        "PROV-KALSHI-KXBTC15M-26SEP050645-45",
+        "PROV-KALSHI-KXBTC15M-26SEP050930-30",
+        "PROV-KALSHI-KXBTC15M-26SEP051215-15",
+        "PROV-KALSHI-KXBTC15M-26SEP051500-00",
+        "PROV-KALSHI-KXBTC15M-26SEP051745-45",
+        "PROV-KALSHI-KXBTC15M-26SEP052030-30",
+        "PROV-KALSHI-KXBTC15M-26SEP052315-15",
+        "PROV-KALSHI-KXBTC15M-26SEP060200-00",
+        "PROV-KALSHI-KXBTC15M-26SEP060445-45",
+        "PROV-KALSHI-KXBTC15M-26SEP060730-30",
+        "PROV-KALSHI-KXBTC15M-26SEP061015-15",
+        "PROV-KALSHI-KXBTC15M-26SEP061315-15",
+        "PROV-KALSHI-KXBTC15M-26SEP061600-00",
+        "PROV-KALSHI-KXBTC15M-26SEP061845-45",
+        "PROV-KALSHI-KXBTC15M-26SEP062130-30",
+        "PROV-KALSHI-KXBTC15M-26SEP070015-15",
+        "PROV-KALSHI-KXBTC15M-26SEP070300-00",
+        "PROV-KALSHI-KXBTC15M-26SEP070545-45",
+        "PROV-KALSHI-KXBTC15M-26SEP070830-30",
+        "PROV-KALSHI-KXBTC15M-26SEP071115-15",
+        "PROV-KALSHI-KXBTC15M-26SEP071400-00",
+        "PROV-KALSHI-KXBTC15M-26SEP071645-45",
+        "PROV-KALSHI-KXBTC15M-26SEP071930-30",
+        "PROV-KALSHI-KXBTC15M-26SEP072215-15",
+        "PROV-KALSHI-KXBTC15M-26SEP080100-00",
+        "PROV-KALSHI-KXBTC15M-26SEP080345-45",
+        "PROV-KALSHI-KXBTC15M-26SEP080645-45",
+        "PROV-KALSHI-KXBTC15M-26SEP080930-30",
+        "PROV-KALSHI-KXBTC15M-26SEP081215-15",
+        "PROV-KALSHI-KXBTC15M-26SEP081500-00",
+        "PROV-KALSHI-KXBTC15M-26SEP081745-45",
+        "PROV-KALSHI-KXBTC15M-26SEP082030-30",
+        "PROV-KALSHI-KXBTC15M-26SEP082315-15",
+        "PROV-KALSHI-KXBTC15M-26SEP090200-00",
+        "PROV-KALSHI-KXBTC15M-26SEP090445-45",
+        "PROV-KALSHI-KXBTC15M-26SEP090730-30",
+        "PROV-KALSHI-KXBTC15M-26SEP091015-15",
+        "PROV-KALSHI-KXBTC15M-26SEP091300-00",
+        "PROV-KALSHI-KXBTC15M-26SEP091545-45",
+        "PROV-KALSHI-KXBTC15M-26SEP091830-30",
+        "PROV-KALSHI-KXBTC15M-26SEP092115-15",
+        "PROV-KALSHI-KXBTC15M-26SEP100015-15",
+        "PROV-KALSHI-KXBTC15M-26SEP100300-00",
+        "PROV-KALSHI-KXBTC15M-26SEP100745-45",
+        "PROV-KALSHI-KXBTC15M-26SEP101030-30",
+        "PROV-KALSHI-KXBTC15M-26SEP101315-15",
+        "PROV-KALSHI-KXBTC15M-26SEP101600-00",
+        "PROV-KALSHI-KXBTC15M-26SEP101845-45",
+        "PROV-KALSHI-KXBTC15M-26SEP102130-30",
+        "PROV-KALSHI-KXBTC15M-26SEP110015-15",
+        "PROV-KALSHI-KXBTC15M-26SEP110300-00",
+        "PROV-KALSHI-KXBTC15M-26SEP110545-45",
+        "PROV-KALSHI-KXBTC15M-26SEP110830-30",
+        "PROV-KALSHI-KXBTC15M-26SEP111115-15",
+        "PROV-KALSHI-KXBTC15M-26SEP111400-00",
+        "PROV-KALSHI-KXBTC15M-26SEP111645-45"
+      ]
+    },
+    "KALSHI|15m|BTC|T-10m|mid": {
+      "N": 60,
+      "N_unit": "scored decision-events (checkpoint \u00d7 contract after filters)",
+      "contract_count": 60,
+      "distinct_utc_days": 8,
+      "span_utc": {
+        "min": "2026-09-04",
+        "max": "2026-09-11"
+      },
+      "WR": 0.6833333333333333,
+      "WR_definition": "mid>0.5\u21d2YES; mid<0.5\u21d2NO; mid==0.5 excluded",
+      "N_WR": 60,
+      "N_tie_excluded": 0,
+      "CI": {
+        "low": 0.5576599505698345,
+        "high": 0.7869429415882567,
+        "level": 0.95
+      },
+      "CI_method": "Wilson",
+      "Brier_model": "UNTESTED",
+      "LogLoss_model": "UNTESTED",
+      "Calibration": {
+        "reliability_table": {
+          "bins": [
+            {
+              "bin": "[0.02,0.50)",
+              "n": 35,
+              "mean_m": 0.31744285714285714,
+              "obs_rate": 0.22857142857142856,
+              "CI": {
+                "low": 0.12065736746179101,
+                "high": 0.39017637780102,
+                "level": 0.95
+              },
+              "CI_method": "Wilson"
+            },
+            {
+              "bin": "[0.50,0.55)",
+              "n": 3,
+              "mean_m": 0.5083333333333333,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=3 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.55,0.60)",
+              "n": 3,
+              "mean_m": 0.5783333333333333,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=3 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.60,0.70)",
+              "n": 10,
+              "mean_m": 0.639,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=10 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.70,0.80)",
+              "n": 5,
+              "mean_m": 0.763,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=5 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.80,0.90)",
+              "n": 3,
+              "mean_m": 0.8483333333333333,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=3 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.90,0.98)",
+              "n": 1,
+              "mean_m": 0.9115,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=1 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            }
+          ],
+          "powered_bin_count": 1,
+          "min_n_per_bin": 20,
+          "pooling": false
+        },
+        "ECE": "UNTESTED",
+        "note": "powered calibration underpowered: N=60, powered_bins=1 (need \u22652 bins with n\u226520 and/or N\u2265100 for ECE); thin bins UNTESTED, not pooled"
+      },
+      "Brier_market": 0.198882375,
+      "LogLoss_market": 0.5769429146078505,
+      "LogLoss_eps": 1e-15,
+      "\u0394Brier": "UNTESTED",
+      "\u0394LogLoss": "UNTESTED",
+      "gap": "UNTESTED",
+      "EV_gross": "UNTESTED",
+      "EV_net": "UNTESTED",
+      "abstention_rate": "UNTESTED",
+      "cost_sensitivity": "UNTESTED",
+      "mean(m_t)": 0.4672,
+      "underpowered_calibration": true,
+      "cell_verdict": "FAIL-INSUFFICIENT",
+      "contract_ids_scored": [
+        "PROV-KALSHI-KXBTC15M-26SEP041945-45",
+        "PROV-KALSHI-KXBTC15M-26SEP042230-30",
+        "PROV-KALSHI-KXBTC15M-26SEP050115-15",
+        "PROV-KALSHI-KXBTC15M-26SEP050400-00",
+        "PROV-KALSHI-KXBTC15M-26SEP050645-45",
+        "PROV-KALSHI-KXBTC15M-26SEP050930-30",
+        "PROV-KALSHI-KXBTC15M-26SEP051215-15",
+        "PROV-KALSHI-KXBTC15M-26SEP051500-00",
+        "PROV-KALSHI-KXBTC15M-26SEP051745-45",
+        "PROV-KALSHI-KXBTC15M-26SEP052030-30",
+        "PROV-KALSHI-KXBTC15M-26SEP052315-15",
+        "PROV-KALSHI-KXBTC15M-26SEP060200-00",
+        "PROV-KALSHI-KXBTC15M-26SEP060445-45",
+        "PROV-KALSHI-KXBTC15M-26SEP060730-30",
+        "PROV-KALSHI-KXBTC15M-26SEP061015-15",
+        "PROV-KALSHI-KXBTC15M-26SEP061315-15",
+        "PROV-KALSHI-KXBTC15M-26SEP061600-00",
+        "PROV-KALSHI-KXBTC15M-26SEP061845-45",
+        "PROV-KALSHI-KXBTC15M-26SEP062130-30",
+        "PROV-KALSHI-KXBTC15M-26SEP070015-15",
+        "PROV-KALSHI-KXBTC15M-26SEP070300-00",
+        "PROV-KALSHI-KXBTC15M-26SEP070545-45",
+        "PROV-KALSHI-KXBTC15M-26SEP070830-30",
+        "PROV-KALSHI-KXBTC15M-26SEP071115-15",
+        "PROV-KALSHI-KXBTC15M-26SEP071400-00",
+        "PROV-KALSHI-KXBTC15M-26SEP071645-45",
+        "PROV-KALSHI-KXBTC15M-26SEP071930-30",
+        "PROV-KALSHI-KXBTC15M-26SEP072215-15",
+        "PROV-KALSHI-KXBTC15M-26SEP080100-00",
+        "PROV-KALSHI-KXBTC15M-26SEP080345-45",
+        "PROV-KALSHI-KXBTC15M-26SEP080645-45",
+        "PROV-KALSHI-KXBTC15M-26SEP080930-30",
+        "PROV-KALSHI-KXBTC15M-26SEP081215-15",
+        "PROV-KALSHI-KXBTC15M-26SEP081500-00",
+        "PROV-KALSHI-KXBTC15M-26SEP081745-45",
+        "PROV-KALSHI-KXBTC15M-26SEP082030-30",
+        "PROV-KALSHI-KXBTC15M-26SEP082315-15",
+        "PROV-KALSHI-KXBTC15M-26SEP090200-00",
+        "PROV-KALSHI-KXBTC15M-26SEP090445-45",
+        "PROV-KALSHI-KXBTC15M-26SEP090730-30",
+        "PROV-KALSHI-KXBTC15M-26SEP091015-15",
+        "PROV-KALSHI-KXBTC15M-26SEP091300-00",
+        "PROV-KALSHI-KXBTC15M-26SEP091545-45",
+        "PROV-KALSHI-KXBTC15M-26SEP091830-30",
+        "PROV-KALSHI-KXBTC15M-26SEP092115-15",
+        "PROV-KALSHI-KXBTC15M-26SEP100015-15",
+        "PROV-KALSHI-KXBTC15M-26SEP100300-00",
+        "PROV-KALSHI-KXBTC15M-26SEP100745-45",
+        "PROV-KALSHI-KXBTC15M-26SEP101030-30",
+        "PROV-KALSHI-KXBTC15M-26SEP101315-15",
+        "PROV-KALSHI-KXBTC15M-26SEP101600-00",
+        "PROV-KALSHI-KXBTC15M-26SEP101845-45",
+        "PROV-KALSHI-KXBTC15M-26SEP102130-30",
+        "PROV-KALSHI-KXBTC15M-26SEP110015-15",
+        "PROV-KALSHI-KXBTC15M-26SEP110300-00",
+        "PROV-KALSHI-KXBTC15M-26SEP110545-45",
+        "PROV-KALSHI-KXBTC15M-26SEP110830-30",
+        "PROV-KALSHI-KXBTC15M-26SEP111115-15",
+        "PROV-KALSHI-KXBTC15M-26SEP111400-00",
+        "PROV-KALSHI-KXBTC15M-26SEP111645-45"
+      ]
+    },
+    "KALSHI|15m|BTC|T-5m|mid": {
+      "N": 54,
+      "N_unit": "scored decision-events (checkpoint \u00d7 contract after filters)",
+      "contract_count": 54,
+      "distinct_utc_days": 8,
+      "span_utc": {
+        "min": "2026-09-04",
+        "max": "2026-09-11"
+      },
+      "WR": 0.7962962962962963,
+      "WR_definition": "mid>0.5\u21d2YES; mid<0.5\u21d2NO; mid==0.5 excluded",
+      "N_WR": 54,
+      "N_tie_excluded": 0,
+      "CI": {
+        "low": 0.6709743827734083,
+        "high": 0.8822606591341462,
+        "level": 0.95
+      },
+      "CI_method": "Wilson",
+      "Brier_model": "UNTESTED",
+      "LogLoss_model": "UNTESTED",
+      "Calibration": {
+        "reliability_table": {
+          "bins": [
+            {
+              "bin": "[0.02,0.50)",
+              "n": 30,
+              "mean_m": 0.17483333333333334,
+              "obs_rate": 0.13333333333333333,
+              "CI": {
+                "low": 0.05309569424218105,
+                "high": 0.2968168394441695,
+                "level": 0.95
+              },
+              "CI_method": "Wilson"
+            },
+            {
+              "bin": "[0.50,0.55)",
+              "n": 1,
+              "mean_m": 0.525,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=1 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.55,0.60)",
+              "n": 3,
+              "mean_m": 0.5783333333333333,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=3 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.60,0.70)",
+              "n": 2,
+              "mean_m": 0.65,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=2 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.70,0.80)",
+              "n": 5,
+              "mean_m": 0.739,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=5 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.80,0.90)",
+              "n": 9,
+              "mean_m": 0.855,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=9 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.90,0.98)",
+              "n": 4,
+              "mean_m": 0.9376249999999999,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=4 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            }
+          ],
+          "powered_bin_count": 1,
+          "min_n_per_bin": 20,
+          "pooling": false
+        },
+        "ECE": "UNTESTED",
+        "note": "powered calibration underpowered: N=54, powered_bins=1 (need \u22652 bins with n\u226520 and/or N\u2265100 for ECE); thin bins UNTESTED, not pooled"
+      },
+      "Brier_market": 0.14127286574074074,
+      "LogLoss_market": 0.43074369932196027,
+      "LogLoss_eps": 1e-15,
+      "\u0394Brier": "UNTESTED",
+      "\u0394LogLoss": "UNTESTED",
+      "gap": "UNTESTED",
+      "EV_gross": "UNTESTED",
+      "EV_net": "UNTESTED",
+      "abstention_rate": "UNTESTED",
+      "cost_sensitivity": "UNTESTED",
+      "mean(m_t)": 0.44343518518518515,
+      "underpowered_calibration": true,
+      "cell_verdict": "FAIL-INSUFFICIENT",
+      "contract_ids_scored": [
+        "PROV-KALSHI-KXBTC15M-26SEP041945-45",
+        "PROV-KALSHI-KXBTC15M-26SEP042230-30",
+        "PROV-KALSHI-KXBTC15M-26SEP050115-15",
+        "PROV-KALSHI-KXBTC15M-26SEP050400-00",
+        "PROV-KALSHI-KXBTC15M-26SEP050645-45",
+        "PROV-KALSHI-KXBTC15M-26SEP050930-30",
+        "PROV-KALSHI-KXBTC15M-26SEP051215-15",
+        "PROV-KALSHI-KXBTC15M-26SEP051500-00",
+        "PROV-KALSHI-KXBTC15M-26SEP051745-45",
+        "PROV-KALSHI-KXBTC15M-26SEP052030-30",
+        "PROV-KALSHI-KXBTC15M-26SEP052315-15",
+        "PROV-KALSHI-KXBTC15M-26SEP060200-00",
+        "PROV-KALSHI-KXBTC15M-26SEP060445-45",
+        "PROV-KALSHI-KXBTC15M-26SEP060730-30",
+        "PROV-KALSHI-KXBTC15M-26SEP061015-15",
+        "PROV-KALSHI-KXBTC15M-26SEP061315-15",
+        "PROV-KALSHI-KXBTC15M-26SEP061600-00",
+        "PROV-KALSHI-KXBTC15M-26SEP061845-45",
+        "PROV-KALSHI-KXBTC15M-26SEP062130-30",
+        "PROV-KALSHI-KXBTC15M-26SEP070015-15",
+        "PROV-KALSHI-KXBTC15M-26SEP070300-00",
+        "PROV-KALSHI-KXBTC15M-26SEP070545-45",
+        "PROV-KALSHI-KXBTC15M-26SEP070830-30",
+        "PROV-KALSHI-KXBTC15M-26SEP071115-15",
+        "PROV-KALSHI-KXBTC15M-26SEP071400-00",
+        "PROV-KALSHI-KXBTC15M-26SEP071645-45",
+        "PROV-KALSHI-KXBTC15M-26SEP071930-30",
+        "PROV-KALSHI-KXBTC15M-26SEP072215-15",
+        "PROV-KALSHI-KXBTC15M-26SEP080100-00",
+        "PROV-KALSHI-KXBTC15M-26SEP080345-45",
+        "PROV-KALSHI-KXBTC15M-26SEP080645-45",
+        "PROV-KALSHI-KXBTC15M-26SEP081745-45",
+        "PROV-KALSHI-KXBTC15M-26SEP082030-30",
+        "PROV-KALSHI-KXBTC15M-26SEP082315-15",
+        "PROV-KALSHI-KXBTC15M-26SEP090200-00",
+        "PROV-KALSHI-KXBTC15M-26SEP090445-45",
+        "PROV-KALSHI-KXBTC15M-26SEP090730-30",
+        "PROV-KALSHI-KXBTC15M-26SEP091015-15",
+        "PROV-KALSHI-KXBTC15M-26SEP091300-00",
+        "PROV-KALSHI-KXBTC15M-26SEP092115-15",
+        "PROV-KALSHI-KXBTC15M-26SEP100015-15",
+        "PROV-KALSHI-KXBTC15M-26SEP100300-00",
+        "PROV-KALSHI-KXBTC15M-26SEP100745-45",
+        "PROV-KALSHI-KXBTC15M-26SEP101030-30",
+        "PROV-KALSHI-KXBTC15M-26SEP101315-15",
+        "PROV-KALSHI-KXBTC15M-26SEP101600-00",
+        "PROV-KALSHI-KXBTC15M-26SEP101845-45",
+        "PROV-KALSHI-KXBTC15M-26SEP102130-30",
+        "PROV-KALSHI-KXBTC15M-26SEP110015-15",
+        "PROV-KALSHI-KXBTC15M-26SEP110300-00",
+        "PROV-KALSHI-KXBTC15M-26SEP110830-30",
+        "PROV-KALSHI-KXBTC15M-26SEP111115-15",
+        "PROV-KALSHI-KXBTC15M-26SEP111400-00",
+        "PROV-KALSHI-KXBTC15M-26SEP111645-45"
+      ]
+    },
+    "KALSHI|15m|ETH|T-14m|mid": {
+      "N": 60,
+      "N_unit": "scored decision-events (checkpoint \u00d7 contract after filters)",
+      "contract_count": 60,
+      "distinct_utc_days": 8,
+      "span_utc": {
+        "min": "2026-09-04",
+        "max": "2026-09-11"
+      },
+      "WR": 0.6833333333333333,
+      "WR_definition": "mid>0.5\u21d2YES; mid<0.5\u21d2NO; mid==0.5 excluded",
+      "N_WR": 60,
+      "N_tie_excluded": 0,
+      "CI": {
+        "low": 0.5576599505698345,
+        "high": 0.7869429415882567,
+        "level": 0.95
+      },
+      "CI_method": "Wilson",
+      "Brier_model": "UNTESTED",
+      "LogLoss_model": "UNTESTED",
+      "Calibration": {
+        "reliability_table": {
+          "bins": [
+            {
+              "bin": "[0.02,0.50)",
+              "n": 35,
+              "mean_m": 0.39285714285714285,
+              "obs_rate": 0.2857142857142857,
+              "CI": {
+                "low": 0.16326363398295565,
+                "high": 0.45055248069821086,
+                "level": 0.95
+              },
+              "CI_method": "Wilson"
+            },
+            {
+              "bin": "[0.50,0.55)",
+              "n": 8,
+              "mean_m": 0.52375,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=8 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.55,0.60)",
+              "n": 10,
+              "mean_m": 0.5725,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=10 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.60,0.70)",
+              "n": 7,
+              "mean_m": 0.6264285714285714,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=7 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.70,0.80)",
+              "n": 0,
+              "mean_m": "UNTESTED",
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=0 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.80,0.90)",
+              "n": 0,
+              "mean_m": "UNTESTED",
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=0 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.90,0.98)",
+              "n": 0,
+              "mean_m": "UNTESTED",
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=0 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            }
+          ],
+          "powered_bin_count": 1,
+          "min_n_per_bin": 20,
+          "pooling": false
+        },
+        "ECE": "UNTESTED",
+        "note": "powered calibration underpowered: N=60, powered_bins=1 (need \u22652 bins with n\u226520 and/or N\u2265100 for ECE); thin bins UNTESTED, not pooled"
+      },
+      "Brier_market": 0.21935500000000002,
+      "LogLoss_market": 0.6299497717002976,
+      "LogLoss_eps": 1e-15,
+      "\u0394Brier": "UNTESTED",
+      "\u0394LogLoss": "UNTESTED",
+      "gap": "UNTESTED",
+      "EV_gross": "UNTESTED",
+      "EV_net": "UNTESTED",
+      "abstention_rate": "UNTESTED",
+      "cost_sensitivity": "UNTESTED",
+      "mean(m_t)": 0.4675,
+      "underpowered_calibration": true,
+      "cell_verdict": "FAIL-INSUFFICIENT",
+      "contract_ids_scored": [
+        "PROV-KALSHI-KXETH15M-26SEP041945-45",
+        "PROV-KALSHI-KXETH15M-26SEP042230-30",
+        "PROV-KALSHI-KXETH15M-26SEP050115-15",
+        "PROV-KALSHI-KXETH15M-26SEP050400-00",
+        "PROV-KALSHI-KXETH15M-26SEP050645-45",
+        "PROV-KALSHI-KXETH15M-26SEP050930-30",
+        "PROV-KALSHI-KXETH15M-26SEP051215-15",
+        "PROV-KALSHI-KXETH15M-26SEP051500-00",
+        "PROV-KALSHI-KXETH15M-26SEP051745-45",
+        "PROV-KALSHI-KXETH15M-26SEP052030-30",
+        "PROV-KALSHI-KXETH15M-26SEP052315-15",
+        "PROV-KALSHI-KXETH15M-26SEP060200-00",
+        "PROV-KALSHI-KXETH15M-26SEP060445-45",
+        "PROV-KALSHI-KXETH15M-26SEP060730-30",
+        "PROV-KALSHI-KXETH15M-26SEP061015-15",
+        "PROV-KALSHI-KXETH15M-26SEP061315-15",
+        "PROV-KALSHI-KXETH15M-26SEP061600-00",
+        "PROV-KALSHI-KXETH15M-26SEP061845-45",
+        "PROV-KALSHI-KXETH15M-26SEP062130-30",
+        "PROV-KALSHI-KXETH15M-26SEP070015-15",
+        "PROV-KALSHI-KXETH15M-26SEP070300-00",
+        "PROV-KALSHI-KXETH15M-26SEP070545-45",
+        "PROV-KALSHI-KXETH15M-26SEP070830-30",
+        "PROV-KALSHI-KXETH15M-26SEP071115-15",
+        "PROV-KALSHI-KXETH15M-26SEP071400-00",
+        "PROV-KALSHI-KXETH15M-26SEP071645-45",
+        "PROV-KALSHI-KXETH15M-26SEP071930-30",
+        "PROV-KALSHI-KXETH15M-26SEP072215-15",
+        "PROV-KALSHI-KXETH15M-26SEP080100-00",
+        "PROV-KALSHI-KXETH15M-26SEP080345-45",
+        "PROV-KALSHI-KXETH15M-26SEP080645-45",
+        "PROV-KALSHI-KXETH15M-26SEP080930-30",
+        "PROV-KALSHI-KXETH15M-26SEP081215-15",
+        "PROV-KALSHI-KXETH15M-26SEP081500-00",
+        "PROV-KALSHI-KXETH15M-26SEP081745-45",
+        "PROV-KALSHI-KXETH15M-26SEP082030-30",
+        "PROV-KALSHI-KXETH15M-26SEP082315-15",
+        "PROV-KALSHI-KXETH15M-26SEP090200-00",
+        "PROV-KALSHI-KXETH15M-26SEP090445-45",
+        "PROV-KALSHI-KXETH15M-26SEP090730-30",
+        "PROV-KALSHI-KXETH15M-26SEP091015-15",
+        "PROV-KALSHI-KXETH15M-26SEP091300-00",
+        "PROV-KALSHI-KXETH15M-26SEP091545-45",
+        "PROV-KALSHI-KXETH15M-26SEP091830-30",
+        "PROV-KALSHI-KXETH15M-26SEP092115-15",
+        "PROV-KALSHI-KXETH15M-26SEP100015-15",
+        "PROV-KALSHI-KXETH15M-26SEP100300-00",
+        "PROV-KALSHI-KXETH15M-26SEP100745-45",
+        "PROV-KALSHI-KXETH15M-26SEP101030-30",
+        "PROV-KALSHI-KXETH15M-26SEP101315-15",
+        "PROV-KALSHI-KXETH15M-26SEP101600-00",
+        "PROV-KALSHI-KXETH15M-26SEP101845-45",
+        "PROV-KALSHI-KXETH15M-26SEP102130-30",
+        "PROV-KALSHI-KXETH15M-26SEP110015-15",
+        "PROV-KALSHI-KXETH15M-26SEP110300-00",
+        "PROV-KALSHI-KXETH15M-26SEP110545-45",
+        "PROV-KALSHI-KXETH15M-26SEP110830-30",
+        "PROV-KALSHI-KXETH15M-26SEP111115-15",
+        "PROV-KALSHI-KXETH15M-26SEP111400-00",
+        "PROV-KALSHI-KXETH15M-26SEP111645-45"
+      ]
+    },
+    "KALSHI|15m|ETH|T-10m|mid": {
+      "N": 60,
+      "N_unit": "scored decision-events (checkpoint \u00d7 contract after filters)",
+      "contract_count": 60,
+      "distinct_utc_days": 8,
+      "span_utc": {
+        "min": "2026-09-04",
+        "max": "2026-09-11"
+      },
+      "WR": 0.6949152542372882,
+      "WR_definition": "mid>0.5\u21d2YES; mid<0.5\u21d2NO; mid==0.5 excluded",
+      "N_WR": 59,
+      "N_tie_excluded": 1,
+      "CI": {
+        "low": 0.5685343274025617,
+        "high": 0.7974652652239788,
+        "level": 0.95
+      },
+      "CI_method": "Wilson",
+      "Brier_model": "UNTESTED",
+      "LogLoss_model": "UNTESTED",
+      "Calibration": {
+        "reliability_table": {
+          "bins": [
+            {
+              "bin": "[0.02,0.50)",
+              "n": 33,
+              "mean_m": 0.28371212121212125,
+              "obs_rate": 0.2727272727272727,
+              "CI": {
+                "low": 0.15067272656322814,
+                "high": 0.44217883254386814,
+                "level": 0.95
+              },
+              "CI_method": "Wilson"
+            },
+            {
+              "bin": "[0.50,0.55)",
+              "n": 5,
+              "mean_m": 0.513,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=5 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.55,0.60)",
+              "n": 4,
+              "mean_m": 0.565,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=4 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.60,0.70)",
+              "n": 4,
+              "mean_m": 0.635,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=4 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.70,0.80)",
+              "n": 9,
+              "mean_m": 0.7327777777777778,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=9 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.80,0.90)",
+              "n": 3,
+              "mean_m": 0.8649999999999999,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=3 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.90,0.98)",
+              "n": 2,
+              "mean_m": 0.921,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=2 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            }
+          ],
+          "powered_bin_count": 1,
+          "min_n_per_bin": 20,
+          "pooling": false
+        },
+        "ECE": "UNTESTED",
+        "note": "powered calibration underpowered: N=60, powered_bins=1 (need \u22652 bins with n\u226520 and/or N\u2265100 for ECE); thin bins UNTESTED, not pooled"
+      },
+      "Brier_market": 0.1847153125,
+      "LogLoss_market": 0.5417897837382423,
+      "LogLoss_eps": 1e-15,
+      "\u0394Brier": "UNTESTED",
+      "\u0394LogLoss": "UNTESTED",
+      "gap": "UNTESTED",
+      "EV_gross": "UNTESTED",
+      "EV_net": "UNTESTED",
+      "abstention_rate": "UNTESTED",
+      "cost_sensitivity": "UNTESTED",
+      "mean(m_t)": 0.46265833333333334,
+      "underpowered_calibration": true,
+      "cell_verdict": "FAIL-INSUFFICIENT",
+      "contract_ids_scored": [
+        "PROV-KALSHI-KXETH15M-26SEP041945-45",
+        "PROV-KALSHI-KXETH15M-26SEP042230-30",
+        "PROV-KALSHI-KXETH15M-26SEP050115-15",
+        "PROV-KALSHI-KXETH15M-26SEP050400-00",
+        "PROV-KALSHI-KXETH15M-26SEP050645-45",
+        "PROV-KALSHI-KXETH15M-26SEP050930-30",
+        "PROV-KALSHI-KXETH15M-26SEP051215-15",
+        "PROV-KALSHI-KXETH15M-26SEP051500-00",
+        "PROV-KALSHI-KXETH15M-26SEP051745-45",
+        "PROV-KALSHI-KXETH15M-26SEP052030-30",
+        "PROV-KALSHI-KXETH15M-26SEP052315-15",
+        "PROV-KALSHI-KXETH15M-26SEP060200-00",
+        "PROV-KALSHI-KXETH15M-26SEP060445-45",
+        "PROV-KALSHI-KXETH15M-26SEP060730-30",
+        "PROV-KALSHI-KXETH15M-26SEP061015-15",
+        "PROV-KALSHI-KXETH15M-26SEP061315-15",
+        "PROV-KALSHI-KXETH15M-26SEP061600-00",
+        "PROV-KALSHI-KXETH15M-26SEP061845-45",
+        "PROV-KALSHI-KXETH15M-26SEP062130-30",
+        "PROV-KALSHI-KXETH15M-26SEP070015-15",
+        "PROV-KALSHI-KXETH15M-26SEP070300-00",
+        "PROV-KALSHI-KXETH15M-26SEP070545-45",
+        "PROV-KALSHI-KXETH15M-26SEP070830-30",
+        "PROV-KALSHI-KXETH15M-26SEP071115-15",
+        "PROV-KALSHI-KXETH15M-26SEP071400-00",
+        "PROV-KALSHI-KXETH15M-26SEP071645-45",
+        "PROV-KALSHI-KXETH15M-26SEP071930-30",
+        "PROV-KALSHI-KXETH15M-26SEP072215-15",
+        "PROV-KALSHI-KXETH15M-26SEP080100-00",
+        "PROV-KALSHI-KXETH15M-26SEP080345-45",
+        "PROV-KALSHI-KXETH15M-26SEP080645-45",
+        "PROV-KALSHI-KXETH15M-26SEP080930-30",
+        "PROV-KALSHI-KXETH15M-26SEP081215-15",
+        "PROV-KALSHI-KXETH15M-26SEP081500-00",
+        "PROV-KALSHI-KXETH15M-26SEP081745-45",
+        "PROV-KALSHI-KXETH15M-26SEP082030-30",
+        "PROV-KALSHI-KXETH15M-26SEP082315-15",
+        "PROV-KALSHI-KXETH15M-26SEP090200-00",
+        "PROV-KALSHI-KXETH15M-26SEP090445-45",
+        "PROV-KALSHI-KXETH15M-26SEP090730-30",
+        "PROV-KALSHI-KXETH15M-26SEP091015-15",
+        "PROV-KALSHI-KXETH15M-26SEP091300-00",
+        "PROV-KALSHI-KXETH15M-26SEP091545-45",
+        "PROV-KALSHI-KXETH15M-26SEP091830-30",
+        "PROV-KALSHI-KXETH15M-26SEP092115-15",
+        "PROV-KALSHI-KXETH15M-26SEP100015-15",
+        "PROV-KALSHI-KXETH15M-26SEP100300-00",
+        "PROV-KALSHI-KXETH15M-26SEP100745-45",
+        "PROV-KALSHI-KXETH15M-26SEP101030-30",
+        "PROV-KALSHI-KXETH15M-26SEP101315-15",
+        "PROV-KALSHI-KXETH15M-26SEP101600-00",
+        "PROV-KALSHI-KXETH15M-26SEP101845-45",
+        "PROV-KALSHI-KXETH15M-26SEP102130-30",
+        "PROV-KALSHI-KXETH15M-26SEP110015-15",
+        "PROV-KALSHI-KXETH15M-26SEP110300-00",
+        "PROV-KALSHI-KXETH15M-26SEP110545-45",
+        "PROV-KALSHI-KXETH15M-26SEP110830-30",
+        "PROV-KALSHI-KXETH15M-26SEP111115-15",
+        "PROV-KALSHI-KXETH15M-26SEP111400-00",
+        "PROV-KALSHI-KXETH15M-26SEP111645-45"
+      ]
+    },
+    "KALSHI|15m|ETH|T-5m|mid": {
+      "N": 51,
+      "N_unit": "scored decision-events (checkpoint \u00d7 contract after filters)",
+      "contract_count": 51,
+      "distinct_utc_days": 8,
+      "span_utc": {
+        "min": "2026-09-04",
+        "max": "2026-09-11"
+      },
+      "WR": 0.803921568627451,
+      "WR_definition": "mid>0.5\u21d2YES; mid<0.5\u21d2NO; mid==0.5 excluded",
+      "N_WR": 51,
+      "N_tie_excluded": 0,
+      "CI": {
+        "low": 0.6754165732550456,
+        "high": 0.8898477516370072,
+        "level": 0.95
+      },
+      "CI_method": "Wilson",
+      "Brier_model": "UNTESTED",
+      "LogLoss_model": "UNTESTED",
+      "Calibration": {
+        "reliability_table": {
+          "bins": [
+            {
+              "bin": "[0.02,0.50)",
+              "n": 26,
+              "mean_m": 0.20532692307692307,
+              "obs_rate": 0.19230769230769232,
+              "CI": {
+                "low": 0.08506935771788271,
+                "high": 0.37876636154649995,
+                "level": 0.95
+              },
+              "CI_method": "Wilson"
+            },
+            {
+              "bin": "[0.50,0.55)",
+              "n": 0,
+              "mean_m": "UNTESTED",
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=0 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.55,0.60)",
+              "n": 2,
+              "mean_m": 0.5774999999999999,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=2 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.60,0.70)",
+              "n": 4,
+              "mean_m": 0.635,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=4 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.70,0.80)",
+              "n": 1,
+              "mean_m": 0.75,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=1 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.80,0.90)",
+              "n": 8,
+              "mean_m": 0.85625,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=8 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.90,0.98)",
+              "n": 10,
+              "mean_m": 0.93915,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=10 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            }
+          ],
+          "powered_bin_count": 1,
+          "min_n_per_bin": 20,
+          "pooling": false
+        },
+        "ECE": "UNTESTED",
+        "note": "powered calibration underpowered: N=51, powered_bins=1 (need \u22652 bins with n\u226520 and/or N\u2265100 for ECE); thin bins UNTESTED, not pooled"
+      },
+      "Brier_market": 0.11802583333333333,
+      "LogLoss_market": 0.36829731125197207,
+      "LogLoss_eps": 1e-15,
+      "\u0394Brier": "UNTESTED",
+      "\u0394LogLoss": "UNTESTED",
+      "gap": "UNTESTED",
+      "EV_gross": "UNTESTED",
+      "EV_net": "UNTESTED",
+      "abstention_rate": "UNTESTED",
+      "cost_sensitivity": "UNTESTED",
+      "mean(m_t)": 0.5102941176470588,
+      "underpowered_calibration": true,
+      "cell_verdict": "FAIL-INSUFFICIENT",
+      "contract_ids_scored": [
+        "PROV-KALSHI-KXETH15M-26SEP041945-45",
+        "PROV-KALSHI-KXETH15M-26SEP042230-30",
+        "PROV-KALSHI-KXETH15M-26SEP050115-15",
+        "PROV-KALSHI-KXETH15M-26SEP050400-00",
+        "PROV-KALSHI-KXETH15M-26SEP050645-45",
+        "PROV-KALSHI-KXETH15M-26SEP050930-30",
+        "PROV-KALSHI-KXETH15M-26SEP051215-15",
+        "PROV-KALSHI-KXETH15M-26SEP051500-00",
+        "PROV-KALSHI-KXETH15M-26SEP051745-45",
+        "PROV-KALSHI-KXETH15M-26SEP052030-30",
+        "PROV-KALSHI-KXETH15M-26SEP052315-15",
+        "PROV-KALSHI-KXETH15M-26SEP060200-00",
+        "PROV-KALSHI-KXETH15M-26SEP060445-45",
+        "PROV-KALSHI-KXETH15M-26SEP060730-30",
+        "PROV-KALSHI-KXETH15M-26SEP061315-15",
+        "PROV-KALSHI-KXETH15M-26SEP061600-00",
+        "PROV-KALSHI-KXETH15M-26SEP061845-45",
+        "PROV-KALSHI-KXETH15M-26SEP062130-30",
+        "PROV-KALSHI-KXETH15M-26SEP070015-15",
+        "PROV-KALSHI-KXETH15M-26SEP070300-00",
+        "PROV-KALSHI-KXETH15M-26SEP070830-30",
+        "PROV-KALSHI-KXETH15M-26SEP071115-15",
+        "PROV-KALSHI-KXETH15M-26SEP071400-00",
+        "PROV-KALSHI-KXETH15M-26SEP071645-45",
+        "PROV-KALSHI-KXETH15M-26SEP071930-30",
+        "PROV-KALSHI-KXETH15M-26SEP080100-00",
+        "PROV-KALSHI-KXETH15M-26SEP080345-45",
+        "PROV-KALSHI-KXETH15M-26SEP080930-30",
+        "PROV-KALSHI-KXETH15M-26SEP081215-15",
+        "PROV-KALSHI-KXETH15M-26SEP081745-45",
+        "PROV-KALSHI-KXETH15M-26SEP082030-30",
+        "PROV-KALSHI-KXETH15M-26SEP082315-15",
+        "PROV-KALSHI-KXETH15M-26SEP090200-00",
+        "PROV-KALSHI-KXETH15M-26SEP090445-45",
+        "PROV-KALSHI-KXETH15M-26SEP090730-30",
+        "PROV-KALSHI-KXETH15M-26SEP091015-15",
+        "PROV-KALSHI-KXETH15M-26SEP091300-00",
+        "PROV-KALSHI-KXETH15M-26SEP092115-15",
+        "PROV-KALSHI-KXETH15M-26SEP100015-15",
+        "PROV-KALSHI-KXETH15M-26SEP100300-00",
+        "PROV-KALSHI-KXETH15M-26SEP100745-45",
+        "PROV-KALSHI-KXETH15M-26SEP101030-30",
+        "PROV-KALSHI-KXETH15M-26SEP101315-15",
+        "PROV-KALSHI-KXETH15M-26SEP101845-45",
+        "PROV-KALSHI-KXETH15M-26SEP102130-30",
+        "PROV-KALSHI-KXETH15M-26SEP110015-15",
+        "PROV-KALSHI-KXETH15M-26SEP110300-00",
+        "PROV-KALSHI-KXETH15M-26SEP110830-30",
+        "PROV-KALSHI-KXETH15M-26SEP111115-15",
+        "PROV-KALSHI-KXETH15M-26SEP111400-00",
+        "PROV-KALSHI-KXETH15M-26SEP111645-45"
+      ]
+    }
+  },
+  "primary_filter_stats": {
+    "candidates": 360,
+    "excluded_method_not_mid": 0,
+    "excluded_near_deg": 15,
+    "excluded_no_label": 0,
+    "excluded_void_or_other": 0,
+    "scored": 345,
+    "void_bucket_n": 0,
+    "void_bucket": []
+  },
+  "annex_poly": {
+    "POLYMARKET_GLOBAL|5m|BTC|T-4m|last": {
+      "N": 30,
+      "N_unit": "scored decision-events (checkpoint \u00d7 contract after filters)",
+      "contract_count": 30,
+      "distinct_utc_days": 4,
+      "span_utc": {
+        "min": "2026-09-08",
+        "max": "2026-09-11"
+      },
+      "WR": 0.5666666666666667,
+      "WR_definition": "mid>0.5\u21d2YES; mid<0.5\u21d2NO; mid==0.5 excluded",
+      "N_WR": 30,
+      "N_tie_excluded": 0,
+      "CI": {
+        "low": 0.3919700954540873,
+        "high": 0.7262276256938489,
+        "level": 0.95
+      },
+      "CI_method": "Wilson",
+      "Brier_model": "UNTESTED",
+      "LogLoss_model": "UNTESTED",
+      "Calibration": {
+        "reliability_table": {
+          "bins": [
+            {
+              "bin": "[0.02,0.50)",
+              "n": 15,
+              "mean_m": 0.405,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=15 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.50,0.55)",
+              "n": 6,
+              "mean_m": 0.5075,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=6 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.55,0.60)",
+              "n": 5,
+              "mean_m": 0.571,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=5 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.60,0.70)",
+              "n": 3,
+              "mean_m": 0.645,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=3 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.70,0.80)",
+              "n": 1,
+              "mean_m": 0.745,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=1 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.80,0.90)",
+              "n": 0,
+              "mean_m": "UNTESTED",
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=0 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.90,0.98)",
+              "n": 0,
+              "mean_m": "UNTESTED",
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=0 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            }
+          ],
+          "powered_bin_count": 0,
+          "min_n_per_bin": 20,
+          "pooling": false
+        },
+        "ECE": "UNTESTED",
+        "note": "powered calibration underpowered: N=30, powered_bins=0 (need \u22652 bins with n\u226520 and/or N\u2265100 for ECE); thin bins UNTESTED, not pooled"
+      },
+      "Brier_market": 0.22617749999999998,
+      "LogLoss_market": 0.642836930957859,
+      "LogLoss_eps": 1e-15,
+      "\u0394Brier": "UNTESTED",
+      "\u0394LogLoss": "UNTESTED",
+      "gap": "UNTESTED",
+      "EV_gross": "UNTESTED",
+      "EV_net": "UNTESTED",
+      "abstention_rate": "UNTESTED",
+      "cost_sensitivity": "UNTESTED",
+      "mean(m_t)": 0.4885,
+      "underpowered_calibration": true,
+      "cell_verdict": "FAIL-INSUFFICIENT",
+      "contract_ids_scored": [
+        "PROV-POLYGLOBAL-btc-updown-5m-1788887100",
+        "PROV-POLYGLOBAL-btc-updown-5m-1788896400",
+        "PROV-POLYGLOBAL-btc-updown-5m-1788905700",
+        "PROV-POLYGLOBAL-btc-updown-5m-1788915300",
+        "PROV-POLYGLOBAL-btc-updown-5m-1788924600",
+        "PROV-POLYGLOBAL-btc-updown-5m-1788933900",
+        "PROV-POLYGLOBAL-btc-updown-5m-1788943200",
+        "PROV-POLYGLOBAL-btc-updown-5m-1788952800",
+        "PROV-POLYGLOBAL-btc-updown-5m-1788962100",
+        "PROV-POLYGLOBAL-btc-updown-5m-1788971400",
+        "PROV-POLYGLOBAL-btc-updown-5m-1788980700",
+        "PROV-POLYGLOBAL-btc-updown-5m-1788990300",
+        "PROV-POLYGLOBAL-btc-updown-5m-1788999600",
+        "PROV-POLYGLOBAL-btc-updown-5m-1789008900",
+        "PROV-POLYGLOBAL-btc-updown-5m-1789018200",
+        "PROV-POLYGLOBAL-btc-updown-5m-1789027800",
+        "PROV-POLYGLOBAL-btc-updown-5m-1789037100",
+        "PROV-POLYGLOBAL-btc-updown-5m-1789046400",
+        "PROV-POLYGLOBAL-btc-updown-5m-1789056000",
+        "PROV-POLYGLOBAL-btc-updown-5m-1789065300",
+        "PROV-POLYGLOBAL-btc-updown-5m-1789074600",
+        "PROV-POLYGLOBAL-btc-updown-5m-1789083900",
+        "PROV-POLYGLOBAL-btc-updown-5m-1789093500",
+        "PROV-POLYGLOBAL-btc-updown-5m-1789102800",
+        "PROV-POLYGLOBAL-btc-updown-5m-1789112100",
+        "PROV-POLYGLOBAL-btc-updown-5m-1789121400",
+        "PROV-POLYGLOBAL-btc-updown-5m-1789131000",
+        "PROV-POLYGLOBAL-btc-updown-5m-1789140300",
+        "PROV-POLYGLOBAL-btc-updown-5m-1789149600",
+        "PROV-POLYGLOBAL-btc-updown-5m-1789158900"
+      ]
+    },
+    "POLYMARKET_GLOBAL|5m|BTC|T-3m|last": {
+      "N": 30,
+      "N_unit": "scored decision-events (checkpoint \u00d7 contract after filters)",
+      "contract_count": 30,
+      "distinct_utc_days": 4,
+      "span_utc": {
+        "min": "2026-09-08",
+        "max": "2026-09-11"
+      },
+      "WR": 0.7333333333333333,
+      "WR_definition": "mid>0.5\u21d2YES; mid<0.5\u21d2NO; mid==0.5 excluded",
+      "N_WR": 30,
+      "N_tie_excluded": 0,
+      "CI": {
+        "low": 0.5555169795568831,
+        "high": 0.8581750444608938,
+        "level": 0.95
+      },
+      "CI_method": "Wilson",
+      "Brier_model": "UNTESTED",
+      "LogLoss_model": "UNTESTED",
+      "Calibration": {
+        "reliability_table": {
+          "bins": [
+            {
+              "bin": "[0.02,0.50)",
+              "n": 16,
+              "mean_m": 0.323125,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=16 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.50,0.55)",
+              "n": 2,
+              "mean_m": 0.515,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=2 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.55,0.60)",
+              "n": 2,
+              "mean_m": 0.56,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=2 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.60,0.70)",
+              "n": 3,
+              "mean_m": 0.665,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=3 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.70,0.80)",
+              "n": 4,
+              "mean_m": 0.7575000000000001,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=4 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.80,0.90)",
+              "n": 3,
+              "mean_m": 0.835,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=3 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.90,0.98)",
+              "n": 0,
+              "mean_m": "UNTESTED",
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=0 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            }
+          ],
+          "powered_bin_count": 0,
+          "min_n_per_bin": 20,
+          "pooling": false
+        },
+        "ECE": "UNTESTED",
+        "note": "powered calibration underpowered: N=30, powered_bins=0 (need \u22652 bins with n\u226520 and/or N\u2265100 for ECE); thin bins UNTESTED, not pooled"
+      },
+      "Brier_market": 0.18989166666666665,
+      "LogLoss_market": 0.5604373352489536,
+      "LogLoss_eps": 1e-15,
+      "\u0394Brier": "UNTESTED",
+      "\u0394LogLoss": "UNTESTED",
+      "gap": "UNTESTED",
+      "EV_gross": "UNTESTED",
+      "EV_net": "UNTESTED",
+      "abstention_rate": "UNTESTED",
+      "cost_sensitivity": "UNTESTED",
+      "mean(m_t)": 0.495,
+      "underpowered_calibration": true,
+      "cell_verdict": "FAIL-INSUFFICIENT",
+      "contract_ids_scored": [
+        "PROV-POLYGLOBAL-btc-updown-5m-1788887100",
+        "PROV-POLYGLOBAL-btc-updown-5m-1788896400",
+        "PROV-POLYGLOBAL-btc-updown-5m-1788905700",
+        "PROV-POLYGLOBAL-btc-updown-5m-1788915300",
+        "PROV-POLYGLOBAL-btc-updown-5m-1788924600",
+        "PROV-POLYGLOBAL-btc-updown-5m-1788933900",
+        "PROV-POLYGLOBAL-btc-updown-5m-1788943200",
+        "PROV-POLYGLOBAL-btc-updown-5m-1788952800",
+        "PROV-POLYGLOBAL-btc-updown-5m-1788962100",
+        "PROV-POLYGLOBAL-btc-updown-5m-1788971400",
+        "PROV-POLYGLOBAL-btc-updown-5m-1788980700",
+        "PROV-POLYGLOBAL-btc-updown-5m-1788990300",
+        "PROV-POLYGLOBAL-btc-updown-5m-1788999600",
+        "PROV-POLYGLOBAL-btc-updown-5m-1789008900",
+        "PROV-POLYGLOBAL-btc-updown-5m-1789018200",
+        "PROV-POLYGLOBAL-btc-updown-5m-1789027800",
+        "PROV-POLYGLOBAL-btc-updown-5m-1789037100",
+        "PROV-POLYGLOBAL-btc-updown-5m-1789046400",
+        "PROV-POLYGLOBAL-btc-updown-5m-1789056000",
+        "PROV-POLYGLOBAL-btc-updown-5m-1789065300",
+        "PROV-POLYGLOBAL-btc-updown-5m-1789074600",
+        "PROV-POLYGLOBAL-btc-updown-5m-1789083900",
+        "PROV-POLYGLOBAL-btc-updown-5m-1789093500",
+        "PROV-POLYGLOBAL-btc-updown-5m-1789102800",
+        "PROV-POLYGLOBAL-btc-updown-5m-1789112100",
+        "PROV-POLYGLOBAL-btc-updown-5m-1789121400",
+        "PROV-POLYGLOBAL-btc-updown-5m-1789131000",
+        "PROV-POLYGLOBAL-btc-updown-5m-1789140300",
+        "PROV-POLYGLOBAL-btc-updown-5m-1789149600",
+        "PROV-POLYGLOBAL-btc-updown-5m-1789158900"
+      ]
+    },
+    "POLYMARKET_GLOBAL|5m|BTC|T-1m|last": {
+      "N": 25,
+      "N_unit": "scored decision-events (checkpoint \u00d7 contract after filters)",
+      "contract_count": 25,
+      "distinct_utc_days": 4,
+      "span_utc": {
+        "min": "2026-09-08",
+        "max": "2026-09-11"
+      },
+      "WR": 0.68,
+      "WR_definition": "mid>0.5\u21d2YES; mid<0.5\u21d2NO; mid==0.5 excluded",
+      "N_WR": 25,
+      "N_tie_excluded": 0,
+      "CI": "UNTESTED",
+      "CI_method": "Wilson",
+      "Brier_model": "UNTESTED",
+      "LogLoss_model": "UNTESTED",
+      "Calibration": {
+        "reliability_table": {
+          "bins": [
+            {
+              "bin": "[0.02,0.50)",
+              "n": 12,
+              "mean_m": 0.21583333333333332,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=12 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.50,0.55)",
+              "n": 2,
+              "mean_m": 0.52,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=2 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.55,0.60)",
+              "n": 1,
+              "mean_m": 0.555,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=1 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.60,0.70)",
+              "n": 3,
+              "mean_m": 0.6316666666666667,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=3 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.70,0.80)",
+              "n": 0,
+              "mean_m": "UNTESTED",
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=0 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.80,0.90)",
+              "n": 3,
+              "mean_m": 0.835,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=3 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.90,0.98)",
+              "n": 4,
+              "mean_m": 0.955,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=4 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            }
+          ],
+          "powered_bin_count": 0,
+          "min_n_per_bin": 20,
+          "pooling": false
+        },
+        "ECE": "UNTESTED",
+        "note": "powered calibration underpowered: N=25, powered_bins=0 (need \u22652 bins with n\u226520 and/or N\u2265100 for ECE); thin bins UNTESTED, not pooled"
+      },
+      "Brier_market": 0.199953,
+      "LogLoss_market": 0.5952661707576282,
+      "LogLoss_eps": 1e-15,
+      "\u0394Brier": "UNTESTED",
+      "\u0394LogLoss": "UNTESTED",
+      "gap": "UNTESTED",
+      "EV_gross": "UNTESTED",
+      "EV_net": "UNTESTED",
+      "abstention_rate": "UNTESTED",
+      "cost_sensitivity": "UNTESTED",
+      "mean(m_t)": 0.4962,
+      "underpowered_calibration": true,
+      "cell_verdict": "FAIL-INSUFFICIENT",
+      "contract_ids_scored": [
+        "PROV-POLYGLOBAL-btc-updown-5m-1788887100",
+        "PROV-POLYGLOBAL-btc-updown-5m-1788896400",
+        "PROV-POLYGLOBAL-btc-updown-5m-1788905700",
+        "PROV-POLYGLOBAL-btc-updown-5m-1788915300",
+        "PROV-POLYGLOBAL-btc-updown-5m-1788924600",
+        "PROV-POLYGLOBAL-btc-updown-5m-1788943200",
+        "PROV-POLYGLOBAL-btc-updown-5m-1788952800",
+        "PROV-POLYGLOBAL-btc-updown-5m-1788962100",
+        "PROV-POLYGLOBAL-btc-updown-5m-1788980700",
+        "PROV-POLYGLOBAL-btc-updown-5m-1788999600",
+        "PROV-POLYGLOBAL-btc-updown-5m-1789008900",
+        "PROV-POLYGLOBAL-btc-updown-5m-1789018200",
+        "PROV-POLYGLOBAL-btc-updown-5m-1789027800",
+        "PROV-POLYGLOBAL-btc-updown-5m-1789037100",
+        "PROV-POLYGLOBAL-btc-updown-5m-1789046400",
+        "PROV-POLYGLOBAL-btc-updown-5m-1789056000",
+        "PROV-POLYGLOBAL-btc-updown-5m-1789074600",
+        "PROV-POLYGLOBAL-btc-updown-5m-1789083900",
+        "PROV-POLYGLOBAL-btc-updown-5m-1789093500",
+        "PROV-POLYGLOBAL-btc-updown-5m-1789102800",
+        "PROV-POLYGLOBAL-btc-updown-5m-1789112100",
+        "PROV-POLYGLOBAL-btc-updown-5m-1789121400",
+        "PROV-POLYGLOBAL-btc-updown-5m-1789131000",
+        "PROV-POLYGLOBAL-btc-updown-5m-1789140300",
+        "PROV-POLYGLOBAL-btc-updown-5m-1789158900"
+      ]
+    },
+    "POLYMARKET_GLOBAL|5m|ETH|T-4m|last": {
+      "N": 30,
+      "N_unit": "scored decision-events (checkpoint \u00d7 contract after filters)",
+      "contract_count": 30,
+      "distinct_utc_days": 4,
+      "span_utc": {
+        "min": "2026-09-08",
+        "max": "2026-09-11"
+      },
+      "WR": 0.5333333333333333,
+      "WR_definition": "mid>0.5\u21d2YES; mid<0.5\u21d2NO; mid==0.5 excluded",
+      "N_WR": 30,
+      "N_tie_excluded": 0,
+      "CI": {
+        "low": 0.3614201328152505,
+        "high": 0.6976787277587178,
+        "level": 0.95
+      },
+      "CI_method": "Wilson",
+      "Brier_model": "UNTESTED",
+      "LogLoss_model": "UNTESTED",
+      "Calibration": {
+        "reliability_table": {
+          "bins": [
+            {
+              "bin": "[0.02,0.50)",
+              "n": 15,
+              "mean_m": 0.43633333333333335,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=15 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.50,0.55)",
+              "n": 7,
+              "mean_m": 0.5221428571428571,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=7 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.55,0.60)",
+              "n": 5,
+              "mean_m": 0.577,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=5 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.60,0.70)",
+              "n": 2,
+              "mean_m": 0.635,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=2 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.70,0.80)",
+              "n": 1,
+              "mean_m": 0.71,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=1 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.80,0.90)",
+              "n": 0,
+              "mean_m": "UNTESTED",
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=0 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.90,0.98)",
+              "n": 0,
+              "mean_m": "UNTESTED",
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=0 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            }
+          ],
+          "powered_bin_count": 0,
+          "min_n_per_bin": 20,
+          "pooling": false
+        },
+        "ECE": "UNTESTED",
+        "note": "powered calibration underpowered: N=30, powered_bins=0 (need \u22652 bins with n\u226520 and/or N\u2265100 for ECE); thin bins UNTESTED, not pooled"
+      },
+      "Brier_market": 0.23820083333333333,
+      "LogLoss_market": 0.6684828010732059,
+      "LogLoss_eps": 1e-15,
+      "\u0394Brier": "UNTESTED",
+      "\u0394LogLoss": "UNTESTED",
+      "gap": "UNTESTED",
+      "EV_gross": "UNTESTED",
+      "EV_net": "UNTESTED",
+      "abstention_rate": "UNTESTED",
+      "cost_sensitivity": "UNTESTED",
+      "mean(m_t)": 0.5021666666666667,
+      "underpowered_calibration": true,
+      "cell_verdict": "FAIL-INSUFFICIENT",
+      "contract_ids_scored": [
+        "PROV-POLYGLOBAL-eth-updown-5m-1788887700",
+        "PROV-POLYGLOBAL-eth-updown-5m-1788897000",
+        "PROV-POLYGLOBAL-eth-updown-5m-1788906300",
+        "PROV-POLYGLOBAL-eth-updown-5m-1788915600",
+        "PROV-POLYGLOBAL-eth-updown-5m-1788924900",
+        "PROV-POLYGLOBAL-eth-updown-5m-1788934200",
+        "PROV-POLYGLOBAL-eth-updown-5m-1788944100",
+        "PROV-POLYGLOBAL-eth-updown-5m-1788953400",
+        "PROV-POLYGLOBAL-eth-updown-5m-1788962700",
+        "PROV-POLYGLOBAL-eth-updown-5m-1788972000",
+        "PROV-POLYGLOBAL-eth-updown-5m-1788981300",
+        "PROV-POLYGLOBAL-eth-updown-5m-1788990600",
+        "PROV-POLYGLOBAL-eth-updown-5m-1789000200",
+        "PROV-POLYGLOBAL-eth-updown-5m-1789009500",
+        "PROV-POLYGLOBAL-eth-updown-5m-1789018800",
+        "PROV-POLYGLOBAL-eth-updown-5m-1789028100",
+        "PROV-POLYGLOBAL-eth-updown-5m-1789037400",
+        "PROV-POLYGLOBAL-eth-updown-5m-1789046700",
+        "PROV-POLYGLOBAL-eth-updown-5m-1789056300",
+        "PROV-POLYGLOBAL-eth-updown-5m-1789065600",
+        "PROV-POLYGLOBAL-eth-updown-5m-1789074900",
+        "PROV-POLYGLOBAL-eth-updown-5m-1789084200",
+        "PROV-POLYGLOBAL-eth-updown-5m-1789093500",
+        "PROV-POLYGLOBAL-eth-updown-5m-1789102800",
+        "PROV-POLYGLOBAL-eth-updown-5m-1789112400",
+        "PROV-POLYGLOBAL-eth-updown-5m-1789121700",
+        "PROV-POLYGLOBAL-eth-updown-5m-1789131000",
+        "PROV-POLYGLOBAL-eth-updown-5m-1789140300",
+        "PROV-POLYGLOBAL-eth-updown-5m-1789149600",
+        "PROV-POLYGLOBAL-eth-updown-5m-1789158900"
+      ]
+    },
+    "POLYMARKET_GLOBAL|5m|ETH|T-3m|last": {
+      "N": 30,
+      "N_unit": "scored decision-events (checkpoint \u00d7 contract after filters)",
+      "contract_count": 30,
+      "distinct_utc_days": 4,
+      "span_utc": {
+        "min": "2026-09-08",
+        "max": "2026-09-11"
+      },
+      "WR": 0.8333333333333334,
+      "WR_definition": "mid>0.5\u21d2YES; mid<0.5\u21d2NO; mid==0.5 excluded",
+      "N_WR": 30,
+      "N_tie_excluded": 0,
+      "CI": {
+        "low": 0.6643529481431982,
+        "high": 0.9266356575964831,
+        "level": 0.95
+      },
+      "CI_method": "Wilson",
+      "Brier_model": "UNTESTED",
+      "LogLoss_model": "UNTESTED",
+      "Calibration": {
+        "reliability_table": {
+          "bins": [
+            {
+              "bin": "[0.02,0.50)",
+              "n": 16,
+              "mean_m": 0.3484375,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=16 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.50,0.55)",
+              "n": 3,
+              "mean_m": 0.5316666666666667,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=3 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.55,0.60)",
+              "n": 2,
+              "mean_m": 0.565,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=2 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.60,0.70)",
+              "n": 5,
+              "mean_m": 0.639,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=5 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.70,0.80)",
+              "n": 1,
+              "mean_m": 0.795,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=1 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.80,0.90)",
+              "n": 2,
+              "mean_m": 0.8274999999999999,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=2 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.90,0.98)",
+              "n": 1,
+              "mean_m": 0.905,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=1 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            }
+          ],
+          "powered_bin_count": 0,
+          "min_n_per_bin": 20,
+          "pooling": false
+        },
+        "ECE": "UNTESTED",
+        "note": "powered calibration underpowered: N=30, powered_bins=0 (need \u22652 bins with n\u226520 and/or N\u2265100 for ECE); thin bins UNTESTED, not pooled"
+      },
+      "Brier_market": 0.16634333333333334,
+      "LogLoss_market": 0.5100677435221479,
+      "LogLoss_eps": 1e-15,
+      "\u0394Brier": "UNTESTED",
+      "\u0394LogLoss": "UNTESTED",
+      "gap": "UNTESTED",
+      "EV_gross": "UNTESTED",
+      "EV_net": "UNTESTED",
+      "abstention_rate": "UNTESTED",
+      "cost_sensitivity": "UNTESTED",
+      "mean(m_t)": 0.495,
+      "underpowered_calibration": true,
+      "cell_verdict": "FAIL-INSUFFICIENT",
+      "contract_ids_scored": [
+        "PROV-POLYGLOBAL-eth-updown-5m-1788887700",
+        "PROV-POLYGLOBAL-eth-updown-5m-1788897000",
+        "PROV-POLYGLOBAL-eth-updown-5m-1788906300",
+        "PROV-POLYGLOBAL-eth-updown-5m-1788915600",
+        "PROV-POLYGLOBAL-eth-updown-5m-1788924900",
+        "PROV-POLYGLOBAL-eth-updown-5m-1788934200",
+        "PROV-POLYGLOBAL-eth-updown-5m-1788944100",
+        "PROV-POLYGLOBAL-eth-updown-5m-1788953400",
+        "PROV-POLYGLOBAL-eth-updown-5m-1788962700",
+        "PROV-POLYGLOBAL-eth-updown-5m-1788972000",
+        "PROV-POLYGLOBAL-eth-updown-5m-1788981300",
+        "PROV-POLYGLOBAL-eth-updown-5m-1788990600",
+        "PROV-POLYGLOBAL-eth-updown-5m-1789000200",
+        "PROV-POLYGLOBAL-eth-updown-5m-1789009500",
+        "PROV-POLYGLOBAL-eth-updown-5m-1789018800",
+        "PROV-POLYGLOBAL-eth-updown-5m-1789028100",
+        "PROV-POLYGLOBAL-eth-updown-5m-1789037400",
+        "PROV-POLYGLOBAL-eth-updown-5m-1789046700",
+        "PROV-POLYGLOBAL-eth-updown-5m-1789056300",
+        "PROV-POLYGLOBAL-eth-updown-5m-1789065600",
+        "PROV-POLYGLOBAL-eth-updown-5m-1789074900",
+        "PROV-POLYGLOBAL-eth-updown-5m-1789084200",
+        "PROV-POLYGLOBAL-eth-updown-5m-1789093500",
+        "PROV-POLYGLOBAL-eth-updown-5m-1789102800",
+        "PROV-POLYGLOBAL-eth-updown-5m-1789112400",
+        "PROV-POLYGLOBAL-eth-updown-5m-1789121700",
+        "PROV-POLYGLOBAL-eth-updown-5m-1789131000",
+        "PROV-POLYGLOBAL-eth-updown-5m-1789140300",
+        "PROV-POLYGLOBAL-eth-updown-5m-1789149600",
+        "PROV-POLYGLOBAL-eth-updown-5m-1789158900"
+      ]
+    },
+    "POLYMARKET_GLOBAL|5m|ETH|T-1m|last": {
+      "N": 27,
+      "N_unit": "scored decision-events (checkpoint \u00d7 contract after filters)",
+      "contract_count": 27,
+      "distinct_utc_days": 4,
+      "span_utc": {
+        "min": "2026-09-08",
+        "max": "2026-09-11"
+      },
+      "WR": 0.8148148148148148,
+      "WR_definition": "mid>0.5\u21d2YES; mid<0.5\u21d2NO; mid==0.5 excluded",
+      "N_WR": 27,
+      "N_tie_excluded": 0,
+      "CI": "UNTESTED",
+      "CI_method": "Wilson",
+      "Brier_model": "UNTESTED",
+      "LogLoss_model": "UNTESTED",
+      "Calibration": {
+        "reliability_table": {
+          "bins": [
+            {
+              "bin": "[0.02,0.50)",
+              "n": 17,
+              "mean_m": 0.23441176470588235,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=17 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.50,0.55)",
+              "n": 1,
+              "mean_m": 0.535,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=1 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.55,0.60)",
+              "n": 1,
+              "mean_m": 0.595,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=1 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.60,0.70)",
+              "n": 2,
+              "mean_m": 0.645,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=2 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.70,0.80)",
+              "n": 2,
+              "mean_m": 0.715,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=2 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.80,0.90)",
+              "n": 4,
+              "mean_m": 0.8725,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=4 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.90,0.98)",
+              "n": 0,
+              "mean_m": "UNTESTED",
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=0 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            }
+          ],
+          "powered_bin_count": 0,
+          "min_n_per_bin": 20,
+          "pooling": false
+        },
+        "ECE": "UNTESTED",
+        "note": "powered calibration underpowered: N=27, powered_bins=0 (need \u22652 bins with n\u226520 and/or N\u2265100 for ECE); thin bins UNTESTED, not pooled"
+      },
+      "Brier_market": 0.11956018518518519,
+      "LogLoss_market": 0.38222751795289656,
+      "LogLoss_eps": 1e-15,
+      "\u0394Brier": "UNTESTED",
+      "\u0394LogLoss": "UNTESTED",
+      "gap": "UNTESTED",
+      "EV_gross": "UNTESTED",
+      "EV_net": "UNTESTED",
+      "abstention_rate": "UNTESTED",
+      "cost_sensitivity": "UNTESTED",
+      "mean(m_t)": 0.4194444444444444,
+      "underpowered_calibration": true,
+      "cell_verdict": "FAIL-INSUFFICIENT",
+      "contract_ids_scored": [
+        "PROV-POLYGLOBAL-eth-updown-5m-1788887700",
+        "PROV-POLYGLOBAL-eth-updown-5m-1788897000",
+        "PROV-POLYGLOBAL-eth-updown-5m-1788906300",
+        "PROV-POLYGLOBAL-eth-updown-5m-1788915600",
+        "PROV-POLYGLOBAL-eth-updown-5m-1788924900",
+        "PROV-POLYGLOBAL-eth-updown-5m-1788944100",
+        "PROV-POLYGLOBAL-eth-updown-5m-1788953400",
+        "PROV-POLYGLOBAL-eth-updown-5m-1788962700",
+        "PROV-POLYGLOBAL-eth-updown-5m-1788972000",
+        "PROV-POLYGLOBAL-eth-updown-5m-1788981300",
+        "PROV-POLYGLOBAL-eth-updown-5m-1788990600",
+        "PROV-POLYGLOBAL-eth-updown-5m-1789000200",
+        "PROV-POLYGLOBAL-eth-updown-5m-1789009500",
+        "PROV-POLYGLOBAL-eth-updown-5m-1789018800",
+        "PROV-POLYGLOBAL-eth-updown-5m-1789028100",
+        "PROV-POLYGLOBAL-eth-updown-5m-1789037400",
+        "PROV-POLYGLOBAL-eth-updown-5m-1789046700",
+        "PROV-POLYGLOBAL-eth-updown-5m-1789056300",
+        "PROV-POLYGLOBAL-eth-updown-5m-1789065600",
+        "PROV-POLYGLOBAL-eth-updown-5m-1789074900",
+        "PROV-POLYGLOBAL-eth-updown-5m-1789084200",
+        "PROV-POLYGLOBAL-eth-updown-5m-1789093500",
+        "PROV-POLYGLOBAL-eth-updown-5m-1789102800",
+        "PROV-POLYGLOBAL-eth-updown-5m-1789112400",
+        "PROV-POLYGLOBAL-eth-updown-5m-1789121700",
+        "PROV-POLYGLOBAL-eth-updown-5m-1789131000",
+        "PROV-POLYGLOBAL-eth-updown-5m-1789140300"
+      ]
+    },
+    "POLYMARKET_GLOBAL|15m|BTC|T-14m|last": {
+      "N": 30,
+      "N_unit": "scored decision-events (checkpoint \u00d7 contract after filters)",
+      "contract_count": 30,
+      "distinct_utc_days": 4,
+      "span_utc": {
+        "min": "2026-09-08",
+        "max": "2026-09-11"
+      },
+      "WR": 0.5333333333333333,
+      "WR_definition": "mid>0.5\u21d2YES; mid<0.5\u21d2NO; mid==0.5 excluded",
+      "N_WR": 30,
+      "N_tie_excluded": 0,
+      "CI": {
+        "low": 0.3614201328152505,
+        "high": 0.6976787277587178,
+        "level": 0.95
+      },
+      "CI_method": "Wilson",
+      "Brier_model": "UNTESTED",
+      "LogLoss_model": "UNTESTED",
+      "Calibration": {
+        "reliability_table": {
+          "bins": [
+            {
+              "bin": "[0.02,0.50)",
+              "n": 14,
+              "mean_m": 0.42642857142857143,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=14 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.50,0.55)",
+              "n": 11,
+              "mean_m": 0.5204545454545455,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=11 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.55,0.60)",
+              "n": 4,
+              "mean_m": 0.5625,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=4 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.60,0.70)",
+              "n": 1,
+              "mean_m": 0.605,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=1 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.70,0.80)",
+              "n": 0,
+              "mean_m": "UNTESTED",
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=0 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.80,0.90)",
+              "n": 0,
+              "mean_m": "UNTESTED",
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=0 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.90,0.98)",
+              "n": 0,
+              "mean_m": "UNTESTED",
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=0 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            }
+          ],
+          "powered_bin_count": 0,
+          "min_n_per_bin": 20,
+          "pooling": false
+        },
+        "ECE": "UNTESTED",
+        "note": "powered calibration underpowered: N=30, powered_bins=0 (need \u22652 bins with n\u226520 and/or N\u2265100 for ECE); thin bins UNTESTED, not pooled"
+      },
+      "Brier_market": 0.2671516666666667,
+      "LogLoss_market": 0.7357819154360502,
+      "LogLoss_eps": 1e-15,
+      "\u0394Brier": "UNTESTED",
+      "\u0394LogLoss": "UNTESTED",
+      "gap": "UNTESTED",
+      "EV_gross": "UNTESTED",
+      "EV_net": "UNTESTED",
+      "abstention_rate": "UNTESTED",
+      "cost_sensitivity": "UNTESTED",
+      "mean(m_t)": 0.48500000000000004,
+      "underpowered_calibration": true,
+      "cell_verdict": "FAIL-INSUFFICIENT",
+      "contract_ids_scored": [
+        "PROV-POLYGLOBAL-btc-updown-15m-1788886800",
+        "PROV-POLYGLOBAL-btc-updown-15m-1788895800",
+        "PROV-POLYGLOBAL-btc-updown-15m-1788905700",
+        "PROV-POLYGLOBAL-btc-updown-15m-1788914700",
+        "PROV-POLYGLOBAL-btc-updown-15m-1788923700",
+        "PROV-POLYGLOBAL-btc-updown-15m-1788933600",
+        "PROV-POLYGLOBAL-btc-updown-15m-1788942600",
+        "PROV-POLYGLOBAL-btc-updown-15m-1788952500",
+        "PROV-POLYGLOBAL-btc-updown-15m-1788961500",
+        "PROV-POLYGLOBAL-btc-updown-15m-1788970500",
+        "PROV-POLYGLOBAL-btc-updown-15m-1788980400",
+        "PROV-POLYGLOBAL-btc-updown-15m-1788989400",
+        "PROV-POLYGLOBAL-btc-updown-15m-1788999300",
+        "PROV-POLYGLOBAL-btc-updown-15m-1789008300",
+        "PROV-POLYGLOBAL-btc-updown-15m-1789017300",
+        "PROV-POLYGLOBAL-btc-updown-15m-1789027200",
+        "PROV-POLYGLOBAL-btc-updown-15m-1789036200",
+        "PROV-POLYGLOBAL-btc-updown-15m-1789046100",
+        "PROV-POLYGLOBAL-btc-updown-15m-1789055100",
+        "PROV-POLYGLOBAL-btc-updown-15m-1789064100",
+        "PROV-POLYGLOBAL-btc-updown-15m-1789074000",
+        "PROV-POLYGLOBAL-btc-updown-15m-1789083000",
+        "PROV-POLYGLOBAL-btc-updown-15m-1789092900",
+        "PROV-POLYGLOBAL-btc-updown-15m-1789101900",
+        "PROV-POLYGLOBAL-btc-updown-15m-1789110900",
+        "PROV-POLYGLOBAL-btc-updown-15m-1789120800",
+        "PROV-POLYGLOBAL-btc-updown-15m-1789129800",
+        "PROV-POLYGLOBAL-btc-updown-15m-1789139700",
+        "PROV-POLYGLOBAL-btc-updown-15m-1789148700",
+        "PROV-POLYGLOBAL-btc-updown-15m-1789157700"
+      ]
+    },
+    "POLYMARKET_GLOBAL|15m|BTC|T-10m|last": {
+      "N": 30,
+      "N_unit": "scored decision-events (checkpoint \u00d7 contract after filters)",
+      "contract_count": 30,
+      "distinct_utc_days": 4,
+      "span_utc": {
+        "min": "2026-09-08",
+        "max": "2026-09-11"
+      },
+      "WR": 0.5666666666666667,
+      "WR_definition": "mid>0.5\u21d2YES; mid<0.5\u21d2NO; mid==0.5 excluded",
+      "N_WR": 30,
+      "N_tie_excluded": 0,
+      "CI": {
+        "low": 0.3919700954540873,
+        "high": 0.7262276256938489,
+        "level": 0.95
+      },
+      "CI_method": "Wilson",
+      "Brier_model": "UNTESTED",
+      "LogLoss_model": "UNTESTED",
+      "Calibration": {
+        "reliability_table": {
+          "bins": [
+            {
+              "bin": "[0.02,0.50)",
+              "n": 15,
+              "mean_m": 0.29766666666666663,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=15 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.50,0.55)",
+              "n": 2,
+              "mean_m": 0.505,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=2 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.55,0.60)",
+              "n": 5,
+              "mean_m": 0.577,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=5 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.60,0.70)",
+              "n": 3,
+              "mean_m": 0.6383333333333333,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=3 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.70,0.80)",
+              "n": 4,
+              "mean_m": 0.765,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=4 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.80,0.90)",
+              "n": 1,
+              "mean_m": 0.805,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=1 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.90,0.98)",
+              "n": 0,
+              "mean_m": "UNTESTED",
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=0 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            }
+          ],
+          "powered_bin_count": 0,
+          "min_n_per_bin": 20,
+          "pooling": false
+        },
+        "ECE": "UNTESTED",
+        "note": "powered calibration underpowered: N=30, powered_bins=0 (need \u22652 bins with n\u226520 and/or N\u2265100 for ECE); thin bins UNTESTED, not pooled"
+      },
+      "Brier_market": 0.263245,
+      "LogLoss_market": 0.7380739206302459,
+      "LogLoss_eps": 1e-15,
+      "\u0394Brier": "UNTESTED",
+      "\u0394LogLoss": "UNTESTED",
+      "gap": "UNTESTED",
+      "EV_gross": "UNTESTED",
+      "EV_net": "UNTESTED",
+      "abstention_rate": "UNTESTED",
+      "cost_sensitivity": "UNTESTED",
+      "mean(m_t)": 0.4713333333333333,
+      "underpowered_calibration": true,
+      "cell_verdict": "FAIL-INSUFFICIENT",
+      "contract_ids_scored": [
+        "PROV-POLYGLOBAL-btc-updown-15m-1788886800",
+        "PROV-POLYGLOBAL-btc-updown-15m-1788895800",
+        "PROV-POLYGLOBAL-btc-updown-15m-1788905700",
+        "PROV-POLYGLOBAL-btc-updown-15m-1788914700",
+        "PROV-POLYGLOBAL-btc-updown-15m-1788923700",
+        "PROV-POLYGLOBAL-btc-updown-15m-1788933600",
+        "PROV-POLYGLOBAL-btc-updown-15m-1788942600",
+        "PROV-POLYGLOBAL-btc-updown-15m-1788952500",
+        "PROV-POLYGLOBAL-btc-updown-15m-1788961500",
+        "PROV-POLYGLOBAL-btc-updown-15m-1788970500",
+        "PROV-POLYGLOBAL-btc-updown-15m-1788980400",
+        "PROV-POLYGLOBAL-btc-updown-15m-1788989400",
+        "PROV-POLYGLOBAL-btc-updown-15m-1788999300",
+        "PROV-POLYGLOBAL-btc-updown-15m-1789008300",
+        "PROV-POLYGLOBAL-btc-updown-15m-1789017300",
+        "PROV-POLYGLOBAL-btc-updown-15m-1789027200",
+        "PROV-POLYGLOBAL-btc-updown-15m-1789036200",
+        "PROV-POLYGLOBAL-btc-updown-15m-1789046100",
+        "PROV-POLYGLOBAL-btc-updown-15m-1789055100",
+        "PROV-POLYGLOBAL-btc-updown-15m-1789064100",
+        "PROV-POLYGLOBAL-btc-updown-15m-1789074000",
+        "PROV-POLYGLOBAL-btc-updown-15m-1789083000",
+        "PROV-POLYGLOBAL-btc-updown-15m-1789092900",
+        "PROV-POLYGLOBAL-btc-updown-15m-1789101900",
+        "PROV-POLYGLOBAL-btc-updown-15m-1789110900",
+        "PROV-POLYGLOBAL-btc-updown-15m-1789120800",
+        "PROV-POLYGLOBAL-btc-updown-15m-1789129800",
+        "PROV-POLYGLOBAL-btc-updown-15m-1789139700",
+        "PROV-POLYGLOBAL-btc-updown-15m-1789148700",
+        "PROV-POLYGLOBAL-btc-updown-15m-1789157700"
+      ]
+    },
+    "POLYMARKET_GLOBAL|15m|BTC|T-5m|last": {
+      "N": 30,
+      "N_unit": "scored decision-events (checkpoint \u00d7 contract after filters)",
+      "contract_count": 30,
+      "distinct_utc_days": 4,
+      "span_utc": {
+        "min": "2026-09-08",
+        "max": "2026-09-11"
+      },
+      "WR": 0.8,
+      "WR_definition": "mid>0.5\u21d2YES; mid<0.5\u21d2NO; mid==0.5 excluded",
+      "N_WR": 30,
+      "N_tie_excluded": 0,
+      "CI": {
+        "low": 0.6269395261897256,
+        "high": 0.9049502189759876,
+        "level": 0.95
+      },
+      "CI_method": "Wilson",
+      "Brier_model": "UNTESTED",
+      "LogLoss_model": "UNTESTED",
+      "Calibration": {
+        "reliability_table": {
+          "bins": [
+            {
+              "bin": "[0.02,0.50)",
+              "n": 12,
+              "mean_m": 0.27291666666666664,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=12 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.50,0.55)",
+              "n": 0,
+              "mean_m": "UNTESTED",
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=0 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.55,0.60)",
+              "n": 2,
+              "mean_m": 0.585,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=2 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.60,0.70)",
+              "n": 5,
+              "mean_m": 0.658,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=5 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.70,0.80)",
+              "n": 2,
+              "mean_m": 0.75,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=2 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.80,0.90)",
+              "n": 6,
+              "mean_m": 0.8616666666666667,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=6 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.90,0.98)",
+              "n": 3,
+              "mean_m": 0.9283333333333333,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=3 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            }
+          ],
+          "powered_bin_count": 0,
+          "min_n_per_bin": 20,
+          "pooling": false
+        },
+        "ECE": "UNTESTED",
+        "note": "powered calibration underpowered: N=30, powered_bins=0 (need \u22652 bins with n\u226520 and/or N\u2265100 for ECE); thin bins UNTESTED, not pooled"
+      },
+      "Brier_market": 0.15571000000000002,
+      "LogLoss_market": 0.47254527428619836,
+      "LogLoss_eps": 1e-15,
+      "\u0394Brier": "UNTESTED",
+      "\u0394LogLoss": "UNTESTED",
+      "gap": "UNTESTED",
+      "EV_gross": "UNTESTED",
+      "EV_net": "UNTESTED",
+      "abstention_rate": "UNTESTED",
+      "cost_sensitivity": "UNTESTED",
+      "mean(m_t)": 0.5730000000000001,
+      "underpowered_calibration": true,
+      "cell_verdict": "FAIL-INSUFFICIENT",
+      "contract_ids_scored": [
+        "PROV-POLYGLOBAL-btc-updown-15m-1788886800",
+        "PROV-POLYGLOBAL-btc-updown-15m-1788895800",
+        "PROV-POLYGLOBAL-btc-updown-15m-1788905700",
+        "PROV-POLYGLOBAL-btc-updown-15m-1788914700",
+        "PROV-POLYGLOBAL-btc-updown-15m-1788923700",
+        "PROV-POLYGLOBAL-btc-updown-15m-1788933600",
+        "PROV-POLYGLOBAL-btc-updown-15m-1788942600",
+        "PROV-POLYGLOBAL-btc-updown-15m-1788952500",
+        "PROV-POLYGLOBAL-btc-updown-15m-1788961500",
+        "PROV-POLYGLOBAL-btc-updown-15m-1788970500",
+        "PROV-POLYGLOBAL-btc-updown-15m-1788980400",
+        "PROV-POLYGLOBAL-btc-updown-15m-1788989400",
+        "PROV-POLYGLOBAL-btc-updown-15m-1788999300",
+        "PROV-POLYGLOBAL-btc-updown-15m-1789008300",
+        "PROV-POLYGLOBAL-btc-updown-15m-1789017300",
+        "PROV-POLYGLOBAL-btc-updown-15m-1789027200",
+        "PROV-POLYGLOBAL-btc-updown-15m-1789036200",
+        "PROV-POLYGLOBAL-btc-updown-15m-1789046100",
+        "PROV-POLYGLOBAL-btc-updown-15m-1789055100",
+        "PROV-POLYGLOBAL-btc-updown-15m-1789064100",
+        "PROV-POLYGLOBAL-btc-updown-15m-1789074000",
+        "PROV-POLYGLOBAL-btc-updown-15m-1789083000",
+        "PROV-POLYGLOBAL-btc-updown-15m-1789092900",
+        "PROV-POLYGLOBAL-btc-updown-15m-1789101900",
+        "PROV-POLYGLOBAL-btc-updown-15m-1789110900",
+        "PROV-POLYGLOBAL-btc-updown-15m-1789120800",
+        "PROV-POLYGLOBAL-btc-updown-15m-1789129800",
+        "PROV-POLYGLOBAL-btc-updown-15m-1789139700",
+        "PROV-POLYGLOBAL-btc-updown-15m-1789148700",
+        "PROV-POLYGLOBAL-btc-updown-15m-1789157700"
+      ]
+    },
+    "POLYMARKET_GLOBAL|15m|BTC|T-1m|last": {
+      "N": 22,
+      "N_unit": "scored decision-events (checkpoint \u00d7 contract after filters)",
+      "contract_count": 22,
+      "distinct_utc_days": 4,
+      "span_utc": {
+        "min": "2026-09-08",
+        "max": "2026-09-11"
+      },
+      "WR": 0.7272727272727273,
+      "WR_definition": "mid>0.5\u21d2YES; mid<0.5\u21d2NO; mid==0.5 excluded",
+      "N_WR": 22,
+      "N_tie_excluded": 0,
+      "CI": "UNTESTED",
+      "CI_method": "Wilson",
+      "Brier_model": "UNTESTED",
+      "LogLoss_model": "UNTESTED",
+      "Calibration": {
+        "reliability_table": {
+          "bins": [
+            {
+              "bin": "[0.02,0.50)",
+              "n": 11,
+              "mean_m": 0.273,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=11 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.50,0.55)",
+              "n": 3,
+              "mean_m": 0.5283333333333333,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=3 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.55,0.60)",
+              "n": 0,
+              "mean_m": "UNTESTED",
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=0 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.60,0.70)",
+              "n": 0,
+              "mean_m": "UNTESTED",
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=0 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.70,0.80)",
+              "n": 2,
+              "mean_m": 0.76,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=2 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.80,0.90)",
+              "n": 2,
+              "mean_m": 0.86,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=2 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.90,0.98)",
+              "n": 4,
+              "mean_m": 0.9475,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=4 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            }
+          ],
+          "powered_bin_count": 0,
+          "min_n_per_bin": 20,
+          "pooling": false
+        },
+        "ECE": "UNTESTED",
+        "note": "powered calibration underpowered: N=22, powered_bins=0 (need \u22652 bins with n\u226520 and/or N\u2265100 for ECE); thin bins UNTESTED, not pooled"
+      },
+      "Brier_market": 0.18716654545454545,
+      "LogLoss_market": 0.5408828853821701,
+      "LogLoss_eps": 1e-15,
+      "\u0394Brier": "UNTESTED",
+      "\u0394LogLoss": "UNTESTED",
+      "gap": "UNTESTED",
+      "EV_gross": "UNTESTED",
+      "EV_net": "UNTESTED",
+      "abstention_rate": "UNTESTED",
+      "cost_sensitivity": "UNTESTED",
+      "mean(m_t)": 0.528090909090909,
+      "underpowered_calibration": true,
+      "cell_verdict": "FAIL-INSUFFICIENT",
+      "contract_ids_scored": [
+        "PROV-POLYGLOBAL-btc-updown-15m-1788886800",
+        "PROV-POLYGLOBAL-btc-updown-15m-1788895800",
+        "PROV-POLYGLOBAL-btc-updown-15m-1788905700",
+        "PROV-POLYGLOBAL-btc-updown-15m-1788923700",
+        "PROV-POLYGLOBAL-btc-updown-15m-1788942600",
+        "PROV-POLYGLOBAL-btc-updown-15m-1788961500",
+        "PROV-POLYGLOBAL-btc-updown-15m-1788970500",
+        "PROV-POLYGLOBAL-btc-updown-15m-1788980400",
+        "PROV-POLYGLOBAL-btc-updown-15m-1788989400",
+        "PROV-POLYGLOBAL-btc-updown-15m-1788999300",
+        "PROV-POLYGLOBAL-btc-updown-15m-1789017300",
+        "PROV-POLYGLOBAL-btc-updown-15m-1789027200",
+        "PROV-POLYGLOBAL-btc-updown-15m-1789036200",
+        "PROV-POLYGLOBAL-btc-updown-15m-1789046100",
+        "PROV-POLYGLOBAL-btc-updown-15m-1789055100",
+        "PROV-POLYGLOBAL-btc-updown-15m-1789074000",
+        "PROV-POLYGLOBAL-btc-updown-15m-1789083000",
+        "PROV-POLYGLOBAL-btc-updown-15m-1789101900",
+        "PROV-POLYGLOBAL-btc-updown-15m-1789110900",
+        "PROV-POLYGLOBAL-btc-updown-15m-1789120800",
+        "PROV-POLYGLOBAL-btc-updown-15m-1789148700",
+        "PROV-POLYGLOBAL-btc-updown-15m-1789157700"
+      ]
+    },
+    "POLYMARKET_GLOBAL|15m|ETH|T-14m|last": {
+      "N": 30,
+      "N_unit": "scored decision-events (checkpoint \u00d7 contract after filters)",
+      "contract_count": 30,
+      "distinct_utc_days": 4,
+      "span_utc": {
+        "min": "2026-09-08",
+        "max": "2026-09-11"
+      },
+      "WR": 0.7666666666666667,
+      "WR_definition": "mid>0.5\u21d2YES; mid<0.5\u21d2NO; mid==0.5 excluded",
+      "N_WR": 30,
+      "N_tie_excluded": 0,
+      "CI": {
+        "low": 0.5907132766967574,
+        "high": 0.8820776078949878,
+        "level": 0.95
+      },
+      "CI_method": "Wilson",
+      "Brier_model": "UNTESTED",
+      "LogLoss_model": "UNTESTED",
+      "Calibration": {
+        "reliability_table": {
+          "bins": [
+            {
+              "bin": "[0.02,0.50)",
+              "n": 18,
+              "mean_m": 0.4330555555555555,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=18 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.50,0.55)",
+              "n": 7,
+              "mean_m": 0.5342857142857144,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=7 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.55,0.60)",
+              "n": 4,
+              "mean_m": 0.575,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=4 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.60,0.70)",
+              "n": 1,
+              "mean_m": 0.625,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=1 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.70,0.80)",
+              "n": 0,
+              "mean_m": "UNTESTED",
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=0 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.80,0.90)",
+              "n": 0,
+              "mean_m": "UNTESTED",
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=0 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.90,0.98)",
+              "n": 0,
+              "mean_m": "UNTESTED",
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=0 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            }
+          ],
+          "powered_bin_count": 0,
+          "min_n_per_bin": 20,
+          "pooling": false
+        },
+        "ECE": "UNTESTED",
+        "note": "powered calibration underpowered: N=30, powered_bins=0 (need \u22652 bins with n\u226520 and/or N\u2265100 for ECE); thin bins UNTESTED, not pooled"
+      },
+      "Brier_market": 0.24079833333333334,
+      "LogLoss_market": 0.6808415082656026,
+      "LogLoss_eps": 1e-15,
+      "\u0394Brier": "UNTESTED",
+      "\u0394LogLoss": "UNTESTED",
+      "gap": "UNTESTED",
+      "EV_gross": "UNTESTED",
+      "EV_net": "UNTESTED",
+      "abstention_rate": "UNTESTED",
+      "cost_sensitivity": "UNTESTED",
+      "mean(m_t)": 0.48200000000000004,
+      "underpowered_calibration": true,
+      "cell_verdict": "FAIL-INSUFFICIENT",
+      "contract_ids_scored": [
+        "PROV-POLYGLOBAL-eth-updown-15m-1788886800",
+        "PROV-POLYGLOBAL-eth-updown-15m-1788895800",
+        "PROV-POLYGLOBAL-eth-updown-15m-1788905700",
+        "PROV-POLYGLOBAL-eth-updown-15m-1788914700",
+        "PROV-POLYGLOBAL-eth-updown-15m-1788923700",
+        "PROV-POLYGLOBAL-eth-updown-15m-1788933600",
+        "PROV-POLYGLOBAL-eth-updown-15m-1788943500",
+        "PROV-POLYGLOBAL-eth-updown-15m-1788952500",
+        "PROV-POLYGLOBAL-eth-updown-15m-1788962400",
+        "PROV-POLYGLOBAL-eth-updown-15m-1788971400",
+        "PROV-POLYGLOBAL-eth-updown-15m-1788981300",
+        "PROV-POLYGLOBAL-eth-updown-15m-1788990300",
+        "PROV-POLYGLOBAL-eth-updown-15m-1788999300",
+        "PROV-POLYGLOBAL-eth-updown-15m-1789009200",
+        "PROV-POLYGLOBAL-eth-updown-15m-1789018200",
+        "PROV-POLYGLOBAL-eth-updown-15m-1789027200",
+        "PROV-POLYGLOBAL-eth-updown-15m-1789037100",
+        "PROV-POLYGLOBAL-eth-updown-15m-1789046100",
+        "PROV-POLYGLOBAL-eth-updown-15m-1789055100",
+        "PROV-POLYGLOBAL-eth-updown-15m-1789065000",
+        "PROV-POLYGLOBAL-eth-updown-15m-1789074000",
+        "PROV-POLYGLOBAL-eth-updown-15m-1789083900",
+        "PROV-POLYGLOBAL-eth-updown-15m-1789092900",
+        "PROV-POLYGLOBAL-eth-updown-15m-1789101900",
+        "PROV-POLYGLOBAL-eth-updown-15m-1789111800",
+        "PROV-POLYGLOBAL-eth-updown-15m-1789120800",
+        "PROV-POLYGLOBAL-eth-updown-15m-1789129800",
+        "PROV-POLYGLOBAL-eth-updown-15m-1789139700",
+        "PROV-POLYGLOBAL-eth-updown-15m-1789148700",
+        "PROV-POLYGLOBAL-eth-updown-15m-1789157700"
+      ]
+    },
+    "POLYMARKET_GLOBAL|15m|ETH|T-10m|last": {
+      "N": 30,
+      "N_unit": "scored decision-events (checkpoint \u00d7 contract after filters)",
+      "contract_count": 30,
+      "distinct_utc_days": 4,
+      "span_utc": {
+        "min": "2026-09-08",
+        "max": "2026-09-11"
+      },
+      "WR": 0.6666666666666666,
+      "WR_definition": "mid>0.5\u21d2YES; mid<0.5\u21d2NO; mid==0.5 excluded",
+      "N_WR": 30,
+      "N_tie_excluded": 0,
+      "CI": {
+        "low": 0.48779725813830266,
+        "high": 0.807697044731538,
+        "level": 0.95
+      },
+      "CI_method": "Wilson",
+      "Brier_model": "UNTESTED",
+      "LogLoss_model": "UNTESTED",
+      "Calibration": {
+        "reliability_table": {
+          "bins": [
+            {
+              "bin": "[0.02,0.50)",
+              "n": 15,
+              "mean_m": 0.26999999999999996,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=15 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.50,0.55)",
+              "n": 2,
+              "mean_m": 0.5225,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=2 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.55,0.60)",
+              "n": 1,
+              "mean_m": 0.565,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=1 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.60,0.70)",
+              "n": 5,
+              "mean_m": 0.655,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=5 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.70,0.80)",
+              "n": 5,
+              "mean_m": 0.76,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=5 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.80,0.90)",
+              "n": 1,
+              "mean_m": 0.805,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=1 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.90,0.98)",
+              "n": 1,
+              "mean_m": 0.915,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=1 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            }
+          ],
+          "powered_bin_count": 0,
+          "min_n_per_bin": 20,
+          "pooling": false
+        },
+        "ECE": "UNTESTED",
+        "note": "powered calibration underpowered: N=30, powered_bins=0 (need \u22652 bins with n\u226520 and/or N\u2265100 for ECE); thin bins UNTESTED, not pooled"
+      },
+      "Brier_market": 0.22139416666666667,
+      "LogLoss_market": 0.6314555635339545,
+      "LogLoss_eps": 1e-15,
+      "\u0394Brier": "UNTESTED",
+      "\u0394LogLoss": "UNTESTED",
+      "gap": "UNTESTED",
+      "EV_gross": "UNTESTED",
+      "EV_net": "UNTESTED",
+      "abstention_rate": "UNTESTED",
+      "cost_sensitivity": "UNTESTED",
+      "mean(m_t)": 0.48183333333333334,
+      "underpowered_calibration": true,
+      "cell_verdict": "FAIL-INSUFFICIENT",
+      "contract_ids_scored": [
+        "PROV-POLYGLOBAL-eth-updown-15m-1788886800",
+        "PROV-POLYGLOBAL-eth-updown-15m-1788895800",
+        "PROV-POLYGLOBAL-eth-updown-15m-1788905700",
+        "PROV-POLYGLOBAL-eth-updown-15m-1788914700",
+        "PROV-POLYGLOBAL-eth-updown-15m-1788923700",
+        "PROV-POLYGLOBAL-eth-updown-15m-1788933600",
+        "PROV-POLYGLOBAL-eth-updown-15m-1788943500",
+        "PROV-POLYGLOBAL-eth-updown-15m-1788952500",
+        "PROV-POLYGLOBAL-eth-updown-15m-1788962400",
+        "PROV-POLYGLOBAL-eth-updown-15m-1788971400",
+        "PROV-POLYGLOBAL-eth-updown-15m-1788981300",
+        "PROV-POLYGLOBAL-eth-updown-15m-1788990300",
+        "PROV-POLYGLOBAL-eth-updown-15m-1788999300",
+        "PROV-POLYGLOBAL-eth-updown-15m-1789009200",
+        "PROV-POLYGLOBAL-eth-updown-15m-1789018200",
+        "PROV-POLYGLOBAL-eth-updown-15m-1789027200",
+        "PROV-POLYGLOBAL-eth-updown-15m-1789037100",
+        "PROV-POLYGLOBAL-eth-updown-15m-1789046100",
+        "PROV-POLYGLOBAL-eth-updown-15m-1789055100",
+        "PROV-POLYGLOBAL-eth-updown-15m-1789065000",
+        "PROV-POLYGLOBAL-eth-updown-15m-1789074000",
+        "PROV-POLYGLOBAL-eth-updown-15m-1789083900",
+        "PROV-POLYGLOBAL-eth-updown-15m-1789092900",
+        "PROV-POLYGLOBAL-eth-updown-15m-1789101900",
+        "PROV-POLYGLOBAL-eth-updown-15m-1789111800",
+        "PROV-POLYGLOBAL-eth-updown-15m-1789120800",
+        "PROV-POLYGLOBAL-eth-updown-15m-1789129800",
+        "PROV-POLYGLOBAL-eth-updown-15m-1789139700",
+        "PROV-POLYGLOBAL-eth-updown-15m-1789148700",
+        "PROV-POLYGLOBAL-eth-updown-15m-1789157700"
+      ]
+    },
+    "POLYMARKET_GLOBAL|15m|ETH|T-5m|last": {
+      "N": 29,
+      "N_unit": "scored decision-events (checkpoint \u00d7 contract after filters)",
+      "contract_count": 29,
+      "distinct_utc_days": 4,
+      "span_utc": {
+        "min": "2026-09-08",
+        "max": "2026-09-11"
+      },
+      "WR": 0.8620689655172413,
+      "WR_definition": "mid>0.5\u21d2YES; mid<0.5\u21d2NO; mid==0.5 excluded",
+      "N_WR": 29,
+      "N_tie_excluded": 0,
+      "CI": "UNTESTED",
+      "CI_method": "Wilson",
+      "Brier_model": "UNTESTED",
+      "LogLoss_model": "UNTESTED",
+      "Calibration": {
+        "reliability_table": {
+          "bins": [
+            {
+              "bin": "[0.02,0.50)",
+              "n": 13,
+              "mean_m": 0.23153846153846153,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=13 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.50,0.55)",
+              "n": 2,
+              "mean_m": 0.535,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=2 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.55,0.60)",
+              "n": 0,
+              "mean_m": "UNTESTED",
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=0 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.60,0.70)",
+              "n": 1,
+              "mean_m": 0.685,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=1 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.70,0.80)",
+              "n": 3,
+              "mean_m": 0.7383333333333333,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=3 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.80,0.90)",
+              "n": 4,
+              "mean_m": 0.8625,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=4 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.90,0.98)",
+              "n": 6,
+              "mean_m": 0.9308333333333333,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=6 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            }
+          ],
+          "powered_bin_count": 0,
+          "min_n_per_bin": 20,
+          "pooling": false
+        },
+        "ECE": "UNTESTED",
+        "note": "powered calibration underpowered: N=29, powered_bins=0 (need \u22652 bins with n\u226520 and/or N\u2265100 for ECE); thin bins UNTESTED, not pooled"
+      },
+      "Brier_market": 0.1220698275862069,
+      "LogLoss_market": 0.3939730108725391,
+      "LogLoss_eps": 1e-15,
+      "\u0394Brier": "UNTESTED",
+      "\u0394LogLoss": "UNTESTED",
+      "gap": "UNTESTED",
+      "EV_gross": "UNTESTED",
+      "EV_net": "UNTESTED",
+      "abstention_rate": "UNTESTED",
+      "cost_sensitivity": "UNTESTED",
+      "mean(m_t)": 0.5522413793103449,
+      "underpowered_calibration": true,
+      "cell_verdict": "FAIL-INSUFFICIENT",
+      "contract_ids_scored": [
+        "PROV-POLYGLOBAL-eth-updown-15m-1788886800",
+        "PROV-POLYGLOBAL-eth-updown-15m-1788895800",
+        "PROV-POLYGLOBAL-eth-updown-15m-1788905700",
+        "PROV-POLYGLOBAL-eth-updown-15m-1788914700",
+        "PROV-POLYGLOBAL-eth-updown-15m-1788923700",
+        "PROV-POLYGLOBAL-eth-updown-15m-1788933600",
+        "PROV-POLYGLOBAL-eth-updown-15m-1788943500",
+        "PROV-POLYGLOBAL-eth-updown-15m-1788952500",
+        "PROV-POLYGLOBAL-eth-updown-15m-1788962400",
+        "PROV-POLYGLOBAL-eth-updown-15m-1788971400",
+        "PROV-POLYGLOBAL-eth-updown-15m-1788981300",
+        "PROV-POLYGLOBAL-eth-updown-15m-1788990300",
+        "PROV-POLYGLOBAL-eth-updown-15m-1788999300",
+        "PROV-POLYGLOBAL-eth-updown-15m-1789009200",
+        "PROV-POLYGLOBAL-eth-updown-15m-1789018200",
+        "PROV-POLYGLOBAL-eth-updown-15m-1789027200",
+        "PROV-POLYGLOBAL-eth-updown-15m-1789037100",
+        "PROV-POLYGLOBAL-eth-updown-15m-1789046100",
+        "PROV-POLYGLOBAL-eth-updown-15m-1789055100",
+        "PROV-POLYGLOBAL-eth-updown-15m-1789065000",
+        "PROV-POLYGLOBAL-eth-updown-15m-1789074000",
+        "PROV-POLYGLOBAL-eth-updown-15m-1789083900",
+        "PROV-POLYGLOBAL-eth-updown-15m-1789092900",
+        "PROV-POLYGLOBAL-eth-updown-15m-1789101900",
+        "PROV-POLYGLOBAL-eth-updown-15m-1789111800",
+        "PROV-POLYGLOBAL-eth-updown-15m-1789120800",
+        "PROV-POLYGLOBAL-eth-updown-15m-1789139700",
+        "PROV-POLYGLOBAL-eth-updown-15m-1789148700",
+        "PROV-POLYGLOBAL-eth-updown-15m-1789157700"
+      ]
+    },
+    "POLYMARKET_GLOBAL|15m|ETH|T-1m|last": {
+      "N": 16,
+      "N_unit": "scored decision-events (checkpoint \u00d7 contract after filters)",
+      "contract_count": 16,
+      "distinct_utc_days": 4,
+      "span_utc": {
+        "min": "2026-09-08",
+        "max": "2026-09-11"
+      },
+      "WR": 0.875,
+      "WR_definition": "mid>0.5\u21d2YES; mid<0.5\u21d2NO; mid==0.5 excluded",
+      "N_WR": 16,
+      "N_tie_excluded": 0,
+      "CI": "UNTESTED",
+      "CI_method": "Wilson",
+      "Brier_model": "UNTESTED",
+      "LogLoss_model": "UNTESTED",
+      "Calibration": {
+        "reliability_table": {
+          "bins": [
+            {
+              "bin": "[0.02,0.50)",
+              "n": 10,
+              "mean_m": 0.17045,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=10 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.50,0.55)",
+              "n": 0,
+              "mean_m": "UNTESTED",
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=0 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.55,0.60)",
+              "n": 0,
+              "mean_m": "UNTESTED",
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=0 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.60,0.70)",
+              "n": 1,
+              "mean_m": 0.655,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=1 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.70,0.80)",
+              "n": 1,
+              "mean_m": 0.735,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=1 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.80,0.90)",
+              "n": 0,
+              "mean_m": "UNTESTED",
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=0 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.90,0.98)",
+              "n": 4,
+              "mean_m": 0.955,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=4 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            }
+          ],
+          "powered_bin_count": 0,
+          "min_n_per_bin": 20,
+          "pooling": false
+        },
+        "ECE": "UNTESTED",
+        "note": "powered calibration underpowered: N=16, powered_bins=0 (need \u22652 bins with n\u226520 and/or N\u2265100 for ECE); thin bins UNTESTED, not pooled"
+      },
+      "Brier_market": 0.074581265625,
+      "LogLoss_market": 0.25283578751315866,
+      "LogLoss_eps": 1e-15,
+      "\u0394Brier": "UNTESTED",
+      "\u0394LogLoss": "UNTESTED",
+      "gap": "UNTESTED",
+      "EV_gross": "UNTESTED",
+      "EV_net": "UNTESTED",
+      "abstention_rate": "UNTESTED",
+      "cost_sensitivity": "UNTESTED",
+      "mean(m_t)": 0.43215625,
+      "underpowered_calibration": true,
+      "cell_verdict": "FAIL-INSUFFICIENT",
+      "contract_ids_scored": [
+        "PROV-POLYGLOBAL-eth-updown-15m-1788886800",
+        "PROV-POLYGLOBAL-eth-updown-15m-1788895800",
+        "PROV-POLYGLOBAL-eth-updown-15m-1788905700",
+        "PROV-POLYGLOBAL-eth-updown-15m-1788923700",
+        "PROV-POLYGLOBAL-eth-updown-15m-1788962400",
+        "PROV-POLYGLOBAL-eth-updown-15m-1788981300",
+        "PROV-POLYGLOBAL-eth-updown-15m-1788999300",
+        "PROV-POLYGLOBAL-eth-updown-15m-1789009200",
+        "PROV-POLYGLOBAL-eth-updown-15m-1789018200",
+        "PROV-POLYGLOBAL-eth-updown-15m-1789027200",
+        "PROV-POLYGLOBAL-eth-updown-15m-1789037100",
+        "PROV-POLYGLOBAL-eth-updown-15m-1789055100",
+        "PROV-POLYGLOBAL-eth-updown-15m-1789065000",
+        "PROV-POLYGLOBAL-eth-updown-15m-1789074000",
+        "PROV-POLYGLOBAL-eth-updown-15m-1789111800",
+        "PROV-POLYGLOBAL-eth-updown-15m-1789148700"
+      ]
+    }
+  },
+  "annex_kalshi_t1m": {
+    "KALSHI|15m|BTC|T-1m|mid": {
+      "N": 21,
+      "N_unit": "scored decision-events (checkpoint \u00d7 contract after filters)",
+      "contract_count": 21,
+      "distinct_utc_days": 7,
+      "span_utc": {
+        "min": "2026-09-05",
+        "max": "2026-09-11"
+      },
+      "WR": 0.6666666666666666,
+      "WR_definition": "mid>0.5\u21d2YES; mid<0.5\u21d2NO; mid==0.5 excluded",
+      "N_WR": 21,
+      "N_tie_excluded": 0,
+      "CI": "UNTESTED",
+      "CI_method": "Wilson",
+      "Brier_model": "UNTESTED",
+      "LogLoss_model": "UNTESTED",
+      "Calibration": {
+        "reliability_table": {
+          "bins": [
+            {
+              "bin": "[0.02,0.50)",
+              "n": 10,
+              "mean_m": 0.1974,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=10 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.50,0.55)",
+              "n": 3,
+              "mean_m": 0.5216666666666666,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=3 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.55,0.60)",
+              "n": 2,
+              "mean_m": 0.58,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=2 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.60,0.70)",
+              "n": 1,
+              "mean_m": 0.695,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=1 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.70,0.80)",
+              "n": 0,
+              "mean_m": "UNTESTED",
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=0 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.80,0.90)",
+              "n": 1,
+              "mean_m": 0.805,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=1 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.90,0.98)",
+              "n": 4,
+              "mean_m": 0.9670000000000001,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=4 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            }
+          ],
+          "powered_bin_count": 0,
+          "min_n_per_bin": 20,
+          "pooling": false
+        },
+        "ECE": "UNTESTED",
+        "note": "powered calibration underpowered: N=21, powered_bins=0 (need \u22652 bins with n\u226520 and/or N\u2265100 for ECE); thin bins UNTESTED, not pooled"
+      },
+      "Brier_market": 0.1318307619047619,
+      "LogLoss_market": 0.3868804980312377,
+      "LogLoss_eps": 1e-15,
+      "\u0394Brier": "UNTESTED",
+      "\u0394LogLoss": "UNTESTED",
+      "gap": "UNTESTED",
+      "EV_gross": "UNTESTED",
+      "EV_net": "UNTESTED",
+      "abstention_rate": "UNTESTED",
+      "cost_sensitivity": "UNTESTED",
+      "mean(m_t)": 0.4793809523809524,
+      "underpowered_calibration": true,
+      "cell_verdict": "FAIL-INSUFFICIENT",
+      "contract_ids_scored": [
+        "PROV-KALSHI-KXBTC15M-26SEP050400-00",
+        "PROV-KALSHI-KXBTC15M-26SEP050645-45",
+        "PROV-KALSHI-KXBTC15M-26SEP050930-30",
+        "PROV-KALSHI-KXBTC15M-26SEP051215-15",
+        "PROV-KALSHI-KXBTC15M-26SEP051745-45",
+        "PROV-KALSHI-KXBTC15M-26SEP052315-15",
+        "PROV-KALSHI-KXBTC15M-26SEP060730-30",
+        "PROV-KALSHI-KXBTC15M-26SEP061600-00",
+        "PROV-KALSHI-KXBTC15M-26SEP062130-30",
+        "PROV-KALSHI-KXBTC15M-26SEP070015-15",
+        "PROV-KALSHI-KXBTC15M-26SEP070300-00",
+        "PROV-KALSHI-KXBTC15M-26SEP071645-45",
+        "PROV-KALSHI-KXBTC15M-26SEP080345-45",
+        "PROV-KALSHI-KXBTC15M-26SEP081745-45",
+        "PROV-KALSHI-KXBTC15M-26SEP090200-00",
+        "PROV-KALSHI-KXBTC15M-26SEP090445-45",
+        "PROV-KALSHI-KXBTC15M-26SEP091300-00",
+        "PROV-KALSHI-KXBTC15M-26SEP100745-45",
+        "PROV-KALSHI-KXBTC15M-26SEP101315-15",
+        "PROV-KALSHI-KXBTC15M-26SEP110830-30",
+        "PROV-KALSHI-KXBTC15M-26SEP111645-45"
+      ]
+    },
+    "KALSHI|15m|ETH|T-1m|mid": {
+      "N": 15,
+      "N_unit": "scored decision-events (checkpoint \u00d7 contract after filters)",
+      "contract_count": 15,
+      "distinct_utc_days": 7,
+      "span_utc": {
+        "min": "2026-09-05",
+        "max": "2026-09-11"
+      },
+      "WR": 0.8666666666666667,
+      "WR_definition": "mid>0.5\u21d2YES; mid<0.5\u21d2NO; mid==0.5 excluded",
+      "N_WR": 15,
+      "N_tie_excluded": 0,
+      "CI": "UNTESTED",
+      "CI_method": "Wilson",
+      "Brier_model": "UNTESTED",
+      "LogLoss_model": "UNTESTED",
+      "Calibration": {
+        "reliability_table": {
+          "bins": [
+            {
+              "bin": "[0.02,0.50)",
+              "n": 7,
+              "mean_m": 0.1132857142857143,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=7 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.50,0.55)",
+              "n": 0,
+              "mean_m": "UNTESTED",
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=0 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.55,0.60)",
+              "n": 1,
+              "mean_m": 0.57,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=1 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.60,0.70)",
+              "n": 0,
+              "mean_m": "UNTESTED",
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=0 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.70,0.80)",
+              "n": 3,
+              "mean_m": 0.7783333333333333,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=3 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.80,0.90)",
+              "n": 3,
+              "mean_m": 0.8616666666666667,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=3 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            },
+            {
+              "bin": "[0.90,0.98)",
+              "n": 1,
+              "mean_m": 0.925,
+              "obs_rate": "UNTESTED",
+              "CI": "UNTESTED",
+              "reason": "n=1 < MIN_N_FOR_BIN_RATE_CI=20; not pooled"
+            }
+          ],
+          "powered_bin_count": 0,
+          "min_n_per_bin": 20,
+          "pooling": false
+        },
+        "ECE": "UNTESTED",
+        "note": "powered calibration underpowered: N=15, powered_bins=0 (need \u22652 bins with n\u226520 and/or N\u2265100 for ECE); thin bins UNTESTED, not pooled"
+      },
+      "Brier_market": 0.11873589999999999,
+      "LogLoss_market": 0.3755751452459541,
+      "LogLoss_eps": 1e-15,
+      "\u0394Brier": "UNTESTED",
+      "\u0394LogLoss": "UNTESTED",
+      "gap": "UNTESTED",
+      "EV_gross": "UNTESTED",
+      "EV_net": "UNTESTED",
+      "abstention_rate": "UNTESTED",
+      "cost_sensitivity": "UNTESTED",
+      "mean(m_t)": 0.48053333333333337,
+      "underpowered_calibration": true,
+      "cell_verdict": "FAIL-INSUFFICIENT",
+      "contract_ids_scored": [
+        "PROV-KALSHI-KXETH15M-26SEP042230-30",
+        "PROV-KALSHI-KXETH15M-26SEP050115-15",
+        "PROV-KALSHI-KXETH15M-26SEP050400-00",
+        "PROV-KALSHI-KXETH15M-26SEP050645-45",
+        "PROV-KALSHI-KXETH15M-26SEP050930-30",
+        "PROV-KALSHI-KXETH15M-26SEP051215-15",
+        "PROV-KALSHI-KXETH15M-26SEP060730-30",
+        "PROV-KALSHI-KXETH15M-26SEP061600-00",
+        "PROV-KALSHI-KXETH15M-26SEP070300-00",
+        "PROV-KALSHI-KXETH15M-26SEP081745-45",
+        "PROV-KALSHI-KXETH15M-26SEP090200-00",
+        "PROV-KALSHI-KXETH15M-26SEP091015-15",
+        "PROV-KALSHI-KXETH15M-26SEP100745-45",
+        "PROV-KALSHI-KXETH15M-26SEP111115-15",
+        "PROV-KALSHI-KXETH15M-26SEP111645-45"
+      ]
+    }
+  },
+  "annex_notes": {
+    "poly": "CLEARED_WEAKER_LAST_PRINT \u2014 never score as mid; never pool with Kalshi",
+    "kalshi_t1m": "CLEARED_WITH_STRONG_CAVEAT \u2014 high near-deg; mid only"
+  },
+  "sign_conventions": {
+    "\u0394Brier": "Brier_model \u2212 Brier_market (UNTESTED \u2014 no model)",
+    "\u0394LogLoss": "LogLoss_model \u2212 LogLoss_market (UNTESTED \u2014 no model)",
+    "WR": "descriptive mid>0.5\u21d2YES; not skill",
+    "LogLoss_eps": 1e-15
+  },
+  "artifact_paths": [
+    "/workspace/lab/harness/examiner/out/TEST-20260911-006-PM002-MARKET-BASELINE.json",
+    "/workspace/lab/harness/examiner/out/TEST-20260911-006-PM002-MARKET-BASELINE.md",
+    "/workspace/lab/archive/tests/TEST-20260911-006-PM002-MARKET-BASELINE.json",
+    "/workspace/lab/archive/tests/TEST-20260911-006-PM002-MARKET-BASELINE.md",
+    "/workspace/lab/archive/tests/TEST-20260911-006.json",
+    "/workspace/lab/archive/tests/TEST-20260911-006.md",
+    "/workspace/lab/archive/audit/2026-09-11-TEST-20260911-006-PM002-MARKET-BASELINE-examiner.md"
+  ]
+}

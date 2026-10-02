@@ -1,0 +1,760 @@
+{
+  "DATA_ID": "DATA-PROV-L3-001",
+  "audited_at_utc": "2026-09-12T00:14:37.670937+00:00",
+  "auditor": "Clock",
+  "order": "/workspace/lab/governance/CLOCK_REVIEW_DATA-PROV-L3-001.md",
+  "role": "L3_external_predictor_NOT_oracle",
+  "all_integrity_tests_pass": true,
+  "tests": {
+    "hash_verify": {
+      "pass": true,
+      "n_checksum_entries": 20,
+      "n_vision_zips": 14,
+      "n_api_json": 2,
+      "expected_vision_zips": 14,
+      "expected_api_json": 2,
+      "inventory_ok": true,
+      "per_file": {
+        "derived/BTCUSDT_1m_spot_2026-09-04_2026-09-11.ndjson": {
+          "exists": true,
+          "sha256_expected": "efe3dfc4dd57291a842b9eb67b0ffd67b6507f1b6cdbac795f990707c872b1a0",
+          "sha256_measured": "efe3dfc4dd57291a842b9eb67b0ffd67b6507f1b6cdbac795f990707c872b1a0",
+          "match": true,
+          "size_bytes": 3384017
+        },
+        "derived/BTCUSDT_1m_spot_2026-09-04_2026-09-11.parquet": {
+          "exists": true,
+          "sha256_expected": "5aa400b7614a3112567ff4b85419a2f554765e19b6992ce50dd864a98d1ff25f",
+          "sha256_measured": "5aa400b7614a3112567ff4b85419a2f554765e19b6992ce50dd864a98d1ff25f",
+          "match": true,
+          "size_bytes": 1052778
+        },
+        "derived/ETHUSDT_1m_spot_2026-09-04_2026-09-11.ndjson": {
+          "exists": true,
+          "sha256_expected": "48bb77838822ab4eba2539d5ada8125e83a778fdebca4f709b9031f5703893c7",
+          "sha256_measured": "48bb77838822ab4eba2539d5ada8125e83a778fdebca4f709b9031f5703893c7",
+          "match": true,
+          "size_bytes": 3346964
+        },
+        "derived/ETHUSDT_1m_spot_2026-09-04_2026-09-11.parquet": {
+          "exists": true,
+          "sha256_expected": "82e9bf8f4909eead8b9ee4b9eab4451488b7962cd007074f282e238e4a96fe72",
+          "sha256_measured": "82e9bf8f4909eead8b9ee4b9eab4451488b7962cd007074f282e238e4a96fe72",
+          "match": true,
+          "size_bytes": 941888
+        },
+        "raw/api_fill_sep11/BTCUSDT-1m-2026-09-11.json": {
+          "exists": true,
+          "sha256_expected": "bc2cc0c6126937d6e9774f3b2622798f4ed6826449b5c51e298d8cc4371c3b52",
+          "sha256_measured": "bc2cc0c6126937d6e9774f3b2622798f4ed6826449b5c51e298d8cc4371c3b52",
+          "match": true,
+          "size_bytes": 260959
+        },
+        "raw/api_fill_sep11/ETHUSDT-1m-2026-09-11.json": {
+          "exists": true,
+          "sha256_expected": "0b1bef4d1c68e03f0f9e041be8e667246a657629ac45c261dea20d6122207f71",
+          "sha256_measured": "0b1bef4d1c68e03f0f9e041be8e667246a657629ac45c261dea20d6122207f71",
+          "match": true,
+          "size_bytes": 259022
+        },
+        "raw/vision_spot_1m/BTCUSDT-1m-2026-09-04.zip": {
+          "exists": true,
+          "sha256_expected": "81064e4b9e326105763003b522214c8ce884a5203428f7b1e0e2bb6893988839",
+          "sha256_measured": "81064e4b9e326105763003b522214c8ce884a5203428f7b1e0e2bb6893988839",
+          "match": true,
+          "size_bytes": 70253
+        },
+        "raw/vision_spot_1m/BTCUSDT-1m-2026-09-05.zip": {
+          "exists": true,
+          "sha256_expected": "9f3603aa9f5a1a0e35891644fe6da763526c1c72f1156840e5e4508eeb271afb",
+          "sha256_measured": "9f3603aa9f5a1a0e35891644fe6da763526c1c72f1156840e5e4508eeb271afb",
+          "match": true,
+          "size_bytes": 65657
+        },
+        "raw/vision_spot_1m/BTCUSDT-1m-2026-09-06.zip": {
+          "exists": true,
+          "sha256_expected": "b865b8a7fa8508d551caa10ca129396a490221542b37e5b0d5d37519143e7895",
+          "sha256_measured": "b865b8a7fa8508d551caa10ca129396a490221542b37e5b0d5d37519143e7895",
+          "match": true,
+          "size_bytes": 66440
+        },
+        "raw/vision_spot_1m/BTCUSDT-1m-2026-09-07.zip": {
+          "exists": true,
+          "sha256_expected": "ccf135fcadf6a18361e1967a1fc2dab961e62f73e7cd9e01848c1ee758e84a44",
+          "sha256_measured": "ccf135fcadf6a18361e1967a1fc2dab961e62f73e7cd9e01848c1ee758e84a44",
+          "match": true,
+          "size_bytes": 68631
+        },
+        "raw/vision_spot_1m/BTCUSDT-1m-2026-09-08.zip": {
+          "exists": true,
+          "sha256_expected": "1c4d9dbbd92530f5c981dbb4aa560db6d4a5784d8ec21c910b1a4f44b40afdc7",
+          "sha256_measured": "1c4d9dbbd92530f5c981dbb4aa560db6d4a5784d8ec21c910b1a4f44b40afdc7",
+          "match": true,
+          "size_bytes": 69958
+        },
+        "raw/vision_spot_1m/BTCUSDT-1m-2026-09-09.zip": {
+          "exists": true,
+          "sha256_expected": "79e5f281fec6f04bc29542f2463e934dd647a9534f476d1910811b228079b406",
+          "sha256_measured": "79e5f281fec6f04bc29542f2463e934dd647a9534f476d1910811b228079b406",
+          "match": true,
+          "size_bytes": 69693
+        },
+        "raw/vision_spot_1m/BTCUSDT-1m-2026-09-10.zip": {
+          "exists": true,
+          "sha256_expected": "c03d63c5cd204e9627d20a3ce13a63fc708468f37f28f3455cfefed8680051a4",
+          "sha256_measured": "c03d63c5cd204e9627d20a3ce13a63fc708468f37f28f3455cfefed8680051a4",
+          "match": true,
+          "size_bytes": 69441
+        },
+        "raw/vision_spot_1m/ETHUSDT-1m-2026-09-04.zip": {
+          "exists": true,
+          "sha256_expected": "dc48a3fcf8dd3df15f655887b583d30ef6913e76e9512de76beefbdc1ca29448",
+          "sha256_measured": "dc48a3fcf8dd3df15f655887b583d30ef6913e76e9512de76beefbdc1ca29448",
+          "match": true,
+          "size_bytes": 67186
+        },
+        "raw/vision_spot_1m/ETHUSDT-1m-2026-09-05.zip": {
+          "exists": true,
+          "sha256_expected": "6e4f222d188731e64415621b0c8176d11124f8dd436580dfdd403f0d85520b91",
+          "sha256_measured": "6e4f222d188731e64415621b0c8176d11124f8dd436580dfdd403f0d85520b91",
+          "match": true,
+          "size_bytes": 63346
+        },
+        "raw/vision_spot_1m/ETHUSDT-1m-2026-09-06.zip": {
+          "exists": true,
+          "sha256_expected": "b5fb7aa0c9ef2de218472570e0b052debff60fc352c02cb510b4fff1bd293b46",
+          "sha256_measured": "b5fb7aa0c9ef2de218472570e0b052debff60fc352c02cb510b4fff1bd293b46",
+          "match": true,
+          "size_bytes": 65916
+        },
+        "raw/vision_spot_1m/ETHUSDT-1m-2026-09-07.zip": {
+          "exists": true,
+          "sha256_expected": "73e9dd2d38ee179738240dabeb2fac3ffe74bbaebbec90b1d58b3010fe85466e",
+          "sha256_measured": "73e9dd2d38ee179738240dabeb2fac3ffe74bbaebbec90b1d58b3010fe85466e",
+          "match": true,
+          "size_bytes": 66827
+        },
+        "raw/vision_spot_1m/ETHUSDT-1m-2026-09-08.zip": {
+          "exists": true,
+          "sha256_expected": "97c871d95ae4750a34081e7b5ff7ac52db7775d10412b24fef9fa2d6e99e5b91",
+          "sha256_measured": "97c871d95ae4750a34081e7b5ff7ac52db7775d10412b24fef9fa2d6e99e5b91",
+          "match": true,
+          "size_bytes": 66761
+        },
+        "raw/vision_spot_1m/ETHUSDT-1m-2026-09-09.zip": {
+          "exists": true,
+          "sha256_expected": "174943ca2129eb59ed096b0c744227d991bbacbf08556b4882077553b42b00d2",
+          "sha256_measured": "174943ca2129eb59ed096b0c744227d991bbacbf08556b4882077553b42b00d2",
+          "match": true,
+          "size_bytes": 67374
+        },
+        "raw/vision_spot_1m/ETHUSDT-1m-2026-09-10.zip": {
+          "exists": true,
+          "sha256_expected": "9719c865bc95e10132753182ae6f44344ab5eb221af77e8db954f3099fb9aa35",
+          "sha256_measured": "9719c865bc95e10132753182ae6f44344ab5eb221af77e8db954f3099fb9aa35",
+          "match": true,
+          "size_bytes": 66930
+        }
+      }
+    },
+    "symbols": {
+      "BTCUSDT": {
+        "symbol": "BTCUSDT",
+        "path": "/workspace/lab/data/DATA-PROV-L3-001/derived/BTCUSDT_1m_spot_2026-09-04_2026-09-11.parquet",
+        "n_cols": 17,
+        "contiguity": {
+          "rows": 11520,
+          "expected_rows": 11520,
+          "rows_match": true,
+          "first_open_ms": 1788480000000,
+          "last_open_ms": 1789171140000,
+          "first_open_utc": "2026-09-04T00:00:00Z",
+          "last_open_utc": "2026-09-11T23:59:00Z",
+          "first_open_expected": "2026-09-04T00:00:00Z",
+          "last_open_expected": "2026-09-11T23:59:00Z",
+          "first_open_ok": true,
+          "last_open_ok": true,
+          "gaps_delta_ne_60s": 0,
+          "gaps_ok": true,
+          "duplicate_open_time_ms": 0,
+          "dups_ok": true,
+          "sorted_ascending": true,
+          "strictly_increasing": true,
+          "pass": true
+        },
+        "schema": {
+          "columns": [
+            "open_time_ms",
+            "open",
+            "high",
+            "low",
+            "close",
+            "volume",
+            "close_time_ms",
+            "quote_volume",
+            "trades",
+            "taker_buy_base",
+            "taker_buy_quote",
+            "open_time_utc",
+            "close_time_utc",
+            "symbol",
+            "market",
+            "layer",
+            "label"
+          ],
+          "required_present": true,
+          "missing_required": [],
+          "close_time_convention": "open_time_ms + 59999 (Binance 1m kline close)",
+          "close_time_eq_open_plus_59999": true,
+          "close_mismatch_count": 0,
+          "layer_field": "L3",
+          "layer_all_L3": true,
+          "label_field": "external_predictor_NOT_oracle_NOT_CF_BRTI",
+          "label_all_NOT_oracle": true,
+          "market_all_spot": true,
+          "pass": true
+        },
+        "ohlc_sanity": {
+          "high_lt_max_oc_count": 0,
+          "low_gt_min_oc_count": 0,
+          "nonpositive_price_count": 0,
+          "negative_volume_count": 0,
+          "pass": true
+        },
+        "source_split": {
+          "day_counts": {
+            "2026-09-04": 1440,
+            "2026-09-05": 1440,
+            "2026-09-06": 1440,
+            "2026-09-07": 1440,
+            "2026-09-08": 1440,
+            "2026-09-09": 1440,
+            "2026-09-10": 1440,
+            "2026-09-11": 1440
+          },
+          "vision_days": [
+            "2026-09-04",
+            "2026-09-05",
+            "2026-09-06",
+            "2026-09-07",
+            "2026-09-08",
+            "2026-09-09",
+            "2026-09-10"
+          ],
+          "api_fill_day": "2026-09-11",
+          "vision_days_all_1440": true,
+          "api_day_1440": true,
+          "sep10_last_open_utc": "2026-09-10T23:59:00Z",
+          "sep11_first_open_utc": "2026-09-11T00:00:00Z",
+          "boundary_gap_ms": 60000,
+          "boundary_contiguous_60s": true,
+          "api_path_note": "Vision daily zip 2026-09-11 HTTP 404 at fetch; filled via https://www.binance.com/api/v3/klines (api.binance.com HTTP 451 from host)",
+          "pass": true
+        },
+        "pass": true
+      },
+      "ETHUSDT": {
+        "symbol": "ETHUSDT",
+        "path": "/workspace/lab/data/DATA-PROV-L3-001/derived/ETHUSDT_1m_spot_2026-09-04_2026-09-11.parquet",
+        "n_cols": 17,
+        "contiguity": {
+          "rows": 11520,
+          "expected_rows": 11520,
+          "rows_match": true,
+          "first_open_ms": 1788480000000,
+          "last_open_ms": 1789171140000,
+          "first_open_utc": "2026-09-04T00:00:00Z",
+          "last_open_utc": "2026-09-11T23:59:00Z",
+          "first_open_expected": "2026-09-04T00:00:00Z",
+          "last_open_expected": "2026-09-11T23:59:00Z",
+          "first_open_ok": true,
+          "last_open_ok": true,
+          "gaps_delta_ne_60s": 0,
+          "gaps_ok": true,
+          "duplicate_open_time_ms": 0,
+          "dups_ok": true,
+          "sorted_ascending": true,
+          "strictly_increasing": true,
+          "pass": true
+        },
+        "schema": {
+          "columns": [
+            "open_time_ms",
+            "open",
+            "high",
+            "low",
+            "close",
+            "volume",
+            "close_time_ms",
+            "quote_volume",
+            "trades",
+            "taker_buy_base",
+            "taker_buy_quote",
+            "open_time_utc",
+            "close_time_utc",
+            "symbol",
+            "market",
+            "layer",
+            "label"
+          ],
+          "required_present": true,
+          "missing_required": [],
+          "close_time_convention": "open_time_ms + 59999 (Binance 1m kline close)",
+          "close_time_eq_open_plus_59999": true,
+          "close_mismatch_count": 0,
+          "layer_field": "L3",
+          "layer_all_L3": true,
+          "label_field": "external_predictor_NOT_oracle_NOT_CF_BRTI",
+          "label_all_NOT_oracle": true,
+          "market_all_spot": true,
+          "pass": true
+        },
+        "ohlc_sanity": {
+          "high_lt_max_oc_count": 0,
+          "low_gt_min_oc_count": 0,
+          "nonpositive_price_count": 0,
+          "negative_volume_count": 0,
+          "pass": true
+        },
+        "source_split": {
+          "day_counts": {
+            "2026-09-04": 1440,
+            "2026-09-05": 1440,
+            "2026-09-06": 1440,
+            "2026-09-07": 1440,
+            "2026-09-08": 1440,
+            "2026-09-09": 1440,
+            "2026-09-10": 1440,
+            "2026-09-11": 1440
+          },
+          "vision_days": [
+            "2026-09-04",
+            "2026-09-05",
+            "2026-09-06",
+            "2026-09-07",
+            "2026-09-08",
+            "2026-09-09",
+            "2026-09-10"
+          ],
+          "api_fill_day": "2026-09-11",
+          "vision_days_all_1440": true,
+          "api_day_1440": true,
+          "sep10_last_open_utc": "2026-09-10T23:59:00Z",
+          "sep11_first_open_utc": "2026-09-11T00:00:00Z",
+          "boundary_gap_ms": 60000,
+          "boundary_contiguous_60s": true,
+          "api_path_note": "Vision daily zip 2026-09-11 HTTP 404 at fetch; filled via https://www.binance.com/api/v3/klines (api.binance.com HTTP 451 from host)",
+          "pass": true
+        },
+        "pass": true
+      }
+    },
+    "timestamp_units": {
+      "BTCUSDT": {
+        "vision_zip": "/workspace/lab/data/DATA-PROV-L3-001/raw/vision_spot_1m/BTCUSDT-1m-2026-09-04.zip",
+        "date_spot_checked": "2026-09-04",
+        "n_spot": 5,
+        "all_truncation_matches": true,
+        "checks": [
+          {
+            "i": 0,
+            "vision_open_us": 1788480000000000,
+            "vision_close_us": 1788480059999999,
+            "trunc_open_ms": 1788480000000,
+            "trunc_close_ms": 1788480059999,
+            "derived_open_ms": 1788480000000,
+            "derived_close_ms": 1788480059999,
+            "match": true
+          },
+          {
+            "i": 1,
+            "vision_open_us": 1788480060000000,
+            "vision_close_us": 1788480119999999,
+            "trunc_open_ms": 1788480060000,
+            "trunc_close_ms": 1788480119999,
+            "derived_open_ms": 1788480060000,
+            "derived_close_ms": 1788480119999,
+            "match": true
+          },
+          {
+            "i": 2,
+            "vision_open_us": 1788480120000000,
+            "vision_close_us": 1788480179999999,
+            "trunc_open_ms": 1788480120000,
+            "trunc_close_ms": 1788480179999,
+            "derived_open_ms": 1788480120000,
+            "derived_close_ms": 1788480179999,
+            "match": true
+          },
+          {
+            "i": 3,
+            "vision_open_us": 1788480180000000,
+            "vision_close_us": 1788480239999999,
+            "trunc_open_ms": 1788480180000,
+            "trunc_close_ms": 1788480239999,
+            "derived_open_ms": 1788480180000,
+            "derived_close_ms": 1788480239999,
+            "match": true
+          },
+          {
+            "i": 4,
+            "vision_open_us": 1788480240000000,
+            "vision_close_us": 1788480299999999,
+            "trunc_open_ms": 1788480240000,
+            "trunc_close_ms": 1788480299999,
+            "derived_open_ms": 1788480240000,
+            "derived_close_ms": 1788480299999,
+            "match": true
+          }
+        ],
+        "api_fill_first_bar_match": true,
+        "api_first_open_ms": 1789084800000,
+        "api_first_close_ms": 1789084859999,
+        "derived_sep11_first_open_ms": 1789084800000,
+        "derived_sep11_first_close_ms": 1789084859999,
+        "convention": "Vision CSV microseconds truncated with integer //1000 (not round) to match API ms; close remains \u2026999",
+        "pass": true
+      },
+      "ETHUSDT": {
+        "vision_zip": "/workspace/lab/data/DATA-PROV-L3-001/raw/vision_spot_1m/ETHUSDT-1m-2026-09-04.zip",
+        "date_spot_checked": "2026-09-04",
+        "n_spot": 5,
+        "all_truncation_matches": true,
+        "checks": [
+          {
+            "i": 0,
+            "vision_open_us": 1788480000000000,
+            "vision_close_us": 1788480059999999,
+            "trunc_open_ms": 1788480000000,
+            "trunc_close_ms": 1788480059999,
+            "derived_open_ms": 1788480000000,
+            "derived_close_ms": 1788480059999,
+            "match": true
+          },
+          {
+            "i": 1,
+            "vision_open_us": 1788480060000000,
+            "vision_close_us": 1788480119999999,
+            "trunc_open_ms": 1788480060000,
+            "trunc_close_ms": 1788480119999,
+            "derived_open_ms": 1788480060000,
+            "derived_close_ms": 1788480119999,
+            "match": true
+          },
+          {
+            "i": 2,
+            "vision_open_us": 1788480120000000,
+            "vision_close_us": 1788480179999999,
+            "trunc_open_ms": 1788480120000,
+            "trunc_close_ms": 1788480179999,
+            "derived_open_ms": 1788480120000,
+            "derived_close_ms": 1788480179999,
+            "match": true
+          },
+          {
+            "i": 3,
+            "vision_open_us": 1788480180000000,
+            "vision_close_us": 1788480239999999,
+            "trunc_open_ms": 1788480180000,
+            "trunc_close_ms": 1788480239999,
+            "derived_open_ms": 1788480180000,
+            "derived_close_ms": 1788480239999,
+            "match": true
+          },
+          {
+            "i": 4,
+            "vision_open_us": 1788480240000000,
+            "vision_close_us": 1788480299999999,
+            "trunc_open_ms": 1788480240000,
+            "trunc_close_ms": 1788480299999,
+            "derived_open_ms": 1788480240000,
+            "derived_close_ms": 1788480299999,
+            "match": true
+          }
+        ],
+        "api_fill_first_bar_match": true,
+        "api_first_open_ms": 1789084800000,
+        "api_first_close_ms": 1789084859999,
+        "derived_sep11_first_open_ms": 1789084800000,
+        "derived_sep11_first_close_ms": 1789084859999,
+        "convention": "Vision CSV microseconds truncated with integer //1000 (not round) to match API ms; close remains \u2026999",
+        "pass": true
+      },
+      "pass": true
+    },
+    "knowability_pm003": {
+      "pm003_path": "/workspace/lab/data/DATA-PROV-PM-003/derived/checkpoints.ndjson",
+      "n_checkpoint_rows": 6040,
+      "n_unique_decision_times": 3020,
+      "decision_time_first": "2026-09-04T20:46:00Z",
+      "decision_time_last": "2026-09-11T20:30:00Z",
+      "all_in_L3_window": true,
+      "seconds_on_00": 3020,
+      "fraction_on_00": 1.0,
+      "ms_fraction_zero": 1.0,
+      "aligns_to_open_time_grid": true,
+      "rule_A_strict_lt": {
+        "n_with_completed_prior_bar": 3020,
+        "n_missing": 0,
+        "pass": true
+      },
+      "rule_A_inclusive_le": {
+        "n_with_completed_prior_bar": 3020,
+        "n_missing": 0,
+        "pass": true
+      },
+      "lt_vs_le_identical_on_pm003": true,
+      "rule_B_open_at_t_bar_present": 3020,
+      "rule_B_open_eq_decision_time": 3020,
+      "equiv_prior_open_in_grid": 3020,
+      "recommendation": {
+        "rule": "completed_bar_close",
+        "comparison": "close_time_ms <= decision_time_ms",
+        "rationale": "Binance 1m close_time_ms = open_time_ms + 59999. PM-003 decision_times all land on :00.000Z (minute boundary). At those instants, close_time_ms < t and close_time_ms <= t select the identical prior bar (prior close is always :59.999). Prefer <= so a decision exactly at close_time (if ever) still sees that bar as completed. Strict < is equally safe for this PM-003 slice and matches REPORT.md sketch.",
+        "exact_join_formula": "knowable_bar = argmax { bar in L3 | bar.close_time_ms <= decision_time_ms }; price_at_t = knowable_bar.close; equiv_when_decision_on_minute_boundary: open_time_ms = floor_minute_ms(decision_time_ms) - 60_000 (= decision_time_ms - 60_000 when decision_time is :00.000).",
+        "rule_B_blocked_for_close": "Bar with open_time_ms == floor_minute_ms(decision_time_ms) has known open at t but UNKNOWN close until close_time_ms \u2014 using that bar's close at decision_time is LOOKAHEAD / BLOCKED."
+      },
+      "samples": [
+        {
+          "decision_time": "2026-09-04T20:46:00Z",
+          "decision_time_ms": 1788554760000,
+          "floor_minute_ms": 1788554760000,
+          "on_minute_boundary": true,
+          "rule_A_lt": {
+            "has_bar": true,
+            "open_time_ms": 1788554700000,
+            "close_time_ms": 1788554759999,
+            "open_time_utc": "2026-09-04T20:45:00Z"
+          },
+          "rule_A_le": {
+            "has_bar": true,
+            "open_time_ms": 1788554700000,
+            "close_time_ms": 1788554759999,
+            "open_time_utc": "2026-09-04T20:45:00Z"
+          },
+          "rule_B_open_at_t": {
+            "open_time_ms": 1788554760000,
+            "bar_present": true,
+            "close_knowable_at_decision": false,
+            "note": "open known at open; close NOT knowable until close_time_ms"
+          },
+          "equiv_prior_open_ms": 1788554700000,
+          "equiv_prior_in_grid": true
+        },
+        {
+          "decision_time": "2026-09-08T07:46:00Z",
+          "decision_time_ms": 1788853560000,
+          "floor_minute_ms": 1788853560000,
+          "on_minute_boundary": true,
+          "rule_A_lt": {
+            "has_bar": true,
+            "open_time_ms": 1788853500000,
+            "close_time_ms": 1788853559999,
+            "open_time_utc": "2026-09-08T07:45:00Z"
+          },
+          "rule_A_le": {
+            "has_bar": true,
+            "open_time_ms": 1788853500000,
+            "close_time_ms": 1788853559999,
+            "open_time_utc": "2026-09-08T07:45:00Z"
+          },
+          "rule_B_open_at_t": {
+            "open_time_ms": 1788853560000,
+            "bar_present": true,
+            "close_knowable_at_decision": false,
+            "note": "open known at open; close NOT knowable until close_time_ms"
+          },
+          "equiv_prior_open_ms": 1788853500000,
+          "equiv_prior_in_grid": true
+        },
+        {
+          "decision_time": "2026-09-11T20:30:00Z",
+          "decision_time_ms": 1789158600000,
+          "floor_minute_ms": 1789158600000,
+          "on_minute_boundary": true,
+          "rule_A_lt": {
+            "has_bar": true,
+            "open_time_ms": 1789158540000,
+            "close_time_ms": 1789158599999,
+            "open_time_utc": "2026-09-11T20:29:00Z"
+          },
+          "rule_A_le": {
+            "has_bar": true,
+            "open_time_ms": 1789158540000,
+            "close_time_ms": 1789158599999,
+            "open_time_utc": "2026-09-11T20:29:00Z"
+          },
+          "rule_B_open_at_t": {
+            "open_time_ms": 1789158600000,
+            "bar_present": true,
+            "close_knowable_at_decision": false,
+            "note": "open known at open; close NOT knowable until close_time_ms"
+          },
+          "equiv_prior_open_ms": 1789158540000,
+          "equiv_prior_in_grid": true
+        }
+      ],
+      "pass": true
+    },
+    "spot_ne_cf_brti": {
+      "oracleish_columns_found": [],
+      "no_oracle_columns": true,
+      "manifest_flags": {
+        "NOT_oracle": true,
+        "NOT_CF_BRTI_substitute": true,
+        "NOT_settlement_oracle": true,
+        "layer": "L3",
+        "role": "external_predictor_price_at_t",
+        "forbidden_as_feature": [
+          "PM-001 EXPIRATION_VALUE",
+          "terminal last-as-oracle",
+          "Binance-as-Kalshi-settlement-oracle"
+        ]
+      },
+      "manifest_NOT_oracle_true": true,
+      "label_present_NOT_oracle": true,
+      "oracle_recon_path": "/workspace/lab/governance/ORACLE_RECON_CF_BRTI_2026-09-12.md",
+      "oracle_recon_exists": true,
+      "F2_remains_DATA_BLOCKED": true,
+      "do_not_bless_binance_as_cf_brti": true,
+      "pass": true
+    },
+    "coverage_freeze": {
+      "L3_freeze_start": "2026-09-04T00:00:00Z",
+      "L3_freeze_end_inclusive_day": "2026-09-11",
+      "L3_first_open": "2026-09-04T00:00:00Z",
+      "L3_last_open": "2026-09-11T23:59:00Z",
+      "DATA_PROV_001_holdout_last_open": "2026-08-31T23:55:00Z",
+      "extends_DATA_PROV_001_holdout": false,
+      "note": "DATA-PROV-L3-001 coverage is 2026-09-04\u219211 only. DATA-PROV-001 sealed holdout ends 2026-08-31T23:55:00Z (5m). This dataset does NOT extend or reopen that holdout; it is a separate L3 label for the PM-003 Feature Wave window.",
+      "pass": true
+    }
+  },
+  "verdict": {
+    "recommended_verdict": "CONDITIONAL",
+    "rationale": "All integrity tests PASS. CONDITIONAL (not APPROVED) because: (1) role is L3 external predictor with explicit NOT_oracle constraints; (2) Sep-11 is API fill via www.binance.com (api.binance.com 451) not Vision zip; (3) F2/CF BRTI remains DATA-BLOCKED \u2014 Binance must not be promoted to settlement oracle; (4) knowability requires completed-bar join discipline.",
+    "cleared_f1_uses": [
+      {
+        "use": "F1_price_at_t_completed_1m_close",
+        "status": "CLEARED",
+        "join": "price_at_t = L3.close where close_time_ms <= decision_time_ms (last completed 1m bar before/at t); equiv on PM-003 :00 boundaries: open_time_ms = decision_time_ms - 60_000",
+        "caveats": [
+          "L3 external predictor only \u2014 not settlement oracle",
+          "Freeze = 2026-09-04\u219211 only",
+          "Do not use incomplete bar close at bar open"
+        ]
+      },
+      {
+        "use": "F1_RV_sigma_trailing_completed_1m",
+        "status": "CLEARED",
+        "join": "RV/\u03c3 over trailing completed 1m bars with close_time_ms <= decision_time_ms (window ends at last completed bar before t); no bars with open_time_ms >= decision_time_ms",
+        "caveats": [
+          "Trailing window must end strictly on completed bars",
+          "Same L3 / NOT_oracle constraints"
+        ]
+      }
+    ],
+    "blocked": [
+      {
+        "use": "incomplete_bar_close_at_bar_open",
+        "status": "BLOCKED",
+        "reason": "Using close of bar with open_time_ms == floor_minute(decision_time) at decision_time is LOOKAHEAD \u2014 close not knowable until close_time_ms"
+      },
+      {
+        "use": "Binance_as_F2_oracle_or_settlement",
+        "status": "BLOCKED",
+        "reason": "Binance spot is L3 predictor only; Kalshi settlement oracle is CF BRTI / ETHUSDRTI"
+      },
+      {
+        "use": "claim_CF_BRTI_substitute",
+        "status": "BLOCKED",
+        "reason": "Explicitly forbidden; ORACLE_RECON confirms F2 DATA-BLOCKED"
+      },
+      {
+        "use": "DATA_PROV_001_holdout_extension",
+        "status": "BLOCKED",
+        "reason": "L3 freeze is 2026-09-04\u219211 only; does not extend DATA-PROV-001 holdout (ends 2026-08-31)"
+      },
+      {
+        "use": "Examiner_F1_scores_in_this_audit",
+        "status": "BLOCKED",
+        "reason": "Clock integrity audit only \u2014 no Examiner numbers / no alpha"
+      },
+      {
+        "use": "F2_independent_oracle_replay",
+        "status": "BLOCKED",
+        "reason": "F2 remains DATA-BLOCKED pending licensed CF/Kalshi path (ORACLE_RECON_CF_BRTI_2026-09-12)"
+      }
+    ]
+  },
+  "recommended_verdict": "CONDITIONAL",
+  "cleared_f1_uses": [
+    {
+      "use": "F1_price_at_t_completed_1m_close",
+      "status": "CLEARED",
+      "join": "price_at_t = L3.close where close_time_ms <= decision_time_ms (last completed 1m bar before/at t); equiv on PM-003 :00 boundaries: open_time_ms = decision_time_ms - 60_000",
+      "caveats": [
+        "L3 external predictor only \u2014 not settlement oracle",
+        "Freeze = 2026-09-04\u219211 only",
+        "Do not use incomplete bar close at bar open"
+      ]
+    },
+    {
+      "use": "F1_RV_sigma_trailing_completed_1m",
+      "status": "CLEARED",
+      "join": "RV/\u03c3 over trailing completed 1m bars with close_time_ms <= decision_time_ms (window ends at last completed bar before t); no bars with open_time_ms >= decision_time_ms",
+      "caveats": [
+        "Trailing window must end strictly on completed bars",
+        "Same L3 / NOT_oracle constraints"
+      ]
+    }
+  ],
+  "blocked": [
+    {
+      "use": "incomplete_bar_close_at_bar_open",
+      "status": "BLOCKED",
+      "reason": "Using close of bar with open_time_ms == floor_minute(decision_time) at decision_time is LOOKAHEAD \u2014 close not knowable until close_time_ms"
+    },
+    {
+      "use": "Binance_as_F2_oracle_or_settlement",
+      "status": "BLOCKED",
+      "reason": "Binance spot is L3 predictor only; Kalshi settlement oracle is CF BRTI / ETHUSDRTI"
+    },
+    {
+      "use": "claim_CF_BRTI_substitute",
+      "status": "BLOCKED",
+      "reason": "Explicitly forbidden; ORACLE_RECON confirms F2 DATA-BLOCKED"
+    },
+    {
+      "use": "DATA_PROV_001_holdout_extension",
+      "status": "BLOCKED",
+      "reason": "L3 freeze is 2026-09-04\u219211 only; does not extend DATA-PROV-001 holdout (ends 2026-08-31)"
+    },
+    {
+      "use": "Examiner_F1_scores_in_this_audit",
+      "status": "BLOCKED",
+      "reason": "Clock integrity audit only \u2014 no Examiner numbers / no alpha"
+    },
+    {
+      "use": "F2_independent_oracle_replay",
+      "status": "BLOCKED",
+      "reason": "F2 remains DATA-BLOCKED pending licensed CF/Kalshi path (ORACLE_RECON_CF_BRTI_2026-09-12)"
+    }
+  ],
+  "exact_join_formula": "knowable_bar = argmax { bar in L3 | bar.close_time_ms <= decision_time_ms }; price_at_t = knowable_bar.close; equiv_when_decision_on_minute_boundary: open_time_ms = floor_minute_ms(decision_time_ms) - 60_000 (= decision_time_ms - 60_000 when decision_time is :00.000).",
+  "paths": {
+    "base": "/workspace/lab/data/DATA-PROV-L3-001",
+    "script": "/workspace/lab/data/DATA-PROV-L3-001/provenance/clock_audit_DATA-PROV-L3-001.py",
+    "json": "/workspace/lab/data/DATA-PROV-L3-001/provenance/CLOCK_AUDIT_REPORT.json",
+    "md": "/workspace/lab/data/DATA-PROV-L3-001/provenance/CLOCK_AUDIT_REPORT.md",
+    "oracle_recon": "/workspace/lab/governance/ORACLE_RECON_CF_BRTI_2026-09-12.md",
+    "pm003_checkpoints": "/workspace/lab/data/DATA-PROV-PM-003/derived/checkpoints.ndjson"
+  },
+  "policy": {
+    "no_alpha": true,
+    "no_examiner_f1_scores": true,
+    "no_binance_as_cf_brti": true,
+    "f2_data_blocked": true,
+    "no_holdout_extension": true
+  }
+}

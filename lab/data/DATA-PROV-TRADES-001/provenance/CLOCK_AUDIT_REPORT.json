@@ -1,0 +1,3285 @@
+{
+  "dataset": "DATA-PROV-TRADES-001",
+  "audited_utc": "2026-09-11T00:58:26.693535+00:00",
+  "base": "/workspace/lab/data/DATA-PROV-TRADES-001",
+  "sections": {
+    "A": {
+      "test": "A_INVENTORY_CALENDAR",
+      "expected_days_per_symbol": 2069,
+      "per_symbol": {
+        "BTCUSDT": {
+          "zip_count": 2069,
+          "sidecar_count": 2069,
+          "expect": 2069,
+          "date_first": "2021-01-01",
+          "date_last": "2026-08-31",
+          "missing_days": 0,
+          "missing_day_list": [],
+          "extra_days": 0,
+          "contiguous": true,
+          "pass": true
+        },
+        "ETHUSDT": {
+          "zip_count": 2069,
+          "sidecar_count": 2069,
+          "expect": 2069,
+          "date_first": "2021-01-01",
+          "date_last": "2026-08-31",
+          "missing_days": 0,
+          "missing_day_list": [],
+          "extra_days": 0,
+          "contiguous": true,
+          "pass": true
+        }
+      },
+      "sha256sums_lines": 4138,
+      "sha256sums_expect": 4138,
+      "sha256sums_missing_paths": [],
+      "sha256sums_extra_paths": [],
+      "derived_empty": true,
+      "missing_days_txt_date_rows": [],
+      "missing_days_txt_empty_of_dates": true,
+      "recovery_btc_2024_01_01_to_24": {
+        "all_exist": true,
+        "count_ok": 24,
+        "expect": 24,
+        "details": [
+          {
+            "date": "2024-01-01",
+            "exists": true,
+            "bytes": 10064410
+          },
+          {
+            "date": "2024-01-02",
+            "exists": true,
+            "bytes": 22014977
+          },
+          {
+            "date": "2024-01-03",
+            "exists": true,
+            "bytes": 29557346
+          },
+          {
+            "date": "2024-01-04",
+            "exists": true,
+            "bytes": 18384895
+          },
+          {
+            "date": "2024-01-05",
+            "exists": true,
+            "bytes": 20807819
+          },
+          {
+            "date": "2024-01-06",
+            "exists": true,
+            "bytes": 8645906
+          },
+          {
+            "date": "2024-01-07",
+            "exists": true,
+            "bytes": 10348979
+          },
+          {
+            "date": "2024-01-08",
+            "exists": true,
+            "bytes": 25344854
+          },
+          {
+            "date": "2024-01-09",
+            "exists": true,
+            "bytes": 28513073
+          },
+          {
+            "date": "2024-01-10",
+            "exists": true,
+            "bytes": 38346920
+          },
+          {
+            "date": "2024-01-11",
+            "exists": true,
+            "bytes": 35191286
+          },
+          {
+            "date": "2024-01-12",
+            "exists": true,
+            "bytes": 30888838
+          },
+          {
+            "date": "2024-01-13",
+            "exists": true,
+            "bytes": 12316866
+          },
+          {
+            "date": "2024-01-14",
+            "exists": true,
+            "bytes": 10575353
+          },
+          {
+            "date": "2024-01-15",
+            "exists": true,
+            "bytes": 13510974
+          },
+          {
+            "date": "2024-01-16",
+            "exists": true,
+            "bytes": 15299332
+          },
+          {
+            "date": "2024-01-17",
+            "exists": true,
+            "bytes": 11715936
+          },
+          {
+            "date": "2024-01-18",
+            "exists": true,
+            "bytes": 17344265
+          },
+          {
+            "date": "2024-01-19",
+            "exists": true,
+            "bytes": 17363510
+          },
+          {
+            "date": "2024-01-20",
+            "exists": true,
+            "bytes": 5597835
+          },
+          {
+            "date": "2024-01-21",
+            "exists": true,
+            "bytes": 4203920
+          },
+          {
+            "date": "2024-01-22",
+            "exists": true,
+            "bytes": 21443313
+          },
+          {
+            "date": "2024-01-23",
+            "exists": true,
+            "bytes": 19175195
+          },
+          {
+            "date": "2024-01-24",
+            "exists": true,
+            "bytes": 13389617
+          }
+        ]
+      },
+      "pass": true
+    },
+    "B": {
+      "test": "B_HASH_VERIFY",
+      "total_zips": 4138,
+      "workers": 6,
+      "sidecar_matches": 4138,
+      "sums_matches": 4138,
+      "both_match": 4138,
+      "fail_count": 0,
+      "fail_list": [],
+      "elapsed_sec": 29.73,
+      "full_verify_completed": true,
+      "pass": true
+    },
+    "C": {
+      "test": "C_DEEP_SAMPLE_CSV",
+      "sample_plan": {
+        "BTCUSDT": [
+          "2021-01-01",
+          "2021-11-22",
+          "2021-12-21",
+          "2022-04-11",
+          "2022-06-15",
+          "2022-08-08",
+          "2023-05-17",
+          "2023-07-20",
+          "2024-01-01",
+          "2024-01-02",
+          "2024-01-03",
+          "2024-05-11",
+          "2024-09-08",
+          "2025-01-01",
+          "2025-08-24",
+          "2026-07-13",
+          "2026-08-29",
+          "2026-08-31"
+        ],
+        "ETHUSDT": [
+          "2021-01-01",
+          "2021-11-22",
+          "2021-12-21",
+          "2022-04-11",
+          "2022-06-15",
+          "2022-08-08",
+          "2023-05-17",
+          "2023-07-20",
+          "2024-05-11",
+          "2024-09-08",
+          "2025-01-01",
+          "2025-08-24",
+          "2026-07-13",
+          "2026-08-29",
+          "2026-08-31"
+        ],
+        "stratified_seed42": [
+          "2021-11-22",
+          "2021-12-21",
+          "2022-04-11",
+          "2022-08-08",
+          "2023-05-17",
+          "2023-07-20",
+          "2024-05-11",
+          "2024-09-08",
+          "2025-01-01",
+          "2025-08-24",
+          "2026-07-13",
+          "2026-08-29"
+        ]
+      },
+      "n_samples": 33,
+      "samples": [
+        {
+          "symbol": "BTCUSDT",
+          "date": "2021-01-01",
+          "zip_path": "/workspace/lab/data/DATA-PROV-TRADES-001/raw/BTCUSDT/2021-01-01.zip",
+          "zip_exists": true,
+          "pass": true,
+          "csv_name": "BTCUSDT-aggTrades-2021-01-01.csv",
+          "header_present": true,
+          "row_count": 885732,
+          "parse_errors": 0,
+          "empty_critical_fields": 0,
+          "schema_parse_ok": true,
+          "dtype_sanity": {
+            "price_gt_0": 885732,
+            "price_le_0": 0,
+            "qty_gt_0": 885732,
+            "qty_le_0": 0,
+            "time_positive": 885732,
+            "ok": true
+          },
+          "duplicates": {
+            "duplicate_agg_trade_id_values": 0,
+            "duplicate_time_agg_pairs": 0,
+            "pass": true
+          },
+          "ordering": {
+            "agg_trade_id_strictly_increasing": true,
+            "transact_time_non_decreasing": true,
+            "time_goes_backward_events": 0,
+            "pass": true
+          },
+          "id_continuity": {
+            "gap_count": 0,
+            "max_gap_missing_ids": 0,
+            "first_le_last_violations": 0,
+            "trade_id_overlap_vs_prev_count": 0,
+            "first_agg_trade_id": 225902528,
+            "last_agg_trade_id": 226788259,
+            "first_transact_time": 1609459200001,
+            "last_transact_time": 1609545599660,
+            "first_transact_time_utc": "2021-01-01T00:00:00.001000+00:00",
+            "last_transact_time_utc": "2021-01-01T23:59:59.660000+00:00"
+          },
+          "aggressor": {
+            "is_buyer_maker_true_count": 447386,
+            "is_buyer_maker_false_count": 438346,
+            "unknown_count": 0,
+            "interpretation": {
+              "true": "buyer was maker \u2192 aggressor SELL",
+              "false": "buyer was taker \u2192 aggressor BUY"
+            },
+            "aggressor_SELL_count": 447386,
+            "aggressor_BUY_count": 438346,
+            "pass": true
+          },
+          "aggregation_artifacts": {
+            "first_gt_last_count": 0,
+            "negative_or_zero_span_count": 0,
+            "min_span": 1,
+            "max_span": 325,
+            "note": "last-first+1 vs quantity equality NOT required for aggTrades",
+            "pass": true
+          },
+          "event_time": {
+            "day_start_ms": 1609459200000,
+            "day_end_ms_exclusive": 1609545600000,
+            "rows_outside_utc_day": 0,
+            "min_time": 1609459200001,
+            "max_time": 1609545599660,
+            "pass": true
+          },
+          "impossible": {
+            "empty_critical_fields": 0,
+            "parse_errors": 0,
+            "nan_note": "CSV path used; NaN only via parse failure counted above",
+            "pass": true
+          },
+          "fail_reasons": [],
+          "last_price": 29337.16,
+          "first_price": 28948.19,
+          "audit_elapsed_sec": 2.51
+        },
+        {
+          "symbol": "BTCUSDT",
+          "date": "2021-11-22",
+          "zip_path": "/workspace/lab/data/DATA-PROV-TRADES-001/raw/BTCUSDT/2021-11-22.zip",
+          "zip_exists": true,
+          "pass": true,
+          "csv_name": "BTCUSDT-aggTrades-2021-11-22.csv",
+          "header_present": false,
+          "row_count": 2062432,
+          "parse_errors": 0,
+          "empty_critical_fields": 0,
+          "schema_parse_ok": true,
+          "dtype_sanity": {
+            "price_gt_0": 2062432,
+            "price_le_0": 0,
+            "qty_gt_0": 2062432,
+            "qty_le_0": 0,
+            "time_positive": 2062432,
+            "ok": true
+          },
+          "duplicates": {
+            "duplicate_agg_trade_id_values": 0,
+            "duplicate_time_agg_pairs": 0,
+            "pass": true
+          },
+          "ordering": {
+            "agg_trade_id_strictly_increasing": true,
+            "transact_time_non_decreasing": true,
+            "time_goes_backward_events": 0,
+            "pass": true
+          },
+          "id_continuity": {
+            "gap_count": 0,
+            "max_gap_missing_ids": 0,
+            "first_le_last_violations": 0,
+            "trade_id_overlap_vs_prev_count": 0,
+            "first_agg_trade_id": 929595294,
+            "last_agg_trade_id": 931657725,
+            "first_transact_time": 1637539200002,
+            "last_transact_time": 1637625599737,
+            "first_transact_time_utc": "2021-11-22T00:00:00.002000+00:00",
+            "last_transact_time_utc": "2021-11-22T23:59:59.737000+00:00"
+          },
+          "aggressor": {
+            "is_buyer_maker_true_count": 1041229,
+            "is_buyer_maker_false_count": 1021203,
+            "unknown_count": 0,
+            "interpretation": {
+              "true": "buyer was maker \u2192 aggressor SELL",
+              "false": "buyer was taker \u2192 aggressor BUY"
+            },
+            "aggressor_SELL_count": 1041229,
+            "aggressor_BUY_count": 1021203,
+            "pass": true
+          },
+          "aggregation_artifacts": {
+            "first_gt_last_count": 0,
+            "negative_or_zero_span_count": 0,
+            "min_span": 1,
+            "max_span": 2123,
+            "note": "last-first+1 vs quantity equality NOT required for aggTrades",
+            "pass": true
+          },
+          "event_time": {
+            "day_start_ms": 1637539200000,
+            "day_end_ms_exclusive": 1637625600000,
+            "rows_outside_utc_day": 0,
+            "min_time": 1637539200002,
+            "max_time": 1637625599737,
+            "pass": true
+          },
+          "impossible": {
+            "empty_critical_fields": 0,
+            "parse_errors": 0,
+            "nan_note": "CSV path used; NaN only via parse failure counted above",
+            "pass": true
+          },
+          "fail_reasons": [],
+          "last_price": 56268.31,
+          "first_price": 58648.87,
+          "audit_elapsed_sec": 6.03
+        },
+        {
+          "symbol": "BTCUSDT",
+          "date": "2021-12-21",
+          "zip_path": "/workspace/lab/data/DATA-PROV-TRADES-001/raw/BTCUSDT/2021-12-21.zip",
+          "zip_exists": true,
+          "pass": true,
+          "csv_name": "BTCUSDT-aggTrades-2021-12-21.csv",
+          "header_present": false,
+          "row_count": 1876367,
+          "parse_errors": 0,
+          "empty_critical_fields": 0,
+          "schema_parse_ok": true,
+          "dtype_sanity": {
+            "price_gt_0": 1876367,
+            "price_le_0": 0,
+            "qty_gt_0": 1876367,
+            "qty_le_0": 0,
+            "time_positive": 1876367,
+            "ok": true
+          },
+          "duplicates": {
+            "duplicate_agg_trade_id_values": 0,
+            "duplicate_time_agg_pairs": 0,
+            "pass": true
+          },
+          "ordering": {
+            "agg_trade_id_strictly_increasing": true,
+            "transact_time_non_decreasing": true,
+            "time_goes_backward_events": 0,
+            "pass": true
+          },
+          "id_continuity": {
+            "gap_count": 0,
+            "max_gap_missing_ids": 0,
+            "first_le_last_violations": 0,
+            "trade_id_overlap_vs_prev_count": 0,
+            "first_agg_trade_id": 982341857,
+            "last_agg_trade_id": 984218223,
+            "first_transact_time": 1640044800204,
+            "last_transact_time": 1640131199841,
+            "first_transact_time_utc": "2021-12-21T00:00:00.204000+00:00",
+            "last_transact_time_utc": "2021-12-21T23:59:59.841000+00:00"
+          },
+          "aggressor": {
+            "is_buyer_maker_true_count": 937792,
+            "is_buyer_maker_false_count": 938575,
+            "unknown_count": 0,
+            "interpretation": {
+              "true": "buyer was maker \u2192 aggressor SELL",
+              "false": "buyer was taker \u2192 aggressor BUY"
+            },
+            "aggressor_SELL_count": 937792,
+            "aggressor_BUY_count": 938575,
+            "pass": true
+          },
+          "aggregation_artifacts": {
+            "first_gt_last_count": 0,
+            "negative_or_zero_span_count": 0,
+            "min_span": 1,
+            "max_span": 1870,
+            "note": "last-first+1 vs quantity equality NOT required for aggTrades",
+            "pass": true
+          },
+          "event_time": {
+            "day_start_ms": 1640044800000,
+            "day_end_ms_exclusive": 1640131200000,
+            "rows_outside_utc_day": 0,
+            "min_time": 1640044800204,
+            "max_time": 1640131199841,
+            "pass": true
+          },
+          "impossible": {
+            "empty_critical_fields": 0,
+            "parse_errors": 0,
+            "nan_note": "CSV path used; NaN only via parse failure counted above",
+            "pass": true
+          },
+          "fail_reasons": [],
+          "last_price": 48875.15,
+          "first_price": 46896.82,
+          "audit_elapsed_sec": 5.62
+        },
+        {
+          "symbol": "BTCUSDT",
+          "date": "2022-04-11",
+          "zip_path": "/workspace/lab/data/DATA-PROV-TRADES-001/raw/BTCUSDT/2022-04-11.zip",
+          "zip_exists": true,
+          "pass": true,
+          "csv_name": "BTCUSDT-aggTrades-2022-04-11.csv",
+          "header_present": false,
+          "row_count": 1843670,
+          "parse_errors": 0,
+          "empty_critical_fields": 0,
+          "schema_parse_ok": true,
+          "dtype_sanity": {
+            "price_gt_0": 1843670,
+            "price_le_0": 0,
+            "qty_gt_0": 1843670,
+            "qty_le_0": 0,
+            "time_positive": 1843670,
+            "ok": true
+          },
+          "duplicates": {
+            "duplicate_agg_trade_id_values": 0,
+            "duplicate_time_agg_pairs": 0,
+            "pass": true
+          },
+          "ordering": {
+            "agg_trade_id_strictly_increasing": true,
+            "transact_time_non_decreasing": true,
+            "time_goes_backward_events": 0,
+            "pass": true
+          },
+          "id_continuity": {
+            "gap_count": 0,
+            "max_gap_missing_ids": 0,
+            "first_le_last_violations": 0,
+            "trade_id_overlap_vs_prev_count": 0,
+            "first_agg_trade_id": 1166591486,
+            "last_agg_trade_id": 1168435155,
+            "first_transact_time": 1649635200078,
+            "last_transact_time": 1649721599764,
+            "first_transact_time_utc": "2022-04-11T00:00:00.078000+00:00",
+            "last_transact_time_utc": "2022-04-11T23:59:59.764000+00:00"
+          },
+          "aggressor": {
+            "is_buyer_maker_true_count": 933051,
+            "is_buyer_maker_false_count": 910619,
+            "unknown_count": 0,
+            "interpretation": {
+              "true": "buyer was maker \u2192 aggressor SELL",
+              "false": "buyer was taker \u2192 aggressor BUY"
+            },
+            "aggressor_SELL_count": 933051,
+            "aggressor_BUY_count": 910619,
+            "pass": true
+          },
+          "aggregation_artifacts": {
+            "first_gt_last_count": 0,
+            "negative_or_zero_span_count": 0,
+            "min_span": 1,
+            "max_span": 2182,
+            "note": "last-first+1 vs quantity equality NOT required for aggTrades",
+            "pass": true
+          },
+          "event_time": {
+            "day_start_ms": 1649635200000,
+            "day_end_ms_exclusive": 1649721600000,
+            "rows_outside_utc_day": 0,
+            "min_time": 1649635200078,
+            "max_time": 1649721599764,
+            "pass": true
+          },
+          "impossible": {
+            "empty_critical_fields": 0,
+            "parse_errors": 0,
+            "nan_note": "CSV path used; NaN only via parse failure counted above",
+            "pass": true
+          },
+          "fail_reasons": [],
+          "last_price": 39505.6,
+          "first_price": 42140.3,
+          "audit_elapsed_sec": 5.4
+        },
+        {
+          "symbol": "BTCUSDT",
+          "date": "2022-06-15",
+          "zip_path": "/workspace/lab/data/DATA-PROV-TRADES-001/raw/BTCUSDT/2022-06-15.zip",
+          "zip_exists": true,
+          "pass": true,
+          "csv_name": "BTCUSDT-aggTrades-2022-06-15.csv",
+          "header_present": false,
+          "row_count": 6146703,
+          "parse_errors": 0,
+          "empty_critical_fields": 0,
+          "schema_parse_ok": true,
+          "dtype_sanity": {
+            "price_gt_0": 6146703,
+            "price_le_0": 0,
+            "qty_gt_0": 6146703,
+            "qty_le_0": 0,
+            "time_positive": 6146703,
+            "ok": true
+          },
+          "duplicates": {
+            "duplicate_agg_trade_id_values": 0,
+            "duplicate_time_agg_pairs": 0,
+            "pass": true
+          },
+          "ordering": {
+            "agg_trade_id_strictly_increasing": true,
+            "transact_time_non_decreasing": true,
+            "time_goes_backward_events": 0,
+            "pass": true
+          },
+          "id_continuity": {
+            "gap_count": 0,
+            "max_gap_missing_ids": 0,
+            "first_le_last_violations": 0,
+            "trade_id_overlap_vs_prev_count": 0,
+            "first_agg_trade_id": 1281821103,
+            "last_agg_trade_id": 1287967805,
+            "first_transact_time": 1655251200024,
+            "last_transact_time": 1655337599910,
+            "first_transact_time_utc": "2022-06-15T00:00:00.024000+00:00",
+            "last_transact_time_utc": "2022-06-15T23:59:59.910000+00:00"
+          },
+          "aggressor": {
+            "is_buyer_maker_true_count": 3089669,
+            "is_buyer_maker_false_count": 3057034,
+            "unknown_count": 0,
+            "interpretation": {
+              "true": "buyer was maker \u2192 aggressor SELL",
+              "false": "buyer was taker \u2192 aggressor BUY"
+            },
+            "aggressor_SELL_count": 3089669,
+            "aggressor_BUY_count": 3057034,
+            "pass": true
+          },
+          "aggregation_artifacts": {
+            "first_gt_last_count": 0,
+            "negative_or_zero_span_count": 0,
+            "min_span": 1,
+            "max_span": 1265,
+            "note": "last-first+1 vs quantity equality NOT required for aggTrades",
+            "pass": true
+          },
+          "event_time": {
+            "day_start_ms": 1655251200000,
+            "day_end_ms_exclusive": 1655337600000,
+            "rows_outside_utc_day": 0,
+            "min_time": 1655251200024,
+            "max_time": 1655337599910,
+            "pass": true
+          },
+          "impossible": {
+            "empty_critical_fields": 0,
+            "parse_errors": 0,
+            "nan_note": "CSV path used; NaN only via parse failure counted above",
+            "pass": true
+          },
+          "fail_reasons": [],
+          "last_price": 22567.5,
+          "first_price": 22122.7,
+          "audit_elapsed_sec": 18.41
+        },
+        {
+          "symbol": "BTCUSDT",
+          "date": "2022-08-08",
+          "zip_path": "/workspace/lab/data/DATA-PROV-TRADES-001/raw/BTCUSDT/2022-08-08.zip",
+          "zip_exists": true,
+          "pass": true,
+          "csv_name": "BTCUSDT-aggTrades-2022-08-08.csv",
+          "header_present": false,
+          "row_count": 1430125,
+          "parse_errors": 0,
+          "empty_critical_fields": 0,
+          "schema_parse_ok": true,
+          "dtype_sanity": {
+            "price_gt_0": 1430125,
+            "price_le_0": 0,
+            "qty_gt_0": 1430125,
+            "qty_le_0": 0,
+            "time_positive": 1430125,
+            "ok": true
+          },
+          "duplicates": {
+            "duplicate_agg_trade_id_values": 0,
+            "duplicate_time_agg_pairs": 0,
+            "pass": true
+          },
+          "ordering": {
+            "agg_trade_id_strictly_increasing": true,
+            "transact_time_non_decreasing": true,
+            "time_goes_backward_events": 0,
+            "pass": true
+          },
+          "id_continuity": {
+            "gap_count": 0,
+            "max_gap_missing_ids": 0,
+            "first_le_last_violations": 0,
+            "trade_id_overlap_vs_prev_count": 0,
+            "first_agg_trade_id": 1398698355,
+            "last_agg_trade_id": 1400128479,
+            "first_transact_time": 1659916800064,
+            "last_transact_time": 1660003199953,
+            "first_transact_time_utc": "2022-08-08T00:00:00.064000+00:00",
+            "last_transact_time_utc": "2022-08-08T23:59:59.953000+00:00"
+          },
+          "aggressor": {
+            "is_buyer_maker_true_count": 717450,
+            "is_buyer_maker_false_count": 712675,
+            "unknown_count": 0,
+            "interpretation": {
+              "true": "buyer was maker \u2192 aggressor SELL",
+              "false": "buyer was taker \u2192 aggressor BUY"
+            },
+            "aggressor_SELL_count": 717450,
+            "aggressor_BUY_count": 712675,
+            "pass": true
+          },
+          "aggregation_artifacts": {
+            "first_gt_last_count": 0,
+            "negative_or_zero_span_count": 0,
+            "min_span": 1,
+            "max_span": 2127,
+            "note": "last-first+1 vs quantity equality NOT required for aggTrades",
+            "pass": true
+          },
+          "event_time": {
+            "day_start_ms": 1659916800000,
+            "day_end_ms_exclusive": 1660003200000,
+            "rows_outside_utc_day": 0,
+            "min_time": 1659916800064,
+            "max_time": 1660003199953,
+            "pass": true
+          },
+          "impossible": {
+            "empty_critical_fields": 0,
+            "parse_errors": 0,
+            "nan_note": "CSV path used; NaN only via parse failure counted above",
+            "pass": true
+          },
+          "fail_reasons": [],
+          "last_price": 23804.4,
+          "first_price": 23167.9,
+          "audit_elapsed_sec": 4.14
+        },
+        {
+          "symbol": "BTCUSDT",
+          "date": "2023-05-17",
+          "zip_path": "/workspace/lab/data/DATA-PROV-TRADES-001/raw/BTCUSDT/2023-05-17.zip",
+          "zip_exists": true,
+          "pass": true,
+          "csv_name": "BTCUSDT-aggTrades-2023-05-17.csv",
+          "header_present": true,
+          "row_count": 1265796,
+          "parse_errors": 0,
+          "empty_critical_fields": 0,
+          "schema_parse_ok": true,
+          "dtype_sanity": {
+            "price_gt_0": 1265796,
+            "price_le_0": 0,
+            "qty_gt_0": 1265796,
+            "qty_le_0": 0,
+            "time_positive": 1265796,
+            "ok": true
+          },
+          "duplicates": {
+            "duplicate_agg_trade_id_values": 0,
+            "duplicate_time_agg_pairs": 0,
+            "pass": true
+          },
+          "ordering": {
+            "agg_trade_id_strictly_increasing": true,
+            "transact_time_non_decreasing": true,
+            "time_goes_backward_events": 0,
+            "pass": true
+          },
+          "id_continuity": {
+            "gap_count": 0,
+            "max_gap_missing_ids": 0,
+            "first_le_last_violations": 0,
+            "trade_id_overlap_vs_prev_count": 0,
+            "first_agg_trade_id": 1737805868,
+            "last_agg_trade_id": 1739071663,
+            "first_transact_time": 1684281600099,
+            "last_transact_time": 1684367999831,
+            "first_transact_time_utc": "2023-05-17T00:00:00.099000+00:00",
+            "last_transact_time_utc": "2023-05-17T23:59:59.831000+00:00"
+          },
+          "aggressor": {
+            "is_buyer_maker_true_count": 633141,
+            "is_buyer_maker_false_count": 632655,
+            "unknown_count": 0,
+            "interpretation": {
+              "true": "buyer was maker \u2192 aggressor SELL",
+              "false": "buyer was taker \u2192 aggressor BUY"
+            },
+            "aggressor_SELL_count": 633141,
+            "aggressor_BUY_count": 632655,
+            "pass": true
+          },
+          "aggregation_artifacts": {
+            "first_gt_last_count": 0,
+            "negative_or_zero_span_count": 0,
+            "min_span": 1,
+            "max_span": 1233,
+            "note": "last-first+1 vs quantity equality NOT required for aggTrades",
+            "pass": true
+          },
+          "event_time": {
+            "day_start_ms": 1684281600000,
+            "day_end_ms_exclusive": 1684368000000,
+            "rows_outside_utc_day": 0,
+            "min_time": 1684281600099,
+            "max_time": 1684367999831,
+            "pass": true
+          },
+          "impossible": {
+            "empty_critical_fields": 0,
+            "parse_errors": 0,
+            "nan_note": "CSV path used; NaN only via parse failure counted above",
+            "pass": true
+          },
+          "fail_reasons": [],
+          "last_price": 27395.8,
+          "first_price": 27024.7,
+          "audit_elapsed_sec": 3.72
+        },
+        {
+          "symbol": "BTCUSDT",
+          "date": "2023-07-20",
+          "zip_path": "/workspace/lab/data/DATA-PROV-TRADES-001/raw/BTCUSDT/2023-07-20.zip",
+          "zip_exists": true,
+          "pass": true,
+          "csv_name": "BTCUSDT-aggTrades-2023-07-20.csv",
+          "header_present": true,
+          "row_count": 1040049,
+          "parse_errors": 0,
+          "empty_critical_fields": 0,
+          "schema_parse_ok": true,
+          "dtype_sanity": {
+            "price_gt_0": 1040049,
+            "price_le_0": 0,
+            "qty_gt_0": 1040049,
+            "qty_le_0": 0,
+            "time_positive": 1040049,
+            "ok": true
+          },
+          "duplicates": {
+            "duplicate_agg_trade_id_values": 0,
+            "duplicate_time_agg_pairs": 0,
+            "pass": true
+          },
+          "ordering": {
+            "agg_trade_id_strictly_increasing": true,
+            "transact_time_non_decreasing": true,
+            "time_goes_backward_events": 0,
+            "pass": true
+          },
+          "id_continuity": {
+            "gap_count": 0,
+            "max_gap_missing_ids": 0,
+            "first_le_last_violations": 0,
+            "trade_id_overlap_vs_prev_count": 0,
+            "first_agg_trade_id": 1808315519,
+            "last_agg_trade_id": 1809355567,
+            "first_transact_time": 1689811200084,
+            "last_transact_time": 1689897599922,
+            "first_transact_time_utc": "2023-07-20T00:00:00.084000+00:00",
+            "last_transact_time_utc": "2023-07-20T23:59:59.922000+00:00"
+          },
+          "aggressor": {
+            "is_buyer_maker_true_count": 514800,
+            "is_buyer_maker_false_count": 525249,
+            "unknown_count": 0,
+            "interpretation": {
+              "true": "buyer was maker \u2192 aggressor SELL",
+              "false": "buyer was taker \u2192 aggressor BUY"
+            },
+            "aggressor_SELL_count": 514800,
+            "aggressor_BUY_count": 525249,
+            "pass": true
+          },
+          "aggregation_artifacts": {
+            "first_gt_last_count": 0,
+            "negative_or_zero_span_count": 0,
+            "min_span": 1,
+            "max_span": 1526,
+            "note": "last-first+1 vs quantity equality NOT required for aggTrades",
+            "pass": true
+          },
+          "event_time": {
+            "day_start_ms": 1689811200000,
+            "day_end_ms_exclusive": 1689897600000,
+            "rows_outside_utc_day": 0,
+            "min_time": 1689811200084,
+            "max_time": 1689897599922,
+            "pass": true
+          },
+          "impossible": {
+            "empty_critical_fields": 0,
+            "parse_errors": 0,
+            "nan_note": "CSV path used; NaN only via parse failure counted above",
+            "pass": true
+          },
+          "fail_reasons": [],
+          "last_price": 29791.0,
+          "first_price": 29895.5,
+          "audit_elapsed_sec": 2.92
+        },
+        {
+          "symbol": "BTCUSDT",
+          "date": "2024-01-01",
+          "zip_path": "/workspace/lab/data/DATA-PROV-TRADES-001/raw/BTCUSDT/2024-01-01.zip",
+          "zip_exists": true,
+          "pass": true,
+          "csv_name": "BTCUSDT-aggTrades-2024-01-01.csv",
+          "header_present": true,
+          "row_count": 761222,
+          "parse_errors": 0,
+          "empty_critical_fields": 0,
+          "schema_parse_ok": true,
+          "dtype_sanity": {
+            "price_gt_0": 761222,
+            "price_le_0": 0,
+            "qty_gt_0": 761222,
+            "qty_le_0": 0,
+            "time_positive": 761222,
+            "ok": true
+          },
+          "duplicates": {
+            "duplicate_agg_trade_id_values": 0,
+            "duplicate_time_agg_pairs": 0,
+            "pass": true
+          },
+          "ordering": {
+            "agg_trade_id_strictly_increasing": true,
+            "transact_time_non_decreasing": true,
+            "time_goes_backward_events": 0,
+            "pass": true
+          },
+          "id_continuity": {
+            "gap_count": 0,
+            "max_gap_missing_ids": 0,
+            "first_le_last_violations": 0,
+            "trade_id_overlap_vs_prev_count": 0,
+            "first_agg_trade_id": 1965151407,
+            "last_agg_trade_id": 1965912628,
+            "first_transact_time": 1704067200038,
+            "last_transact_time": 1704153599978,
+            "first_transact_time_utc": "2024-01-01T00:00:00.038000+00:00",
+            "last_transact_time_utc": "2024-01-01T23:59:59.978000+00:00"
+          },
+          "aggressor": {
+            "is_buyer_maker_true_count": 376837,
+            "is_buyer_maker_false_count": 384385,
+            "unknown_count": 0,
+            "interpretation": {
+              "true": "buyer was maker \u2192 aggressor SELL",
+              "false": "buyer was taker \u2192 aggressor BUY"
+            },
+            "aggressor_SELL_count": 376837,
+            "aggressor_BUY_count": 384385,
+            "pass": true
+          },
+          "aggregation_artifacts": {
+            "first_gt_last_count": 0,
+            "negative_or_zero_span_count": 0,
+            "min_span": 1,
+            "max_span": 1435,
+            "note": "last-first+1 vs quantity equality NOT required for aggTrades",
+            "pass": true
+          },
+          "event_time": {
+            "day_start_ms": 1704067200000,
+            "day_end_ms_exclusive": 1704153600000,
+            "rows_outside_utc_day": 0,
+            "min_time": 1704067200038,
+            "max_time": 1704153599978,
+            "pass": true
+          },
+          "impossible": {
+            "empty_critical_fields": 0,
+            "parse_errors": 0,
+            "nan_note": "CSV path used; NaN only via parse failure counted above",
+            "pass": true
+          },
+          "fail_reasons": [],
+          "last_price": 44230.2,
+          "first_price": 42313.9,
+          "audit_elapsed_sec": 2.22
+        },
+        {
+          "symbol": "BTCUSDT",
+          "date": "2024-01-02",
+          "zip_path": "/workspace/lab/data/DATA-PROV-TRADES-001/raw/BTCUSDT/2024-01-02.zip",
+          "zip_exists": true,
+          "pass": true,
+          "csv_name": "BTCUSDT-aggTrades-2024-01-02.csv",
+          "header_present": true,
+          "row_count": 1677641,
+          "parse_errors": 0,
+          "empty_critical_fields": 0,
+          "schema_parse_ok": true,
+          "dtype_sanity": {
+            "price_gt_0": 1677641,
+            "price_le_0": 0,
+            "qty_gt_0": 1677641,
+            "qty_le_0": 0,
+            "time_positive": 1677641,
+            "ok": true
+          },
+          "duplicates": {
+            "duplicate_agg_trade_id_values": 0,
+            "duplicate_time_agg_pairs": 0,
+            "pass": true
+          },
+          "ordering": {
+            "agg_trade_id_strictly_increasing": true,
+            "transact_time_non_decreasing": true,
+            "time_goes_backward_events": 0,
+            "pass": true
+          },
+          "id_continuity": {
+            "gap_count": 0,
+            "max_gap_missing_ids": 0,
+            "first_le_last_violations": 0,
+            "trade_id_overlap_vs_prev_count": 0,
+            "first_agg_trade_id": 1965912629,
+            "last_agg_trade_id": 1967590269,
+            "first_transact_time": 1704153600008,
+            "last_transact_time": 1704239999968,
+            "first_transact_time_utc": "2024-01-02T00:00:00.008000+00:00",
+            "last_transact_time_utc": "2024-01-02T23:59:59.968000+00:00"
+          },
+          "aggressor": {
+            "is_buyer_maker_true_count": 851006,
+            "is_buyer_maker_false_count": 826635,
+            "unknown_count": 0,
+            "interpretation": {
+              "true": "buyer was maker \u2192 aggressor SELL",
+              "false": "buyer was taker \u2192 aggressor BUY"
+            },
+            "aggressor_SELL_count": 851006,
+            "aggressor_BUY_count": 826635,
+            "pass": true
+          },
+          "aggregation_artifacts": {
+            "first_gt_last_count": 0,
+            "negative_or_zero_span_count": 0,
+            "min_span": 1,
+            "max_span": 840,
+            "note": "last-first+1 vs quantity equality NOT required for aggTrades",
+            "pass": true
+          },
+          "event_time": {
+            "day_start_ms": 1704153600000,
+            "day_end_ms_exclusive": 1704240000000,
+            "rows_outside_utc_day": 0,
+            "min_time": 1704153600008,
+            "max_time": 1704239999968,
+            "pass": true
+          },
+          "impossible": {
+            "empty_critical_fields": 0,
+            "parse_errors": 0,
+            "nan_note": "CSV path used; NaN only via parse failure counted above",
+            "pass": true
+          },
+          "fail_reasons": [],
+          "last_price": 44979.8,
+          "first_price": 44230.3,
+          "audit_elapsed_sec": 4.83
+        },
+        {
+          "symbol": "BTCUSDT",
+          "date": "2024-01-03",
+          "zip_path": "/workspace/lab/data/DATA-PROV-TRADES-001/raw/BTCUSDT/2024-01-03.zip",
+          "zip_exists": true,
+          "pass": true,
+          "csv_name": "BTCUSDT-aggTrades-2024-01-03.csv",
+          "header_present": true,
+          "row_count": 2295158,
+          "parse_errors": 0,
+          "empty_critical_fields": 0,
+          "schema_parse_ok": true,
+          "dtype_sanity": {
+            "price_gt_0": 2295158,
+            "price_le_0": 0,
+            "qty_gt_0": 2295158,
+            "qty_le_0": 0,
+            "time_positive": 2295158,
+            "ok": true
+          },
+          "duplicates": {
+            "duplicate_agg_trade_id_values": 0,
+            "duplicate_time_agg_pairs": 0,
+            "pass": true
+          },
+          "ordering": {
+            "agg_trade_id_strictly_increasing": true,
+            "transact_time_non_decreasing": true,
+            "time_goes_backward_events": 0,
+            "pass": true
+          },
+          "id_continuity": {
+            "gap_count": 0,
+            "max_gap_missing_ids": 0,
+            "first_le_last_violations": 0,
+            "trade_id_overlap_vs_prev_count": 0,
+            "first_agg_trade_id": 1967590270,
+            "last_agg_trade_id": 1969885427,
+            "first_transact_time": 1704240000017,
+            "last_transact_time": 1704326399984,
+            "first_transact_time_utc": "2024-01-03T00:00:00.017000+00:00",
+            "last_transact_time_utc": "2024-01-03T23:59:59.984000+00:00"
+          },
+          "aggressor": {
+            "is_buyer_maker_true_count": 1165726,
+            "is_buyer_maker_false_count": 1129432,
+            "unknown_count": 0,
+            "interpretation": {
+              "true": "buyer was maker \u2192 aggressor SELL",
+              "false": "buyer was taker \u2192 aggressor BUY"
+            },
+            "aggressor_SELL_count": 1165726,
+            "aggressor_BUY_count": 1129432,
+            "pass": true
+          },
+          "aggregation_artifacts": {
+            "first_gt_last_count": 0,
+            "negative_or_zero_span_count": 0,
+            "min_span": 1,
+            "max_span": 1281,
+            "note": "last-first+1 vs quantity equality NOT required for aggTrades",
+            "pass": true
+          },
+          "event_time": {
+            "day_start_ms": 1704240000000,
+            "day_end_ms_exclusive": 1704326400000,
+            "rows_outside_utc_day": 0,
+            "min_time": 1704240000017,
+            "max_time": 1704326399984,
+            "pass": true
+          },
+          "impossible": {
+            "empty_critical_fields": 0,
+            "parse_errors": 0,
+            "nan_note": "CSV path used; NaN only via parse failure counted above",
+            "pass": true
+          },
+          "fail_reasons": [],
+          "last_price": 42849.5,
+          "first_price": 44979.7,
+          "audit_elapsed_sec": 6.63
+        },
+        {
+          "symbol": "BTCUSDT",
+          "date": "2024-05-11",
+          "zip_path": "/workspace/lab/data/DATA-PROV-TRADES-001/raw/BTCUSDT/2024-05-11.zip",
+          "zip_exists": true,
+          "pass": true,
+          "csv_name": "BTCUSDT-aggTrades-2024-05-11.csv",
+          "header_present": true,
+          "row_count": 683102,
+          "parse_errors": 0,
+          "empty_critical_fields": 0,
+          "schema_parse_ok": true,
+          "dtype_sanity": {
+            "price_gt_0": 683102,
+            "price_le_0": 0,
+            "qty_gt_0": 683102,
+            "qty_le_0": 0,
+            "time_positive": 683102,
+            "ok": true
+          },
+          "duplicates": {
+            "duplicate_agg_trade_id_values": 0,
+            "duplicate_time_agg_pairs": 0,
+            "pass": true
+          },
+          "ordering": {
+            "agg_trade_id_strictly_increasing": true,
+            "transact_time_non_decreasing": true,
+            "time_goes_backward_events": 0,
+            "pass": true
+          },
+          "id_continuity": {
+            "gap_count": 0,
+            "max_gap_missing_ids": 0,
+            "first_le_last_violations": 0,
+            "trade_id_overlap_vs_prev_count": 0,
+            "first_agg_trade_id": 2176684203,
+            "last_agg_trade_id": 2177367304,
+            "first_transact_time": 1715385600127,
+            "last_transact_time": 1715471999983,
+            "first_transact_time_utc": "2024-05-11T00:00:00.127000+00:00",
+            "last_transact_time_utc": "2024-05-11T23:59:59.983000+00:00"
+          },
+          "aggressor": {
+            "is_buyer_maker_true_count": 335262,
+            "is_buyer_maker_false_count": 347840,
+            "unknown_count": 0,
+            "interpretation": {
+              "true": "buyer was maker \u2192 aggressor SELL",
+              "false": "buyer was taker \u2192 aggressor BUY"
+            },
+            "aggressor_SELL_count": 335262,
+            "aggressor_BUY_count": 347840,
+            "pass": true
+          },
+          "aggregation_artifacts": {
+            "first_gt_last_count": 0,
+            "negative_or_zero_span_count": 0,
+            "min_span": 1,
+            "max_span": 486,
+            "note": "last-first+1 vs quantity equality NOT required for aggTrades",
+            "pass": true
+          },
+          "event_time": {
+            "day_start_ms": 1715385600000,
+            "day_end_ms_exclusive": 1715472000000,
+            "rows_outside_utc_day": 0,
+            "min_time": 1715385600127,
+            "max_time": 1715471999983,
+            "pass": true
+          },
+          "impossible": {
+            "empty_critical_fields": 0,
+            "parse_errors": 0,
+            "nan_note": "CSV path used; NaN only via parse failure counted above",
+            "pass": true
+          },
+          "fail_reasons": [],
+          "last_price": 60809.2,
+          "first_price": 60778.0,
+          "audit_elapsed_sec": 1.85
+        },
+        {
+          "symbol": "BTCUSDT",
+          "date": "2024-09-08",
+          "zip_path": "/workspace/lab/data/DATA-PROV-TRADES-001/raw/BTCUSDT/2024-09-08.zip",
+          "zip_exists": true,
+          "pass": true,
+          "csv_name": "BTCUSDT-aggTrades-2024-09-08.csv",
+          "header_present": true,
+          "row_count": 835850,
+          "parse_errors": 0,
+          "empty_critical_fields": 0,
+          "schema_parse_ok": true,
+          "dtype_sanity": {
+            "price_gt_0": 835850,
+            "price_le_0": 0,
+            "qty_gt_0": 835850,
+            "qty_le_0": 0,
+            "time_positive": 835850,
+            "ok": true
+          },
+          "duplicates": {
+            "duplicate_agg_trade_id_values": 0,
+            "duplicate_time_agg_pairs": 0,
+            "pass": true
+          },
+          "ordering": {
+            "agg_trade_id_strictly_increasing": true,
+            "transact_time_non_decreasing": true,
+            "time_goes_backward_events": 0,
+            "pass": true
+          },
+          "id_continuity": {
+            "gap_count": 0,
+            "max_gap_missing_ids": 0,
+            "first_le_last_violations": 0,
+            "trade_id_overlap_vs_prev_count": 0,
+            "first_agg_trade_id": 2320791030,
+            "last_agg_trade_id": 2321626879,
+            "first_transact_time": 1725753603313,
+            "last_transact_time": 1725839999770,
+            "first_transact_time_utc": "2024-09-08T00:00:03.313000+00:00",
+            "last_transact_time_utc": "2024-09-08T23:59:59.770000+00:00"
+          },
+          "aggressor": {
+            "is_buyer_maker_true_count": 419898,
+            "is_buyer_maker_false_count": 415952,
+            "unknown_count": 0,
+            "interpretation": {
+              "true": "buyer was maker \u2192 aggressor SELL",
+              "false": "buyer was taker \u2192 aggressor BUY"
+            },
+            "aggressor_SELL_count": 419898,
+            "aggressor_BUY_count": 415952,
+            "pass": true
+          },
+          "aggregation_artifacts": {
+            "first_gt_last_count": 0,
+            "negative_or_zero_span_count": 0,
+            "min_span": 1,
+            "max_span": 649,
+            "note": "last-first+1 vs quantity equality NOT required for aggTrades",
+            "pass": true
+          },
+          "event_time": {
+            "day_start_ms": 1725753600000,
+            "day_end_ms_exclusive": 1725840000000,
+            "rows_outside_utc_day": 0,
+            "min_time": 1725753603313,
+            "max_time": 1725839999770,
+            "pass": true
+          },
+          "impossible": {
+            "empty_critical_fields": 0,
+            "parse_errors": 0,
+            "nan_note": "CSV path used; NaN only via parse failure counted above",
+            "pass": true
+          },
+          "fail_reasons": [],
+          "last_price": 54839.6,
+          "first_price": 54134.9,
+          "audit_elapsed_sec": 2.28
+        },
+        {
+          "symbol": "BTCUSDT",
+          "date": "2025-01-01",
+          "zip_path": "/workspace/lab/data/DATA-PROV-TRADES-001/raw/BTCUSDT/2025-01-01.zip",
+          "zip_exists": true,
+          "pass": true,
+          "csv_name": "BTCUSDT-aggTrades-2025-01-01.csv",
+          "header_present": true,
+          "row_count": 726611,
+          "parse_errors": 0,
+          "empty_critical_fields": 0,
+          "schema_parse_ok": true,
+          "dtype_sanity": {
+            "price_gt_0": 726611,
+            "price_le_0": 0,
+            "qty_gt_0": 726611,
+            "qty_le_0": 0,
+            "time_positive": 726611,
+            "ok": true
+          },
+          "duplicates": {
+            "duplicate_agg_trade_id_values": 0,
+            "duplicate_time_agg_pairs": 0,
+            "pass": true
+          },
+          "ordering": {
+            "agg_trade_id_strictly_increasing": true,
+            "transact_time_non_decreasing": true,
+            "time_goes_backward_events": 0,
+            "pass": true
+          },
+          "id_continuity": {
+            "gap_count": 0,
+            "max_gap_missing_ids": 0,
+            "first_le_last_violations": 0,
+            "trade_id_overlap_vs_prev_count": 0,
+            "first_agg_trade_id": 2496124811,
+            "last_agg_trade_id": 2496851421,
+            "first_transact_time": 1735689600051,
+            "last_transact_time": 1735775999458,
+            "first_transact_time_utc": "2025-01-01T00:00:00.051000+00:00",
+            "last_transact_time_utc": "2025-01-01T23:59:59.458000+00:00"
+          },
+          "aggressor": {
+            "is_buyer_maker_true_count": 361496,
+            "is_buyer_maker_false_count": 365115,
+            "unknown_count": 0,
+            "interpretation": {
+              "true": "buyer was maker \u2192 aggressor SELL",
+              "false": "buyer was taker \u2192 aggressor BUY"
+            },
+            "aggressor_SELL_count": 361496,
+            "aggressor_BUY_count": 365115,
+            "pass": true
+          },
+          "aggregation_artifacts": {
+            "first_gt_last_count": 0,
+            "negative_or_zero_span_count": 0,
+            "min_span": 1,
+            "max_span": 535,
+            "note": "last-first+1 vs quantity equality NOT required for aggTrades",
+            "pass": true
+          },
+          "event_time": {
+            "day_start_ms": 1735689600000,
+            "day_end_ms_exclusive": 1735776000000,
+            "rows_outside_utc_day": 0,
+            "min_time": 1735689600051,
+            "max_time": 1735775999458,
+            "pass": true
+          },
+          "impossible": {
+            "empty_critical_fields": 0,
+            "parse_errors": 0,
+            "nan_note": "CSV path used; NaN only via parse failure counted above",
+            "pass": true
+          },
+          "fail_reasons": [],
+          "last_price": 94580.9,
+          "first_price": 93548.8,
+          "audit_elapsed_sec": 1.93
+        },
+        {
+          "symbol": "BTCUSDT",
+          "date": "2025-08-24",
+          "zip_path": "/workspace/lab/data/DATA-PROV-TRADES-001/raw/BTCUSDT/2025-08-24.zip",
+          "zip_exists": true,
+          "pass": true,
+          "csv_name": "BTCUSDT-aggTrades-2025-08-24.csv",
+          "header_present": true,
+          "row_count": 1172176,
+          "parse_errors": 0,
+          "empty_critical_fields": 0,
+          "schema_parse_ok": true,
+          "dtype_sanity": {
+            "price_gt_0": 1172176,
+            "price_le_0": 0,
+            "qty_gt_0": 1172176,
+            "qty_le_0": 0,
+            "time_positive": 1172176,
+            "ok": true
+          },
+          "duplicates": {
+            "duplicate_agg_trade_id_values": 0,
+            "duplicate_time_agg_pairs": 0,
+            "pass": true
+          },
+          "ordering": {
+            "agg_trade_id_strictly_increasing": true,
+            "transact_time_non_decreasing": true,
+            "time_goes_backward_events": 0,
+            "pass": true
+          },
+          "id_continuity": {
+            "gap_count": 0,
+            "max_gap_missing_ids": 0,
+            "first_le_last_violations": 0,
+            "trade_id_overlap_vs_prev_count": 0,
+            "first_agg_trade_id": 2831259273,
+            "last_agg_trade_id": 2832431448,
+            "first_transact_time": 1755993600766,
+            "last_transact_time": 1756079999958,
+            "first_transact_time_utc": "2025-08-24T00:00:00.766000+00:00",
+            "last_transact_time_utc": "2025-08-24T23:59:59.958000+00:00"
+          },
+          "aggressor": {
+            "is_buyer_maker_true_count": 592569,
+            "is_buyer_maker_false_count": 579607,
+            "unknown_count": 0,
+            "interpretation": {
+              "true": "buyer was maker \u2192 aggressor SELL",
+              "false": "buyer was taker \u2192 aggressor BUY"
+            },
+            "aggressor_SELL_count": 592569,
+            "aggressor_BUY_count": 579607,
+            "pass": true
+          },
+          "aggregation_artifacts": {
+            "first_gt_last_count": 0,
+            "negative_or_zero_span_count": 0,
+            "min_span": 1,
+            "max_span": 1078,
+            "note": "last-first+1 vs quantity equality NOT required for aggTrades",
+            "pass": true
+          },
+          "event_time": {
+            "day_start_ms": 1755993600000,
+            "day_end_ms_exclusive": 1756080000000,
+            "rows_outside_utc_day": 0,
+            "min_time": 1755993600766,
+            "max_time": 1756079999958,
+            "pass": true
+          },
+          "impossible": {
+            "empty_critical_fields": 0,
+            "parse_errors": 0,
+            "nan_note": "CSV path used; NaN only via parse failure counted above",
+            "pass": true
+          },
+          "fail_reasons": [],
+          "last_price": 113446.3,
+          "first_price": 115377.1,
+          "audit_elapsed_sec": 3.27
+        },
+        {
+          "symbol": "BTCUSDT",
+          "date": "2026-07-13",
+          "zip_path": "/workspace/lab/data/DATA-PROV-TRADES-001/raw/BTCUSDT/2026-07-13.zip",
+          "zip_exists": true,
+          "pass": true,
+          "csv_name": "BTCUSDT-aggTrades-2026-07-13.csv",
+          "header_present": true,
+          "row_count": 1432145,
+          "parse_errors": 0,
+          "empty_critical_fields": 0,
+          "schema_parse_ok": true,
+          "dtype_sanity": {
+            "price_gt_0": 1432145,
+            "price_le_0": 0,
+            "qty_gt_0": 1432145,
+            "qty_le_0": 0,
+            "time_positive": 1432145,
+            "ok": true
+          },
+          "duplicates": {
+            "duplicate_agg_trade_id_values": 0,
+            "duplicate_time_agg_pairs": 0,
+            "pass": true
+          },
+          "ordering": {
+            "agg_trade_id_strictly_increasing": true,
+            "transact_time_non_decreasing": true,
+            "time_goes_backward_events": 0,
+            "pass": true
+          },
+          "id_continuity": {
+            "gap_count": 0,
+            "max_gap_missing_ids": 0,
+            "first_le_last_violations": 0,
+            "trade_id_overlap_vs_prev_count": 0,
+            "first_agg_trade_id": 3380488855,
+            "last_agg_trade_id": 3381920999,
+            "first_transact_time": 1783900800347,
+            "last_transact_time": 1783987199762,
+            "first_transact_time_utc": "2026-07-13T00:00:00.347000+00:00",
+            "last_transact_time_utc": "2026-07-13T23:59:59.762000+00:00"
+          },
+          "aggressor": {
+            "is_buyer_maker_true_count": 712863,
+            "is_buyer_maker_false_count": 719282,
+            "unknown_count": 0,
+            "interpretation": {
+              "true": "buyer was maker \u2192 aggressor SELL",
+              "false": "buyer was taker \u2192 aggressor BUY"
+            },
+            "aggressor_SELL_count": 712863,
+            "aggressor_BUY_count": 719282,
+            "pass": true
+          },
+          "aggregation_artifacts": {
+            "first_gt_last_count": 0,
+            "negative_or_zero_span_count": 0,
+            "min_span": 1,
+            "max_span": 1410,
+            "note": "last-first+1 vs quantity equality NOT required for aggTrades",
+            "pass": true
+          },
+          "event_time": {
+            "day_start_ms": 1783900800000,
+            "day_end_ms_exclusive": 1783987200000,
+            "rows_outside_utc_day": 0,
+            "min_time": 1783900800347,
+            "max_time": 1783987199762,
+            "pass": true
+          },
+          "impossible": {
+            "empty_critical_fields": 0,
+            "parse_errors": 0,
+            "nan_note": "CSV path used; NaN only via parse failure counted above",
+            "pass": true
+          },
+          "fail_reasons": [],
+          "last_price": 62307.0,
+          "first_price": 63749.9,
+          "audit_elapsed_sec": 4.16
+        },
+        {
+          "symbol": "BTCUSDT",
+          "date": "2026-08-29",
+          "zip_path": "/workspace/lab/data/DATA-PROV-TRADES-001/raw/BTCUSDT/2026-08-29.zip",
+          "zip_exists": true,
+          "pass": true,
+          "csv_name": "BTCUSDT-aggTrades-2026-08-29.csv",
+          "header_present": true,
+          "row_count": 444895,
+          "parse_errors": 0,
+          "empty_critical_fields": 0,
+          "schema_parse_ok": true,
+          "dtype_sanity": {
+            "price_gt_0": 444895,
+            "price_le_0": 0,
+            "qty_gt_0": 444895,
+            "qty_le_0": 0,
+            "time_positive": 444895,
+            "ok": true
+          },
+          "duplicates": {
+            "duplicate_agg_trade_id_values": 0,
+            "duplicate_time_agg_pairs": 0,
+            "pass": true
+          },
+          "ordering": {
+            "agg_trade_id_strictly_increasing": true,
+            "transact_time_non_decreasing": true,
+            "time_goes_backward_events": 0,
+            "pass": true
+          },
+          "id_continuity": {
+            "gap_count": 0,
+            "max_gap_missing_ids": 0,
+            "first_le_last_violations": 0,
+            "trade_id_overlap_vs_prev_count": 0,
+            "first_agg_trade_id": 3432396007,
+            "last_agg_trade_id": 3432840901,
+            "first_transact_time": 1787961600003,
+            "last_transact_time": 1788047999157,
+            "first_transact_time_utc": "2026-08-29T00:00:00.003000+00:00",
+            "last_transact_time_utc": "2026-08-29T23:59:59.157000+00:00"
+          },
+          "aggressor": {
+            "is_buyer_maker_true_count": 220553,
+            "is_buyer_maker_false_count": 224342,
+            "unknown_count": 0,
+            "interpretation": {
+              "true": "buyer was maker \u2192 aggressor SELL",
+              "false": "buyer was taker \u2192 aggressor BUY"
+            },
+            "aggressor_SELL_count": 220553,
+            "aggressor_BUY_count": 224342,
+            "pass": true
+          },
+          "aggregation_artifacts": {
+            "first_gt_last_count": 0,
+            "negative_or_zero_span_count": 0,
+            "min_span": 1,
+            "max_span": 567,
+            "note": "last-first+1 vs quantity equality NOT required for aggTrades",
+            "pass": true
+          },
+          "event_time": {
+            "day_start_ms": 1787961600000,
+            "day_end_ms_exclusive": 1788048000000,
+            "rows_outside_utc_day": 0,
+            "min_time": 1787961600003,
+            "max_time": 1788047999157,
+            "pass": true
+          },
+          "impossible": {
+            "empty_critical_fields": 0,
+            "parse_errors": 0,
+            "nan_note": "CSV path used; NaN only via parse failure counted above",
+            "pass": true
+          },
+          "fail_reasons": [],
+          "last_price": 78200.7,
+          "first_price": 77805.9,
+          "audit_elapsed_sec": 1.18
+        },
+        {
+          "symbol": "BTCUSDT",
+          "date": "2026-08-31",
+          "zip_path": "/workspace/lab/data/DATA-PROV-TRADES-001/raw/BTCUSDT/2026-08-31.zip",
+          "zip_exists": true,
+          "pass": true,
+          "csv_name": "BTCUSDT-aggTrades-2026-08-31.csv",
+          "header_present": true,
+          "row_count": 1353859,
+          "parse_errors": 0,
+          "empty_critical_fields": 0,
+          "schema_parse_ok": true,
+          "dtype_sanity": {
+            "price_gt_0": 1353859,
+            "price_le_0": 0,
+            "qty_gt_0": 1353859,
+            "qty_le_0": 0,
+            "time_positive": 1353859,
+            "ok": true
+          },
+          "duplicates": {
+            "duplicate_agg_trade_id_values": 0,
+            "duplicate_time_agg_pairs": 0,
+            "pass": true
+          },
+          "ordering": {
+            "agg_trade_id_strictly_increasing": true,
+            "transact_time_non_decreasing": true,
+            "time_goes_backward_events": 0,
+            "pass": true
+          },
+          "id_continuity": {
+            "gap_count": 0,
+            "max_gap_missing_ids": 0,
+            "first_le_last_violations": 0,
+            "trade_id_overlap_vs_prev_count": 0,
+            "first_agg_trade_id": 3433700662,
+            "last_agg_trade_id": 3435054520,
+            "first_transact_time": 1788134400001,
+            "last_transact_time": 1788220799466,
+            "first_transact_time_utc": "2026-08-31T00:00:00.001000+00:00",
+            "last_transact_time_utc": "2026-08-31T23:59:59.466000+00:00"
+          },
+          "aggressor": {
+            "is_buyer_maker_true_count": 679219,
+            "is_buyer_maker_false_count": 674640,
+            "unknown_count": 0,
+            "interpretation": {
+              "true": "buyer was maker \u2192 aggressor SELL",
+              "false": "buyer was taker \u2192 aggressor BUY"
+            },
+            "aggressor_SELL_count": 679219,
+            "aggressor_BUY_count": 674640,
+            "pass": true
+          },
+          "aggregation_artifacts": {
+            "first_gt_last_count": 0,
+            "negative_or_zero_span_count": 0,
+            "min_span": 1,
+            "max_span": 1004,
+            "note": "last-first+1 vs quantity equality NOT required for aggTrades",
+            "pass": true
+          },
+          "event_time": {
+            "day_start_ms": 1788134400000,
+            "day_end_ms_exclusive": 1788220800000,
+            "rows_outside_utc_day": 0,
+            "min_time": 1788134400001,
+            "max_time": 1788220799466,
+            "pass": true
+          },
+          "impossible": {
+            "empty_critical_fields": 0,
+            "parse_errors": 0,
+            "nan_note": "CSV path used; NaN only via parse failure counted above",
+            "pass": true
+          },
+          "fail_reasons": [],
+          "last_price": 78549.6,
+          "first_price": 77634.6,
+          "audit_elapsed_sec": 3.8
+        },
+        {
+          "symbol": "ETHUSDT",
+          "date": "2021-01-01",
+          "zip_path": "/workspace/lab/data/DATA-PROV-TRADES-001/raw/ETHUSDT/2021-01-01.zip",
+          "zip_exists": true,
+          "pass": true,
+          "csv_name": "ETHUSDT-aggTrades-2021-01-01.csv",
+          "header_present": false,
+          "row_count": 437250,
+          "parse_errors": 0,
+          "empty_critical_fields": 0,
+          "schema_parse_ok": true,
+          "dtype_sanity": {
+            "price_gt_0": 437250,
+            "price_le_0": 0,
+            "qty_gt_0": 437250,
+            "qty_le_0": 0,
+            "time_positive": 437250,
+            "ok": true
+          },
+          "duplicates": {
+            "duplicate_agg_trade_id_values": 0,
+            "duplicate_time_agg_pairs": 0,
+            "pass": true
+          },
+          "ordering": {
+            "agg_trade_id_strictly_increasing": true,
+            "transact_time_non_decreasing": true,
+            "time_goes_backward_events": 0,
+            "pass": true
+          },
+          "id_continuity": {
+            "gap_count": 0,
+            "max_gap_missing_ids": 0,
+            "first_le_last_violations": 0,
+            "trade_id_overlap_vs_prev_count": 0,
+            "first_agg_trade_id": 101974006,
+            "last_agg_trade_id": 102411255,
+            "first_transact_time": 1609459200004,
+            "last_transact_time": 1609545599697,
+            "first_transact_time_utc": "2021-01-01T00:00:00.004000+00:00",
+            "last_transact_time_utc": "2021-01-01T23:59:59.697000+00:00"
+          },
+          "aggressor": {
+            "is_buyer_maker_true_count": 224893,
+            "is_buyer_maker_false_count": 212357,
+            "unknown_count": 0,
+            "interpretation": {
+              "true": "buyer was maker \u2192 aggressor SELL",
+              "false": "buyer was taker \u2192 aggressor BUY"
+            },
+            "aggressor_SELL_count": 224893,
+            "aggressor_BUY_count": 212357,
+            "pass": true
+          },
+          "aggregation_artifacts": {
+            "first_gt_last_count": 0,
+            "negative_or_zero_span_count": 0,
+            "min_span": 1,
+            "max_span": 311,
+            "note": "last-first+1 vs quantity equality NOT required for aggTrades",
+            "pass": true
+          },
+          "event_time": {
+            "day_start_ms": 1609459200000,
+            "day_end_ms_exclusive": 1609545600000,
+            "rows_outside_utc_day": 0,
+            "min_time": 1609459200004,
+            "max_time": 1609545599697,
+            "pass": true
+          },
+          "impossible": {
+            "empty_critical_fields": 0,
+            "parse_errors": 0,
+            "nan_note": "CSV path used; NaN only via parse failure counted above",
+            "pass": true
+          },
+          "fail_reasons": [],
+          "last_price": 729.77,
+          "first_price": 737.18,
+          "audit_elapsed_sec": 1.16
+        },
+        {
+          "symbol": "ETHUSDT",
+          "date": "2021-11-22",
+          "zip_path": "/workspace/lab/data/DATA-PROV-TRADES-001/raw/ETHUSDT/2021-11-22.zip",
+          "zip_exists": true,
+          "pass": true,
+          "csv_name": "ETHUSDT-aggTrades-2021-11-22.csv",
+          "header_present": false,
+          "row_count": 1393037,
+          "parse_errors": 0,
+          "empty_critical_fields": 0,
+          "schema_parse_ok": true,
+          "dtype_sanity": {
+            "price_gt_0": 1393037,
+            "price_le_0": 0,
+            "qty_gt_0": 1393037,
+            "qty_le_0": 0,
+            "time_positive": 1393037,
+            "ok": true
+          },
+          "duplicates": {
+            "duplicate_agg_trade_id_values": 0,
+            "duplicate_time_agg_pairs": 0,
+            "pass": true
+          },
+          "ordering": {
+            "agg_trade_id_strictly_increasing": true,
+            "transact_time_non_decreasing": true,
+            "time_goes_backward_events": 0,
+            "pass": true
+          },
+          "id_continuity": {
+            "gap_count": 0,
+            "max_gap_missing_ids": 0,
+            "first_le_last_violations": 0,
+            "trade_id_overlap_vs_prev_count": 0,
+            "first_agg_trade_id": 638438730,
+            "last_agg_trade_id": 639831766,
+            "first_transact_time": 1637539200002,
+            "last_transact_time": 1637625599329,
+            "first_transact_time_utc": "2021-11-22T00:00:00.002000+00:00",
+            "last_transact_time_utc": "2021-11-22T23:59:59.329000+00:00"
+          },
+          "aggressor": {
+            "is_buyer_maker_true_count": 702661,
+            "is_buyer_maker_false_count": 690376,
+            "unknown_count": 0,
+            "interpretation": {
+              "true": "buyer was maker \u2192 aggressor SELL",
+              "false": "buyer was taker \u2192 aggressor BUY"
+            },
+            "aggressor_SELL_count": 702661,
+            "aggressor_BUY_count": 690376,
+            "pass": true
+          },
+          "aggregation_artifacts": {
+            "first_gt_last_count": 0,
+            "negative_or_zero_span_count": 0,
+            "min_span": 1,
+            "max_span": 1073,
+            "note": "last-first+1 vs quantity equality NOT required for aggTrades",
+            "pass": true
+          },
+          "event_time": {
+            "day_start_ms": 1637539200000,
+            "day_end_ms_exclusive": 1637625600000,
+            "rows_outside_utc_day": 0,
+            "min_time": 1637539200002,
+            "max_time": 1637625599329,
+            "pass": true
+          },
+          "impossible": {
+            "empty_critical_fields": 0,
+            "parse_errors": 0,
+            "nan_note": "CSV path used; NaN only via parse failure counted above",
+            "pass": true
+          },
+          "fail_reasons": [],
+          "last_price": 4086.57,
+          "first_price": 4259.28,
+          "audit_elapsed_sec": 3.95
+        },
+        {
+          "symbol": "ETHUSDT",
+          "date": "2021-12-21",
+          "zip_path": "/workspace/lab/data/DATA-PROV-TRADES-001/raw/ETHUSDT/2021-12-21.zip",
+          "zip_exists": true,
+          "pass": true,
+          "csv_name": "ETHUSDT-aggTrades-2021-12-21.csv",
+          "header_present": false,
+          "row_count": 1087800,
+          "parse_errors": 0,
+          "empty_critical_fields": 0,
+          "schema_parse_ok": true,
+          "dtype_sanity": {
+            "price_gt_0": 1087800,
+            "price_le_0": 0,
+            "qty_gt_0": 1087800,
+            "qty_le_0": 0,
+            "time_positive": 1087800,
+            "ok": true
+          },
+          "duplicates": {
+            "duplicate_agg_trade_id_values": 0,
+            "duplicate_time_agg_pairs": 0,
+            "pass": true
+          },
+          "ordering": {
+            "agg_trade_id_strictly_increasing": true,
+            "transact_time_non_decreasing": true,
+            "time_goes_backward_events": 0,
+            "pass": true
+          },
+          "id_continuity": {
+            "gap_count": 0,
+            "max_gap_missing_ids": 0,
+            "first_le_last_violations": 0,
+            "trade_id_overlap_vs_prev_count": 0,
+            "first_agg_trade_id": 679518902,
+            "last_agg_trade_id": 680606701,
+            "first_transact_time": 1640044800117,
+            "last_transact_time": 1640131199946,
+            "first_transact_time_utc": "2021-12-21T00:00:00.117000+00:00",
+            "last_transact_time_utc": "2021-12-21T23:59:59.946000+00:00"
+          },
+          "aggressor": {
+            "is_buyer_maker_true_count": 543344,
+            "is_buyer_maker_false_count": 544456,
+            "unknown_count": 0,
+            "interpretation": {
+              "true": "buyer was maker \u2192 aggressor SELL",
+              "false": "buyer was taker \u2192 aggressor BUY"
+            },
+            "aggressor_SELL_count": 543344,
+            "aggressor_BUY_count": 544456,
+            "pass": true
+          },
+          "aggregation_artifacts": {
+            "first_gt_last_count": 0,
+            "negative_or_zero_span_count": 0,
+            "min_span": 1,
+            "max_span": 602,
+            "note": "last-first+1 vs quantity equality NOT required for aggTrades",
+            "pass": true
+          },
+          "event_time": {
+            "day_start_ms": 1640044800000,
+            "day_end_ms_exclusive": 1640131200000,
+            "rows_outside_utc_day": 0,
+            "min_time": 1640044800117,
+            "max_time": 1640131199946,
+            "pass": true
+          },
+          "impossible": {
+            "empty_critical_fields": 0,
+            "parse_errors": 0,
+            "nan_note": "CSV path used; NaN only via parse failure counted above",
+            "pass": true
+          },
+          "fail_reasons": [],
+          "last_price": 4014.38,
+          "first_price": 3943.64,
+          "audit_elapsed_sec": 3.03
+        },
+        {
+          "symbol": "ETHUSDT",
+          "date": "2022-04-11",
+          "zip_path": "/workspace/lab/data/DATA-PROV-TRADES-001/raw/ETHUSDT/2022-04-11.zip",
+          "zip_exists": true,
+          "pass": true,
+          "csv_name": "ETHUSDT-aggTrades-2022-04-11.csv",
+          "header_present": false,
+          "row_count": 1298709,
+          "parse_errors": 0,
+          "empty_critical_fields": 0,
+          "schema_parse_ok": true,
+          "dtype_sanity": {
+            "price_gt_0": 1298709,
+            "price_le_0": 0,
+            "qty_gt_0": 1298709,
+            "qty_le_0": 0,
+            "time_positive": 1298709,
+            "ok": true
+          },
+          "duplicates": {
+            "duplicate_agg_trade_id_values": 0,
+            "duplicate_time_agg_pairs": 0,
+            "pass": true
+          },
+          "ordering": {
+            "agg_trade_id_strictly_increasing": true,
+            "transact_time_non_decreasing": true,
+            "time_goes_backward_events": 0,
+            "pass": true
+          },
+          "id_continuity": {
+            "gap_count": 0,
+            "max_gap_missing_ids": 0,
+            "first_le_last_violations": 0,
+            "trade_id_overlap_vs_prev_count": 0,
+            "first_agg_trade_id": 802625459,
+            "last_agg_trade_id": 803924167,
+            "first_transact_time": 1649635200050,
+            "last_transact_time": 1649721599745,
+            "first_transact_time_utc": "2022-04-11T00:00:00.050000+00:00",
+            "last_transact_time_utc": "2022-04-11T23:59:59.745000+00:00"
+          },
+          "aggressor": {
+            "is_buyer_maker_true_count": 660977,
+            "is_buyer_maker_false_count": 637732,
+            "unknown_count": 0,
+            "interpretation": {
+              "true": "buyer was maker \u2192 aggressor SELL",
+              "false": "buyer was taker \u2192 aggressor BUY"
+            },
+            "aggressor_SELL_count": 660977,
+            "aggressor_BUY_count": 637732,
+            "pass": true
+          },
+          "aggregation_artifacts": {
+            "first_gt_last_count": 0,
+            "negative_or_zero_span_count": 0,
+            "min_span": 1,
+            "max_span": 1354,
+            "note": "last-first+1 vs quantity equality NOT required for aggTrades",
+            "pass": true
+          },
+          "event_time": {
+            "day_start_ms": 1649635200000,
+            "day_end_ms_exclusive": 1649721600000,
+            "rows_outside_utc_day": 0,
+            "min_time": 1649635200050,
+            "max_time": 1649721599745,
+            "pass": true
+          },
+          "impossible": {
+            "empty_critical_fields": 0,
+            "parse_errors": 0,
+            "nan_note": "CSV path used; NaN only via parse failure counted above",
+            "pass": true
+          },
+          "fail_reasons": [],
+          "last_price": 2978.69,
+          "first_price": 3200.33,
+          "audit_elapsed_sec": 3.72
+        },
+        {
+          "symbol": "ETHUSDT",
+          "date": "2022-06-15",
+          "zip_path": "/workspace/lab/data/DATA-PROV-TRADES-001/raw/ETHUSDT/2022-06-15.zip",
+          "zip_exists": true,
+          "pass": true,
+          "csv_name": "ETHUSDT-aggTrades-2022-06-15.csv",
+          "header_present": false,
+          "row_count": 5317519,
+          "parse_errors": 0,
+          "empty_critical_fields": 0,
+          "schema_parse_ok": true,
+          "dtype_sanity": {
+            "price_gt_0": 5317519,
+            "price_le_0": 0,
+            "qty_gt_0": 5317519,
+            "qty_le_0": 0,
+            "time_positive": 5317519,
+            "ok": true
+          },
+          "duplicates": {
+            "duplicate_agg_trade_id_values": 0,
+            "duplicate_time_agg_pairs": 0,
+            "pass": true
+          },
+          "ordering": {
+            "agg_trade_id_strictly_increasing": true,
+            "transact_time_non_decreasing": true,
+            "time_goes_backward_events": 0,
+            "pass": true
+          },
+          "id_continuity": {
+            "gap_count": 0,
+            "max_gap_missing_ids": 0,
+            "first_le_last_violations": 0,
+            "trade_id_overlap_vs_prev_count": 0,
+            "first_agg_trade_id": 886275248,
+            "last_agg_trade_id": 891592766,
+            "first_transact_time": 1655251200037,
+            "last_transact_time": 1655337599956,
+            "first_transact_time_utc": "2022-06-15T00:00:00.037000+00:00",
+            "last_transact_time_utc": "2022-06-15T23:59:59.956000+00:00"
+          },
+          "aggressor": {
+            "is_buyer_maker_true_count": 2667726,
+            "is_buyer_maker_false_count": 2649793,
+            "unknown_count": 0,
+            "interpretation": {
+              "true": "buyer was maker \u2192 aggressor SELL",
+              "false": "buyer was taker \u2192 aggressor BUY"
+            },
+            "aggressor_SELL_count": 2667726,
+            "aggressor_BUY_count": 2649793,
+            "pass": true
+          },
+          "aggregation_artifacts": {
+            "first_gt_last_count": 0,
+            "negative_or_zero_span_count": 0,
+            "min_span": 1,
+            "max_span": 665,
+            "note": "last-first+1 vs quantity equality NOT required for aggTrades",
+            "pass": true
+          },
+          "event_time": {
+            "day_start_ms": 1655251200000,
+            "day_end_ms_exclusive": 1655337600000,
+            "rows_outside_utc_day": 0,
+            "min_time": 1655251200037,
+            "max_time": 1655337599956,
+            "pass": true
+          },
+          "impossible": {
+            "empty_critical_fields": 0,
+            "parse_errors": 0,
+            "nan_note": "CSV path used; NaN only via parse failure counted above",
+            "pass": true
+          },
+          "fail_reasons": [],
+          "last_price": 1236.49,
+          "first_price": 1208.32,
+          "audit_elapsed_sec": 15.77
+        },
+        {
+          "symbol": "ETHUSDT",
+          "date": "2022-08-08",
+          "zip_path": "/workspace/lab/data/DATA-PROV-TRADES-001/raw/ETHUSDT/2022-08-08.zip",
+          "zip_exists": true,
+          "pass": true,
+          "csv_name": "ETHUSDT-aggTrades-2022-08-08.csv",
+          "header_present": false,
+          "row_count": 1661373,
+          "parse_errors": 0,
+          "empty_critical_fields": 0,
+          "schema_parse_ok": true,
+          "dtype_sanity": {
+            "price_gt_0": 1661373,
+            "price_le_0": 0,
+            "qty_gt_0": 1661373,
+            "qty_le_0": 0,
+            "time_positive": 1661373,
+            "ok": true
+          },
+          "duplicates": {
+            "duplicate_agg_trade_id_values": 0,
+            "duplicate_time_agg_pairs": 0,
+            "pass": true
+          },
+          "ordering": {
+            "agg_trade_id_strictly_increasing": true,
+            "transact_time_non_decreasing": true,
+            "time_goes_backward_events": 0,
+            "pass": true
+          },
+          "id_continuity": {
+            "gap_count": 0,
+            "max_gap_missing_ids": 0,
+            "first_le_last_violations": 0,
+            "trade_id_overlap_vs_prev_count": 0,
+            "first_agg_trade_id": 992486113,
+            "last_agg_trade_id": 994147485,
+            "first_transact_time": 1659916800060,
+            "last_transact_time": 1660003199960,
+            "first_transact_time_utc": "2022-08-08T00:00:00.060000+00:00",
+            "last_transact_time_utc": "2022-08-08T23:59:59.960000+00:00"
+          },
+          "aggressor": {
+            "is_buyer_maker_true_count": 822255,
+            "is_buyer_maker_false_count": 839118,
+            "unknown_count": 0,
+            "interpretation": {
+              "true": "buyer was maker \u2192 aggressor SELL",
+              "false": "buyer was taker \u2192 aggressor BUY"
+            },
+            "aggressor_SELL_count": 822255,
+            "aggressor_BUY_count": 839118,
+            "pass": true
+          },
+          "aggregation_artifacts": {
+            "first_gt_last_count": 0,
+            "negative_or_zero_span_count": 0,
+            "min_span": 1,
+            "max_span": 1424,
+            "note": "last-first+1 vs quantity equality NOT required for aggTrades",
+            "pass": true
+          },
+          "event_time": {
+            "day_start_ms": 1659916800000,
+            "day_end_ms_exclusive": 1660003200000,
+            "rows_outside_utc_day": 0,
+            "min_time": 1659916800060,
+            "max_time": 1660003199960,
+            "pass": true
+          },
+          "impossible": {
+            "empty_critical_fields": 0,
+            "parse_errors": 0,
+            "nan_note": "CSV path used; NaN only via parse failure counted above",
+            "pass": true
+          },
+          "fail_reasons": [],
+          "last_price": 1776.09,
+          "first_price": 1699.27,
+          "audit_elapsed_sec": 4.85
+        },
+        {
+          "symbol": "ETHUSDT",
+          "date": "2023-05-17",
+          "zip_path": "/workspace/lab/data/DATA-PROV-TRADES-001/raw/ETHUSDT/2023-05-17.zip",
+          "zip_exists": true,
+          "pass": true,
+          "csv_name": "ETHUSDT-aggTrades-2023-05-17.csv",
+          "header_present": true,
+          "row_count": 807546,
+          "parse_errors": 0,
+          "empty_critical_fields": 0,
+          "schema_parse_ok": true,
+          "dtype_sanity": {
+            "price_gt_0": 807546,
+            "price_le_0": 0,
+            "qty_gt_0": 807546,
+            "qty_le_0": 0,
+            "time_positive": 807546,
+            "ok": true
+          },
+          "duplicates": {
+            "duplicate_agg_trade_id_values": 0,
+            "duplicate_time_agg_pairs": 0,
+            "pass": true
+          },
+          "ordering": {
+            "agg_trade_id_strictly_increasing": true,
+            "transact_time_non_decreasing": true,
+            "time_goes_backward_events": 0,
+            "pass": true
+          },
+          "id_continuity": {
+            "gap_count": 0,
+            "max_gap_missing_ids": 0,
+            "first_le_last_violations": 0,
+            "trade_id_overlap_vs_prev_count": 0,
+            "first_agg_trade_id": 1305968510,
+            "last_agg_trade_id": 1306776055,
+            "first_transact_time": 1684281600130,
+            "last_transact_time": 1684367999514,
+            "first_transact_time_utc": "2023-05-17T00:00:00.130000+00:00",
+            "last_transact_time_utc": "2023-05-17T23:59:59.514000+00:00"
+          },
+          "aggressor": {
+            "is_buyer_maker_true_count": 407505,
+            "is_buyer_maker_false_count": 400041,
+            "unknown_count": 0,
+            "interpretation": {
+              "true": "buyer was maker \u2192 aggressor SELL",
+              "false": "buyer was taker \u2192 aggressor BUY"
+            },
+            "aggressor_SELL_count": 407505,
+            "aggressor_BUY_count": 400041,
+            "pass": true
+          },
+          "aggregation_artifacts": {
+            "first_gt_last_count": 0,
+            "negative_or_zero_span_count": 0,
+            "min_span": 1,
+            "max_span": 1158,
+            "note": "last-first+1 vs quantity equality NOT required for aggTrades",
+            "pass": true
+          },
+          "event_time": {
+            "day_start_ms": 1684281600000,
+            "day_end_ms_exclusive": 1684368000000,
+            "rows_outside_utc_day": 0,
+            "min_time": 1684281600130,
+            "max_time": 1684367999514,
+            "pass": true
+          },
+          "impossible": {
+            "empty_critical_fields": 0,
+            "parse_errors": 0,
+            "nan_note": "CSV path used; NaN only via parse failure counted above",
+            "pass": true
+          },
+          "fail_reasons": [],
+          "last_price": 1821.65,
+          "first_price": 1823.52,
+          "audit_elapsed_sec": 2.2
+        },
+        {
+          "symbol": "ETHUSDT",
+          "date": "2023-07-20",
+          "zip_path": "/workspace/lab/data/DATA-PROV-TRADES-001/raw/ETHUSDT/2023-07-20.zip",
+          "zip_exists": true,
+          "pass": true,
+          "csv_name": "ETHUSDT-aggTrades-2023-07-20.csv",
+          "header_present": true,
+          "row_count": 699123,
+          "parse_errors": 0,
+          "empty_critical_fields": 0,
+          "schema_parse_ok": true,
+          "dtype_sanity": {
+            "price_gt_0": 699123,
+            "price_le_0": 0,
+            "qty_gt_0": 699123,
+            "qty_le_0": 0,
+            "time_positive": 699123,
+            "ok": true
+          },
+          "duplicates": {
+            "duplicate_agg_trade_id_values": 0,
+            "duplicate_time_agg_pairs": 0,
+            "pass": true
+          },
+          "ordering": {
+            "agg_trade_id_strictly_increasing": true,
+            "transact_time_non_decreasing": true,
+            "time_goes_backward_events": 0,
+            "pass": true
+          },
+          "id_continuity": {
+            "gap_count": 0,
+            "max_gap_missing_ids": 0,
+            "first_le_last_violations": 0,
+            "trade_id_overlap_vs_prev_count": 0,
+            "first_agg_trade_id": 1351118282,
+            "last_agg_trade_id": 1351817404,
+            "first_transact_time": 1689811200063,
+            "last_transact_time": 1689897599830,
+            "first_transact_time_utc": "2023-07-20T00:00:00.063000+00:00",
+            "last_transact_time_utc": "2023-07-20T23:59:59.830000+00:00"
+          },
+          "aggressor": {
+            "is_buyer_maker_true_count": 347749,
+            "is_buyer_maker_false_count": 351374,
+            "unknown_count": 0,
+            "interpretation": {
+              "true": "buyer was maker \u2192 aggressor SELL",
+              "false": "buyer was taker \u2192 aggressor BUY"
+            },
+            "aggressor_SELL_count": 347749,
+            "aggressor_BUY_count": 351374,
+            "pass": true
+          },
+          "aggregation_artifacts": {
+            "first_gt_last_count": 0,
+            "negative_or_zero_span_count": 0,
+            "min_span": 1,
+            "max_span": 1063,
+            "note": "last-first+1 vs quantity equality NOT required for aggTrades",
+            "pass": true
+          },
+          "event_time": {
+            "day_start_ms": 1689811200000,
+            "day_end_ms_exclusive": 1689897600000,
+            "rows_outside_utc_day": 0,
+            "min_time": 1689811200063,
+            "max_time": 1689897599830,
+            "pass": true
+          },
+          "impossible": {
+            "empty_critical_fields": 0,
+            "parse_errors": 0,
+            "nan_note": "CSV path used; NaN only via parse failure counted above",
+            "pass": true
+          },
+          "fail_reasons": [],
+          "last_price": 1890.56,
+          "first_price": 1887.55,
+          "audit_elapsed_sec": 1.93
+        },
+        {
+          "symbol": "ETHUSDT",
+          "date": "2024-05-11",
+          "zip_path": "/workspace/lab/data/DATA-PROV-TRADES-001/raw/ETHUSDT/2024-05-11.zip",
+          "zip_exists": true,
+          "pass": true,
+          "csv_name": "ETHUSDT-aggTrades-2024-05-11.csv",
+          "header_present": true,
+          "row_count": 603304,
+          "parse_errors": 0,
+          "empty_critical_fields": 0,
+          "schema_parse_ok": true,
+          "dtype_sanity": {
+            "price_gt_0": 603304,
+            "price_le_0": 0,
+            "qty_gt_0": 603304,
+            "qty_le_0": 0,
+            "time_positive": 603304,
+            "ok": true
+          },
+          "duplicates": {
+            "duplicate_agg_trade_id_values": 0,
+            "duplicate_time_agg_pairs": 0,
+            "pass": true
+          },
+          "ordering": {
+            "agg_trade_id_strictly_increasing": true,
+            "transact_time_non_decreasing": true,
+            "time_goes_backward_events": 0,
+            "pass": true
+          },
+          "id_continuity": {
+            "gap_count": 0,
+            "max_gap_missing_ids": 0,
+            "first_le_last_violations": 0,
+            "trade_id_overlap_vs_prev_count": 0,
+            "first_agg_trade_id": 1628669135,
+            "last_agg_trade_id": 1629272438,
+            "first_transact_time": 1715385600024,
+            "last_transact_time": 1715471999980,
+            "first_transact_time_utc": "2024-05-11T00:00:00.024000+00:00",
+            "last_transact_time_utc": "2024-05-11T23:59:59.980000+00:00"
+          },
+          "aggressor": {
+            "is_buyer_maker_true_count": 286447,
+            "is_buyer_maker_false_count": 316857,
+            "unknown_count": 0,
+            "interpretation": {
+              "true": "buyer was maker \u2192 aggressor SELL",
+              "false": "buyer was taker \u2192 aggressor BUY"
+            },
+            "aggressor_SELL_count": 286447,
+            "aggressor_BUY_count": 316857,
+            "pass": true
+          },
+          "aggregation_artifacts": {
+            "first_gt_last_count": 0,
+            "negative_or_zero_span_count": 0,
+            "min_span": 1,
+            "max_span": 448,
+            "note": "last-first+1 vs quantity equality NOT required for aggTrades",
+            "pass": true
+          },
+          "event_time": {
+            "day_start_ms": 1715385600000,
+            "day_end_ms_exclusive": 1715472000000,
+            "rows_outside_utc_day": 0,
+            "min_time": 1715385600024,
+            "max_time": 1715471999980,
+            "pass": true
+          },
+          "impossible": {
+            "empty_critical_fields": 0,
+            "parse_errors": 0,
+            "nan_note": "CSV path used; NaN only via parse failure counted above",
+            "pass": true
+          },
+          "fail_reasons": [],
+          "last_price": 2911.27,
+          "first_price": 2908.85,
+          "audit_elapsed_sec": 1.68
+        },
+        {
+          "symbol": "ETHUSDT",
+          "date": "2024-09-08",
+          "zip_path": "/workspace/lab/data/DATA-PROV-TRADES-001/raw/ETHUSDT/2024-09-08.zip",
+          "zip_exists": true,
+          "pass": true,
+          "csv_name": "ETHUSDT-aggTrades-2024-09-08.csv",
+          "header_present": true,
+          "row_count": 715681,
+          "parse_errors": 0,
+          "empty_critical_fields": 0,
+          "schema_parse_ok": true,
+          "dtype_sanity": {
+            "price_gt_0": 715681,
+            "price_le_0": 0,
+            "qty_gt_0": 715681,
+            "qty_le_0": 0,
+            "time_positive": 715681,
+            "ok": true
+          },
+          "duplicates": {
+            "duplicate_agg_trade_id_values": 0,
+            "duplicate_time_agg_pairs": 0,
+            "pass": true
+          },
+          "ordering": {
+            "agg_trade_id_strictly_increasing": true,
+            "transact_time_non_decreasing": true,
+            "time_goes_backward_events": 0,
+            "pass": true
+          },
+          "id_continuity": {
+            "gap_count": 0,
+            "max_gap_missing_ids": 0,
+            "first_le_last_violations": 0,
+            "trade_id_overlap_vs_prev_count": 0,
+            "first_agg_trade_id": 1769327635,
+            "last_agg_trade_id": 1770043315,
+            "first_transact_time": 1725753600015,
+            "last_transact_time": 1725839999730,
+            "first_transact_time_utc": "2024-09-08T00:00:00.015000+00:00",
+            "last_transact_time_utc": "2024-09-08T23:59:59.730000+00:00"
+          },
+          "aggressor": {
+            "is_buyer_maker_true_count": 350353,
+            "is_buyer_maker_false_count": 365328,
+            "unknown_count": 0,
+            "interpretation": {
+              "true": "buyer was maker \u2192 aggressor SELL",
+              "false": "buyer was taker \u2192 aggressor BUY"
+            },
+            "aggressor_SELL_count": 350353,
+            "aggressor_BUY_count": 365328,
+            "pass": true
+          },
+          "aggregation_artifacts": {
+            "first_gt_last_count": 0,
+            "negative_or_zero_span_count": 0,
+            "min_span": 1,
+            "max_span": 544,
+            "note": "last-first+1 vs quantity equality NOT required for aggTrades",
+            "pass": true
+          },
+          "event_time": {
+            "day_start_ms": 1725753600000,
+            "day_end_ms_exclusive": 1725840000000,
+            "rows_outside_utc_day": 0,
+            "min_time": 1725753600015,
+            "max_time": 1725839999730,
+            "pass": true
+          },
+          "impossible": {
+            "empty_critical_fields": 0,
+            "parse_errors": 0,
+            "nan_note": "CSV path used; NaN only via parse failure counted above",
+            "pass": true
+          },
+          "fail_reasons": [],
+          "last_price": 2295.89,
+          "first_price": 2272.21,
+          "audit_elapsed_sec": 2.03
+        },
+        {
+          "symbol": "ETHUSDT",
+          "date": "2025-01-01",
+          "zip_path": "/workspace/lab/data/DATA-PROV-TRADES-001/raw/ETHUSDT/2025-01-01.zip",
+          "zip_exists": true,
+          "pass": true,
+          "csv_name": "ETHUSDT-aggTrades-2025-01-01.csv",
+          "header_present": true,
+          "row_count": 816837,
+          "parse_errors": 0,
+          "empty_critical_fields": 0,
+          "schema_parse_ok": true,
+          "dtype_sanity": {
+            "price_gt_0": 816837,
+            "price_le_0": 0,
+            "qty_gt_0": 816837,
+            "qty_le_0": 0,
+            "time_positive": 816837,
+            "ok": true
+          },
+          "duplicates": {
+            "duplicate_agg_trade_id_values": 0,
+            "duplicate_time_agg_pairs": 0,
+            "pass": true
+          },
+          "ordering": {
+            "agg_trade_id_strictly_increasing": true,
+            "transact_time_non_decreasing": true,
+            "time_goes_backward_events": 0,
+            "pass": true
+          },
+          "id_continuity": {
+            "gap_count": 0,
+            "max_gap_missing_ids": 0,
+            "first_le_last_violations": 0,
+            "trade_id_overlap_vs_prev_count": 0,
+            "first_agg_trade_id": 1953027711,
+            "last_agg_trade_id": 1953844547,
+            "first_transact_time": 1735689605058,
+            "last_transact_time": 1735775999679,
+            "first_transact_time_utc": "2025-01-01T00:00:05.058000+00:00",
+            "last_transact_time_utc": "2025-01-01T23:59:59.679000+00:00"
+          },
+          "aggressor": {
+            "is_buyer_maker_true_count": 395135,
+            "is_buyer_maker_false_count": 421702,
+            "unknown_count": 0,
+            "interpretation": {
+              "true": "buyer was maker \u2192 aggressor SELL",
+              "false": "buyer was taker \u2192 aggressor BUY"
+            },
+            "aggressor_SELL_count": 395135,
+            "aggressor_BUY_count": 421702,
+            "pass": true
+          },
+          "aggregation_artifacts": {
+            "first_gt_last_count": 0,
+            "negative_or_zero_span_count": 0,
+            "min_span": 1,
+            "max_span": 696,
+            "note": "last-first+1 vs quantity equality NOT required for aggTrades",
+            "pass": true
+          },
+          "event_time": {
+            "day_start_ms": 1735689600000,
+            "day_end_ms_exclusive": 1735776000000,
+            "rows_outside_utc_day": 0,
+            "min_time": 1735689605058,
+            "max_time": 1735775999679,
+            "pass": true
+          },
+          "impossible": {
+            "empty_critical_fields": 0,
+            "parse_errors": 0,
+            "nan_note": "CSV path used; NaN only via parse failure counted above",
+            "pass": true
+          },
+          "fail_reasons": [],
+          "last_price": 3359.36,
+          "first_price": 3336.58,
+          "audit_elapsed_sec": 2.2
+        },
+        {
+          "symbol": "ETHUSDT",
+          "date": "2025-08-24",
+          "zip_path": "/workspace/lab/data/DATA-PROV-TRADES-001/raw/ETHUSDT/2025-08-24.zip",
+          "zip_exists": true,
+          "pass": true,
+          "csv_name": "ETHUSDT-aggTrades-2025-08-24.csv",
+          "header_present": true,
+          "row_count": 2880376,
+          "parse_errors": 0,
+          "empty_critical_fields": 0,
+          "schema_parse_ok": true,
+          "dtype_sanity": {
+            "price_gt_0": 2880376,
+            "price_le_0": 0,
+            "qty_gt_0": 2880376,
+            "qty_le_0": 0,
+            "time_positive": 2880376,
+            "ok": true
+          },
+          "duplicates": {
+            "duplicate_agg_trade_id_values": 0,
+            "duplicate_time_agg_pairs": 0,
+            "pass": true
+          },
+          "ordering": {
+            "agg_trade_id_strictly_increasing": true,
+            "transact_time_non_decreasing": true,
+            "time_goes_backward_events": 0,
+            "pass": true
+          },
+          "id_continuity": {
+            "gap_count": 0,
+            "max_gap_missing_ids": 0,
+            "first_le_last_violations": 0,
+            "trade_id_overlap_vs_prev_count": 0,
+            "first_agg_trade_id": 2405329584,
+            "last_agg_trade_id": 2408209959,
+            "first_transact_time": 1755993600886,
+            "last_transact_time": 1756079999965,
+            "first_transact_time_utc": "2025-08-24T00:00:00.886000+00:00",
+            "last_transact_time_utc": "2025-08-24T23:59:59.965000+00:00"
+          },
+          "aggressor": {
+            "is_buyer_maker_true_count": 1451121,
+            "is_buyer_maker_false_count": 1429255,
+            "unknown_count": 0,
+            "interpretation": {
+              "true": "buyer was maker \u2192 aggressor SELL",
+              "false": "buyer was taker \u2192 aggressor BUY"
+            },
+            "aggressor_SELL_count": 1451121,
+            "aggressor_BUY_count": 1429255,
+            "pass": true
+          },
+          "aggregation_artifacts": {
+            "first_gt_last_count": 0,
+            "negative_or_zero_span_count": 0,
+            "min_span": 1,
+            "max_span": 1440,
+            "note": "last-first+1 vs quantity equality NOT required for aggTrades",
+            "pass": true
+          },
+          "event_time": {
+            "day_start_ms": 1755993600000,
+            "day_end_ms_exclusive": 1756080000000,
+            "rows_outside_utc_day": 0,
+            "min_time": 1755993600886,
+            "max_time": 1756079999965,
+            "pass": true
+          },
+          "impossible": {
+            "empty_critical_fields": 0,
+            "parse_errors": 0,
+            "nan_note": "CSV path used; NaN only via parse failure counted above",
+            "pass": true
+          },
+          "fail_reasons": [],
+          "last_price": 4778.32,
+          "first_price": 4777.25,
+          "audit_elapsed_sec": 8.34
+        },
+        {
+          "symbol": "ETHUSDT",
+          "date": "2026-07-13",
+          "zip_path": "/workspace/lab/data/DATA-PROV-TRADES-001/raw/ETHUSDT/2026-07-13.zip",
+          "zip_exists": true,
+          "pass": true,
+          "csv_name": "ETHUSDT-aggTrades-2026-07-13.csv",
+          "header_present": true,
+          "row_count": 1269320,
+          "parse_errors": 0,
+          "empty_critical_fields": 0,
+          "schema_parse_ok": true,
+          "dtype_sanity": {
+            "price_gt_0": 1269320,
+            "price_le_0": 0,
+            "qty_gt_0": 1269320,
+            "qty_le_0": 0,
+            "time_positive": 1269320,
+            "ok": true
+          },
+          "duplicates": {
+            "duplicate_agg_trade_id_values": 0,
+            "duplicate_time_agg_pairs": 0,
+            "pass": true
+          },
+          "ordering": {
+            "agg_trade_id_strictly_increasing": true,
+            "transact_time_non_decreasing": true,
+            "time_goes_backward_events": 0,
+            "pass": true
+          },
+          "id_continuity": {
+            "gap_count": 0,
+            "max_gap_missing_ids": 0,
+            "first_le_last_violations": 0,
+            "trade_id_overlap_vs_prev_count": 0,
+            "first_agg_trade_id": 3018929100,
+            "last_agg_trade_id": 3020198419,
+            "first_transact_time": 1783900800516,
+            "last_transact_time": 1783987199931,
+            "first_transact_time_utc": "2026-07-13T00:00:00.516000+00:00",
+            "last_transact_time_utc": "2026-07-13T23:59:59.931000+00:00"
+          },
+          "aggressor": {
+            "is_buyer_maker_true_count": 635319,
+            "is_buyer_maker_false_count": 634001,
+            "unknown_count": 0,
+            "interpretation": {
+              "true": "buyer was maker \u2192 aggressor SELL",
+              "false": "buyer was taker \u2192 aggressor BUY"
+            },
+            "aggressor_SELL_count": 635319,
+            "aggressor_BUY_count": 634001,
+            "pass": true
+          },
+          "aggregation_artifacts": {
+            "first_gt_last_count": 0,
+            "negative_or_zero_span_count": 0,
+            "min_span": 1,
+            "max_span": 693,
+            "note": "last-first+1 vs quantity equality NOT required for aggTrades",
+            "pass": true
+          },
+          "event_time": {
+            "day_start_ms": 1783900800000,
+            "day_end_ms_exclusive": 1783987200000,
+            "rows_outside_utc_day": 0,
+            "min_time": 1783900800516,
+            "max_time": 1783987199931,
+            "pass": true
+          },
+          "impossible": {
+            "empty_critical_fields": 0,
+            "parse_errors": 0,
+            "nan_note": "CSV path used; NaN only via parse failure counted above",
+            "pass": true
+          },
+          "fail_reasons": [],
+          "last_price": 1776.0,
+          "first_price": 1805.92,
+          "audit_elapsed_sec": 3.58
+        },
+        {
+          "symbol": "ETHUSDT",
+          "date": "2026-08-29",
+          "zip_path": "/workspace/lab/data/DATA-PROV-TRADES-001/raw/ETHUSDT/2026-08-29.zip",
+          "zip_exists": true,
+          "pass": true,
+          "csv_name": "ETHUSDT-aggTrades-2026-08-29.csv",
+          "header_present": true,
+          "row_count": 340277,
+          "parse_errors": 0,
+          "empty_critical_fields": 0,
+          "schema_parse_ok": true,
+          "dtype_sanity": {
+            "price_gt_0": 340277,
+            "price_le_0": 0,
+            "qty_gt_0": 340277,
+            "qty_le_0": 0,
+            "time_positive": 340277,
+            "ok": true
+          },
+          "duplicates": {
+            "duplicate_agg_trade_id_values": 0,
+            "duplicate_time_agg_pairs": 0,
+            "pass": true
+          },
+          "ordering": {
+            "agg_trade_id_strictly_increasing": true,
+            "transact_time_non_decreasing": true,
+            "time_goes_backward_events": 0,
+            "pass": true
+          },
+          "id_continuity": {
+            "gap_count": 0,
+            "max_gap_missing_ids": 0,
+            "first_le_last_violations": 0,
+            "trade_id_overlap_vs_prev_count": 0,
+            "first_agg_trade_id": 3066976216,
+            "last_agg_trade_id": 3067316492,
+            "first_transact_time": 1787961600003,
+            "last_transact_time": 1788047999847,
+            "first_transact_time_utc": "2026-08-29T00:00:00.003000+00:00",
+            "last_transact_time_utc": "2026-08-29T23:59:59.847000+00:00"
+          },
+          "aggressor": {
+            "is_buyer_maker_true_count": 165130,
+            "is_buyer_maker_false_count": 175147,
+            "unknown_count": 0,
+            "interpretation": {
+              "true": "buyer was maker \u2192 aggressor SELL",
+              "false": "buyer was taker \u2192 aggressor BUY"
+            },
+            "aggressor_SELL_count": 165130,
+            "aggressor_BUY_count": 175147,
+            "pass": true
+          },
+          "aggregation_artifacts": {
+            "first_gt_last_count": 0,
+            "negative_or_zero_span_count": 0,
+            "min_span": 1,
+            "max_span": 310,
+            "note": "last-first+1 vs quantity equality NOT required for aggTrades",
+            "pass": true
+          },
+          "event_time": {
+            "day_start_ms": 1787961600000,
+            "day_end_ms_exclusive": 1788048000000,
+            "rows_outside_utc_day": 0,
+            "min_time": 1787961600003,
+            "max_time": 1788047999847,
+            "pass": true
+          },
+          "impossible": {
+            "empty_critical_fields": 0,
+            "parse_errors": 0,
+            "nan_note": "CSV path used; NaN only via parse failure counted above",
+            "pass": true
+          },
+          "fail_reasons": [],
+          "last_price": 2456.5,
+          "first_price": 2441.91,
+          "audit_elapsed_sec": 0.91
+        },
+        {
+          "symbol": "ETHUSDT",
+          "date": "2026-08-31",
+          "zip_path": "/workspace/lab/data/DATA-PROV-TRADES-001/raw/ETHUSDT/2026-08-31.zip",
+          "zip_exists": true,
+          "pass": true,
+          "csv_name": "ETHUSDT-aggTrades-2026-08-31.csv",
+          "header_present": true,
+          "row_count": 1250468,
+          "parse_errors": 0,
+          "empty_critical_fields": 0,
+          "schema_parse_ok": true,
+          "dtype_sanity": {
+            "price_gt_0": 1250468,
+            "price_le_0": 0,
+            "qty_gt_0": 1250468,
+            "qty_le_0": 0,
+            "time_positive": 1250468,
+            "ok": true
+          },
+          "duplicates": {
+            "duplicate_agg_trade_id_values": 0,
+            "duplicate_time_agg_pairs": 0,
+            "pass": true
+          },
+          "ordering": {
+            "agg_trade_id_strictly_increasing": true,
+            "transact_time_non_decreasing": true,
+            "time_goes_backward_events": 0,
+            "pass": true
+          },
+          "id_continuity": {
+            "gap_count": 0,
+            "max_gap_missing_ids": 0,
+            "first_le_last_violations": 0,
+            "trade_id_overlap_vs_prev_count": 0,
+            "first_agg_trade_id": 3068371432,
+            "last_agg_trade_id": 3069621899,
+            "first_transact_time": 1788134400002,
+            "last_transact_time": 1788220799994,
+            "first_transact_time_utc": "2026-08-31T00:00:00.002000+00:00",
+            "last_transact_time_utc": "2026-08-31T23:59:59.994000+00:00"
+          },
+          "aggressor": {
+            "is_buyer_maker_true_count": 625666,
+            "is_buyer_maker_false_count": 624802,
+            "unknown_count": 0,
+            "interpretation": {
+              "true": "buyer was maker \u2192 aggressor SELL",
+              "false": "buyer was taker \u2192 aggressor BUY"
+            },
+            "aggressor_SELL_count": 625666,
+            "aggressor_BUY_count": 624802,
+            "pass": true
+          },
+          "aggregation_artifacts": {
+            "first_gt_last_count": 0,
+            "negative_or_zero_span_count": 0,
+            "min_span": 1,
+            "max_span": 648,
+            "note": "last-first+1 vs quantity equality NOT required for aggTrades",
+            "pass": true
+          },
+          "event_time": {
+            "day_start_ms": 1788134400000,
+            "day_end_ms_exclusive": 1788220800000,
+            "rows_outside_utc_day": 0,
+            "min_time": 1788134400002,
+            "max_time": 1788220799994,
+            "pass": true
+          },
+          "impossible": {
+            "empty_critical_fields": 0,
+            "parse_errors": 0,
+            "nan_note": "CSV path used; NaN only via parse failure counted above",
+            "pass": true
+          },
+          "fail_reasons": [],
+          "last_price": 2466.53,
+          "first_price": 2415.57,
+          "audit_elapsed_sec": 3.49
+        }
+      ],
+      "header_quirk_checks": [
+        {
+          "symbol": "ETHUSDT",
+          "date": "2021-01-01",
+          "expected_header_present": false,
+          "observed": false,
+          "handled_safely": true,
+          "match_expectation": true
+        },
+        {
+          "symbol": "BTCUSDT",
+          "date": "2022-06-15",
+          "expected_header_present": false,
+          "observed": false,
+          "handled_safely": true,
+          "match_expectation": true
+        },
+        {
+          "symbol": "ETHUSDT",
+          "date": "2022-06-15",
+          "expected_header_present": false,
+          "observed": false,
+          "handled_safely": true,
+          "match_expectation": true
+        },
+        {
+          "symbol": "BTCUSDT",
+          "date": "2021-01-01",
+          "expected_header_present": true,
+          "observed": true,
+          "handled_safely": true,
+          "match_expectation": true
+        }
+      ],
+      "header_handling_safe": true,
+      "pass": true
+    },
+    "D": {
+      "test": "D_CROSS_DAY_CONTINUITY",
+      "pairs": [
+        {
+          "symbol": "BTCUSDT",
+          "day_n": "2024-01-01",
+          "day_n1": "2024-01-02",
+          "last_agg_trade_id_n": 1965912628,
+          "first_agg_trade_id_n1": 1965912629,
+          "id_increases": true,
+          "id_gap_missing": 0,
+          "last_transact_time_n": 1704153599978,
+          "first_transact_time_n1": 1704153600008,
+          "time_order_ok": true,
+          "day_n_rows": 761222,
+          "day_n1_rows": 1677641,
+          "pass": true
+        },
+        {
+          "symbol": "BTCUSDT",
+          "day_n": "2022-06-14",
+          "day_n1": "2022-06-15",
+          "last_agg_trade_id_n": 1281821102,
+          "first_agg_trade_id_n1": 1281821103,
+          "id_increases": true,
+          "id_gap_missing": 0,
+          "last_transact_time_n": 1655251199912,
+          "first_transact_time_n1": 1655251200024,
+          "time_order_ok": true,
+          "day_n_rows": 5163528,
+          "day_n1_rows": 6146703,
+          "pass": true
+        },
+        {
+          "symbol": "BTCUSDT",
+          "day_n": "2026-08-30",
+          "day_n1": "2026-08-31",
+          "last_agg_trade_id_n": 3433700661,
+          "first_agg_trade_id_n1": 3433700662,
+          "id_increases": true,
+          "id_gap_missing": 0,
+          "last_transact_time_n": 1788134399885,
+          "first_transact_time_n1": 1788134400001,
+          "time_order_ok": true,
+          "day_n_rows": 859760,
+          "day_n1_rows": 1353859,
+          "pass": true
+        },
+        {
+          "symbol": "ETHUSDT",
+          "day_n": "2024-01-01",
+          "day_n1": "2024-01-02",
+          "last_agg_trade_id_n": 1459138884,
+          "first_agg_trade_id_n1": 1459138885,
+          "id_increases": true,
+          "id_gap_missing": 0,
+          "last_transact_time_n": 1704153599604,
+          "first_transact_time_n1": 1704153600010,
+          "time_order_ok": true,
+          "day_n_rows": 504953,
+          "day_n1_rows": 1056586,
+          "pass": true
+        },
+        {
+          "symbol": "ETHUSDT",
+          "day_n": "2022-06-14",
+          "day_n1": "2022-06-15",
+          "last_agg_trade_id_n": 886275247,
+          "first_agg_trade_id_n1": 886275248,
+          "id_increases": true,
+          "id_gap_missing": 0,
+          "last_transact_time_n": 1655251199881,
+          "first_transact_time_n1": 1655251200037,
+          "time_order_ok": true,
+          "day_n_rows": 4267267,
+          "day_n1_rows": 5317519,
+          "pass": true
+        },
+        {
+          "symbol": "ETHUSDT",
+          "day_n": "2026-08-30",
+          "day_n1": "2026-08-31",
+          "last_agg_trade_id_n": 3068371431,
+          "first_agg_trade_id_n1": 3068371432,
+          "id_increases": true,
+          "id_gap_missing": 0,
+          "last_transact_time_n": 1788134399887,
+          "first_transact_time_n1": 1788134400002,
+          "time_order_ok": true,
+          "day_n_rows": 1054939,
+          "day_n1_rows": 1250468,
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    "E": {
+      "test": "E_ALIGNMENT_OHLCV_5M",
+      "ohlcv_ref": "/workspace/lab/data/DATA-PROV-001/raw",
+      "results": [
+        {
+          "symbol": "BTCUSDT",
+          "date": "2021-01-01",
+          "pass": true,
+          "ohlcv_bar_count": 288,
+          "trade_rows": 885732,
+          "empty_ohlcv_bars": 0,
+          "bars_with_ge1_trade": 288,
+          "trades_outside_utc_day": 0,
+          "trades_outside_ohlcv_bar_opens": 0,
+          "median_rel_abs_last_vs_close": 0.0,
+          "median_rel_abs_vwap_vs_close": 0.0005327175405146765,
+          "note": "empty bars OK (\u22650 trades); proximity diagnostic not a hard fail",
+          "compatible_with_exchange_candle_clock": true
+        },
+        {
+          "symbol": "BTCUSDT",
+          "date": "2022-06-15",
+          "pass": true,
+          "ohlcv_bar_count": 288,
+          "trade_rows": 6146703,
+          "empty_ohlcv_bars": 0,
+          "bars_with_ge1_trade": 288,
+          "trades_outside_utc_day": 0,
+          "trades_outside_ohlcv_bar_opens": 0,
+          "median_rel_abs_last_vs_close": 0.0,
+          "median_rel_abs_vwap_vs_close": 0.0013857280401720644,
+          "note": "empty bars OK (\u22650 trades); proximity diagnostic not a hard fail",
+          "compatible_with_exchange_candle_clock": true
+        },
+        {
+          "symbol": "BTCUSDT",
+          "date": "2024-01-01",
+          "pass": true,
+          "ohlcv_bar_count": 288,
+          "trade_rows": 761222,
+          "empty_ohlcv_bars": 0,
+          "bars_with_ge1_trade": 288,
+          "trades_outside_utc_day": 0,
+          "trades_outside_ohlcv_bar_opens": 0,
+          "median_rel_abs_last_vs_close": 0.0,
+          "median_rel_abs_vwap_vs_close": 0.00029997151320296635,
+          "note": "empty bars OK (\u22650 trades); proximity diagnostic not a hard fail",
+          "compatible_with_exchange_candle_clock": true
+        },
+        {
+          "symbol": "BTCUSDT",
+          "date": "2026-08-31",
+          "pass": true,
+          "ohlcv_bar_count": 288,
+          "trade_rows": 1353859,
+          "empty_ohlcv_bars": 0,
+          "bars_with_ge1_trade": 288,
+          "trades_outside_utc_day": 0,
+          "trades_outside_ohlcv_bar_opens": 0,
+          "median_rel_abs_last_vs_close": 0.0,
+          "median_rel_abs_vwap_vs_close": 0.0003285335971099478,
+          "note": "empty bars OK (\u22650 trades); proximity diagnostic not a hard fail",
+          "compatible_with_exchange_candle_clock": true
+        },
+        {
+          "symbol": "ETHUSDT",
+          "date": "2021-01-01",
+          "pass": true,
+          "ohlcv_bar_count": 288,
+          "trade_rows": 437250,
+          "empty_ohlcv_bars": 0,
+          "bars_with_ge1_trade": 288,
+          "trades_outside_utc_day": 0,
+          "trades_outside_ohlcv_bar_opens": 0,
+          "median_rel_abs_last_vs_close": 0.0,
+          "median_rel_abs_vwap_vs_close": 0.0005911720811192446,
+          "note": "empty bars OK (\u22650 trades); proximity diagnostic not a hard fail",
+          "compatible_with_exchange_candle_clock": true
+        },
+        {
+          "symbol": "ETHUSDT",
+          "date": "2022-06-15",
+          "pass": true,
+          "ohlcv_bar_count": 288,
+          "trade_rows": 5317519,
+          "empty_ohlcv_bars": 0,
+          "bars_with_ge1_trade": 288,
+          "trades_outside_utc_day": 0,
+          "trades_outside_ohlcv_bar_opens": 0,
+          "median_rel_abs_last_vs_close": 0.0,
+          "median_rel_abs_vwap_vs_close": 0.0022534303260653196,
+          "note": "empty bars OK (\u22650 trades); proximity diagnostic not a hard fail",
+          "compatible_with_exchange_candle_clock": true
+        },
+        {
+          "symbol": "ETHUSDT",
+          "date": "2024-01-01",
+          "pass": true,
+          "ohlcv_bar_count": 288,
+          "trade_rows": 504953,
+          "empty_ohlcv_bars": 0,
+          "bars_with_ge1_trade": 288,
+          "trades_outside_utc_day": 0,
+          "trades_outside_ohlcv_bar_opens": 0,
+          "median_rel_abs_last_vs_close": 0.0,
+          "median_rel_abs_vwap_vs_close": 0.0003008226314114082,
+          "note": "empty bars OK (\u22650 trades); proximity diagnostic not a hard fail",
+          "compatible_with_exchange_candle_clock": true
+        },
+        {
+          "symbol": "ETHUSDT",
+          "date": "2026-08-31",
+          "pass": true,
+          "ohlcv_bar_count": 288,
+          "trade_rows": 1250468,
+          "empty_ohlcv_bars": 0,
+          "bars_with_ge1_trade": 288,
+          "trades_outside_utc_day": 0,
+          "trades_outside_ohlcv_bar_opens": 0,
+          "median_rel_abs_last_vs_close": 0.0,
+          "median_rel_abs_vwap_vs_close": 0.0003936832895600326,
+          "note": "empty bars OK (\u22650 trades); proximity diagnostic not a hard fail",
+          "compatible_with_exchange_candle_clock": true
+        }
+      ],
+      "pass": true,
+      "compatible_all": true
+    },
+    "F": {
+      "test": "F_LOOKAHEAD_KNOWABILITY",
+      "rules": [
+        "A trade at transact_time T is knowable only after T (and after receipt \u2014 receipt time [U] unavailable in this dataset).",
+        "Features for a decision at 5m bar close C may only use trades with transact_time <= C.",
+        "Binance 5m close_time_ms \u2248 open_time_ms + 299999; decision-at-close must wait until close_time.",
+        "Cannot use future trades within an incomplete bar (trades with transact_time > current decision time).",
+        "No receipt/local ingest timestamps in Vision aggTrades archives \u2014 exchange event-time only."
+      ],
+      "EDGE_005_006": {
+        "status": "UNMEASURABLE_WITHOUT_L2",
+        "reason": "aggTrades provide aggressor side and size of executed aggregates only; they do not provide order-book depth troughs, bid/ask sizes, or spread path. EDGE-005/006 remain unmeasurable from this dataset alone."
+      },
+      "pass": true,
+      "documentation_complete": true
+    },
+    "G": {
+      "test": "G_SEAL_ALIGNMENT_FEASIBILITY",
+      "trades_calendar": {
+        "first": "2021-01-01",
+        "last": "2026-08-31",
+        "days_per_symbol": 2069
+      },
+      "seal_lock_path": "/workspace/lab/data/DATA-PROV-001/sealed/SEAL_LOCK.json",
+      "ohlcv_bounds_BTCUSDT": {
+        "research_open_first_utc": "2021-01-03T04:00:00+00:00",
+        "research_open_last_utc": "2024-05-27T06:15:00+00:00",
+        "validation_open_last_utc": "2025-07-14T15:00:00+00:00",
+        "holdout_open_first_utc": "2025-07-14T15:05:00+00:00",
+        "holdout_open_last_utc": "2026-08-31T23:55:00+00:00"
+      },
+      "coverage": {
+        "trades_cover_ohlcv_calendar_span": true,
+        "trades_start": "2021-01-01",
+        "ohlcv_raw_start_open": "2021-01-01T00:00:00+00:00",
+        "ohlcv_raw_end_open": "2026-08-31T23:55:00+00:00",
+        "note": "Trades daily files exist for every UTC day from 2021-01-01 through 2026-08-31 matching OHLCV raw span."
+      },
+      "can_day_aligned_splits": true,
+      "can_timestamp_aligned_splits": true,
+      "recommendation": {
+        "day_aligned": "Possible but blunt: map research to calendar dates whose UTC day intersects research open_time range; bars on 2024-05-27 span both research (through 06:15) and validation (from 06:20) \u2014 day-align would leak across slice boundary on that calendar day.",
+        "timestamp_aligned_preferred": "PREFERRED: for a decision at bar close C, include trades with transact_time <= C and only bars belonging to the target SEAL slice. Research: open_time in [research_open_first, research_open_last]; same for validation/holdout. Do NOT create slices in this audit.",
+        "boundary_days": {
+          "research_validation": "2024-05-27 \u2014 split intra-day at 06:15 vs 06:20 open",
+          "validation_holdout": "2025-07-14 \u2014 split intra-day at 15:00 vs 15:05 open"
+        }
+      },
+      "slices_created": false,
+      "pass": true
+    }
+  },
+  "verdict": {
+    "verdict": "APPROVED",
+    "hard_fail": [],
+    "conditional_triggers": [
+      "F: receipt-time [U] unavailable \u2014 knowability bounded by exchange transact_time only",
+      "F: EDGE-005/006 UNMEASURABLE WITHOUT L2 \u2014 trades do not provide depth/spread",
+      "G: prefer timestamp-aligned SEAL cuts; day-align leaks on 2024-05-27 and 2025-07-14 boundary days"
+    ],
+    "quarantine_triggers": [],
+    "section_pass": {
+      "A": true,
+      "B": true,
+      "C": true,
+      "D": true,
+      "E": true,
+      "F": true,
+      "G": true
+    }
+  },
+  "paths": {
+    "script": "/workspace/lab/data/DATA-PROV-TRADES-001/provenance/clock_audit_DATA-PROV-TRADES-001.py",
+    "json": "/workspace/lab/data/DATA-PROV-TRADES-001/provenance/CLOCK_AUDIT_REPORT.json",
+    "md": "/workspace/lab/data/DATA-PROV-TRADES-001/provenance/CLOCK_AUDIT_REPORT.md"
+  }
+}

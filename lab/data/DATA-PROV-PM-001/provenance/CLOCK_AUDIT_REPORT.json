@@ -1,0 +1,1080 @@
+{
+  "DATA_ID": "DATA-PROV-PM-001",
+  "audited_at_utc": "2026-09-11T20:52:32.978683+00:00",
+  "auditor": "clock_audit_DATA-PROV-PM-001.py",
+  "paths": {
+    "base": "/workspace/lab/data/DATA-PROV-PM-001",
+    "checksums": "/workspace/lab/data/DATA-PROV-PM-001/CHECKSUMS.sha256",
+    "manifest": "/workspace/lab/data/DATA-PROV-PM-001/MANIFEST.json",
+    "card": "/workspace/lab/archive/datasets/DATA-PROV-PM-001.md",
+    "plan": "/workspace/lab/governance/TRACK_B_DATA_PLAN_2026-09-11.md",
+    "template": "/workspace/lab/archive/templates/BINARY_CONTRACT.md",
+    "fetch_log": "/workspace/lab/data/DATA-PROV-PM-001/provenance/FETCH_LOG.json"
+  },
+  "scope": {
+    "trading": false,
+    "alpha": false,
+    "invented_oracle_values": false,
+    "role": "L1 resolved binary contract integrity + knowability"
+  },
+  "row_totals": {
+    "kalshi": 1328,
+    "polymarket_global": 2496,
+    "combined": 3824
+  },
+  "combined_composition": {
+    "combined_len": 3824,
+    "parts_sum": 3824,
+    "prefix_is_kalshi": true,
+    "suffix_is_poly": true,
+    "id_set_equal": true,
+    "pass": true
+  },
+  "tests": {
+    "A_HASH_VERIFY": {
+      "test": "A_HASH_VERIFY",
+      "pass": true,
+      "checksum_entries": 79,
+      "checksum_failures": [],
+      "all_checksums_match": true,
+      "row_counts": {
+        "normalized/kalshi_15m_btc_eth_resolved.ndjson": {
+          "rows": 1328,
+          "expected": 1328,
+          "match": true
+        },
+        "normalized/polymarket_global_5m_15m_btc_eth_resolved.ndjson": {
+          "rows": 2496,
+          "expected": 2496,
+          "match": true
+        },
+        "normalized/binary_contracts_provisional.ndjson": {
+          "rows": 3824,
+          "expected": 3824,
+          "match": true
+        }
+      },
+      "card_hash_check": {
+        "normalized/kalshi_15m_btc_eth_resolved.ndjson": {
+          "expected": "c1a09fd7eb4e97ef4672f2d9d281299695125185bc6be0743ca6bb26c8e8186d",
+          "actual": "c1a09fd7eb4e97ef4672f2d9d281299695125185bc6be0743ca6bb26c8e8186d",
+          "match": true
+        },
+        "normalized/polymarket_global_5m_15m_btc_eth_resolved.ndjson": {
+          "expected": "e199d2478b015a4210fa153883a020856f17c81169ca50558dbbf020601b8867",
+          "actual": "e199d2478b015a4210fa153883a020856f17c81169ca50558dbbf020601b8867",
+          "match": true
+        },
+        "normalized/binary_contracts_provisional.ndjson": {
+          "expected": "431f7bd1f3d5d7b96b1419c2cdd3f200c05a91086f0983a738897c7243e1f027",
+          "actual": "431f7bd1f3d5d7b96b1419c2cdd3f200c05a91086f0983a738897c7243e1f027",
+          "match": true
+        }
+      },
+      "failures": [],
+      "entries": [
+        {
+          "path": "MANIFEST.json",
+          "expected_sha256": "beb4ebb74c559214a71f4f1bdf3e1792305ff4a2b7559506a2399aae8edf412a",
+          "exists": true,
+          "actual_sha256": "beb4ebb74c559214a71f4f1bdf3e1792305ff4a2b7559506a2399aae8edf412a",
+          "match": true
+        },
+        {
+          "path": "README.md",
+          "expected_sha256": "1a2e68c40e04f52e947f7ca33e5c92bcadb6582bd24de7d692a2c1c7f74ba770",
+          "exists": true,
+          "actual_sha256": "1a2e68c40e04f52e947f7ca33e5c92bcadb6582bd24de7d692a2c1c7f74ba770",
+          "match": true
+        },
+        {
+          "path": "normalized/binary_contracts_provisional.ndjson",
+          "expected_sha256": "431f7bd1f3d5d7b96b1419c2cdd3f200c05a91086f0983a738897c7243e1f027",
+          "exists": true,
+          "actual_sha256": "431f7bd1f3d5d7b96b1419c2cdd3f200c05a91086f0983a738897c7243e1f027",
+          "match": true
+        },
+        {
+          "path": "normalized/kalshi_15m_btc_eth_resolved.ndjson",
+          "expected_sha256": "c1a09fd7eb4e97ef4672f2d9d281299695125185bc6be0743ca6bb26c8e8186d",
+          "exists": true,
+          "actual_sha256": "c1a09fd7eb4e97ef4672f2d9d281299695125185bc6be0743ca6bb26c8e8186d",
+          "match": true
+        },
+        {
+          "path": "normalized/polymarket_global_5m_15m_btc_eth_resolved.ndjson",
+          "expected_sha256": "e199d2478b015a4210fa153883a020856f17c81169ca50558dbbf020601b8867",
+          "exists": true,
+          "actual_sha256": "e199d2478b015a4210fa153883a020856f17c81169ca50558dbbf020601b8867",
+          "match": true
+        },
+        {
+          "path": "provenance/FETCH_LOG.json",
+          "expected_sha256": "26339bdbaebba7c11f3c8c90cf7a880cbebc4b7c55028b03471626bcadc8e166",
+          "exists": true,
+          "actual_sha256": "26339bdbaebba7c11f3c8c90cf7a880cbebc4b7c55028b03471626bcadc8e166",
+          "match": true
+        },
+        {
+          "path": "provenance/fetch_pm001.py",
+          "expected_sha256": "9fa0a682b17226d3ee79b6b2e6562072ee9cabeee1a8fd5df229b49a066e6034",
+          "exists": true,
+          "actual_sha256": "9fa0a682b17226d3ee79b6b2e6562072ee9cabeee1a8fd5df229b49a066e6034",
+          "match": true
+        },
+        {
+          "path": "raw/kalshi_KXBTC15M_settled_p001.json",
+          "expected_sha256": "513de7b4567ed41bb6072d9e5fce54a790c8b5ce8af06e491267038c4e78cbc1",
+          "exists": true,
+          "actual_sha256": "513de7b4567ed41bb6072d9e5fce54a790c8b5ce8af06e491267038c4e78cbc1",
+          "match": true
+        },
+        {
+          "path": "raw/kalshi_KXBTC15M_settled_p002.json",
+          "expected_sha256": "0996d39904ab3a0d41f6ddb1af39740c1692928c1510803a3996b43b326f81a9",
+          "exists": true,
+          "actual_sha256": "0996d39904ab3a0d41f6ddb1af39740c1692928c1510803a3996b43b326f81a9",
+          "match": true
+        },
+        {
+          "path": "raw/kalshi_KXBTC15M_settled_p003.json",
+          "expected_sha256": "795c8b1ee7da8c67943024a99b58aa1d1a9bb6fd552a1581f30fd87f6e0f926f",
+          "exists": true,
+          "actual_sha256": "795c8b1ee7da8c67943024a99b58aa1d1a9bb6fd552a1581f30fd87f6e0f926f",
+          "match": true
+        },
+        {
+          "path": "raw/kalshi_KXBTC15M_settled_p004.json",
+          "expected_sha256": "486a25db1539887623c6684ce46b3eb8942df07c96367b4d4045e426daf644e0",
+          "exists": true,
+          "actual_sha256": "486a25db1539887623c6684ce46b3eb8942df07c96367b4d4045e426daf644e0",
+          "match": true
+        },
+        {
+          "path": "raw/kalshi_KXBTC15M_settled_p005.json",
+          "expected_sha256": "5612ff4d9b917bec69aaf2f51ed22512baeace5d24fd6d37b868cf027aacbd18",
+          "exists": true,
+          "actual_sha256": "5612ff4d9b917bec69aaf2f51ed22512baeace5d24fd6d37b868cf027aacbd18",
+          "match": true
+        },
+        {
+          "path": "raw/kalshi_KXBTC15M_settled_p006.json",
+          "expected_sha256": "ad8f58919a5f21a3b61be87e766f20ae20a2b834c800bfe920c90a651119c333",
+          "exists": true,
+          "actual_sha256": "ad8f58919a5f21a3b61be87e766f20ae20a2b834c800bfe920c90a651119c333",
+          "match": true
+        },
+        {
+          "path": "raw/kalshi_KXBTC15M_settled_p007.json",
+          "expected_sha256": "8302ddfa105224101b7e0e73ab336e863354b17f4e0a1e07ca896e459a64fe78",
+          "exists": true,
+          "actual_sha256": "8302ddfa105224101b7e0e73ab336e863354b17f4e0a1e07ca896e459a64fe78",
+          "match": true
+        },
+        {
+          "path": "raw/kalshi_KXETH15M_settled_p001.json",
+          "expected_sha256": "833626939d68eaa92ea440903c0a91abe0356c4ae80d40191bbb2826896bb225",
+          "exists": true,
+          "actual_sha256": "833626939d68eaa92ea440903c0a91abe0356c4ae80d40191bbb2826896bb225",
+          "match": true
+        },
+        {
+          "path": "raw/kalshi_KXETH15M_settled_p002.json",
+          "expected_sha256": "c80b73a0edb4bebf9dc1de17c77c0493e5512451a4f06177b420db31feea3861",
+          "exists": true,
+          "actual_sha256": "c80b73a0edb4bebf9dc1de17c77c0493e5512451a4f06177b420db31feea3861",
+          "match": true
+        },
+        {
+          "path": "raw/kalshi_KXETH15M_settled_p003.json",
+          "expected_sha256": "faf4fe08ee419562200b91912e421f23826bf5d8a6a62e61cf5d741b061a8338",
+          "exists": true,
+          "actual_sha256": "faf4fe08ee419562200b91912e421f23826bf5d8a6a62e61cf5d741b061a8338",
+          "match": true
+        },
+        {
+          "path": "raw/kalshi_KXETH15M_settled_p004.json",
+          "expected_sha256": "cc08187c064d796d9eb5bef4d910dabb9182252bf5b63a12af2ea0a8cda84933",
+          "exists": true,
+          "actual_sha256": "cc08187c064d796d9eb5bef4d910dabb9182252bf5b63a12af2ea0a8cda84933",
+          "match": true
+        },
+        {
+          "path": "raw/kalshi_KXETH15M_settled_p005.json",
+          "expected_sha256": "790828a76259a6abdb49f52e8a97b197a73d5b4efa866c659f80b2483a86ede9",
+          "exists": true,
+          "actual_sha256": "790828a76259a6abdb49f52e8a97b197a73d5b4efa866c659f80b2483a86ede9",
+          "match": true
+        },
+        {
+          "path": "raw/kalshi_KXETH15M_settled_p006.json",
+          "expected_sha256": "29792348f86528e523719f00250f8929286b40a2cb4105e33fe9cdf400d3de20",
+          "exists": true,
+          "actual_sha256": "29792348f86528e523719f00250f8929286b40a2cb4105e33fe9cdf400d3de20",
+          "match": true
+        },
+        {
+          "path": "raw/kalshi_KXETH15M_settled_p007.json",
+          "expected_sha256": "f4407c12a173afaad6a721a64613884cff2566a4e47f50dc51cca33eced5c3d4",
+          "exists": true,
+          "actual_sha256": "f4407c12a173afaad6a721a64613884cff2566a4e47f50dc51cca33eced5c3d4",
+          "match": true
+        },
+        {
+          "path": "raw/kalshi_historical_cutoff.json",
+          "expected_sha256": "95b67f9c24ce0df86663710b671c64eb1165af3f891a9cefdebe4ba3e17f66a6",
+          "exists": true,
+          "actual_sha256": "95b67f9c24ce0df86663710b671c64eb1165af3f891a9cefdebe4ba3e17f66a6",
+          "match": true
+        },
+        {
+          "path": "raw/kalshi_historical_markets_KXBTC15M_smoke.json",
+          "expected_sha256": "a02e6dd65069955270fabedae379513af20bf6b9978067b9376d9fc88024ab3c",
+          "exists": true,
+          "actual_sha256": "a02e6dd65069955270fabedae379513af20bf6b9978067b9376d9fc88024ab3c",
+          "match": true
+        },
+        {
+          "path": "raw/poly_BTC_title_closed_p001.json",
+          "expected_sha256": "7d5d02526f9f542dd62f793e204fce6900e3c7a325325ea3e2846af300d621bb",
+          "exists": true,
+          "actual_sha256": "7d5d02526f9f542dd62f793e204fce6900e3c7a325325ea3e2846af300d621bb",
+          "match": true
+        },
+        {
+          "path": "raw/poly_BTC_title_closed_p002.json",
+          "expected_sha256": "ae5e966086966bbd31c7ed4ffc14ac5bb8dbb790778fb701da9af4e7b48832d5",
+          "exists": true,
+          "actual_sha256": "ae5e966086966bbd31c7ed4ffc14ac5bb8dbb790778fb701da9af4e7b48832d5",
+          "match": true
+        },
+        {
+          "path": "raw/poly_BTC_title_closed_p003.json",
+          "expected_sha256": "193fa9423e667cd969fdb4d1448d25e21be48d38845e2bdc79fb27dfa47bdacc",
+          "exists": true,
+          "actual_sha256": "193fa9423e667cd969fdb4d1448d25e21be48d38845e2bdc79fb27dfa47bdacc",
+          "match": true
+        },
+        {
+          "path": "raw/poly_BTC_title_closed_p004.json",
+          "expected_sha256": "071860b0779895766cffc4ddb44603bd98eddf2fda9188548131bc74907e4cc3",
+          "exists": true,
+          "actual_sha256": "071860b0779895766cffc4ddb44603bd98eddf2fda9188548131bc74907e4cc3",
+          "match": true
+        },
+        {
+          "path": "raw/poly_BTC_title_closed_p005.json",
+          "expected_sha256": "1756d2f0670f27683876566868500bb3b511ac78b1cfdc7eac80ca96a64ccda3",
+          "exists": true,
+          "actual_sha256": "1756d2f0670f27683876566868500bb3b511ac78b1cfdc7eac80ca96a64ccda3",
+          "match": true
+        },
+        {
+          "path": "raw/poly_BTC_title_closed_p006.json",
+          "expected_sha256": "d1d45582049d2ce311473cdfae4b0eb9b95850307f9c3b1072f56f954068a0cd",
+          "exists": true,
+          "actual_sha256": "d1d45582049d2ce311473cdfae4b0eb9b95850307f9c3b1072f56f954068a0cd",
+          "match": true
+        },
+        {
+          "path": "raw/poly_BTC_title_closed_p007.json",
+          "expected_sha256": "92299dc2b58024d5baa85e824fef90694cf3cf9d55ed16e6cae3fef0069cb969",
+          "exists": true,
+          "actual_sha256": "92299dc2b58024d5baa85e824fef90694cf3cf9d55ed16e6cae3fef0069cb969",
+          "match": true
+        },
+        {
+          "path": "raw/poly_BTC_title_closed_p008.json",
+          "expected_sha256": "f5b677551c164bed2ccbd00f3da45f0e20c6cf5f43c5a2307c188c0dc359585c",
+          "exists": true,
+          "actual_sha256": "f5b677551c164bed2ccbd00f3da45f0e20c6cf5f43c5a2307c188c0dc359585c",
+          "match": true
+        },
+        {
+          "path": "raw/poly_BTC_title_closed_p009.json",
+          "expected_sha256": "11d782d86b7a0667d4424d761cb29a92eb4c8253c00eb1280a2b1128b1e98dec",
+          "exists": true,
+          "actual_sha256": "11d782d86b7a0667d4424d761cb29a92eb4c8253c00eb1280a2b1128b1e98dec",
+          "match": true
+        },
+        {
+          "path": "raw/poly_BTC_title_closed_p010.json",
+          "expected_sha256": "72263ad8593f0701593c35557b31c092d35e1fce07b25727ec7eb2857420e888",
+          "exists": true,
+          "actual_sha256": "72263ad8593f0701593c35557b31c092d35e1fce07b25727ec7eb2857420e888",
+          "match": true
+        },
+        {
+          "path": "raw/poly_BTC_title_closed_p011.json",
+          "expected_sha256": "f6344a81ce999d490161ad1fbb01284ccc2c6dcc5088a0d935a4674e6c31d4b4",
+          "exists": true,
+          "actual_sha256": "f6344a81ce999d490161ad1fbb01284ccc2c6dcc5088a0d935a4674e6c31d4b4",
+          "match": true
+        },
+        {
+          "path": "raw/poly_BTC_title_closed_p012.json",
+          "expected_sha256": "d35210b02d7a383c83d5fcc8ab1bc0d732adb1d47cdfac1b555e95cd0aac1ba1",
+          "exists": true,
+          "actual_sha256": "d35210b02d7a383c83d5fcc8ab1bc0d732adb1d47cdfac1b555e95cd0aac1ba1",
+          "match": true
+        },
+        {
+          "path": "raw/poly_BTC_title_closed_p013.json",
+          "expected_sha256": "edf35eb475f7764ab4b440f94f4ef33b187c7b8f5ec3422b8f3e657df725ea2f",
+          "exists": true,
+          "actual_sha256": "edf35eb475f7764ab4b440f94f4ef33b187c7b8f5ec3422b8f3e657df725ea2f",
+          "match": true
+        },
+        {
+          "path": "raw/poly_BTC_title_closed_p014.json",
+          "expected_sha256": "cf83a0e3b5b6ffd7cdd96335bdec5990e56d553aefef38e32f6b03fe1c5664ea",
+          "exists": true,
+          "actual_sha256": "cf83a0e3b5b6ffd7cdd96335bdec5990e56d553aefef38e32f6b03fe1c5664ea",
+          "match": true
+        },
+        {
+          "path": "raw/poly_BTC_title_closed_p015.json",
+          "expected_sha256": "0d13af1350f92bcaca46cc9e78f5b76ed812023c170a2c5f10cee1ab885b176d",
+          "exists": true,
+          "actual_sha256": "0d13af1350f92bcaca46cc9e78f5b76ed812023c170a2c5f10cee1ab885b176d",
+          "match": true
+        },
+        {
+          "path": "raw/poly_BTC_title_closed_p016.json",
+          "expected_sha256": "163aa62a62e68c00cd8603035dc0d2ac68c1e189848478820032dfbf0c11293a",
+          "exists": true,
+          "actual_sha256": "163aa62a62e68c00cd8603035dc0d2ac68c1e189848478820032dfbf0c11293a",
+          "match": true
+        },
+        {
+          "path": "raw/poly_BTC_title_closed_p017.json",
+          "expected_sha256": "1940a164732c321ede3a15cbe3b4f2450d28da2ac17f447e1aec59a989f828aa",
+          "exists": true,
+          "actual_sha256": "1940a164732c321ede3a15cbe3b4f2450d28da2ac17f447e1aec59a989f828aa",
+          "match": true
+        },
+        {
+          "path": "raw/poly_BTC_title_closed_p018.json",
+          "expected_sha256": "5dc5da13c67731a5b41e5a2ed27492d1c4900b4428be52e821f240460359f379",
+          "exists": true,
+          "actual_sha256": "5dc5da13c67731a5b41e5a2ed27492d1c4900b4428be52e821f240460359f379",
+          "match": true
+        },
+        {
+          "path": "raw/poly_BTC_title_closed_p019.json",
+          "expected_sha256": "f50ae1df33676349db74b8259bc2172b0809bf9c5ee532f0639b6df60739fa5a",
+          "exists": true,
+          "actual_sha256": "f50ae1df33676349db74b8259bc2172b0809bf9c5ee532f0639b6df60739fa5a",
+          "match": true
+        },
+        {
+          "path": "raw/poly_BTC_title_closed_p020.json",
+          "expected_sha256": "4aac0683dab57f8375374d0cfb399b6589070666c3cd9eee1d20aeb9c5281404",
+          "exists": true,
+          "actual_sha256": "4aac0683dab57f8375374d0cfb399b6589070666c3cd9eee1d20aeb9c5281404",
+          "match": true
+        },
+        {
+          "path": "raw/poly_BTC_title_closed_p021.json",
+          "expected_sha256": "765bacb37ce82fc2c8e1ae988089d595f9b80e2e6a044a17ae862d97da347be8",
+          "exists": true,
+          "actual_sha256": "765bacb37ce82fc2c8e1ae988089d595f9b80e2e6a044a17ae862d97da347be8",
+          "match": true
+        },
+        {
+          "path": "raw/poly_BTC_title_closed_p022.json",
+          "expected_sha256": "d3d8226d757b93a354b156235a3005b12e022075b93e51e95609fc6c6f9b9bd4",
+          "exists": true,
+          "actual_sha256": "d3d8226d757b93a354b156235a3005b12e022075b93e51e95609fc6c6f9b9bd4",
+          "match": true
+        },
+        {
+          "path": "raw/poly_BTC_title_closed_p023.json",
+          "expected_sha256": "768d15591437c24e8fc9e41ae3698708769d4d7d4918c3d8a24ec285405c5c80",
+          "exists": true,
+          "actual_sha256": "768d15591437c24e8fc9e41ae3698708769d4d7d4918c3d8a24ec285405c5c80",
+          "match": true
+        },
+        {
+          "path": "raw/poly_BTC_title_closed_p024.json",
+          "expected_sha256": "86ba721e699d49c4df73debd6ba2b2a9a09618a404da4b39436121808f331c6d",
+          "exists": true,
+          "actual_sha256": "86ba721e699d49c4df73debd6ba2b2a9a09618a404da4b39436121808f331c6d",
+          "match": true
+        },
+        {
+          "path": "raw/poly_BTC_title_closed_p025.json",
+          "expected_sha256": "4be95a9d59327c1335d7aa1941599a83092117fc55089ae89c9fc86132eedb3b",
+          "exists": true,
+          "actual_sha256": "4be95a9d59327c1335d7aa1941599a83092117fc55089ae89c9fc86132eedb3b",
+          "match": true
+        },
+        {
+          "path": "raw/poly_BTC_title_closed_p026.json",
+          "expected_sha256": "4b9d90af9bd5e9e1478df2260f07e43bf13b1be2d175b3a34a41bc8ce7557642",
+          "exists": true,
+          "actual_sha256": "4b9d90af9bd5e9e1478df2260f07e43bf13b1be2d175b3a34a41bc8ce7557642",
+          "match": true
+        },
+        {
+          "path": "raw/poly_BTC_title_closed_p027.json",
+          "expected_sha256": "da2f2cb47c5b8a3ca4c5963681c40d68f1202aa1e40cf2e648fa652057ca7e8c",
+          "exists": true,
+          "actual_sha256": "da2f2cb47c5b8a3ca4c5963681c40d68f1202aa1e40cf2e648fa652057ca7e8c",
+          "match": true
+        },
+        {
+          "path": "raw/poly_BTC_title_closed_p028.json",
+          "expected_sha256": "99d19461d57d7eec486823a29d454204ddfbcb2265bcbc8a713385995d3f65f5",
+          "exists": true,
+          "actual_sha256": "99d19461d57d7eec486823a29d454204ddfbcb2265bcbc8a713385995d3f65f5",
+          "match": true
+        },
+        {
+          "path": "raw/poly_ETH_title_closed_p001.json",
+          "expected_sha256": "fec39db873420764e84ad73d774e8746b62e516238c86931ec05872d4be5591e",
+          "exists": true,
+          "actual_sha256": "fec39db873420764e84ad73d774e8746b62e516238c86931ec05872d4be5591e",
+          "match": true
+        },
+        {
+          "path": "raw/poly_ETH_title_closed_p002.json",
+          "expected_sha256": "71f970ac3f5524b0568d0925c8c10f9809d46739607717472a9ae12d41723fba",
+          "exists": true,
+          "actual_sha256": "71f970ac3f5524b0568d0925c8c10f9809d46739607717472a9ae12d41723fba",
+          "match": true
+        },
+        {
+          "path": "raw/poly_ETH_title_closed_p003.json",
+          "expected_sha256": "a41a28b3775af455a3abe5ecd1015a5524427ec2adc5ab45a22cb782ca58bf75",
+          "exists": true,
+          "actual_sha256": "a41a28b3775af455a3abe5ecd1015a5524427ec2adc5ab45a22cb782ca58bf75",
+          "match": true
+        },
+        {
+          "path": "raw/poly_ETH_title_closed_p004.json",
+          "expected_sha256": "5e7984f82c57cb9e470e63aa2e10f6529b9da181e783ca30ed2f0507e2f228e1",
+          "exists": true,
+          "actual_sha256": "5e7984f82c57cb9e470e63aa2e10f6529b9da181e783ca30ed2f0507e2f228e1",
+          "match": true
+        },
+        {
+          "path": "raw/poly_ETH_title_closed_p005.json",
+          "expected_sha256": "6fdf596ad3d6413963c225aa738cab13d3bd1610740beb442baa098fb6053e3e",
+          "exists": true,
+          "actual_sha256": "6fdf596ad3d6413963c225aa738cab13d3bd1610740beb442baa098fb6053e3e",
+          "match": true
+        },
+        {
+          "path": "raw/poly_ETH_title_closed_p006.json",
+          "expected_sha256": "c62ab3bd0c7e95924da97ab116e777e8934bc7cb7ede23626ad671bbc9df6435",
+          "exists": true,
+          "actual_sha256": "c62ab3bd0c7e95924da97ab116e777e8934bc7cb7ede23626ad671bbc9df6435",
+          "match": true
+        },
+        {
+          "path": "raw/poly_ETH_title_closed_p007.json",
+          "expected_sha256": "5f5cfefb0f1b1746e65e6a48d25a6a10bc349040caccdf7f7ef355c4810f7b64",
+          "exists": true,
+          "actual_sha256": "5f5cfefb0f1b1746e65e6a48d25a6a10bc349040caccdf7f7ef355c4810f7b64",
+          "match": true
+        },
+        {
+          "path": "raw/poly_ETH_title_closed_p008.json",
+          "expected_sha256": "779ba2f7579f8ff45a56f6e7eee92af6872ba01e7719491ce935c21b5ee97432",
+          "exists": true,
+          "actual_sha256": "779ba2f7579f8ff45a56f6e7eee92af6872ba01e7719491ce935c21b5ee97432",
+          "match": true
+        },
+        {
+          "path": "raw/poly_ETH_title_closed_p009.json",
+          "expected_sha256": "cf1bf97d98135d7431ae8de61f19917e5c45725d0f38d76b747b9ea9026521ab",
+          "exists": true,
+          "actual_sha256": "cf1bf97d98135d7431ae8de61f19917e5c45725d0f38d76b747b9ea9026521ab",
+          "match": true
+        },
+        {
+          "path": "raw/poly_ETH_title_closed_p010.json",
+          "expected_sha256": "994dd5882b81392fc35819d3f536ce9d429e66caec09a3a121af311d6a10459c",
+          "exists": true,
+          "actual_sha256": "994dd5882b81392fc35819d3f536ce9d429e66caec09a3a121af311d6a10459c",
+          "match": true
+        },
+        {
+          "path": "raw/poly_ETH_title_closed_p011.json",
+          "expected_sha256": "8055ee0714064ff8170b48374969d5ef9f84a62646ad94cc221f47e97ca7e2e2",
+          "exists": true,
+          "actual_sha256": "8055ee0714064ff8170b48374969d5ef9f84a62646ad94cc221f47e97ca7e2e2",
+          "match": true
+        },
+        {
+          "path": "raw/poly_ETH_title_closed_p012.json",
+          "expected_sha256": "105b96efde7b936a96e98afdf86eb30f0f6c945f64414095ee784a7045452713",
+          "exists": true,
+          "actual_sha256": "105b96efde7b936a96e98afdf86eb30f0f6c945f64414095ee784a7045452713",
+          "match": true
+        },
+        {
+          "path": "raw/poly_ETH_title_closed_p013.json",
+          "expected_sha256": "528e5e6f673de85148f784c8e384de03f5d70f74f991c901b6c51fb89d90767c",
+          "exists": true,
+          "actual_sha256": "528e5e6f673de85148f784c8e384de03f5d70f74f991c901b6c51fb89d90767c",
+          "match": true
+        },
+        {
+          "path": "raw/poly_ETH_title_closed_p014.json",
+          "expected_sha256": "f87a2c352900c9c2e54a13e6c4deb11c1cb17fa06a95548f0a19122255552f93",
+          "exists": true,
+          "actual_sha256": "f87a2c352900c9c2e54a13e6c4deb11c1cb17fa06a95548f0a19122255552f93",
+          "match": true
+        },
+        {
+          "path": "raw/poly_ETH_title_closed_p015.json",
+          "expected_sha256": "a56787d9cedf2d3cfb1e676aae841d31ff50e28fee1c21c5825f38c41a05158f",
+          "exists": true,
+          "actual_sha256": "a56787d9cedf2d3cfb1e676aae841d31ff50e28fee1c21c5825f38c41a05158f",
+          "match": true
+        },
+        {
+          "path": "raw/poly_ETH_title_closed_p016.json",
+          "expected_sha256": "953c9ed862e6e2ece694d8cc67a477471efd68a848856d9a264bd358038d32c8",
+          "exists": true,
+          "actual_sha256": "953c9ed862e6e2ece694d8cc67a477471efd68a848856d9a264bd358038d32c8",
+          "match": true
+        },
+        {
+          "path": "raw/poly_ETH_title_closed_p017.json",
+          "expected_sha256": "5954699a9605324954092fc2e2bb73b8188283b07cd645f87f536b24f01e9b66",
+          "exists": true,
+          "actual_sha256": "5954699a9605324954092fc2e2bb73b8188283b07cd645f87f536b24f01e9b66",
+          "match": true
+        },
+        {
+          "path": "raw/poly_ETH_title_closed_p018.json",
+          "expected_sha256": "853d945ad0bf6dd4ce7f8409f8d3c944500fd6b5a8254661de4803f3f780c426",
+          "exists": true,
+          "actual_sha256": "853d945ad0bf6dd4ce7f8409f8d3c944500fd6b5a8254661de4803f3f780c426",
+          "match": true
+        },
+        {
+          "path": "raw/poly_ETH_title_closed_p019.json",
+          "expected_sha256": "1bdf1e6973a7272b12bb545f1862a38f3977bc51f6db3dc4abe492b958bcff52",
+          "exists": true,
+          "actual_sha256": "1bdf1e6973a7272b12bb545f1862a38f3977bc51f6db3dc4abe492b958bcff52",
+          "match": true
+        },
+        {
+          "path": "raw/poly_ETH_title_closed_p020.json",
+          "expected_sha256": "fcb66554fea40d28f022c668f65406817286f4c1abf8251de9996c52551cf5d2",
+          "exists": true,
+          "actual_sha256": "fcb66554fea40d28f022c668f65406817286f4c1abf8251de9996c52551cf5d2",
+          "match": true
+        },
+        {
+          "path": "raw/poly_ETH_title_closed_p021.json",
+          "expected_sha256": "d112d237a62004514ec67be31453d251d22f66f15d9b5b0736a57747c9c27fc9",
+          "exists": true,
+          "actual_sha256": "d112d237a62004514ec67be31453d251d22f66f15d9b5b0736a57747c9c27fc9",
+          "match": true
+        },
+        {
+          "path": "raw/poly_ETH_title_closed_p022.json",
+          "expected_sha256": "5b48a4f8d7e2f32215cc5f2cca4e4fae1ce56d268fbd3be579da10e59cfade83",
+          "exists": true,
+          "actual_sha256": "5b48a4f8d7e2f32215cc5f2cca4e4fae1ce56d268fbd3be579da10e59cfade83",
+          "match": true
+        },
+        {
+          "path": "raw/poly_ETH_title_closed_p023.json",
+          "expected_sha256": "e0c3ec1fe498be0629306572cf00e903e40a47c9b1d0230bea80c44078e624a1",
+          "exists": true,
+          "actual_sha256": "e0c3ec1fe498be0629306572cf00e903e40a47c9b1d0230bea80c44078e624a1",
+          "match": true
+        },
+        {
+          "path": "raw/poly_ETH_title_closed_p024.json",
+          "expected_sha256": "217e3cee619e231630239f19d944deb060678fe523fa81c4d56332d56653a82d",
+          "exists": true,
+          "actual_sha256": "217e3cee619e231630239f19d944deb060678fe523fa81c4d56332d56653a82d",
+          "match": true
+        },
+        {
+          "path": "raw/poly_ETH_title_closed_p025.json",
+          "expected_sha256": "21a19f37d385d2560ae4b952f5db9e75345134c2ace270f6a459e3b7cbfa5daa",
+          "exists": true,
+          "actual_sha256": "21a19f37d385d2560ae4b952f5db9e75345134c2ace270f6a459e3b7cbfa5daa",
+          "match": true
+        },
+        {
+          "path": "raw/poly_ETH_title_closed_p026.json",
+          "expected_sha256": "04af1b72ad96834b9c9bbfd3cbe58ccb46b0ab924d8d11608231a3d8a0969905",
+          "exists": true,
+          "actual_sha256": "04af1b72ad96834b9c9bbfd3cbe58ccb46b0ab924d8d11608231a3d8a0969905",
+          "match": true
+        },
+        {
+          "path": "raw/poly_ETH_title_closed_p027.json",
+          "expected_sha256": "b5cbf3de2a1abcc1975cdab1ca3dbc132a9834c1bf0ffc53a58ce33f4264febd",
+          "exists": true,
+          "actual_sha256": "b5cbf3de2a1abcc1975cdab1ca3dbc132a9834c1bf0ffc53a58ce33f4264febd",
+          "match": true
+        },
+        {
+          "path": "raw/poly_ETH_title_closed_p028.json",
+          "expected_sha256": "e052c4ecde24095bba551e20077d5ee3a2ba895f0c8bfdb9209d547837d3fc35",
+          "exists": true,
+          "actual_sha256": "e052c4ecde24095bba551e20077d5ee3a2ba895f0c8bfdb9209d547837d3fc35",
+          "match": true
+        }
+      ]
+    },
+    "B_SCHEMA": {
+      "test": "B_SCHEMA",
+      "pass": true,
+      "venue_adapter_counts": {
+        "KALSHI": 1328,
+        "POLYMARKET_GLOBAL": 2496
+      },
+      "allowed_adapters": [
+        "KALSHI",
+        "POLYMARKET_GLOBAL"
+      ],
+      "missing_required_fields": {},
+      "contract_id_unique": true,
+      "duplicate_contract_id_count": 0,
+      "duplicate_contract_id_sample": [],
+      "bad_outcomes_count": 0,
+      "status_counts": {
+        "RESOLVED": 3824
+      },
+      "failures": []
+    },
+    "C_RESOLUTION": {
+      "test": "C_RESOLUTION",
+      "pass": true,
+      "resolution_counts": {
+        "YES": 1889,
+        "NO": 1935
+      },
+      "blank_count": 0,
+      "invalid_count": 0,
+      "by_venue_asset_horizon": {
+        "KALSHI|BTC|15m": {
+          "YES": 321,
+          "NO": 343,
+          "OTHER": 0,
+          "n": 664
+        },
+        "KALSHI|ETH|15m": {
+          "YES": 339,
+          "NO": 325,
+          "OTHER": 0,
+          "n": 664
+        },
+        "POLYMARKET_GLOBAL|BTC|5m": {
+          "YES": 461,
+          "NO": 477,
+          "OTHER": 0,
+          "n": 938
+        },
+        "POLYMARKET_GLOBAL|BTC|15m": {
+          "YES": 151,
+          "NO": 161,
+          "OTHER": 0,
+          "n": 312
+        },
+        "POLYMARKET_GLOBAL|ETH|5m": {
+          "YES": 458,
+          "NO": 477,
+          "OTHER": 0,
+          "n": 935
+        },
+        "POLYMARKET_GLOBAL|ETH|15m": {
+          "YES": 159,
+          "NO": 152,
+          "OTHER": 0,
+          "n": 311
+        }
+      },
+      "polymarket_updown_map": {
+        "ok": 2496,
+        "bad": 0,
+        "rule": "Up\u2192YES, Down\u2192NO via OUTCOME_PRICES winner",
+        "bad_examples": []
+      },
+      "failures": []
+    },
+    "D_TEMPORAL_INTEGRITY": {
+      "test": "D_TEMPORAL_INTEGRITY",
+      "pass": true,
+      "open_lt_close": 3824,
+      "open_ge_close": 0,
+      "resolve_ge_close": 3824,
+      "resolve_lt_close": 0,
+      "resolve_lt_close_examples": [],
+      "timestamp_parse_failures": 0,
+      "window_length_ok": 3824,
+      "window_length_bad": 0,
+      "window_tolerance_sec": 5.0,
+      "window_bad_examples": [],
+      "settlement_lag_sec": {
+        "KALSHI": {
+          "n": 1328,
+          "min_sec": 3.696613,
+          "median_sec": 5.506125,
+          "p95_sec": 15.505897,
+          "max_sec": 7203.867898,
+          "buckets": {
+            "<60s": 1322,
+            "1h-1d": 2,
+            "5m-1h": 2,
+            "1-5m": 2
+          },
+          "lag_gt_10m_count": 4,
+          "lag_gt_1h_count": 2
+        },
+        "POLYMARKET_GLOBAL": {
+          "n": 2496,
+          "min_sec": 51.0,
+          "median_sec": 55.0,
+          "p95_sec": 450.0,
+          "max_sec": 22959.0,
+          "buckets": {
+            "<60s": 1522,
+            "1-5m": 801,
+            "5m-1h": 158,
+            "1h-1d": 15
+          },
+          "lag_gt_10m_count": 113,
+          "lag_gt_1h_count": 15
+        }
+      },
+      "knowability": {
+        "rule": "RESOLUTION label becomes knowable only after venue settlement publish, proxied here by RESOLVE_TIME (Kalshi settlement_ts / Polymarket closedTime). Any feature that uses RESOLUTION at decision time t where t < RESOLVE_TIME is LOOKAHEAD. CLOSE_TIME is trade cutoff \u2014 oracle inputs for the window may exist at CLOSE, but the *label* is not guaranteed published until RESOLVE_TIME. Conservative Examiner rule: label-only evaluation may use RESOLUTION only for decisions with t >= RESOLVE_TIME.",
+        "settlement_source_tag": "VENUE_DECLARED [V]",
+        "independent_oracle_recompute": "UNTESTED [U]",
+        "lookahead_definition": "feature_uses_RESOLUTION_at_t_before_RESOLVE_TIME => LOOKAHEAD; also LOOKAHEAD if using RESOLUTION before CLOSE when resolution not yet knowable",
+        "safe_label_use": "post-RESOLVE_TIME label-only evaluation / grading",
+        "unsafe_label_use": "any intra-window or pre-RESOLVE decision that consumes RESOLUTION / OUTCOME_PRICES winner / terminal LAST_PRICE as if known at t"
+      },
+      "warnings": [],
+      "failures": []
+    },
+    "E_DUPLICATES": {
+      "test": "E_DUPLICATES",
+      "pass": true,
+      "duplicate_venue_native_id_count": 0,
+      "duplicate_venue_native_id_sample": [],
+      "duplicate_contract_id_count": 0,
+      "blank_venue_native_id": 0,
+      "failures": []
+    },
+    "F_CROSS_VENUE": {
+      "test": "F_CROSS_VENUE",
+      "pass": true,
+      "by_venue": {
+        "KALSHI": {
+          "n": 1328,
+          "assets": {
+            "BTC": 664,
+            "ETH": 664
+          },
+          "windows": {
+            "15m": 1328
+          },
+          "resolution_counts": {
+            "YES": 660,
+            "NO": 668
+          },
+          "resolution_sources": [
+            "CF Benchmarks RTI 60s average (BRTI/ETHUSDRTI per series rules)"
+          ],
+          "oracle_providers": [
+            "CF Benchmarks"
+          ],
+          "native_outcome_space": "yes/no (Kalshi result)"
+        },
+        "POLYMARKET_GLOBAL": {
+          "n": 2496,
+          "assets": {
+            "BTC": 1250,
+            "ETH": 1246
+          },
+          "windows": {
+            "5m": 1873,
+            "15m": 623
+          },
+          "resolution_counts": {
+            "YES": 1229,
+            "NO": 1267
+          },
+          "resolution_sources": [
+            "https://data.chain.link/streams/btc-usd-twap-60s-streams",
+            "https://data.chain.link/streams/eth-usd-twap-60s-streams"
+          ],
+          "oracle_providers": [
+            "Chainlink"
+          ],
+          "native_outcome_space": "Up/Down mapped to YES/NO"
+        }
+      },
+      "semantics": {
+        "equivalent": false,
+        "rule": "Kalshi \u2260 Polymarket. Never pool rows for joint stats / training without VENUE_ADAPTER tags and separate evaluation strata. YES on Kalshi is CF BRTI end>=start; YES on Polymarket Global is Chainlink TWAP Up (end>=start, flat\u2192Up). Oracles, fee schedules, tick sizes, dispute paths, and settlement clocks differ.",
+        "pooling_status": "FORBIDDEN_WITHOUT_ADAPTER_STRATA",
+        "separate_coverage_reported": true
+      },
+      "failures": []
+    },
+    "G_BOOKS_PRICES": {
+      "test": "G_BOOKS_PRICES",
+      "pass": true,
+      "historical_books_present": false,
+      "mid_paths_present": false,
+      "books_verdict": "ABSENT_OR_INCOMPLETE_BY_DESIGN",
+      "suspicious_book_or_path_keys": [],
+      "terminal_price_like_fields_present": [
+        "LAST_PRICE_DOLLARS",
+        "LIQUIDITY",
+        "OUTCOME_PRICES",
+        "VOLUME",
+        "VOLUME_FP"
+      ],
+      "terminal_field_flags": [
+        {
+          "field": "LAST_PRICE_DOLLARS",
+          "venue": "KALSHI",
+          "n": 1328,
+          "interpretation": "Terminal last on settled market object \u2014 NOT a decision-time mid path. Must not be used as m_t at arbitrary t < CLOSE/RESOLVE.",
+          "pretends_to_be_path": false,
+          "usable_as_decision_time_path": false
+        },
+        {
+          "field": "OUTCOME_PRICES",
+          "venue": "POLYMARKET_GLOBAL",
+          "n": 2496,
+          "distinct": {
+            "('0', '1')": 1267,
+            "('1', '0')": 1229
+          },
+          "interpretation": "Resolved outcomePrices (typically ['1','0'] or ['0','1']) \u2014 terminal settlement encoding, not an intra-window CLOB mid path.",
+          "pretends_to_be_path": false,
+          "usable_as_decision_time_path": false
+        }
+      ],
+      "approve_books": false,
+      "recommendation": "Do NOT APPROVE this dataset as if historical books / mid paths exist. Label-only evaluation may proceed under CONDITIONAL. Mid/path evaluation is UNTESTED/blocked until CLOB prices-history or trade tapes are attached as a separate DATA-* with its own Clock.",
+      "failures": []
+    },
+    "H_ORACLE": {
+      "test": "H_ORACLE",
+      "pass": true,
+      "resolution_source_counts": {
+        "CF Benchmarks RTI 60s average (BRTI/ETHUSDRTI per series rules)": 1328,
+        "https://data.chain.link/streams/btc-usd-twap-60s-streams": 1250,
+        "https://data.chain.link/streams/eth-usd-twap-60s-streams": 1246
+      },
+      "raw_cf_or_chainlink_series_attached": false,
+      "attached_raw_field_names": [],
+      "oracle_mapping_documented": {
+        "KALSHI": {
+          "provider": "CF Benchmarks",
+          "indices": "BRTI (BTC) / ETHUSDRTI (ETH)",
+          "method": "simple average of 60\u00d71s RTI prints in last minute before window start vs before window end; Yes if end >= start",
+          "evidence_tag": "[V] rules_primary / settlement_sources on settled markets",
+          "independent_raw_replay": "UNTESTED [U]"
+        },
+        "POLYMARKET_GLOBAL": {
+          "provider": "Chainlink",
+          "streams": "btc-usd-twap-60s / eth-usd-twap-60s",
+          "method": "TWAP at end of titled range >= TWAP at beginning \u2192 Up (YES); flat \u2192 Up",
+          "evidence_tag": "[V] resolutionSource / rules description / docs",
+          "independent_raw_replay": "UNTESTED [U]"
+        }
+      },
+      "settlement_source_classification": {
+        "tag": "VENUE_DECLARED [V]",
+        "independent_recompute": "UNTESTED [U]",
+        "implication": "Integrity of venue-published RESOLUTION labels can be CONDITIONAL-cleared for label-only use; cannot APPROVE independent oracle-verified settlement."
+      },
+      "failures": []
+    },
+    "I_COVERAGE": {
+      "test": "I_COVERAGE",
+      "pass": true,
+      "coverage_by_venue_asset_horizon": {
+        "KALSHI|BTC|15m": {
+          "venue": "KALSHI",
+          "asset": "BTC",
+          "horizon": "15m",
+          "n": 664,
+          "OPEN_TIME_min": "2026-09-04T20:45:00+00:00",
+          "OPEN_TIME_max": "2026-09-11T20:30:00+00:00",
+          "CLOSE_TIME_min": "2026-09-04T21:00:00+00:00",
+          "CLOSE_TIME_max": "2026-09-11T20:45:00+00:00",
+          "RESOLVE_TIME_min": "2026-09-04T21:00:05.506188+00:00",
+          "RESOLVE_TIME_max": "2026-09-11T20:45:08.528178+00:00",
+          "YES": 321,
+          "NO": 343
+        },
+        "KALSHI|ETH|15m": {
+          "venue": "KALSHI",
+          "asset": "ETH",
+          "horizon": "15m",
+          "n": 664,
+          "OPEN_TIME_min": "2026-09-04T20:45:00+00:00",
+          "OPEN_TIME_max": "2026-09-11T20:30:00+00:00",
+          "CLOSE_TIME_min": "2026-09-04T21:00:00+00:00",
+          "CLOSE_TIME_max": "2026-09-11T20:45:00+00:00",
+          "RESOLVE_TIME_min": "2026-09-04T21:00:05.507885+00:00",
+          "RESOLVE_TIME_max": "2026-09-11T20:45:08.500660+00:00",
+          "YES": 339,
+          "NO": 325
+        },
+        "POLYMARKET_GLOBAL|BTC|15m": {
+          "venue": "POLYMARKET_GLOBAL",
+          "asset": "BTC",
+          "horizon": "15m",
+          "n": 312,
+          "OPEN_TIME_min": "2026-09-08T14:30:00+00:00",
+          "OPEN_TIME_max": "2026-09-11T20:15:00+00:00",
+          "CLOSE_TIME_min": "2026-09-08T14:45:00+00:00",
+          "CLOSE_TIME_max": "2026-09-11T20:30:00+00:00",
+          "RESOLVE_TIME_min": "2026-09-08T14:46:25+00:00",
+          "RESOLVE_TIME_max": "2026-09-11T20:30:54+00:00",
+          "YES": 151,
+          "NO": 161
+        },
+        "POLYMARKET_GLOBAL|BTC|5m": {
+          "venue": "POLYMARKET_GLOBAL",
+          "asset": "BTC",
+          "horizon": "5m",
+          "n": 938,
+          "OPEN_TIME_min": "2026-09-08T14:30:00+00:00",
+          "OPEN_TIME_max": "2026-09-11T20:35:00+00:00",
+          "CLOSE_TIME_min": "2026-09-08T14:35:00+00:00",
+          "CLOSE_TIME_max": "2026-09-11T20:40:00+00:00",
+          "RESOLVE_TIME_min": "2026-09-08T14:36:25+00:00",
+          "RESOLVE_TIME_max": "2026-09-11T20:40:52+00:00",
+          "YES": 461,
+          "NO": 477
+        },
+        "POLYMARKET_GLOBAL|ETH|15m": {
+          "venue": "POLYMARKET_GLOBAL",
+          "asset": "ETH",
+          "horizon": "15m",
+          "n": 311,
+          "OPEN_TIME_min": "2026-09-08T14:30:00+00:00",
+          "OPEN_TIME_max": "2026-09-11T20:15:00+00:00",
+          "CLOSE_TIME_min": "2026-09-08T14:45:00+00:00",
+          "CLOSE_TIME_max": "2026-09-11T20:30:00+00:00",
+          "RESOLVE_TIME_min": "2026-09-08T14:46:25+00:00",
+          "RESOLVE_TIME_max": "2026-09-11T20:30:52+00:00",
+          "YES": 159,
+          "NO": 152
+        },
+        "POLYMARKET_GLOBAL|ETH|5m": {
+          "venue": "POLYMARKET_GLOBAL",
+          "asset": "ETH",
+          "horizon": "5m",
+          "n": 935,
+          "OPEN_TIME_min": "2026-09-08T14:40:00+00:00",
+          "OPEN_TIME_max": "2026-09-11T20:35:00+00:00",
+          "CLOSE_TIME_min": "2026-09-08T14:45:00+00:00",
+          "CLOSE_TIME_max": "2026-09-11T20:40:00+00:00",
+          "RESOLVE_TIME_min": "2026-09-08T14:46:25+00:00",
+          "RESOLVE_TIME_max": "2026-09-11T20:40:54+00:00",
+          "YES": 458,
+          "NO": 477
+        }
+      },
+      "recommended_freeze": {
+        "label_only_evaluation": {
+          "status": "USABLE_UNDER_CONDITIONAL",
+          "knowability": "use RESOLUTION only at/after RESOLVE_TIME",
+          "windows": {
+            "KALSHI|BTC|15m": {
+              "freeze_open_min_utc": "2026-09-04T20:45:00+00:00",
+              "freeze_close_max_utc": "2026-09-11T20:45:00+00:00",
+              "freeze_resolve_max_utc": "2026-09-11T20:45:08.528178+00:00",
+              "n": 664,
+              "note": "~7d settled sample 2026-09-04 \u2192 2026-09-11 UTC"
+            },
+            "KALSHI|ETH|15m": {
+              "freeze_open_min_utc": "2026-09-04T20:45:00+00:00",
+              "freeze_close_max_utc": "2026-09-11T20:45:00+00:00",
+              "freeze_resolve_max_utc": "2026-09-11T20:45:08.500660+00:00",
+              "n": 664,
+              "note": "~7d settled sample 2026-09-04 \u2192 2026-09-11 UTC"
+            },
+            "POLYMARKET_GLOBAL|BTC|5m": {
+              "freeze_open_min_utc": "2026-09-08T14:30:00+00:00",
+              "freeze_close_max_utc": "2026-09-11T20:40:00+00:00",
+              "freeze_resolve_max_utc": "2026-09-11T20:40:52+00:00",
+              "n": 938,
+              "note": "Bounded cap; ~3d dense 5m-heavy from 2026-09-08 UTC"
+            },
+            "POLYMARKET_GLOBAL|ETH|5m": {
+              "freeze_open_min_utc": "2026-09-08T14:40:00+00:00",
+              "freeze_close_max_utc": "2026-09-11T20:40:00+00:00",
+              "freeze_resolve_max_utc": "2026-09-11T20:40:54+00:00",
+              "n": 935,
+              "note": "Bounded cap; ~3d dense 5m-heavy from 2026-09-08 UTC"
+            },
+            "POLYMARKET_GLOBAL|BTC|15m": {
+              "freeze_open_min_utc": "2026-09-08T14:30:00+00:00",
+              "freeze_close_max_utc": "2026-09-11T20:30:00+00:00",
+              "freeze_resolve_max_utc": "2026-09-11T20:30:54+00:00",
+              "n": 312,
+              "note": "Sparser than 5m within same Poly fetch window"
+            },
+            "POLYMARKET_GLOBAL|ETH|15m": {
+              "freeze_open_min_utc": "2026-09-08T14:30:00+00:00",
+              "freeze_close_max_utc": "2026-09-11T20:30:00+00:00",
+              "freeze_resolve_max_utc": "2026-09-11T20:30:52+00:00",
+              "n": 311,
+              "note": "Sparser than 5m within same Poly fetch window"
+            }
+          },
+          "strata_rule": "Evaluate Kalshi and Polymarket Global separately; never pool YES rates"
+        },
+        "mid_path_evaluation": {
+          "status": "UNTESTED_BLOCKED",
+          "reason": "No historical order books or decision-time mid paths in this sample. Kalshi LAST_PRICE_DOLLARS and Poly OUTCOME_PRICES are terminal only."
+        },
+        "independent_oracle_evaluation": {
+          "status": "UNTESTED_BLOCKED",
+          "reason": "CF BRTI / Chainlink TWAP raw series not attached; settlement is VENUE_DECLARED [V] only."
+        }
+      },
+      "failures": []
+    }
+  },
+  "verdict": {
+    "verdict": "CONDITIONAL",
+    "hard_fail_tests": [],
+    "conditional_reasons": [
+      "Independent CF BRTI / Chainlink TWAP raw oracle replay UNTESTED [U] \u2014 settlement source VENUE_DECLARED [V]",
+      "Historical order books / decision-time mid paths ABSENT \u2014 do not APPROVE books",
+      "CONTRACT_IDs are provisional PROV-* pending Archivist",
+      "Polymarket coverage shorter than Kalshi (~3d vs ~7d) due to intentional row cap",
+      "Some contracts show long settlement publish lags (label knowable only at RESOLVE_TIME; see lag buckets)",
+      "Fee schedule PDF (Kalshi) UNTESTED [U]",
+      "Not a sealed holdout \u2014 provisional sample only"
+    ],
+    "quarantine_reasons": [],
+    "reject_reasons": [],
+    "approve_books": false,
+    "approve_independent_oracle": false,
+    "label_only_examiner_route": true,
+    "summary": "Venue-published RESOLUTION labels are internally consistent (YES/NO, temporal order OK, adapters tagged, no illegal pool). Independent oracle recompute UNTESTED and books absent \u2192 CONDITIONAL for label-only Examiner use; mid/path and oracle-verified settlement remain blocked."
+  },
+  "overall_hard_pass": true,
+  "references": {
+    "card_exists": true,
+    "plan_exists": true,
+    "template_exists": true,
+    "manifest_exists": true,
+    "fetch_log_exists": true
+  }
+}

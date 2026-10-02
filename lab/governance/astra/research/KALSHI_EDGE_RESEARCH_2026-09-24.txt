@@ -1,0 +1,963 @@
+ Where a Kalshi edge
+ could actually persist
+ STRATEGY RESEARCH | 24 SEPTEMBER 2026 | PREPARED FOR LOGAN
+
+ A mechanism can be real while a particular bot is unprofitable. None of these ten
+ has demonstrated live, net profitability for this account.
+
+ The conclusion
+ The strongest direction is a small portfolio of specialized trading processes, each exploiting an
+ identifiable source of mispricing or compensation. The research does not establish a deployable
+ cash cow. It does identify ten falsifiable candidates, three near-term priorities, and one unusually
+ interesting new opportunity in perpetual futures.
+
+ What changed after this review
+ Sethi's work supports evaluating forecasts by the trading decisions they induce, with explicit risk
+ preferences. It does not imply that a more accurate model necessarily earns more money. The best
+ fit is a specialist that combines an independent forecast with market information and abstains
+ unless the disagreement survives costs. Less prominent markets deserve more attention than the
+ headline contracts everyone studies.
+
+ The immediate allocation
+ Concentrate research on (1) neglected-market hybrid forecasts, (2) station-specific weather
+ nowcasts, and (3) selective liquidity-reward allocation. Give perpetuals a short, separate feasibility
+ screen for account economics and executable latency. Do not spend heavily on speed infrastructure
+ before that screen passes. Preserve the NFL engine as a benchmark while resolving the Q7
+ implementation conflict.
+
+ What was reviewed
+ The 74-page Engines of Prophecy deck; the Grokbot operations repository and its link to the
+ canonical GPT-6-Astra science repository; main plus four relevant research branches; the named
+ authors' relevant primary-source work; and current Kalshi documentation, incentives, fees, RFQs
+ and settlement mechanics. This is an evidence and strategy audit, not a rerun of every experiment
+ or an audit of a running production host.
+
+ How to read the ranking
+ The ranking is a judgment about the value of the next research dollar, combining evidence,
+ testability, repetition, competition and fit with the existing work. It is not an expected-return
+ forecast. Each card distinguishes sourced findings from my proposed adaptation, identifies who
+ could pay for the edge, and gives an experiment that can reject it.
+
+
+
+
+KALSHI EDGE RESEARCH | 24 SEP 2026 | RESEARCH, NOT A PROFIT CLAIM                                         1
+ The ten candidates
+ RANKED BY RESEARCH PRIORITY, NOT PROMISED RETURNS
+
+  Rank / candidate                    Potential source of profit     Evidence / principal obstacle
+
+
+  1. Neglected-market hybrid          Better processing of           Historical forecast-profit evidence; no
+  forecasts                           specialist information         current executable replication
+
+
+  2. Station-specific weather         Better conditional             Official measurement mechanics; forecast
+  nowcasts                            distribution and settlement    edge untested
+                                      mapping
+
+
+  3. Selective liquidity rewards      Exchange-funded resting        Current program + measured gaps;
+                                      liquidity                      competition and losing fills
+
+
+  4. Subsidized-perps stale quotes    Faster takers against          Fresh mechanism evidence; fees, access
+                                      committed makers               and latency unknown
+
+
+  5. Calibrated anti-longshot         Demand for unlikely,           Historical Kalshi evidence; selection and
+  making                              exciting outcomes              fee-regime changes
+
+
+  6. Official-source interpretation   Faster understanding of        Plausible information advantage;
+                                      precisely defined outcomes     open-market windows scarce
+
+
+  7. Correlation-aware combo          Demand for packaged            Native RFQ mechanism; joint-model and
+  quoting                             outcomes                       inventory risk
+
+
+  8. Anchored flow dislocations       Temporary pressure from        Historical trader ecology; distinguishing
+                                      directional demand             information from noise
+
+
+  9. Crypto settlement-window         Correct use of already-fixed   Current benchmark feed; competition and
+  pricing                             average observations           tiny cost budget
+
+
+  10. Rule-proven event baskets       Cross-contract inconsistency   Mathematical payoff bounds; static repo
+                                                                     scan found no gross edge
+
+
+
+ Evidence labels used on the cards
+ Historical empirical evidence means an author studied past data; it is not a current replication.
+ Mechanism verified means official rules or market design support the mechanism. Repo measured
+ means the saved study contains observations, subject to its stated sample and execution
+ assumptions. Proposed means the trading adaptation is my inference. None is labeled
+ profit-validated.
+
+
+
+
+KALSHI EDGE RESEARCH | 24 SEP 2026 | RESEARCH, NOT A PROFIT CLAIM                                                2
+ What the repositories actually
+ establish
+ READ RESULTS AT THEIR RECORDED COMMIT AND IMPLEMENTATION
+
+ Preserve every frozen negative. A new market, modified queue or renamed arm
+ does not create a fresh holdout.
+
+ Repository roles
+ Grokbot-Deathmatch-Dedicated-Repo is an operations and handoff repository, not a second
+ independent strategy implementation. It names GPT-6-Astra-Deathmatch as its science source of
+ truth. I did not find a distinct third science repository in those instructions. Operations notes
+ describe a GET-only recorder; that is not verification that a remote process remains healthy now.
+ [R1, R2]
+
+ Execution dominates the old headline
+ The saved NFL progression goes from a legacy +$1,027.47 replay to a repaired +$681.73, then
+ approximately +$44.55 when the queue assumption is increased from 290.595 to 3,300. That is
+ roughly a 93.5% reduction from the repaired result, on a reused 16-game week. It demonstrates
+ fragility to execution assumptions, not a repeatable account return. The later 31-game factorial still
+ reuses development data. [R2]
+
+ Q7 is not one consistent result
+ Main retains a frozen/not-run Q7 study and later refiner diagnoses reporting B/D retention around
+ 0.843. The paired-price research branch reports its router-on arm ahead of router-off under its
+ replay stresses. The policies differ: main gates quote creation around existing working orders; the
+ research branch filters inside selection and applies bounded sizing. Reconcile code, fixture, arm
+ labels and full ledgers before comparing them. The discrepancy cannot be solved by selecting the
+ better P&L. [R2, R3]
+
+ Negative transfer is useful evidence
+ Q8 joint routing improves the lighter-queue replay but loses its advantage under higher queue; the
+ preregistered promotion screen fails. M2's four CFB and four WNBA games do not establish
+ successful NFL transfer. M3's better CFB timing is four reused games; a changed queue assumption
+ is not an algorithmic improvement. Many newer market-family and microstructure labs contain unit
+ tests, null scorecards or synthetic fixtures rather than accepted market evidence. [R4, R5]
+
+ The widest scan narrows the opportunity
+ AMS tested 216 static nested-threshold cases, of which 180 had complete depth: zero positive
+ gross payoff-floor opportunities. Its completed incentive survey had 199 usable open markets from
+ a prespecified 200-market sample; 32 lacked target depth on at least one side. A later filter left only
+ three with ideal remaining half-pool rewards above one $10 losing fill. Those are candidate
+ observations, not net profits or independent validation. [R6]
+
+
+
+KALSHI EDGE RESEARCH | 24 SEP 2026 | RESEARCH, NOT A PROFIT CLAIM                                          3
+ What the deck and authors
+ contribute
+ FULL DECK REVIEW; PRIMARY-SOURCE CORPUS WITH ACCESS LIMITS
+
+ The most actionable Sethi lesson: compare complete trading policies at available
+ prices, with risk preferences and costs, rather than selecting the best forecaster in
+ isolation.
+
+ Pages 1-32: prices are not pure probabilities
+ The deck moves from market design to the interpretation of prices and forecast scoring. Prices
+ reflect beliefs, budgets, risk preferences and participation. Its Brier-score examples motivate
+ comparing mechanisms, but a score alone does not tell us which executable trades are attractive.
+ Reciprocal YES and NO quotations are two views of one book, not independent arbitrage legs. [D1]
+
+ Pages 33-44: profitability and trader specialization
+ The virtual-portfolio approach converts forecasts into risk-sensitive trades. The election results
+ differ across market types: gains in some less visible contests coexist with losses in headline
+ contests. The historical Intrade examples show that trading style and capital use matter; maximum
+ posted margin is not initial capital and should not be converted into a sensational ROI. These are
+ simulated or historical findings, not evidence for today's Kalshi execution. [D1, S01-S04]
+
+ Pages 45-74: reflexivity, volume and settlement
+ Large trades need not be uninformed; manipulation may even influence the event being predicted.
+ Wash-trading analysis requires a mechanism and counterparty evidence, not merely repeated trade
+ sizes. Late-2020 election prices illustrate persistent disagreement and limits to arbitrage, including
+ settlement uncertainty and tied-up capital. The closing material reinforces conditional judgment
+ rather than a universal bot recipe. [D1, S05-S07]
+
+ Named-author coverage
+ Rajiv Sethi, Julie Seager and Emily Cai connect the 2021 model-market precursor to the 2024
+ profitability paper. Daniel M. Benjamin and Fred Morstatter also contribute relevant human-machine
+ forecasting research. Olivia Bobrownicki, Yuqi Cheng, Anushka Kumar and Anusha Wanganoo
+ appear on the 2024 paper. Anna Hammell, Tianshuo Liu, Sachi Patel and Ramya Subramanian
+ appear on the 2025 election paper. All 13 names were included in targeted searches; no additional
+ independently verified trading corpus was established for every junior coauthor.
+
+ What I could and could not read
+ I inspected all 74 slides and read the available full 2021 precursor and SAGE study, plus accessible
+ primary abstracts, author commentary and current exchange documentation. The 2024 and 2025
+ ACM/SSRN full texts were not retrievable through the available paths; their primary university
+ abstracts and the deck's displayed results were accessible. The report does not present
+ abstract-only access as full-paper review or claim to exhaust every author's publications.
+
+
+
+KALSHI EDGE RESEARCH | 24 SEP 2026 | RESEARCH, NOT A PROFIT CLAIM                                         4
+ 01 Neglected-market hybrid
+ forecasts
+ FIRST PRIORITY | HISTORICAL EMPIRICAL SUPPORT; CURRENT EDGE UNTESTED
+
+ Best strategic fit: a narrow specialist with permission to abstain, not a
+ general-purpose model that trades every disagreement.
+
+ The edge and its payer
+ Specialize in markets where an independent, disciplined forecast captures information that the
+ marginal trader has not fully processed. Combine it with market prices instead of mechanically
+ opposing them. The proposed source of profit is uneven research attention, not the belief that
+ markets are generally foolish.
+
+ What supports it
+ The 2025 Sethi-coauthor study reports models losing in prominent presidential markets while some
+ outperform in less visible markets; the uploaded deck displays that contrast. The 2021 precursor
+ finds benefits from combining models and markets. SAGE supports skill- and recency-sensitive
+ human-machine aggregation, but tests forecasting scores rather than trading profit. These are
+ reasons to investigate selective hybrids, not a guarantee that low attention implies inefficiency.
+ [S01-S03, D1]
+
+ Adaptation for this project
+ Choose one coherent family with defensible external information: initially selected down-ballot
+ elections, or another family only after verifying comparable forecast inputs. Create a timestamped
+ probability distribution with market-only, model-only and hybrid baselines. Weight forecasts using
+ past out-of-sample calibration; shrink weak evidence toward the market. An LLM can extract and
+ organize public information, but its unsupported confidence is not a probability model.
+
+ Economics and capacity
+ Trade only when conservative expected payout exceeds the executable cost plus all fees, a
+ model-error allowance and a capital charge. A 54% estimate against a 50c ask gives only 2.25c
+ before other costs under an illustrative standard 1.75c taker fee. Election capital can remain locked
+ for weeks; apparently large percentage gaps may generate little annual dollar capacity.
+
+ First validation and rejection rule
+ Freeze one family and its forecast sources before observing future outcomes. Record revisions and
+ orderbooks at actual receipt time. Compare the three baselines under identical feasible fills, then
+ test the hybrid on untouched events. Reject if its gains disappear against market-only, are
+ concentrated in one correlated event, or exist only at midpoints. Treat this as a slower research
+ stream; one election cycle is not hundreds of independent experiments.
+
+
+
+
+KALSHI EDGE RESEARCH | 24 SEP 2026 | RESEARCH, NOT A PROFIT CLAIM                                        5
+ 02 Station-specific weather
+ nowcasts
+ HIGH PRIORITY | SETTLEMENT MECHANICS VERIFIED; FORECAST ADVANTAGE
+ PROPOSED
+
+ The defensible asset would be a clean station-to-settlement dataset and calibrated
+ residual model, not access to a common weather API.
+
+ The edge and its payer
+ Estimate the distribution of the final official daily high or low at the exact settlement station,
+ conditional on the weather already observed and what can still happen. The potential counterparty
+ error is using a generic city forecast, a rounded app observation or an unconditional morning
+ distribution after the day has substantially unfolded.
+
+ What supports it
+ Kalshi's weather guide distinguishes final NWS daily climate reports from hourly products and
+ explains the local-standard-time day. NWS explains how five-minute averages and Celsius
+ conversion can make displayed temperatures differ from official climatic extremes. These establish
+ a real modeling problem; they do not establish that current prices systematically mishandle it. The
+ repo's weather scaffolds do not yet provide a profitable out-of-sample execution study. [S08, S09,
+ R2]
+
+ Adaptation for this project
+ Start with a few stations rather than every weather market. Model the remaining-day maximum
+ conditional on the observed maximum, time, clouds, wind shifts, humidity and forecast changes.
+ Map raw observations into the official measurement and rounding process. Learn station- and
+ regime-specific residuals. Treat missing or stale feeds as missing evidence; the NWS Phoenix
+ experimental page itself currently warns about outages and erroneous preliminary values.
+
+ Economics and capacity
+ Prefer situations with a meaningful probability gap, not a one-tick race. There is daily repetition, but
+ neighboring strikes and cities can share weather risk. Prices in apparently impossible buckets are
+ not free money when the observation feed differs from the settlement source. Account for
+ settlement lag and the chance of losing all principal on an incorrect near-certainty trade.
+
+ First validation and rejection rule
+ Archive original forecasts, receipt-time observations, exact station rules, books and eventual final
+ reports for an initial 60-day pilot, then reserve future days for evaluation. Compare against the
+ market and a simple forecast-error distribution. Sixty days is a collection target, not proof of power.
+ Reject if extra skill fails to improve executable net returns, rounding explains the apparent edge, or
+ profits depend on one season or station.
+
+
+
+
+KALSHI EDGE RESEARCH | 24 SEP 2026 | RESEARCH, NOT A PROFIT CLAIM                                           6
+ 03 Selective liquidity-reward
+ allocation
+ HIGH PRIORITY | PROGRAM VERIFIED; REPO GAP OBSERVATIONS; NET EDGE
+ UNTESTED
+
+ Potential small, repeatable supplement; currently weak evidence for a broad cash
+ cow. Do not annualize an ideal hourly rate from one snapshot.
+
+ The edge and its payer
+ Allocate resting liquidity only where the expected exchange reward exceeds adverse selection,
+ inventory loss, fees and capital use. Kalshi funds the subsidy. This is a scheduling and competition
+ problem across eligible markets, not a forecast-free passive-income strategy.
+
+ What supports it
+ The current program scores qualifying depth on both sides and pays proportional shares over
+ eligible snapshots. The repo's AMS004 survey found 32 of 199 usable markets short of target depth.
+ Of 29 later-screened one-empty-side cases, 16 would make a 1c order cross; only 13 could rest.
+ Three passed an idealized remaining-reward-versus-$10-loss screen. This validates sparse
+ candidate supply, not a durable income stream. [S10, R6]
+
+ Adaptation for this project
+ Continue the existing census/tape work instead of launching a duplicate snapshot study.
+ Recompute the reference level and reward share after adding our proposed order, and track
+ competitors, program windows, eligibility and minimum payment. Rank candidates by net reward
+ per constrained capital-hour. Inventory acquired by a fill changes the decision: the bot must not
+ replenish losing exposure indefinitely to preserve reward share.
+
+ Economics and capacity
+ If one trader owns all qualifying score on one side, its ideal share is half the pool over the relevant
+ time, not the whole pool. A 1c bid for 1,000 contracts risks $10 principal on a full losing fill, plus
+ costs. The three saved candidates' ideal gross rates were only about $0.32-$0.65 per hour.
+ Repeated losing fills, competition or short windows can dominate that.
+
+ First validation and rejection rule
+ Measure duration of reward gaps with a forward tape, not just frequency in a snapshot. Simulate
+ orders entering the score denominator and carry inventory honestly. Keep a no-reward P&L control
+ and a realized-reward ledger. Reject markets whose conservative reward is below expected
+ inventory loss, whose qualification depends on unverifiable assumptions, or whose gaps disappear
+ before an order can rest. Small pilot orders would require a separate trading decision after research
+ approval.
+
+
+
+
+KALSHI EDGE RESEARCH | 24 SEP 2026 | RESEARCH, NOT A PROFIT CLAIM                                          7
+ 04 Stale quotes in subsidized
+ perpetuals
+ HIGHEST CONDITIONAL CEILING | NEW MECHANISM EVIDENCE; ACCESS AND
+ SPEED UNPROVEN
+
+ Worth an immediate feasibility screen. Its potential is large only conditional on a
+ demonstrable speed advantage and viable account economics.
+
+ The edge and its payer
+ A faster trader identifies when a committed market maker's resting perpetual-futures quote is stale
+ relative to executable fair value. A liquidity subsidy can keep the maker quoting despite selection
+ losses. Our proposed trade monetizes that selection loss while controlling hedge, basis and exit
+ costs.
+
+ What supports it
+ Sethi's September 23 commentary discusses volume generation through this mechanism. Kalshi's
+ September 22 explanation says the questioned trades involved profitable takers against a maker
+ and describes liquidity obligations plus a temporary fee holiday for qualifying perpetuals
+ self-clearing members. This is useful first-party mechanism evidence, not an independent audit of
+ participant returns. The article explicitly says a circulating +0.3/-0.3 basis-point fee program is not
+ live. [S11, S12]
+
+ Adaptation for this project
+ Separate this from binary BTC betting. First verify the actual account's fee tier, any self-clearing
+ requirements, capital contribution and accessible venues. Record synchronized external executable
+ bids/asks, Kalshi perps books and source/receipt timestamps. Test whether a signal remains
+ actionable after our realistic order-arrival delay, not merely whether one feed leads another.
+
+ Economics and capacity
+ Perps fees apply to notional exposure; opening, closing, hedging, funding and basis matter. A fee
+ holiday available to an institution is not automatically available to this account. Margin leverage
+ does not increase the underlying edge and can magnify losses. The repository's external spot-data
+ access failure blocks a local feasibility claim; it does not disprove the mechanism. [S13, R6]
+
+ First validation and rejection rule
+ Run a brief read-only feasibility study before infrastructure spending: obtain valid feeds, establish
+ costs, and count stale quotes still present at conservative arrival times. Report attainable depth and
+ hedge slippage. Reject if the apparent spread disappears at arrival, fees consume it, or profitable
+ execution requires inaccessible membership economics. Any later execution study must distinguish
+ failed orders from assumed fills.
+
+
+
+
+KALSHI EDGE RESEARCH | 24 SEP 2026 | RESEARCH, NOT A PROFIT CLAIM                                          8
+ 05 Calibrated anti-longshot
+ market making
+ EMPIRICAL PRIOR | HISTORICAL KALSHI PATTERN; CURRENT REPLICATION
+ REQUIRED
+
+ A defensible inventory style if replicated. The historical result does not justify a
+ universal "buy 90c favorites" bot.
+
+ The edge and its payer
+ Supply liquidity to demand for low-probability, exciting outcomes only when their price exceeds a
+ conservative calibrated probability. Buying NO is one way to express the view; blindly buying every
+ favorite is not the strategy. Potential compensation comes from lottery-like demand and liquidity
+ provision.
+
+ What supports it
+ Burgi, Deng and Whelan's January 2026 paper studies Kalshi data through April 2025 and
+ documents favorite-longshot bias and better maker than taker outcomes. Its historical fee regime
+ and its restriction to markets open at least 24 hours limit transfer to today's fast markets. The
+ evidence is an empirical prior, not an executable maker backtest for our queue or a guarantee that
+ the bias remains. [S14]
+
+ Adaptation for this project
+ Estimate calibration by family, horizon, price, liquidity and maker/taker side. Use the existing FL
+ harness only after loading accepted real data and actual fee versions. Require an independent
+ probability check and adverse-selection model. Avoid treating 20 correlated longshots on one
+ underlying event as 20 diversified positions.
+
+ Economics and capacity
+ A hypothetical NO at 95c with a true 98% win probability has 3c gross edge. At the illustrative
+ standard taker multiplier, its unrounded fee is 0.3325c, leaving 2.6675c before other costs. If its
+ true probability is only 95%, the same trade loses after fees. A high win rate can hide occasional
+ losses large enough to erase many wins.
+
+ First validation and rejection rule
+ Preregister price bands and market families, then evaluate future settlements and fill-conditional
+ returns. Compare equal-risk maker, taker and abstention policies with the same underlying signals.
+ Attribute return separately to calibration, spread and rewards. Reject if the estimated bias is
+ eliminated by current fees, selected fills lose more than unselected quotes, or tail concentration
+ dominates the return.
+
+
+
+
+KALSHI EDGE RESEARCH | 24 SEP 2026 | RESEARCH, NOT A PROFIT CLAIM                                      9
+ 06 Official-source interpretation
+ PROMISING INFORMATION HYPOTHESIS | AVAILABILITY MUST BE VERIFIED PER
+ CONTRACT
+
+ The initial product is an eligibility-and-interpretation test. If markets close before
+ the information arrives, stop that family immediately.
+
+ The edge and its payer
+ Translate an official release into the exact contract outcome more reliably and quickly than traders
+ reacting to a headline. Candidate difficulties include fiscal versus calendar periods, reported versus
+ adjusted earnings, growth-rate definitions, rounding and the contract's source hierarchy. The
+ proposed payer is a trader who interprets the wrong number or remains uncertain after the correct
+ one is available.
+
+ What supports it
+ The project’s all-market triage retained company-source interpretation while finding that its tested
+ CPI contract closes before the release. That blocks the simple post-release CPI-sniping story. SAGE
+ supports disciplined evidence aggregation, but supplies no proof of a latency-trading edge. This
+ card is a proposed adaptation with a clear gate: the relevant information must arrive while the
+ specific market can still execute. [R6, S03]
+
+ Adaptation for this project
+ Build a small registry of contract definitions and approved public source URLs. Before each event,
+ identify the exact field or sentence needed. Archive the first received version of the release and
+ deterministic extraction output. Use an LLM for ambiguous-text triage, with explicit abstention; use
+ numerical parsers and rule checks wherever possible. Never treat a revised web page as if it was
+ available earlier.
+
+ Economics and capacity
+ The opportunity may last seconds or minutes, but event frequency and available depth may be
+ small. The best niche could be semantic difficulty rather than raw network speed. A price
+ approaching certainty still carries source, interpretation and settlement risk. Fees and failed orders
+ belong in the measured result.
+
+ First validation and rejection rule
+ Screen the first 20 candidate releases for actual open-market overlap before building a strategy.
+ For those that pass, record source arrival, interpretation completion, book updates and attainable
+ prices; compare a simple headline parser with the rule-aware parser. Reject any family with no
+ tradable information window, no incremental semantic advantage, or unresolved rule ambiguity.
+ Move to untouched future releases before claiming returns.
+
+
+
+
+KALSHI EDGE RESEARCH | 24 SEP 2026 | RESEARCH, NOT A PROFIT CLAIM                                       10
+ 07 Correlation-aware combo
+ quoting
+ NATIVE MECHANISM VERIFIED | JOINT-PROBABILITY AND EXECUTION EDGE
+ PROPOSED
+
+ A potentially scalable specialist business, but a later build than weather or reward
+ measurement because model and inventory demands are materially higher.
+
+ The edge and its payer
+ Quote packages of outcomes when a calibrated joint model can price the requested combination
+ more accurately than competitors while charging enough for inventory and selection risk. A
+ plausible payer is a customer seeking a convenient or appealing package. The edge would be joint
+ pricing and risk management, not multiplication of marginal probabilities.
+
+ What supports it
+ Kalshi supports dedicated combo markets and RFQs. Its documentation describes private maker
+ responses and shorter confirmation/execution windows for combos. The repo already recognizes
+ combo-versus-leg-product measurement, but does not establish a profitable dealer. Official rules
+ validate an execution route; they do not show that existing dealers misprice correlation. [S15, S16,
+ R2]
+
+ Adaptation for this project
+ Begin with one sport and a limited set of combinations whose dependence can be estimated.
+ Simulate common underlying game states so that leg probabilities and joint probabilities are
+ internally consistent. Track pushes, nonparticipation and fractional leg payoffs exactly. Quote only
+ packages for which the full requested size fits portfolio limits; RFQ acceptance is not a guaranteed
+ neutral hedge.
+
+ Economics and capacity
+ If both legs have probability 0.60, independence gives 0.36, but a plausible positively dependent
+ joint probability might be 0.45. Selling the package at 0.40 then has negative expected value
+ despite looking expensive relative to 0.36. Marginal legs generally do not replicate a conjunction
+ exactly. Fees, confirmation timing, leg liquidity and common-factor exposure can overwhelm
+ apparent pricing differences.
+
+ First validation and rejection rule
+ Collect accessible RFQ opportunities and contemporaneous legs under actual account permissions.
+ Fit the joint model before evaluation, then compare it with independence and a conservative
+ dependence bound. Test accepted-quote selection rather than all displayed opportunities. Reject if
+ correlation uncertainty spans the quote margin, executable volume is inaccessible, or residual
+ unhedgeable inventory supplies all apparent profit.
+
+
+
+
+KALSHI EDGE RESEARCH | 24 SEP 2026 | RESEARCH, NOT A PROFIT CLAIM                                       11
+ 08 Anchored flow-dislocation
+ trading
+ HISTORICAL MICROSTRUCTURE SUPPORT | SIGNAL IDENTIFICATION UNPROVEN
+
+ Useful only with a credible anchor. "A whale moved the market" is an observation,
+ not a trading thesis.
+
+ The edge and its payer
+ Trade temporary price pressure from urgent or strongly directional demand only when an
+ independent value estimate and related markets remain stable. The proposed profit source is
+ compensation for absorbing inventory until pressure recedes. This is a conditional mean-reversion
+ hypothesis, not a claim that large traders are uninformed.
+
+ What supports it
+ Rothschild and Sethi's Intrade study describes heterogeneous strategies, including market making,
+ arbitrage and directional activity. Sethi's commentary emphasizes that a large order can reveal
+ information or reflect belief, and the deck discusses reflexive effects. Those sources motivate
+ distinguishing trader pressure from news; they do not provide a ready-made whale-fading signal.
+ [S04, S05, D1]
+
+ Adaptation for this project
+ Use public book and trade information to detect abrupt imbalance, consumed depth and divergence
+ from a preregistered anchor. Do not invent private trader identities from anonymous Kalshi prints.
+ Require source monitoring and coherent comparison contracts. Let the independent model veto
+ reversion trades when news explains the move; add explicit time and inventory limits.
+
+ Economics and capacity
+ Spreads and short-horizon reversals can look attractive before fills. A maker is most likely to fill
+ when its quote has become bad, so quote-level reversion is not the relevant return. Measure
+ conditional adverse movement after attainable fills. Position capacity is bounded by both event risk
+ and realistic exit depth; a marked gain in an illiquid book may be uncollectible.
+
+ First validation and rejection rule
+ Preregister a small number of imbalance/anchor conditions and compare with matched no-shock
+ periods. Use future events, conservative queue assumptions and news receipt times. Test whether
+ reversion exceeds costs after actionable arrival, not at the detected extreme. Reject if effects
+ vanish when news is controlled, only one event drives the result, or forced exits produce negative
+ net returns.
+
+
+
+
+KALSHI EDGE RESEARCH | 24 SEP 2026 | RESEARCH, NOT A PROFIT CLAIM                                     12
+ 09 Crypto settlement-window
+ pricing
+ BENCHMARK DATA MECHANICS VERIFIED | REMAINING-UNCERTAINTY EDGE
+ PROPOSED
+
+ A sharply defined falsifiable variant worth testing; no basis yet to resurrect a
+ generic short-term crypto bot.
+
+ The edge and its payer
+ Price a short-horizon binary using the exact settlement average and the part of that average
+ already observed. The target is a trader or model treating the contract as a bet on a final spot tick
+ or using the wrong reference feed. This differs from a generic BTC momentum or indicator bot.
+
+ What supports it
+ Kalshi now documents an authenticated CF Benchmarks feed with raw index values, trailing
+ averages and final-minute quarter-hour accumulation. The once-per-second documentation
+ specifies boundary conventions; the five-Hz channel has raw ticks rather than those averages. That
+ supports a rule-faithful data pipeline. It does not establish that the market ignores the same public
+ information. Contract-specific rules still govern settlement. [S17, S18]
+
+ Adaptation for this project
+ For a contract whose rule is an equal-weight average of 60 specified observations, track the fixed
+ sum S after k observations. To finish above strike K, the remaining observations must sum to more
+ than 60K-S, subject to the contract's tie and rounding rules. Model that remaining joint path
+ distribution; do not count correlated seconds as independent draws or replace it with the final tick.
+
+ Economics and capacity
+ Most of the uncertainty can disappear near close, but so can accessible price discrepancies. Many
+ participants have the same feed, fees consume small margins, and missing ticks can create false
+ near-certainties. Trading and settlement timestamps must be distinguished. A public benchmark
+ stream alone is not a speed advantage.
+
+ First validation and rejection rule
+ Reconstruct archived outcomes from the precise source and compare against settled contracts
+ before estimating profit. Then compare spot-only, full-window and partial-window models on future
+ windows at realistic order arrival. Require real books and fee versions in the existing BTC harness.
+ Reject if replay cannot reproduce settlement, incremental calibration does not survive costs, or fills
+ are assumed after trading has closed.
+
+
+
+
+KALSHI EDGE RESEARCH | 24 SEP 2026 | RESEARCH, NOT A PROFIT CLAIM                                        13
+ 10 Rule-proven event baskets
+ MATHEMATICAL SUPPORT | NEGATIVE STATIC SCAN; CONDITIONAL BACKLOG
+
+ Keep as a selective structural check and backlog item. The existing negative scan
+ makes it a poor first use of additional build time.
+
+ The edge and its payer
+ Exploit a price inconsistency among contracts with a proven relationship: a threshold implies
+ another threshold, deadlines nest, or a complete set partitions all outcomes. Potential profit comes
+ from fragmented attention or the service of completing an inconvenient basket.
+
+ What supports it
+ Payoff inequalities are exact when the rules truly imply them. But the project's AMS static scan
+ found no positive gross floor in 180 depth-complete cases from 216 candidate cases. That is
+ evidence against promoting the already-tested static taker scanner. Sethi's work on arbitrage limits
+ also cautions that apparent price differences can persist because implementation is costly. [R6,
+ S06]
+
+ Adaptation for this project
+ Keep only genuinely new relationships or a distinct execution policy, such as patient basket
+ completion during transient imbalance. Prove the relationship with identical source, timestamp,
+ threshold convention and resolution hierarchy. Do not conflate YES/NO reciprocity with two
+ independent legs. A paper deadline implication can fail if contracts use different definitions of
+ occurrence or announcement.
+
+ Economics and capacity
+ For A contained in B, YES(B) plus NO(A) pays at least $1, provided their binary rules are compatible.
+ Buying those legs for 49c and 48c appears to lock 3c before fees, but illustrative standard taker
+ fees total about 3.4965c, making the floor negative. Maker quotes may improve arithmetic but
+ introduce non-atomic fills, unmatched inventory and queue risk.
+
+ First validation and rejection rule
+ Before collecting more data, specify what differs from the failed static scan. Test new rule classes
+ separately from execution changes. Track matched and unmatched legs, cash usage and
+ liquidatable value with shared depth. Reject if the floor is not positive after all costs at feasible size,
+ if rule equivalence is uncertain, or if expected unmatched losses consume the completion margin.
+
+
+
+
+KALSHI EDGE RESEARCH | 24 SEP 2026 | RESEARCH, NOT A PROFIT CLAIM                                          14
+ The accounting that decides
+ survival
+ ONE SHARED CAPITAL POOL; EXECUTION-CONDITIONAL RETURNS
+
+ Optimize risk-adjusted net dollars per constrained capital-hour, with uncertainty
+ and capacity reported beside the headline P&L.
+
+ Binary expected value
+ For a fully paid YES purchase held to a binary settlement, expected net value per contract is q - p -
+ net fees - other costs. Here q must be the probability conditional on the information and the fact
+ that our order fills. A maker's unconditional forecast can be right while its filled orders are
+ systematically bad. Exit-based strategies must model realized entry and exit cash flows instead of
+ replacing them with terminal payoff.
+
+ Fees must be versioned
+ The July 7 event-contract schedule gives model formulas with market multipliers; maker fees are
+ not universally zero. Illustrative unrounded standard-multiplier taker cost at 50c is 1.75c. Current
+ API documentation distinguishes direct-member balance precision of $0.0001 from non-direct
+ precision of $0.01 and describes per-order rounding accumulators. The repo's older cent-ceiling
+ convention requires a version-and-account reconciliation, not an assumption that one formula
+ covers every historical and current trade. Prefer actual recorded fee components. [S19, S20]
+
+ Separate the profit sources
+ Report trading P&L excluding rewards, exchange rewards actually earned, fees, inventory
+ liquidation or settlement, and capital cost. Do not hide a negative forecasting strategy inside a
+ positive subsidy. Likewise, do not count an ideal reward estimate as cash received. For perpetuals
+ use notional-based fees, funding and hedge costs, not the binary fee formula.
+
+ Capacity is a first-class output
+ For each candidate record executable dollars per day, independent opportunities, capital-hours,
+ stress drawdown and correlation with existing positions. A 20% return on $5 of available depth is a
+ curiosity; a modest repeatable edge with substantial capacity could be more valuable. A quote can
+ disappear, and consuming it changes the opportunity.
+
+ No duplicate liquidity or fake diversification
+ A public print cannot be credited as a fill to multiple bots, and competing bots must share cash,
+ queue and exit depth. Contracts on one election, game, weather system or crypto price path share
+ risk. Event-cluster uncertainty matters more than the raw number of fills or timestamps. Never
+ annualize a reused-week replay into an account-growth claim.
+
+
+
+
+KALSHI EDGE RESEARCH | 24 SEP 2026 | RESEARCH, NOT A PROFIT CLAIM                                        15
+ A research program that can say
+ no
+ PROPOSED EXPERIMENT ORDER; NO LIVE ORDERS PLACED
+
+ Research should cheaply eliminate weak candidates. Building ten production bots
+ before validating one would spread the same uncertainty across ten codebases.
+
+ First: repair the decision record
+ Pin main and research heads. Reconcile Q7's policy definitions, arm labels and scorecards without
+ retuning the frozen studies. Add a common fee/account-version manifest. Mark each study as
+ unit-only, synthetic, historical replay, prospective shadow or live. The existing code and negatives
+ are assets only when these distinctions remain visible.
+
+ Next: three focused workstreams
+ Use the neglected-market hybrid as the strategic forecasting stream, with explicit awareness that
+ resolution is slow. Use weather as the daily repeated physical-data stream. Continue the existing
+ reward census and prospective tape as the near-term microstructure stream. Give perps a limited
+ feasibility screen in parallel only if valid data and actual fee access can be obtained. This is a
+ proposed allocation of research effort, not a new authorization to trade.
+
+ Minimum preregistration
+ Freeze the market universe, exclusions, receipt-time information set, fee regime, order timing,
+ sizing, fill model, stopping rules and evaluation metrics before the test. Limit candidate variants; log
+ every attempted variant. Separate discovery, tuning and untouched evaluation periods. Sampling
+ more prints from the same event does not solve small-sample uncertainty.
+
+ The common scorecard
+ Track net P&L with and without rewards; calibration; fill rate; adverse selection after fills; feasible
+ versus requested size; unresolved inventory; capital-hours; drawdown; and event concentration.
+ Compare with market-only, simple-model and no-trade controls where relevant. Report uncertainty
+ by event or day and sensitivity to worse queues, latency and costs. No universal sample count
+ substitutes for enough independent events and stable effects.
+
+ Promotion and rejection
+ Promote a candidate only after an untouched prospective evaluation is economically positive under
+ realistic costs and conservative execution, the uncertainty is acceptable for its risk, and the result
+ survives reasonable stress without dependence on one exceptional event. If not, reject or record
+ the precise missing evidence. Do not revise a threshold on the evaluation data and keep calling it a
+ holdout. A later tiny live test would calibrate fills, not retroactively validate an overfit simulation.
+
+
+
+
+KALSHI EDGE RESEARCH | 24 SEP 2026 | RESEARCH, NOT A PROFIT CLAIM                                          16
+ Sources and access notes
+ PRIMARY SOURCES 1-8 OF 24 | ACCESSED 24 SEPTEMBER 2026
+
+ S01
+ Sethi et al. (2025), Political Prediction and the Wisdom of Crowds. DOI 10.1145/3715928.3737483. Primary USC abstract;
+ full-paper access unavailable. Deck supplies displayed result tables.
+
+ Open primary source
+
+
+ S02
+ Sethi, Seager, Cai, Benjamin and Morstatter (2021), Models, Markets, and the Forecasting of Elections. Full arXiv paper
+ examined; historical virtual portfolios and hybrid forecasts.
+
+ Open primary source
+
+
+ S03
+ SAGE: A Hybrid Forecasting System for Predicting Geopolitical Events (AI Magazine; arXiv version 2024). Full text
+ examined. Forecasting experiment, not a trading-profit test.
+
+ Open primary source
+
+
+ S04
+ Rothschild and Sethi (2016), Trading Strategies and Market Microstructure: Evidence from a Prediction Market. Primary
+ journal abstract and deck illustrations.
+
+ Open primary source
+
+
+ S05
+ Sethi (2024), Forecasting Mechanisms: An Update. Primary author commentary on forecasts, large trades and inference.
+
+ Open primary source
+
+
+ S06
+ Sethi, The Limits of Arbitrage. Primary author commentary; implementation limits are not proof that a discrepancy is
+ monetizable.
+
+ Open primary source
+
+
+ S07
+ Sirolly, Ma, Kanoria and Sethi, Network-Based Detection of Wash Trading. Columbia primary research page,
+ supplemented by the deck. Historical Polymarket evidence does not identify current Kalshi traders.
+
+ Open primary source
+
+
+ S08
+ Kalshi, Weather Markets. Current official settlement-source and climatic-day guidance, read September 24, 2026. Each
+ market rule remains authoritative.
+
+ Open primary source
+
+
+
+
+KALSHI EDGE RESEARCH | 24 SEP 2026 | RESEARCH, NOT A PROFIT CLAIM                                                          17
+ Sources and access notes
+ PRIMARY SOURCES 9-16 OF 24 | ACCESSED 24 SEPTEMBER 2026
+
+ S09
+ NWS Phoenix, High-Resolution KPHX ASOS Data. Primary measurement/rounding explanation; current page also warns
+ about feed availability and preliminary errors.
+
+ Open primary source
+
+
+ S10
+ Kalshi, Liquidity Incentive Program. Current official mechanics, eligibility, score weighting and payment conditions, read
+ September 24, 2026. Program terms may change.
+
+ Open primary source
+
+
+ S11
+ Sethi (September 23, 2026), Volume Inflation Without Wash Trading. Fresh author interpretation of subsidized perps
+ liquidity; not audited participant P&L.
+
+ Open primary source
+
+
+ S12
+ Kalshi (September 22, 2026), The Facts Behind Kalshi's Perpetuals Volume. Venue explanation of maker incentives, taker
+ selection and fee-holiday scope. Fictional program examples are not account offers.
+
+ Open primary source
+
+
+ S13
+ Kalshi, Perps Fees Explained. Current official description of notional fees and separate funding; actual account tier still
+ requires verification.
+
+ Open primary source
+
+
+ S14
+ Burgi, Deng and Whelan (January 2026), Makers and Takers: The Economics of the Kalshi Prediction Market. Full 44-page
+ author-hosted paper examined; historical period ends April 2025.
+
+ Open primary source
+
+
+ S15
+ Kalshi, Combos. Current official market, RFQ and settlement mechanics; product of leg payoffs is not independence of
+ leg probabilities.
+
+ Open primary source
+
+
+ S16
+ Kalshi API, Request for Quote (RFQ). Current official interfaces, full-size quotes, confirmation and execution timing.
+
+ Open primary source
+
+
+
+
+KALSHI EDGE RESEARCH | 24 SEP 2026 | RESEARCH, NOT A PROFIT CLAIM                                                              18
+ Sources and access notes
+ PRIMARY SOURCES 17-24 OF 24 | ACCESSED 24 SEPTEMBER 2026
+
+ S17
+ Kalshi API, CF Benchmarks Value Feed. Current official source, timestamps, availability and average-window
+ conventions.
+
+ Open primary source
+
+
+ S18
+ Kalshi API, CF Benchmarks 5Hz Value Feed. Current official raw-tick channel; distinct from the per-second average fields.
+
+ Open primary source
+
+
+ S19
+ Kalshi Fee Schedule, effective July 7, 2026. Downloaded 12-page schedule; market multipliers and fee versions matter.
+
+ Open primary source
+
+
+ S20
+ Kalshi API, Fee Rounding. Current official member-type precision, fee components and accumulator mechanics.
+
+ Open primary source
+
+
+ S21
+ Sethi et al. (2024), Evaluating Prediction Mechanisms: A Profitability Test. DOI 10.1145/3643562.3672612. Primary Nova
+ abstract and deck; ACM/SSRN full text inaccessible.
+
+ Open primary source
+
+
+ S22
+ Sethi and Vaughan, Belief Aggregation with Automated Market Makers. Primary Microsoft Research publication page.
+ Theory concerns cost-function makers, not a ready-made Kalshi limit-order-book strategy.
+
+ Open primary source
+
+
+ S23
+ Kets, Pennock, Sethi and Shah (2014), Betting Strategies, Market Selection, and the Wisdom of Crowds. Primary AAAI
+ paper. Wealth dynamics and belief aggregation are theory, not a live performance claim.
+
+ Open primary source
+
+
+ S24
+ Dubach (2026), Anatomy of a Decentralized Prediction Market. Full arXiv preprint examined. Useful on book data and
+ inferred trade-side limitations; no independent replication here.
+
+ Open primary source
+
+
+
+
+KALSHI EDGE RESEARCH | 24 SEP 2026 | RESEARCH, NOT A PROFIT CLAIM                                                        19
+ Repository and deck evidence
+ ledger
+ PINNED REVIEW SNAPSHOT; ONGOING WORK MAY HAVE ADVANCED
+
+ No orders, credentials, remote runtime settings or frozen experiment files were
+ changed for this review.
+
+ R1 - Grokbot operations
+ Repository: 17thgreen/Grokbot-Deathmatch-Dedicated-Repo. Main reviewed at
+ 1825ec8c78e7f1444fa179ba9762558ece081144. Read its eight Markdown operations/handoff files
+ and followed the explicit science-source link. No production process health or live account
+ performance was independently checked.
+
+ Open primary source
+
+
+ R2 - Canonical science main
+ Repository: 17thgreen/GPT-6-Astra-Deathmatch. Main
+ a281adc944e4dacffcdb5677a140fabaed675a81. Reviewed AGENTS, README, experiment registry,
+ Stern round-two results, NFL factorial and completion results, Q7/refiner status and policies, fee
+ logic, and representative accepted-input requirements and empty scorecards in newer
+ market-family labs. Not every duplicate fixture was independently rerun.
+
+ Open primary source
+
+
+ R3 / R4 - Q7 and Q8 research branches
+ Q7: research/q7-paired-price at 01c726ae9244d801d359e00df67d6a71f4012669;
+ nfl_pair_price_lab_20260921/Q7_RESULTS.md and policy code. Q8: research/q8-joint-routing at
+ d7079b6fece902e6e4603114a1d9ed5ef5a246c5; nfl_joint_route_lab_20260921/Q8_RESULTS.md. Read saved results
+ and compared relevant Q7 implementations; no controlled reconciliation run was performed.
+
+
+ R5 - Cross-sport continuation
+ research/m2-continuation at f44574e8f318920cc8fdf87c9c3d35c18bca2107. Read
+ cross_sport_replay_20260922/M2_RESULTS.md and market_adaptation_20260922/M3_RESULTS.md. Small reused panels
+ remain development evidence.
+
+
+ R6 - All-market structure
+ research/all-market-structure-20260924 at a59c9e331dcfcd71c957e753bc4fd2460df403c0. Read root results,
+ recovery/next-study notes, threshold findings, triage/DECISIONS.md and depth_survey/RESULTS.md. AMS004
+ observations span September 24, 03:32:10-03:35:44 UTC. Snapshot candidate rates do not measure persistence. Later
+ census/tape scaffolds are not completed return studies.
+
+
+ D1 - Supplied deck
+ Rajiv Sethi, Engines of Prophecy: The Power and Perils of Prediction Markets, D2 Columbia, May 2026. Uploaded 74-page
+ PDF, Rajiv Sethi - Engines_of_Prophecy(1).pdf. All pages text-extracted and visually inspected in contact sheets. The
+ supplied photo corresponds to page 32's two coauthored papers.
+
+
+
+
+KALSHI EDGE RESEARCH | 24 SEP 2026 | RESEARCH, NOT A PROFIT CLAIM                                                    20
+

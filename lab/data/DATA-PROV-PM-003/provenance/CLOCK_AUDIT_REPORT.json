@@ -1,0 +1,1032 @@
+{
+  "DATA_ID": "DATA-PROV-PM-003",
+  "audited_at_utc": "2026-09-11T23:02:26.125965+00:00",
+  "auditor": "clock_audit_DATA-PROV-PM-003.py",
+  "parent": "DATA-PROV-PM-001",
+  "sibling_excluded": "DATA-PROV-PM-002",
+  "order": "/workspace/lab/governance/CLOCK_REVIEW_DATA-PROV-PM-003.md",
+  "scope": {
+    "alpha": false,
+    "examiner_scores": false,
+    "invented_bid_ask": false,
+    "trading": false,
+    "poly": false,
+    "role": "decision-time checkpoint m_t integrity + knowability (remaining Kalshi)"
+  },
+  "recommended_verdict": "CONDITIONAL",
+  "all_integrity_tests_pass": true,
+  "overlap_count": 0,
+  "row_totals": {
+    "checkpoints": 6040,
+    "coverage": 1208,
+    "kalshi_checkpoints": 6040,
+    "btc_contracts": 604,
+    "eth_contracts": 604
+  },
+  "tests": {
+    "T1": {
+      "test": "T1_HASH_VERIFY_COUNTS_STRATA",
+      "pass": true,
+      "checksums": {
+        "all_match": true,
+        "n_entries": 1252,
+        "n_failures": 0,
+        "failures": []
+      },
+      "checkpoints": {
+        "rows": 6040,
+        "expected": 6040,
+        "match": true,
+        "sha256": "90e38c2f23e224def13db05924f6470a1e738778882f6b0cc17ed708b3143765",
+        "expected_sha256": "90e38c2f23e224def13db05924f6470a1e738778882f6b0cc17ed708b3143765",
+        "sha_match": true
+      },
+      "coverage": {
+        "rows": 1208,
+        "expected": 1208,
+        "match": true,
+        "sha256": "dcbb0b3e41049827a3bff0a61c1889914e211e7be51494775591317a58817f66"
+      },
+      "strata_coverage": {
+        "KALSHI|BTC|15m": 604,
+        "KALSHI|ETH|15m": 604
+      },
+      "strata_expected": {
+        "KALSHI|BTC|15m": 604,
+        "KALSHI|ETH|15m": 604
+      },
+      "strata_match": true,
+      "btc_contracts": 604,
+      "eth_contracts": 604,
+      "strata_checkpoint_rows": {
+        "KALSHI|BTC|15m": 3020,
+        "KALSHI|ETH|15m": 3020
+      },
+      "venue_checkpoint_counts": {
+        "KALSHI": 6040
+      }
+    },
+    "T2": {
+      "test": "T2_ZERO_OVERLAP_PM002_KALSHI",
+      "pass": true,
+      "pm003_venue_native_id_set_size": 1208,
+      "pm002_kalshi_venue_native_id_set_size": 120,
+      "venue_native_id_intersection_size": 0,
+      "venue_native_id_intersection_sample": [],
+      "pm003_contract_id_set_size": 1208,
+      "pm002_kalshi_contract_id_set_size": 120,
+      "contract_id_intersection_size": 0,
+      "contract_id_intersection_sample": [],
+      "also_vs_pm002_kalshi_checkpoints": {
+        "vni_intersection": 0,
+        "cid_intersection": 0,
+        "pm002_kalshi_ckpt_vni_size": 120,
+        "pm002_kalshi_ckpt_cid_size": 120
+      },
+      "overlap_count": 0,
+      "note": "overlap_count=0 required for non-QUARANTINE. PM-003 is remaining universe excluding PM-002 coverage \u2014 not a holdout union."
+    },
+    "T3": {
+      "test": "T3_SUBSET_PM001_KALSHI_VENUE_WINDOW",
+      "pass": true,
+      "every_pm003_id_subseteq_pm001_kalshi": true,
+      "n_missing_from_parent": 0,
+      "missing_sample": [],
+      "venues_present": [
+        "KALSHI"
+      ],
+      "windows_present": [
+        "15m"
+      ],
+      "venue_KALSHI_only": true,
+      "window_15m_only": true,
+      "asset_mismatches_vs_parent": 0,
+      "pm001_kalshi_n": 1328,
+      "pm002_kalshi_n": 120,
+      "pm003_n": 1208,
+      "pm002_plus_pm003_equals_pm001_kalshi": true,
+      "poly_absent": true
+    },
+    "T4": {
+      "test": "T4_DECISION_TIME_LAG_FORMULA",
+      "pass": true,
+      "decision_time_in_OPEN_CLOSE": {
+        "ok": 6040,
+        "total_ckpt": 6040,
+        "n_outside": 0,
+        "outside_sample": []
+      },
+      "obs_time_equals_decision_time": 6040,
+      "obs_lag_sec_zero": 6040,
+      "decision_time_equals_CLOSE_minus_remaining": {
+        "ok": 6040,
+        "bad_sample": []
+      },
+      "coverage_open_close_match_parent": {
+        "ok": 1208,
+        "total": 1208,
+        "mismatch_sample": []
+      },
+      "coverage_vs_ckpt_id_sets_equal": true,
+      "semantics": {
+        "candle": "1-minute candlestick; end_period_ts is the CLOSE of the minute bar",
+        "obs_time": "set to candle end_period_ts (ISO)",
+        "decision_time": "CLOSE - time_remaining_sec; equals obs_time (exact minute grid)",
+        "knowability": "A trader knows the candle's close values only at/after the minute end. Using end_period_ts as decision_time is decision-time-aligned for that closed bar \u2014 not lookahead into a future bar. At exact OPEN there is no closed 1m candle yet.",
+        "mid_construction": "mid = (yes_bid.close + yes_ask.close)/2 from the closed minute bar at decision_time"
+      }
+    },
+    "T5": {
+      "test": "T5_REMAINING_SET_FIVE_ROWS",
+      "pass": true,
+      "remaining_sec_set": [
+        0,
+        60,
+        300,
+        600,
+        840
+      ],
+      "expected_remaining_sec_set": [
+        0,
+        60,
+        300,
+        600,
+        840
+      ],
+      "remaining_sec_counts": {
+        "0": 1208,
+        "60": 1208,
+        "300": 1208,
+        "600": 1208,
+        "840": 1208
+      },
+      "fabricated_remaining_900": 0,
+      "rows_per_contract_counts": {
+        "5": 1208
+      },
+      "all_contracts_exactly_5_rows": true,
+      "n_unique_contracts": 1208,
+      "note": "Exact OPEN rem=900 has no closed 1m candle; dataset correctly uses T-14m (840). rem=300 is T-5m mid-window, not exact OPEN."
+    },
+    "T6": {
+      "test": "T6_IMPLIED_P_METHOD_MID_VALIDITY_LAST_FALLBACK",
+      "pass": true,
+      "method_counts": {
+        "mid": 5330,
+        "last": 709,
+        "None": 1
+      },
+      "mid": 5330,
+      "last": 709,
+      "null_method": 1,
+      "mid_valid_bid_ask": 5330,
+      "mid_invalid_sample": [],
+      "mid_by_remaining": {
+        "0": 612,
+        "60": 1094,
+        "300": 1208,
+        "600": 1208,
+        "840": 1208
+      },
+      "last_fallback_by_remaining": {
+        "0": 595,
+        "60": 114
+      },
+      "null_method_by_remaining": {
+        "0": 1
+      },
+      "last_fallback_T_1m_remaining_60": 114,
+      "last_fallback_T_0_remaining_0": 595,
+      "null_method_sample": [
+        {
+          "contract_id": "PROV-KALSHI-KXETH15M-26SEP090530-30",
+          "remaining": 0,
+          "yes_bid": 0.0,
+          "yes_ask": 0.001,
+          "last": null,
+          "implied_p": null
+        }
+      ],
+      "note": "mid requires bid>0, ask>0, bid<=ask; else last; if last also missing -> implied_p/method null (do not invent). Primary T-14m/T-10m/T-5m are mid-only on this slice."
+    },
+    "T7": {
+      "test": "T7_NEAR_DEGENERACY_BY_REMAINING",
+      "pass": true,
+      "near_degenerate_threshold": 0.02,
+      "near_by_remaining": {
+        "0": {
+          "n": 1208,
+          "near_0_or_1": 1206,
+          "implied_p_null": 1,
+          "rate": 0.9983
+        },
+        "60": {
+          "n": 1208,
+          "near_0_or_1": 811,
+          "implied_p_null": 0,
+          "rate": 0.6714
+        },
+        "300": {
+          "n": 1208,
+          "near_0_or_1": 94,
+          "implied_p_null": 0,
+          "rate": 0.0778
+        },
+        "600": {
+          "n": 1208,
+          "near_0_or_1": 0,
+          "implied_p_null": 0,
+          "rate": 0.0
+        },
+        "840": {
+          "n": 1208,
+          "near_0_or_1": 0,
+          "implied_p_null": 0,
+          "rate": 0.0
+        }
+      },
+      "t0_near_degenerate": 1206,
+      "t0_rate": 0.9983,
+      "t0_nondeg_or_null_sample": [
+        {
+          "contract_id": "PROV-KALSHI-KXETH15M-26SEP090530-30",
+          "implied_p": null,
+          "method": null,
+          "yes_bid": 0.0,
+          "yes_ask": 0.001,
+          "last": null
+        },
+        {
+          "contract_id": "PROV-KALSHI-KXETH15M-26SEP100000-00",
+          "implied_p": 0.043,
+          "method": "last",
+          "yes_bid": 0.0,
+          "yes_ask": 0.001,
+          "last": 0.043
+        }
+      ],
+      "t5m_near_deg": 94,
+      "t10m_near_deg": 0,
+      "t14m_near_deg": 0,
+      "delta_vs_pm002": "PM-002 Kalshi T-0 was 120/120 near-deg (rate=1.0). PM-003 T-0 is 1206/1208 near-deg (rate=0.9983) with 1 null implied_p. T-5m near-deg 94/1208 (PM-002: 15/120). T-14m/T-10m still 0 near-deg \u2014 same primary freeze.",
+      "recommendation": "EXCLUDE Kalshi T-0 (remaining=0) from forecast / market-relative Examiner cells. Prefer T-14m / T-10m / T-5m mid cells; T-1m has elevated near-degeneracy and last-fallback."
+    },
+    "T8": {
+      "test": "T8_NO_COPY_FROM_PM001_LAST_PRICE",
+      "pass": true,
+      "compared_rows": 6040,
+      "equal_terminal_any_remaining": 1574,
+      "intra_equal_terminal": 367,
+      "intra_rows": 4832,
+      "intra_equal_rate": 0.076,
+      "t0_equal_terminal": 1207,
+      "examples_intra_differ_from_terminal": [
+        {
+          "contract_id": "PROV-KALSHI-KXBTC15M-26SEP111630-30",
+          "remaining": 840,
+          "implied_p": 0.435,
+          "last": 0.43,
+          "LAST_PRICE_DOLLARS": 0.001,
+          "implied_p_method": "mid"
+        },
+        {
+          "contract_id": "PROV-KALSHI-KXBTC15M-26SEP111630-30",
+          "remaining": 600,
+          "implied_p": 0.205,
+          "last": 0.21,
+          "LAST_PRICE_DOLLARS": 0.001,
+          "implied_p_method": "mid"
+        },
+        {
+          "contract_id": "PROV-KALSHI-KXBTC15M-26SEP111630-30",
+          "remaining": 300,
+          "implied_p": 0.325,
+          "last": 0.33,
+          "LAST_PRICE_DOLLARS": 0.001,
+          "implied_p_method": "mid"
+        },
+        {
+          "contract_id": "PROV-KALSHI-KXBTC15M-26SEP111630-30",
+          "remaining": 60,
+          "implied_p": 0.0035,
+          "last": 0.004,
+          "LAST_PRICE_DOLLARS": 0.001,
+          "implied_p_method": "mid"
+        },
+        {
+          "contract_id": "PROV-KALSHI-KXETH15M-26SEP111630-30",
+          "remaining": 840,
+          "implied_p": 0.405,
+          "last": 0.4,
+          "LAST_PRICE_DOLLARS": 0.001,
+          "implied_p_method": "mid"
+        },
+        {
+          "contract_id": "PROV-KALSHI-KXETH15M-26SEP111630-30",
+          "remaining": 600,
+          "implied_p": 0.115,
+          "last": 0.12,
+          "LAST_PRICE_DOLLARS": 0.001,
+          "implied_p_method": "mid"
+        },
+        {
+          "contract_id": "PROV-KALSHI-KXETH15M-26SEP111630-30",
+          "remaining": 300,
+          "implied_p": 0.052,
+          "last": 0.057,
+          "LAST_PRICE_DOLLARS": 0.001,
+          "implied_p_method": "mid"
+        },
+        {
+          "contract_id": "PROV-KALSHI-KXBTC15M-26SEP111615-15",
+          "remaining": 840,
+          "implied_p": 0.375,
+          "last": 0.38,
+          "LAST_PRICE_DOLLARS": 0.999,
+          "implied_p_method": "mid"
+        }
+      ],
+      "examples_t0_may_match_terminal": [
+        {
+          "contract_id": "PROV-KALSHI-KXBTC15M-26SEP111630-30",
+          "implied_p": 0.001,
+          "last": 0.001,
+          "LAST_PRICE_DOLLARS": 0.001
+        },
+        {
+          "contract_id": "PROV-KALSHI-KXETH15M-26SEP111630-30",
+          "implied_p": 0.001,
+          "last": 0.001,
+          "LAST_PRICE_DOLLARS": 0.001
+        },
+        {
+          "contract_id": "PROV-KALSHI-KXBTC15M-26SEP111615-15",
+          "implied_p": 0.9995,
+          "last": 0.999,
+          "LAST_PRICE_DOLLARS": 0.999
+        },
+        {
+          "contract_id": "PROV-KALSHI-KXETH15M-26SEP111615-15",
+          "implied_p": 0.9995,
+          "last": 0.999,
+          "LAST_PRICE_DOLLARS": 0.999
+        },
+        {
+          "contract_id": "PROV-KALSHI-KXBTC15M-26SEP111600-00",
+          "implied_p": 0.9995,
+          "last": 0.999,
+          "LAST_PRICE_DOLLARS": 0.999
+        }
+      ],
+      "raw_kalshi_spot_checks": [
+        {
+          "contract_id": "PROV-KALSHI-KXBTC15M-26SEP111630-30",
+          "decision_time": "2026-09-11T20:16:00Z",
+          "time_remaining_sec": 840,
+          "ckpt_yes_bid": 0.43,
+          "ckpt_yes_ask": 0.44,
+          "ckpt_last": 0.43,
+          "ckpt_implied_p": 0.435,
+          "raw_bid_close": 0.43,
+          "raw_ask_close": 0.44,
+          "raw_last_close": 0.43,
+          "bid_match": true,
+          "ask_match": true,
+          "last_match": true,
+          "n_candles": 15,
+          "source_url_prefix": "https://api.elections.kalshi.com/trade-api/v2/series/KXBTC15M/markets/KXBTC15M-26SEP111630-30/candle",
+          "is_batch_endpoint": false
+        },
+        {
+          "contract_id": "PROV-KALSHI-KXETH15M-26SEP111630-30",
+          "decision_time": "2026-09-11T20:16:00Z",
+          "time_remaining_sec": 840,
+          "ckpt_yes_bid": 0.4,
+          "ckpt_yes_ask": 0.41,
+          "ckpt_last": 0.4,
+          "ckpt_implied_p": 0.405,
+          "raw_bid_close": 0.4,
+          "raw_ask_close": 0.41,
+          "raw_last_close": 0.4,
+          "bid_match": true,
+          "ask_match": true,
+          "last_match": true,
+          "n_candles": 15,
+          "source_url_prefix": "https://api.elections.kalshi.com/trade-api/v2/series/KXETH15M/markets/KXETH15M-26SEP111630-30/candle",
+          "is_batch_endpoint": false
+        },
+        {
+          "contract_id": "PROV-KALSHI-KXBTC15M-26SEP111615-15",
+          "decision_time": "2026-09-11T20:01:00Z",
+          "time_remaining_sec": 840,
+          "ckpt_yes_bid": 0.37,
+          "ckpt_yes_ask": 0.38,
+          "ckpt_last": 0.38,
+          "ckpt_implied_p": 0.375,
+          "raw_bid_close": 0.37,
+          "raw_ask_close": 0.38,
+          "raw_last_close": 0.38,
+          "bid_match": true,
+          "ask_match": true,
+          "last_match": true,
+          "n_candles": 15,
+          "source_url_prefix": "https://api.elections.kalshi.com/trade-api/v2/series/KXBTC15M/markets/KXBTC15M-26SEP111615-15/candle",
+          "is_batch_endpoint": false
+        },
+        {
+          "contract_id": "PROV-KALSHI-KXETH15M-26SEP111615-15",
+          "decision_time": "2026-09-11T20:01:00Z",
+          "time_remaining_sec": 840,
+          "ckpt_yes_bid": 0.46,
+          "ckpt_yes_ask": 0.47,
+          "ckpt_last": 0.47,
+          "ckpt_implied_p": 0.465,
+          "raw_bid_close": 0.46,
+          "raw_ask_close": 0.47,
+          "raw_last_close": 0.47,
+          "bid_match": true,
+          "ask_match": true,
+          "last_match": true,
+          "n_candles": 15,
+          "source_url_prefix": "https://api.elections.kalshi.com/trade-api/v2/series/KXETH15M/markets/KXETH15M-26SEP111615-15/candle",
+          "is_batch_endpoint": false
+        },
+        {
+          "contract_id": "PROV-KALSHI-KXBTC15M-26SEP111600-00",
+          "decision_time": "2026-09-11T19:46:00Z",
+          "time_remaining_sec": 840,
+          "ckpt_yes_bid": 0.49,
+          "ckpt_yes_ask": 0.5,
+          "ckpt_last": 0.49,
+          "ckpt_implied_p": 0.495,
+          "raw_bid_close": 0.49,
+          "raw_ask_close": 0.5,
+          "raw_last_close": 0.49,
+          "bid_match": true,
+          "ask_match": true,
+          "last_match": true,
+          "n_candles": 15,
+          "source_url_prefix": "https://api.elections.kalshi.com/trade-api/v2/series/KXBTC15M/markets/KXBTC15M-26SEP111600-00/candle",
+          "is_batch_endpoint": false
+        },
+        {
+          "contract_id": "PROV-KALSHI-KXETH15M-26SEP111600-00",
+          "decision_time": "2026-09-11T19:46:00Z",
+          "time_remaining_sec": 840,
+          "ckpt_yes_bid": 0.46,
+          "ckpt_yes_ask": 0.48,
+          "ckpt_last": 0.47,
+          "ckpt_implied_p": 0.47,
+          "raw_bid_close": 0.46,
+          "raw_ask_close": 0.48,
+          "raw_last_close": 0.47,
+          "bid_match": true,
+          "ask_match": true,
+          "last_match": true,
+          "n_candles": 15,
+          "source_url_prefix": "https://api.elections.kalshi.com/trade-api/v2/series/KXETH15M/markets/KXETH15M-26SEP111600-00/candle",
+          "is_batch_endpoint": false
+        },
+        {
+          "contract_id": "PROV-KALSHI-KXBTC15M-26SEP111545-45",
+          "decision_time": "2026-09-11T19:31:00Z",
+          "time_remaining_sec": 840,
+          "ckpt_yes_bid": 0.37,
+          "ckpt_yes_ask": 0.38,
+          "ckpt_last": 0.38,
+          "ckpt_implied_p": 0.375,
+          "raw_bid_close": 0.37,
+          "raw_ask_close": 0.38,
+          "raw_last_close": 0.38,
+          "bid_match": true,
+          "ask_match": true,
+          "last_match": true,
+          "n_candles": 15,
+          "source_url_prefix": "https://api.elections.kalshi.com/trade-api/v2/series/KXBTC15M/markets/KXBTC15M-26SEP111545-45/candle",
+          "is_batch_endpoint": false
+        },
+        {
+          "contract_id": "PROV-KALSHI-KXETH15M-26SEP111545-45",
+          "decision_time": "2026-09-11T19:31:00Z",
+          "time_remaining_sec": 840,
+          "ckpt_yes_bid": 0.43,
+          "ckpt_yes_ask": 0.44,
+          "ckpt_last": 0.44,
+          "ckpt_implied_p": 0.435,
+          "raw_bid_close": 0.43,
+          "raw_ask_close": 0.44,
+          "raw_last_close": 0.44,
+          "bid_match": true,
+          "ask_match": true,
+          "last_match": true,
+          "n_candles": 15,
+          "source_url_prefix": "https://api.elections.kalshi.com/trade-api/v2/series/KXETH15M/markets/KXETH15M-26SEP111545-45/candle",
+          "is_batch_endpoint": false
+        }
+      ],
+      "raw_kalshi_spot_ok": true,
+      "evidence": "Intra-window implied_p/last differ from PM-001 LAST_PRICE_DOLLARS for majority of rows; raw candle spot-checks match checkpoint bid/ask/last; not a terminal-field copy.",
+      "note": "T-0 near-degeneracy may coincidentally match LAST_PRICE_DOLLARS; that is economic resolution, not field copy."
+    },
+    "T9": {
+      "test": "T9_BATCH_VS_PERTICKER_SEMANTICS",
+      "n_batch_files": 37,
+      "n_per_ticker_raw": 1208,
+      "sample_batch": {
+        "batch_file": "batch_0000_2026-09-11T215834Z.json",
+        "meta_url_prefix": "https://api.elections.kalshi.com/trade-api/v2/markets/candlesticks?market_tickers=KXBTC15M-26SEP041700-00%2CKXETH15M-26SEP041700-00%2CKXBTC15M-26SEP041715-15%2C",
+        "n_markets": 33,
+        "period_interval_in_url": true,
+        "endpoint": "GET /markets/candlesticks?market_tickers&start_ts&end_ts&period_interval=1"
+      },
+      "sample_ticker": "KXBTC15M-26SEP042000-00",
+      "batch_ohlc_field_schema": {
+        "end_period_ts": 1788565560,
+        "price_keys": [
+          "close_dollars",
+          "high_dollars",
+          "low_dollars",
+          "mean_dollars",
+          "open_dollars"
+        ],
+        "yes_bid_keys": [
+          "close_dollars",
+          "high_dollars",
+          "low_dollars",
+          "open_dollars"
+        ],
+        "yes_ask_keys": [
+          "close_dollars",
+          "high_dollars",
+          "low_dollars",
+          "open_dollars"
+        ],
+        "has_volume_fp": true,
+        "has_open_interest_fp": true,
+        "top_keys": [
+          "end_period_ts",
+          "open_interest_fp",
+          "price",
+          "volume_fp",
+          "yes_ask",
+          "yes_bid"
+        ]
+      },
+      "per_ticker_ohlc_field_schema": {
+        "end_period_ts": 1788565560,
+        "price_keys": [
+          "close_dollars",
+          "high_dollars",
+          "low_dollars",
+          "mean_dollars",
+          "open_dollars"
+        ],
+        "yes_bid_keys": [
+          "close_dollars",
+          "high_dollars",
+          "low_dollars",
+          "open_dollars"
+        ],
+        "yes_ask_keys": [
+          "close_dollars",
+          "high_dollars",
+          "low_dollars",
+          "open_dollars"
+        ],
+        "has_volume_fp": true,
+        "has_open_interest_fp": true,
+        "top_keys": [
+          "end_period_ts",
+          "open_interest_fp",
+          "price",
+          "volume_fp",
+          "yes_ask",
+          "yes_bid"
+        ]
+      },
+      "same_ticker_batch_vs_per_ticker": {
+        "aligned_end_period": true,
+        "end_period_ts": 1788565560,
+        "price_close_equal": true,
+        "yes_bid_close_equal": true,
+        "yes_ask_close_equal": true,
+        "volume_fp_equal": true,
+        "oi_fp_equal": true
+      },
+      "pm002_per_ticker_url_prefix": "https://api.elections.kalshi.com/trade-api/v2/series/KXBTC15M/markets/KXBTC15M-26SEP041945-45/candlesticks?start_ts=1788564600&end_ts=1788565500&period_interval",
+      "pm002_ohlc_field_schema": {
+        "end_period_ts": 1788564660,
+        "price_keys": [
+          "close_dollars",
+          "high_dollars",
+          "low_dollars",
+          "mean_dollars",
+          "open_dollars"
+        ],
+        "yes_bid_keys": [
+          "close_dollars",
+          "high_dollars",
+          "low_dollars",
+          "open_dollars"
+        ],
+        "yes_ask_keys": [
+          "close_dollars",
+          "high_dollars",
+          "low_dollars",
+          "open_dollars"
+        ],
+        "has_volume_fp": true,
+        "has_open_interest_fp": true,
+        "top_keys": [
+          "end_period_ts",
+          "open_interest_fp",
+          "price",
+          "volume_fp",
+          "yes_ask",
+          "yes_bid"
+        ]
+      },
+      "schema_keys_match_pm002_per_ticker": true,
+      "end_period_ts_alignment_semantics": "Identical: candle close keyed by end_period_ts (unix sec at minute end). Batch and per-ticker payloads expose the same candlestick object shape (price/yes_bid/yes_ask OHLC dollars + volume_fp + open_interest_fp).",
+      "coverage_phases": {
+        "pm003_remaining_batch": 1208
+      },
+      "coverage_resumed_count": 52,
+      "ckpt_source_endpoint_batch": 5895,
+      "ckpt_source_endpoint_per_ticker": 145,
+      "construction_delta_from_pm002": "PM-002 Kalshi used per-ticker GET /series/{series}/markets/{ticker}/candlesticks. PM-003 primary path uses batch GET /markets/candlesticks?market_tickers=... (span-packed under 10k candle cap); per-ticker raw also present via resume/fallback. Candle OHLC field semantics and end_period_ts alignment match PM-002.",
+      "pass": true
+    },
+    "T10": {
+      "test": "T10_NOT_BOOKS_ORACLE_SEALED_UNION_POLY_ABSENT",
+      "pass": true,
+      "not_book_archive": {
+        "kalshi_candle_bid_ask_close_present": 6040,
+        "kalshi_candle_bid_ask_is_L2_archive": false,
+        "verdict": "NOT a book archive. Kalshi candle yes_bid/yes_ask close are 1m OHLC summaries, not L2 depth snapshots. PM-001 books ABSENT stands."
+      },
+      "not_independent_oracle": {
+        "oracle_named_files": [],
+        "oracle_field_hits_in_ckpt_sample": 0,
+        "independent_oracle_status": "UNTESTED",
+        "verdict": "No independent CF BRTI / Chainlink TWAP replay attached. Settlement oracle remains VENUE_DECLARED from PM-001 labels only. Binance substitution forbidden."
+      },
+      "not_sealed_holdout": {
+        "is_sealed_holdout": false,
+        "evidence": [
+          "REPORT: Sibling excluded DATA-PROV-PM-002 \u2014 not holdout",
+          "ORDER: Forbidden treating 1208+240 as sealed holdout",
+          "coverage rows=1208 remaining slice of PM-001 Kalshi 1328"
+        ]
+      },
+      "not_union_with_pm002_as_holdout": {
+        "overlap_vni": 0,
+        "explicit_non_union": true,
+        "note": "Usable freeze is THIS 1208 only. Do not silently union with PM-002 120 or reuse full PM-001 windows."
+      },
+      "poly_absent": {
+        "poly_named_paths_under_pm003": [],
+        "venues": [
+          "KALSHI"
+        ],
+        "report_says_poly_deferred": true,
+        "order_forbids_poly_claims": true
+      },
+      "precutoff_historical": {
+        "kalshi_live_cutoff_utc": "2026-07-13T00:00:00+00:00",
+        "kalshi_open_min": "2026-09-04T20:45:00+00:00",
+        "kalshi_open_max": "2026-09-11T20:15:00+00:00",
+        "n_pre_cutoff": 0,
+        "historical_routed_raw": 0,
+        "live_routed_raw": 1208,
+        "ckpt_historical_endpoint": 0,
+        "ckpt_live_endpoint": 6040
+      }
+    },
+    "T11": {
+      "test": "T11_USABLE_COVERAGE_FREEZE_1208_ONLY",
+      "pass": true,
+      "n_contracts": 1208,
+      "ge1_intra_all": true,
+      "freeze_strata": {
+        "KALSHI|BTC|15m": {
+          "n_contracts": 604,
+          "expected_n": 604,
+          "open_min_utc": "2026-09-04T20:45:00+00:00",
+          "open_max_utc": "2026-09-11T20:15:00+00:00",
+          "close_min_utc": "2026-09-04T21:00:00+00:00",
+          "close_max_utc": "2026-09-11T20:30:00+00:00",
+          "checkpoint_rows": 3020,
+          "remaining_sec_present": [
+            0,
+            60,
+            300,
+            600,
+            840
+          ],
+          "implied_p_method_counts": {
+            "mid": 2659,
+            "last": 361
+          },
+          "ge1_intra_all": true,
+          "n_checkpoints_hit_5_all": true
+        },
+        "KALSHI|ETH|15m": {
+          "n_contracts": 604,
+          "expected_n": 604,
+          "open_min_utc": "2026-09-04T20:45:00+00:00",
+          "open_max_utc": "2026-09-11T20:15:00+00:00",
+          "close_min_utc": "2026-09-04T21:00:00+00:00",
+          "close_max_utc": "2026-09-11T20:30:00+00:00",
+          "checkpoint_rows": 3020,
+          "remaining_sec_present": [
+            0,
+            60,
+            300,
+            600,
+            840
+          ],
+          "implied_p_method_counts": {
+            "mid": 2671,
+            "last": 348,
+            "None": 1
+          },
+          "ge1_intra_all": true,
+          "n_checkpoints_hit_5_all": true
+        }
+      },
+      "explicit_exclusions": [
+        "Do not union with PM-002 Kalshi 120 as one holdout",
+        "Do not reuse full PM-001 1328 windows as if all have m_t under this label",
+        "Poly not fetched \u2014 out of freeze",
+        "T-0 forecast cells blocked",
+        "last-fallback rows excluded from mid cells",
+        "near-degenerate mid rows excluded"
+      ]
+    },
+    "EXTRAS": {
+      "test": "EXTRAS_DUPLICATES_POSTCLOSE",
+      "pass": true,
+      "n_duplicate_contract_remaining": 0,
+      "n_duplicate_contract_decision_time": 0,
+      "n_post_CLOSE": 0,
+      "venues_present": [
+        "KALSHI"
+      ]
+    }
+  },
+  "cleared_vs_blocked": {
+    "cleared": [
+      {
+        "cell": "KALSHI|15m|*|T-14m|mid",
+        "status": "CLEARED",
+        "method": "mid",
+        "caveats": [
+          "Exclude near-degenerate rows (implied_p<=0.02 or >=0.98): 0/1208 mid rows",
+          "Exclude last-fallback companions at this remaining (expect 0 on primary rem)",
+          "Candle close knowable at minute end (= decision_time)",
+          "Freeze is THIS 1208 only \u2014 do not union with PM-002"
+        ],
+        "stats": {
+          "n": 1208,
+          "near_degenerate": 0,
+          "usable_non_degenerate": 1208,
+          "methods": {
+            "mid": 1208
+          }
+        },
+        "all_methods_at_remaining": {
+          "n": 1208,
+          "near_degenerate": 0,
+          "usable_non_degenerate": 1208,
+          "methods": {
+            "mid": 1208
+          }
+        }
+      },
+      {
+        "cell": "KALSHI|15m|*|T-10m|mid",
+        "status": "CLEARED",
+        "method": "mid",
+        "caveats": [
+          "Exclude near-degenerate rows (implied_p<=0.02 or >=0.98): 0/1208 mid rows",
+          "Exclude last-fallback companions at this remaining (expect 0 on primary rem)",
+          "Candle close knowable at minute end (= decision_time)",
+          "Freeze is THIS 1208 only \u2014 do not union with PM-002"
+        ],
+        "stats": {
+          "n": 1208,
+          "near_degenerate": 0,
+          "usable_non_degenerate": 1208,
+          "methods": {
+            "mid": 1208
+          }
+        },
+        "all_methods_at_remaining": {
+          "n": 1208,
+          "near_degenerate": 0,
+          "usable_non_degenerate": 1208,
+          "methods": {
+            "mid": 1208
+          }
+        }
+      },
+      {
+        "cell": "KALSHI|15m|*|T-5m|mid",
+        "status": "CLEARED",
+        "method": "mid",
+        "caveats": [
+          "Exclude near-degenerate rows (implied_p<=0.02 or >=0.98): 94/1208 mid rows",
+          "Exclude last-fallback companions at this remaining (expect 0 on primary rem)",
+          "Candle close knowable at minute end (= decision_time)",
+          "Freeze is THIS 1208 only \u2014 do not union with PM-002"
+        ],
+        "stats": {
+          "n": 1208,
+          "near_degenerate": 94,
+          "usable_non_degenerate": 1114,
+          "methods": {
+            "mid": 1208
+          }
+        },
+        "all_methods_at_remaining": {
+          "n": 1208,
+          "near_degenerate": 94,
+          "usable_non_degenerate": 1114,
+          "methods": {
+            "mid": 1208
+          }
+        }
+      },
+      {
+        "cell": "KALSHI|15m|*|T-1m|mid",
+        "status": "CLEARED_WITH_STRONG_CAVEAT",
+        "method": "mid",
+        "caveats": [
+          "Elevated near-degeneracy: 697/1094",
+          "Companion last-fallback rows at T-1m must be excluded from mid claims (114 rows)",
+          "Prefer T-14m/T-10m/T-5m for primary market-relative cells"
+        ],
+        "stats": {
+          "n": 1094,
+          "near_degenerate": 697,
+          "usable_non_degenerate": 397,
+          "methods": {
+            "mid": 1094
+          }
+        }
+      }
+    ],
+    "blocked": [
+      {
+        "cell": "KALSHI|15m|*|T-1m|last_fallback",
+        "status": "BLOCKED",
+        "method": "last",
+        "reason": "Last-fallback contaminates mid-based m_t claims; use only if explicitly scoring last-print (weaker).",
+        "stats": {
+          "n": 114,
+          "near_degenerate": 114,
+          "usable_non_degenerate": 0,
+          "methods": {
+            "last": 114
+          }
+        }
+      },
+      {
+        "cell": "KALSHI|15m|*|T-0|last_fallback",
+        "status": "BLOCKED",
+        "method": "last",
+        "reason": "Last-fallback contaminates mid-based m_t claims; use only if explicitly scoring last-print (weaker).",
+        "stats": {
+          "n": 595,
+          "near_degenerate": 594,
+          "usable_non_degenerate": 1,
+          "methods": {
+            "last": 595
+          }
+        }
+      },
+      {
+        "cell": "KALSHI|15m|*|T-0|any",
+        "status": "BLOCKED",
+        "method": "any",
+        "reason": "1206/1208 near-degenerate; 1 null implied_p. Exclude from forecast cells.",
+        "stats": {
+          "n": 1208,
+          "near_degenerate": 1206,
+          "usable_non_degenerate": 2,
+          "methods": {
+            "last": 595,
+            "mid": 612,
+            "null": 1
+          }
+        }
+      },
+      {
+        "cell": "*|*|*|*|books_L2",
+        "status": "BLOCKED",
+        "method": "book",
+        "reason": "Not a book archive. Candle bid/ask close != L2."
+      },
+      {
+        "cell": "*|*|*|*|independent_oracle",
+        "status": "BLOCKED",
+        "method": "oracle",
+        "reason": "Independent CF BRTI / Chainlink TWAP UNTESTED. No Binance substitution."
+      },
+      {
+        "cell": "SEALED_HOLDOUT",
+        "status": "BLOCKED",
+        "reason": "Not sealed. Remaining-universe slice only; not a holdout."
+      },
+      {
+        "cell": "UNION_PM002_PLUS_PM003_AS_HOLDOUT",
+        "status": "BLOCKED",
+        "reason": "Do not treat 1208+120 as sealed holdout or silent research-union until ledger says RESEARCH."
+      },
+      {
+        "cell": "POLYMARKET_ANY",
+        "status": "BLOCKED",
+        "reason": "Poly not fetched under DATA-PROV-PM-003. Out of scope."
+      },
+      {
+        "cell": "EXACT_OPEN_T15m_rem900",
+        "status": "BLOCKED",
+        "reason": "No closed 1m candle at exact OPEN. Do not fabricate rem=900. Use T-14m."
+      },
+      {
+        "cell": "PM001_LAST_PRICE_DOLLARS_AS_mt",
+        "status": "BLOCKED",
+        "reason": "Terminal settlement fields forbidden as decision-time m_t (Clock PM-001)."
+      },
+      {
+        "cell": "KALSHI_PRECUTOFF_HISTORICAL",
+        "status": "BLOCKED_QUARANTINE",
+        "reason": "Historical /historical/... route UNTESTED on this slice (all opens post-cutoff / live)."
+      },
+      {
+        "cell": "FULL_PM001_1328_UNDER_THIS_LABEL",
+        "status": "BLOCKED",
+        "reason": "This label freezes the 1208 remaining only; PM-002 120 is a sibling slice, not silently included."
+      }
+    ]
+  },
+  "usable_coverage_freeze": {
+    "KALSHI|BTC|15m": {
+      "n_contracts": 604,
+      "expected_n": 604,
+      "open_min_utc": "2026-09-04T20:45:00+00:00",
+      "open_max_utc": "2026-09-11T20:15:00+00:00",
+      "close_min_utc": "2026-09-04T21:00:00+00:00",
+      "close_max_utc": "2026-09-11T20:30:00+00:00",
+      "checkpoint_rows": 3020,
+      "remaining_sec_present": [
+        0,
+        60,
+        300,
+        600,
+        840
+      ],
+      "implied_p_method_counts": {
+        "mid": 2659,
+        "last": 361
+      },
+      "ge1_intra_all": true,
+      "n_checkpoints_hit_5_all": true
+    },
+    "KALSHI|ETH|15m": {
+      "n_contracts": 604,
+      "expected_n": 604,
+      "open_min_utc": "2026-09-04T20:45:00+00:00",
+      "open_max_utc": "2026-09-11T20:15:00+00:00",
+      "close_min_utc": "2026-09-04T21:00:00+00:00",
+      "close_max_utc": "2026-09-11T20:30:00+00:00",
+      "checkpoint_rows": 3020,
+      "remaining_sec_present": [
+        0,
+        60,
+        300,
+        600,
+        840
+      ],
+      "implied_p_method_counts": {
+        "mid": 2671,
+        "last": 348,
+        "None": 1
+      },
+      "ge1_intra_all": true,
+      "n_checkpoints_hit_5_all": true
+    }
+  },
+  "construction_deltas_from_pm002": [
+    "PM-002 Kalshi used per-ticker GET /series/{series}/markets/{ticker}/candlesticks. PM-003 primary path uses batch GET /markets/candlesticks?market_tickers=... (span-packed under 10k candle cap); per-ticker raw also present via resume/fallback. Candle OHLC field semantics and end_period_ts alignment match PM-002.",
+    "PM-002 Kalshi T-0 was 120/120 near-deg (rate=1.0). PM-003 T-0 is 1206/1208 near-deg (rate=0.9983) with 1 null implied_p. T-5m near-deg 94/1208 (PM-002: 15/120). T-14m/T-10m still 0 near-deg \u2014 same primary freeze.",
+    "Method mix: mid=5330 last=709 null=1 (PM-002 Kalshi was mid=506 last=94). Primary rem 840/600/300 remain mid-only.",
+    "Endpoint: batch /markets/candlesticks primary (+ resume per-ticker raw); PM-002 was per-ticker series route only. Same OHLC / end_period_ts semantics."
+  ],
+  "summary": {
+    "verdict": "CONDITIONAL",
+    "headline": "Kalshi mid m_t CLEARED at T-14m/T-10m/T-5m (exclude near-degenerate & last-fallback) on THIS 1208 remaining universe (overlap_with_PM002=0); BLOCKED: T-0 (1206/1208 near-deg), last-fallback, books, oracle, sealed holdout, union-with-PM-002-as-holdout, Poly (absent), rem=900 fabrication, PM-001 terminals as m_t. Same primary freeze pattern as PM-002 Kalshi.",
+    "primary_freeze": "KALSHI mid @ T-14m/T-10m/T-5m on 1208 only; exclude near-deg & last-fallback"
+  }
+}

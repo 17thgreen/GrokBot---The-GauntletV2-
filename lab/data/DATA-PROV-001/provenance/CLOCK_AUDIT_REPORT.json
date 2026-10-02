@@ -1,0 +1,991 @@
+{
+  "audit_id": "CLOCK_AUDIT_DATA-PROV-001",
+  "dataset": "DATA-PROV-001",
+  "audited_utc": "2026-09-10T23:30:39.551349+00:00",
+  "base_path": "/workspace/lab/data/DATA-PROV-001",
+  "policy": {
+    "sealed_inspection": "sha256 + row counts + min/max open_time_ms + non-overlap only; no sealed OHLC/prices/returns samples",
+    "no_strategy_pnl": true,
+    "no_fabricated_pass_fail": true
+  },
+  "confirmed_timestamp_definition": {
+    "open_time_ms": "candle start (open time) from Binance fapi klines API, UTC epoch milliseconds",
+    "close_time_ms": "candle close time from API; expected open_time_ms + 299999 for 5m bars",
+    "interval_ms": 300000,
+    "source": "provenance/DOWNLOAD_MANIFEST.md"
+  },
+  "known_limitations": [
+    "API primary fapi.binance.com returned HTTP 451 (restricted location); fallback www.binance.com/fapi/v1/klines used (same path/schema).",
+    "No receipt-time / local ingest timestamp recorded \u2014 only exchange open_time_ms / close_time_ms.",
+    "Provisional reference clock: exchange candle clock only; no cross-venue clock comparison (single venue).",
+    "Sealed holdout OHLC integrity not re-checked in this audit (policy); hash+times+counts only."
+  ],
+  "SEAL_LOCK_claims_verified": {
+    "warmup_bars": true,
+    "fractions": true,
+    "file": "/workspace/lab/data/DATA-PROV-001/sealed/SEAL_LOCK.json"
+  },
+  "symbols": {
+    "BTCUSDT": {
+      "symbol": "BTCUSDT",
+      "files": {},
+      "HASH_VERIFY": {
+        "per_file": {
+          "raw": {
+            "path": "/workspace/lab/data/DATA-PROV-001/raw/BTCUSDT_5m_binance_um.parquet",
+            "sha256_measured": "799f379f8a3d3228179b5a17987cbd31a2195b5fc545784a1f0d857b7593a713",
+            "sha256_expected": "799f379f8a3d3228179b5a17987cbd31a2195b5fc545784a1f0d857b7593a713",
+            "match": true,
+            "size_bytes": 38029058
+          },
+          "research": {
+            "path": "/workspace/lab/data/DATA-PROV-001/slices/BTCUSDT_5m_RESEARCH.parquet",
+            "sha256_measured": "29d8a016723a3ae880f79a176f4c19a8f7695843ea9792b87be79204d34485a5",
+            "sha256_expected": "29d8a016723a3ae880f79a176f4c19a8f7695843ea9792b87be79204d34485a5",
+            "match": true,
+            "size_bytes": 23903807
+          },
+          "validation": {
+            "path": "/workspace/lab/data/DATA-PROV-001/slices/BTCUSDT_5m_VALIDATION.parquet",
+            "sha256_measured": "3397049626801bd1f550ff092050076076f444a0dcc8da5fdf4864286c6aa5aa",
+            "sha256_expected": "3397049626801bd1f550ff092050076076f444a0dcc8da5fdf4864286c6aa5aa",
+            "match": true,
+            "size_bytes": 9107749
+          },
+          "warmup": {
+            "path": "/workspace/lab/data/DATA-PROV-001/slices/BTCUSDT_5m_WARMUP_PREFIX.parquet",
+            "sha256_measured": "75b6d45f85da2aeddb8b12486d95e498ced44a608e74282fb65067a820b19a3b",
+            "sha256_expected": "75b6d45f85da2aeddb8b12486d95e498ced44a608e74282fb65067a820b19a3b",
+            "match": true,
+            "size_bytes": 56666
+          },
+          "holdout": {
+            "path": "/workspace/lab/data/DATA-PROV-001/sealed/BTCUSDT_5m_HISTORICAL_HOLDOUT.parquet",
+            "sha256_measured": "e858531c4a6b5282232ca3cec3b313041a27cb648c40f3cb8223426cb274c835",
+            "sha256_expected": "e858531c4a6b5282232ca3cec3b313041a27cb648c40f3cb8223426cb274c835",
+            "match": true,
+            "size_bytes": 9099345
+          }
+        },
+        "pass": true
+      },
+      "row_counts": {
+        "raw": 595872,
+        "warmup": 624,
+        "research": 357148,
+        "validation": 119049,
+        "holdout": 119051,
+        "expected": {
+          "raw": 595872,
+          "post_warmup": 595248,
+          "research": 357148,
+          "validation": 119049,
+          "holdout": 119051,
+          "warmup": 624
+        },
+        "match_seal_lock_counts": {
+          "raw": true,
+          "warmup": true,
+          "research": true,
+          "validation": true,
+          "holdout": true,
+          "post_warmup": true
+        }
+      },
+      "sealed_time_bounds": {
+        "rows": 119051,
+        "min_open_time_ms": 1752505500000,
+        "max_open_time_ms": 1788220500000,
+        "min_open_utc": "2025-07-14T15:05:00+00:00",
+        "max_open_utc": "2026-08-31T23:55:00+00:00",
+        "note": "OHLC/prices/returns from sealed/ NOT inspected"
+      },
+      "DUPLICATES": {
+        "per_slice": {
+          "raw": {
+            "rows": 595872,
+            "duplicate_open_time_ms_count": 0,
+            "sorted_ascending": true,
+            "strictly_increasing": true,
+            "pass": true
+          },
+          "warmup": {
+            "rows": 624,
+            "duplicate_open_time_ms_count": 0,
+            "sorted_ascending": true,
+            "strictly_increasing": true,
+            "pass": true
+          },
+          "research": {
+            "rows": 357148,
+            "duplicate_open_time_ms_count": 0,
+            "sorted_ascending": true,
+            "strictly_increasing": true,
+            "pass": true
+          },
+          "validation": {
+            "rows": 119049,
+            "duplicate_open_time_ms_count": 0,
+            "sorted_ascending": true,
+            "strictly_increasing": true,
+            "pass": true
+          },
+          "holdout_times_only": {
+            "rows": 119051,
+            "duplicate_open_time_ms_count": 0,
+            "sorted_ascending": true,
+            "strictly_increasing": true,
+            "pass": true
+          }
+        },
+        "pass": true
+      },
+      "MISSINGNESS": {
+        "per_slice": {
+          "raw": {
+            "first_open_time_ms": 1609459200000,
+            "last_open_time_ms": 1788220500000,
+            "first_open_utc": "2021-01-01T00:00:00+00:00",
+            "last_open_utc": "2026-08-31T23:55:00+00:00",
+            "expected_bars_on_grid": 595872,
+            "actual_bars": 595872,
+            "missing_bar_count": 0,
+            "missing_open_time_ms_sample": [],
+            "off_grid_from_first_count": 0,
+            "off_epoch_grid_count": 0,
+            "close_time_equals_open_plus_299999": true,
+            "close_time_mismatch_count": 0,
+            "pass": true
+          },
+          "research": {
+            "first_open_time_ms": 1609646400000,
+            "last_open_time_ms": 1716790500000,
+            "first_open_utc": "2021-01-03T04:00:00+00:00",
+            "last_open_utc": "2024-05-27T06:15:00+00:00",
+            "expected_bars_on_grid": 357148,
+            "actual_bars": 357148,
+            "missing_bar_count": 0,
+            "missing_open_time_ms_sample": [],
+            "off_grid_from_first_count": 0,
+            "off_epoch_grid_count": 0,
+            "close_time_equals_open_plus_299999": true,
+            "close_time_mismatch_count": 0,
+            "pass": true
+          },
+          "validation": {
+            "first_open_time_ms": 1716790800000,
+            "last_open_time_ms": 1752505200000,
+            "first_open_utc": "2024-05-27T06:20:00+00:00",
+            "last_open_utc": "2025-07-14T15:00:00+00:00",
+            "expected_bars_on_grid": 119049,
+            "actual_bars": 119049,
+            "missing_bar_count": 0,
+            "missing_open_time_ms_sample": [],
+            "off_grid_from_first_count": 0,
+            "off_epoch_grid_count": 0,
+            "close_time_equals_open_plus_299999": true,
+            "close_time_mismatch_count": 0,
+            "pass": true
+          },
+          "warmup": {
+            "first_open_time_ms": 1609459200000,
+            "last_open_time_ms": 1609646100000,
+            "first_open_utc": "2021-01-01T00:00:00+00:00",
+            "last_open_utc": "2021-01-03T03:55:00+00:00",
+            "expected_bars_on_grid": 624,
+            "actual_bars": 624,
+            "missing_bar_count": 0,
+            "missing_open_time_ms_sample": [],
+            "off_grid_from_first_count": 0,
+            "off_epoch_grid_count": 0,
+            "close_time_equals_open_plus_299999": true,
+            "close_time_mismatch_count": 0,
+            "pass": true
+          },
+          "holdout_times_only": {
+            "first_open_time_ms": 1752505500000,
+            "last_open_time_ms": 1788220500000,
+            "first_open_utc": "2025-07-14T15:05:00+00:00",
+            "last_open_utc": "2026-08-31T23:55:00+00:00",
+            "expected_bars_on_grid": 119051,
+            "actual_bars": 119051,
+            "missing_bar_count": 0,
+            "missing_open_time_ms_sample": [],
+            "off_grid_from_first_count": 0,
+            "off_epoch_grid_count": 0,
+            "close_time_equals_open_plus_299999": true,
+            "close_time_mismatch_count": 0,
+            "pass": true
+          }
+        },
+        "pass": true
+      },
+      "IMPOSSIBLE_SEQUENCING": {
+        "per_slice": {
+          "raw": {
+            "nan_counts": {
+              "open": 0,
+              "high": 0,
+              "low": 0,
+              "close": 0,
+              "volume": 0,
+              "open_time_ms": 0,
+              "close_time_ms": 0
+            },
+            "high_lt_max_open_close": 0,
+            "low_gt_min_open_close": 0,
+            "high_lt_low": 0,
+            "non_positive_prices": {
+              "open": 0,
+              "high": 0,
+              "low": 0,
+              "close": 0
+            },
+            "negative_volume": 0,
+            "close_time_lt_open_time": 0,
+            "total_violation_events": 0,
+            "pass": true
+          },
+          "warmup": {
+            "nan_counts": {
+              "open": 0,
+              "high": 0,
+              "low": 0,
+              "close": 0,
+              "volume": 0,
+              "open_time_ms": 0,
+              "close_time_ms": 0
+            },
+            "high_lt_max_open_close": 0,
+            "low_gt_min_open_close": 0,
+            "high_lt_low": 0,
+            "non_positive_prices": {
+              "open": 0,
+              "high": 0,
+              "low": 0,
+              "close": 0
+            },
+            "negative_volume": 0,
+            "close_time_lt_open_time": 0,
+            "total_violation_events": 0,
+            "pass": true
+          },
+          "research": {
+            "nan_counts": {
+              "open": 0,
+              "high": 0,
+              "low": 0,
+              "close": 0,
+              "volume": 0,
+              "open_time_ms": 0,
+              "close_time_ms": 0
+            },
+            "high_lt_max_open_close": 0,
+            "low_gt_min_open_close": 0,
+            "high_lt_low": 0,
+            "non_positive_prices": {
+              "open": 0,
+              "high": 0,
+              "low": 0,
+              "close": 0
+            },
+            "negative_volume": 0,
+            "close_time_lt_open_time": 0,
+            "total_violation_events": 0,
+            "pass": true
+          },
+          "validation": {
+            "nan_counts": {
+              "open": 0,
+              "high": 0,
+              "low": 0,
+              "close": 0,
+              "volume": 0,
+              "open_time_ms": 0,
+              "close_time_ms": 0
+            },
+            "high_lt_max_open_close": 0,
+            "low_gt_min_open_close": 0,
+            "high_lt_low": 0,
+            "non_positive_prices": {
+              "open": 0,
+              "high": 0,
+              "low": 0,
+              "close": 0
+            },
+            "negative_volume": 0,
+            "close_time_lt_open_time": 0,
+            "total_violation_events": 0,
+            "pass": true
+          },
+          "holdout": {
+            "skipped": true,
+            "reason": "sealed holdout OHLC not inspected per audit policy; times/hash/counts only",
+            "pass": true
+          }
+        },
+        "pass": true
+      },
+      "LOOKAHEAD_LATE_INFORMATION": {
+        "knowability_rule": "Bar t close is only knowable at close_time_ms (exchange event). A feature that uses bar t close for a decision at open_time_ms of bar t is LOOKAHEAD. EDGE-001-style trailing RV/quantile using only completed bars through t is OK IF the decision is at close of t (after close_time_ms).",
+        "derived_dir_exists": true,
+        "derived_files": [],
+        "derived_empty": true,
+        "columns_in_raw": [
+          "open_time_ms",
+          "open",
+          "high",
+          "low",
+          "close",
+          "volume",
+          "close_time_ms",
+          "quote_volume",
+          "trades",
+          "taker_buy_base",
+          "taker_buy_quote",
+          "ignore"
+        ],
+        "extra_feature_columns_beyond_api_schema": [],
+        "pass": true,
+        "quarantine_triggers": []
+      },
+      "SPLIT_SEALING": {
+        "recomputed_counts": {
+          "warmup": 624,
+          "post_warmup": 595248,
+          "research": 357148,
+          "validation": 119049,
+          "holdout": 119051,
+          "method": "warmup=624; research=floor(0.6*post); validation=floor(0.2*post); holdout=post-research-validation (final remainder)"
+        },
+        "seal_lock_counts": {
+          "raw_rows": 595872,
+          "warmup_bars": 624,
+          "post_warmup_rows": 595248,
+          "research_rows": 357148,
+          "validation_rows": 119049,
+          "holdout_rows": 119051
+        },
+        "counts_match_recompute": {
+          "research": true,
+          "validation": true,
+          "holdout": true,
+          "warmup": true,
+          "post_warmup": true
+        },
+        "slice_equals_raw_partition": {
+          "warmup": true,
+          "research": true,
+          "validation": true,
+          "holdout": true
+        },
+        "first_last_open_times": {
+          "research": {
+            "first_ms": 1609646400000,
+            "last_ms": 1716790500000,
+            "first_utc": "2021-01-03T04:00:00+00:00",
+            "last_utc": "2024-05-27T06:15:00+00:00",
+            "matches_seal_lock": true
+          },
+          "validation": {
+            "first_ms": 1716790800000,
+            "last_ms": 1752505200000,
+            "first_utc": "2024-05-27T06:20:00+00:00",
+            "last_utc": "2025-07-14T15:00:00+00:00",
+            "matches_seal_lock": true
+          },
+          "holdout": {
+            "first_ms": 1752505500000,
+            "last_ms": 1788220500000,
+            "first_utc": "2025-07-14T15:05:00+00:00",
+            "last_utc": "2026-08-31T23:55:00+00:00",
+            "matches_seal_lock": true
+          }
+        },
+        "holdout_is_final_20pct_remainder": true,
+        "partition_covers_raw_no_overlap": true,
+        "pass": true
+      },
+      "MISALIGNMENT_WITHIN_SYMBOL": {
+        "slice_boundary_continuity": {
+          "warmup_to_research_gap_ms": 300000,
+          "research_to_validation_gap_ms": 300000,
+          "validation_to_holdout_gap_ms": 300000,
+          "expected_adjacent_gap_ms": 300000
+        },
+        "boundaries_continuous_no_gap": true,
+        "pairwise_open_time_overlap_counts": {
+          "warmup_vs_research": 0,
+          "warmup_vs_validation": 0,
+          "warmup_vs_holdout": 0,
+          "research_vs_validation": 0,
+          "research_vs_holdout": 0,
+          "validation_vs_holdout": 0
+        },
+        "no_overlaps": true,
+        "slices_do_not_overlap_sealed": {
+          "research_vs_holdout": 0,
+          "validation_vs_holdout": 0,
+          "warmup_vs_holdout": 0,
+          "pass": true
+        },
+        "concatenation_equals_raw_timeline": true,
+        "pass": true
+      },
+      "OUTLIERS_DIAGNOSTIC": {
+        "scope": "RESEARCH+VALIDATION only (sealed excluded)",
+        "threshold_abs_log_close_open": 0.05,
+        "bars_checked": 476197,
+        "valid_price_bars": 476197,
+        "outlier_count": 16,
+        "outlier_fraction": 3.35995396863063e-05,
+        "note": "diagnostic only on RESEARCH+VALIDATION; not a hard fail",
+        "hard_fail": false
+      },
+      "SAMPLE_ADEQUACY": {
+        "raw_rows": 595872,
+        "warmup_bars": 624,
+        "research_rows": 357148,
+        "validation_rows": 119049,
+        "holdout_rows": 119051,
+        "span_open_first_utc": "2021-01-01T00:00:00+00:00",
+        "span_open_last_utc": "2026-08-31T23:55:00+00:00",
+        "span_days": 2068.996527777778,
+        "min_warmup_required": 624,
+        "warmup_meets_min": true,
+        "research_nonempty": true,
+        "pass": true
+      },
+      "hard_tests_pass": {
+        "HASH_VERIFY": true,
+        "DUPLICATES": true,
+        "MISSINGNESS": true,
+        "IMPOSSIBLE_SEQUENCING": true,
+        "LOOKAHEAD_LATE_INFORMATION": true,
+        "MISALIGNMENT_WITHIN_SYMBOL": true,
+        "SPLIT_SEALING": true,
+        "SAMPLE_ADEQUACY": true
+      }
+    },
+    "ETHUSDT": {
+      "symbol": "ETHUSDT",
+      "files": {},
+      "HASH_VERIFY": {
+        "per_file": {
+          "raw": {
+            "path": "/workspace/lab/data/DATA-PROV-001/raw/ETHUSDT_5m_binance_um.parquet",
+            "sha256_measured": "d7781563e7665adce5db69cda3ea7b650daee3acdbf3c0814b062248ed9e8cf2",
+            "sha256_expected": "d7781563e7665adce5db69cda3ea7b650daee3acdbf3c0814b062248ed9e8cf2",
+            "match": true,
+            "size_bytes": 37643152
+          },
+          "research": {
+            "path": "/workspace/lab/data/DATA-PROV-001/slices/ETHUSDT_5m_RESEARCH.parquet",
+            "sha256_measured": "96bcc1680589d2221c378d1cf498b0963186b534e596ce7ccfd6002503082c29",
+            "sha256_expected": "96bcc1680589d2221c378d1cf498b0963186b534e596ce7ccfd6002503082c29",
+            "match": true,
+            "size_bytes": 23369244
+          },
+          "validation": {
+            "path": "/workspace/lab/data/DATA-PROV-001/slices/ETHUSDT_5m_VALIDATION.parquet",
+            "sha256_measured": "8590b4872eb2364ffe57ad60dc07a880c5db103f1d762108eaa790ebb8ceb4d7",
+            "sha256_expected": "8590b4872eb2364ffe57ad60dc07a880c5db103f1d762108eaa790ebb8ceb4d7",
+            "match": true,
+            "size_bytes": 9001981
+          },
+          "warmup": {
+            "path": "/workspace/lab/data/DATA-PROV-001/slices/ETHUSDT_5m_WARMUP_PREFIX.parquet",
+            "sha256_measured": "fd1bd1c71496b1770daa854c60ddc0ab878e6aacf1de5ac0859864b33de88c93",
+            "sha256_expected": "fd1bd1c71496b1770daa854c60ddc0ab878e6aacf1de5ac0859864b33de88c93",
+            "match": true,
+            "size_bytes": 53820
+          },
+          "holdout": {
+            "path": "/workspace/lab/data/DATA-PROV-001/sealed/ETHUSDT_5m_HISTORICAL_HOLDOUT.parquet",
+            "sha256_measured": "d95005724ef1071152139ac64aaba816ec3598f214c9361f1a08e74defb438be",
+            "sha256_expected": "d95005724ef1071152139ac64aaba816ec3598f214c9361f1a08e74defb438be",
+            "match": true,
+            "size_bytes": 9158069
+          }
+        },
+        "pass": true
+      },
+      "row_counts": {
+        "raw": 595872,
+        "warmup": 624,
+        "research": 357148,
+        "validation": 119049,
+        "holdout": 119051,
+        "expected": {
+          "raw": 595872,
+          "post_warmup": 595248,
+          "research": 357148,
+          "validation": 119049,
+          "holdout": 119051,
+          "warmup": 624
+        },
+        "match_seal_lock_counts": {
+          "raw": true,
+          "warmup": true,
+          "research": true,
+          "validation": true,
+          "holdout": true,
+          "post_warmup": true
+        }
+      },
+      "sealed_time_bounds": {
+        "rows": 119051,
+        "min_open_time_ms": 1752505500000,
+        "max_open_time_ms": 1788220500000,
+        "min_open_utc": "2025-07-14T15:05:00+00:00",
+        "max_open_utc": "2026-08-31T23:55:00+00:00",
+        "note": "OHLC/prices/returns from sealed/ NOT inspected"
+      },
+      "DUPLICATES": {
+        "per_slice": {
+          "raw": {
+            "rows": 595872,
+            "duplicate_open_time_ms_count": 0,
+            "sorted_ascending": true,
+            "strictly_increasing": true,
+            "pass": true
+          },
+          "warmup": {
+            "rows": 624,
+            "duplicate_open_time_ms_count": 0,
+            "sorted_ascending": true,
+            "strictly_increasing": true,
+            "pass": true
+          },
+          "research": {
+            "rows": 357148,
+            "duplicate_open_time_ms_count": 0,
+            "sorted_ascending": true,
+            "strictly_increasing": true,
+            "pass": true
+          },
+          "validation": {
+            "rows": 119049,
+            "duplicate_open_time_ms_count": 0,
+            "sorted_ascending": true,
+            "strictly_increasing": true,
+            "pass": true
+          },
+          "holdout_times_only": {
+            "rows": 119051,
+            "duplicate_open_time_ms_count": 0,
+            "sorted_ascending": true,
+            "strictly_increasing": true,
+            "pass": true
+          }
+        },
+        "pass": true
+      },
+      "MISSINGNESS": {
+        "per_slice": {
+          "raw": {
+            "first_open_time_ms": 1609459200000,
+            "last_open_time_ms": 1788220500000,
+            "first_open_utc": "2021-01-01T00:00:00+00:00",
+            "last_open_utc": "2026-08-31T23:55:00+00:00",
+            "expected_bars_on_grid": 595872,
+            "actual_bars": 595872,
+            "missing_bar_count": 0,
+            "missing_open_time_ms_sample": [],
+            "off_grid_from_first_count": 0,
+            "off_epoch_grid_count": 0,
+            "close_time_equals_open_plus_299999": true,
+            "close_time_mismatch_count": 0,
+            "pass": true
+          },
+          "research": {
+            "first_open_time_ms": 1609646400000,
+            "last_open_time_ms": 1716790500000,
+            "first_open_utc": "2021-01-03T04:00:00+00:00",
+            "last_open_utc": "2024-05-27T06:15:00+00:00",
+            "expected_bars_on_grid": 357148,
+            "actual_bars": 357148,
+            "missing_bar_count": 0,
+            "missing_open_time_ms_sample": [],
+            "off_grid_from_first_count": 0,
+            "off_epoch_grid_count": 0,
+            "close_time_equals_open_plus_299999": true,
+            "close_time_mismatch_count": 0,
+            "pass": true
+          },
+          "validation": {
+            "first_open_time_ms": 1716790800000,
+            "last_open_time_ms": 1752505200000,
+            "first_open_utc": "2024-05-27T06:20:00+00:00",
+            "last_open_utc": "2025-07-14T15:00:00+00:00",
+            "expected_bars_on_grid": 119049,
+            "actual_bars": 119049,
+            "missing_bar_count": 0,
+            "missing_open_time_ms_sample": [],
+            "off_grid_from_first_count": 0,
+            "off_epoch_grid_count": 0,
+            "close_time_equals_open_plus_299999": true,
+            "close_time_mismatch_count": 0,
+            "pass": true
+          },
+          "warmup": {
+            "first_open_time_ms": 1609459200000,
+            "last_open_time_ms": 1609646100000,
+            "first_open_utc": "2021-01-01T00:00:00+00:00",
+            "last_open_utc": "2021-01-03T03:55:00+00:00",
+            "expected_bars_on_grid": 624,
+            "actual_bars": 624,
+            "missing_bar_count": 0,
+            "missing_open_time_ms_sample": [],
+            "off_grid_from_first_count": 0,
+            "off_epoch_grid_count": 0,
+            "close_time_equals_open_plus_299999": true,
+            "close_time_mismatch_count": 0,
+            "pass": true
+          },
+          "holdout_times_only": {
+            "first_open_time_ms": 1752505500000,
+            "last_open_time_ms": 1788220500000,
+            "first_open_utc": "2025-07-14T15:05:00+00:00",
+            "last_open_utc": "2026-08-31T23:55:00+00:00",
+            "expected_bars_on_grid": 119051,
+            "actual_bars": 119051,
+            "missing_bar_count": 0,
+            "missing_open_time_ms_sample": [],
+            "off_grid_from_first_count": 0,
+            "off_epoch_grid_count": 0,
+            "close_time_equals_open_plus_299999": true,
+            "close_time_mismatch_count": 0,
+            "pass": true
+          }
+        },
+        "pass": true
+      },
+      "IMPOSSIBLE_SEQUENCING": {
+        "per_slice": {
+          "raw": {
+            "nan_counts": {
+              "open": 0,
+              "high": 0,
+              "low": 0,
+              "close": 0,
+              "volume": 0,
+              "open_time_ms": 0,
+              "close_time_ms": 0
+            },
+            "high_lt_max_open_close": 0,
+            "low_gt_min_open_close": 0,
+            "high_lt_low": 0,
+            "non_positive_prices": {
+              "open": 0,
+              "high": 0,
+              "low": 0,
+              "close": 0
+            },
+            "negative_volume": 0,
+            "close_time_lt_open_time": 0,
+            "total_violation_events": 0,
+            "pass": true
+          },
+          "warmup": {
+            "nan_counts": {
+              "open": 0,
+              "high": 0,
+              "low": 0,
+              "close": 0,
+              "volume": 0,
+              "open_time_ms": 0,
+              "close_time_ms": 0
+            },
+            "high_lt_max_open_close": 0,
+            "low_gt_min_open_close": 0,
+            "high_lt_low": 0,
+            "non_positive_prices": {
+              "open": 0,
+              "high": 0,
+              "low": 0,
+              "close": 0
+            },
+            "negative_volume": 0,
+            "close_time_lt_open_time": 0,
+            "total_violation_events": 0,
+            "pass": true
+          },
+          "research": {
+            "nan_counts": {
+              "open": 0,
+              "high": 0,
+              "low": 0,
+              "close": 0,
+              "volume": 0,
+              "open_time_ms": 0,
+              "close_time_ms": 0
+            },
+            "high_lt_max_open_close": 0,
+            "low_gt_min_open_close": 0,
+            "high_lt_low": 0,
+            "non_positive_prices": {
+              "open": 0,
+              "high": 0,
+              "low": 0,
+              "close": 0
+            },
+            "negative_volume": 0,
+            "close_time_lt_open_time": 0,
+            "total_violation_events": 0,
+            "pass": true
+          },
+          "validation": {
+            "nan_counts": {
+              "open": 0,
+              "high": 0,
+              "low": 0,
+              "close": 0,
+              "volume": 0,
+              "open_time_ms": 0,
+              "close_time_ms": 0
+            },
+            "high_lt_max_open_close": 0,
+            "low_gt_min_open_close": 0,
+            "high_lt_low": 0,
+            "non_positive_prices": {
+              "open": 0,
+              "high": 0,
+              "low": 0,
+              "close": 0
+            },
+            "negative_volume": 0,
+            "close_time_lt_open_time": 0,
+            "total_violation_events": 0,
+            "pass": true
+          },
+          "holdout": {
+            "skipped": true,
+            "reason": "sealed holdout OHLC not inspected per audit policy; times/hash/counts only",
+            "pass": true
+          }
+        },
+        "pass": true
+      },
+      "LOOKAHEAD_LATE_INFORMATION": {
+        "knowability_rule": "Bar t close is only knowable at close_time_ms (exchange event). A feature that uses bar t close for a decision at open_time_ms of bar t is LOOKAHEAD. EDGE-001-style trailing RV/quantile using only completed bars through t is OK IF the decision is at close of t (after close_time_ms).",
+        "derived_dir_exists": true,
+        "derived_files": [],
+        "derived_empty": true,
+        "columns_in_raw": [
+          "open_time_ms",
+          "open",
+          "high",
+          "low",
+          "close",
+          "volume",
+          "close_time_ms",
+          "quote_volume",
+          "trades",
+          "taker_buy_base",
+          "taker_buy_quote",
+          "ignore"
+        ],
+        "extra_feature_columns_beyond_api_schema": [],
+        "pass": true,
+        "quarantine_triggers": []
+      },
+      "SPLIT_SEALING": {
+        "recomputed_counts": {
+          "warmup": 624,
+          "post_warmup": 595248,
+          "research": 357148,
+          "validation": 119049,
+          "holdout": 119051,
+          "method": "warmup=624; research=floor(0.6*post); validation=floor(0.2*post); holdout=post-research-validation (final remainder)"
+        },
+        "seal_lock_counts": {
+          "raw_rows": 595872,
+          "warmup_bars": 624,
+          "post_warmup_rows": 595248,
+          "research_rows": 357148,
+          "validation_rows": 119049,
+          "holdout_rows": 119051
+        },
+        "counts_match_recompute": {
+          "research": true,
+          "validation": true,
+          "holdout": true,
+          "warmup": true,
+          "post_warmup": true
+        },
+        "slice_equals_raw_partition": {
+          "warmup": true,
+          "research": true,
+          "validation": true,
+          "holdout": true
+        },
+        "first_last_open_times": {
+          "research": {
+            "first_ms": 1609646400000,
+            "last_ms": 1716790500000,
+            "first_utc": "2021-01-03T04:00:00+00:00",
+            "last_utc": "2024-05-27T06:15:00+00:00",
+            "matches_seal_lock": true
+          },
+          "validation": {
+            "first_ms": 1716790800000,
+            "last_ms": 1752505200000,
+            "first_utc": "2024-05-27T06:20:00+00:00",
+            "last_utc": "2025-07-14T15:00:00+00:00",
+            "matches_seal_lock": true
+          },
+          "holdout": {
+            "first_ms": 1752505500000,
+            "last_ms": 1788220500000,
+            "first_utc": "2025-07-14T15:05:00+00:00",
+            "last_utc": "2026-08-31T23:55:00+00:00",
+            "matches_seal_lock": true
+          }
+        },
+        "holdout_is_final_20pct_remainder": true,
+        "partition_covers_raw_no_overlap": true,
+        "pass": true
+      },
+      "MISALIGNMENT_WITHIN_SYMBOL": {
+        "slice_boundary_continuity": {
+          "warmup_to_research_gap_ms": 300000,
+          "research_to_validation_gap_ms": 300000,
+          "validation_to_holdout_gap_ms": 300000,
+          "expected_adjacent_gap_ms": 300000
+        },
+        "boundaries_continuous_no_gap": true,
+        "pairwise_open_time_overlap_counts": {
+          "warmup_vs_research": 0,
+          "warmup_vs_validation": 0,
+          "warmup_vs_holdout": 0,
+          "research_vs_validation": 0,
+          "research_vs_holdout": 0,
+          "validation_vs_holdout": 0
+        },
+        "no_overlaps": true,
+        "slices_do_not_overlap_sealed": {
+          "research_vs_holdout": 0,
+          "validation_vs_holdout": 0,
+          "warmup_vs_holdout": 0,
+          "pass": true
+        },
+        "concatenation_equals_raw_timeline": true,
+        "pass": true
+      },
+      "OUTLIERS_DIAGNOSTIC": {
+        "scope": "RESEARCH+VALIDATION only (sealed excluded)",
+        "threshold_abs_log_close_open": 0.05,
+        "bars_checked": 476197,
+        "valid_price_bars": 476197,
+        "outlier_count": 32,
+        "outlier_fraction": 6.71990793726126e-05,
+        "note": "diagnostic only on RESEARCH+VALIDATION; not a hard fail",
+        "hard_fail": false
+      },
+      "SAMPLE_ADEQUACY": {
+        "raw_rows": 595872,
+        "warmup_bars": 624,
+        "research_rows": 357148,
+        "validation_rows": 119049,
+        "holdout_rows": 119051,
+        "span_open_first_utc": "2021-01-01T00:00:00+00:00",
+        "span_open_last_utc": "2026-08-31T23:55:00+00:00",
+        "span_days": 2068.996527777778,
+        "min_warmup_required": 624,
+        "warmup_meets_min": true,
+        "research_nonempty": true,
+        "pass": true
+      },
+      "hard_tests_pass": {
+        "HASH_VERIFY": true,
+        "DUPLICATES": true,
+        "MISSINGNESS": true,
+        "IMPOSSIBLE_SEQUENCING": true,
+        "LOOKAHEAD_LATE_INFORMATION": true,
+        "MISALIGNMENT_WITHIN_SYMBOL": true,
+        "SPLIT_SEALING": true,
+        "SAMPLE_ADEQUACY": true
+      }
+    }
+  },
+  "MISALIGNMENT_BTC_ETH": {
+    "btc_rows": 595872,
+    "eth_rows": 595872,
+    "identical_open_time_sets": true,
+    "only_in_btc_count": 0,
+    "only_in_eth_count": 0,
+    "only_in_btc_sample_ms": [],
+    "only_in_eth_sample_ms": [],
+    "pass": true
+  },
+  "CROSS_VENUE_CLOCK_ERROR": {
+    "applicable": false,
+    "note": "N/A single venue (Binance USD-M Futures). API fallback www.binance.com vs fapi.binance.com documented in DOWNLOAD_MANIFEST.",
+    "btc_eth_timestamps_identical": true,
+    "api_primary": "https://fapi.binance.com/fapi/v1/klines",
+    "api_fallback_used": "https://www.binance.com/fapi/v1/klines",
+    "api_fallback_reason": "primary HTTP 451 restricted location",
+    "pass": true
+  },
+  "hard_tests_summary": {
+    "HASH_VERIFY": {
+      "BTCUSDT": true,
+      "ETHUSDT": true,
+      "pass": true
+    },
+    "DUPLICATES": {
+      "BTCUSDT": true,
+      "ETHUSDT": true,
+      "pass": true
+    },
+    "MISSINGNESS": {
+      "BTCUSDT": true,
+      "ETHUSDT": true,
+      "pass": true
+    },
+    "IMPOSSIBLE_SEQUENCING": {
+      "BTCUSDT": true,
+      "ETHUSDT": true,
+      "pass": true
+    },
+    "LOOKAHEAD_LATE_INFORMATION": {
+      "BTCUSDT": true,
+      "ETHUSDT": true,
+      "pass": true
+    },
+    "SPLIT_SEALING": {
+      "BTCUSDT": true,
+      "ETHUSDT": true,
+      "pass": true
+    },
+    "SAMPLE_ADEQUACY": {
+      "BTCUSDT": true,
+      "ETHUSDT": true,
+      "pass": true
+    },
+    "MISALIGNMENT": {
+      "BTCUSDT_within": true,
+      "ETHUSDT_within": true,
+      "BTC_vs_ETH": true,
+      "pass": true
+    },
+    "CROSS_VENUE_CLOCK_ERROR": {
+      "pass": true,
+      "note": "N/A single venue (Binance USD-M Futures). API fallback www.binance.com vs fapi.binance.com documented in DOWNLOAD_MANIFEST."
+    },
+    "OUTLIERS_DIAGNOSTIC": {
+      "BTCUSDT_outlier_count_abs_log_gt_0.05": 16,
+      "ETHUSDT_outlier_count_abs_log_gt_0.05": 32,
+      "hard_fail": false,
+      "note": "diagnostic only"
+    }
+  },
+  "CONDITIONAL_triggers": [
+    "BTCUSDT: 16 RESEARCH+VALIDATION bars with |log(close/open)| > 0.05 (diagnostic; not hard fail)",
+    "ETHUSDT: 32 RESEARCH+VALIDATION bars with |log(close/open)| > 0.05 (diagnostic; not hard fail)",
+    "CROSS-VENUE: N/A single venue; API 451 fallback to www.binance.com \u2014 document as known limitation"
+  ],
+  "QUARANTINE_triggers": [],
+  "overall_pass": true
+}

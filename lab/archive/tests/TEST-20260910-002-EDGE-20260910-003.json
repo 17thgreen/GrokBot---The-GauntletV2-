@@ -1,1 +1,2135 @@
-{"artifact_kind":"MACHINE_READABLE_POINTER","TEST_ID":"TEST-20260910-002","edge_id":"EDGE-20260910-003","local_path":"/workspace/lab/archive/tests/TEST-20260910-002-EDGE-20260910-003.json","size_bytes":71612,"sha256":"08aed389f5917b7340e8924902f63bbbcf986b06c68c7897a2c0294e988764ac","github_note":"Full TEST JSON exceeds GitHub MCP ~11KB ceiling; remains on lab storage. Verify local sha256 before use. Companion *.md are canonical human record. slim_metrics copied from local JSON; full_instrument_summaries omitted (bound by full-file sha256). See MACHINE_READABLE_LOCAL.md.","companion_md":["TEST-20260910-002-EDGE-20260910-003-full.md","TEST-20260910-002-EDGE-20260910-003.md","TEST-20260910-002.md"],"slim_metrics":{"verdict":"FAIL","metrics_summary":{"BTC":{"research":{"slice_name":"research","signal_count":19695,"distinct_utc_days":1228,"mean_gross_bps":1.191802332765081,"mean_net_bps":-5.808197667234919,"hit_rate":0.5521706016755522,"low_high_gap_bps":0.9112200387878318,"gap_nw_ci_low":0.31523859357593453,"gap_nw_ci_high":1.507201483999729,"gap_ci_excludes_zero":true,"concentration_day_frac":0.9895245769540693,"notes":"NW lag=h=1"},"research_mean_gross_bps":1.191802332765081,"validation":null,"holdout":null,"grid_p_stability":{"keep_sign_count":3,"pass":true,"signs":{"90":1,"95":1,"99":1},"ref_sign":1,"param":"p","gap_by_p":{"0.9":0.6703299085361143,"0.95":0.9112200387878318,"0.99":1.624601225834715}},"placebos":{"real_gap":0.9112200387878318,"placebos":{"shuffled_range_ranks":{"gap":-0.28626793874445694,"matches_or_beats_real":false},"random_equal_count_high_range":{"gap":0.06793571296386469,"matches_or_beats_real":false},"scrambled_signs_in_high_range":{"gap":-0.5049156940089803,"matches_or_beats_real":false}}},"C_base_[A]":7.0,"primary_cell":{"p":0.95,"L":288,"h":1,"epsilon":"small","epsilon_value_[A]":5e-05,"range_definition":"(high-low)/close","position":"-Sign(r_t)","r_t":"log_return"},"validation_skipped_because_research_fail":true},"ETH":{"research":{"slice_name":"research","signal_count":19551,"distinct_utc_days":1236,"mean_gross_bps":1.013102871282234,"mean_net_bps":-5.986897128717766,"hit_rate":0.5406373075546008,"low_high_gap_bps":0.649991609022492,"gap_nw_ci_low":-0.1437922767491221,"gap_nw_ci_high":1.4437754947941062,"gap_ci_excludes_zero":false,"concentration_day_frac":0.9959709911361805,"notes":"NW lag=h=1"},"research_mean_gross_bps":1.013102871282234,"validation":null,"holdout":null,"grid_p_stability":{"keep_sign_count":3,"pass":true,"signs":{"90":1,"95":1,"99":1},"ref_sign":1,"param":"p","gap_by_p":{"0.9":0.1857611516888486,"0.95":0.649991609022492,"0.99":0.8402891210818686}},"placebos":{"real_gap":0.649991609022492,"placebos":{"shuffled_range_ranks":{"gap":-0.2620836682640887,"matches_or_beats_real":false},"random_equal_count_high_range":{"gap":0.23589968224801078,"matches_or_beats_real":true},"scrambled_signs_in_high_range":{"gap":0.44153375370227804,"matches_or_beats_real":true}}},"C_base_[A]":7.0,"primary_cell":{"p":0.95,"L":288,"h":1,"epsilon":"small","epsilon_value_[A]":5e-05,"range_definition":"(high-low)/close","position":"-Sign(r_t)","r_t":"log_return"},"validation_skipped_because_research_fail":true}},"instruments":[{"instrument":"BTC","verdict":"FAIL","reasons":["primary net at 1x <= 0 on RESEARCH (net_1x=-5.808197667234919)"]},{"instrument":"ETH","verdict":"FAIL","reasons":["primary net at 1x <= 0 on RESEARCH (net_1x=-5.986897128717766)","low-high RV gap CI covers 0 (or undefined) on RESEARCH","placebo matches or beats real gap within CI noise"]}],"holdout":"SEALED","clock_verdict":"CONDITIONAL","dataset_id":"DATA-PROV-001"},"omitted_large_keys":["full_instrument_summaries"]}
+{
+  "TEST_ID": "TEST-20260910-002",
+  "package_id": "PROV-MEAS-EDGE-003",
+  "edge_id": "EDGE-20260910-003",
+  "MEASUREMENT": "FAIL",
+  "verdict": "FAIL",
+  "data_path": "/workspace/lab/data/DATA-PROV-001",
+  "dataset_id": "DATA-PROV-001",
+  "clock_verdict": "CONDITIONAL",
+  "research_only": false,
+  "pre_sliced": true,
+  "holdout": "SEALED",
+  "invented_numbers": false,
+  "cemetery_citation": "CEM-20260910-001",
+  "not_rescue_of_edge001": true,
+  "signal_module": "range_expansion_snapback",
+  "instruments": [
+    {
+      "instrument": "BTC",
+      "verdict": "FAIL",
+      "reasons": [
+        "primary net at 1x <= 0 on RESEARCH (net_1x=-5.808197667234919)"
+      ]
+    },
+    {
+      "instrument": "ETH",
+      "verdict": "FAIL",
+      "reasons": [
+        "primary net at 1x <= 0 on RESEARCH (net_1x=-5.986897128717766)",
+        "low-high RV gap CI covers 0 (or undefined) on RESEARCH",
+        "placebo matches or beats real gap within CI noise"
+      ]
+    }
+  ],
+  "metrics_summary": {
+    "BTC": {
+      "research": {
+        "slice_name": "research",
+        "signal_count": 19695,
+        "distinct_utc_days": 1228,
+        "mean_gross_bps": 1.191802332765081,
+        "mean_net_bps": -5.808197667234919,
+        "hit_rate": 0.5521706016755522,
+        "low_high_gap_bps": 0.9112200387878318,
+        "gap_nw_ci_low": 0.31523859357593453,
+        "gap_nw_ci_high": 1.507201483999729,
+        "gap_ci_excludes_zero": true,
+        "concentration_day_frac": 0.9895245769540693,
+        "notes": "NW lag=h=1"
+      },
+      "research_mean_gross_bps": 1.191802332765081,
+      "validation": null,
+      "holdout": null,
+      "grid_p_stability": {
+        "keep_sign_count": 3,
+        "pass": true,
+        "signs": {
+          "90": 1,
+          "95": 1,
+          "99": 1
+        },
+        "ref_sign": 1,
+        "param": "p",
+        "gap_by_p": {
+          "0.9": 0.6703299085361143,
+          "0.95": 0.9112200387878318,
+          "0.99": 1.624601225834715
+        }
+      },
+      "placebos": {
+        "real_gap": 0.9112200387878318,
+        "placebos": {
+          "shuffled_range_ranks": {
+            "gap": -0.28626793874445694,
+            "matches_or_beats_real": false
+          },
+          "random_equal_count_high_range": {
+            "gap": 0.06793571296386469,
+            "matches_or_beats_real": false
+          },
+          "scrambled_signs_in_high_range": {
+            "gap": -0.5049156940089803,
+            "matches_or_beats_real": false
+          }
+        }
+      },
+      "C_base_[A]": 7.0,
+      "primary_cell": {
+        "p": 0.95,
+        "L": 288,
+        "h": 1,
+        "epsilon": "small",
+        "epsilon_value_[A]": 5e-05,
+        "range_definition": "(high-low)/close",
+        "position": "-Sign(r_t)",
+        "r_t": "log_return"
+      },
+      "validation_skipped_because_research_fail": true
+    },
+    "ETH": {
+      "research": {
+        "slice_name": "research",
+        "signal_count": 19551,
+        "distinct_utc_days": 1236,
+        "mean_gross_bps": 1.013102871282234,
+        "mean_net_bps": -5.986897128717766,
+        "hit_rate": 0.5406373075546008,
+        "low_high_gap_bps": 0.649991609022492,
+        "gap_nw_ci_low": -0.1437922767491221,
+        "gap_nw_ci_high": 1.4437754947941062,
+        "gap_ci_excludes_zero": false,
+        "concentration_day_frac": 0.9959709911361805,
+        "notes": "NW lag=h=1"
+      },
+      "research_mean_gross_bps": 1.013102871282234,
+      "validation": null,
+      "holdout": null,
+      "grid_p_stability": {
+        "keep_sign_count": 3,
+        "pass": true,
+        "signs": {
+          "90": 1,
+          "95": 1,
+          "99": 1
+        },
+        "ref_sign": 1,
+        "param": "p",
+        "gap_by_p": {
+          "0.9": 0.1857611516888486,
+          "0.95": 0.649991609022492,
+          "0.99": 0.8402891210818686
+        }
+      },
+      "placebos": {
+        "real_gap": 0.649991609022492,
+        "placebos": {
+          "shuffled_range_ranks": {
+            "gap": -0.2620836682640887,
+            "matches_or_beats_real": false
+          },
+          "random_equal_count_high_range": {
+            "gap": 0.23589968224801078,
+            "matches_or_beats_real": true
+          },
+          "scrambled_signs_in_high_range": {
+            "gap": 0.44153375370227804,
+            "matches_or_beats_real": true
+          }
+        }
+      },
+      "C_base_[A]": 7.0,
+      "primary_cell": {
+        "p": 0.95,
+        "L": 288,
+        "h": 1,
+        "epsilon": "small",
+        "epsilon_value_[A]": 5e-05,
+        "range_definition": "(high-low)/close",
+        "position": "-Sign(r_t)",
+        "r_t": "log_return"
+      },
+      "validation_skipped_because_research_fail": true
+    }
+  },
+  "assumptions_[A]": {
+    "C_base_bps": 7.0,
+    "epsilon_small": 5e-05,
+    "epsilon_2x_small": 0.0001,
+    "range_t": "(high-low)/close",
+    "r_t": "log_return"
+  },
+  "non_claims": [
+    "OHLCV range-snapback does NOT validate OF / MM-inventory mechanism",
+    "Provisional net \u2260 executable alpha",
+    "Assumed 7 bps \u2260 any venue true cost",
+    "NOT a rescue of CEM-20260910-001 / EDGE-20260910-001",
+    "Holdout remains SEALED"
+  ],
+  "full_instrument_summaries": {
+    "BTC": {
+      "instrument": "BTC",
+      "n_bars": 476821,
+      "pre_sliced": true,
+      "cemetery_citation": "CEM-20260910-001",
+      "not_rescue_of_edge001": true,
+      "validation_skipped_because_research_fail": true,
+      "splits": {
+        "warmup_end": 624,
+        "research": [
+          624,
+          357772
+        ],
+        "validation": [
+          357772,
+          476821
+        ],
+        "holdout": [
+          476821,
+          476821
+        ],
+        "holdout_sealed": true,
+        "holdout_exists": true,
+        "holdout_loaded": false,
+        "source": "SEAL_LOCK_slices",
+        "n_warmup": 624,
+        "n_research": 357148,
+        "n_validation": 119049
+      },
+      "primary_cell": {
+        "p": 0.95,
+        "L": 288,
+        "h": 1,
+        "epsilon": "small",
+        "epsilon_value_[A]": 5e-05,
+        "range_definition": "(high-low)/close",
+        "position": "-Sign(r_t)",
+        "r_t": "log_return"
+      },
+      "research": {
+        "slice_name": "research",
+        "signal_count": 19695,
+        "distinct_utc_days": 1228,
+        "mean_gross_bps": 1.191802332765081,
+        "mean_net_bps": -5.808197667234919,
+        "hit_rate": 0.5521706016755522,
+        "low_high_gap_bps": 0.9112200387878318,
+        "gap_nw_ci_low": 0.31523859357593453,
+        "gap_nw_ci_high": 1.507201483999729,
+        "gap_ci_excludes_zero": true,
+        "concentration_day_frac": 0.9895245769540693,
+        "notes": "NW lag=h=1"
+      },
+      "research_mean_gross_bps": 1.191802332765081,
+      "validation": null,
+      "holdout": null,
+      "cost_stress_[A]": {
+        "GROSS_C0_DIAGNOSTIC": {
+          "slice_name": "research_GROSS_C0_DIAGNOSTIC",
+          "signal_count": 19695,
+          "distinct_utc_days": 1228,
+          "mean_gross_bps": 1.191802332765081,
+          "mean_net_bps": 1.191802332765081,
+          "hit_rate": 0.5521706016755522,
+          "low_high_gap_bps": 0.9112200387878318,
+          "gap_nw_ci_low": 0.31523859357593453,
+          "gap_nw_ci_high": 1.507201483999729,
+          "gap_ci_excludes_zero": true,
+          "concentration_day_frac": 0.9895245769540693,
+          "notes": "NW lag=h=1"
+        },
+        "C_1x": {
+          "slice_name": "research_C_1x",
+          "signal_count": 19695,
+          "distinct_utc_days": 1228,
+          "mean_gross_bps": 1.191802332765081,
+          "mean_net_bps": -5.808197667234919,
+          "hit_rate": 0.5521706016755522,
+          "low_high_gap_bps": 0.9112200387878318,
+          "gap_nw_ci_low": 0.31523859357593453,
+          "gap_nw_ci_high": 1.507201483999729,
+          "gap_ci_excludes_zero": true,
+          "concentration_day_frac": 0.9895245769540693,
+          "notes": "NW lag=h=1"
+        },
+        "C_2x": {
+          "slice_name": "research_C_2x",
+          "signal_count": 19695,
+          "distinct_utc_days": 1228,
+          "mean_gross_bps": 1.191802332765081,
+          "mean_net_bps": -12.80819766723492,
+          "hit_rate": 0.5521706016755522,
+          "low_high_gap_bps": 0.9112200387878318,
+          "gap_nw_ci_low": 0.31523859357593453,
+          "gap_nw_ci_high": 1.507201483999729,
+          "gap_ci_excludes_zero": true,
+          "concentration_day_frac": 0.9895245769540693,
+          "notes": "NW lag=h=1"
+        },
+        "C_3x": {
+          "slice_name": "research_C_3x",
+          "signal_count": 19695,
+          "distinct_utc_days": 1228,
+          "mean_gross_bps": 1.191802332765081,
+          "mean_net_bps": -19.808197667234918,
+          "hit_rate": 0.5521706016755522,
+          "low_high_gap_bps": 0.9112200387878318,
+          "gap_nw_ci_low": 0.31523859357593453,
+          "gap_nw_ci_high": 1.507201483999729,
+          "gap_ci_excludes_zero": true,
+          "concentration_day_frac": 0.9895245769540693,
+          "notes": "NW lag=h=1"
+        },
+        "LATENCY_STRESS_+1bp_[A]": {
+          "slice_name": "research_LATENCY_STRESS_+1bp_[A]",
+          "signal_count": 19695,
+          "distinct_utc_days": 1228,
+          "mean_gross_bps": 1.191802332765081,
+          "mean_net_bps": -6.808197667234919,
+          "hit_rate": 0.5521706016755522,
+          "low_high_gap_bps": 0.9112200387878318,
+          "gap_nw_ci_low": 0.31523859357593453,
+          "gap_nw_ci_high": 1.507201483999729,
+          "gap_ci_excludes_zero": true,
+          "concentration_day_frac": 0.9895245769540693,
+          "notes": "NW lag=h=1"
+        },
+        "LATENCY_STRESS_+3bp_[A]": {
+          "slice_name": "research_LATENCY_STRESS_+3bp_[A]",
+          "signal_count": 19695,
+          "distinct_utc_days": 1228,
+          "mean_gross_bps": 1.191802332765081,
+          "mean_net_bps": -8.80819766723492,
+          "hit_rate": 0.5521706016755522,
+          "low_high_gap_bps": 0.9112200387878318,
+          "gap_nw_ci_low": 0.31523859357593453,
+          "gap_nw_ci_high": 1.507201483999729,
+          "gap_ci_excludes_zero": true,
+          "concentration_day_frac": 0.9895245769540693,
+          "notes": "NW lag=h=1"
+        }
+      },
+      "time_half": {
+        "half1": {
+          "slice_name": "research_half1",
+          "signal_count": 9747,
+          "distinct_utc_days": 617,
+          "mean_gross_bps": 1.9955457428927659,
+          "mean_net_bps": -5.004454257107234,
+          "hit_rate": 0.5505283677028829,
+          "low_high_gap_bps": 1.6549539992896656,
+          "gap_nw_ci_low": 0.6348715915094445,
+          "gap_nw_ci_high": 2.6750364070698867,
+          "gap_ci_excludes_zero": true,
+          "concentration_day_frac": 0.9935587761674718,
+          "notes": "NW lag=h=1"
+        },
+        "half2": {
+          "slice_name": "research_half2",
+          "signal_count": 9948,
+          "distinct_utc_days": 612,
+          "mean_gross_bps": 0.4042986115633781,
+          "mean_net_bps": -6.595701388436622,
+          "hit_rate": 0.5537796542018496,
+          "low_high_gap_bps": 0.18656453714919918,
+          "gap_nw_ci_low": -0.43902385916523345,
+          "gap_nw_ci_high": 0.8121529334636318,
+          "gap_ci_excludes_zero": false,
+          "concentration_day_frac": 0.9855072463768116,
+          "notes": "NW lag=h=1"
+        },
+        "gap_same_sign": true
+      },
+      "placebos": {
+        "real_gap": 0.9112200387878318,
+        "real_ci": {
+          "low": 0.31523859357593453,
+          "high": 1.507201483999729
+        },
+        "placebos": {
+          "shuffled_range_ranks": {
+            "gap": -0.28626793874445694,
+            "matches_or_beats_real": false
+          },
+          "random_equal_count_high_range": {
+            "gap": 0.06793571296386469,
+            "matches_or_beats_real": false
+          },
+          "scrambled_signs_in_high_range": {
+            "gap": -0.5049156940089803,
+            "matches_or_beats_real": false
+          }
+        },
+        "seed": 20260910
+      },
+      "grid_p_stability": {
+        "keep_sign_count": 3,
+        "pass": true,
+        "signs": {
+          "90": 1,
+          "95": 1,
+          "99": 1
+        },
+        "ref_sign": 1,
+        "param": "p",
+        "gap_by_p": {
+          "0.9": 0.6703299085361143,
+          "0.95": 0.9112200387878318,
+          "0.99": 1.624601225834715
+        }
+      },
+      "L_neighbor_gaps": {
+        "288": 0.9112200387878318,
+        "576": 0.852288002135752
+      },
+      "p_cliff": false,
+      "grid_cell_count": 36,
+      "grid_results": [
+        {
+          "p": 0.9,
+          "L": 288,
+          "h": 1,
+          "epsilon": "small",
+          "metrics": {
+            "slice_name": "research",
+            "signal_count": 37252,
+            "distinct_utc_days": 1239,
+            "mean_gross_bps": 0.9509122025133635,
+            "mean_net_bps": -6.049087797486637,
+            "hit_rate": 0.5473263180500376,
+            "low_high_gap_bps": 0.6703299085361143,
+            "gap_nw_ci_low": 0.29284595660955376,
+            "gap_nw_ci_high": 1.0478138604626748,
+            "gap_ci_excludes_zero": true,
+            "concentration_day_frac": 0.9983883964544722,
+            "notes": "NW lag=h=1"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.9,
+          "L": 288,
+          "h": 1,
+          "epsilon": "2x_small",
+          "metrics": {
+            "slice_name": "research",
+            "signal_count": 36997,
+            "distinct_utc_days": 1239,
+            "mean_gross_bps": 0.9467178829862873,
+            "mean_net_bps": -6.053282117013713,
+            "hit_rate": 0.5473416763521367,
+            "low_high_gap_bps": 0.6578434215462524,
+            "gap_nw_ci_low": 0.2781749618210163,
+            "gap_nw_ci_high": 1.0375118812714885,
+            "gap_ci_excludes_zero": true,
+            "concentration_day_frac": 0.9983883964544722,
+            "notes": "NW lag=h=1"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.9,
+          "L": 288,
+          "h": 2,
+          "epsilon": "small",
+          "metrics": {
+            "slice_name": "research",
+            "signal_count": 37252,
+            "distinct_utc_days": 1239,
+            "mean_gross_bps": 1.4497354704091183,
+            "mean_net_bps": -5.550264529590882,
+            "hit_rate": 0.5438097283367336,
+            "low_high_gap_bps": 1.0270346606381018,
+            "gap_nw_ci_low": 0.5092720806416263,
+            "gap_nw_ci_high": 1.5447972406345771,
+            "gap_ci_excludes_zero": true,
+            "concentration_day_frac": 0.9983883964544722,
+            "notes": "NW lag=h=2"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.9,
+          "L": 288,
+          "h": 2,
+          "epsilon": "2x_small",
+          "metrics": {
+            "slice_name": "research",
+            "signal_count": 36997,
+            "distinct_utc_days": 1239,
+            "mean_gross_bps": 1.4569100512713073,
+            "mean_net_bps": -5.543089948728692,
+            "hit_rate": 0.54393599481039,
+            "low_high_gap_bps": 1.0225488553078663,
+            "gap_nw_ci_low": 0.5012611840845387,
+            "gap_nw_ci_high": 1.543836526531194,
+            "gap_ci_excludes_zero": true,
+            "concentration_day_frac": 0.9983883964544722,
+            "notes": "NW lag=h=2"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.9,
+          "L": 288,
+          "h": 3,
+          "epsilon": "small",
+          "metrics": {
+            "slice_name": "research",
+            "signal_count": 37252,
+            "distinct_utc_days": 1239,
+            "mean_gross_bps": 1.2969429104784924,
+            "mean_net_bps": -5.703057089521508,
+            "hit_rate": 0.5410984645119725,
+            "low_high_gap_bps": 0.8974198562076032,
+            "gap_nw_ci_low": 0.2903946604586345,
+            "gap_nw_ci_high": 1.504445051956572,
+            "gap_ci_excludes_zero": true,
+            "concentration_day_frac": 0.9983883964544722,
+            "notes": "NW lag=h=3"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.9,
+          "L": 288,
+          "h": 3,
+          "epsilon": "2x_small",
+          "metrics": {
+            "slice_name": "research",
+            "signal_count": 36997,
+            "distinct_utc_days": 1239,
+            "mean_gross_bps": 1.3133602796184496,
+            "mean_net_bps": -5.68663972038155,
+            "hit_rate": 0.5413141606076168,
+            "low_high_gap_bps": 0.9131234877222986,
+            "gap_nw_ci_low": 0.30216867117077073,
+            "gap_nw_ci_high": 1.5240783042738264,
+            "gap_ci_excludes_zero": true,
+            "concentration_day_frac": 0.9983883964544722,
+            "notes": "NW lag=h=3"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.9,
+          "L": 576,
+          "h": 1,
+          "epsilon": "small",
+          "metrics": {
+            "slice_name": "research",
+            "signal_count": 38422,
+            "distinct_utc_days": 1230,
+            "mean_gross_bps": 0.7690712730810908,
+            "mean_net_bps": -6.2309287269189095,
+            "hit_rate": 0.5441153505803966,
+            "low_high_gap_bps": 0.5129974399884183,
+            "gap_nw_ci_low": 0.1324497797311983,
+            "gap_nw_ci_high": 0.8935451002456383,
+            "gap_ci_excludes_zero": true,
+            "concentration_day_frac": 0.9911361804995971,
+            "notes": "NW lag=h=1"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.9,
+          "L": 576,
+          "h": 1,
+          "epsilon": "2x_small",
+          "metrics": {
+            "slice_name": "research",
+            "signal_count": 38145,
+            "distinct_utc_days": 1230,
+            "mean_gross_bps": 0.7567243152258204,
+            "mean_net_bps": -6.243275684774179,
+            "hit_rate": 0.543950714379342,
+            "low_high_gap_bps": 0.4911956558506932,
+            "gap_nw_ci_low": 0.10831712736856147,
+            "gap_nw_ci_high": 0.8740741843328249,
+            "gap_ci_excludes_zero": true,
+            "concentration_day_frac": 0.9911361804995971,
+            "notes": "NW lag=h=1"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.9,
+          "L": 576,
+          "h": 2,
+          "epsilon": "small",
+          "metrics": {
+            "slice_name": "research",
+            "signal_count": 38422,
+            "distinct_utc_days": 1230,
+            "mean_gross_bps": 1.2034367226052216,
+            "mean_net_bps": -5.796563277394778,
+            "hit_rate": 0.5390661600124929,
+            "low_high_gap_bps": 0.7873328021551315,
+            "gap_nw_ci_low": 0.25931347417439865,
+            "gap_nw_ci_high": 1.3153521301358642,
+            "gap_ci_excludes_zero": true,
+            "concentration_day_frac": 0.9911361804995971,
+            "notes": "NW lag=h=2"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.9,
+          "L": 576,
+          "h": 2,
+          "epsilon": "2x_small",
+          "metrics": {
+            "slice_name": "research",
+            "signal_count": 38145,
+            "distinct_utc_days": 1230,
+            "mean_gross_bps": 1.1887732728119864,
+            "mean_net_bps": -5.811226727188013,
+            "hit_rate": 0.538943505046533,
+            "low_high_gap_bps": 0.7600482904710082,
+            "gap_nw_ci_low": 0.22848438150474393,
+            "gap_nw_ci_high": 1.2916121994372725,
+            "gap_ci_excludes_zero": true,
+            "concentration_day_frac": 0.9911361804995971,
+            "notes": "NW lag=h=2"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.9,
+          "L": 576,
+          "h": 3,
+          "epsilon": "small",
+          "metrics": {
+            "slice_name": "research",
+            "signal_count": 38422,
+            "distinct_utc_days": 1230,
+            "mean_gross_bps": 1.1159772485465456,
+            "mean_net_bps": -5.884022751453454,
+            "hit_rate": 0.5370100463276248,
+            "low_high_gap_bps": 0.7386166317511564,
+            "gap_nw_ci_low": 0.1198681098956349,
+            "gap_nw_ci_high": 1.357365153606678,
+            "gap_ci_excludes_zero": true,
+            "concentration_day_frac": 0.9911361804995971,
+            "notes": "NW lag=h=3"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.9,
+          "L": 576,
+          "h": 3,
+          "epsilon": "2x_small",
+          "metrics": {
+            "slice_name": "research",
+            "signal_count": 38145,
+            "distinct_utc_days": 1230,
+            "mean_gross_bps": 1.1128598810468784,
+            "mean_net_bps": -5.887140118953122,
+            "hit_rate": 0.5370297548826845,
+            "low_high_gap_bps": 0.7328673641822293,
+            "gap_nw_ci_low": 0.11059781863245899,
+            "gap_nw_ci_high": 1.3551369097319996,
+            "gap_ci_excludes_zero": true,
+            "concentration_day_frac": 0.9911361804995971,
+            "notes": "NW lag=h=3"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.95,
+          "L": 288,
+          "h": 1,
+          "epsilon": "small",
+          "metrics": {
+            "slice_name": "research",
+            "signal_count": 19695,
+            "distinct_utc_days": 1228,
+            "mean_gross_bps": 1.191802332765081,
+            "mean_net_bps": -5.808197667234919,
+            "hit_rate": 0.5521706016755522,
+            "low_high_gap_bps": 0.9112200387878318,
+            "gap_nw_ci_low": 0.31523859357593453,
+            "gap_nw_ci_high": 1.507201483999729,
+            "gap_ci_excludes_zero": true,
+            "concentration_day_frac": 0.9895245769540693,
+            "notes": "NW lag=h=1"
+          },
+          "is_primary": true
+        },
+        {
+          "p": 0.95,
+          "L": 288,
+          "h": 1,
+          "epsilon": "2x_small",
+          "metrics": {
+            "slice_name": "research",
+            "signal_count": 19604,
+            "distinct_utc_days": 1228,
+            "mean_gross_bps": 1.1715010748299637,
+            "mean_net_bps": -5.828498925170036,
+            "hit_rate": 0.5521832279126709,
+            "low_high_gap_bps": 0.8826266133899288,
+            "gap_nw_ci_low": 0.2853714606674632,
+            "gap_nw_ci_high": 1.4798817661123942,
+            "gap_ci_excludes_zero": true,
+            "concentration_day_frac": 0.9895245769540693,
+            "notes": "NW lag=h=1"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.95,
+          "L": 288,
+          "h": 2,
+          "epsilon": "small",
+          "metrics": {
+            "slice_name": "research",
+            "signal_count": 19695,
+            "distinct_utc_days": 1228,
+            "mean_gross_bps": 1.4315909747730398,
+            "mean_net_bps": -5.56840902522696,
+            "hit_rate": 0.5438436151307439,
+            "low_high_gap_bps": 1.0088901650020232,
+            "gap_nw_ci_low": 0.1940532733855489,
+            "gap_nw_ci_high": 1.8237270566184975,
+            "gap_ci_excludes_zero": true,
+            "concentration_day_frac": 0.9895245769540693,
+            "notes": "NW lag=h=2"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.95,
+          "L": 288,
+          "h": 2,
+          "epsilon": "2x_small",
+          "metrics": {
+            "slice_name": "research",
+            "signal_count": 19604,
+            "distinct_utc_days": 1228,
+            "mean_gross_bps": 1.424736318514198,
+            "mean_net_bps": -5.5752636814858025,
+            "hit_rate": 0.5437665782493368,
+            "low_high_gap_bps": 0.9903751225507569,
+            "gap_nw_ci_low": 0.1726618644263146,
+            "gap_nw_ci_high": 1.808088380675199,
+            "gap_ci_excludes_zero": true,
+            "concentration_day_frac": 0.9895245769540693,
+            "notes": "NW lag=h=2"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.95,
+          "L": 288,
+          "h": 3,
+          "epsilon": "small",
+          "metrics": {
+            "slice_name": "research",
+            "signal_count": 19695,
+            "distinct_utc_days": 1228,
+            "mean_gross_bps": 1.103867728728944,
+            "mean_net_bps": -5.896132271271056,
+            "hit_rate": 0.5427265803503427,
+            "low_high_gap_bps": 0.7043446744580548,
+            "gap_nw_ci_low": -0.22842767939005149,
+            "gap_nw_ci_high": 1.6371170283061611,
+            "gap_ci_excludes_zero": false,
+            "concentration_day_frac": 0.9895245769540693,
+            "notes": "NW lag=h=3"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.95,
+          "L": 288,
+          "h": 3,
+          "epsilon": "2x_small",
+          "metrics": {
+            "slice_name": "research",
+            "signal_count": 19604,
+            "distinct_utc_days": 1228,
+            "mean_gross_bps": 1.1036954901048948,
+            "mean_net_bps": -5.8963045098951055,
+            "hit_rate": 0.5427463782901448,
+            "low_high_gap_bps": 0.7034586982087437,
+            "gap_nw_ci_low": -0.23191216069255427,
+            "gap_nw_ci_high": 1.6388295571100417,
+            "gap_ci_excludes_zero": false,
+            "concentration_day_frac": 0.9895245769540693,
+            "notes": "NW lag=h=3"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.95,
+          "L": 576,
+          "h": 1,
+          "epsilon": "small",
+          "metrics": {
+            "slice_name": "research",
+            "signal_count": 19575,
+            "distinct_utc_days": 1211,
+            "mean_gross_bps": 1.1083618352284246,
+            "mean_net_bps": -5.891638164771575,
+            "hit_rate": 0.5456960408684547,
+            "low_high_gap_bps": 0.852288002135752,
+            "gap_nw_ci_low": 0.23255384349736496,
+            "gap_nw_ci_high": 1.4720221607741388,
+            "gap_ci_excludes_zero": true,
+            "concentration_day_frac": 0.975825946817083,
+            "notes": "NW lag=h=1"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.95,
+          "L": 576,
+          "h": 1,
+          "epsilon": "2x_small",
+          "metrics": {
+            "slice_name": "research",
+            "signal_count": 19479,
+            "distinct_utc_days": 1211,
+            "mean_gross_bps": 1.1092111743794155,
+            "mean_net_bps": -5.890788825620584,
+            "hit_rate": 0.5457672365111146,
+            "low_high_gap_bps": 0.8436825150042884,
+            "gap_nw_ci_low": 0.22170643007353907,
+            "gap_nw_ci_high": 1.4656585999350376,
+            "gap_ci_excludes_zero": true,
+            "concentration_day_frac": 0.975825946817083,
+            "notes": "NW lag=h=1"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.95,
+          "L": 576,
+          "h": 2,
+          "epsilon": "small",
+          "metrics": {
+            "slice_name": "research",
+            "signal_count": 19575,
+            "distinct_utc_days": 1211,
+            "mean_gross_bps": 1.3988893710875174,
+            "mean_net_bps": -5.601110628912482,
+            "hit_rate": 0.5389016602809706,
+            "low_high_gap_bps": 0.9827854506374273,
+            "gap_nw_ci_low": 0.13936612824027583,
+            "gap_nw_ci_high": 1.8262047730345787,
+            "gap_ci_excludes_zero": true,
+            "concentration_day_frac": 0.975825946817083,
+            "notes": "NW lag=h=2"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.95,
+          "L": 576,
+          "h": 2,
+          "epsilon": "2x_small",
+          "metrics": {
+            "slice_name": "research",
+            "signal_count": 19479,
+            "distinct_utc_days": 1211,
+            "mean_gross_bps": 1.4006196945832794,
+            "mean_net_bps": -5.59938030541672,
+            "hit_rate": 0.5388366959289491,
+            "low_high_gap_bps": 0.9718947122423012,
+            "gap_nw_ci_low": 0.12517162205147825,
+            "gap_nw_ci_high": 1.818617802433124,
+            "gap_ci_excludes_zero": true,
+            "concentration_day_frac": 0.975825946817083,
+            "notes": "NW lag=h=2"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.95,
+          "L": 576,
+          "h": 3,
+          "epsilon": "small",
+          "metrics": {
+            "slice_name": "research",
+            "signal_count": 19575,
+            "distinct_utc_days": 1211,
+            "mean_gross_bps": 1.1204587685710758,
+            "mean_net_bps": -5.879541231428924,
+            "hit_rate": 0.5371647509578544,
+            "low_high_gap_bps": 0.7430981517756867,
+            "gap_nw_ci_low": -0.22566800816368082,
+            "gap_nw_ci_high": 1.7118643117150543,
+            "gap_ci_excludes_zero": false,
+            "concentration_day_frac": 0.975825946817083,
+            "notes": "NW lag=h=3"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.95,
+          "L": 576,
+          "h": 3,
+          "epsilon": "2x_small",
+          "metrics": {
+            "slice_name": "research",
+            "signal_count": 19479,
+            "distinct_utc_days": 1211,
+            "mean_gross_bps": 1.1250136047464516,
+            "mean_net_bps": -5.874986395253549,
+            "hit_rate": 0.536988551773705,
+            "low_high_gap_bps": 0.7450210878818025,
+            "gap_nw_ci_low": -0.2273392999984265,
+            "gap_nw_ci_high": 1.7173814757620316,
+            "gap_ci_excludes_zero": false,
+            "concentration_day_frac": 0.975825946817083,
+            "notes": "NW lag=h=3"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.99,
+          "L": 288,
+          "h": 1,
+          "epsilon": "small",
+          "metrics": {
+            "slice_name": "research",
+            "signal_count": 4138,
+            "distinct_utc_days": 1093,
+            "mean_gross_bps": 1.9051835198119642,
+            "mean_net_bps": -5.094816480188036,
+            "hit_rate": 0.5546157564040599,
+            "low_high_gap_bps": 1.624601225834715,
+            "gap_nw_ci_low": -0.205804911088183,
+            "gap_nw_ci_high": 3.4550073627576126,
+            "gap_ci_excludes_zero": false,
+            "concentration_day_frac": 0.8807413376309428,
+            "notes": "NW lag=h=1"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.99,
+          "L": 288,
+          "h": 1,
+          "epsilon": "2x_small",
+          "metrics": {
+            "slice_name": "research",
+            "signal_count": 4130,
+            "distinct_utc_days": 1092,
+            "mean_gross_bps": 1.9248596064772634,
+            "mean_net_bps": -5.075140393522736,
+            "hit_rate": 0.5549636803874092,
+            "low_high_gap_bps": 1.6359851450372285,
+            "gap_nw_ci_low": -0.19779817944023792,
+            "gap_nw_ci_high": 3.469768469514695,
+            "gap_ci_excludes_zero": false,
+            "concentration_day_frac": 0.8799355358581789,
+            "notes": "NW lag=h=1"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.99,
+          "L": 288,
+          "h": 2,
+          "epsilon": "small",
+          "metrics": {
+            "slice_name": "research",
+            "signal_count": 4138,
+            "distinct_utc_days": 1093,
+            "mean_gross_bps": 2.0776086024455513,
+            "mean_net_bps": -4.922391397554449,
+            "hit_rate": 0.5381826969550507,
+            "low_high_gap_bps": 1.6549077926745348,
+            "gap_nw_ci_low": -0.802611481899205,
+            "gap_nw_ci_high": 4.112427067248275,
+            "gap_ci_excludes_zero": false,
+            "concentration_day_frac": 0.8807413376309428,
+            "notes": "NW lag=h=2"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.99,
+          "L": 288,
+          "h": 2,
+          "epsilon": "2x_small",
+          "metrics": {
+            "slice_name": "research",
+            "signal_count": 4130,
+            "distinct_utc_days": 1092,
+            "mean_gross_bps": 2.0938468022815835,
+            "mean_net_bps": -4.9061531977184165,
+            "hit_rate": 0.5387409200968523,
+            "low_high_gap_bps": 1.6594856063181425,
+            "gap_nw_ci_low": -0.8030750115407228,
+            "gap_nw_ci_high": 4.122046224177008,
+            "gap_ci_excludes_zero": false,
+            "concentration_day_frac": 0.8799355358581789,
+            "notes": "NW lag=h=2"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.99,
+          "L": 288,
+          "h": 3,
+          "epsilon": "small",
+          "metrics": {
+            "slice_name": "research",
+            "signal_count": 4138,
+            "distinct_utc_days": 1093,
+            "mean_gross_bps": 1.2878536962981717,
+            "mean_net_bps": -5.712146303701829,
+            "hit_rate": 0.5384243595940068,
+            "low_high_gap_bps": 0.8883306420272825,
+            "gap_nw_ci_low": -1.7249611789607486,
+            "gap_nw_ci_high": 3.5016224630153134,
+            "gap_ci_excludes_zero": false,
+            "concentration_day_frac": 0.8807413376309428,
+            "notes": "NW lag=h=3"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.99,
+          "L": 288,
+          "h": 3,
+          "epsilon": "2x_small",
+          "metrics": {
+            "slice_name": "research",
+            "signal_count": 4130,
+            "distinct_utc_days": 1092,
+            "mean_gross_bps": 1.2831209419346512,
+            "mean_net_bps": -5.716879058065349,
+            "hit_rate": 0.538498789346247,
+            "low_high_gap_bps": 0.8828841500385002,
+            "gap_nw_ci_low": -1.7353377006930444,
+            "gap_nw_ci_high": 3.5011060007700445,
+            "gap_ci_excludes_zero": false,
+            "concentration_day_frac": 0.8799355358581789,
+            "notes": "NW lag=h=3"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.99,
+          "L": 576,
+          "h": 1,
+          "epsilon": "small",
+          "metrics": {
+            "slice_name": "research",
+            "signal_count": 4240,
+            "distinct_utc_days": 1002,
+            "mean_gross_bps": 1.5126016355473821,
+            "mean_net_bps": -5.487398364452618,
+            "hit_rate": 0.5429245283018868,
+            "low_high_gap_bps": 1.2565278024547095,
+            "gap_nw_ci_low": -0.6569507394835623,
+            "gap_nw_ci_high": 3.1700063443929816,
+            "gap_ci_excludes_zero": false,
+            "concentration_day_frac": 0.8074133763094279,
+            "notes": "NW lag=h=1"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.99,
+          "L": 576,
+          "h": 1,
+          "epsilon": "2x_small",
+          "metrics": {
+            "slice_name": "research",
+            "signal_count": 4228,
+            "distinct_utc_days": 1002,
+            "mean_gross_bps": 1.4913790136641236,
+            "mean_net_bps": -5.508620986335877,
+            "hit_rate": 0.543282876064333,
+            "low_high_gap_bps": 1.2258503542889965,
+            "gap_nw_ci_low": -0.6916169718565834,
+            "gap_nw_ci_high": 3.1433176804345764,
+            "gap_ci_excludes_zero": false,
+            "concentration_day_frac": 0.8074133763094279,
+            "notes": "NW lag=h=1"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.99,
+          "L": 576,
+          "h": 2,
+          "epsilon": "small",
+          "metrics": {
+            "slice_name": "research",
+            "signal_count": 4240,
+            "distinct_utc_days": 1002,
+            "mean_gross_bps": 1.969262903322105,
+            "mean_net_bps": -5.030737096677895,
+            "hit_rate": 0.533254716981132,
+            "low_high_gap_bps": 1.5531589828720147,
+            "gap_nw_ci_low": -1.0141526893324446,
+            "gap_nw_ci_high": 4.120470655076474,
+            "gap_ci_excludes_zero": false,
+            "concentration_day_frac": 0.8074133763094279,
+            "notes": "NW lag=h=2"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.99,
+          "L": 576,
+          "h": 2,
+          "epsilon": "2x_small",
+          "metrics": {
+            "slice_name": "research",
+            "signal_count": 4228,
+            "distinct_utc_days": 1002,
+            "mean_gross_bps": 1.9106294294126371,
+            "mean_net_bps": -5.089370570587363,
+            "hit_rate": 0.5338221381267739,
+            "low_high_gap_bps": 1.481904447071659,
+            "gap_nw_ci_low": -1.0896351284067096,
+            "gap_nw_ci_high": 4.0534440225500274,
+            "gap_ci_excludes_zero": false,
+            "concentration_day_frac": 0.8074133763094279,
+            "notes": "NW lag=h=2"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.99,
+          "L": 576,
+          "h": 3,
+          "epsilon": "small",
+          "metrics": {
+            "slice_name": "research",
+            "signal_count": 4240,
+            "distinct_utc_days": 1002,
+            "mean_gross_bps": 1.421346055471701,
+            "mean_net_bps": -5.578653944528299,
+            "hit_rate": 0.534433962264151,
+            "low_high_gap_bps": 1.0439854386763119,
+            "gap_nw_ci_low": -1.7322345530544125,
+            "gap_nw_ci_high": 3.8202054304070363,
+            "gap_ci_excludes_zero": false,
+            "concentration_day_frac": 0.8074133763094279,
+            "notes": "NW lag=h=3"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.99,
+          "L": 576,
+          "h": 3,
+          "epsilon": "2x_small",
+          "metrics": {
+            "slice_name": "research",
+            "signal_count": 4228,
+            "distinct_utc_days": 1002,
+            "mean_gross_bps": 1.3677061450022976,
+            "mean_net_bps": -5.632293854997703,
+            "hit_rate": 0.5345316934720908,
+            "low_high_gap_bps": 0.9877136281376485,
+            "gap_nw_ci_low": -1.795452597269119,
+            "gap_nw_ci_high": 3.770879853544416,
+            "gap_ci_excludes_zero": false,
+            "concentration_day_frac": 0.8074133763094279,
+            "notes": "NW lag=h=3"
+          },
+          "is_primary": false
+        }
+      ],
+      "C_base_[A]": 7.0
+    },
+    "ETH": {
+      "instrument": "ETH",
+      "n_bars": 476821,
+      "pre_sliced": true,
+      "cemetery_citation": "CEM-20260910-001",
+      "not_rescue_of_edge001": true,
+      "validation_skipped_because_research_fail": true,
+      "splits": {
+        "warmup_end": 624,
+        "research": [
+          624,
+          357772
+        ],
+        "validation": [
+          357772,
+          476821
+        ],
+        "holdout": [
+          476821,
+          476821
+        ],
+        "holdout_sealed": true,
+        "holdout_exists": true,
+        "holdout_loaded": false,
+        "source": "SEAL_LOCK_slices",
+        "n_warmup": 624,
+        "n_research": 357148,
+        "n_validation": 119049
+      },
+      "primary_cell": {
+        "p": 0.95,
+        "L": 288,
+        "h": 1,
+        "epsilon": "small",
+        "epsilon_value_[A]": 5e-05,
+        "range_definition": "(high-low)/close",
+        "position": "-Sign(r_t)",
+        "r_t": "log_return"
+      },
+      "research": {
+        "slice_name": "research",
+        "signal_count": 19551,
+        "distinct_utc_days": 1236,
+        "mean_gross_bps": 1.013102871282234,
+        "mean_net_bps": -5.986897128717766,
+        "hit_rate": 0.5406373075546008,
+        "low_high_gap_bps": 0.649991609022492,
+        "gap_nw_ci_low": -0.1437922767491221,
+        "gap_nw_ci_high": 1.4437754947941062,
+        "gap_ci_excludes_zero": false,
+        "concentration_day_frac": 0.9959709911361805,
+        "notes": "NW lag=h=1"
+      },
+      "research_mean_gross_bps": 1.013102871282234,
+      "validation": null,
+      "holdout": null,
+      "cost_stress_[A]": {
+        "GROSS_C0_DIAGNOSTIC": {
+          "slice_name": "research_GROSS_C0_DIAGNOSTIC",
+          "signal_count": 19551,
+          "distinct_utc_days": 1236,
+          "mean_gross_bps": 1.013102871282234,
+          "mean_net_bps": 1.013102871282234,
+          "hit_rate": 0.5406373075546008,
+          "low_high_gap_bps": 0.649991609022492,
+          "gap_nw_ci_low": -0.1437922767491221,
+          "gap_nw_ci_high": 1.4437754947941062,
+          "gap_ci_excludes_zero": false,
+          "concentration_day_frac": 0.9959709911361805,
+          "notes": "NW lag=h=1"
+        },
+        "C_1x": {
+          "slice_name": "research_C_1x",
+          "signal_count": 19551,
+          "distinct_utc_days": 1236,
+          "mean_gross_bps": 1.013102871282234,
+          "mean_net_bps": -5.986897128717766,
+          "hit_rate": 0.5406373075546008,
+          "low_high_gap_bps": 0.649991609022492,
+          "gap_nw_ci_low": -0.1437922767491221,
+          "gap_nw_ci_high": 1.4437754947941062,
+          "gap_ci_excludes_zero": false,
+          "concentration_day_frac": 0.9959709911361805,
+          "notes": "NW lag=h=1"
+        },
+        "C_2x": {
+          "slice_name": "research_C_2x",
+          "signal_count": 19551,
+          "distinct_utc_days": 1236,
+          "mean_gross_bps": 1.013102871282234,
+          "mean_net_bps": -12.986897128717766,
+          "hit_rate": 0.5406373075546008,
+          "low_high_gap_bps": 0.649991609022492,
+          "gap_nw_ci_low": -0.1437922767491221,
+          "gap_nw_ci_high": 1.4437754947941062,
+          "gap_ci_excludes_zero": false,
+          "concentration_day_frac": 0.9959709911361805,
+          "notes": "NW lag=h=1"
+        },
+        "C_3x": {
+          "slice_name": "research_C_3x",
+          "signal_count": 19551,
+          "distinct_utc_days": 1236,
+          "mean_gross_bps": 1.013102871282234,
+          "mean_net_bps": -19.986897128717764,
+          "hit_rate": 0.5406373075546008,
+          "low_high_gap_bps": 0.649991609022492,
+          "gap_nw_ci_low": -0.1437922767491221,
+          "gap_nw_ci_high": 1.4437754947941062,
+          "gap_ci_excludes_zero": false,
+          "concentration_day_frac": 0.9959709911361805,
+          "notes": "NW lag=h=1"
+        },
+        "LATENCY_STRESS_+1bp_[A]": {
+          "slice_name": "research_LATENCY_STRESS_+1bp_[A]",
+          "signal_count": 19551,
+          "distinct_utc_days": 1236,
+          "mean_gross_bps": 1.013102871282234,
+          "mean_net_bps": -6.986897128717766,
+          "hit_rate": 0.5406373075546008,
+          "low_high_gap_bps": 0.649991609022492,
+          "gap_nw_ci_low": -0.1437922767491221,
+          "gap_nw_ci_high": 1.4437754947941062,
+          "gap_ci_excludes_zero": false,
+          "concentration_day_frac": 0.9959709911361805,
+          "notes": "NW lag=h=1"
+        },
+        "LATENCY_STRESS_+3bp_[A]": {
+          "slice_name": "research_LATENCY_STRESS_+3bp_[A]",
+          "signal_count": 19551,
+          "distinct_utc_days": 1236,
+          "mean_gross_bps": 1.013102871282234,
+          "mean_net_bps": -8.986897128717766,
+          "hit_rate": 0.5406373075546008,
+          "low_high_gap_bps": 0.649991609022492,
+          "gap_nw_ci_low": -0.1437922767491221,
+          "gap_nw_ci_high": 1.4437754947941062,
+          "gap_ci_excludes_zero": false,
+          "concentration_day_frac": 0.9959709911361805,
+          "notes": "NW lag=h=1"
+        }
+      },
+      "time_half": {
+        "half1": {
+          "slice_name": "research_half1",
+          "signal_count": 9727,
+          "distinct_utc_days": 621,
+          "mean_gross_bps": 1.942654874310081,
+          "mean_net_bps": -5.057345125689919,
+          "hit_rate": 0.5320242623624961,
+          "low_high_gap_bps": 1.4777053222507908,
+          "gap_nw_ci_low": 0.07218193000171458,
+          "gap_nw_ci_high": 2.883228714499867,
+          "gap_ci_excludes_zero": true,
+          "concentration_day_frac": 1.0,
+          "notes": "NW lag=h=1"
+        },
+        "half2": {
+          "slice_name": "research_half2",
+          "signal_count": 9824,
+          "distinct_utc_days": 616,
+          "mean_gross_bps": 0.0927290588380297,
+          "mean_net_bps": -6.90727094116197,
+          "hit_rate": 0.5491653094462541,
+          "low_high_gap_bps": -0.16407895344987225,
+          "gap_nw_ci_low": -0.9099197930701602,
+          "gap_nw_ci_high": 0.5817618861704158,
+          "gap_ci_excludes_zero": false,
+          "concentration_day_frac": 0.9919484702093397,
+          "notes": "NW lag=h=1"
+        },
+        "gap_same_sign": false
+      },
+      "placebos": {
+        "real_gap": 0.649991609022492,
+        "real_ci": {
+          "low": -0.1437922767491221,
+          "high": 1.4437754947941062
+        },
+        "placebos": {
+          "shuffled_range_ranks": {
+            "gap": -0.2620836682640887,
+            "matches_or_beats_real": false
+          },
+          "random_equal_count_high_range": {
+            "gap": 0.23589968224801078,
+            "matches_or_beats_real": true
+          },
+          "scrambled_signs_in_high_range": {
+            "gap": 0.44153375370227804,
+            "matches_or_beats_real": true
+          }
+        },
+        "seed": 20260910
+      },
+      "grid_p_stability": {
+        "keep_sign_count": 3,
+        "pass": true,
+        "signs": {
+          "90": 1,
+          "95": 1,
+          "99": 1
+        },
+        "ref_sign": 1,
+        "param": "p",
+        "gap_by_p": {
+          "0.9": 0.1857611516888486,
+          "0.95": 0.649991609022492,
+          "0.99": 0.8402891210818686
+        }
+      },
+      "L_neighbor_gaps": {
+        "288": 0.649991609022492,
+        "576": 0.6709652875588448
+      },
+      "p_cliff": false,
+      "grid_cell_count": 36,
+      "grid_results": [
+        {
+          "p": 0.9,
+          "L": 288,
+          "h": 1,
+          "epsilon": "small",
+          "metrics": {
+            "slice_name": "research",
+            "signal_count": 37134,
+            "distinct_utc_days": 1240,
+            "mean_gross_bps": 0.5488724139485907,
+            "mean_net_bps": -6.45112758605141,
+            "hit_rate": 0.5360047395917488,
+            "low_high_gap_bps": 0.1857611516888486,
+            "gap_nw_ci_low": -0.31323227426485717,
+            "gap_nw_ci_high": 0.6847545776425543,
+            "gap_ci_excludes_zero": false,
+            "concentration_day_frac": 0.9991941982272361,
+            "notes": "NW lag=h=1"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.9,
+          "L": 288,
+          "h": 1,
+          "epsilon": "2x_small",
+          "metrics": {
+            "slice_name": "research",
+            "signal_count": 36911,
+            "distinct_utc_days": 1240,
+            "mean_gross_bps": 0.5569730793319111,
+            "mean_net_bps": -6.443026920668089,
+            "hit_rate": 0.5363170870472217,
+            "low_high_gap_bps": 0.18051552775843116,
+            "gap_nw_ci_low": -0.32177924296014493,
+            "gap_nw_ci_high": 0.6828102984770072,
+            "gap_ci_excludes_zero": false,
+            "concentration_day_frac": 0.9991941982272361,
+            "notes": "NW lag=h=1"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.9,
+          "L": 288,
+          "h": 2,
+          "epsilon": "small",
+          "metrics": {
+            "slice_name": "research",
+            "signal_count": 37134,
+            "distinct_utc_days": 1240,
+            "mean_gross_bps": 0.8680543276531381,
+            "mean_net_bps": -6.131945672346862,
+            "hit_rate": 0.5333656487316206,
+            "low_high_gap_bps": 0.35949401975590467,
+            "gap_nw_ci_low": -0.3289759648822943,
+            "gap_nw_ci_high": 1.0479640043941036,
+            "gap_ci_excludes_zero": false,
+            "concentration_day_frac": 0.9991941982272361,
+            "notes": "NW lag=h=2"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.9,
+          "L": 288,
+          "h": 2,
+          "epsilon": "2x_small",
+          "metrics": {
+            "slice_name": "research",
+            "signal_count": 36911,
+            "distinct_utc_days": 1240,
+            "mean_gross_bps": 0.8900196364392841,
+            "mean_net_bps": -6.109980363560716,
+            "hit_rate": 0.5338246051312617,
+            "low_high_gap_bps": 0.3650436928605806,
+            "gap_nw_ci_low": -0.32827705500629145,
+            "gap_nw_ci_high": 1.0583644407274526,
+            "gap_ci_excludes_zero": false,
+            "concentration_day_frac": 0.9991941982272361,
+            "notes": "NW lag=h=2"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.9,
+          "L": 288,
+          "h": 3,
+          "epsilon": "small",
+          "metrics": {
+            "slice_name": "research",
+            "signal_count": 37134,
+            "distinct_utc_days": 1240,
+            "mean_gross_bps": 0.4638739481443305,
+            "mean_net_bps": -6.536126051855669,
+            "hit_rate": 0.534254322184521,
+            "low_high_gap_bps": 0.10410804072713176,
+            "gap_nw_ci_low": -0.6868437842248114,
+            "gap_nw_ci_high": 0.8950598656790749,
+            "gap_ci_excludes_zero": false,
+            "concentration_day_frac": 0.9991941982272361,
+            "notes": "NW lag=h=3"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.9,
+          "L": 288,
+          "h": 3,
+          "epsilon": "2x_small",
+          "metrics": {
+            "slice_name": "research",
+            "signal_count": 36911,
+            "distinct_utc_days": 1240,
+            "mean_gross_bps": 0.4781040827042746,
+            "mean_net_bps": -6.521895917295725,
+            "hit_rate": 0.5346373709734226,
+            "low_high_gap_bps": 0.10545296615353633,
+            "gap_nw_ci_low": -0.6910680385403232,
+            "gap_nw_ci_high": 0.9019739708473957,
+            "gap_ci_excludes_zero": false,
+            "concentration_day_frac": 0.9991941982272361,
+            "notes": "NW lag=h=3"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.9,
+          "L": 576,
+          "h": 1,
+          "epsilon": "small",
+          "metrics": {
+            "slice_name": "research",
+            "signal_count": 37971,
+            "distinct_utc_days": 1237,
+            "mean_gross_bps": 0.4994790311861003,
+            "mean_net_bps": -6.5005209688139,
+            "hit_rate": 0.5345395169998156,
+            "low_high_gap_bps": 0.15308318925971698,
+            "gap_nw_ci_low": -0.3501452903268656,
+            "gap_nw_ci_high": 0.6563116688462995,
+            "gap_ci_excludes_zero": false,
+            "concentration_day_frac": 0.9967767929089444,
+            "notes": "NW lag=h=1"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.9,
+          "L": 576,
+          "h": 1,
+          "epsilon": "2x_small",
+          "metrics": {
+            "slice_name": "research",
+            "signal_count": 37739,
+            "distinct_utc_days": 1237,
+            "mean_gross_bps": 0.5183685722688903,
+            "mean_net_bps": -6.481631427731109,
+            "hit_rate": 0.5351493150321948,
+            "low_high_gap_bps": 0.15593242180838152,
+            "gap_nw_ci_low": -0.35059167944938796,
+            "gap_nw_ci_high": 0.662456523066151,
+            "gap_ci_excludes_zero": false,
+            "concentration_day_frac": 0.9967767929089444,
+            "notes": "NW lag=h=1"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.9,
+          "L": 576,
+          "h": 2,
+          "epsilon": "small",
+          "metrics": {
+            "slice_name": "research",
+            "signal_count": 37971,
+            "distinct_utc_days": 1237,
+            "mean_gross_bps": 0.8895291979328285,
+            "mean_net_bps": -6.110470802067171,
+            "hit_rate": 0.5328540201732901,
+            "low_high_gap_bps": 0.3932256607395129,
+            "gap_nw_ci_low": -0.3015996061556153,
+            "gap_nw_ci_high": 1.088050927634641,
+            "gap_ci_excludes_zero": false,
+            "concentration_day_frac": 0.9967767929089444,
+            "notes": "NW lag=h=2"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.9,
+          "L": 576,
+          "h": 2,
+          "epsilon": "2x_small",
+          "metrics": {
+            "slice_name": "research",
+            "signal_count": 37739,
+            "distinct_utc_days": 1237,
+            "mean_gross_bps": 0.9243199291265455,
+            "mean_net_bps": -6.075680070873455,
+            "hit_rate": 0.5334799544238056,
+            "low_high_gap_bps": 0.4097423826269687,
+            "gap_nw_ci_low": -0.2899365390451716,
+            "gap_nw_ci_high": 1.109421304299109,
+            "gap_ci_excludes_zero": false,
+            "concentration_day_frac": 0.9967767929089444,
+            "notes": "NW lag=h=2"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.9,
+          "L": 576,
+          "h": 3,
+          "epsilon": "small",
+          "metrics": {
+            "slice_name": "research",
+            "signal_count": 37971,
+            "distinct_utc_days": 1237,
+            "mean_gross_bps": 0.4523096900202551,
+            "mean_net_bps": -6.547690309979745,
+            "hit_rate": 0.5304047825972452,
+            "low_high_gap_bps": 0.08018428793855054,
+            "gap_nw_ci_low": -0.721998657524807,
+            "gap_nw_ci_high": 0.8823672334019079,
+            "gap_ci_excludes_zero": false,
+            "concentration_day_frac": 0.9967767929089444,
+            "notes": "NW lag=h=3"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.9,
+          "L": 576,
+          "h": 3,
+          "epsilon": "2x_small",
+          "metrics": {
+            "slice_name": "research",
+            "signal_count": 37739,
+            "distinct_utc_days": 1237,
+            "mean_gross_bps": 0.49269571131822265,
+            "mean_net_bps": -6.507304288681778,
+            "hit_rate": 0.5311481491295477,
+            "low_high_gap_bps": 0.10242003845446729,
+            "gap_nw_ci_low": -0.7054997586599177,
+            "gap_nw_ci_high": 0.9103398355688521,
+            "gap_ci_excludes_zero": false,
+            "concentration_day_frac": 0.9967767929089444,
+            "notes": "NW lag=h=3"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.95,
+          "L": 288,
+          "h": 1,
+          "epsilon": "small",
+          "metrics": {
+            "slice_name": "research",
+            "signal_count": 19551,
+            "distinct_utc_days": 1236,
+            "mean_gross_bps": 1.013102871282234,
+            "mean_net_bps": -5.986897128717766,
+            "hit_rate": 0.5406373075546008,
+            "low_high_gap_bps": 0.649991609022492,
+            "gap_nw_ci_low": -0.1437922767491221,
+            "gap_nw_ci_high": 1.4437754947941062,
+            "gap_ci_excludes_zero": false,
+            "concentration_day_frac": 0.9959709911361805,
+            "notes": "NW lag=h=1"
+          },
+          "is_primary": true
+        },
+        {
+          "p": 0.95,
+          "L": 288,
+          "h": 1,
+          "epsilon": "2x_small",
+          "metrics": {
+            "slice_name": "research",
+            "signal_count": 19474,
+            "distinct_utc_days": 1236,
+            "mean_gross_bps": 1.022738990091325,
+            "mean_net_bps": -5.977261009908675,
+            "hit_rate": 0.5409777138749101,
+            "low_high_gap_bps": 0.6462814385178451,
+            "gap_nw_ci_low": -0.15063725364285907,
+            "gap_nw_ci_high": 1.4432001306785494,
+            "gap_ci_excludes_zero": false,
+            "concentration_day_frac": 0.9959709911361805,
+            "notes": "NW lag=h=1"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.95,
+          "L": 288,
+          "h": 2,
+          "epsilon": "small",
+          "metrics": {
+            "slice_name": "research",
+            "signal_count": 19551,
+            "distinct_utc_days": 1236,
+            "mean_gross_bps": 1.4407291793367425,
+            "mean_net_bps": -5.559270820663258,
+            "hit_rate": 0.5387448212367654,
+            "low_high_gap_bps": 0.9321688714395091,
+            "gap_nw_ci_low": -0.1570155630660668,
+            "gap_nw_ci_high": 2.0213533059450848,
+            "gap_ci_excludes_zero": false,
+            "concentration_day_frac": 0.9959709911361805,
+            "notes": "NW lag=h=2"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.95,
+          "L": 288,
+          "h": 2,
+          "epsilon": "2x_small",
+          "metrics": {
+            "slice_name": "research",
+            "signal_count": 19474,
+            "distinct_utc_days": 1236,
+            "mean_gross_bps": 1.4378519280474586,
+            "mean_net_bps": -5.562148071952541,
+            "hit_rate": 0.5387182910547397,
+            "low_high_gap_bps": 0.9128759844687552,
+            "gap_nw_ci_low": -0.18065081746166245,
+            "gap_nw_ci_high": 2.006402786399173,
+            "gap_ci_excludes_zero": false,
+            "concentration_day_frac": 0.9959709911361805,
+            "notes": "NW lag=h=2"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.95,
+          "L": 288,
+          "h": 3,
+          "epsilon": "small",
+          "metrics": {
+            "slice_name": "research",
+            "signal_count": 19551,
+            "distinct_utc_days": 1236,
+            "mean_gross_bps": 0.6606182313340236,
+            "mean_net_bps": -6.339381768665977,
+            "hit_rate": 0.5379775970538592,
+            "low_high_gap_bps": 0.3008523239168249,
+            "gap_nw_ci_low": -0.8823456525916388,
+            "gap_nw_ci_high": 1.4840503004252885,
+            "gap_ci_excludes_zero": false,
+            "concentration_day_frac": 0.9959709911361805,
+            "notes": "NW lag=h=3"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.95,
+          "L": 288,
+          "h": 3,
+          "epsilon": "2x_small",
+          "metrics": {
+            "slice_name": "research",
+            "signal_count": 19474,
+            "distinct_utc_days": 1236,
+            "mean_gross_bps": 0.6609016052844038,
+            "mean_net_bps": -6.339098394715596,
+            "hit_rate": 0.5381534353496971,
+            "low_high_gap_bps": 0.2882504887336655,
+            "gap_nw_ci_low": -0.8993756069191916,
+            "gap_nw_ci_high": 1.4758765843865225,
+            "gap_ci_excludes_zero": false,
+            "concentration_day_frac": 0.9959709911361805,
+            "notes": "NW lag=h=3"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.95,
+          "L": 576,
+          "h": 1,
+          "epsilon": "small",
+          "metrics": {
+            "slice_name": "research",
+            "signal_count": 19406,
+            "distinct_utc_days": 1215,
+            "mean_gross_bps": 1.017361129485228,
+            "mean_net_bps": -5.982638870514772,
+            "hit_rate": 0.53741110996599,
+            "low_high_gap_bps": 0.6709652875588448,
+            "gap_nw_ci_low": -0.15832754663134574,
+            "gap_nw_ci_high": 1.5002581217490354,
+            "gap_ci_excludes_zero": false,
+            "concentration_day_frac": 0.9790491539081386,
+            "notes": "NW lag=h=1"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.95,
+          "L": 576,
+          "h": 1,
+          "epsilon": "2x_small",
+          "metrics": {
+            "slice_name": "research",
+            "signal_count": 19321,
+            "distinct_utc_days": 1215,
+            "mean_gross_bps": 1.0283717857568193,
+            "mean_net_bps": -5.9716282142431805,
+            "hit_rate": 0.5379121163500854,
+            "low_high_gap_bps": 0.6659356352963105,
+            "gap_nw_ci_low": -0.16696180166088148,
+            "gap_nw_ci_high": 1.4988330722535026,
+            "gap_ci_excludes_zero": false,
+            "concentration_day_frac": 0.9790491539081386,
+            "notes": "NW lag=h=1"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.95,
+          "L": 576,
+          "h": 2,
+          "epsilon": "small",
+          "metrics": {
+            "slice_name": "research",
+            "signal_count": 19406,
+            "distinct_utc_days": 1215,
+            "mean_gross_bps": 1.4755382928202316,
+            "mean_net_bps": -5.524461707179769,
+            "hit_rate": 0.5355044831495414,
+            "low_high_gap_bps": 0.9792347556269161,
+            "gap_nw_ci_low": -0.15812240939707678,
+            "gap_nw_ci_high": 2.116591920650909,
+            "gap_ci_excludes_zero": false,
+            "concentration_day_frac": 0.9790491539081386,
+            "notes": "NW lag=h=2"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.95,
+          "L": 576,
+          "h": 2,
+          "epsilon": "2x_small",
+          "metrics": {
+            "slice_name": "research",
+            "signal_count": 19321,
+            "distinct_utc_days": 1215,
+            "mean_gross_bps": 1.4910309023770678,
+            "mean_net_bps": -5.508969097622932,
+            "hit_rate": 0.5358935872884426,
+            "low_high_gap_bps": 0.976453355877491,
+            "gap_nw_ci_low": -0.16597783991717407,
+            "gap_nw_ci_high": 2.1188845516721564,
+            "gap_ci_excludes_zero": false,
+            "concentration_day_frac": 0.9790491539081386,
+            "notes": "NW lag=h=2"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.95,
+          "L": 576,
+          "h": 3,
+          "epsilon": "small",
+          "metrics": {
+            "slice_name": "research",
+            "signal_count": 19406,
+            "distinct_utc_days": 1215,
+            "mean_gross_bps": 0.8219196913706751,
+            "mean_net_bps": -6.178080308629325,
+            "hit_rate": 0.5347830567865609,
+            "low_high_gap_bps": 0.44979428928897053,
+            "gap_nw_ci_low": -0.8208610438807193,
+            "gap_nw_ci_high": 1.7204496224586605,
+            "gap_ci_excludes_zero": false,
+            "concentration_day_frac": 0.9790491539081386,
+            "notes": "NW lag=h=3"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.95,
+          "L": 576,
+          "h": 3,
+          "epsilon": "2x_small",
+          "metrics": {
+            "slice_name": "research",
+            "signal_count": 19321,
+            "distinct_utc_days": 1215,
+            "mean_gross_bps": 0.833981858033484,
+            "mean_net_bps": -6.166018141966516,
+            "hit_rate": 0.535220744267895,
+            "low_high_gap_bps": 0.44370618516972865,
+            "gap_nw_ci_low": -0.8319155114055441,
+            "gap_nw_ci_high": 1.7193278817450013,
+            "gap_ci_excludes_zero": false,
+            "concentration_day_frac": 0.9790491539081386,
+            "notes": "NW lag=h=3"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.99,
+          "L": 288,
+          "h": 1,
+          "epsilon": "small",
+          "metrics": {
+            "slice_name": "research",
+            "signal_count": 4219,
+            "distinct_utc_days": 1122,
+            "mean_gross_bps": 1.2034003833416107,
+            "mean_net_bps": -5.796599616658389,
+            "hit_rate": 0.5314055463379947,
+            "low_high_gap_bps": 0.8402891210818686,
+            "gap_nw_ci_low": -1.7982354643168523,
+            "gap_nw_ci_high": 3.4788137064805893,
+            "gap_ci_excludes_zero": false,
+            "concentration_day_frac": 0.9041095890410958,
+            "notes": "NW lag=h=1"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.99,
+          "L": 288,
+          "h": 1,
+          "epsilon": "2x_small",
+          "metrics": {
+            "slice_name": "research",
+            "signal_count": 4215,
+            "distinct_utc_days": 1122,
+            "mean_gross_bps": 1.1907378319283042,
+            "mean_net_bps": -5.809262168071696,
+            "hit_rate": 0.531435349940688,
+            "low_high_gap_bps": 0.8142802803548242,
+            "gap_nw_ci_low": -1.8269001684072368,
+            "gap_nw_ci_high": 3.4554607291168855,
+            "gap_ci_excludes_zero": false,
+            "concentration_day_frac": 0.9041095890410958,
+            "notes": "NW lag=h=1"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.99,
+          "L": 288,
+          "h": 2,
+          "epsilon": "small",
+          "metrics": {
+            "slice_name": "research",
+            "signal_count": 4219,
+            "distinct_utc_days": 1122,
+            "mean_gross_bps": 2.108665467174884,
+            "mean_net_bps": -4.891334532825116,
+            "hit_rate": 0.5342498222327566,
+            "low_high_gap_bps": 1.6001051592776505,
+            "gap_nw_ci_low": -1.932543468067667,
+            "gap_nw_ci_high": 5.132753786622968,
+            "gap_ci_excludes_zero": false,
+            "concentration_day_frac": 0.9041095890410958,
+            "notes": "NW lag=h=2"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.99,
+          "L": 288,
+          "h": 2,
+          "epsilon": "2x_small",
+          "metrics": {
+            "slice_name": "research",
+            "signal_count": 4215,
+            "distinct_utc_days": 1122,
+            "mean_gross_bps": 2.0852156556852948,
+            "mean_net_bps": -4.914784344314706,
+            "hit_rate": 0.5340450771055754,
+            "low_high_gap_bps": 1.5602397121065912,
+            "gap_nw_ci_low": -1.9758545854096123,
+            "gap_nw_ci_high": 5.096334009622795,
+            "gap_ci_excludes_zero": false,
+            "concentration_day_frac": 0.9041095890410958,
+            "notes": "NW lag=h=2"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.99,
+          "L": 288,
+          "h": 3,
+          "epsilon": "small",
+          "metrics": {
+            "slice_name": "research",
+            "signal_count": 4219,
+            "distinct_utc_days": 1122,
+            "mean_gross_bps": 0.9375563543104237,
+            "mean_net_bps": -6.0624436456895765,
+            "hit_rate": 0.5347238682152169,
+            "low_high_gap_bps": 0.577790446893225,
+            "gap_nw_ci_low": -2.87767305072768,
+            "gap_nw_ci_high": 4.03325394451413,
+            "gap_ci_excludes_zero": false,
+            "concentration_day_frac": 0.9041095890410958,
+            "notes": "NW lag=h=3"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.99,
+          "L": 288,
+          "h": 3,
+          "epsilon": "2x_small",
+          "metrics": {
+            "slice_name": "research",
+            "signal_count": 4215,
+            "distinct_utc_days": 1122,
+            "mean_gross_bps": 0.9225017358505504,
+            "mean_net_bps": -6.077498264149449,
+            "hit_rate": 0.5347568208778173,
+            "low_high_gap_bps": 0.549850619299812,
+            "gap_nw_ci_low": -2.9093268265107968,
+            "gap_nw_ci_high": 4.009028065110421,
+            "gap_ci_excludes_zero": false,
+            "concentration_day_frac": 0.9041095890410958,
+            "notes": "NW lag=h=3"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.99,
+          "L": 576,
+          "h": 1,
+          "epsilon": "small",
+          "metrics": {
+            "slice_name": "research",
+            "signal_count": 4218,
+            "distinct_utc_days": 1036,
+            "mean_gross_bps": 2.691866103463405,
+            "mean_net_bps": -4.308133896536595,
+            "hit_rate": 0.543859649122807,
+            "low_high_gap_bps": 2.3454702615370215,
+            "gap_nw_ci_low": -0.43820493515320935,
+            "gap_nw_ci_high": 5.129145458227253,
+            "gap_ci_excludes_zero": false,
+            "concentration_day_frac": 0.8348106365834005,
+            "notes": "NW lag=h=1"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.99,
+          "L": 576,
+          "h": 1,
+          "epsilon": "2x_small",
+          "metrics": {
+            "slice_name": "research",
+            "signal_count": 4213,
+            "distinct_utc_days": 1036,
+            "mean_gross_bps": 2.6941329657200104,
+            "mean_net_bps": -4.30586703427999,
+            "hit_rate": 0.5442677427011631,
+            "low_high_gap_bps": 2.3316968152595017,
+            "gap_nw_ci_low": -0.45511281144564997,
+            "gap_nw_ci_high": 5.118506441964653,
+            "gap_ci_excludes_zero": false,
+            "concentration_day_frac": 0.8348106365834005,
+            "notes": "NW lag=h=1"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.99,
+          "L": 576,
+          "h": 2,
+          "epsilon": "small",
+          "metrics": {
+            "slice_name": "research",
+            "signal_count": 4218,
+            "distinct_utc_days": 1036,
+            "mean_gross_bps": 3.0171789417585138,
+            "mean_net_bps": -3.9828210582414862,
+            "hit_rate": 0.5417259364627786,
+            "low_high_gap_bps": 2.5208754045651984,
+            "gap_nw_ci_low": -1.159021597651559,
+            "gap_nw_ci_high": 6.200772406781956,
+            "gap_ci_excludes_zero": false,
+            "concentration_day_frac": 0.8348106365834005,
+            "notes": "NW lag=h=2"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.99,
+          "L": 576,
+          "h": 2,
+          "epsilon": "2x_small",
+          "metrics": {
+            "slice_name": "research",
+            "signal_count": 4213,
+            "distinct_utc_days": 1036,
+            "mean_gross_bps": 2.9906601319499875,
+            "mean_net_bps": -4.009339868050013,
+            "hit_rate": 0.5414194160930453,
+            "low_high_gap_bps": 2.4760825854504107,
+            "gap_nw_ci_low": -1.2082525188538686,
+            "gap_nw_ci_high": 6.16041768975469,
+            "gap_ci_excludes_zero": false,
+            "concentration_day_frac": 0.8348106365834005,
+            "notes": "NW lag=h=2"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.99,
+          "L": 576,
+          "h": 3,
+          "epsilon": "small",
+          "metrics": {
+            "slice_name": "research",
+            "signal_count": 4218,
+            "distinct_utc_days": 1036,
+            "mean_gross_bps": 1.0784831766951835,
+            "mean_net_bps": -5.921516823304817,
+            "hit_rate": 0.5301090564248458,
+            "low_high_gap_bps": 0.7063577746134788,
+            "gap_nw_ci_low": -2.9416561961653267,
+            "gap_nw_ci_high": 4.354371745392284,
+            "gap_ci_excludes_zero": false,
+            "concentration_day_frac": 0.8348106365834005,
+            "notes": "NW lag=h=3"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.99,
+          "L": 576,
+          "h": 3,
+          "epsilon": "2x_small",
+          "metrics": {
+            "slice_name": "research",
+            "signal_count": 4213,
+            "distinct_utc_days": 1036,
+            "mean_gross_bps": 1.067023063718035,
+            "mean_net_bps": -5.932976936281965,
+            "hit_rate": 0.5302634702112509,
+            "low_high_gap_bps": 0.6767473908542796,
+            "gap_nw_ci_low": -2.975419635333407,
+            "gap_nw_ci_high": 4.328914417041966,
+            "gap_ci_excludes_zero": false,
+            "concentration_day_frac": 0.8348106365834005,
+            "notes": "NW lag=h=3"
+          },
+          "is_primary": false
+        }
+      ],
+      "C_base_[A]": 7.0
+    }
+  }
+}

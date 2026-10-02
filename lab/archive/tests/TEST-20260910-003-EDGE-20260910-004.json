@@ -1,1 +1,1081 @@
-{"artifact_kind":"MACHINE_READABLE_POINTER","TEST_ID":"TEST-20260910-003","edge_id":"EDGE-20260910-004","local_path":"/workspace/lab/archive/tests/TEST-20260910-003-EDGE-20260910-004.json","size_bytes":36001,"sha256":"498a4d6eea520ac56614e2804ebb05b0f4f528cdd3ff133276048fa5feccd509","github_note":"Full TEST JSON exceeds GitHub MCP ~11KB ceiling; remains on lab storage. Verify local sha256 before use. Companion *.md are canonical human record. slim_metrics copied from local JSON; full_instrument_summaries omitted (bound by full-file sha256). See MACHINE_READABLE_LOCAL.md.","companion_md":["TEST-20260910-003-EDGE-20260910-004-full.md","TEST-20260910-003-EDGE-20260910-004.md","TEST-20260910-003.md"],"slim_metrics":{"verdict":"FAIL","metrics_summary":{"BTC_ETH":{"research":{"signal_count":3814,"distinct_utc_days":1023,"mean_gross_bps":-0.1285005541731035,"mean_net_bps":-7.128500554173104,"hit_rate":0.46224436287362347,"nw_mean":-0.1285005541731035,"nw_se":0.5691533515665033,"nw_ci_low":-1.2440206249237133,"nw_ci_high":0.9870195165775064,"concentration_day_frac":0.8243352135374697,"notes":"NW lag=h=1; C=7.0"},"research_mean_gross_bps":-0.1285005541731035,"research_net_1x":-7.128500554173104,"research_net_2x":-14.128500554173103,"research_net_3x":-21.128500554173105,"validation":null,"holdout":null,"controls":{"reverse_ETH_to_BTC":{"signal_count":10140,"distinct_utc_days":1210,"mean_gross_bps":-0.030126177635563217,"mean_net_bps":-7.030126177635563,"hit_rate":0.4626232741617357,"nw_mean":-0.030126177635563217,"nw_se":0.3259037992144045,"nw_ci_low":-0.6688858865205692,"nw_ci_high":0.6086335312494427,"concentration_day_frac":0.9750201450443191,"notes":"NW lag=h=1; C=7.0","matches_or_beats_primary":true},"timestamp_shuffle_BTC_vs_ETH":{"signal_count":36043,"distinct_utc_days":1241,"mean_gross_bps":0.1330117067876439,"mean_net_bps":-6.866988293212356,"hit_rate":0.5038703770496351,"nw_mean":0.1330117067876439,"nw_se":0.1507824543438856,"nw_ci_low":-0.16251647322692692,"nw_ci_high":0.4285398868022147,"concentration_day_frac":1.0,"notes":"NW lag=h=1; C=7.0","matches_or_beats_primary":true,"seed":20260910},"kappa_ablation_diagnostic":{"signal_count":36869,"distinct_utc_days":1241,"mean_gross_bps":-0.8666414075984056,"mean_net_bps":-7.866641407598405,"hit_rate":0.44934769047166995,"nw_mean":-0.8666414075984056,"nw_se":0.23020176050754193,"nw_ci_low":-1.3178285673709027,"nw_ci_high":-0.41545424782590845,"concentration_day_frac":1.0,"notes":"NW lag=h=1; C=7.0","note":"diagnostic only — not alternate headline"}},"grid_p_stability":{"keep_sign_count":3,"pass":true,"signs":{"80":-1,"90":-1,"95":-1},"ref_sign":-1,"param":"p","gross_by_p":{"0.8":-0.2079682426108149,"0.9":-0.1285005541731035,"0.95":-0.1334628352858666}},"C_base_[A]":7.0,"primary_cell":{"p":0.9,"L":288,"h":1,"kappa":0.5,"position":"Sign(r_BTC_t) on ETH","r_t":"log_return","alignment":"inner_join_on_timestamp"},"validation_ran":false,"validation_skipped_because_research_fail":true,"n_aligned_research":357148}},"instruments":[{"instrument":"BTC_ETH","verdict":"FAIL","reasons":["mean gross ETH sign-aligned forward <= 0 (gross=-0.1285005541731035)","net @1x C_base <= 0 (net_1x=-7.128500554173104)","reverse ETH→BTC matches or beats BTC→ETH within CI noise","timestamp-shuffle placebo matches or beats BTC→ETH within CI noise"]}],"holdout":"SEALED","clock_verdict":"CONDITIONAL","dataset_id":"DATA-PROV-001"},"omitted_large_keys":["full_instrument_summaries"]}
+{
+  "TEST_ID": "TEST-20260910-003",
+  "package_id": "PROV-MEAS-EDGE-004",
+  "edge_id": "EDGE-20260910-004",
+  "MEASUREMENT": "FAIL",
+  "verdict": "FAIL",
+  "data_path": "/workspace/lab/data/DATA-PROV-001",
+  "dataset_id": "DATA-PROV-001",
+  "clock_verdict": "CONDITIONAL",
+  "research_only": false,
+  "pre_sliced": true,
+  "holdout": "SEALED",
+  "invented_numbers": false,
+  "cemetery_citations": [
+    "CEM-20260910-001",
+    "CEM-20260910-002"
+  ],
+  "cemetery_citation": "CEM-20260910-001;CEM-20260910-002",
+  "not_rescue_of_edge001": true,
+  "not_rescue_of_edge003": true,
+  "signal_module": "btc_lead_eth_response",
+  "instruments": [
+    {
+      "instrument": "BTC_ETH",
+      "verdict": "FAIL",
+      "reasons": [
+        "mean gross ETH sign-aligned forward <= 0 (gross=-0.1285005541731035)",
+        "net @1x C_base <= 0 (net_1x=-7.128500554173104)",
+        "reverse ETH\u2192BTC matches or beats BTC\u2192ETH within CI noise",
+        "timestamp-shuffle placebo matches or beats BTC\u2192ETH within CI noise"
+      ]
+    }
+  ],
+  "metrics_summary": {
+    "BTC_ETH": {
+      "research": {
+        "signal_count": 3814,
+        "distinct_utc_days": 1023,
+        "mean_gross_bps": -0.1285005541731035,
+        "mean_net_bps": -7.128500554173104,
+        "hit_rate": 0.46224436287362347,
+        "nw_mean": -0.1285005541731035,
+        "nw_se": 0.5691533515665033,
+        "nw_ci_low": -1.2440206249237133,
+        "nw_ci_high": 0.9870195165775064,
+        "concentration_day_frac": 0.8243352135374697,
+        "notes": "NW lag=h=1; C=7.0"
+      },
+      "research_mean_gross_bps": -0.1285005541731035,
+      "research_net_1x": -7.128500554173104,
+      "research_net_2x": -14.128500554173103,
+      "research_net_3x": -21.128500554173105,
+      "validation": null,
+      "holdout": null,
+      "controls": {
+        "reverse_ETH_to_BTC": {
+          "signal_count": 10140,
+          "distinct_utc_days": 1210,
+          "mean_gross_bps": -0.030126177635563217,
+          "mean_net_bps": -7.030126177635563,
+          "hit_rate": 0.4626232741617357,
+          "nw_mean": -0.030126177635563217,
+          "nw_se": 0.3259037992144045,
+          "nw_ci_low": -0.6688858865205692,
+          "nw_ci_high": 0.6086335312494427,
+          "concentration_day_frac": 0.9750201450443191,
+          "notes": "NW lag=h=1; C=7.0",
+          "matches_or_beats_primary": true
+        },
+        "timestamp_shuffle_BTC_vs_ETH": {
+          "signal_count": 36043,
+          "distinct_utc_days": 1241,
+          "mean_gross_bps": 0.1330117067876439,
+          "mean_net_bps": -6.866988293212356,
+          "hit_rate": 0.5038703770496351,
+          "nw_mean": 0.1330117067876439,
+          "nw_se": 0.1507824543438856,
+          "nw_ci_low": -0.16251647322692692,
+          "nw_ci_high": 0.4285398868022147,
+          "concentration_day_frac": 1.0,
+          "notes": "NW lag=h=1; C=7.0",
+          "matches_or_beats_primary": true,
+          "seed": 20260910
+        },
+        "kappa_ablation_diagnostic": {
+          "signal_count": 36869,
+          "distinct_utc_days": 1241,
+          "mean_gross_bps": -0.8666414075984056,
+          "mean_net_bps": -7.866641407598405,
+          "hit_rate": 0.44934769047166995,
+          "nw_mean": -0.8666414075984056,
+          "nw_se": 0.23020176050754193,
+          "nw_ci_low": -1.3178285673709027,
+          "nw_ci_high": -0.41545424782590845,
+          "concentration_day_frac": 1.0,
+          "notes": "NW lag=h=1; C=7.0",
+          "note": "diagnostic only \u2014 not alternate headline"
+        }
+      },
+      "grid_p_stability": {
+        "keep_sign_count": 3,
+        "pass": true,
+        "signs": {
+          "80": -1,
+          "90": -1,
+          "95": -1
+        },
+        "ref_sign": -1,
+        "param": "p",
+        "gross_by_p": {
+          "0.8": -0.2079682426108149,
+          "0.9": -0.1285005541731035,
+          "0.95": -0.1334628352858666
+        }
+      },
+      "C_base_[A]": 7.0,
+      "primary_cell": {
+        "p": 0.9,
+        "L": 288,
+        "h": 1,
+        "kappa": 0.5,
+        "position": "Sign(r_BTC_t) on ETH",
+        "r_t": "log_return",
+        "alignment": "inner_join_on_timestamp"
+      },
+      "validation_ran": false,
+      "validation_skipped_because_research_fail": true,
+      "n_aligned_research": 357148
+    }
+  },
+  "assumptions_[A]": {
+    "C_base_bps": 7.0,
+    "r_t": "log_return",
+    "kappa": 0.5,
+    "alignment": "inner_join_timestamp"
+  },
+  "non_claims": [
+    "Cross-asset OHLCV lead/lag does NOT validate microstructure OF mechanism",
+    "Provisional net \u2260 executable alpha",
+    "Assumed 7 bps \u2260 any venue true cost",
+    "NOT a rescue of CEM-20260910-001 / EDGE-20260910-001",
+    "NOT a rescue of CEM-20260910-002 / EDGE-20260910-003",
+    "Holdout remains SEALED",
+    "kappa ablation is diagnostic only \u2014 not alternate headline"
+  ],
+  "full_instrument_summaries": {
+    "BTC_ETH": {
+      "instrument": "BTC_ETH",
+      "claim": "BTC_lead_ETH_trade",
+      "n_bars_btc_research": 357148,
+      "n_bars_eth_research": 357148,
+      "n_aligned_research": 357148,
+      "pre_sliced": true,
+      "cemetery_citations": [
+        "CEM-20260910-001",
+        "CEM-20260910-002"
+      ],
+      "cemetery_citation": "CEM-20260910-001;CEM-20260910-002",
+      "not_rescue_of_edge001": true,
+      "not_rescue_of_edge003": true,
+      "validation_ran": false,
+      "validation_skipped_because_research_fail": true,
+      "splits": {
+        "warmup_end": 624,
+        "research": [
+          624,
+          357772
+        ],
+        "validation": [
+          357772,
+          476821
+        ],
+        "holdout": [
+          476821,
+          476821
+        ],
+        "holdout_sealed": true,
+        "holdout_exists": true,
+        "holdout_loaded": false,
+        "source": "SEAL_LOCK_slices",
+        "n_warmup": 624,
+        "n_research": 357148,
+        "n_validation": 119049
+      },
+      "primary_cell": {
+        "p": 0.9,
+        "L": 288,
+        "h": 1,
+        "kappa": 0.5,
+        "position": "Sign(r_BTC_t) on ETH",
+        "r_t": "log_return",
+        "alignment": "inner_join_on_timestamp"
+      },
+      "research": {
+        "signal_count": 3814,
+        "distinct_utc_days": 1023,
+        "mean_gross_bps": -0.1285005541731035,
+        "mean_net_bps": -7.128500554173104,
+        "hit_rate": 0.46224436287362347,
+        "nw_mean": -0.1285005541731035,
+        "nw_se": 0.5691533515665033,
+        "nw_ci_low": -1.2440206249237133,
+        "nw_ci_high": 0.9870195165775064,
+        "concentration_day_frac": 0.8243352135374697,
+        "notes": "NW lag=h=1; C=7.0"
+      },
+      "research_mean_gross_bps": -0.1285005541731035,
+      "research_net_1x": -7.128500554173104,
+      "research_net_2x": -14.128500554173103,
+      "research_net_3x": -21.128500554173105,
+      "validation": null,
+      "holdout": null,
+      "cost_stress_[A]": {
+        "GROSS_C0_DIAGNOSTIC": {
+          "signal_count": 3814,
+          "distinct_utc_days": 1023,
+          "mean_gross_bps": -0.1285005541731035,
+          "mean_net_bps": -0.1285005541731035,
+          "hit_rate": 0.46224436287362347,
+          "nw_mean": -0.1285005541731035,
+          "nw_se": 0.5691533515665033,
+          "nw_ci_low": -1.2440206249237133,
+          "nw_ci_high": 0.9870195165775064,
+          "concentration_day_frac": 0.8243352135374697,
+          "notes": "NW lag=h=1; C=0.0"
+        },
+        "C_1x": {
+          "signal_count": 3814,
+          "distinct_utc_days": 1023,
+          "mean_gross_bps": -0.1285005541731035,
+          "mean_net_bps": -7.128500554173104,
+          "hit_rate": 0.46224436287362347,
+          "nw_mean": -0.1285005541731035,
+          "nw_se": 0.5691533515665033,
+          "nw_ci_low": -1.2440206249237133,
+          "nw_ci_high": 0.9870195165775064,
+          "concentration_day_frac": 0.8243352135374697,
+          "notes": "NW lag=h=1; C=7.0"
+        },
+        "C_2x": {
+          "signal_count": 3814,
+          "distinct_utc_days": 1023,
+          "mean_gross_bps": -0.1285005541731035,
+          "mean_net_bps": -14.128500554173103,
+          "hit_rate": 0.46224436287362347,
+          "nw_mean": -0.1285005541731035,
+          "nw_se": 0.5691533515665033,
+          "nw_ci_low": -1.2440206249237133,
+          "nw_ci_high": 0.9870195165775064,
+          "concentration_day_frac": 0.8243352135374697,
+          "notes": "NW lag=h=1; C=14.0"
+        },
+        "C_3x": {
+          "signal_count": 3814,
+          "distinct_utc_days": 1023,
+          "mean_gross_bps": -0.1285005541731035,
+          "mean_net_bps": -21.128500554173105,
+          "hit_rate": 0.46224436287362347,
+          "nw_mean": -0.1285005541731035,
+          "nw_se": 0.5691533515665033,
+          "nw_ci_low": -1.2440206249237133,
+          "nw_ci_high": 0.9870195165775064,
+          "concentration_day_frac": 0.8243352135374697,
+          "notes": "NW lag=h=1; C=21.0"
+        },
+        "LATENCY_STRESS_+1bp_[A]": {
+          "signal_count": 3814,
+          "distinct_utc_days": 1023,
+          "mean_gross_bps": -0.1285005541731035,
+          "mean_net_bps": -8.128500554173103,
+          "hit_rate": 0.46224436287362347,
+          "nw_mean": -0.1285005541731035,
+          "nw_se": 0.5691533515665033,
+          "nw_ci_low": -1.2440206249237133,
+          "nw_ci_high": 0.9870195165775064,
+          "concentration_day_frac": 0.8243352135374697,
+          "notes": "NW lag=h=1; C=8.0"
+        },
+        "LATENCY_STRESS_+3bp_[A]": {
+          "signal_count": 3814,
+          "distinct_utc_days": 1023,
+          "mean_gross_bps": -0.1285005541731035,
+          "mean_net_bps": -10.128500554173103,
+          "hit_rate": 0.46224436287362347,
+          "nw_mean": -0.1285005541731035,
+          "nw_se": 0.5691533515665033,
+          "nw_ci_low": -1.2440206249237133,
+          "nw_ci_high": 0.9870195165775064,
+          "concentration_day_frac": 0.8243352135374697,
+          "notes": "NW lag=h=1; C=10.0"
+        }
+      },
+      "controls": {
+        "reverse_ETH_to_BTC": {
+          "signal_count": 10140,
+          "distinct_utc_days": 1210,
+          "mean_gross_bps": -0.030126177635563217,
+          "mean_net_bps": -7.030126177635563,
+          "hit_rate": 0.4626232741617357,
+          "nw_mean": -0.030126177635563217,
+          "nw_se": 0.3259037992144045,
+          "nw_ci_low": -0.6688858865205692,
+          "nw_ci_high": 0.6086335312494427,
+          "concentration_day_frac": 0.9750201450443191,
+          "notes": "NW lag=h=1; C=7.0",
+          "matches_or_beats_primary": true
+        },
+        "timestamp_shuffle_BTC_vs_ETH": {
+          "signal_count": 36043,
+          "distinct_utc_days": 1241,
+          "mean_gross_bps": 0.1330117067876439,
+          "mean_net_bps": -6.866988293212356,
+          "hit_rate": 0.5038703770496351,
+          "nw_mean": 0.1330117067876439,
+          "nw_se": 0.1507824543438856,
+          "nw_ci_low": -0.16251647322692692,
+          "nw_ci_high": 0.4285398868022147,
+          "concentration_day_frac": 1.0,
+          "notes": "NW lag=h=1; C=7.0",
+          "matches_or_beats_primary": true,
+          "seed": 20260910
+        },
+        "kappa_ablation_diagnostic": {
+          "signal_count": 36869,
+          "distinct_utc_days": 1241,
+          "mean_gross_bps": -0.8666414075984056,
+          "mean_net_bps": -7.866641407598405,
+          "hit_rate": 0.44934769047166995,
+          "nw_mean": -0.8666414075984056,
+          "nw_se": 0.23020176050754193,
+          "nw_ci_low": -1.3178285673709027,
+          "nw_ci_high": -0.41545424782590845,
+          "concentration_day_frac": 1.0,
+          "notes": "NW lag=h=1; C=7.0",
+          "note": "diagnostic only \u2014 not alternate headline"
+        }
+      },
+      "grid_p_stability": {
+        "keep_sign_count": 3,
+        "pass": true,
+        "signs": {
+          "80": -1,
+          "90": -1,
+          "95": -1
+        },
+        "ref_sign": -1,
+        "param": "p",
+        "gross_by_p": {
+          "0.8": -0.2079682426108149,
+          "0.9": -0.1285005541731035,
+          "0.95": -0.1334628352858666
+        }
+      },
+      "grid_cell_count": 36,
+      "grid_results": [
+        {
+          "p": 0.8,
+          "L": 288,
+          "h": 1,
+          "kappa": 0.35,
+          "metrics": {
+            "signal_count": 4463,
+            "distinct_utc_days": 1090,
+            "mean_gross_bps": 0.11129136825007609,
+            "mean_net_bps": -6.888708631749924,
+            "hit_rate": 0.4768093210844723,
+            "nw_mean": 0.11129136825007609,
+            "nw_se": 0.4838836545833381,
+            "nw_ci_low": -0.8371031674408864,
+            "nw_ci_high": 1.0596859039410387,
+            "concentration_day_frac": 0.878323932312651,
+            "notes": "NW lag=h=1; C=7.0"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.8,
+          "L": 288,
+          "h": 1,
+          "kappa": 0.5,
+          "metrics": {
+            "signal_count": 8298,
+            "distinct_utc_days": 1185,
+            "mean_gross_bps": -0.2079682426108149,
+            "mean_net_bps": -7.207968242610815,
+            "hit_rate": 0.47071583514099785,
+            "nw_mean": -0.2079682426108149,
+            "nw_se": 0.3371225065005068,
+            "nw_ci_low": -0.8687162137296784,
+            "nw_ci_high": 0.4527797285080486,
+            "concentration_day_frac": 0.9548751007252216,
+            "notes": "NW lag=h=1; C=7.0"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.8,
+          "L": 288,
+          "h": 1,
+          "kappa": 0.75,
+          "metrics": {
+            "signal_count": 19476,
+            "distinct_utc_days": 1236,
+            "mean_gross_bps": -0.1552359208812336,
+            "mean_net_bps": -7.155235920881234,
+            "hit_rate": 0.4683199835695215,
+            "nw_mean": -0.1552359208812336,
+            "nw_se": 0.21627128692792602,
+            "nw_ci_low": -0.5791198541500968,
+            "nw_ci_high": 0.2686480123876296,
+            "concentration_day_frac": 0.9959709911361805,
+            "notes": "NW lag=h=1; C=7.0"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.8,
+          "L": 288,
+          "h": 2,
+          "kappa": 0.35,
+          "metrics": {
+            "signal_count": 4463,
+            "distinct_utc_days": 1090,
+            "mean_gross_bps": -0.4024664057110822,
+            "mean_net_bps": -7.402466405711082,
+            "hit_rate": 0.4765852565538875,
+            "nw_mean": -0.4024664057110822,
+            "nw_se": 0.6343605913580311,
+            "nw_ci_low": -1.645790317984354,
+            "nw_ci_high": 0.8408575065621895,
+            "concentration_day_frac": 0.878323932312651,
+            "notes": "NW lag=h=2; C=7.0"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.8,
+          "L": 288,
+          "h": 2,
+          "kappa": 0.5,
+          "metrics": {
+            "signal_count": 8298,
+            "distinct_utc_days": 1185,
+            "mean_gross_bps": -0.5166247121704898,
+            "mean_net_bps": -7.51662471217049,
+            "hit_rate": 0.4713183899734876,
+            "nw_mean": -0.5166247121704898,
+            "nw_se": 0.4673806404403502,
+            "nw_ci_low": -1.432673934504841,
+            "nw_ci_high": 0.3994245101638614,
+            "concentration_day_frac": 0.9548751007252216,
+            "notes": "NW lag=h=2; C=7.0"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.8,
+          "L": 288,
+          "h": 2,
+          "kappa": 0.75,
+          "metrics": {
+            "signal_count": 19475,
+            "distinct_utc_days": 1236,
+            "mean_gross_bps": -0.49280477571581394,
+            "mean_net_bps": -7.492804775715814,
+            "hit_rate": 0.4713735558408216,
+            "nw_mean": -0.49280477571581394,
+            "nw_se": 0.30629095452775273,
+            "nw_ci_low": -1.0931240153806048,
+            "nw_ci_high": 0.10751446394897679,
+            "concentration_day_frac": 0.9959709911361805,
+            "notes": "NW lag=h=2; C=7.0"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.8,
+          "L": 576,
+          "h": 1,
+          "kappa": 0.35,
+          "metrics": {
+            "signal_count": 4653,
+            "distinct_utc_days": 1060,
+            "mean_gross_bps": 0.012853495404512364,
+            "mean_net_bps": -6.987146504595487,
+            "hit_rate": 0.47840103159252095,
+            "nw_mean": 0.012853495404512364,
+            "nw_se": 0.5055829106830177,
+            "nw_ci_low": -0.9780708007331333,
+            "nw_ci_high": 1.0037777915421582,
+            "concentration_day_frac": 0.8541498791297341,
+            "notes": "NW lag=h=1; C=7.0"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.8,
+          "L": 576,
+          "h": 1,
+          "kappa": 0.5,
+          "metrics": {
+            "signal_count": 8596,
+            "distinct_utc_days": 1161,
+            "mean_gross_bps": -0.1696650577491292,
+            "mean_net_bps": -7.169665057749129,
+            "hit_rate": 0.473708701721731,
+            "nw_mean": -0.1696650577491292,
+            "nw_se": 0.34175780552359064,
+            "nw_ci_low": -0.8394980480108108,
+            "nw_ci_high": 0.5001679325125524,
+            "concentration_day_frac": 0.935535858178888,
+            "notes": "NW lag=h=1; C=7.0"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.8,
+          "L": 576,
+          "h": 1,
+          "kappa": 0.75,
+          "metrics": {
+            "signal_count": 20010,
+            "distinct_utc_days": 1231,
+            "mean_gross_bps": -0.117834525510741,
+            "mean_net_bps": -7.117834525510741,
+            "hit_rate": 0.47086456771614194,
+            "nw_mean": -0.117834525510741,
+            "nw_se": 0.21995489282996963,
+            "nw_ci_low": -0.5489381936808488,
+            "nw_ci_high": 0.3132691426593669,
+            "concentration_day_frac": 0.991941982272361,
+            "notes": "NW lag=h=1; C=7.0"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.8,
+          "L": 576,
+          "h": 2,
+          "kappa": 0.35,
+          "metrics": {
+            "signal_count": 4653,
+            "distinct_utc_days": 1060,
+            "mean_gross_bps": -0.425275069889525,
+            "mean_net_bps": -7.425275069889525,
+            "hit_rate": 0.4779712013754567,
+            "nw_mean": -0.425275069889525,
+            "nw_se": 0.6598464946999163,
+            "nw_ci_low": -1.7185504348263607,
+            "nw_ci_high": 0.8680002950473106,
+            "concentration_day_frac": 0.8541498791297341,
+            "notes": "NW lag=h=2; C=7.0"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.8,
+          "L": 576,
+          "h": 2,
+          "kappa": 0.5,
+          "metrics": {
+            "signal_count": 8596,
+            "distinct_utc_days": 1161,
+            "mean_gross_bps": -0.43028234802976867,
+            "mean_net_bps": -7.430282348029769,
+            "hit_rate": 0.4744067007910656,
+            "nw_mean": -0.43028234802976867,
+            "nw_se": 0.4742648341254623,
+            "nw_ci_low": -1.3598243420495375,
+            "nw_ci_high": 0.4992596459900002,
+            "concentration_day_frac": 0.935535858178888,
+            "notes": "NW lag=h=2; C=7.0"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.8,
+          "L": 576,
+          "h": 2,
+          "kappa": 0.75,
+          "metrics": {
+            "signal_count": 20009,
+            "distinct_utc_days": 1231,
+            "mean_gross_bps": -0.33515933812443216,
+            "mean_net_bps": -7.335159338124432,
+            "hit_rate": 0.4722874706382128,
+            "nw_mean": -0.33515933812443216,
+            "nw_se": 0.3122704036862045,
+            "nw_ci_low": -0.9471980827871767,
+            "nw_ci_high": 0.2768794065383124,
+            "concentration_day_frac": 0.991941982272361,
+            "notes": "NW lag=h=2; C=7.0"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.9,
+          "L": 288,
+          "h": 1,
+          "kappa": 0.35,
+          "metrics": {
+            "signal_count": 1918,
+            "distinct_utc_days": 811,
+            "mean_gross_bps": 0.09863331701514239,
+            "mean_net_bps": -6.9013666829848574,
+            "hit_rate": 0.45933263816475495,
+            "nw_mean": 0.09863331701514239,
+            "nw_se": 0.8377956694392276,
+            "nw_ci_low": -1.5434160214893682,
+            "nw_ci_high": 1.7406826555196528,
+            "concentration_day_frac": 0.6535052377115229,
+            "notes": "NW lag=h=1; C=7.0"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.9,
+          "L": 288,
+          "h": 1,
+          "kappa": 0.5,
+          "metrics": {
+            "signal_count": 3814,
+            "distinct_utc_days": 1023,
+            "mean_gross_bps": -0.1285005541731035,
+            "mean_net_bps": -7.128500554173104,
+            "hit_rate": 0.46224436287362347,
+            "nw_mean": -0.1285005541731035,
+            "nw_se": 0.5691533515665033,
+            "nw_ci_low": -1.2440206249237133,
+            "nw_ci_high": 0.9870195165775064,
+            "concentration_day_frac": 0.8243352135374697,
+            "notes": "NW lag=h=1; C=7.0"
+          },
+          "is_primary": true
+        },
+        {
+          "p": 0.9,
+          "L": 288,
+          "h": 1,
+          "kappa": 0.75,
+          "metrics": {
+            "signal_count": 9962,
+            "distinct_utc_days": 1195,
+            "mean_gross_bps": -0.13142244921480475,
+            "mean_net_bps": -7.131422449214805,
+            "hit_rate": 0.45894398715117446,
+            "nw_mean": -0.13142244921480475,
+            "nw_se": 0.34028121150627816,
+            "nw_ci_low": -0.7983613683827665,
+            "nw_ci_high": 0.535516469953157,
+            "concentration_day_frac": 0.9629331184528606,
+            "notes": "NW lag=h=1; C=7.0"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.9,
+          "L": 288,
+          "h": 2,
+          "kappa": 0.35,
+          "metrics": {
+            "signal_count": 1918,
+            "distinct_utc_days": 811,
+            "mean_gross_bps": -0.13190812446051528,
+            "mean_net_bps": -7.131908124460515,
+            "hit_rate": 0.45933263816475495,
+            "nw_mean": -0.13190812446051528,
+            "nw_se": 1.0429258933598127,
+            "nw_ci_low": -2.1760053139900095,
+            "nw_ci_high": 1.9121890650689788,
+            "concentration_day_frac": 0.6535052377115229,
+            "notes": "NW lag=h=2; C=7.0"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.9,
+          "L": 288,
+          "h": 2,
+          "kappa": 0.5,
+          "metrics": {
+            "signal_count": 3814,
+            "distinct_utc_days": 1023,
+            "mean_gross_bps": -0.5274868052075427,
+            "mean_net_bps": -7.527486805207543,
+            "hit_rate": 0.4604090194022024,
+            "nw_mean": -0.5274868052075427,
+            "nw_se": 0.7837026264390847,
+            "nw_ci_low": -2.0635157276175966,
+            "nw_ci_high": 1.0085421172025115,
+            "concentration_day_frac": 0.8243352135374697,
+            "notes": "NW lag=h=2; C=7.0"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.9,
+          "L": 288,
+          "h": 2,
+          "kappa": 0.75,
+          "metrics": {
+            "signal_count": 9962,
+            "distinct_utc_days": 1195,
+            "mean_gross_bps": -0.43396527528046963,
+            "mean_net_bps": -7.433965275280469,
+            "hit_rate": 0.4600481830957639,
+            "nw_mean": -0.43396527528046963,
+            "nw_se": 0.462351756562064,
+            "nw_ci_low": -1.3401580663309456,
+            "nw_ci_high": 0.4722275157700064,
+            "concentration_day_frac": 0.9629331184528606,
+            "notes": "NW lag=h=2; C=7.0"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.9,
+          "L": 576,
+          "h": 1,
+          "kappa": 0.35,
+          "metrics": {
+            "signal_count": 2026,
+            "distinct_utc_days": 776,
+            "mean_gross_bps": 0.8257449216331637,
+            "mean_net_bps": -6.174255078366836,
+            "hit_rate": 0.47334649555774927,
+            "nw_mean": 0.8257449216331637,
+            "nw_se": 0.8410146913595425,
+            "nw_ci_low": -0.8226135839006091,
+            "nw_ci_high": 2.4741034271669364,
+            "concentration_day_frac": 0.6253021756647864,
+            "notes": "NW lag=h=1; C=7.0"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.9,
+          "L": 576,
+          "h": 1,
+          "kappa": 0.5,
+          "metrics": {
+            "signal_count": 4033,
+            "distinct_utc_days": 994,
+            "mean_gross_bps": 0.0980709671872601,
+            "mean_net_bps": -6.90192903281274,
+            "hit_rate": 0.46962558889164396,
+            "nw_mean": 0.0980709671872601,
+            "nw_se": 0.5682800756546396,
+            "nw_ci_low": -1.0157375142275304,
+            "nw_ci_high": 1.2118794486020508,
+            "concentration_day_frac": 0.8009669621273167,
+            "notes": "NW lag=h=1; C=7.0"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.9,
+          "L": 576,
+          "h": 1,
+          "kappa": 0.75,
+          "metrics": {
+            "signal_count": 10364,
+            "distinct_utc_days": 1170,
+            "mean_gross_bps": 0.06447431353853178,
+            "mean_net_bps": -6.935525686461468,
+            "hit_rate": 0.464203010420687,
+            "nw_mean": 0.06447431353853178,
+            "nw_se": 0.33693410213974234,
+            "nw_ci_low": -0.5959043918187032,
+            "nw_ci_high": 0.7248530188957667,
+            "concentration_day_frac": 0.9427880741337631,
+            "notes": "NW lag=h=1; C=7.0"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.9,
+          "L": 576,
+          "h": 2,
+          "kappa": 0.35,
+          "metrics": {
+            "signal_count": 2026,
+            "distinct_utc_days": 776,
+            "mean_gross_bps": 0.17107749147434778,
+            "mean_net_bps": -6.828922508525652,
+            "hit_rate": 0.46890424481737414,
+            "nw_mean": 0.17107749147434778,
+            "nw_se": 1.0610782564364702,
+            "nw_ci_low": -1.9085976759196899,
+            "nw_ci_high": 2.2507526588683855,
+            "concentration_day_frac": 0.6253021756647864,
+            "notes": "NW lag=h=2; C=7.0"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.9,
+          "L": 576,
+          "h": 2,
+          "kappa": 0.5,
+          "metrics": {
+            "signal_count": 4033,
+            "distinct_utc_days": 994,
+            "mean_gross_bps": -0.2904422367175589,
+            "mean_net_bps": -7.290442236717559,
+            "hit_rate": 0.46838581700967025,
+            "nw_mean": -0.2904422367175589,
+            "nw_se": 0.7559412058829884,
+            "nw_ci_low": -1.7720597746779942,
+            "nw_ci_high": 1.1911753012428763,
+            "concentration_day_frac": 0.8009669621273167,
+            "notes": "NW lag=h=2; C=7.0"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.9,
+          "L": 576,
+          "h": 2,
+          "kappa": 0.75,
+          "metrics": {
+            "signal_count": 10364,
+            "distinct_utc_days": 1170,
+            "mean_gross_bps": -0.44232592704505524,
+            "mean_net_bps": -7.442325927045055,
+            "hit_rate": 0.4627556927827094,
+            "nw_mean": -0.44232592704505524,
+            "nw_se": 0.47052784054895613,
+            "nw_ci_low": -1.3645435482444146,
+            "nw_ci_high": 0.479891694154304,
+            "concentration_day_frac": 0.9427880741337631,
+            "notes": "NW lag=h=2; C=7.0"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.95,
+          "L": 288,
+          "h": 1,
+          "kappa": 0.35,
+          "metrics": {
+            "signal_count": 849,
+            "distinct_utc_days": 523,
+            "mean_gross_bps": 0.7301170123044083,
+            "mean_net_bps": -6.269882987695592,
+            "hit_rate": 0.464075382803298,
+            "nw_mean": 0.7301170123044083,
+            "nw_se": 1.5863181689022774,
+            "nw_ci_low": -2.3790094667655817,
+            "nw_ci_high": 3.8392434913743987,
+            "concentration_day_frac": 0.42143432715551976,
+            "notes": "NW lag=h=1; C=7.0"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.95,
+          "L": 288,
+          "h": 1,
+          "kappa": 0.5,
+          "metrics": {
+            "signal_count": 1834,
+            "distinct_utc_days": 793,
+            "mean_gross_bps": -0.1334628352858666,
+            "mean_net_bps": -7.133462835285867,
+            "hit_rate": 0.4558342420937841,
+            "nw_mean": -0.1334628352858666,
+            "nw_se": 0.9773421708223254,
+            "nw_ci_low": -2.0490182906698178,
+            "nw_ci_high": 1.7820926200980844,
+            "concentration_day_frac": 0.6390008058017728,
+            "notes": "NW lag=h=1; C=7.0"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.95,
+          "L": 288,
+          "h": 1,
+          "kappa": 0.75,
+          "metrics": {
+            "signal_count": 5258,
+            "distinct_utc_days": 1102,
+            "mean_gross_bps": -0.20680163130106474,
+            "mean_net_bps": -7.206801631301064,
+            "hit_rate": 0.45207303157093953,
+            "nw_mean": -0.20680163130106474,
+            "nw_se": 0.5328425940488889,
+            "nw_ci_low": -1.2511539250657835,
+            "nw_ci_high": 0.837550662463654,
+            "concentration_day_frac": 0.8879935535858179,
+            "notes": "NW lag=h=1; C=7.0"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.95,
+          "L": 288,
+          "h": 2,
+          "kappa": 0.35,
+          "metrics": {
+            "signal_count": 849,
+            "distinct_utc_days": 523,
+            "mean_gross_bps": 1.5604402382718499,
+            "mean_net_bps": -5.43955976172815,
+            "hit_rate": 0.4581861012956419,
+            "nw_mean": 1.5604402382718499,
+            "nw_se": 1.8493200338376565,
+            "nw_ci_low": -2.0641604239383513,
+            "nw_ci_high": 5.185040900482051,
+            "concentration_day_frac": 0.42143432715551976,
+            "notes": "NW lag=h=2; C=7.0"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.95,
+          "L": 288,
+          "h": 2,
+          "kappa": 0.5,
+          "metrics": {
+            "signal_count": 1834,
+            "distinct_utc_days": 793,
+            "mean_gross_bps": 0.5448073630408437,
+            "mean_net_bps": -6.455192636959156,
+            "hit_rate": 0.460196292257361,
+            "nw_mean": 0.5448073630408437,
+            "nw_se": 1.327171711773239,
+            "nw_ci_low": -2.056401393335078,
+            "nw_ci_high": 3.1460161194167653,
+            "concentration_day_frac": 0.6390008058017728,
+            "notes": "NW lag=h=2; C=7.0"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.95,
+          "L": 288,
+          "h": 2,
+          "kappa": 0.75,
+          "metrics": {
+            "signal_count": 5258,
+            "distinct_utc_days": 1102,
+            "mean_gross_bps": -0.22637216948566144,
+            "mean_net_bps": -7.2263721694856615,
+            "hit_rate": 0.45568657284138453,
+            "nw_mean": -0.22637216948566144,
+            "nw_se": 0.6889130599299245,
+            "nw_ci_low": -1.5766169554275973,
+            "nw_ci_high": 1.1238726164562742,
+            "concentration_day_frac": 0.8879935535858179,
+            "notes": "NW lag=h=2; C=7.0"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.95,
+          "L": 576,
+          "h": 1,
+          "kappa": 0.35,
+          "metrics": {
+            "signal_count": 894,
+            "distinct_utc_days": 489,
+            "mean_gross_bps": 2.123905806179278,
+            "mean_net_bps": -4.876094193820721,
+            "hit_rate": 0.4720357941834452,
+            "nw_mean": 2.123905806179278,
+            "nw_se": 1.5115193662075295,
+            "nw_ci_low": -0.8386177135222885,
+            "nw_ci_high": 5.086429325880845,
+            "concentration_day_frac": 0.39403706688154716,
+            "notes": "NW lag=h=1; C=7.0"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.95,
+          "L": 576,
+          "h": 1,
+          "kappa": 0.5,
+          "metrics": {
+            "signal_count": 1884,
+            "distinct_utc_days": 740,
+            "mean_gross_bps": 0.7086883240159539,
+            "mean_net_bps": -6.291311675984046,
+            "hit_rate": 0.46178343949044587,
+            "nw_mean": 0.7086883240159539,
+            "nw_se": 0.9699910965897403,
+            "nw_ci_low": -1.1924592906244498,
+            "nw_ci_high": 2.609835938656358,
+            "concentration_day_frac": 0.5962933118452861,
+            "notes": "NW lag=h=1; C=7.0"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.95,
+          "L": 576,
+          "h": 1,
+          "kappa": 0.75,
+          "metrics": {
+            "signal_count": 5354,
+            "distinct_utc_days": 1043,
+            "mean_gross_bps": 0.16283566785974948,
+            "mean_net_bps": -6.837164332140251,
+            "hit_rate": 0.4555472543892417,
+            "nw_mean": 0.16283566785974948,
+            "nw_se": 0.5251711401029567,
+            "nw_ci_low": -0.8664808524618847,
+            "nw_ci_high": 1.1921521881813837,
+            "concentration_day_frac": 0.8404512489927478,
+            "notes": "NW lag=h=1; C=7.0"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.95,
+          "L": 576,
+          "h": 2,
+          "kappa": 0.35,
+          "metrics": {
+            "signal_count": 894,
+            "distinct_utc_days": 489,
+            "mean_gross_bps": 2.1822529901204333,
+            "mean_net_bps": -4.817747009879566,
+            "hit_rate": 0.46868008948545864,
+            "nw_mean": 2.1822529901204333,
+            "nw_se": 1.8644092669677812,
+            "nw_ci_low": -1.4719220255791403,
+            "nw_ci_high": 5.836428005820007,
+            "concentration_day_frac": 0.39403706688154716,
+            "notes": "NW lag=h=2; C=7.0"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.95,
+          "L": 576,
+          "h": 2,
+          "kappa": 0.5,
+          "metrics": {
+            "signal_count": 1884,
+            "distinct_utc_days": 740,
+            "mean_gross_bps": 0.9909628088710596,
+            "mean_net_bps": -6.00903719112894,
+            "hit_rate": 0.4708067940552017,
+            "nw_mean": 0.9909628088710596,
+            "nw_se": 1.3360358976961875,
+            "nw_ci_low": -1.627619432666108,
+            "nw_ci_high": 3.609545050408227,
+            "concentration_day_frac": 0.5962933118452861,
+            "notes": "NW lag=h=2; C=7.0"
+          },
+          "is_primary": false
+        },
+        {
+          "p": 0.95,
+          "L": 576,
+          "h": 2,
+          "kappa": 0.75,
+          "metrics": {
+            "signal_count": 5354,
+            "distinct_utc_days": 1043,
+            "mean_gross_bps": 0.1725699769228545,
+            "mean_net_bps": -6.827430023077145,
+            "hit_rate": 0.4592827792304819,
+            "nw_mean": 0.1725699769228545,
+            "nw_se": 0.7032991536707958,
+            "nw_ci_low": -1.2058710346294061,
+            "nw_ci_high": 1.5510109884751153,
+            "concentration_day_frac": 0.8404512489927478,
+            "notes": "NW lag=h=2; C=7.0"
+          },
+          "is_primary": false
+        }
+      ],
+      "C_base_[A]": 7.0,
+      "n_prefix_used": 624
+    }
+  }
+}
