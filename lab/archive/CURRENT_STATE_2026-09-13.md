@@ -97,3 +97,43 @@ Headline compared Map 2 at CLOSE-k=30 to **T−1m** Kalshi mid. T−0 mid was **
 
 ## CB-VEL (updated 2026-09-13T20:58:16Z)
 TEST-20260913-005 REDUNDANT / FAIL-INSUFFICIENT. FEAT-20260913-005 INACTIVE. Wave 007 closed. Wave 008 W2-D rem=180 declared NEEDS_DATA. Mid incumbent. No retune. Poly last still unsored.
+
+## Wave 008 close (2026-09-13T21:51:30Z)
+
+| Item | State |
+|------|--------|
+| Feature | `FEAT-20260913-006` (promoted from DRAFT-FEAT-20260913-006) |
+| TEST-20260913-006 | **REDUNDANT / FAIL-INSUFFICIENT** |
+| Wave 008 | **CLOSED** · no cemetery |
+| Wave 006 W2-B | still HELD |
+| Artifacts | `archive/tests/TEST-20260913-006-W2D-IVRV-INCREMENTAL.{md,json}` |
+
+## W2-B incumbent-at-obs Clock (updated 2026-09-13T22:00:54Z)
+
+| Item | State |
+|------|--------|
+| Order | `CLOCK_ORDER_W2B_INCUMBENT_AT_OBS_2026-09-13.md` |
+| Verdict | **CONDITIONAL** · join_only_incumbent_at_obs |
+| Coverage | BTC 254/254 m_L · ETH 240/240 m_L · miss_m_L=0 |
+| Lag | median ~45s L vs decision_time (unchanged) |
+| Candle | `completed_bar_at_L_end_period_ts_le_L` · decision_time bar as m_L = 0 · last-as-mid = 0 |
+| Door | NEEDS_DATA · Examiner dark on Poly last |
+| Artifacts | `data/DATA-PROV-PM-005/provenance/DATA_VERDICT_W2B_INCUMBENT_AT_OBS.md` |
+
+Next physical: Cartographer Wave 006 eligibility with lag + incumbent-at-obs (m_L) on the card. Not Examiner. No λ/c/w retune. Captures LIQ + PM-006 live.
+
+## F4 leftover data (2026-09-13T22:05Z)
+PM-004 × L3-002 Clock **CONDITIONAL** lock B: Sep-12 851/855 mid×L3; 4 named midnight edges. Sep-13 Vision still 404. F4 not commissioned. Examiner dark. Edge-close via L3-001 Sep-11 23:59 ordered (not PM-003 peek).
+
+Sep-12 midnight edges **CLEARED** 4/4 (`DATA_VERDICT_PM004_L3_SEP11_EDGE`). Combined Sep-12 mid×L3 **855/855** under B. F4 still unsigned.
+
+
+## W2-B / Wave 006 (updated 2026-09-13T23:38:44Z)
+TEST-20260913-007 REDUNDANT / FAIL-INSUFFICIENT (one-asset invert). FEAT-20260913-007 INACTIVE. Wave 006 closed.
+BTC T-5m N=254 ΔBrier=−0.000690 ΔLogLoss=−0.001818 PROMISING. ETH N=240 ΔBrier=+0.000330 ΔLogLoss=+0.000057 kill.
+No BTC-only. No λ retune. Mid incumbent. F4 Sep-12 855/855 unsigned next leftover.
+
+
+## F4 kill / Wave 009 close (2026-09-14T01:12:05Z)
+TEST-20260914-001 REDUNDANT / FAIL-INSUFFICIENT. N_wick BTC 12 / ETH 10 < 80. No cemetery. No θ/W/λ retune. Mid incumbent.
+Next: follow-vs-fade NEEDS_DATA (PM-006 38 closed 15m; PM-008 Kalshi live mid kicked). Squeeze extract filed, not a wave.
