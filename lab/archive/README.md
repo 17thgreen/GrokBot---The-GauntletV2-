@@ -6,9 +6,9 @@ Canonical permanent memory for the short-horizon BTC/ETH alpha lab.
 **Rule:** Nothing important disappears. Rejected strategies are proprietary research memory, not trash.
 
 
-## CURRENT HEADLINE — 2026-09-13 (AMD-003)
+## CURRENT HEADLINE — 2026-09-14 (AMD-003)
 
-**Incumbent:** `MKT-KALSHI-15M-MID`. Dead Features INACTIVE (incl. CB-VEL). **Wave 007 CLOSED.** **Wave 008** = **W2-D** rem=180 / T-3m — **NEEDS_DATA** (`WAVE_008_ORTHOGONAL_SLOT_2026-09-13.md`); DATA-PROV-PM-007 fetch in flight. Wave 006 W2-B **HELD**. Trade **FORBIDDEN**. No cemetery. See INDEX.
+**Incumbent:** `MKT-KALSHI-15M-MID`. Dead Features INACTIVE (incl. F4). TEST-20260914-001 F4-WICK **REDUNDANT / FAIL-INSUFFICIENT** (N_wick 12/10; **no cemetery**; no θ/W/λ retune). Trade **FORBIDDEN**. See INDEX.
 
 
 ## Before any hypothesis enters testing
