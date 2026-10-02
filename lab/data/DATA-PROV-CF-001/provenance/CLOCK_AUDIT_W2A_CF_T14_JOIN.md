@@ -153,7 +153,8 @@ cf_t = last-in-second CF print from DATA-PROV-CF-001 HOUR tape (BRTI if BTC else
 - PM-001 meta: `{'n_rows': 1328, 'n_unique_contract_id': 1328, 'n_unique_venue_native_id': 1328, 'n_null_FLOOR_STRIKE': 0, 'status_counts': {'RESOLVED': 1328}, 'resolution_counts': {'YES': 660, 'NO': 668}, 'one_row_per_contract': True, 'revision_feed_present': False, 'revision_policy_tag': '[V] static dump snapshot — one FLOOR_STRIKE per CONTRACT_ID; [A] no post-OPEN revision feed in this dump (cannot observe revisions).', 'EXPIRATION_VALUE_note': 'Field present on PM-001 rows for audit inventory only; FORBIDDEN in feature join / p_t construction / cf join key.', 'n_null_EXPIRATION_VALUE': 0}`
 - Prior CF-001 DATA VERDICT CLEARED = close-minute 1Hz + pre_close_last only; this audit certifies a **different** join (hour tape at rem=840).
 - Forbidden derived paths exist on disk but were **not** used for join values: `/workspace/lab/data/DATA-PROV-CF-001/derived/close_minute_1hz.ndjson`, `/workspace/lab/data/DATA-PROV-CF-001/derived/pre_close_last.ndjson`.
-- **Verdict recommendation (join only)**
+
+## Verdict recommendation (join only)
 
 **CONDITIONAL** — Join-only: hour-tape last-in-second (A) pairs on all scored rows with K present (OPEN_TIME<=t) and same-t m_t; no look-ahead (print.time<=t); forbidden paths unused. CONDITIONAL (not CLEARED) because: (1) all decision_times are on-second boundaries and A selects the ms=0 print of the *incomplete* current second — order forbids treating incomplete current second as complete; B (completed-second safe, s-1) is also dense (document, do not silently switch); (2) FLOOR_STRIKE is [V] snapshot / [A] no revision feed; (3) prior CF-001 CLEARED is close-minute F2 path only — this T-14m hour-tape join is a distinct path (READY ≠ CLEARED for F2 reuse).
 
