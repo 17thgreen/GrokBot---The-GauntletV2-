@@ -101,7 +101,7 @@ Free survivors exist for **other** windows (Aug and earlier) or are **wrong prod
 | **`sneddy/polymarket_research`**, **`Caiooooo/polymarket-l2-collector`**, **`holypolyfoundation/KDE`**, **`Conn-Ho/polymarket-btc-tracker`**, **`suitedaces/polyterminal`** | Collectors / live tools; **no** published historical Sep BTC/ETH book dumps. |
 | **`LuciferForge` / `manja316` polymarket-historical-data** | GitHub points to **paid** Gumroad / API; author warns orderbook table is mostly thin placeholders. Free HF samples ≠ dense BTC/ETH 15m L2 for Sep. |
 | **`vcorp-dev/kalshi-price-data`**, **`V-Corp/polymarket-orderbook-depth-sample`** | DepthFeed client + **free sample** (BTC L2, generated 2026-08-07). Full archive = **paid DepthFeed** — **FORBIDDEN to buy** for this hunt. |
-| **`astrnvk/polymarket-orderbook-data-preview`** | Free preview Jun 26–29 TOB + Jun-21 30m L2 sample; full = **paid** storefront. CC BY-NC 4.0 on preview. |
+| **`astrnvk/polymarket-orderbook-data-preview`** | Free preview Jun 26–29 TOB + Jul-21 30m L2 sample; full = **paid** storefront. CC BY-NC 4.0 on preview. |
 | **`Coyevans/polymarket-kalshi-scoresync-orderbook-sample`** | Sports score-sync teaser; not crypto 5m/15m. |
 | **OFI × polymarket GitHub query** | Hits are live bots / research code / trade-derived features — **no** additional free Sep book dump identified. |
 
