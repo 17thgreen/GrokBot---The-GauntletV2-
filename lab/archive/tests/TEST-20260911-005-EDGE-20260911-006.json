@@ -1,0 +1,275 @@
+{
+  "TEST_ID": "TEST-20260911-005",
+  "edge_id": "EDGE-20260911-006",
+  "informal": "CAT_FUND_OI_C5",
+  "MEASUREMENT": "FAIL-INSUFFICIENT",
+  "verdict": "FAIL-INSUFFICIENT",
+  "kill_reasons": [
+    "BTC:FAIL-INSUFFICIENT",
+    "RESEARCH signals 2 < min 20",
+    "RESEARCH distinct days 2 < min 8",
+    "ETH:FAIL-INSUFFICIENT",
+    "RESEARCH signals 6 < min 20",
+    "RESEARCH distinct days 5 < min 8"
+  ],
+  "instruments": [
+    {
+      "symbol": "BTCUSDT",
+      "research": {
+        "signal_count": 2,
+        "distinct_utc_days": 2,
+        "mean_gross_bps": -38.061825768137,
+        "mean_net_1x": -45.061825768137,
+        "mean_net_2x": -52.061825768137,
+        "mean_net_3x": -59.061825768137,
+        "hit_rate": 0.5,
+        "nw_ci_low": -79.10738962278427,
+        "nw_ci_high": 2.9837380865102716,
+        "concentration_day_frac": 0.0022002200220022,
+        "C_base_bps": 7.0,
+        "C_tag": "[A]",
+        "funding_carry_over_hold_bps": 0,
+        "funding_carry_tag": "[U] not modeled; reported 0"
+      },
+      "funding_only_nested": {
+        "signal_count": 11,
+        "distinct_utc_days": 10,
+        "mean_gross_bps": -9.488932448159515,
+        "mean_net_1x": -16.488932448159517,
+        "mean_net_2x": -23.488932448159517,
+        "mean_net_3x": -30.488932448159517,
+        "hit_rate": 0.36363636363636365,
+        "nw_ci_low": -23.349337019817074,
+        "nw_ci_high": 4.3714721234980445,
+        "concentration_day_frac": 0.011001100110011002,
+        "C_base_bps": 7.0,
+        "C_tag": "[A]",
+        "funding_carry_over_hold_bps": 0,
+        "funding_carry_tag": "[U] not modeled; reported 0"
+      },
+      "oi_only_nested": {
+        "signal_count": 3152,
+        "distinct_utc_days": 765,
+        "mean_gross_bps": 0.3816724542797694,
+        "mean_net_1x": -6.618327545720231,
+        "mean_net_2x": -13.61832754572023,
+        "mean_net_3x": -20.61832754572023,
+        "hit_rate": 0.5317258883248731,
+        "nw_ci_low": -0.7202474230930422,
+        "nw_ci_high": 1.483592331652581,
+        "concentration_day_frac": 0.8415841584158416,
+        "C_base_bps": 7.0,
+        "C_tag": "[A]",
+        "funding_carry_over_hold_bps": 0,
+        "funding_carry_tag": "[U] not modeled; reported 0"
+      },
+      "ohlcv_nested": {
+        "signal_count": 53069,
+        "distinct_utc_days": 909,
+        "mean_gross_bps": 0.2873877233137165,
+        "mean_net_1x": -6.712612276686284,
+        "mean_net_2x": -13.712612276686283,
+        "mean_net_3x": -20.712612276686283,
+        "hit_rate": 0.5386195330607323,
+        "nw_ci_low": -0.04929393586634012,
+        "nw_ci_high": 0.6240693824937731,
+        "concentration_day_frac": 1.0,
+        "C_base_bps": 7.0,
+        "C_tag": "[A]",
+        "funding_carry_over_hold_bps": 0,
+        "funding_carry_tag": "[U] not modeled; reported 0"
+      },
+      "trade_flow_nested": {
+        "signal_count": 53041,
+        "distinct_utc_days": 909,
+        "mean_gross_bps": -0.048761429617236944,
+        "mean_net_1x": -7.048761429617237,
+        "mean_net_2x": -14.048761429617237,
+        "mean_net_3x": -21.048761429617237,
+        "hit_rate": 0.5026111875718784,
+        "nw_ci_low": -0.28534903673855827,
+        "nw_ci_high": 0.1878261775040844,
+        "concentration_day_frac": 1.0,
+        "C_base_bps": 7.0,
+        "C_tag": "[A]",
+        "funding_carry_over_hold_bps": 0,
+        "funding_carry_tag": "[U] not modeled; reported 0"
+      },
+      "nested_beats": {
+        "funding_only_nested": true,
+        "oi_only_nested": true,
+        "ohlcv_nested": true,
+        "trade_flow_nested": true
+      },
+      "verdict": "FAIL-INSUFFICIENT",
+      "reasons": [
+        "RESEARCH signals 2 < min 20",
+        "RESEARCH distinct days 2 < min 8"
+      ],
+      "validation": null,
+      "validation_ran": false,
+      "C_base_tag": "[A]",
+      "funding_carry_over_hold_bps": 0,
+      "funding_carry_tag": "[U] not modeled"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "research": {
+        "signal_count": 6,
+        "distinct_utc_days": 5,
+        "mean_gross_bps": -17.788069405108946,
+        "mean_net_1x": -24.788069405108946,
+        "mean_net_2x": -31.788069405108946,
+        "mean_net_3x": -38.78806940510894,
+        "hit_rate": 0.5,
+        "nw_ci_low": -48.11653793275277,
+        "nw_ci_high": 12.540399122534879,
+        "concentration_day_frac": 0.005500550055005501,
+        "C_base_bps": 7.0,
+        "C_tag": "[A]",
+        "funding_carry_over_hold_bps": 0,
+        "funding_carry_tag": "[U] not modeled; reported 0"
+      },
+      "funding_only_nested": {
+        "signal_count": 13,
+        "distinct_utc_days": 9,
+        "mean_gross_bps": -15.774136878463375,
+        "mean_net_1x": -22.774136878463374,
+        "mean_net_2x": -29.774136878463374,
+        "mean_net_3x": -36.77413687846337,
+        "hit_rate": 0.46153846153846156,
+        "nw_ci_low": -36.153802654549295,
+        "nw_ci_high": 4.605528897622547,
+        "concentration_day_frac": 0.009900990099009901,
+        "C_base_bps": 7.0,
+        "C_tag": "[A]",
+        "funding_carry_over_hold_bps": 0,
+        "funding_carry_tag": "[U] not modeled; reported 0"
+      },
+      "oi_only_nested": {
+        "signal_count": 3269,
+        "distinct_utc_days": 753,
+        "mean_gross_bps": 0.4251697708045097,
+        "mean_net_1x": -6.5748302291954905,
+        "mean_net_2x": -13.57483022919549,
+        "mean_net_3x": -20.57483022919549,
+        "hit_rate": 0.5331905781584583,
+        "nw_ci_low": -0.8774464252702885,
+        "nw_ci_high": 1.7277859668793079,
+        "concentration_day_frac": 0.8283828382838284,
+        "C_base_bps": 7.0,
+        "C_tag": "[A]",
+        "funding_carry_over_hold_bps": 0,
+        "funding_carry_tag": "[U] not modeled; reported 0"
+      },
+      "ohlcv_nested": {
+        "signal_count": 52876,
+        "distinct_utc_days": 909,
+        "mean_gross_bps": 0.0031936322646217573,
+        "mean_net_1x": -6.9968063677353785,
+        "mean_net_2x": -13.996806367735378,
+        "mean_net_3x": -20.996806367735378,
+        "hit_rate": 0.5356305318102731,
+        "nw_ci_low": -0.41480389973423254,
+        "nw_ci_high": 0.4211911642634761,
+        "concentration_day_frac": 1.0,
+        "C_base_bps": 7.0,
+        "C_tag": "[A]",
+        "funding_carry_over_hold_bps": 0,
+        "funding_carry_tag": "[U] not modeled; reported 0"
+      },
+      "trade_flow_nested": {
+        "signal_count": 52991,
+        "distinct_utc_days": 909,
+        "mean_gross_bps": -0.05792249629803288,
+        "mean_net_1x": -7.0579224962980325,
+        "mean_net_2x": -14.057922496298033,
+        "mean_net_3x": -21.057922496298033,
+        "hit_rate": 0.49789586910984884,
+        "nw_ci_low": -0.35536986801156617,
+        "nw_ci_high": 0.23952487541550044,
+        "concentration_day_frac": 1.0,
+        "C_base_bps": 7.0,
+        "C_tag": "[A]",
+        "funding_carry_over_hold_bps": 0,
+        "funding_carry_tag": "[U] not modeled; reported 0"
+      },
+      "nested_beats": {
+        "funding_only_nested": true,
+        "oi_only_nested": true,
+        "ohlcv_nested": true,
+        "trade_flow_nested": true
+      },
+      "verdict": "FAIL-INSUFFICIENT",
+      "reasons": [
+        "RESEARCH signals 6 < min 20",
+        "RESEARCH distinct days 5 < min 8"
+      ],
+      "validation": null,
+      "validation_ran": false,
+      "C_base_tag": "[A]",
+      "funding_carry_over_hold_bps": 0,
+      "funding_carry_tag": "[U] not modeled"
+    }
+  ],
+  "nested_summary": {
+    "BTCUSDT": {
+      "funding_only_nested": true,
+      "oi_only_nested": true,
+      "ohlcv_nested": true,
+      "trade_flow_nested": true
+    },
+    "ETHUSDT": {
+      "funding_only_nested": true,
+      "oi_only_nested": true,
+      "ohlcv_nested": true,
+      "trade_flow_nested": true
+    }
+  },
+  "holdout_sealed": true,
+  "invented_numbers": false,
+  "validation_ran": false,
+  "C_base_bps": 7.0,
+  "C_tag": "[A]",
+  "cost_stress": {
+    "GROSS_C0_DIAGNOSTIC": 0.0,
+    "C_1x": 7.0,
+    "C_2x": 14.0,
+    "C_3x": 21.0,
+    "LATENCY_STRESS_+1bp_[A]": 8.0,
+    "LATENCY_STRESS_+3bp_[A]": 10.0
+  },
+  "funding_carry_over_hold_bps": 0,
+  "funding_carry_tag": "[U] not modeled",
+  "clock_verdict_funding": "CONDITIONAL",
+  "clock_verdict_oi": "CONDITIONAL",
+  "splits": {
+    "research": [
+      "2021-12-01 00:00:00+00:00",
+      "2024-05-27 06:15:00+00:00"
+    ],
+    "validation": [
+      "2024-05-27T06:20:00Z",
+      "2025-07-14T15:00:00Z"
+    ],
+    "holdout": "LOCKED"
+  },
+  "primary_cell": {
+    "Z": 2.5,
+    "D": 3,
+    "L": 42,
+    "Q_oi": 0.8,
+    "L_oi": 288,
+    "h_bars": 3,
+    "delta_exec_bars": 1
+  },
+  "cemetery": [
+    "CEM-20260911-001",
+    "CEM-20260911-002",
+    "CEM-20260910-001",
+    "CEM-20260910-002",
+    "CEM-20260910-003"
+  ],
+  "binary_scoreboard": "skipped_no_Kalshi_PM_futures_mechanism_only_[V]",
+  "LIQ_003_invoked": false
+}

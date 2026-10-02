@@ -1,0 +1,10 @@
+{
+  "TEST_ID": "TEST-20260912-002",
+  "package": "F1-INCREMENTAL",
+  "verdict": "REDUNDANT / FAIL-INSUFFICIENT",
+  "invented_numbers": false,
+  "trading": "FORBIDDEN",
+  "EXPIRATION_VALUE_used": false,
+  "incomplete_bar_used": false,
+  "full": "/workspace/lab/archive/tests/TEST-20260912-002-F1-INCREMENTAL.json"
+}

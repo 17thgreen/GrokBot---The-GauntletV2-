@@ -1,0 +1,8 @@
+{
+  "TEST_ID": "TEST-20260912-001",
+  "package": "F3-INCREMENTAL",
+  "verdict": "REDUNDANT / FAIL-INSUFFICIENT",
+  "invented_numbers": false,
+  "trading": "FORBIDDEN",
+  "full": "/workspace/lab/archive/tests/TEST-20260912-001-F3-INCREMENTAL.json"
+}

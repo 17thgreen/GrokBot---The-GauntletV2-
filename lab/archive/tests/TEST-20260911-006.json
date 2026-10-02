@@ -1,0 +1,7 @@
+{
+  "TEST_ID": "TEST-20260911-006",
+  "package": "PM002-MARKET-BASELINE",
+  "verdict": "FAIL-INSUFFICIENT",
+  "invented_numbers": false,
+  "full": "/workspace/lab/archive/tests/TEST-20260911-006-PM002-MARKET-BASELINE.json"
+}
