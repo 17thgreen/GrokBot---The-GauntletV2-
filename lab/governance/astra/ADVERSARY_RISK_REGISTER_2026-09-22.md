@@ -4,9 +4,9 @@
 **Charter:** Working Plan v0.1 §4 / §4b / weekly cadence  
 **Stance:** Name risks onto the scorecard. Do **not** invent failures. Do **not** block trials by default. Do **not** replace Examiner of record.
 
-**Queue status:** Empty — no Examiner KEEP / bakeoff awaiting Adversary. Conductor wake protocol: **KEEP/bakeoff only**.
+**Queue status:** Empty for bakeoff — Q7 scored **SCORED_KILL_B_KEEP_000** (no new KEEP/bakeoff). Hygiene memo indexed. Conductor wake protocol: **KEEP/bakeoff only**.
 
-**Updated:** 2026-09-22 ~17:05 ET (Conductor handoff + PR status).
+**Updated:** 2026-09-24T20:08:57-04:00 (Adversary: Card 01 NH-002-H leakage/circularity check linked below). Prior: 2026-09-24T19:50:00-04:00 (Edge Research dead-card overlap + Refiner extension overfit-check protocol).
 
 ---
 
@@ -15,7 +15,7 @@
 | Line | Stage | Notes |
 |---|---|---|
 | Q6 incumbent (label `000`, F/P/R off) | Historical sim freeze → shadow candidate only | Modeled P&L only; not live |
-| Q7 `nfl_paircheck_lab_20260922` 2×2 | **IMPLEMENTED / FROZEN, not run** on draft [PR2](https://github.com/17thgreen/GPT-6-Astra-Deathmatch/pull/2) | 16 scenarios **NOT_RUN** (kits pending). Do not treat draft-PR freeze as `main` evidence until Archivist indexes. |
+| Q7 `nfl_paircheck_lab_20260922` 2×2 | **SCORED_KILL_B_KEEP_000** on `main` | Examiner closed measurement · Arm B KILL · shadow `000` KEEP · live DENIED · see scorecard + cemetery CEM-ASTRA-20260922-001 · hygiene: `packets/Q6_000_COMPLACENCY_SPOTCHECK_2026-09-22.md` |
 | C1 durable GET collector + panel | PR1 draft, **undeployed** | PHI@CHI full T−7d incomplete — no backdate |
 | Bakeoff B0 | Template pending | Needed before any challenger displaces incumbent |
 
@@ -58,6 +58,10 @@ Registry `PACKET_INDEX.md` / `STATUS_2026-09-22.md` (17:04 ET) still show Q7 fre
 
 ---
 
+
+
+---
+
 ## Packet R1-P3-ADVERSE (2026-09-22)
 
 **Status:** ACCEPT — measurement/Adversary gate only (Conductor triage).  
@@ -68,6 +72,62 @@ Registry `PACKET_INDEX.md` / `STATUS_2026-09-22.md` (17:04 ET) still show Q7 fre
 **Freeze note:** name Shin vs proportional de-vig (or factorial both); silent method switch after outcomes = drift.
 
 **Banned:** Polymarket/polymm full bot port; silent Q6/Q7 retune; author wallet P&L as Astra evidence.
+
+
+
+---
+
+## Packet Q6-000 complacency (2026-09-22)
+
+After Examiner **KILL** Arm B · **KEEP** shadow `000`: see `packets/Q6_000_COMPLACENCY_SPOTCHECK_2026-09-22.md`.
+
+Watch: inherited-fee ≠ venue pin; queue 3,300 vs 10,000 EV gap; no reopen of freeze after Q7 peek; 31-game reuse ≠ holdout; pair-check-on ≠ pair economics solved. No capital redesign from this seat.
+
+
+
+### Hygiene stamp (Archivist) — 2026-09-22
+
+| Field | Value |
+|---|---|
+| Status | **HYGIENE** after **SCORED_KILL_B_KEEP_000** |
+| Packet | `packets/Q6_000_COMPLACENCY_SPOTCHECK_2026-09-22.md` |
+| Named risks | (1) fee blindness (2) queue/capital contention (3) lookahead/freeze integrity (4) 31-game overfit (5) mechanism complacency |
+| Verdict change | **None** — Examiner KILL_B / KEEP_000 / live DENIED stands |
+| Cemetery-adjacent | Risks parked here + noted on `CEM-ASTRA-20260922-001` · not a second kill |
+| Banned | Invented PnL · promote language · orders · capital redesign from this memo |
+
+
+
+---
+
+## Packet R2-P5 refuse hygiene (2026-09-22)
+
+**Yes — refuse** fee-honest `hedge_complete` without R1-P1 feebook pin, or with mixed kickoff clocks not labeled `holdout_mixed`. Detail: `packets/R2-P5_ADVERSARY_REFUSE_HYGIENE_2026-09-22.md`. No Q6-000 verdict change.
+
+## Freeze refuse-binds (Conductor ACCEPTED — 2026-09-22 ~20:15 ET)
+
+Adversary filed short refuse-bind memos on freezes Conductor put live. Measurement/provenance only. No Q6-000 verdict change. No orders. Results null until Examiner.
+
+| Packet | Memo | Key refuse (one-line) |
+|---|---|---|
+| **C1+C3+C5** (cash-cow) | `packets/C1_C3_C5_ADVERSARY_REFUSE_BIND_2026-09-22.md` | C1: no UFC strategy; $5k bakeoff label only · C3: weather-spread GitHub = hypothesis only, never Astra EV · C5: not live crypto; no bacchus/kxeth15m port · Simulator units NOT_FOUND → spot-check deferred |
+| **R3-P3** (priority) | `packets/R3-P3_ADVERSARY_REFUSE_BIND_2026-09-22.md` | Paper +2.6% = hypothesis only; refuse Lee-Ready; refuse scoring before settled panel + R1-P1; Simulator units NOT_FOUND → spot-check deferred |
+| **R3 suite** P1–P4 | `packets/R3_SUITE_ADVERSARY_REFUSE_BIND_2026-09-22.md` | No bacchus port; no invented PnL; no paper maker ROI as Astra edge; no demo queue = production fills; prefer `fee_cost` over model when present |
+| **R2-P3** | `packets/R2-P3_ADVERSARY_REFUSE_BIND_2026-09-22.md` | Refuse completed-profit w/o R1-P1; freshness from WS ping; maker-credit floor-zero near 0/1; `000` retune; ATL@GB sub |
+| **S5** | `packets/S5_ADVERSARY_REFUSE_BIND_2026-09-22.md` | Refuse PnL/strategy claims; R1-P4 reopen; RFQ-density while 401/429; fee-honest w/o combo fee channel; inventing fills; `000` retune |
+| **S4** | `packets/S4_ADVERSARY_REFUSE_BIND_2026-09-22.md` | Refuse `000` retune / NFL ML capacity; fee-honest w/o R1-P1; freshness from WS ping; invented OI/vol; weekend-overlap as same-edge proof |
+
+**Simulator R3-P3:** RESULTS_NULL / units NOT_FOUND (`r3_p3_fl_maker_taker/results/EMPTY_RESULTS.json`). Spot-check deferred.  
+**Simulator C1/C3/C5:** RESULTS_NULL / units NOT_FOUND (`scout_c1_kxufcfight/`, `scout_c3_kxhighny/`, `scout_c5_kxbtc15m/` — `FROZEN_NOT_RUN` / `NOT_RUN`). Spot-check deferred.
+
+## Edge Research + Refiner extensions (2026-09-24 ~19:50 ET)
+
+- Dead-card overlap, cards 01–10: `packets/ADVERSARY_DEAD_CARD_OVERLAP_EDGE_RESEARCH_2026-09-24.md`. Up-front cemetery: 09, 10-core, 06-CPI, 03 volume-subsidy taker. Conductor's three flags confirmed on disk. No Q6-`000` verdict change.
+- Extension overfit CHECK (advisory; vote only at pass > 5): `packets/ADVERSARY_EXTENSION_OVERFIT_CHECK_PROTOCOL_2026-09-24.md`. First application: Q7 Arm B. P2 in flight, extensions not yet due, 4 pre-flags filed.
+
+## Card 01 NH-002-H leakage check (2026-09-24 ~20:09 ET)
+
+- `packets/ADVERSARY_CARD01_NH002H_LEAKAGE_CHECK_2026-09-24.md`: ElectIndex INDEPENDENT (documentary; code unaudited); w grid [V] pre-price; universe price-independent by reproduction, 'no price viewed' claim [A]; one-draw handled (state bootstrap + recentering, scoped to this cycle); 6 advisory flags (fee pin default for House series, ElectIndex model drift, unanchored timestamps, recentering not pinned, legacy-series attrition, gate (c) text). Advisory only; Q6-`000` unchanged.
 
 ## What I will / will not do on promote
 
