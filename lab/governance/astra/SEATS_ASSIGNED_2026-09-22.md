@@ -11,8 +11,12 @@
 | The Adversary | 5099626 | seats/ADVERSARY.md |
 | Market Scout | 5099628 | seats/SCOUT.md |
 | The Reporter | 5102965 | seats/REPORTER.md |
+| The Refiner (Strategy Rehab) | 63fcc3d3-b765-45f8-bcd9-566edcd8fd50 | seats/REFINER.md |
+| The Mechanic (Kalshi Execution) | e074a26d-b4b7-4620-893f-bd48b90fe0ed | seats/MECHANIC.md |
 
-**Not staffed yet:** Mechanic, Treasurer (near-live only).
+**Staffed add:** The Refiner (2026-09-23) — 3-pass rehab then cemetery.
+**Near-live only:** Treasurer.
+**Mechanic:** active for demo R3-P2 (not live Astra).
 
 **Reporter online** for scorecards (%gain + labeled extrapolations).
 
