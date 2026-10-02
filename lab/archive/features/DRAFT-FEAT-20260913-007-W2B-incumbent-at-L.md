@@ -91,9 +91,9 @@ Not sibling-asset. Not CF−mid. Not CB-VEL. Not W2-D rem shop.
 ## DECISION-TIME / KNOWABILITY
 
 - \(L\), `last_L`: Poly 15m last, method=last [V CLEARED join]
-- \(m_L\): Kalshi 1m completed-bar mid, `end_period_ts \u2264 unix(L)` [V named Clock rule]
+- \(m_L\): Kalshi 1m completed-bar mid, `end_period_ts ≤ unix(L)` [V named Clock rule]
 - FORBIDDEN as incumbent: Kalshi mid at `decision_time` [V]
-- FORBIDDEN at \(t\): invented Poly mid; last-as-mid; sibling-asset mid; \u03a6(z); Map 2; signed CB-VEL; W2-D rem shop; policy A
+- FORBIDDEN at \(t\): invented Poly mid; last-as-mid; sibling-asset mid; Φ(z); Map 2; signed CB-VEL; W2-D rem shop; policy A
 
 ## DATA LAYER
 
@@ -102,9 +102,9 @@ Not sibling-asset. Not CF−mid. Not CB-VEL. Not W2-D rem shop.
 - Join: `DATA_VERDICT_W2B_INCUMBENT_AT_OBS` CLEARED [V]
 - Fields: Poly `last`, `obs_time`; Kalshi `yes_bid`/`yes_ask` at completed bar; `implied_p_method==mid` for \(m_L\)
 
-## TRANSFORMS / NORMALIZATION
+## TRANSFORMATION / NORMALIZATION
 
-- Missing `last_L` or `m_L` \u2192 ABSTAIN, never impute
+- Missing `last_L` or `m_L` → ABSTAIN, never impute
 - clip basis to \(\pm w\); clip \(p\) to \((\varepsilon,1-\varepsilon)\)
 - No learned weights. No quote fabrication
 - No silent fallback to decision-time mid
@@ -115,38 +115,38 @@ If `last_L` > \(m_L\), \(b>0\) and \(p\) rises vs \(m_L\) (capped). Converse if 
 
 ## FAILURE REGIME
 
-- Sparse last / missing \(m_L\) \u2192 FAIL-INSUFFICIENT / chronic ABSTAIN
+- Sparse last / missing \(m_L\) → FAIL-INSUFFICIENT / chronic ABSTAIN
 - Stale last after clip still noise vs \(m_L\)
-- Using decision-time mid as incumbent \u2192 verdict violation / wrong claim
+- Using decision-time mid as incumbent → verdict violation / wrong claim
 - last-as-mid leakage if someone relabels
-- N=254/240 is the pairable set, not 604 \u2014 do not invent 604 coverage
+- N=254/240 is the pairable set, not 604 — do not invent 604 coverage
 
 ## FALSIFICATION
 
 On **each** headline separately vs **\(m_L\)** (not decision-time mid):
 
-Skill requires **both** \u0394Brier < 0 and \u0394LogLoss < 0 (model \u2212 \(m_L\); lower-is-better).  
-Kill / REDUNDANT if \u0394Brier \u2265 0 **or** \u0394LogLoss \u2265 0, or CIs cover 0.  
+Skill requires **both** ΔBrier < 0 and ΔLogLoss < 0 (model − \(m_L\); lower-is-better).  
+Kill / REDUNDANT if ΔBrier ≥ 0 **or** ΔLogLoss ≥ 0, or CIs cover 0.  
 Also kill if one headline works and the other inverts (no pool, no venue pool).
 
-A \u0394 vs TEST-007 decision-time mid is **out of scope** on this card and stays UNTESTED. Do not report it as this instrument.
+A Δ vs TEST-007 decision-time mid is **out of scope** on this card and stays UNTESTED. Do not report it as this instrument.
 
 Placebos:
 1. Shuffle `last_L` vs \(m_L\) within cell
-2. \u03bb = 0 (must give \u0394 = 0 vs \(m_L\))
+2. λ = 0 (must give Δ = 0 vs \(m_L\))
 3. Flip sign of \(b\)
 4. Swap incumbent to decision-time mid (must not be this card; that is held 004)
 
-Do not retune \u03bb/\(w\) or headlines after a sheet. Do not patch 004. Do not invent Poly mid to rescue. Do not lift Examiner from this filing.
+Do not retune λ/\(w\) or headlines after a sheet. Do not patch 004. Do not invent Poly mid to rescue. Do not lift Examiner from this filing.
 
 ## LEAKAGE & REDUNDANCY CONTROLS
 
 - Ablation vs \(m_L\) alone required
-- Ablation vs unclipped last (no \(w\)) \u2014 if required to win, instrument is not *clipped* last
+- Ablation vs unclipped last (no \(w\)) — if required to win, instrument is not *clipped* last
 - Not 004 (wrong incumbent). Not W2-C / W2-A / W2-E / W2-D / CB-VEL
 - USED_RESEARCH if ever scored on the pairable set
 - Holdout closed
 
 ## Evidence notes
 
-Thesis [H]. \u03bb/\(w\)/\u03b5 [A] frozen **before** any sheet. Incumbent = \(m_L\) [V]. CLEARED 254/240 [V]. last \u2260 mid [V]. 004 not edited [V]. Examiner **DARK** [V]. Measurement **UNTESTED**. No invented \u0394 or Poly mids. Trade FORBIDDEN.
+Thesis [H]. λ/\(w\)/ε [A] frozen **before** any sheet. Incumbent = \(m_L\) [V]. CLEARED 254/240 [V]. last ≠ mid [V]. 004 not edited [V]. Examiner **DARK** [V]. Measurement **UNTESTED**. No invented Δ or Poly mids. Trade FORBIDDEN.
