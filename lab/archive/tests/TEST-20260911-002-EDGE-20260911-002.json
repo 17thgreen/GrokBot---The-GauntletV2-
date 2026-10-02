@@ -1,0 +1,199 @@
+{
+  "TEST_ID": "TEST-20260911-002",
+  "edge_id": "EDGE-20260911-002",
+  "package_id": "PROV-MEAS-EDGE-20260911-002",
+  "MEASUREMENT": "FAIL",
+  "verdict": "FAIL",
+  "holdout": "SEALED",
+  "holdout_sealed": true,
+  "invented_numbers": false,
+  "delta_exec_ms": 500,
+  "C_base_bps": 7.0,
+  "C_base_tag": "[A]",
+  "cemetery_citations": [
+    "CEM-20260910-001",
+    "CEM-20260910-002",
+    "CEM-20260910-003"
+  ],
+  "cemetery_citation": "CEM-20260910-001;CEM-20260910-002;CEM-20260910-003",
+  "validation_ran": false,
+  "l2_proxy": false,
+  "not_rewrite_of_EDGE_005_006": true,
+  "primary_cell": {
+    "p": 0.95,
+    "W_ms": 60000,
+    "K": 3,
+    "C_star": 0.5,
+    "P_star": 0.67,
+    "V_min": 0.0,
+    "L_size": 2000,
+    "L": 288,
+    "alpha": 0.5,
+    "delta_exec_ms": 500,
+    "h_bars": 1
+  },
+  "instruments": [
+    {
+      "symbol": "BTCUSDT",
+      "research": {
+        "signal_count": 7272,
+        "distinct_utc_days": 1089,
+        "mean_gross_bps": -0.10682936552910584,
+        "mean_net_1x": -7.106829365529106,
+        "mean_net_2x": -14.106829365529105,
+        "mean_net_3x": -21.106829365529105,
+        "hit_rate": 0.48047304730473045,
+        "nw_ci_low": -0.3717565293733143,
+        "nw_ci_high": 0.15809779831510268,
+        "concentration_day_frac": 0.8775181305398871
+      },
+      "placebo_scramble_sides": {
+        "signal_count": 745,
+        "distinct_utc_days": 401,
+        "mean_gross_bps": -0.08378684788554285,
+        "mean_net_1x": -7.083786847885543,
+        "mean_net_2x": -14.083786847885543,
+        "mean_net_3x": -21.08378684788554,
+        "hit_rate": 0.508724832214765,
+        "nw_ci_low": -0.6474283463265816,
+        "nw_ci_high": 0.479854650555496,
+        "concentration_day_frac": 0.32312651087832395
+      },
+      "placebo_size_shuffle": {
+        "signal_count": 4,
+        "distinct_utc_days": 4,
+        "mean_gross_bps": 2.207390662304909,
+        "mean_net_1x": -4.792609337695091,
+        "mean_net_2x": -11.79260933769509,
+        "mean_net_3x": -18.79260933769509,
+        "hit_rate": 0.75,
+        "nw_ci_low": -0.957924273182285,
+        "nw_ci_high": 5.372705597792103,
+        "concentration_day_frac": 0.0032232070910556
+      },
+      "placebo_kill_pers": {
+        "signal_count": 12754,
+        "distinct_utc_days": 1159,
+        "mean_gross_bps": -0.1561464100372843,
+        "mean_net_1x": -7.156146410037285,
+        "mean_net_2x": -14.156146410037284,
+        "mean_net_3x": -21.156146410037284,
+        "hit_rate": 0.4769484083424808,
+        "nw_ci_low": -0.34682432089572585,
+        "nw_ci_high": 0.034531500821157246,
+        "concentration_day_frac": 0.9339242546333602
+      },
+      "ohlcv_nested": {
+        "signal_count": 72212,
+        "distinct_utc_days": 1241,
+        "mean_gross_bps": -0.6595171564565908,
+        "mean_net_1x": -7.659517156456591,
+        "mean_net_2x": -14.659517156456591,
+        "mean_net_3x": -21.65951715645659,
+        "hit_rate": 0.44891430787126796,
+        "nw_ci_low": -0.8666132753981037,
+        "nw_ci_high": -0.4524210375150779,
+        "concentration_day_frac": 1.0
+      },
+      "placebo_beats": true,
+      "ohlcv_redundant": false,
+      "verdict": "FAIL",
+      "reasons": [
+        "mean gross <= 0 after \u0394_exec (gross=-0.10682936552910584)",
+        "net@1\u00d7 <= 0 after \u0394_exec (net_1x=-7.106829365529106)",
+        "placebo matches or beats primary within CI noise",
+        "single-spike / kill-PERS matches or beats full signal"
+      ],
+      "validation": null,
+      "validation_ran": false,
+      "not_L2_005_006": true
+    },
+    {
+      "symbol": "ETHUSDT",
+      "research": {
+        "signal_count": 6595,
+        "distinct_utc_days": 1121,
+        "mean_gross_bps": -0.3765284245285184,
+        "mean_net_1x": -7.3765284245285185,
+        "mean_net_2x": -14.376528424528518,
+        "mean_net_3x": -21.37652842452852,
+        "hit_rate": 0.47642153146322974,
+        "nw_ci_low": -0.7535996384367307,
+        "nw_ci_high": 0.0005427893796938754,
+        "concentration_day_frac": 0.9033037872683319
+      },
+      "placebo_scramble_sides": {
+        "signal_count": 687,
+        "distinct_utc_days": 405,
+        "mean_gross_bps": -0.028643682394550653,
+        "mean_net_1x": -7.02864368239455,
+        "mean_net_2x": -14.02864368239455,
+        "mean_net_3x": -21.028643682394552,
+        "hit_rate": 0.5036390101892285,
+        "nw_ci_low": -0.8665445819622816,
+        "nw_ci_high": 0.8092572171731803,
+        "concentration_day_frac": 0.32634971796937956
+      },
+      "placebo_size_shuffle": {
+        "signal_count": 3,
+        "distinct_utc_days": 3,
+        "mean_gross_bps": 0.5226738700710628,
+        "mean_net_1x": -6.4773261299289375,
+        "mean_net_2x": -13.477326129928937,
+        "mean_net_3x": -20.477326129928937,
+        "hit_rate": 0.3333333333333333,
+        "nw_ci_low": -2.052361098207783,
+        "nw_ci_high": 3.097708838349909,
+        "concentration_day_frac": 0.0024174053182917004
+      },
+      "placebo_kill_pers": {
+        "signal_count": 14196,
+        "distinct_utc_days": 1179,
+        "mean_gross_bps": -0.3412432422816741,
+        "mean_net_1x": -7.341243242281674,
+        "mean_net_2x": -14.341243242281674,
+        "mean_net_3x": -21.341243242281674,
+        "hit_rate": 0.4821076359537898,
+        "nw_ci_low": -0.5674488122763873,
+        "nw_ci_high": -0.11503767228696082,
+        "concentration_day_frac": 0.9500402900886382
+      },
+      "ohlcv_nested": {
+        "signal_count": 71979,
+        "distinct_utc_days": 1241,
+        "mean_gross_bps": -0.6191802116949122,
+        "mean_net_1x": -7.619180211694912,
+        "mean_net_2x": -14.619180211694912,
+        "mean_net_3x": -21.61918021169491,
+        "hit_rate": 0.45663318467886466,
+        "nw_ci_low": -0.896052330536725,
+        "nw_ci_high": -0.34230809285309954,
+        "concentration_day_frac": 1.0
+      },
+      "placebo_beats": true,
+      "ohlcv_redundant": true,
+      "verdict": "FAIL",
+      "reasons": [
+        "mean gross <= 0 after \u0394_exec (gross=-0.3765284245285184)",
+        "net@1\u00d7 <= 0 after \u0394_exec (net_1x=-7.3765284245285185)",
+        "REDUNDANT vs OHLCV-only nested control (matches/beats)",
+        "placebo matches or beats primary within CI noise",
+        "single-spike / kill-PERS matches or beats full signal"
+      ],
+      "validation": null,
+      "validation_ran": false,
+      "not_L2_005_006": true
+    }
+  ],
+  "stress_schedule": {
+    "GROSS_C0_DIAGNOSTIC": 0.0,
+    "C_1x": 7.0,
+    "C_2x": 14.0,
+    "C_3x": 21.0,
+    "LATENCY_STRESS_+1bp_[A]": 8.0,
+    "LATENCY_STRESS_+3bp_[A]": 10.0
+  },
+  "data_trades": "/workspace/lab/data/DATA-PROV-TRADES-001",
+  "data_ohlcv": "/workspace/lab/data/DATA-PROV-001",
+  "scope_cut_max_days": null
+}
