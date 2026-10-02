@@ -85,7 +85,7 @@ Blank operable template: `archive/templates/BINARY_CONTRACT.md`.
 | `STATUS` | YES | `OPEN` \| `CLOSED` \| `RESOLVED` \| `VOID` \| `DISPUTED` \| `QUARANTINED` |
 | `RESOLUTION` | WHEN DONE | `YES` \| `NO` \| `VOID` + evidence tag `[V]` + pointer |
 | `TICK_SIZE` / `FEE_SCHEDULE_REF` | YES | Pricing grid + fee doc ref (tagged) |
-| `LIQUIDITY_NOTES` | YES | `[V]`/`[I]`/`[H]` — depth, spreads; inventing depth forbidden |
+| `LIQUIDITY_NOTES` | YES | `[V]/[I]/[H]` — depth, spreads; inventing depth forbidden |
 | `KNOWABILITY` | YES | What is knowable at decision \(t\) (Clock grades) |
 | `PROVENANCE` | YES | Registration agent, date UTC, DATA-* links |
 
@@ -108,7 +108,7 @@ Let:
 
 - \(p_t\) = model’s forecast \(P(\text{YES} \mid \mathcal{I}_t)\)
 - \(m_t\) = venue implied probability of YES at decision time \(t\) (document mid vs microprice vs last; tag `[A]` if choice is conventional)
-- \(c\) = round-trip cost in probability points (fees + half-spread + expected slippage), tagged `[V]`/`[I]`/`[H]`/`[U]`
+- \(c\) = round-trip cost in probability points (fees + half-spread + expected slippage), tagged `[V]/[I]/[H]`/`[U]`
 
 **Gross edge (YES side):**
 
@@ -325,7 +325,7 @@ Failure to beat the market after honest measurement is **successful institution-
 ### 13.2 Milestones
 
 | # | Milestone | Done when |
-|---|-----------|----------|
+|---|-----------|-----------|
 | 1 | Mission + schemas filed | This doc + `BINARY_CONTRACT` / `FEATURE` / `STRATEGY_LEAGUE` templates on disk |
 | 2 | AMD stub indexed | `AMD-20260911-PM-001` as DOMAIN OBJECTIVE EXPANSION · `RETROACTIVE: NO` |
 | 3 | First DATA-* family for PM adapter | Dataset card + Clock review path (no silent fetch mandate here) |
