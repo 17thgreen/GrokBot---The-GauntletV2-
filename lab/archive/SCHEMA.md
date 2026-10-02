@@ -108,3 +108,28 @@ Conductor cannot waive this amendment.
 | Provisional series | `DATA-PROV-NNN` | `DATA-PROV-001` |
 
 Provisional reference venues are **not** venue marriage. Raw must be immutable + sha256 + manifest before Archivist marks READY. Research slices must not open until Conductor seals final 20% holdout and Clock verdicts.
+
+## Amendment IDs (institutional)
+
+- `AMD-YYYYMMDD-NNN` — filed under `governance/` after Human Governor approval
+- Schema: see `governance/AMENDMENT_RULE.md` + `governance/templates/AMENDMENT.md`
+- Default `RETROACTIVE: NO` — past TEST/CEM/EDGE verdicts stand under rules then in force
+
+## Prediction-market IDs (domain expansion AMD-20260911-PM-001)
+
+- `CONTRACT-YYYYMMDD-NNN` — binary contract ground truth (`templates/BINARY_CONTRACT.md`)
+- `FEAT-YYYYMMDD-NNN` — feature card (`templates/FEATURE.md`)
+- `STRATEGY-YYYYMMDD-NNN` — strategy league entry (`templates/STRATEGY_LEAGUE.md`)
+- `AMD-YYYYMMDD-…` — amendments under `governance/` (+ mirror `archive/amendments/`)
+- Venue adapters (`POLYMARKET_US`, `KALSHI`, …) are adapters — not hard-primary
+- RETROACTIVE default NO — does not rewrite prior CEM/TEST/EDGE
+
+## Contract registry (Track B)
+
+- Template: `templates/CONTRACT_REGISTRY.md` — append-only index of `CONTRACT-YYYYMMDD-NNN`
+- Per-contract body: `templates/BINARY_CONTRACT.md`
+- Active instance (when opened by Archivist): `contracts/CONTRACT_REGISTRY.md`
+- Binary measurement: `governance/BINARY_EXAMINER_SPEC.md` (missing metrics = `UNTESTED`)
+
+## Dataset IDs — prediction market
+- `DATA-PROV-PM-NNN` — provisional PM L1 contract samples (Track B); distinct from OHLCV/trades/funding/OI

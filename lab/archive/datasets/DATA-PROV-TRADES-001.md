@@ -1,7 +1,7 @@
 # DATA-PROV-TRADES-001
 
 - **DATA_ID:** DATA-PROV-TRADES-001
-- **STATUS:** CLOCK_REVIEW
+- **STATUS:** CONDITIONAL
 - **Registered:** 2026-09-11 UTC (Archivist)
 - **Fetch complete:** 2026-09-11T00:42:02Z (manifest)
 - **Spec:** `/workspace/lab/governance/DATA_PROV_TRADES_001_SPEC.md`
@@ -31,12 +31,26 @@
 
 | Path | Access |
 |------|--------|
-| raw/ | immutable; Clock review |
-| derived/ | empty until Clock + approved transforms |
-| Examiner | **BLOCKED until Clock verdict** |
-| EDGE-20260911-001/002 TEST | held until Clock + Conductor route |
+| raw/ | immutable; Clock CONDITIONAL |
+| derived/ | empty until approved transforms |
+| Examiner | **CLEARED for trade-flow-only** after Conductor route (001 then 002 commissioned) |
+| EDGE-20260911-001 | IN_TEST — provisional RESEARCH TEST commissioned |
+| EDGE-20260911-002 | HYPOTHESIS — next after 001; CLEARED for trade-flow TEST |
 | EDGE-005/006 | still UNMEASURABLE WITHOUT L2 (this dataset does not unblock) |
+| Seal | timestamp-aligned to OHLCV SEAL_LOCK (not calendar-day) |
 
 ## Status history
 1. FETCH_IN_PROGRESS
-2. **CLOCK_REVIEW** ← current (fetch COMPLETE; Examiner blocked until Clock)
+2. CLOCK_REVIEW (fetch COMPLETE)
+3. **CONDITIONAL** ← current (2026-09-11T00:59:35Z) — Clock DATA VERDICT: APPROVED_WITH_LIMITATIONS; trade-flow edges cleared; EDGE-005/006 still blocked; timestamp-aligned seals preferred
+
+## Clock DATA VERDICT
+
+- **Verdict:** CONDITIONAL
+- **Quality:** APPROVED_WITH_LIMITATIONS
+- **Failures:** none (hard inventory/hash; sampled integrity)
+- **Safe features:** aggressor-signed aggTrades with transact_time <= decision; completed-interval trade-flow features
+- **Unsafe features:** L2 proxies (005/006); lookahead trades; receipt-time claims; day-aligned seal leaks on boundary days
+- **Required remediation:** optional full-zip content inventory; receipt-time on live feeds; L2 before 005/006; timestamp-aligned seals; forward window + cross-venue before capital
+- **Full verdict:** `/workspace/lab/data/DATA-PROV-TRADES-001/provenance/DATA_VERDICT_DATA-PROV-TRADES-001.md`
+- **Audit:** `/workspace/lab/archive/audit/2026-09-11-Clock-DATA-VERDICT-DATA-PROV-TRADES-001.md`
