@@ -42,3 +42,4 @@
 - Holdout and forward windows follow the same honesty: prior peek ⇒ not sealable as untouched.
 
 **RETROACTIVE:** NO — this ledger governs going-forward opens; it does not rewrite prior TEST/CEM verdicts.
+
