@@ -17,13 +17,17 @@
 - n with 60/60 locked seconds: 1208
 - n with any MISSING slot in close minute: 0
 - n with pre_close_last: 1208
-- Missing-slot rate BTC: 0.000000
-- Missing-slot rate ETH: 0.000000
+- Missing-slot rate (mean missing slots / 60) BTC: 0.000000
+- Missing-slot rate (mean missing slots / 60) ETH: 0.000000
+- Contracts with ≥1 missing BTC: 0 / 604
+- Contracts with ≥1 missing ETH: 0 / 604
 
 ## Clock audit only (NOT a feature)
-- Reconstructed 60s mean vs EXPIRATION_VALUE: n=1208, MAE=0.144134
+- Reconstructed 60s mean vs EXPIRATION_VALUE: n=1208, MAE=0.1441343818984217
 - EXPIRATION_VALUE not used as p / feature
 
-## Artifacts (local only; not in git)
-- raw/: hour JSON
+## Artifacts
+- raw/: `{BRTI|ETHUSD_RTI}_HOUR_YYYY-mm-ddTHH.json`
 - derived/close_minute_1hz.ndjson
+- derived/pre_close_last.ndjson
+- derived/contract_tick_coverage.ndjson
