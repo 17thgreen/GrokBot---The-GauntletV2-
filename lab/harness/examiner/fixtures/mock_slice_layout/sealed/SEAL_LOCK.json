@@ -1,0 +1,1 @@
+{"dataset":"MOCK","warmup_bars":8,"fractions":{"research":0.6,"validation":0.2,"historical_holdout":0.2}}
