@@ -1,0 +1,116 @@
+{
+  "label": "DATA-PROV-CB-001",
+  "fetched_at_utc": "2026-09-13T20:45:29Z",
+  "window_start": "2026-09-04T20:00:00Z",
+  "window_end": "2026-09-11T20:59:00Z",
+  "granularity": 60,
+  "products": {
+    "BTC-USD": {
+      "product": "BTC-USD",
+      "path": "/workspace/lab/data/DATA-PROV-CB-001/raw/BTC-USD_1m.csv",
+      "n_requests": 34,
+      "http_status_counts": {
+        "200": 34
+      },
+      "n_unique_bars_all_fetched": 10142,
+      "n_bars_in_window": 10140,
+      "n_expected_in_window": 10140,
+      "n_missing_in_window": 0,
+      "missing_sample": [],
+      "first_bar_iso": "2026-09-04T19:59:00Z",
+      "last_bar_iso": "2026-09-11T21:00:00Z",
+      "page_log_tail": [
+        {
+          "n": 30,
+          "status": 200,
+          "start": "2026-09-10T20:59:00Z",
+          "end": "2026-09-11T01:59:00Z",
+          "n_candles": 301
+        },
+        {
+          "n": 31,
+          "status": 200,
+          "start": "2026-09-11T01:59:00Z",
+          "end": "2026-09-11T06:59:00Z",
+          "n_candles": 301
+        },
+        {
+          "n": 32,
+          "status": 200,
+          "start": "2026-09-11T06:59:00Z",
+          "end": "2026-09-11T11:59:00Z",
+          "n_candles": 301
+        },
+        {
+          "n": 33,
+          "status": 200,
+          "start": "2026-09-11T11:59:00Z",
+          "end": "2026-09-11T16:59:00Z",
+          "n_candles": 301
+        },
+        {
+          "n": 34,
+          "status": 200,
+          "start": "2026-09-11T16:59:00Z",
+          "end": "2026-09-11T21:00:00Z",
+          "n_candles": 242
+        }
+      ],
+      "page_log_n": 34
+    },
+    "ETH-USD": {
+      "product": "ETH-USD",
+      "path": "/workspace/lab/data/DATA-PROV-CB-001/raw/ETH-USD_1m.csv",
+      "n_requests": 34,
+      "http_status_counts": {
+        "200": 34
+      },
+      "n_unique_bars_all_fetched": 10142,
+      "n_bars_in_window": 10140,
+      "n_expected_in_window": 10140,
+      "n_missing_in_window": 0,
+      "missing_sample": [],
+      "first_bar_iso": "2026-09-04T19:59:00Z",
+      "last_bar_iso": "2026-09-11T21:00:00Z",
+      "page_log_tail": [
+        {
+          "n": 30,
+          "status": 200,
+          "start": "2026-09-10T20:59:00Z",
+          "end": "2026-09-11T01:59:00Z",
+          "n_candles": 301
+        },
+        {
+          "n": 31,
+          "status": 200,
+          "start": "2026-09-11T01:59:00Z",
+          "end": "2026-09-11T06:59:00Z",
+          "n_candles": 301
+        },
+        {
+          "n": 32,
+          "status": 200,
+          "start": "2026-09-11T06:59:00Z",
+          "end": "2026-09-11T11:59:00Z",
+          "n_candles": 301
+        },
+        {
+          "n": 33,
+          "status": 200,
+          "start": "2026-09-11T11:59:00Z",
+          "end": "2026-09-11T16:59:00Z",
+          "n_candles": 301
+        },
+        {
+          "n": 34,
+          "status": 200,
+          "start": "2026-09-11T16:59:00Z",
+          "end": "2026-09-11T21:00:00Z",
+          "n_candles": 242
+        }
+      ],
+      "page_log_n": 34
+    }
+  },
+  "trade": "FORBIDDEN"
+}
