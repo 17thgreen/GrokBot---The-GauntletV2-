@@ -145,7 +145,7 @@
         }
       ],
       "sample_missing": [],
-      "fail_closed_rule": "if sibling missing or excluded \u2192 own mid (p_t := m_t); no speak"
+      "fail_closed_rule": "if sibling missing or excluded \u2192 p_t := m_t (own mid); no speak"
     },
     "headline_B": {
       "id": "headline_B",
@@ -223,7 +223,7 @@
         }
       ],
       "sample_missing": [],
-      "fail_closed_rule": "if sibling missing or excluded \u2192 own mid (p_t := m_t); no speak"
+      "fail_closed_rule": "if sibling missing or excluded \u2192 p_t := m_t (own mid); no speak"
     },
     "annex_BTC_T14m": {
       "id": "annex_BTC_T14m",
@@ -302,7 +302,7 @@
         }
       ],
       "sample_missing": [],
-      "fail_closed_rule": "if sibling missing or excluded \u2192 own mid (p_t := m_t); no speak"
+      "fail_closed_rule": "if sibling missing or excluded \u2192 p_t := m_t (own mid); no speak"
     }
   },
   "knowability": {
