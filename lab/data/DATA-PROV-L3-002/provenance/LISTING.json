@@ -1,0 +1,44 @@
+{
+  "DATA_ID": "DATA-PROV-L3-002",
+  "fetched_at_utc": "2026-09-13T18:48:36Z",
+  "dates": [
+    "2026-09-12"
+  ],
+  "symbols": [
+    "BTCUSDT",
+    "ETHUSDT"
+  ],
+  "skipped_dates": [
+    "2026-09-13"
+  ],
+  "skip_reason_2026-09-13": "inventory HEAD returned HTTP 404; do not fetch",
+  "not_redownloaded": "DATA-PROV-L3-001 covers 2026-09-04..11",
+  "files": [
+    {
+      "symbol": "BTCUSDT",
+      "date": "2026-09-12",
+      "path": "raw/vision_spot_1m/BTCUSDT-1m-2026-09-12.zip",
+      "bytes": 63357,
+      "sha256": "a271cb4c1ddb3c68d3fbbf2dd45ee77e4a718be6f1946dde5577b0bbba430eb2",
+      "http": 200,
+      "n_bars": 1440,
+      "timestamp_unit_in": "microseconds_div_1000",
+      "open_time_ms_min": 1789171200000,
+      "open_time_ms_max": 1789257540000
+    },
+    {
+      "symbol": "ETHUSDT",
+      "date": "2026-09-12",
+      "path": "raw/vision_spot_1m/ETHUSDT-1m-2026-09-12.zip",
+      "bytes": 63684,
+      "sha256": "58542d93f3ce1f41ce94d291361fb124f4de3d198ac38d7ad6262df0f4a5f4d7",
+      "http": 200,
+      "n_bars": 1440,
+      "timestamp_unit_in": "microseconds_div_1000",
+      "open_time_ms_min": 1789171200000,
+      "open_time_ms_max": 1789257540000
+    }
+  ],
+  "errors": [],
+  "finished_at_utc": "2026-09-13T18:48:37Z"
+}
