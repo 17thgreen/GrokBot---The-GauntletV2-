@@ -1,0 +1,501 @@
+{
+  "audit": "CLOCK_AUDIT_PM004_L3002_JOIN",
+  "issued_utc": "2026-09-13T22:05:27Z",
+  "order": "/workspace/lab/governance/CLOCK_ORDER_PM004_L3002_JOIN_2026-09-13.md",
+  "trade": "FORBIDDEN",
+  "not_feature": true,
+  "not_ready": true,
+  "f4_commissioned": false,
+  "examiner": "dark",
+  "alpha": false,
+  "verdict_draft": "CONDITIONAL",
+  "certified_rule": {
+    "name": "B",
+    "rule": "last L3-002 1m bar with bar_end_ms < decision_time_ms",
+    "bar_end_ms": "open_time_ms + 60000  (== close_time_ms + 1; Vision close \u202659999)",
+    "calendar_gate": "decision_time UTC calendar day must be 2026-09-12 for with_L3 hit",
+    "why_B_not_A": "Wave 007 Feature-style lock B (bar_end < t) preferred; L3-001 lineage used close_time_ms <= t (\u2248 A). For Vision ms, A is close_time_ms <= t which equals bar_end_ms <= t and lands every on-minute decision on bar_end == t. Certify B; report A as caveat count only \u2014 do not silent-switch.",
+    "l3_role": "external_predictor_NOT_oracle_NOT_CF"
+  },
+  "policy_A_caveat": {
+    "rule": "bar_end_ms <= decision_time_ms (equiv. close_time_ms <= decision_time_ms)",
+    "scored": false,
+    "note": "on-minute coincidence counted; not Feature-scored"
+  },
+  "inputs": {
+    "pm004_checkpoints": "/workspace/lab/data/DATA-PROV-PM-004/derived/checkpoints.ndjson",
+    "n_checkpoints_total": 1845,
+    "implied_p_method_counts": {
+      "mid": 1647,
+      "last": 198
+    },
+    "n_mid_ok": 1647,
+    "n_last_excluded": 198,
+    "n_mid_rejected_bidask": 0,
+    "last_as_mid_leaks": 0,
+    "mid_by_calendar_day": {
+      "2026-09-11": 120,
+      "2026-09-12": 855,
+      "2026-09-13": 672
+    },
+    "last_by_calendar_day": {
+      "2026-09-11": 18,
+      "2026-09-12": 105,
+      "2026-09-13": 75
+    },
+    "decision_time_on_minute_mid": 1647,
+    "decision_time_off_minute_mid": 0,
+    "l3_002": {
+      "BTCUSDT": {
+        "path": "/workspace/lab/data/DATA-PROV-L3-002/derived/BTCUSDT-1m-2026-09-12.csv",
+        "n_bars": 1440,
+        "first_open_time_ms": 1789171200000,
+        "first_bar_end_ms": 1789171260000,
+        "last_open_time_ms": 1789257540000,
+        "last_bar_end_ms": 1789257600000,
+        "first_open_utc": "2026-09-12T00:00:00Z",
+        "last_bar_end_utc": "2026-09-13T00:00:00Z"
+      },
+      "ETHUSDT": {
+        "path": "/workspace/lab/data/DATA-PROV-L3-002/derived/ETHUSDT-1m-2026-09-12.csv",
+        "n_bars": 1440,
+        "first_open_time_ms": 1789171200000,
+        "first_bar_end_ms": 1789171260000,
+        "last_open_time_ms": 1789257540000,
+        "last_bar_end_ms": 1789257600000,
+        "first_open_utc": "2026-09-12T00:00:00Z",
+        "last_bar_end_utc": "2026-09-13T00:00:00Z"
+      }
+    }
+  },
+  "overlap_out_of_tape": {
+    "sep11_mid": 120,
+    "sep12_mid": 855,
+    "sep13_mid": 672,
+    "expected_miss_non_sep12": 792,
+    "note": "L3-002 has 2026-09-12 only (Sep-13 Vision 404 at inventory). Non-Sep-12 mid rows are expected miss_L3 under calendar gate.",
+    "ungated_sep13_B_counterfactual_NOT_certified": {
+      "hit": 672,
+      "miss": 0,
+      "lag_sec_min": 60.0,
+      "lag_sec_max": 67500.0,
+      "note": "Without calendar gate, Sep-13 would stale-hit last Sep-12 bar with growing lag \u2014 FORBIDDEN / not certified."
+    }
+  },
+  "coverage_all_mid_calendar_gated": {
+    "totals": {
+      "N_pm004_mid": 1647,
+      "N_with_L3_B": 851,
+      "miss_L3": 796,
+      "lookahead": 0,
+      "N_with_L3_A": 853,
+      "miss_L3_A": 794,
+      "lookahead_A": 0,
+      "on_minute_A": 853,
+      "B_eq_t": 0,
+      "lag_sec_B": {
+        "60.0": 851
+      }
+    },
+    "by_asset_rem": [
+      {
+        "asset": "BTC",
+        "symbol": "BTCUSDT",
+        "time_remaining_sec": 840,
+        "N_pm004_mid": 184,
+        "N_with_L3_B": 95,
+        "miss_L3": 89,
+        "lookahead": 0,
+        "N_with_L3_A_caveat": 96,
+        "miss_L3_A_caveat": 88,
+        "on_minute_A_caveat": 96,
+        "lag_sec_B": {
+          "60.0": 95
+        },
+        "B_eq_t": 0
+      },
+      {
+        "asset": "BTC",
+        "symbol": "BTCUSDT",
+        "time_remaining_sec": 600,
+        "N_pm004_mid": 184,
+        "N_with_L3_B": 96,
+        "miss_L3": 88,
+        "lookahead": 0,
+        "N_with_L3_A_caveat": 96,
+        "miss_L3_A_caveat": 88,
+        "on_minute_A_caveat": 96,
+        "lag_sec_B": {
+          "60.0": 96
+        },
+        "B_eq_t": 0
+      },
+      {
+        "asset": "BTC",
+        "symbol": "BTCUSDT",
+        "time_remaining_sec": 300,
+        "N_pm004_mid": 184,
+        "N_with_L3_B": 96,
+        "miss_L3": 88,
+        "lookahead": 0,
+        "N_with_L3_A_caveat": 96,
+        "miss_L3_A_caveat": 88,
+        "on_minute_A_caveat": 96,
+        "lag_sec_B": {
+          "60.0": 96
+        },
+        "B_eq_t": 0
+      },
+      {
+        "asset": "BTC",
+        "symbol": "BTCUSDT",
+        "time_remaining_sec": 60,
+        "N_pm004_mid": 182,
+        "N_with_L3_B": 96,
+        "miss_L3": 86,
+        "lookahead": 0,
+        "N_with_L3_A_caveat": 96,
+        "miss_L3_A_caveat": 86,
+        "on_minute_A_caveat": 96,
+        "lag_sec_B": {
+          "60.0": 96
+        },
+        "B_eq_t": 0
+      },
+      {
+        "asset": "BTC",
+        "symbol": "BTCUSDT",
+        "time_remaining_sec": 0,
+        "N_pm004_mid": 90,
+        "N_with_L3_B": 42,
+        "miss_L3": 48,
+        "lookahead": 0,
+        "N_with_L3_A_caveat": 42,
+        "miss_L3_A_caveat": 48,
+        "on_minute_A_caveat": 42,
+        "lag_sec_B": {
+          "60.0": 42
+        },
+        "B_eq_t": 0
+      },
+      {
+        "asset": "ETH",
+        "symbol": "ETHUSDT",
+        "time_remaining_sec": 840,
+        "N_pm004_mid": 185,
+        "N_with_L3_B": 95,
+        "miss_L3": 90,
+        "lookahead": 0,
+        "N_with_L3_A_caveat": 96,
+        "miss_L3_A_caveat": 89,
+        "on_minute_A_caveat": 96,
+        "lag_sec_B": {
+          "60.0": 95
+        },
+        "B_eq_t": 0
+      },
+      {
+        "asset": "ETH",
+        "symbol": "ETHUSDT",
+        "time_remaining_sec": 600,
+        "N_pm004_mid": 185,
+        "N_with_L3_B": 96,
+        "miss_L3": 89,
+        "lookahead": 0,
+        "N_with_L3_A_caveat": 96,
+        "miss_L3_A_caveat": 89,
+        "on_minute_A_caveat": 96,
+        "lag_sec_B": {
+          "60.0": 96
+        },
+        "B_eq_t": 0
+      },
+      {
+        "asset": "ETH",
+        "symbol": "ETHUSDT",
+        "time_remaining_sec": 300,
+        "N_pm004_mid": 185,
+        "N_with_L3_B": 96,
+        "miss_L3": 89,
+        "lookahead": 0,
+        "N_with_L3_A_caveat": 96,
+        "miss_L3_A_caveat": 89,
+        "on_minute_A_caveat": 96,
+        "lag_sec_B": {
+          "60.0": 96
+        },
+        "B_eq_t": 0
+      },
+      {
+        "asset": "ETH",
+        "symbol": "ETHUSDT",
+        "time_remaining_sec": 60,
+        "N_pm004_mid": 180,
+        "N_with_L3_B": 95,
+        "miss_L3": 85,
+        "lookahead": 0,
+        "N_with_L3_A_caveat": 95,
+        "miss_L3_A_caveat": 85,
+        "on_minute_A_caveat": 95,
+        "lag_sec_B": {
+          "60.0": 95
+        },
+        "B_eq_t": 0
+      },
+      {
+        "asset": "ETH",
+        "symbol": "ETHUSDT",
+        "time_remaining_sec": 0,
+        "N_pm004_mid": 88,
+        "N_with_L3_B": 44,
+        "miss_L3": 44,
+        "lookahead": 0,
+        "N_with_L3_A_caveat": 44,
+        "miss_L3_A_caveat": 44,
+        "on_minute_A_caveat": 44,
+        "lag_sec_B": {
+          "60.0": 44
+        },
+        "B_eq_t": 0
+      }
+    ]
+  },
+  "coverage_sep12_only": {
+    "totals": {
+      "N_pm004_mid": 855,
+      "N_with_L3_B": 851,
+      "miss_L3": 4,
+      "lookahead": 0,
+      "N_with_L3_A": 853,
+      "miss_L3_A": 2,
+      "lookahead_A": 0,
+      "on_minute_A": 853,
+      "B_eq_t": 0,
+      "lag_sec_B": {
+        "60.0": 851
+      }
+    },
+    "by_asset_rem": [
+      {
+        "asset": "BTC",
+        "symbol": "BTCUSDT",
+        "time_remaining_sec": 840,
+        "N_pm004_mid": 96,
+        "N_with_L3_B": 95,
+        "miss_L3": 1,
+        "lookahead": 0,
+        "N_with_L3_A_caveat": 96,
+        "miss_L3_A_caveat": 0,
+        "on_minute_A_caveat": 96,
+        "lag_sec_B": {
+          "60.0": 95
+        },
+        "B_eq_t": 0
+      },
+      {
+        "asset": "BTC",
+        "symbol": "BTCUSDT",
+        "time_remaining_sec": 600,
+        "N_pm004_mid": 96,
+        "N_with_L3_B": 96,
+        "miss_L3": 0,
+        "lookahead": 0,
+        "N_with_L3_A_caveat": 96,
+        "miss_L3_A_caveat": 0,
+        "on_minute_A_caveat": 96,
+        "lag_sec_B": {
+          "60.0": 96
+        },
+        "B_eq_t": 0
+      },
+      {
+        "asset": "BTC",
+        "symbol": "BTCUSDT",
+        "time_remaining_sec": 300,
+        "N_pm004_mid": 96,
+        "N_with_L3_B": 96,
+        "miss_L3": 0,
+        "lookahead": 0,
+        "N_with_L3_A_caveat": 96,
+        "miss_L3_A_caveat": 0,
+        "on_minute_A_caveat": 96,
+        "lag_sec_B": {
+          "60.0": 96
+        },
+        "B_eq_t": 0
+      },
+      {
+        "asset": "BTC",
+        "symbol": "BTCUSDT",
+        "time_remaining_sec": 60,
+        "N_pm004_mid": 96,
+        "N_with_L3_B": 96,
+        "miss_L3": 0,
+        "lookahead": 0,
+        "N_with_L3_A_caveat": 96,
+        "miss_L3_A_caveat": 0,
+        "on_minute_A_caveat": 96,
+        "lag_sec_B": {
+          "60.0": 96
+        },
+        "B_eq_t": 0
+      },
+      {
+        "asset": "BTC",
+        "symbol": "BTCUSDT",
+        "time_remaining_sec": 0,
+        "N_pm004_mid": 43,
+        "N_with_L3_B": 42,
+        "miss_L3": 1,
+        "lookahead": 0,
+        "N_with_L3_A_caveat": 42,
+        "miss_L3_A_caveat": 1,
+        "on_minute_A_caveat": 42,
+        "lag_sec_B": {
+          "60.0": 42
+        },
+        "B_eq_t": 0
+      },
+      {
+        "asset": "ETH",
+        "symbol": "ETHUSDT",
+        "time_remaining_sec": 840,
+        "N_pm004_mid": 96,
+        "N_with_L3_B": 95,
+        "miss_L3": 1,
+        "lookahead": 0,
+        "N_with_L3_A_caveat": 96,
+        "miss_L3_A_caveat": 0,
+        "on_minute_A_caveat": 96,
+        "lag_sec_B": {
+          "60.0": 95
+        },
+        "B_eq_t": 0
+      },
+      {
+        "asset": "ETH",
+        "symbol": "ETHUSDT",
+        "time_remaining_sec": 600,
+        "N_pm004_mid": 96,
+        "N_with_L3_B": 96,
+        "miss_L3": 0,
+        "lookahead": 0,
+        "N_with_L3_A_caveat": 96,
+        "miss_L3_A_caveat": 0,
+        "on_minute_A_caveat": 96,
+        "lag_sec_B": {
+          "60.0": 96
+        },
+        "B_eq_t": 0
+      },
+      {
+        "asset": "ETH",
+        "symbol": "ETHUSDT",
+        "time_remaining_sec": 300,
+        "N_pm004_mid": 96,
+        "N_with_L3_B": 96,
+        "miss_L3": 0,
+        "lookahead": 0,
+        "N_with_L3_A_caveat": 96,
+        "miss_L3_A_caveat": 0,
+        "on_minute_A_caveat": 96,
+        "lag_sec_B": {
+          "60.0": 96
+        },
+        "B_eq_t": 0
+      },
+      {
+        "asset": "ETH",
+        "symbol": "ETHUSDT",
+        "time_remaining_sec": 60,
+        "N_pm004_mid": 95,
+        "N_with_L3_B": 95,
+        "miss_L3": 0,
+        "lookahead": 0,
+        "N_with_L3_A_caveat": 95,
+        "miss_L3_A_caveat": 0,
+        "on_minute_A_caveat": 95,
+        "lag_sec_B": {
+          "60.0": 95
+        },
+        "B_eq_t": 0
+      },
+      {
+        "asset": "ETH",
+        "symbol": "ETHUSDT",
+        "time_remaining_sec": 0,
+        "N_pm004_mid": 45,
+        "N_with_L3_B": 44,
+        "miss_L3": 1,
+        "lookahead": 0,
+        "N_with_L3_A_caveat": 44,
+        "miss_L3_A_caveat": 1,
+        "on_minute_A_caveat": 44,
+        "lag_sec_B": {
+          "60.0": 44
+        },
+        "B_eq_t": 0
+      }
+    ],
+    "edge_misses_B": [
+      {
+        "asset": "BTC",
+        "decision_time": "2026-09-12T00:00:00Z",
+        "time_remaining_sec": 0,
+        "venue_native_id": "KXBTC15M-26SEP112000-00",
+        "reason": "no L3-002 bar with bar_end_ms < decision_time (day-start under lock B; Sep-11 prior bar not in L3-002)"
+      },
+      {
+        "asset": "ETH",
+        "decision_time": "2026-09-12T00:00:00Z",
+        "time_remaining_sec": 0,
+        "venue_native_id": "KXETH15M-26SEP112000-00",
+        "reason": "no L3-002 bar with bar_end_ms < decision_time (day-start under lock B; Sep-11 prior bar not in L3-002)"
+      },
+      {
+        "asset": "BTC",
+        "decision_time": "2026-09-12T00:01:00Z",
+        "time_remaining_sec": 840,
+        "venue_native_id": "KXBTC15M-26SEP112015-15",
+        "reason": "no L3-002 bar with bar_end_ms < decision_time (day-start under lock B; Sep-11 prior bar not in L3-002)"
+      },
+      {
+        "asset": "ETH",
+        "decision_time": "2026-09-12T00:01:00Z",
+        "time_remaining_sec": 840,
+        "venue_native_id": "KXETH15M-26SEP112015-15",
+        "reason": "no L3-002 bar with bar_end_ms < decision_time (day-start under lock B; Sep-11 prior bar not in L3-002)"
+      }
+    ],
+    "edge_misses_A_caveat": [
+      {
+        "asset": "BTC",
+        "decision_time": "2026-09-12T00:00:00Z",
+        "time_remaining_sec": 0,
+        "venue_native_id": "KXBTC15M-26SEP112000-00",
+        "reason": "no L3-002 bar with bar_end_ms <= decision_time (exact Sep-12 00:00Z; no prior bar in tape)"
+      },
+      {
+        "asset": "ETH",
+        "decision_time": "2026-09-12T00:00:00Z",
+        "time_remaining_sec": 0,
+        "venue_native_id": "KXETH15M-26SEP112000-00",
+        "reason": "no L3-002 bar with bar_end_ms <= decision_time (exact Sep-12 00:00Z; no prior bar in tape)"
+      }
+    ]
+  },
+  "certifications": {
+    "mid_only_clean": true,
+    "last_as_mid_leaks": 0,
+    "lookahead_B": 0,
+    "lookahead_B_sep12": 0,
+    "B_eq_t_sep12": 0,
+    "oracle_claim": false,
+    "wick_work": false,
+    "f4_commission_language": false,
+    "pm003_peek_as_fill": false
+  },
+  "rationale": "Join works under lock B on Sep-12: 851/855 with 4 named day-start edge holes (bar_end < t needs Sep-11 prior bar not in L3-002). 0 lookahead; B_eq_t=0; lag_sec unique ['60.0']. Policy A caveat: would recover 853 with on_minute_A=853 \u2014 NOT certified; do not silent-switch. Sep-11 mid=120 and Sep-13 mid=672 are expected out-of-tape misses (L3-002 has 2026-09-12 only). last-as-mid leaks=0. L3 = external predictor NOT oracle/CF. F4 not commissioned; Examiner dark; Not Feature / Not READY.",
+  "blockers": [],
+  "state": "inventory for later F4 only \u2014 F4 not commissioned; Examiner dark"
+}

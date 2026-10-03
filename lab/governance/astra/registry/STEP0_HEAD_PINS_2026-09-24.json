@@ -1,0 +1,154 @@
+{
+  "id": "STEP0_HEAD_PINS_2026-09-24",
+  "seat": "The Archivist (Registry)",
+  "task": "Conductor step-0 record repair \u2014 pin main + research heads (CONDUCTOR_ROUTING_KALSHI_EDGE_RESEARCH_2026-09-24.md)",
+  "repo": "17thgreen/GPT-6-Astra-Deathmatch",
+  "method": "GitHub connector READ-ONLY: list_branches (per_page=100, 55 branches returned, single page), list_commits(sha=<short>, per_page=1), list_commits(branch, since) for ancestry; no writes. Raw responses saved on box under /workspace/archivist_step0/",
+  "queried_at_et": "2026-09-24T19:38:10-04:00",
+  "queried_at_note": "heads re-confirmed by list_branches at this time; research pins parents re-read via list_commits",
+  "timezone_note": "commit timestamps from GitHub are UTC (Z); converted to America/New_York (UTC-4, EDT)",
+  "evidence_tags": {
+    "V": "verified on disk or GitHub",
+    "I": "inferred",
+    "U": "unknown"
+  },
+  "pins": [
+    {
+      "label": "main (current)",
+      "requested_short": "34a27202",
+      "full_sha": "34a2720218b4f4f2d6dd0cbde6334ee672a3684b",
+      "resolution": "RESOLVED",
+      "branches": [
+        "main"
+      ],
+      "is_branch_head": true,
+      "branch_head_now": "34a2720218b4f4f2d6dd0cbde6334ee672a3684b",
+      "still_head": true,
+      "commit_date_utc": "2026-09-24T23:20:39Z",
+      "commit_date_et": "2026-09-24T19:20:39-04:00",
+      "author": "17thgreen <130828095+17thgreen@users.noreply.github.com>",
+      "committer": "GitHub (web-flow; squash merge)",
+      "message_first_line": "C1-RJ KXUFCFIGHT settled-join harness (authentic pins, NOT_SCORED) (#49)",
+      "parents": [
+        "a281adc944e4dacffcdb5677a140fabaed675a81"
+      ],
+      "pr": 49,
+      "evidence": "[V] list_branches main.commit.sha; list_commits sha=34a27202",
+      "notes": "Main history reachable from this sha = 46 commits [V]. Parent a281adc9 is the PR47 merge = the main sha the research report says it reviewed (R2). Main has therefore advanced by exactly one commit (PR49) since the report's review snapshot [V]."
+    },
+    {
+      "label": "research/q7-paired-price (report R3)",
+      "requested_short": "01c726ae",
+      "full_sha": "01c726ae9244d801d359e00df67d6a71f4012669",
+      "resolution": "RESOLVED",
+      "branches": [
+        "research/q7-paired-price"
+      ],
+      "is_branch_head": true,
+      "branch_head_now": "01c726ae9244d801d359e00df67d6a71f4012669",
+      "still_head": true,
+      "commit_date_utc": "2026-09-21T18:29:16Z",
+      "commit_date_et": "2026-09-21T14:29:16-04:00",
+      "author": "17thgreen <130828095+17thgreen@users.noreply.github.com>",
+      "committer": "17thgreen",
+      "message_first_line": "Record verified Q7 results and freeze simpler guarded router",
+      "parents": [
+        "f0a2692a09f14210039796f2b2d5ae696de138cd"
+      ],
+      "matches_report_full_sha": true,
+      "evidence": "[V] list_branches + list_commits sha=01c726ae",
+      "notes": "Not reachable from main (not among main's 46 commits) [V]. Containment in other non-main branches not exhaustively checked [U]."
+    },
+    {
+      "label": "research/q8-joint-routing (report R4)",
+      "requested_short": "d7079b6f",
+      "full_sha": "d7079b6fece902e6e4603114a1d9ed5ef5a246c5",
+      "resolution": "RESOLVED",
+      "branches": [
+        "research/q8-joint-routing"
+      ],
+      "is_branch_head": true,
+      "branch_head_now": "d7079b6fece902e6e4603114a1d9ed5ef5a246c5",
+      "still_head": true,
+      "commit_date_utc": "2026-09-22T17:51:39Z",
+      "commit_date_et": "2026-09-22T13:51:39-04:00",
+      "author": "17thgreen <130828095+17thgreen@users.noreply.github.com>",
+      "committer": "17thgreen",
+      "message_first_line": "Freeze eight-game NCAAF/WNBA cohort and bounded capture before tape download",
+      "parents": [
+        "bcd39b319d2d800a04927fce6004f082ea6d012c"
+      ],
+      "matches_report_full_sha": true,
+      "evidence": "[V] list_branches + list_commits sha=d7079b6f",
+      "notes": "Head commit message concerns the M2 NCAAF/WNBA cohort freeze, not Q8 itself; M2_RESULTS.md on m2-continuation states 'Cohort freeze d7079b6 follows specification bcd39b3' [V]. Q8_RESULTS.md is present at this sha [V]. Not reachable from main [V]."
+    },
+    {
+      "label": "research/m2-continuation (report R5)",
+      "requested_short": "f44574e8",
+      "full_sha": "f44574e8f318920cc8fdf87c9c3d35c18bca2107",
+      "resolution": "RESOLVED",
+      "branches": [
+        "research/m2-continuation"
+      ],
+      "is_branch_head": true,
+      "branch_head_now": "f44574e8f318920cc8fdf87c9c3d35c18bca2107",
+      "still_head": true,
+      "commit_date_utc": "2026-09-22T19:33:05Z",
+      "commit_date_et": "2026-09-22T15:33:05-04:00",
+      "author": "17thgreen <130828095+17thgreen@users.noreply.github.com>",
+      "committer": "17thgreen",
+      "message_first_line": "Freeze M4 tested source, exact cohorts and retained capture blockers before outcomes",
+      "parents": [
+        "ed5be41760b74c01116fef633b5c6869b25b40ad"
+      ],
+      "matches_report_full_sha": true,
+      "evidence": "[V] list_branches + list_commits sha=f44574e8",
+      "notes": "Head is an M4 pre-outcome freeze; the report cites M2_RESULTS.md and M3_RESULTS.md at this sha (both present [V]). M4 outcomes not seen at this sha [U]. Not reachable from main [V]."
+    },
+    {
+      "label": "research/all-market-structure-20260924 (report R6)",
+      "requested_short": "a59c9e33",
+      "full_sha": "a59c9e331dcfcd71c957e753bc4fd2460df403c0",
+      "resolution": "RESOLVED",
+      "branches": [
+        "research/all-market-structure-20260924 (ancestor, not head)"
+      ],
+      "is_branch_head": false,
+      "branch_head_now": "cba057e62b3162bbf5cab17f4e2fee532a209ddc",
+      "branch_head_now_date_et": "2026-09-24T02:21:28-04:00",
+      "branch_head_now_message_first_line": "Report original gap strategy windows, capacity and $5,000 sensitivity",
+      "still_head": false,
+      "commits_ahead_of_pin": 25,
+      "ancestry": "a59c9e33 is the parent of 6c5c0590, which is on the linear chain to head cba057e6 (list_commits on branch since 2026-09-24T03:40Z) [V]",
+      "commit_date_utc": "2026-09-24T03:51:18Z",
+      "commit_date_et": "2026-09-23T23:51:18-04:00",
+      "author": "17thgreen <130828095+17thgreen@users.noreply.github.com>",
+      "committer": "17thgreen",
+      "message_first_line": "Preregister candidate trade-tape check after metadata volume warning",
+      "parents": [
+        "4d31474b953bd6f0f4a6e288a83656cd18afd233"
+      ],
+      "matches_report_full_sha": true,
+      "evidence": "[V] list_branches + list_commits sha=a59c9e33 + branch commit list",
+      "notes": "The report's AMS review snapshot is STALE vs the branch: 25 later commits (AMS-005..AMS-010 preregistrations/freezes/results per commit messages, e.g. 'Record 49,308 threshold cases; current fees defeat both gross-positive pairs', 'Record AMS-007 prospective replication...') are NOT covered by the report [V commit messages; content UNVERIFIED]. Not reachable from main [V]."
+    }
+  ],
+  "extra_heads_observed": [
+    {
+      "label": "report R2 main snapshot (not requested; context)",
+      "full_sha": "a281adc944e4dacffcdb5677a140fabaed675a81",
+      "commit_date_et": "2026-09-23T17:50:25-04:00",
+      "message_first_line": "Q7 Arm B Pass-2 portfolio_rank sizing freeze (units only) (#47)",
+      "status": "parent of current main; no longer head [V]"
+    },
+    {
+      "label": "research/neglected-hybrid-20260924 (not cited in report; found in list_branches)",
+      "full_sha": "2253c03cd86eb5515325f1d91b43bdcbea7a902c",
+      "commit_date_et": "2026-09-24T01:31:47-04:00",
+      "message_first_line": "Preserve original CSV line endings for byte-exact offline reproduction",
+      "status": "branch head [V]; branch contains NH-001/NH-001A preregistration (7daf8665), freeze (faa0562f) and results (6de80155) commits per messages [V]; branched from a281adc9 [V]"
+    }
+  ],
+  "unresolved": [],
+  "no_substitution": "No requested sha was substituted. a59c9e33 recorded as pinned; the current head cba057e6 is recorded separately and is NOT a replacement pin."
+}

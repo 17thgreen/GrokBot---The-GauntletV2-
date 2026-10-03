@@ -1,0 +1,41 @@
+{
+  "v1": [
+    {
+      "path": "/workspace/lab/governance/astra/packets/C4_KXCPI_SETTLED_JOIN_HARNESS/DIGESTS.txt",
+      "old_sha256": "a2754a8673bde8a82acb64226877e4f4d4b2d1a135f0b16d18ed7fed409083a8",
+      "new_sha256": "0404abf51bcdda1742de894d2fe6ed0ae91c4b1cfd73c9af9762c3fc0eed55ab",
+      "prev": "/workspace/lab/governance/astra/packets/C4_KXCPI_SETTLED_JOIN_HARNESS/_prev/a2754a8673bde8a82acb64226877e4f4d4b2d1a135f0b16d18ed7fed409083a8.DIGESTS.txt",
+      "appended_line": "# 2026-10-02 Steward annotation (Archivist ruling): realigned old->new 21df2532->bcd27e06 (SOURCE_PINS.json in this folder), b72465d8->968a46e3 (FROZEN_EXPERIMENT.json in this folder); the frozen_experiment line above lists the scout copy scout_c4_settled_rejoin_2026-09-24/FROZEN_EXPERIMENT.json, which was not realigned and still hashes b72465d8; see lab/governance/astra/steward/RULING2_REALIGN_RECORD_2026-10-01.json"
+    },
+    {
+      "path": "/workspace/lab/governance/astra/packets/ATP_KXATPMATCH_SETTLED_JOIN_HARNESS/DIGESTS.txt",
+      "old_sha256": "e72add7818b65edd32ee0132104611d166934688092c23fce762db4f0a5f8745",
+      "new_sha256": "fffe42ef7d9384bafa05c9dfebaf248b4ead40c82d091c7a7d131eadd331c2ea",
+      "prev": "/workspace/lab/governance/astra/packets/ATP_KXATPMATCH_SETTLED_JOIN_HARNESS/_prev/e72add7818b65edd32ee0132104611d166934688092c23fce762db4f0a5f8745.DIGESTS.txt",
+      "appended_line": "# 2026-10-02 Steward annotation (Archivist ruling): realigned old->new 4de33473->509e2cf2 (SOURCE_PINS.json in this folder), 802b40b3->382009b9 (FROZEN_EXPERIMENT.json in this folder); the frozen_experiment line above lists the scout copy scout_atp_settled_rejoin_2026-09-24/FROZEN_EXPERIMENT.json, which was not realigned and still hashes 802b40b3; see lab/governance/astra/steward/RULING2_REALIGN_RECORD_2026-10-01.json"
+    }
+  ],
+  "revisions": [
+    {
+      "event": "REVERT",
+      "at_et": "2026-10-02 19:14:46 EDT",
+      "ruling": "Archivist 2026-10-02 ~19:14 ET: REVERT both; folder DIGESTS were not stale (frozen_experiment points at unrealigned scout copies b72465d8/802b40b3); appends broke SOURCE_PINS and C4 Examiner READY/ACK/scorecard pins",
+      "files": [
+        {
+          "path": "lab/governance/astra/packets/C4_KXCPI_SETTLED_JOIN_HARNESS/DIGESTS.txt",
+          "annotated_sha256": "0404abf51bcdda1742de894d2fe6ed0ae91c4b1cfd73c9af9762c3fc0eed55ab",
+          "restored_sha256": "a2754a8673bde8a82acb64226877e4f4d4b2d1a135f0b16d18ed7fed409083a8",
+          "audit_copy": "lab/governance/astra/steward/doclag_2026-10-02/digests_annotated_reverted/C4_KXCPI_SETTLED_JOIN_HARNESS.0404abf51bcdda1742de894d2fe6ed0ae91c4b1cfd73c9af9762c3fc0eed55ab.DIGESTS.txt",
+          "prev_kept": true
+        },
+        {
+          "path": "lab/governance/astra/packets/ATP_KXATPMATCH_SETTLED_JOIN_HARNESS/DIGESTS.txt",
+          "annotated_sha256": "fffe42ef7d9384bafa05c9dfebaf248b4ead40c82d091c7a7d131eadd331c2ea",
+          "restored_sha256": "e72add7818b65edd32ee0132104611d166934688092c23fce762db4f0a5f8745",
+          "audit_copy": "lab/governance/astra/steward/doclag_2026-10-02/digests_annotated_reverted/ATP_KXATPMATCH_SETTLED_JOIN_HARNESS.fffe42ef7d9384bafa05c9dfebaf248b4ead40c82d091c7a7d131eadd331c2ea.DIGESTS.txt",
+          "prev_kept": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,298 @@
+{
+ "schema": "steward.sync_analysis.v1",
+ "generated_at": "2026-10-02T18:59-04:00",
+ "author": "The Steward (KALSHI)",
+ "read_only": true,
+ "md_twin": {
+  "path": "lab/governance/astra/steward/STEWARD_SYNC_ANALYSIS_2026-10-02.md",
+  "sha256": "b49137046b8ced77325ca20cc921d7f00bf647fc94beb8b597d6168a55a32436"
+ },
+ "inputs": {
+  "sync_log_sha256": "a5fe5f706bda9695727a5bffc3f108293e9d7195580f79c52580b5f9000b191a",
+  "prompt_v3_1_sha256": "df2f54a65ad1d2a0611e446d4bd6cac0df098402a54b838d35ac3fef1aa52997",
+  "run1645_summary_sha256": "9f743e5a8f27feb94af0e2d4e9a6cd4b892415def5d0f8aee3e155dcc466029d",
+  "run1840_stats_sha256": "1f67a233399402f88be91ac16555a45fe34b615d2722d7061bbf4d5821285dae",
+  "truth_scan_sha256": "d2b6a0e4167ed1496b0d2dfeed089616fa2dd37bbf7f6d6b766b2b9ada934e52",
+  "gv2_main_head": "a6af24204cf2b64280f5c51cdee57f4dcbb1e30f"
+ },
+ "task1": {
+  "verdict": "counting_artifact",
+  "truth": {
+   "in_scope": 1211,
+   "in_sync": 680,
+   "new": 530,
+   "modified": 1,
+   "oversize_text_total": 130,
+   "oversize_already_on_main": 83,
+   "real_backlog": 47,
+   "real_backlog_12_25KB": 44,
+   "real_backlog_over_25KB": 3
+  },
+  "per_run": {
+   "0442": [
+    45,
+    0,
+    39,
+    6,
+    8
+   ],
+   "0648": [
+    129,
+    83,
+    46,
+    0,
+    1
+   ],
+   "0841": [
+    77,
+    38,
+    39,
+    0,
+    8
+   ],
+   "1045": [
+    130,
+    83,
+    47,
+    0,
+    0
+   ],
+   "1249": [
+    130,
+    83,
+    47,
+    0,
+    0
+   ],
+   "1446": [
+    115,
+    75,
+    40,
+    0,
+    7
+   ],
+   "1645": [
+    136,
+    83,
+    47,
+    6,
+    0
+   ],
+   "1840": [
+    46,
+    0,
+    40,
+    6,
+    7
+   ]
+  },
+  "per_run_columns": [
+   "deferred",
+   "already_on_main_counted",
+   "real_backlog",
+   "binaries_as_deferred",
+   "real_backlog_missed"
+  ],
+  "mechanisms": [
+   "size gate applied before in-sync compare [V]",
+   "binary vs size gate order [V]",
+   "scope walk varies per run (provenance json, TRADES-001 md, astra-science) [V counts, I cause]",
+   "classifier regenerated per run (varying reason labels) [V]"
+  ],
+  "real_churn": {
+   "new_backlog_files_today": 1,
+   "deferred_paths_with_blob_change": 0
+  }
+ },
+ "task2": {
+  "writes_after_t0_plus_420": 0,
+  "runs": {
+   "0442": {
+    "t0": "04:42:37",
+    "last_write": "04:48:35",
+    "offset_s": 358
+   },
+   "0648": {
+    "t0": "06:48:22",
+    "last_write": "06:52:43",
+    "offset_s": 261
+   },
+   "0841": {
+    "t0": "08:41:03",
+    "last_write": "08:46:58",
+    "offset_s": 355
+   },
+   "1045": {
+    "t0_ge": "10:45:40",
+    "last_write": "10:52:17",
+    "offset_s_le": 397
+   },
+   "1249": {
+    "t0_ge": "12:49:44",
+    "last_write": "12:56:33",
+    "offset_s_le": 409
+   },
+   "1446": {
+    "t0_ge": "14:46:44",
+    "last_write": "14:53:23",
+    "offset_s_le": 399
+   },
+   "1645": {
+    "t0_ge": "16:45:52",
+    "last_write": "16:49:34",
+    "offset_s_le": 222
+   },
+   "1840": {
+    "t0": "18:40:45",
+    "writes": [
+     "18:44:36",
+     "18:46:12",
+     "18:47:12"
+    ],
+    "offset_s": [
+     231,
+     327,
+     387
+    ],
+    "write_cutoff_stopped_at_s": 433
+   }
+  },
+  "run1645_low_landing": "batch 2 single 10,252 B JSON staged 16:50:15, _push_args 16:52:21, never committed or logged; write window exhausted [I]; batch 1 = 2 capture_status.json precheck-hash errors [V]",
+  "conformance_notes": [
+   "RUN_START/RUN_END untimestamped in 1045/1249/1446/1645",
+   "1645 batch 2 not logged as DEFERRED_OVERSIZE inline-not-reproducible"
+  ]
+ },
+ "task3": {
+  "live_in_scope": [
+   "lab/data/DATA-PROV-CB-002/provenance/capture_status.json (~30s)",
+   "lab/data/DATA-PROV-LIQ-001/provenance/capture_status.json (~20-40s)",
+   "lab/data/DATA-PROV-PM-006/provenance/capture_status.json (~20s)",
+   "lab/data/DATA-PROV-PM-008/provenance/capture_status.json (dormant; writer not running)",
+   "lab/data/DATA-PROV-PM-009/provenance/pull_status.json (live during pulls)",
+   "lab/governance/astra/steward/HYGIENE_<today>.md (during sweep)"
+  ],
+  "writers": [
+   {
+    "pid": 365425,
+    "cmd": "forward_capture_book.py",
+    "cwd": "lab/data/DATA-PROV-PM-006"
+   },
+   {
+    "pid": 365427,
+    "cmd": "forward_capture_candles.py",
+    "cwd": "lab/data/DATA-PROV-CB-002"
+   },
+   {
+    "pid": 366603,
+    "cmd": "forward_capture_forceOrder.py",
+    "cwd": "lab/data/DATA-PROV-LIQ-001"
+   }
+  ],
+  "proposed_never_push": [
+   "lab/data/**/provenance/capture_status.json",
+   "lab/data/**/provenance/*status.json",
+   "lab/data/**/provenance/progress.json",
+   "**/*.pid",
+   "**/*.lock",
+   "**/.locks/**",
+   "**/*heartbeat*",
+   "**/*-wal",
+   "**/*-shm",
+   "**/*-journal",
+   "**/*.tmp",
+   "**/*.partial",
+   "**/*.swp",
+   "lab/governance/astra/steward/GAUNTLET_SYNC_*.log"
+  ],
+  "proposed_quiescence": "mtime > t0-15min, or sha256 change between discovery and precheck, or open for write in /proc/*/fd -> DEFERRED_LIVE (not ERROR); alert after 3 consecutive"
+ },
+ "task4": {
+  "source_run": "sync-20261002-1840",
+  "candidates": 46,
+  "main_included": 37,
+  "main_bytes": 2103664,
+  "excluded": {
+   "binary": 6,
+   "held_prev_copy": 2,
+   "held_electindex_path": 1
+  },
+  "supplement_included": 7,
+  "supplement_bytes": 127841,
+  "artifacts": {
+   "landing_list": {
+    "path": "lab/governance/astra/steward/GAUNTLET_OVERSIZE_LANDING_LIST_2026-10-02.json",
+    "sha256": "0543fbd118f43272772980836ed6fb551e18f56b884ed938cfee2ff84de5fc41"
+   },
+   "main_tar": {
+    "path": "/workspace/steward_gauntlet_oversize_20261001/oversize_bundle_2026-10-02.tar.gz",
+    "sha256": "26f0fd5b55cc6957fc8b273688c94df3ff0f4e19768e612c0511d2a83219caf8",
+    "bytes": 422626,
+    "members": 37
+   },
+   "supplement_tar": {
+    "path": "/workspace/steward_gauntlet_oversize_20261001/oversize_bundle_2026-10-02_supplement.tar.gz",
+    "sha256": "efe5573868ec8c460cc3a78879333d70b6eec93cf79b3f1f144ab56a7daea8e3",
+    "bytes": 21905,
+    "members": 7
+   }
+  },
+  "verified": true,
+  "launched": false
+ },
+ "task5": {
+  "missing_dirs": [
+   {
+    "dir": "/workspace/lab/harness/examiner/out",
+    "refs": 19,
+    "self_creates": true,
+    "risk": "low"
+   },
+   {
+    "dir": "/workspace/lab/data/DATA-PROV-001/derived",
+    "refs": "clock_audit_DATA-PROV-001.py:25 (guarded read)",
+    "self_creates": null,
+    "risk": "clock-audit re-run drift (existed empty pre-rebuild [V])"
+   },
+   {
+    "dir": "/workspace/lab/data/DATA-PROV-FUNDING-001/derived",
+    "refs": "clock_audit:24, download_runner.sh:10",
+    "self_creates": "runner yes",
+    "risk": "low; audit drift"
+   },
+   {
+    "dir": "/workspace/lab/data/DATA-PROV-OI-001/derived",
+    "refs": "clock_audit:28, download_runner.sh:10",
+    "self_creates": "runner yes",
+    "risk": "low; audit drift"
+   },
+   {
+    "dir": "/workspace/lab/data/DATA-PROV-TRADES-001/derived",
+    "refs": "clock_audit:29, download_runner.sh:15",
+    "self_creates": "runner yes",
+    "risk": "low; audit drift"
+   },
+   {
+    "dir": "/workspace/lab/data/DATA-PROV-TRADES-001/provenance/.locks",
+    "refs": "download_runner.sh:10",
+    "self_creates": true,
+    "risk": "low"
+   },
+   {
+    "dir": "/workspace/recovery",
+    "refs": "v3/v3.1 prompt section 11 (never-modify mention)",
+    "self_creates": null,
+    "risk": "none (deleted deliberately)"
+   }
+  ],
+  "excluded_from_list": [
+   "repo_*/.git/refs (Conductor)",
+   "sentinel files FORCE_PHASE_A_LOW/FORCE_PHASE_B/KALSHI_429_STOP",
+   "filename prefixes",
+   "~90 refs in frozen vendored pin copies and scratch extracts",
+   "scout_card06_company_kpi/raw/kalshi: scanner false positive, dir exists [V]"
+  ],
+  "created": 0
+ },
+ "scratch": "/workspace/steward_restore_20261001/sa_* (scripts and intermediate JSON)"
+}

@@ -1,0 +1,140 @@
+{
+ "id": "RESULTS_LANDING_MANIFEST_2026-09-24_ADDENDUM_01",
+ "parent": {
+  "path": "registry/RESULTS_LANDING_MANIFEST_2026-09-24.json",
+  "sha256": "fcbbdddfcecf3248648a4f941f0e252cd20bf0db673cf91b0b2cc2f8212137cf",
+  "rewritten": false
+ },
+ "recorded_by": "The Archivist (Registry)",
+ "recorded_at_et": "2026-09-24T19:54:43-04:00",
+ "authority": "Conductor rulings (a)-(c), 2026-09-24",
+ "tier_lists": {
+  "tier_a": {
+   "path": "registry/RESULTS_LANDING_TIER_A_SHA256SUMS_2026-09-24.txt",
+   "sha256": "89662fa6bc939092fb68468c025ea136c213d6a7f3c037045126f7d03596d36b",
+   "files": 139,
+   "rule": "<=25MB",
+   "handed_to": "Steward"
+  },
+  "tier_b": {
+   "path": "registry/RESULTS_LANDING_TIER_B_CHECKSUM_ONLY_2026-09-24.txt",
+   "sha256": "1c677347328d89dab52a19b7740c3b845e5904bc6d76bbfb10adbca73dd109ee",
+   "files": 13,
+   "rule": ">25MB, checksum-only pending Conductor ruling"
+  },
+  "reconcile_note": "Tier A (139) + Tier B (13) = 152 = the 159 manifest-included files minus the 7 that are already on main byte-identical (paircheck NOT_RUN/analysis_status/FROZEN_EXPERIMENT/EXPERIMENT_SPEC, P1 NOT_RUN/UNIT_RESULTS, R3-P2 demo_queue_sample_series) [V set difference]."
+ },
+ "tier_a_batch3": {
+  "path": "registry/RESULTS_LANDING_TIER_A_BATCH3_SHA256SUMS_2026-09-24.txt",
+  "files": [
+   {
+    "box_path": "/workspace/lab/governance/astra/packets/r3_p2_queue_position/results/abs_err_signed_bias_trade_step_retry.json",
+    "sha256": "755244e25cb0cc387347896d88b708e10d58e001eed40024fc78396c3e384857",
+    "bytes": 11366,
+    "proposed_repo_path": "lab/governance/astra/packets/r3_p2_queue_position/results/abs_err_signed_bias_trade_step_retry.json",
+    "over_25MB": false
+   },
+   {
+    "box_path": "/workspace/lab/governance/astra/packets/r3_p2_queue_position/results/estimate_ahead_labels_trade_step_retry.json",
+    "sha256": "e109ac02183abdf8b350e56b5e865250855a3caa55c474d76be32f7e4e1422b1",
+    "bytes": 21091,
+    "proposed_repo_path": "lab/governance/astra/packets/r3_p2_queue_position/results/estimate_ahead_labels_trade_step_retry.json",
+    "over_25MB": false
+   },
+   {
+    "box_path": "/workspace/lab/governance/astra/packets/EXAMINER_SCORE_R3_P2_TRADE_STEP_RETRY_PLUMBING_2026-09-24.json",
+    "sha256": "e66d2636c771c43e9ea7ff9838a5233eb951e0e3a5e1f01ed800af1a760cf593",
+    "bytes": 14889,
+    "proposed_repo_path": "lab/governance/astra/packets/EXAMINER_SCORE_R3_P2_TRADE_STEP_RETRY_PLUMBING_2026-09-24.json",
+    "over_25MB": false
+   },
+   {
+    "box_path": "/workspace/lab/governance/astra/packets/CONDUCTOR_RULING_R3_P2_WARM_SHELF_2026-09-24.json",
+    "sha256": "7fa4455f46af951e9518c091c18e0695f9f53b1256a4689b9c576d92e642e2c4",
+    "bytes": 810,
+    "proposed_repo_path": "lab/governance/astra/packets/CONDUCTOR_RULING_R3_P2_WARM_SHELF_2026-09-24.json",
+    "over_25MB": false
+   }
+  ],
+  "any_over_25MB": false,
+  "status": "ADDED_TO_LANDING_SET (Conductor ruling c)"
+ },
+ "r3_p2_held_pending_stamp": [
+  {
+   "box_path": "/workspace/lab/governance/astra/packets/r3_p2_queue_position/results/EMPTY_RESULTS.json",
+   "sha256": "649d09e14c5872d71b0d4247642b92cc470a4b037c6207940c29736159dce963",
+   "proposed_repo_path": "lab/governance/astra/packets/r3_p2_queue_position/results/EMPTY_RESULTS.json",
+   "status": "HELD_PENDING_STAMP"
+  },
+  {
+   "box_path": "/workspace/lab/governance/astra/packets/r3_p2_queue_position/results/archive/MECHANIC_DEMO_TRADE_STEP_SERIES_pass1_503block.md",
+   "sha256": "09484574a734f252bc80ba8ef1d61229bad9228ebedb333f7365a7723dc9e466",
+   "proposed_repo_path": "lab/governance/astra/packets/r3_p2_queue_position/results/archive/MECHANIC_DEMO_TRADE_STEP_SERIES_pass1_503block.md",
+   "status": "HELD_PENDING_STAMP"
+  },
+  {
+   "box_path": "/workspace/lab/governance/astra/packets/r3_p2_queue_position/results/archive/demo_trade_step_sample_series_pass1_503block.json",
+   "sha256": "8c8d34e6498449c7557366089301d001686d7779bcf418d2dec3a4f5ed9120e4",
+   "proposed_repo_path": "lab/governance/astra/packets/r3_p2_queue_position/results/archive/demo_trade_step_sample_series_pass1_503block.json",
+   "status": "HELD_PENDING_STAMP"
+  },
+  {
+   "box_path": "/workspace/lab/governance/astra/packets/r3_p2_queue_position/results/demo_trade_step_sample_series.json",
+   "sha256": "8c8d34e6498449c7557366089301d001686d7779bcf418d2dec3a4f5ed9120e4",
+   "proposed_repo_path": "lab/governance/astra/packets/r3_p2_queue_position/results/demo_trade_step_sample_series.json",
+   "status": "HELD_PENDING_STAMP"
+  },
+  {
+   "box_path": "/workspace/lab/governance/astra/packets/r3_p2_queue_position/results/demo_trade_step_sample_series_503_blocked.json",
+   "sha256": "8c8d34e6498449c7557366089301d001686d7779bcf418d2dec3a4f5ed9120e4",
+   "proposed_repo_path": "lab/governance/astra/packets/r3_p2_queue_position/results/demo_trade_step_sample_series_503_blocked.json",
+   "status": "HELD_PENDING_STAMP"
+  },
+  {
+   "box_path": "/workspace/lab/governance/astra/packets/r3_p2_queue_position/results/demo_trade_step_sample_series_retry.json",
+   "sha256": "6e2c82570e72efd19c4c77cac01c8727965938dfbceefec7a8a7d2f2db667db1",
+   "proposed_repo_path": "lab/governance/astra/packets/r3_p2_queue_position/results/demo_trade_step_sample_series_retry.json",
+   "status": "HELD_PENDING_STAMP",
+   "note": "The Examiner stamp EXAMINER_SCORE_R3_P2_TRADE_STEP_RETRY_PLUMBING_2026-09-24.json (e66d2636) pins this series (sha256 6e2c8257\u2026 match=true). It stays HELD per the Conductor ruling. Flagged for the Conductor: it may now qualify."
+  },
+  {
+   "box_path": "/workspace/lab/governance/astra/packets/r3_p2_queue_position/results/first_demo_queue_poll.json",
+   "sha256": "b0212da2f0d03948f9c933bb08d6fc0f1bb292733553bcef7c01d6e75874258e",
+   "proposed_repo_path": "lab/governance/astra/packets/r3_p2_queue_position/results/first_demo_queue_poll.json",
+   "status": "HELD_PENDING_STAMP"
+  }
+ ],
+ "r3_p2_duplicates_dropped": [
+  {
+   "box_path": "/workspace/lab/astra-science/kalshi_r3p2_queue_position_lab_20260923/results/_test_labels.json",
+   "sha256": "f89c06dc1639b194c9d026e157fbfbc2a8b527853afe698dd1f77389eb34c964",
+   "proposed_repo_path": "kalshi_r3p2_queue_position_lab_20260923/results/_test_labels.json",
+   "status": "DROPPED_FROM_LANDING_SET",
+   "box_file_retained": true
+  },
+  {
+   "box_path": "/workspace/lab/astra-science/kalshi_r3p2_queue_position_lab_20260923/results/estimate_ahead_labels.json",
+   "sha256": "f89c06dc1639b194c9d026e157fbfbc2a8b527853afe698dd1f77389eb34c964",
+   "proposed_repo_path": "kalshi_r3p2_queue_position_lab_20260923/results/estimate_ahead_labels.json",
+   "status": "DROPPED_FROM_LANDING_SET",
+   "box_file_retained": true
+  }
+ ],
+ "q7_verification_pin": {
+  "path": "nfl_paircheck_lab_20260922/results/verification.json",
+  "pinned_sha256": "eb1586bf13b1631951a4f177293350cb89fc7948a50fbb7044f4f05313ebc06f",
+  "status": "UNVERIFIED_BYTES_MISSING",
+  "examiner_verdict": "STANDS",
+  "rule": "The Simulator searches first. If it regenerates after the P2 walk and the result does not equal eb1586bf\u2026, it goes back to the Examiner. The pin is NOT rewritten."
+ },
+ "tier_b_cold_evidence": {
+  "dir": "/workspace/lab/evidence_cold/2026-09-24/",
+  "manifest": "/workspace/lab/evidence_cold/2026-09-24/MANIFEST.json",
+  "sha256sums": "/workspace/lab/evidence_cold/2026-09-24/SHA256SUMS.txt",
+  "files": 13,
+  "all_roundtrip_ok": true,
+  "all_gz_lt_2GiB": true,
+  "pushed": false,
+  "lfs": false
+ }
+}

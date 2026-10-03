@@ -1,0 +1,458 @@
+{
+  "AUDIT_ID": "CLOCK_AUDIT_W2B_POLY_T5_JOIN",
+  "FEATURE": "DRAFT-FEAT-20260913-004",
+  "GATE": "DRAFT-ABST-20260913-004",
+  "WAVE": "W2-B / Wave 005",
+  "DATA_IDS": [
+    "DATA-PROV-PM-003",
+    "DATA-PROV-PM-001",
+    "DATA-PROV-PM-005"
+  ],
+  "SIBLING_NOT_UNIONED": "DATA-PROV-PM-002",
+  "audited_at_utc": "2026-09-13T19:55:18.964387+00:00",
+  "auditor": "Clock",
+  "new_fetch": false,
+  "policy": {
+    "no_alpha": true,
+    "no_examiner_delta": true,
+    "no_invented_mid": true,
+    "no_PM002_union": true,
+    "no_venue_pool": true,
+    "trade_forbidden": true,
+    "feature_stays_NEEDS_DATA": true,
+    "this_alone_does_not_authorize_Examiner": true,
+    "dark_rem_600_840_not_headlines": true
+  },
+  "sources": {
+    "pm003_checkpoints": "/workspace/lab/data/DATA-PROV-PM-003/derived/checkpoints.ndjson",
+    "pm001_kalshi": "/workspace/lab/data/DATA-PROV-PM-001/normalized/kalshi_15m_btc_eth_resolved.ndjson",
+    "pm005_checkpoints": "/workspace/lab/data/DATA-PROV-PM-005/derived/checkpoints.ndjson",
+    "pm005_coverage": "/workspace/lab/data/DATA-PROV-PM-005/derived/contract_coverage.ndjson",
+    "pm005_prints": "/workspace/lab/data/DATA-PROV-PM-005/derived/poly_15m_last_prints.ndjson",
+    "fetch_summary": "/workspace/lab/data/DATA-PROV-PM-005/provenance/FETCH_SUMMARY.json",
+    "inventory": "/workspace/lab/data/DATA-PROV-PM-005/provenance/INVENTORY.md",
+    "feature_card": "/workspace/lab/archive/features/DRAFT-FEAT-20260913-004-W2B-poly-last.md",
+    "gate_card": "/workspace/lab/archive/features/DRAFT-ABST-20260913-004-W2B-xvenue.md",
+    "clock_order": "/workspace/lab/governance/CLOCK_ORDER_W2B_POLY_T5_JOIN_2026-09-13.md",
+    "script": "/workspace/lab/data/DATA-PROV-PM-005/provenance/clock_audit_W2B_POLY_T5_JOIN.py"
+  },
+  "exact_join_formula": "m_t = PM-003 Kalshi same-row mid; implied_p_method==mid; rem=300; mid timestamp = decision_time (same-t). L_t = PM-005 Poly 15m last-print; pairing = exact (asset, OPEN_TIME, CLOSE_TIME) vs Kalshi contract via PM-001; obs_time <= decision_time; yes_bid/yes_ask null; implied_p_method==last (NOT mid). Missing m_t or L_t \u2192 fail-closed. FORBIDDEN: PM-002\u222aPM-003 silent union; treat last as mid; pool venues; invent prints/quotes; rem=600/840 as headlines (dark).",
+  "deterministic_pick_rule": "If multiple PM-005 rem=300 last rows share the same (asset, open_time, close_time), select among those with obs_time<=decision_time the row with maximum obs_time, ties broken by contract_id ascending. Expected: one row per rem per OC key.",
+  "pm001_meta": {
+    "n_rows": 1328,
+    "n_unique_contract_id": 1328,
+    "n_unique_venue_native_id": 1328,
+    "status_counts": {
+      "RESOLVED": 1328
+    },
+    "resolution_counts": {
+      "YES": 660,
+      "NO": 668
+    },
+    "one_row_per_contract": true
+  },
+  "pm005_index_meta": {
+    "n_rem300_last_rows": 551,
+    "n_unique_oc_keys": 551,
+    "n_multi_row_oc_keys": 0,
+    "multi_row_oc_example": [],
+    "rem_counts": {
+      "840": 548,
+      "600": 551,
+      "300": 551,
+      "60": 551,
+      "0": 551
+    },
+    "method_counts": {
+      "last": 2752
+    },
+    "role_counts": {
+      "dark": 1099,
+      "headline": 551,
+      "captured": 1102
+    },
+    "rem300_by_asset": {
+      "BTC": 276,
+      "ETH": 275
+    },
+    "bid_ask_nonnull_rem300": 0,
+    "method_not_last_rem300_skipped": 0,
+    "pm002_mentions_in_checkpoints": 0,
+    "paired_kalshi_dataset_counts": {
+      "DATA-PROV-PM-003": 551
+    },
+    "parent_dataset_counts": {
+      "DATA-PROV-PM-001": 551
+    }
+  },
+  "fetch_summary_pairing_N_rem300_last": {
+    "BTC": 276,
+    "ETH": 275,
+    "note": "each row is a Poly last-print at rem=300 with exact OC twin in PM-003; not unioned with PM-002",
+    "target_N_per_headline": 80,
+    "BTC_meets_80": true,
+    "ETH_meets_80": true
+  },
+  "inventory_crosscheck": {
+    "inventory_claim_pairing_N_rem300_last": {
+      "BTC": 276,
+      "ETH": 275
+    },
+    "measured_PM005_rem300_last_by_asset": {
+      "BTC": 276,
+      "ETH": 275
+    },
+    "BTC_match_276": true,
+    "ETH_match_275": true,
+    "inventory_claim_empty_histories": 2,
+    "measured_empty_histories": 2,
+    "empty_by_asset": {
+      "BTC": 1,
+      "ETH": 1
+    },
+    "empty_match_2": true,
+    "coverage_ok": 551,
+    "pm002_mentions_in_checkpoints": 0,
+    "no_PM002_union": true,
+    "paired_kalshi_dataset_counts": {
+      "DATA-PROV-PM-003": 551
+    },
+    "parent_dataset_counts": {
+      "DATA-PROV-PM-001": 551
+    },
+    "n_multi_row_oc_keys": 0,
+    "bid_ask_nonnull_rem300": 0,
+    "dark_rem_counts": {
+      "840": 548,
+      "600": 551,
+      "60": 551,
+      "0": 551
+    },
+    "headline_rem_300_count": 551
+  },
+  "headlines": [
+    {
+      "id": "headline_BTC_T5m",
+      "cell": "KALSHI|15m|BTC|T-5m|mid",
+      "asset": "BTC",
+      "rem": 300,
+      "t_minus": "T-5m",
+      "role": "headline",
+      "n_candidates_at_rem": 604,
+      "scored_exclude_breakdown": {
+        "non_mid_at_rem_dropped": 0,
+        "near_deg_scored_dropped": 35,
+        "void_disputed_scored_dropped": 0,
+        "missing_m_t_implied_p_null": 0
+      },
+      "N_scored": 569,
+      "N_with_exact_OC_twin_in_PM005": 254,
+      "N_pairable": 254,
+      "N_miss_pairing": 315,
+      "N_miss_L": 0,
+      "N_miss_m": 0,
+      "N_miss_either_fail_closed": 315,
+      "N_lookahead_obs_gt_t_discarded": 0,
+      "N_pm001_join_miss": 0,
+      "N_bid_ask_nonnull_on_twins": 0,
+      "N_method_not_last_on_twins": 0,
+      "same_t_mid": {
+        "n_obs_time_eq_decision_time": 569,
+        "n_obs_time_ne_decision_time": 0,
+        "note": "PM-003 mid cells: decision_time is the mid timestamp; obs_time typically equals decision_time on mid method."
+      },
+      "missing_reasons": {
+        "missing_pairing_no_poly_oc_twin": 315
+      },
+      "obs_lag_sec_stats": {
+        "n": 254,
+        "min_sec": 23.0,
+        "max_sec": 103.0,
+        "mean_sec": 44.2007874015748,
+        "median_sec": 45.0,
+        "p90_sec": 47.0,
+        "p99_sec": 50.0
+      },
+      "deterministic_pick_rule": "If multiple PM-005 rem=300 last rows share the same (asset, open_time, close_time), select among those with obs_time<=decision_time the row with maximum obs_time, ties broken by contract_id ascending. Expected: one row per rem per OC key.",
+      "samples_ok": [
+        {
+          "kalshi_contract_id": "PROV-KALSHI-KXBTC15M-26SEP111630-30",
+          "poly_contract_id": "PROV-POLYGLOBAL-btc-updown-15m-1789157700",
+          "decision_time": "2026-09-11T20:25:00Z",
+          "obs_time": "2026-09-11T20:24:15Z",
+          "obs_lag_sec": 45.0,
+          "m_t": 0.325,
+          "L_t": 0.255,
+          "open_time": "2026-09-11T20:15:00Z",
+          "close_time": "2026-09-11T20:30:00Z",
+          "implied_p_method_poly": "last",
+          "yes_bid": null,
+          "yes_ask": null
+        },
+        {
+          "kalshi_contract_id": "PROV-KALSHI-KXBTC15M-26SEP111615-15",
+          "poly_contract_id": "PROV-POLYGLOBAL-btc-updown-15m-1789156800",
+          "decision_time": "2026-09-11T20:10:00Z",
+          "obs_time": "2026-09-11T20:09:14Z",
+          "obs_lag_sec": 46.0,
+          "m_t": 0.895,
+          "L_t": 0.925,
+          "open_time": "2026-09-11T20:00:00Z",
+          "close_time": "2026-09-11T20:15:00Z",
+          "implied_p_method_poly": "last",
+          "yes_bid": null,
+          "yes_ask": null
+        },
+        {
+          "kalshi_contract_id": "PROV-KALSHI-KXBTC15M-26SEP111600-00",
+          "poly_contract_id": "PROV-POLYGLOBAL-btc-updown-15m-1789155900",
+          "decision_time": "2026-09-11T19:55:00Z",
+          "obs_time": "2026-09-11T19:54:14Z",
+          "obs_lag_sec": 46.0,
+          "m_t": 0.795,
+          "L_t": 0.575,
+          "open_time": "2026-09-11T19:45:00Z",
+          "close_time": "2026-09-11T20:00:00Z",
+          "implied_p_method_poly": "last",
+          "yes_bid": null,
+          "yes_ask": null
+        }
+      ],
+      "samples_missing": [
+        {
+          "contract_id": "PROV-KALSHI-KXBTC15M-26SEP111245-45",
+          "decision_time": "2026-09-11T16:40:00Z",
+          "kalshi_open": "2026-09-11T16:30:00Z",
+          "kalshi_close": "2026-09-11T16:45:00Z",
+          "reason": "no_poly_oc_twin"
+        },
+        {
+          "contract_id": "PROV-KALSHI-KXBTC15M-26SEP041700-00",
+          "decision_time": "2026-09-04T20:55:00Z",
+          "kalshi_open": "2026-09-04T20:45:00Z",
+          "kalshi_close": "2026-09-04T21:00:00Z",
+          "reason": "no_poly_oc_twin"
+        },
+        {
+          "contract_id": "PROV-KALSHI-KXBTC15M-26SEP041715-15",
+          "decision_time": "2026-09-04T21:10:00Z",
+          "kalshi_open": "2026-09-04T21:00:00Z",
+          "kalshi_close": "2026-09-04T21:15:00Z",
+          "reason": "no_poly_oc_twin"
+        },
+        {
+          "contract_id": "PROV-KALSHI-KXBTC15M-26SEP041730-30",
+          "decision_time": "2026-09-04T21:25:00Z",
+          "kalshi_open": "2026-09-04T21:15:00Z",
+          "kalshi_close": "2026-09-04T21:30:00Z",
+          "reason": "no_poly_oc_twin"
+        },
+        {
+          "contract_id": "PROV-KALSHI-KXBTC15M-26SEP041745-45",
+          "decision_time": "2026-09-04T21:40:00Z",
+          "kalshi_open": "2026-09-04T21:30:00Z",
+          "kalshi_close": "2026-09-04T21:45:00Z",
+          "reason": "no_poly_oc_twin"
+        }
+      ]
+    },
+    {
+      "id": "headline_ETH_T5m",
+      "cell": "KALSHI|15m|ETH|T-5m|mid",
+      "asset": "ETH",
+      "rem": 300,
+      "t_minus": "T-5m",
+      "role": "headline",
+      "n_candidates_at_rem": 604,
+      "scored_exclude_breakdown": {
+        "non_mid_at_rem_dropped": 0,
+        "near_deg_scored_dropped": 59,
+        "void_disputed_scored_dropped": 0,
+        "missing_m_t_implied_p_null": 0
+      },
+      "N_scored": 545,
+      "N_with_exact_OC_twin_in_PM005": 240,
+      "N_pairable": 240,
+      "N_miss_pairing": 305,
+      "N_miss_L": 0,
+      "N_miss_m": 0,
+      "N_miss_either_fail_closed": 305,
+      "N_lookahead_obs_gt_t_discarded": 0,
+      "N_pm001_join_miss": 0,
+      "N_bid_ask_nonnull_on_twins": 0,
+      "N_method_not_last_on_twins": 0,
+      "same_t_mid": {
+        "n_obs_time_eq_decision_time": 545,
+        "n_obs_time_ne_decision_time": 0,
+        "note": "PM-003 mid cells: decision_time is the mid timestamp; obs_time typically equals decision_time on mid method."
+      },
+      "missing_reasons": {
+        "missing_pairing_no_poly_oc_twin": 305
+      },
+      "obs_lag_sec_stats": {
+        "n": 240,
+        "min_sec": 23.0,
+        "max_sec": 103.0,
+        "mean_sec": 44.18333333333333,
+        "median_sec": 45.0,
+        "p90_sec": 47.0,
+        "p99_sec": 50.609999999999985
+      },
+      "deterministic_pick_rule": "If multiple PM-005 rem=300 last rows share the same (asset, open_time, close_time), select among those with obs_time<=decision_time the row with maximum obs_time, ties broken by contract_id ascending. Expected: one row per rem per OC key.",
+      "samples_ok": [
+        {
+          "kalshi_contract_id": "PROV-KALSHI-KXETH15M-26SEP111630-30",
+          "poly_contract_id": "PROV-POLYGLOBAL-eth-updown-15m-1789157700",
+          "decision_time": "2026-09-11T20:25:00Z",
+          "obs_time": "2026-09-11T20:24:16Z",
+          "obs_lag_sec": 44.0,
+          "m_t": 0.052,
+          "L_t": 0.03,
+          "open_time": "2026-09-11T20:15:00Z",
+          "close_time": "2026-09-11T20:30:00Z",
+          "implied_p_method_poly": "last",
+          "yes_bid": null,
+          "yes_ask": null
+        },
+        {
+          "kalshi_contract_id": "PROV-KALSHI-KXETH15M-26SEP111615-15",
+          "poly_contract_id": "PROV-POLYGLOBAL-eth-updown-15m-1789156800",
+          "decision_time": "2026-09-11T20:10:00Z",
+          "obs_time": "2026-09-11T20:09:14Z",
+          "obs_lag_sec": 46.0,
+          "m_t": 0.835,
+          "L_t": 0.905,
+          "open_time": "2026-09-11T20:00:00Z",
+          "close_time": "2026-09-11T20:15:00Z",
+          "implied_p_method_poly": "last",
+          "yes_bid": null,
+          "yes_ask": null
+        },
+        {
+          "kalshi_contract_id": "PROV-KALSHI-KXETH15M-26SEP111600-00",
+          "poly_contract_id": "PROV-POLYGLOBAL-eth-updown-15m-1789155900",
+          "decision_time": "2026-09-11T19:55:00Z",
+          "obs_time": "2026-09-11T19:54:14Z",
+          "obs_lag_sec": 46.0,
+          "m_t": 0.285,
+          "L_t": 0.165,
+          "open_time": "2026-09-11T19:45:00Z",
+          "close_time": "2026-09-11T20:00:00Z",
+          "implied_p_method_poly": "last",
+          "yes_bid": null,
+          "yes_ask": null
+        }
+      ],
+      "samples_missing": [
+        {
+          "contract_id": "PROV-KALSHI-KXETH15M-26SEP041700-00",
+          "decision_time": "2026-09-04T20:55:00Z",
+          "kalshi_open": "2026-09-04T20:45:00Z",
+          "kalshi_close": "2026-09-04T21:00:00Z",
+          "reason": "no_poly_oc_twin"
+        },
+        {
+          "contract_id": "PROV-KALSHI-KXETH15M-26SEP041715-15",
+          "decision_time": "2026-09-04T21:10:00Z",
+          "kalshi_open": "2026-09-04T21:00:00Z",
+          "kalshi_close": "2026-09-04T21:15:00Z",
+          "reason": "no_poly_oc_twin"
+        },
+        {
+          "contract_id": "PROV-KALSHI-KXETH15M-26SEP041730-30",
+          "decision_time": "2026-09-04T21:25:00Z",
+          "kalshi_open": "2026-09-04T21:15:00Z",
+          "kalshi_close": "2026-09-04T21:30:00Z",
+          "reason": "no_poly_oc_twin"
+        },
+        {
+          "contract_id": "PROV-KALSHI-KXETH15M-26SEP041745-45",
+          "decision_time": "2026-09-04T21:40:00Z",
+          "kalshi_open": "2026-09-04T21:30:00Z",
+          "kalshi_close": "2026-09-04T21:45:00Z",
+          "reason": "no_poly_oc_twin"
+        },
+        {
+          "contract_id": "PROV-KALSHI-KXETH15M-26SEP041800-00",
+          "decision_time": "2026-09-04T21:55:00Z",
+          "kalshi_open": "2026-09-04T21:45:00Z",
+          "kalshi_close": "2026-09-04T22:00:00Z",
+          "reason": "no_poly_oc_twin"
+        }
+      ]
+    }
+  ],
+  "certifications": {
+    "A_m": {
+      "pass": true,
+      "summary": "Kalshi same-t mid on scored rows: implied_p_method==mid, implied_p present, rem=300, decision_time as mid timestamp. miss_m totals: BTC=0, ETH=0"
+    },
+    "B_L": {
+      "pass": true,
+      "summary": "Poly L_t is last-print only: implied_p_method==last on all PM-005 rows; yes_bid/yes_ask null on all rem=300; not treated as mid. obs_time<=decision_time enforced (look-ahead discarded).",
+      "bid_ask_null": true,
+      "method_last_only": true
+    },
+    "C_pairing": {
+      "pass": true,
+      "summary": "Exact (asset, OPEN_TIME, CLOSE_TIME) after UTC normalize; no PM-002\u222aPM-003 silent union; one rem=300 last per OC key; inventory rem300 last BTC=276 ETH=275.",
+      "match_key": "(asset, OPEN_TIME, CLOSE_TIME)",
+      "pm002_union": false
+    },
+    "D_scored_row": {
+      "pass": true,
+      "summary": "TEST-007 hygiene: venue KALSHI, window 15m, rem=300, implied_p_method==mid, drop near-deg \u22640.02/\u22650.98, drop VOID/DISPUTED, require same-t mid present. See per-headline exclude breakdown."
+    },
+    "E_coverage": {
+      "pass": true,
+      "summary": "Inventory cross-check: rem300 last BTC 276 (claim 276); ETH 275 (claim 275); empty histories 2 (claim 2). Among scored Kalshi T-5m mid: BTC N_scored=569 OC_twin=254 pairable=254 miss_pairing=315; ETH N_scored=545 OC_twin=240 pairable=240 miss_pairing=305",
+      "per_headline": {
+        "KALSHI|15m|BTC|T-5m|mid": {
+          "N_scored": 569,
+          "N_with_exact_OC_twin": 254,
+          "N_pairable": 254,
+          "N_miss_pairing": 315,
+          "N_miss_L": 0,
+          "N_miss_m": 0
+        },
+        "KALSHI|15m|ETH|T-5m|mid": {
+          "N_scored": 545,
+          "N_with_exact_OC_twin": 240,
+          "N_pairable": 240,
+          "N_miss_pairing": 305,
+          "N_miss_L": 0,
+          "N_miss_m": 0
+        }
+      }
+    },
+    "F_knowability": {
+      "pass": true,
+      "summary": "L_t requires obs_time <= decision_time; look-ahead discarded before pick. lookahead_discarded_total=0. Lag on pairable rows documented in obs_lag_sec_stats (last is weaker).",
+      "lookahead_baked_in": false,
+      "obs_time_gt_t_is_FAIL": true
+    },
+    "G_forbidden": {
+      "pass": true,
+      "summary": "No invented mid; no bid/ask fabrication; no venue pool; no PM-002 silent union; rem=600/840 present as dark only \u2014 not used as headlines in this audit.",
+      "dark_rem_unused_as_headlines": true,
+      "poly_mid_BLOCKED": true,
+      "no_PM002_union": true
+    }
+  },
+  "verdict": {
+    "recommended_verdict": "CONDITIONAL",
+    "verdict_scope": "join_only",
+    "rationale": "Join works under documented caveats: partial coverage vs full Kalshi T-5m scored universe (many Kalshi opens predate Poly 15m label span / lack OC twin); Poly last is lagged (obs_time < decision_time; documented obs_lag_sec); last \u2260 mid (bid/ask null; mid BLOCKED \u2014 do not invent); fail-closed on miss_L / miss_m / miss_pairing; Feature door stays NEEDS_DATA \u2014 this join verdict alone does not READY or Examiner-route.",
+    "all_pairable": false,
+    "partial_coverage": true,
+    "lag_documented": true,
+    "lookahead_discarded_count": 0,
+    "lookahead_baked_into_pairable": false,
+    "pm002_union": false,
+    "inventory_crosscheck_pass": true,
+    "feature_stays_NEEDS_DATA": true,
+    "examiner_authorized_by_this_alone": false,
+    "poly_mid_BLOCKED": true,
+    "dark_rem_not_used_as_headlines": true
+  }
+}

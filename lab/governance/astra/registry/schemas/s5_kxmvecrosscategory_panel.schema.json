@@ -1,0 +1,355 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "astra.registry.s5_kxmvecrosscategory_panel.v0",
+  "title": "S5 KXMVECROSSCATEGORY fill-vs-legs measurement panel stub (GET-only)",
+  "description": "Panel design stub for S5-KXMVECROSSCATEGORY-MEAS. Cross-category MVE / combo binaries. Prefer KXMVECROSSCATEGORY* over empty KXMVENFL*. Not a strategy. Explicitly NOT R1-P4 strategy. Cite packets/S5_KXMVECROSSCATEGORY_MEASUREMENT_FREEZE_KERNEL_2026-09-22.md; packets/scout_s5_kxmvecrosscategory/FROZEN_EXPERIMENT.json. Does not steal ADMIT-1 / PIT@CLE / S1 / R2-P3 / S4 poll budget. No live orders. results/pnl/volume null. Fee via R1-P1 series override quadratic_with_combo_maker_fees \u2014 forbid Q7/Q6 fee literals. RFQ /communications and is_block_trade density out of scope.",
+  "packet": "S5-KXMVECROSSCATEGORY-MEAS",
+  "status": "PANEL_SCHEMA_STUB_SEED",
+  "stubbed_at_utc": "2026-09-22T23:56:34Z",
+  "panel_version_const": "2026-09-22.s5-kxmvecrosscategory-v0",
+  "freeze_cite": "lab/governance/astra/packets/S5_KXMVECROSSCATEGORY_MEASUREMENT_FREEZE_KERNEL_2026-09-22.md",
+  "freeze_packet_sha256": "a28932ba13b4913b69c48b73dde8ba066cebd212670d0b1cbb5ea8e93734b8ba",
+  "binds": {
+    "fee": "R1-P1 kalshi_feebook_lab_20260922 @22371178cb2663250b4762f328069571c48cb551",
+    "rails": "R1-P5 kalshi_rails_lab_20260922 @6a28e0d6254327ea4e6451c781bec56215ac6cac",
+    "fee_formula_id": "astra.r1p1.feebook.claude_order_level_ceil.v1",
+    "fee_type_series_override": "quadratic_with_combo_maker_fees",
+    "fee_multiplier": 1,
+    "forbid_inherited_q7_fee_literals": true,
+    "not_r1_p4_strategy": true
+  },
+  "type": "object",
+  "required": [
+    "schema_id",
+    "panel_version",
+    "series_ticker",
+    "purpose",
+    "admitted_at",
+    "kickoff_sot",
+    "binds",
+    "capture",
+    "events",
+    "markets",
+    "results",
+    "pnl"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "astra.registry.s5_kxmvecrosscategory_panel.v0"
+    },
+    "panel_version": {
+      "const": "2026-09-22.s5-kxmvecrosscategory-v0"
+    },
+    "series_ticker": {
+      "const": "KXMVECROSSCATEGORY"
+    },
+    "series_glob": {
+      "const": "KXMVECROSSCATEGORY*"
+    },
+    "purpose": {
+      "const": "measurement_gate"
+    },
+    "cohort_kind": {
+      "type": "string"
+    },
+    "admitted_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "null until Collector runs admit.py after Clock join + Conductor greenlight; stub stays null. Do not hand-fill. Honor refuse past T-7d / no backfill. Explicitly NOT R1-P4 strategy."
+    },
+    "kickoff_sot": {
+      "type": "string",
+      "const": "kalshi_occurrence_datetime",
+      "description": "SoT = Kalshi occurrence_datetime when present on joined events; MVE combo events may lack occurrence \u2014 window_clock_source=unknown until Clock join."
+    },
+    "occurrence_source": {
+      "type": "string",
+      "enum": [
+        "kalshi_public_get",
+        "scout_packet",
+        "assumed_et",
+        "unknown"
+      ]
+    },
+    "binds": {
+      "type": "object",
+      "required": [
+        "fee_lab_sha",
+        "rails_lab_sha",
+        "fee_formula_id",
+        "fee_type_series_override",
+        "forbid_inherited_q7_fee_literals"
+      ],
+      "properties": {
+        "fee_lab_sha": {
+          "const": "22371178cb2663250b4762f328069571c48cb551"
+        },
+        "rails_lab_sha": {
+          "const": "6a28e0d6254327ea4e6451c781bec56215ac6cac"
+        },
+        "fee_formula_id": {
+          "const": "astra.r1p1.feebook.claude_order_level_ceil.v1"
+        },
+        "fee_type_series_override": {
+          "const": "quadratic_with_combo_maker_fees"
+        },
+        "fee_multiplier": {
+          "const": 1
+        },
+        "forbid_inherited_q7_fee_literals": {
+          "const": true
+        },
+        "not_r1_p4_strategy": {
+          "const": true
+        }
+      }
+    },
+    "capture": {
+      "type": "object",
+      "required": [
+        "mode",
+        "budget_isolation",
+        "schedule"
+      ],
+      "properties": {
+        "mode": {
+          "const": "GET_only_public"
+        },
+        "host_allowlist": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "routes_allowlist": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "out_of_scope_routes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "budget_isolation": {
+          "type": "object",
+          "required": [
+            "separate_from_admit1",
+            "no_pit_cle_poll_steal"
+          ],
+          "properties": {
+            "separate_from_admit1": {
+              "const": true
+            },
+            "no_pit_cle_poll_steal": {
+              "const": true
+            },
+            "recorder_pid_namespace": {
+              "type": "string"
+            },
+            "db_path": {
+              "type": "string"
+            }
+          }
+        },
+        "schedule": {
+          "type": "object"
+        }
+      }
+    },
+    "events": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/event_row"
+      }
+    },
+    "markets": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/market_row"
+      }
+    },
+    "results": {
+      "type": "null"
+    },
+    "pnl": {
+      "type": "null"
+    },
+    "volume": {
+      "type": "null"
+    }
+  },
+  "$defs": {
+    "event_row": {
+      "type": "object",
+      "required": [
+        "event_ticker",
+        "series_ticker",
+        "admitted_at",
+        "panel_version"
+      ],
+      "properties": {
+        "event_ticker": {
+          "type": "string"
+        },
+        "series_ticker": {
+          "type": "string"
+        },
+        "market_tickers": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "kalshi_occurrence_datetime": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "window_clock_source": {
+          "type": "string",
+          "enum": [
+            "kalshi_occurrence",
+            "unknown",
+            "holdout_mixed"
+          ]
+        },
+        "sot_pin": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "admitted_at": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "volume_fp": {
+          "type": [
+            "number",
+            "string",
+            "null"
+          ]
+        },
+        "volume_24h_fp": {
+          "type": [
+            "number",
+            "string",
+            "null"
+          ]
+        },
+        "open_interest_fp": {
+          "type": [
+            "number",
+            "string",
+            "null"
+          ]
+        },
+        "panel_version": {
+          "const": "2026-09-22.s5-kxmvecrosscategory-v0"
+        }
+      }
+    },
+    "market_row": {
+      "type": "object",
+      "required": [
+        "market_ticker",
+        "event_ticker",
+        "mve_selected_legs",
+        "admitted_at",
+        "panel_version"
+      ],
+      "properties": {
+        "market_ticker": {
+          "type": "string"
+        },
+        "event_ticker": {
+          "type": "string"
+        },
+        "mve_collection_ticker": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "mve_selected_legs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "event_ticker",
+              "market_ticker",
+              "side"
+            ],
+            "properties": {
+              "event_ticker": {
+                "type": "string"
+              },
+              "market_ticker": {
+                "type": "string"
+              },
+              "side": {
+                "type": "string",
+                "enum": [
+                  "yes",
+                  "no"
+                ]
+              }
+            }
+          }
+        },
+        "admitted_at": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "volume_fp": {
+          "type": [
+            "number",
+            "string",
+            "null"
+          ]
+        },
+        "open_interest_fp": {
+          "type": [
+            "number",
+            "string",
+            "null"
+          ]
+        },
+        "panel_version": {
+          "const": "2026-09-22.s5-kxmvecrosscategory-v0"
+        }
+      }
+    }
+  },
+  "measurement_objects_at_sample": [
+    "combo market ticker + mve_selected_legs + mve_collection_ticker",
+    "per-leg 1m TOB mids at fill minute (NO -> 1-mid); independent-leg product",
+    "fill/print price when trades exist else null (do not invent)",
+    "fee-aware residual via R1-P1 combo maker fee channel (quadratic_with_combo_maker_fees)",
+    "rails labels: content_fresh_flag, maker_credit_floor_zero_refuse",
+    "raw API volume_fp / volume_24h_fp / open_interest_fp only \u2014 zeros are valid observations, not bugs to fill"
+  ],
+  "does_not_modify": [
+    "ADMIT-1 prospective/ recorder runtime / capture.sqlite / poll budget",
+    "Q6-000 signal",
+    "Q7 paircheck",
+    "capital-structure arms",
+    "R1-P4 RFQ strategy",
+    "S1 / R2-P3 / S4 panels"
+  ],
+  "out_of_scope": [
+    "GET /communications/rfqs (401)",
+    "is_block_trade density until 429 clears",
+    "any signed trading host"
+  ]
+}

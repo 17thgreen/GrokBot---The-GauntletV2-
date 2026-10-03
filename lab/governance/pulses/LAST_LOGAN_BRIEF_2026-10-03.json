@@ -1,0 +1,12 @@
+{
+  "note": "Conductor stamp for hourly pulse. Read this before flagging (e).",
+  "last_logan_status_et": "2026-10-03 12:46 ET",
+  "content": "Q6-000 KEEP still leads at +6.90% on the $5k pool; no new Examiner score since PR64. Crypto captures healthy and still writing (LIQ 1464 / PM-006 217843 / CB-002 3364); PM-008 held on purpose. Weather still stopped after the morning 429 \u2014 silence until 15:10 ET, then Collector dual-200 \u2192 clear \u2192 r2e; card03 and holdout wait behind that. Gauntlet sync stays paused for Steward repair. No Logan credential/spend block; no live orders.",
+  "rule": "Trigger (e) fires only if >=3h since last_logan_status_et AND (daytime) one-paragraph scoreboard is due, or something material changed. Unchanged scoreboard alone is not a reason to message Logan in the evening.",
+  "written_by": "Conductor 2026-10-03 12:46 ET",
+  "wake_parent": true,
+  "wake_triggers": [
+    "e_3h_strategy_brief"
+  ],
+  "silence_until_et": "2026-10-03 15:10 ET"
+}

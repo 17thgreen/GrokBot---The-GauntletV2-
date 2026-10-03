@@ -1,0 +1,567 @@
+{
+  "dataset": "DATA-PROV-FUNDING-001",
+  "audited_utc": "2026-09-11T04:34:54.875418+00:00",
+  "verdict": "CONDITIONAL",
+  "verdict_rationale": [
+    "Hard integrity tests PASS for both symbols: inventory 68/68, hashes match, schema OK, no dupes, sorted, month bounds OK, interval catalog measured, no missing settlements vs 8h grid, no NaN/negative interval, OHLCV join unmatched=0.",
+    "Vision monthly pack publish lag vs calc_time is [U]/exact lag not established). Observable-to-trader timing for Vision-only consumers uncertain \u2192 cannot APPROVE.",
+    "Verdict CONDITIONAL: data integrity clean, but knowability of publish/observable lag uncertain. SIGNAL must enforce calc_time<=t; forbidden premiumIndex predicted rates. Split freeze may use proposed usable coverage aligned to SEAL_LOCK without reshaping it."
+  ],
+  "base": "/workspace/lab/data/DATA-PROV-FUNDING-001",
+  "hash_verify": {
+    "sha256sums_path": "/workspace/lab/data/DATA-PROV-FUNDING-001/provenance/SHA256SUMS.txt",
+    "sha256sums_lines": 136,
+    "sha256sums_lines_expect": 136,
+    "sha256sums_entry_count": 136,
+    "missing_paths_vs_expect": [],
+    "extra_paths_vs_expect": [],
+    "mismatches": 0,
+    "missing_files": 0,
+    "all_match": true,
+    "per_file_count_verified": 136
+  },
+  "hash_verify_failures": [],
+  "derived": {
+    "exists": true,
+    "empty": true,
+    "entries": []
+  },
+  "missing_txt": {
+    "path": "/workspace/lab/data/DATA-PROV-FUNDING-001/provenance/missing.txt",
+    "exists": true,
+    "bytes": 0,
+    "empty": true,
+    "content_preview": ""
+  },
+  "knowability": {
+    "source": "/workspace/lab/governance/DATA_PROV_CATALYST_SOURCES_2026-09-11.md",
+    "source_section": "\u00a71 DATA-PROV-FUNDING-001",
+    "settlement_vs_publish_vs_observable": {
+      "settlement_calc_time": "calc_time is the exchange settlement / calculation event time (ms UTC). Equivalent semantics to REST fundingTime per source map.",
+      "publish": "Vision monthly zip appears after the calendar month closes (monthly pack). REST /fapi/v1/fundingRate is nearer real-time but geo-blocked on this host. Exact Vision publish lag after calc_time is tagged [U] in source map \u2014 NOT measured in this audit.",
+      "observable_to_trader": "A live trader using REST/WS can observe a settlement at/after calc_time (exchange clock). A researcher using only Vision monthly packs cannot observe intra-month settlements until the monthly archive is published. Exact pack publish timestamp vs last calc_time in month: [U] unknown \u2014 not established from Vision object metadata in this audit."
+    },
+    "signal_rules": {
+      "allowed": "SIGNAL may use last_funding_rate only if calc_time <= decision t (after settlement on exchange clock).",
+      "forbidden": [
+        "premiumIndex predicted / next-interval rate before settlement",
+        "lastFundingRate / nextFundingTime from premiumIndex as if settled",
+        "Invented mid-interval accrued funding for SIGNAL"
+      ]
+    },
+    "vision_monthly_pack_publish_lag": {
+      "status": "UNKNOWN",
+      "tag": "[U]",
+      "exact_lag_ms": null,
+      "exact_lag_established": false,
+      "implication": "Cannot establish when a Vision-only consumer could observe each print relative to calc_time. For backtests that claim live-trader parity on exchange clock, settlement rule calc_time<=t applies. For pipelines that ingest only Vision monthly packs, observability is delayed to pack publish \u2014 CONDITIONAL trigger."
+    },
+    "verdict_impact": "Knowability of publish/observable lag uncertain \u2192 verdict must be CONDITIONAL or QUARANTINED, not APPROVED."
+  },
+  "symbols": {
+    "BTCUSDT": {
+      "symbol": "BTCUSDT",
+      "per_file_meta_count": 68,
+      "inventory": {
+        "expected_months": 68,
+        "present_months": 68,
+        "missing_months": 0,
+        "missing_month_list": [],
+        "extra_months": [],
+        "first_month": "2021-01",
+        "last_month": "2026-08",
+        "total_zip_bytes": 60996,
+        "sidecar_count": 68,
+        "zip_count": 68,
+        "pass": true
+      },
+      "schema": {
+        "total_rows": 6207,
+        "expected_columns": [
+          "calc_time",
+          "funding_interval_hours",
+          "last_funding_rate"
+        ],
+        "columns_ok": true,
+        "actual_columns": [
+          "calc_time",
+          "funding_interval_hours",
+          "last_funding_rate",
+          "_symbol",
+          "_month",
+          "_source_zip"
+        ],
+        "dtypes": {
+          "calc_time": "int64",
+          "funding_interval_hours": "int64",
+          "last_funding_rate": "float64"
+        },
+        "calc_time_integer_dtype": true,
+        "funding_interval_hours_numeric": true,
+        "last_funding_rate_float": true,
+        "null_counts": {
+          "calc_time": 0,
+          "funding_interval_hours": 0,
+          "last_funding_rate": 0
+        },
+        "parse_errors": [],
+        "pass": true
+      },
+      "duplicates_sort_bounds": {
+        "duplicate_calc_time_count": 0,
+        "sorted_ascending_as_loaded": true,
+        "sorted_ascending_values": true,
+        "month_bound_violations": 0,
+        "month_bound_violation_list": [],
+        "month_bound_documented_edge_count": 0,
+        "month_bound_documented_edge_list": [],
+        "month_edge_tolerance_ms": 60000,
+        "pass": true
+      },
+      "interval_catalog": {
+        "unique_funding_interval_hours": [
+          8
+        ],
+        "regimes": [
+          {
+            "funding_interval_hours": 8,
+            "n_prints": 6207,
+            "calc_time_first_ms": 1609459200002,
+            "calc_time_last_ms": 1788192000001,
+            "calc_time_first_utc": "2021-01-01T00:00:00.002000+00:00",
+            "calc_time_last_utc": "2026-08-31T16:00:00.001000+00:00"
+          }
+        ],
+        "assumed_8h_only": false,
+        "note": "Catalog measured from data; do not assume 8h-only in SIGNAL windows.",
+        "pass": true
+      },
+      "missing_settlements": {
+        "expected_chain_count": 6207,
+        "gap_count": 0,
+        "gaps": [],
+        "pairwise_delta_anomaly_count": 0,
+        "pairwise_delta_anomalies": [],
+        "classic_8h_grid": {
+          "applicable": true,
+          "grid": "UTC 00:00/08:00/16:00 (8h from first floor-hour print)",
+          "expected_count": 6207,
+          "actual_count": 6207,
+          "missing_count": 0,
+          "missing_hour_ms": [],
+          "missing_hour_utc": [],
+          "extra_count": 0,
+          "extra_hour_ms": [],
+          "first_hour_ms": 1609459200000,
+          "last_hour_ms": 1788192000000,
+          "first_hour_utc": "2021-01-01T00:00:00+00:00",
+          "last_hour_utc": "2026-08-31T16:00:00+00:00"
+        },
+        "filled": false,
+        "pass": true
+      },
+      "impossible": {
+        "nan_last_funding_rate": 0,
+        "negative_interval_hours": 0,
+        "zero_interval_hours": 0,
+        "absurd_abs_rate_threshold": 0.05,
+        "absurd_outlier_count": 0,
+        "absurd_outliers_diagnostic": [],
+        "rate_min": -0.00119172,
+        "rate_max": 0.00248993,
+        "rate_abs_max": 0.00248993,
+        "pass": true,
+        "note": "Absurd outliers are diagnostic only; hard fail only on NaN/negative/zero interval."
+      },
+      "join_ohlcv": {
+        "ohlcv_path": "/workspace/lab/data/DATA-PROV-001/raw/BTCUSDT_5m_binance_um.parquet",
+        "join_rule": "nearest completed 5m bar with close_time_ms >= calc_time (searchsorted on sorted close_time_ms)",
+        "exists": true,
+        "ohlcv_rows": 595872,
+        "ohlcv_open_first_ms": 1609459200000,
+        "ohlcv_open_last_ms": 1788220500000,
+        "ohlcv_close_first_ms": 1609459499999,
+        "ohlcv_close_last_ms": 1788220799999,
+        "ohlcv_open_first_utc": "2021-01-01T00:00:00+00:00",
+        "ohlcv_open_last_utc": "2026-08-31T23:55:00+00:00",
+        "ohlcv_close_first_utc": "2021-01-01T00:04:59.999000+00:00",
+        "ohlcv_close_last_utc": "2026-08-31T23:59:59.999000+00:00",
+        "funding_prints": 6207,
+        "matched_prints": 6207,
+        "unmatched_prints": 0,
+        "unmatched_calc_time_ms": [],
+        "unmatched_calc_time_utc": [],
+        "calc_time_within_ohlcv_span": 6207,
+        "calc_time_outside_ohlcv_span": 0,
+        "span_check_rule": "open_time_ms_first <= calc_time <= close_time_ms_last",
+        "join_lag_ms_min": 299952,
+        "join_lag_ms_max": 299999,
+        "join_lag_ms_median": 299999.0,
+        "join_lag_ms_p99": 299999.0,
+        "sample_joins": [
+          {
+            "calc_time_ms": 1609459200002,
+            "calc_time_utc": "2021-01-01T00:00:00.002000+00:00",
+            "bar_open_time_ms": 1609459200000,
+            "bar_close_time_ms": 1609459499999,
+            "lag_ms": 299997
+          },
+          {
+            "calc_time_ms": 1698825600000,
+            "calc_time_utc": "2023-11-01T08:00:00+00:00",
+            "bar_open_time_ms": 1698825600000,
+            "bar_close_time_ms": 1698825899999,
+            "lag_ms": 299999
+          },
+          {
+            "calc_time_ms": 1788192000001,
+            "calc_time_utc": "2026-08-31T16:00:00.001000+00:00",
+            "bar_open_time_ms": 1788192000000,
+            "bar_close_time_ms": 1788192299999,
+            "lag_ms": 299998
+          }
+        ],
+        "pass": true
+      },
+      "seal_coverage": {
+        "funding_calc_time_first_ms": 1609459200002,
+        "funding_calc_time_last_ms": 1788192000001,
+        "funding_calc_time_first_utc": "2021-01-01T00:00:00.002000+00:00",
+        "funding_calc_time_last_utc": "2026-08-31T16:00:00.001000+00:00",
+        "seal_bounds": {
+          "research": [
+            "2021-01-03T04:00:00+00:00",
+            "2024-05-27T06:15:00+00:00"
+          ],
+          "validation": [
+            "2024-05-27T06:20:00+00:00",
+            "2025-07-14T15:00:00+00:00"
+          ],
+          "holdout": [
+            "2025-07-14T15:05:00+00:00",
+            "2026-08-31T23:55:00+00:00"
+          ]
+        },
+        "counts_by_seal_slice": {
+          "research": {
+            "n_prints": 3720,
+            "slice_open_first_utc": "2021-01-03T04:00:00+00:00",
+            "slice_open_last_utc": "2024-05-27T06:15:00+00:00",
+            "inclusive_hi_ms": 1716790799999,
+            "inclusive_hi_utc": "2024-05-27T06:19:59.999000+00:00"
+          },
+          "validation": {
+            "n_prints": 1240,
+            "slice_open_first_utc": "2024-05-27T06:20:00+00:00",
+            "slice_open_last_utc": "2025-07-14T15:00:00+00:00",
+            "inclusive_hi_ms": 1752505499999,
+            "inclusive_hi_utc": "2025-07-14T15:04:59.999000+00:00"
+          },
+          "holdout": {
+            "n_prints": 1240,
+            "slice_open_first_utc": "2025-07-14T15:05:00+00:00",
+            "slice_open_last_utc": "2026-08-31T23:55:00+00:00",
+            "inclusive_hi_ms": 1788220799999,
+            "inclusive_hi_utc": "2026-08-31T23:59:59.999000+00:00"
+          }
+        },
+        "prints_before_research_open": 7,
+        "prints_after_holdout_last_close": 0,
+        "usable_coverage_recommendation": {
+          "do_not_reshape_seal_lock": true,
+          "note": "Funding Vision months 2021-01..2026-08 fully cover SEAL_LOCK research/validation/holdout open-time bounds for this symbol. Propose freeze usable funding coverage to the same UTC open bounds as DATA-PROV-001 SEAL_LOCK; prints before research_open_first remain available as pre-split context only (not research-labeled).",
+          "proposed_research_funding_window_utc": [
+            "2021-01-03T04:00:00+00:00",
+            "2024-05-27T06:15:00+00:00"
+          ],
+          "proposed_validation_funding_window_utc": [
+            "2024-05-27T06:20:00+00:00",
+            "2025-07-14T15:00:00+00:00"
+          ],
+          "proposed_holdout_funding_window_utc": [
+            "2025-07-14T15:05:00+00:00",
+            "2026-08-31T23:55:00+00:00"
+          ],
+          "n_prints_in_proposed_windows": {
+            "research": 3720,
+            "validation": 1240,
+            "holdout": 1240,
+            "pre_research_context": 7
+          }
+        }
+      },
+      "row_count": 6207,
+      "calc_time_first_ms": 1609459200002,
+      "calc_time_last_ms": 1788192000001,
+      "calc_time_first_utc": "2021-01-01T00:00:00.002000+00:00",
+      "calc_time_last_utc": "2026-08-31T16:00:00.001000+00:00",
+      "hard_tests_pass": true
+    },
+    "ETHUSDT": {
+      "symbol": "ETHUSDT",
+      "per_file_meta_count": 68,
+      "inventory": {
+        "expected_months": 68,
+        "present_months": 68,
+        "missing_months": 0,
+        "missing_month_list": [],
+        "extra_months": [],
+        "first_month": "2021-01",
+        "last_month": "2026-08",
+        "total_zip_bytes": 61336,
+        "sidecar_count": 68,
+        "zip_count": 68,
+        "pass": true
+      },
+      "schema": {
+        "total_rows": 6207,
+        "expected_columns": [
+          "calc_time",
+          "funding_interval_hours",
+          "last_funding_rate"
+        ],
+        "columns_ok": true,
+        "actual_columns": [
+          "calc_time",
+          "funding_interval_hours",
+          "last_funding_rate",
+          "_symbol",
+          "_month",
+          "_source_zip"
+        ],
+        "dtypes": {
+          "calc_time": "int64",
+          "funding_interval_hours": "int64",
+          "last_funding_rate": "float64"
+        },
+        "calc_time_integer_dtype": true,
+        "funding_interval_hours_numeric": true,
+        "last_funding_rate_float": true,
+        "null_counts": {
+          "calc_time": 0,
+          "funding_interval_hours": 0,
+          "last_funding_rate": 0
+        },
+        "parse_errors": [],
+        "pass": true
+      },
+      "duplicates_sort_bounds": {
+        "duplicate_calc_time_count": 0,
+        "sorted_ascending_as_loaded": true,
+        "sorted_ascending_values": true,
+        "month_bound_violations": 0,
+        "month_bound_violation_list": [],
+        "month_bound_documented_edge_count": 0,
+        "month_bound_documented_edge_list": [],
+        "month_edge_tolerance_ms": 60000,
+        "pass": true
+      },
+      "interval_catalog": {
+        "unique_funding_interval_hours": [
+          8
+        ],
+        "regimes": [
+          {
+            "funding_interval_hours": 8,
+            "n_prints": 6207,
+            "calc_time_first_ms": 1609459200002,
+            "calc_time_last_ms": 1788192000001,
+            "calc_time_first_utc": "2021-01-01T00:00:00.002000+00:00",
+            "calc_time_last_utc": "2026-08-31T16:00:00.001000+00:00"
+          }
+        ],
+        "assumed_8h_only": false,
+        "note": "Catalog measured from data; do not assume 8h-only in SIGNAL windows.",
+        "pass": true
+      },
+      "missing_settlements": {
+        "expected_chain_count": 6207,
+        "gap_count": 0,
+        "gaps": [],
+        "pairwise_delta_anomaly_count": 0,
+        "pairwise_delta_anomalies": [],
+        "classic_8h_grid": {
+          "applicable": true,
+          "grid": "UTC 00:00/08:00/16:00 (8h from first floor-hour print)",
+          "expected_count": 6207,
+          "actual_count": 6207,
+          "missing_count": 0,
+          "missing_hour_ms": [],
+          "missing_hour_utc": [],
+          "extra_count": 0,
+          "extra_hour_ms": [],
+          "first_hour_ms": 1609459200000,
+          "last_hour_ms": 1788192000000,
+          "first_hour_utc": "2021-01-01T00:00:00+00:00",
+          "last_hour_utc": "2026-08-31T16:00:00+00:00"
+        },
+        "filled": false,
+        "pass": true
+      },
+      "impossible": {
+        "nan_last_funding_rate": 0,
+        "negative_interval_hours": 0,
+        "zero_interval_hours": 0,
+        "absurd_abs_rate_threshold": 0.05,
+        "absurd_outlier_count": 0,
+        "absurd_outliers_diagnostic": [],
+        "rate_min": -0.00356332,
+        "rate_max": 0.00375,
+        "rate_abs_max": 0.00375,
+        "pass": true,
+        "note": "Absurd outliers are diagnostic only; hard fail only on NaN/negative/zero interval."
+      },
+      "join_ohlcv": {
+        "ohlcv_path": "/workspace/lab/data/DATA-PROV-001/raw/ETHUSDT_5m_binance_um.parquet",
+        "join_rule": "nearest completed 5m bar with close_time_ms >= calc_time (searchsorted on sorted close_time_ms)",
+        "exists": true,
+        "ohlcv_rows": 595872,
+        "ohlcv_open_first_ms": 1609459200000,
+        "ohlcv_open_last_ms": 1788220500000,
+        "ohlcv_close_first_ms": 1609459499999,
+        "ohlcv_close_last_ms": 1788220799999,
+        "ohlcv_open_first_utc": "2021-01-01T00:00:00+00:00",
+        "ohlcv_open_last_utc": "2026-08-31T23:55:00+00:00",
+        "ohlcv_close_first_utc": "2021-01-01T00:04:59.999000+00:00",
+        "ohlcv_close_last_utc": "2026-08-31T23:59:59.999000+00:00",
+        "funding_prints": 6207,
+        "matched_prints": 6207,
+        "unmatched_prints": 0,
+        "unmatched_calc_time_ms": [],
+        "unmatched_calc_time_utc": [],
+        "calc_time_within_ohlcv_span": 6207,
+        "calc_time_outside_ohlcv_span": 0,
+        "span_check_rule": "open_time_ms_first <= calc_time <= close_time_ms_last",
+        "join_lag_ms_min": 299952,
+        "join_lag_ms_max": 299999,
+        "join_lag_ms_median": 299999.0,
+        "join_lag_ms_p99": 299999.0,
+        "sample_joins": [
+          {
+            "calc_time_ms": 1609459200002,
+            "calc_time_utc": "2021-01-01T00:00:00.002000+00:00",
+            "bar_open_time_ms": 1609459200000,
+            "bar_close_time_ms": 1609459499999,
+            "lag_ms": 299997
+          },
+          {
+            "calc_time_ms": 1698825600000,
+            "calc_time_utc": "2023-11-01T08:00:00+00:00",
+            "bar_open_time_ms": 1698825600000,
+            "bar_close_time_ms": 1698825899999,
+            "lag_ms": 299999
+          },
+          {
+            "calc_time_ms": 1788192000001,
+            "calc_time_utc": "2026-08-31T16:00:00.001000+00:00",
+            "bar_open_time_ms": 1788192000000,
+            "bar_close_time_ms": 1788192299999,
+            "lag_ms": 299998
+          }
+        ],
+        "pass": true
+      },
+      "seal_coverage": {
+        "funding_calc_time_first_ms": 1609459200002,
+        "funding_calc_time_last_ms": 1788192000001,
+        "funding_calc_time_first_utc": "2021-01-01T00:00:00.002000+00:00",
+        "funding_calc_time_last_utc": "2026-08-31T16:00:00.001000+00:00",
+        "seal_bounds": {
+          "research": [
+            "2021-01-03T04:00:00+00:00",
+            "2024-05-27T06:15:00+00:00"
+          ],
+          "validation": [
+            "2024-05-27T06:20:00+00:00",
+            "2025-07-14T15:00:00+00:00"
+          ],
+          "holdout": [
+            "2025-07-14T15:05:00+00:00",
+            "2026-08-31T23:55:00+00:00"
+          ]
+        },
+        "counts_by_seal_slice": {
+          "research": {
+            "n_prints": 3720,
+            "slice_open_first_utc": "2021-01-03T04:00:00+00:00",
+            "slice_open_last_utc": "2024-05-27T06:15:00+00:00",
+            "inclusive_hi_ms": 1716790799999,
+            "inclusive_hi_utc": "2024-05-27T06:19:59.999000+00:00"
+          },
+          "validation": {
+            "n_prints": 1240,
+            "slice_open_first_utc": "2024-05-27T06:20:00+00:00",
+            "slice_open_last_utc": "2025-07-14T15:00:00+00:00",
+            "inclusive_hi_ms": 1752505499999,
+            "inclusive_hi_utc": "2025-07-14T15:04:59.999000+00:00"
+          },
+          "holdout": {
+            "n_prints": 1240,
+            "slice_open_first_utc": "2025-07-14T15:05:00+00:00",
+            "slice_open_last_utc": "2026-08-31T23:55:00+00:00",
+            "inclusive_hi_ms": 1788220799999,
+            "inclusive_hi_utc": "2026-08-31T23:59:59.999000+00:00"
+          }
+        },
+        "prints_before_research_open": 7,
+        "prints_after_holdout_last_close": 0,
+        "usable_coverage_recommendation": {
+          "do_not_reshape_seal_lock": true,
+          "note": "Funding Vision months 2021-01..2026-08 fully cover SEAL_LOCK research/validation/holdout open-time bounds for this symbol. Propose freeze usable funding coverage to the same UTC open bounds as DATA-PROV-001 SEAL_LOCK; prints before research_open_first remain available as pre-split context only (not research-labeled).",
+          "proposed_research_funding_window_utc": [
+            "2021-01-03T04:00:00+00:00",
+            "2024-05-27T06:15:00+00:00"
+          ],
+          "proposed_validation_funding_window_utc": [
+            "2024-05-27T06:20:00+00:00",
+            "2025-07-14T15:00:00+00:00"
+          ],
+          "proposed_holdout_funding_window_utc": [
+            "2025-07-14T15:05:00+00:00",
+            "2026-08-31T23:55:00+00:00"
+          ],
+          "n_prints_in_proposed_windows": {
+            "research": 3720,
+            "validation": 1240,
+            "holdout": 1240,
+            "pre_research_context": 7
+          }
+        }
+      },
+      "row_count": 6207,
+      "calc_time_first_ms": 1609459200002,
+      "calc_time_last_ms": 1788192000001,
+      "calc_time_first_utc": "2021-01-01T00:00:00.002000+00:00",
+      "calc_time_last_utc": "2026-08-31T16:00:00.001000+00:00",
+      "hard_tests_pass": true
+    }
+  },
+  "seal_lock_ref": {
+    "path": "/workspace/lab/data/DATA-PROV-001/sealed/SEAL_LOCK.json",
+    "dataset": "DATA-PROV-001",
+    "sealed_utc": "2026-09-10T23:28:20.943919+00:00",
+    "reshaped": false
+  },
+  "paths": [
+    "/workspace/lab/data/DATA-PROV-FUNDING-001",
+    "/workspace/lab/data/DATA-PROV-FUNDING-001/raw",
+    "/workspace/lab/data/DATA-PROV-FUNDING-001/derived",
+    "/workspace/lab/data/DATA-PROV-FUNDING-001/provenance",
+    "/workspace/lab/data/DATA-PROV-FUNDING-001/provenance/SHA256SUMS.txt",
+    "/workspace/lab/data/DATA-PROV-FUNDING-001/provenance/DOWNLOAD_MANIFEST.md",
+    "/workspace/lab/governance/DATA_PROV_CATALYST_SOURCES_2026-09-11.md",
+    "/workspace/lab/data/DATA-PROV-001/sealed/SEAL_LOCK.json",
+    "/workspace/lab/data/DATA-PROV-001/raw/BTCUSDT_5m_binance_um.parquet",
+    "/workspace/lab/data/DATA-PROV-001/raw/ETHUSDT_5m_binance_um.parquet",
+    "/workspace/lab/data/DATA-PROV-FUNDING-001/provenance/CLOCK_AUDIT_REPORT.json",
+    "/workspace/lab/data/DATA-PROV-FUNDING-001/provenance/CLOCK_AUDIT_REPORT.md",
+    "/workspace/lab/data/DATA-PROV-FUNDING-001/provenance/clock_audit_DATA-PROV-FUNDING-001.py"
+  ],
+  "policy": {
+    "no_alpha": true,
+    "no_invented_numbers": true,
+    "no_predicted_funding": true,
+    "no_seal_lock_reshape": true,
+    "full_content_both_symbols": true
+  }
+}

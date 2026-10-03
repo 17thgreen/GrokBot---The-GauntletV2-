@@ -1,0 +1,20 @@
+{
+  "lab_dir": "kalshi_r2p3_kxnflpassyds_settled_join_lab_20260923/",
+  "feature_family": "R2P3-RJ",
+  "packet_id": "R2P3-KXNFLPASSYDS-SETTLED-RESOLUTION-JOIN-HARNESS",
+  "declared_at_et": "2026-09-23T17:12:00-04:00",
+  "freeze_sha256": "9ad3b0112243c1020aec2bd6ef0df15011b065c30aa691a988da02eb08be1e0b",
+  "scout_reget_sha256": "2c3664ac240887026076a84e451ca798e0c2d10d42bdaf61a9a83844881681e5",
+  "scout_summary_sha256": "534a617bc3f18be501c07237d261e945b1bcf0301ac956cddae46e0431b75cd3",
+  "panel_stub_sha256": "70e879e8738d033f392d821849dee3537af3e7b8a916670779d238f78ce098be",
+  "settled_reget_capture_sha256": "2ce8426edb4ee5053f63bf2fe1439dbd046978eb76afa1e0537b17cca9b8b0e4",
+  "maximize_pin_sha256": "481b603c18df7dfe63475a32bde479f34dd0b5cae41ab0348aa2041788545451",
+  "examiner_hold_sha256": "baf5f6c3bc9f027c8f90de3fe0048c1b74ddebb5af1b93ca72e72f63afa61b5b",
+  "feebook_pin": "22371178cb2663250b4762f328069571c48cb551",
+  "rails_pin": "6a28e0d6254327ea4e6451c781bec56215ac6cac",
+  "results": null,
+  "pnl": null,
+  "admitted_at": null,
+  "prior_s4_rj_pr45_main": "aeff380b29dbe89b16da58f9e15e58415b42b147",
+  "prior_s4_rj_accept_sha256": "87bb8d44e8ac50099cc66d0469dcd4a5cfafb78d92dd24e7a218100a6254da4a"
+}

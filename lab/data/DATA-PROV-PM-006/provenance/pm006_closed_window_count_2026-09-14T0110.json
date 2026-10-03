@@ -1,0 +1,41 @@
+{
+  "stamp": "2026-09-14T01:09:47.907220+00:00",
+  "n_lines": 56968,
+  "n_windows_seen": 158,
+  "closed_15m_both": 38,
+  "closed_5m_both": 112,
+  "open_windows": 8,
+  "by_asset_15m": {
+    "btc": {
+      "n_windows": 19,
+      "median_both": 779,
+      "min_both": 59,
+      "max_both": 835
+    },
+    "eth": {
+      "n_windows": 19,
+      "median_both": 762,
+      "min_both": 12,
+      "max_both": 818
+    }
+  },
+  "by_asset_5m": {
+    "btc": {
+      "n_windows": 56,
+      "median_both": 247,
+      "min_both": 78,
+      "max_both": 277
+    },
+    "eth": {
+      "n_windows": 56,
+      "median_both": 245,
+      "min_both": 67,
+      "max_both": 275
+    }
+  },
+  "span_first": "2026-09-13T20:26:57.616Z",
+  "span_last": "2026-09-14T01:09:47.338Z",
+  "pid": 1391180,
+  "failures": 0,
+  "note": "FORWARD only. Not Clock. Not Examiner. Not a TEST."
+}

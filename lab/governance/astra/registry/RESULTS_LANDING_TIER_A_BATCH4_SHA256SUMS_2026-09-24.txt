@@ -1,0 +1,1 @@
+cd300e664c2c5f2ff344c4b1eb17dd3f8e5f3326168b9dd8e3ade94a3a7382b4  /workspace/lab/astra-science/nfl_factorial_lab_20260921/inputs/events.jsonl.gz	# batch4 -> nfl_factorial_lab_20260921/inputs/events.jsonl.gz (22967126 bytes; Examiner-flagged Q7 input, not in git; identical copies in nfl_adaptive_lab_20260921 and astra-kits/recovered)

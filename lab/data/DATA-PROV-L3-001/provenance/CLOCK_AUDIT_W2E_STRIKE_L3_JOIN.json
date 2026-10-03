@@ -1,0 +1,361 @@
+{
+  "AUDIT_ID": "CLOCK_AUDIT_W2E_STRIKE_L3_JOIN",
+  "FEATURE": "DRAFT-FEAT-20260913-002",
+  "GATE": "DRAFT-ABST-20260913-002",
+  "WAVE": "W2-E / Wave 003",
+  "DATA_IDS": [
+    "DATA-PROV-PM-003",
+    "DATA-PROV-PM-001",
+    "DATA-PROV-L3-001"
+  ],
+  "audited_at_utc": "2026-09-13T19:23:07.917859+00:00",
+  "auditor": "Clock",
+  "new_fetch": false,
+  "policy": {
+    "no_alpha": true,
+    "no_examiner_delta": true,
+    "no_CF_as_oracle": true,
+    "L3_NOT_oracle": true,
+    "EXPIRATION_VALUE_audit_only_never_feature": true
+  },
+  "sources": {
+    "checkpoints": "/workspace/lab/data/DATA-PROV-PM-003/derived/checkpoints.ndjson",
+    "pm001_kalshi": "/workspace/lab/data/DATA-PROV-PM-001/normalized/kalshi_15m_btc_eth_resolved.ndjson",
+    "l3_btc": "/workspace/lab/data/DATA-PROV-L3-001/derived/BTCUSDT_1m_spot_2026-09-04_2026-09-11.parquet",
+    "l3_eth": "/workspace/lab/data/DATA-PROV-L3-001/derived/ETHUSDT_1m_spot_2026-09-04_2026-09-11.parquet",
+    "feature_card": "/workspace/lab/archive/features/DRAFT-FEAT-20260913-002-W2E-strike-vs-mid.md",
+    "gate_card": "/workspace/lab/archive/features/DRAFT-ABST-20260913-002-W2E-rules-strike.md",
+    "prior_clock_l3": "/workspace/lab/data/DATA-PROV-L3-001/provenance/CLOCK_AUDIT_REPORT.json",
+    "script": "/workspace/lab/data/DATA-PROV-L3-001/provenance/clock_audit_W2E_STRIKE_L3_JOIN.py"
+  },
+  "exact_join_formula": "knowable_bar = argmax { bar in L3 | bar.close_time_ms <= decision_time_ms }; S_t = knowable_bar.close; require knowable_bar exists AND (decision_time_ms - close_time_ms) <= 90000; K = PM-001.FLOOR_STRIKE joined by contract_id / venue_native_id; require OPEN_TIME <= decision_time and FLOOR_STRIKE present (fail-closed if missing).",
+  "stale_threshold_ms": 90000,
+  "near_deg": {
+    "lo": 0.02,
+    "hi": 0.98
+  },
+  "pm001_meta": {
+    "n_rows": 1328,
+    "n_unique_contract_id": 1328,
+    "n_unique_venue_native_id": 1328,
+    "n_null_FLOOR_STRIKE": 0,
+    "status_counts": {
+      "RESOLVED": 1328
+    },
+    "resolution_counts": {
+      "YES": 660,
+      "NO": 668
+    },
+    "one_row_per_contract": true,
+    "revision_feed_present": false,
+    "revision_policy_tag": "[V] static dump snapshot \u2014 one FLOOR_STRIKE per CONTRACT_ID; [A] no post-OPEN revision feed in this dump (cannot observe revisions).",
+    "EXPIRATION_VALUE_note": "Field present on PM-001 rows for audit inventory only; FORBIDDEN in feature join / p_t construction.",
+    "n_null_EXPIRATION_VALUE": 0
+  },
+  "headlines": [
+    {
+      "id": "headline_BTC_T5m",
+      "cell": "KALSHI|15m|BTC|T-5m|mid",
+      "asset": "BTC",
+      "symbol": "BTCUSDT",
+      "rem": 300,
+      "t_minus": "T-5m",
+      "role": "headline",
+      "n_candidates_at_rem": 604,
+      "scored_exclude_breakdown": {
+        "non_mid_at_rem_dropped": 0,
+        "near_deg_scored_dropped": 35,
+        "void_disputed_scored_dropped": 0
+      },
+      "N_scored": 569,
+      "N_with_K_and_S_t_pairable": 569,
+      "N_missing_K": 0,
+      "N_missing_S_t": 0,
+      "N_missing_either_fail_closed": 0,
+      "missing_reasons": {},
+      "K_cert": {
+        "n_FLOOR_STRIKE_present": 569,
+        "n_FLOOR_STRIKE_null": 0,
+        "n_OPEN_TIME_le_decision_time": 569,
+        "n_OPEN_TIME_gt_decision_time": 0,
+        "n_pm001_join_miss": 0,
+        "join_keys": [
+          "contract_id->CONTRACT_ID",
+          "venue_native_id->VENUE_NATIVE_ID"
+        ],
+        "knowable_at_t": true,
+        "revision_evidence": "[V] snapshot \u2014 single FLOOR_STRIKE per contract in static dump; [A] no revision feed \u2014 cannot certify absence of post-OPEN revision beyond dump contents.",
+        "fail_closed_if_missing": true
+      },
+      "S_t_cert": {
+        "rule_preferred": "knowable_bar exists AND (decision_time_ms - close_time_ms) <= 90000",
+        "rule_alt_measured": "require close_time_ms in (t-90000, t]",
+        "join_formula": "knowable_bar = argmax { bar | close_time_ms <= decision_time_ms }",
+        "n_bar_exists_le_t": 569,
+        "n_bar_missing": 0,
+        "n_fresh_lag_le_90s": 569,
+        "n_stale_lag_gt_90s": 0,
+        "n_alt_window_miss_on_knowable_bar": 0,
+        "lag_stats_ms": {
+          "n": 569,
+          "min_ms": 1,
+          "max_ms": 1,
+          "median_ms": 1.0,
+          "unique_lags_ms": [
+            1
+          ],
+          "all_le_90s": true
+        },
+        "n_incomplete_bar_used_lookahead": 0,
+        "knowable_at_t": true,
+        "lookahead": false,
+        "fail_closed_if_missing_or_stale": true
+      },
+      "l3_coverage": {
+        "symbol": "BTCUSDT",
+        "first_open_time_ms": 1788480000000,
+        "last_open_time_ms": 1789171140000,
+        "first_close_time_ms": 1788480059999,
+        "last_close_time_ms": 1789171199999,
+        "first_open_utc": "2026-09-04T00:00:00Z",
+        "last_open_utc": "2026-09-11T23:59:00Z",
+        "n_decision_times_in_window": 569,
+        "n_decision_times_out_of_window": 0,
+        "all_decision_times_in_L3_window": true,
+        "n_bars_label_NOT_oracle": 569,
+        "n_bars_layer_L3": 569
+      },
+      "samples_ok": [
+        {
+          "contract_id": "PROV-KALSHI-KXBTC15M-26SEP111630-30",
+          "decision_time": "2026-09-11T20:25:00Z",
+          "decision_time_ms": 1789158300000,
+          "FLOOR_STRIKE": 77446.67,
+          "OPEN_TIME": "2026-09-11T20:15:00Z",
+          "S_t": 77427.35,
+          "knowable_bar_open_time_ms": 1789158240000,
+          "knowable_bar_close_time_ms": 1789158299999,
+          "lag_ms": 1,
+          "implied_p": 0.325
+        },
+        {
+          "contract_id": "PROV-KALSHI-KXBTC15M-26SEP111615-15",
+          "decision_time": "2026-09-11T20:10:00Z",
+          "decision_time_ms": 1789157400000,
+          "FLOOR_STRIKE": 77306.16,
+          "OPEN_TIME": "2026-09-11T20:00:00Z",
+          "S_t": 77420.01,
+          "knowable_bar_open_time_ms": 1789157340000,
+          "knowable_bar_close_time_ms": 1789157399999,
+          "lag_ms": 1,
+          "implied_p": 0.895
+        },
+        {
+          "contract_id": "PROV-KALSHI-KXBTC15M-26SEP111600-00",
+          "decision_time": "2026-09-11T19:55:00Z",
+          "decision_time_ms": 1789156500000,
+          "FLOOR_STRIKE": 77271.95,
+          "OPEN_TIME": "2026-09-11T19:45:00Z",
+          "S_t": 77358.76,
+          "knowable_bar_open_time_ms": 1789156440000,
+          "knowable_bar_close_time_ms": 1789156499999,
+          "lag_ms": 1,
+          "implied_p": 0.795
+        }
+      ],
+      "samples_missing": []
+    },
+    {
+      "id": "headline_ETH_T5m",
+      "cell": "KALSHI|15m|ETH|T-5m|mid",
+      "asset": "ETH",
+      "symbol": "ETHUSDT",
+      "rem": 300,
+      "t_minus": "T-5m",
+      "role": "headline",
+      "n_candidates_at_rem": 604,
+      "scored_exclude_breakdown": {
+        "non_mid_at_rem_dropped": 0,
+        "near_deg_scored_dropped": 59,
+        "void_disputed_scored_dropped": 0
+      },
+      "N_scored": 545,
+      "N_with_K_and_S_t_pairable": 545,
+      "N_missing_K": 0,
+      "N_missing_S_t": 0,
+      "N_missing_either_fail_closed": 0,
+      "missing_reasons": {},
+      "K_cert": {
+        "n_FLOOR_STRIKE_present": 545,
+        "n_FLOOR_STRIKE_null": 0,
+        "n_OPEN_TIME_le_decision_time": 545,
+        "n_OPEN_TIME_gt_decision_time": 0,
+        "n_pm001_join_miss": 0,
+        "join_keys": [
+          "contract_id->CONTRACT_ID",
+          "venue_native_id->VENUE_NATIVE_ID"
+        ],
+        "knowable_at_t": true,
+        "revision_evidence": "[V] snapshot \u2014 single FLOOR_STRIKE per contract in static dump; [A] no revision feed \u2014 cannot certify absence of post-OPEN revision beyond dump contents.",
+        "fail_closed_if_missing": true
+      },
+      "S_t_cert": {
+        "rule_preferred": "knowable_bar exists AND (decision_time_ms - close_time_ms) <= 90000",
+        "rule_alt_measured": "require close_time_ms in (t-90000, t]",
+        "join_formula": "knowable_bar = argmax { bar | close_time_ms <= decision_time_ms }",
+        "n_bar_exists_le_t": 545,
+        "n_bar_missing": 0,
+        "n_fresh_lag_le_90s": 545,
+        "n_stale_lag_gt_90s": 0,
+        "n_alt_window_miss_on_knowable_bar": 0,
+        "lag_stats_ms": {
+          "n": 545,
+          "min_ms": 1,
+          "max_ms": 1,
+          "median_ms": 1.0,
+          "unique_lags_ms": [
+            1
+          ],
+          "all_le_90s": true
+        },
+        "n_incomplete_bar_used_lookahead": 0,
+        "knowable_at_t": true,
+        "lookahead": false,
+        "fail_closed_if_missing_or_stale": true
+      },
+      "l3_coverage": {
+        "symbol": "ETHUSDT",
+        "first_open_time_ms": 1788480000000,
+        "last_open_time_ms": 1789171140000,
+        "first_close_time_ms": 1788480059999,
+        "last_close_time_ms": 1789171199999,
+        "first_open_utc": "2026-09-04T00:00:00Z",
+        "last_open_utc": "2026-09-11T23:59:00Z",
+        "n_decision_times_in_window": 545,
+        "n_decision_times_out_of_window": 0,
+        "all_decision_times_in_L3_window": true,
+        "n_bars_label_NOT_oracle": 545,
+        "n_bars_layer_L3": 545
+      },
+      "samples_ok": [
+        {
+          "contract_id": "PROV-KALSHI-KXETH15M-26SEP111630-30",
+          "decision_time": "2026-09-11T20:25:00Z",
+          "decision_time_ms": 1789158300000,
+          "FLOOR_STRIKE": 2544.97,
+          "OPEN_TIME": "2026-09-11T20:15:00Z",
+          "S_t": 2540.14,
+          "knowable_bar_open_time_ms": 1789158240000,
+          "knowable_bar_close_time_ms": 1789158299999,
+          "lag_ms": 1,
+          "implied_p": 0.052
+        },
+        {
+          "contract_id": "PROV-KALSHI-KXETH15M-26SEP111615-15",
+          "decision_time": "2026-09-11T20:10:00Z",
+          "decision_time_ms": 1789157400000,
+          "FLOOR_STRIKE": 2539.72,
+          "OPEN_TIME": "2026-09-11T20:00:00Z",
+          "S_t": 2542.99,
+          "knowable_bar_open_time_ms": 1789157340000,
+          "knowable_bar_close_time_ms": 1789157399999,
+          "lag_ms": 1,
+          "implied_p": 0.835
+        },
+        {
+          "contract_id": "PROV-KALSHI-KXETH15M-26SEP111600-00",
+          "decision_time": "2026-09-11T19:55:00Z",
+          "decision_time_ms": 1789156500000,
+          "FLOOR_STRIKE": 2542.85,
+          "OPEN_TIME": "2026-09-11T19:45:00Z",
+          "S_t": 2541.36,
+          "knowable_bar_open_time_ms": 1789156440000,
+          "knowable_bar_close_time_ms": 1789156499999,
+          "lag_ms": 1,
+          "implied_p": 0.285
+        }
+      ],
+      "samples_missing": []
+    }
+  ],
+  "certifications": {
+    "A_K": {
+      "pass": true,
+      "summary": "K = FLOOR_STRIKE from PM-001 joined by contract_id/venue_native_id. Present on all scored contracts; OPEN_TIME<=decision_time on all. [V] static dump snapshot \u2014 one FLOOR_STRIKE per CONTRACT_ID; [A] no post-OPEN revision feed in this dump (cannot observe revisions). Fail-closed if null/missing.",
+      "present_on_scored": true,
+      "open_le_t": true,
+      "revision_tags": [
+        "V_snapshot",
+        "A_no_revision_feed"
+      ]
+    },
+    "B_S_t": {
+      "pass": true,
+      "summary": "S_t = last L3 completed 1m close with close_time_ms <= decision_time_ms (BTC\u2192BTCUSDT, ETH\u2192ETHUSDT). Preferred fail-closed: bar exists AND lag <= 90000 ms. Both interpretations measured; preferred used for pairable counts. Lag unique=1ms on this slice.",
+      "preferred_rule_pass": true,
+      "lookahead": false
+    },
+    "C_scored_row": {
+      "pass": true,
+      "summary": "Scored: rem=300, implied_p_method==mid, not near-deg (\u22640.02/\u22650.98), VOID/DISPUTED excluded (TEST-007-style). See per-headline exclude breakdown."
+    },
+    "D_coverage": {
+      "pass": true,
+      "summary": "Per headline: {'KALSHI|15m|BTC|T-5m|mid': {'N_scored': 569, 'N_pairable': 569, 'N_missing_K': 0, 'N_missing_S_t': 0, 'N_missing_either': 0}, 'KALSHI|15m|ETH|T-5m|mid': {'N_scored': 545, 'N_pairable': 545, 'N_missing_K': 0, 'N_missing_S_t': 0, 'N_missing_either': 0}}",
+      "per_headline": {
+        "KALSHI|15m|BTC|T-5m|mid": {
+          "N_scored": 569,
+          "N_pairable": 569,
+          "N_missing_K": 0,
+          "N_missing_S_t": 0,
+          "N_missing_either": 0
+        },
+        "KALSHI|15m|ETH|T-5m|mid": {
+          "N_scored": 545,
+          "N_pairable": 545,
+          "N_missing_K": 0,
+          "N_missing_S_t": 0,
+          "N_missing_either": 0
+        }
+      }
+    },
+    "E_knowability": {
+      "pass": true,
+      "K_knowable": true,
+      "K_detail": "Yes if frozen at OPEN and OPEN<=t. Certified OPEN<=t on all scored; static dump [V]/ no revision feed [A].",
+      "S_t_knowable": true,
+      "S_t_detail": "Yes: completed bar close_time_ms <= t; lag always 1ms <= 90s.",
+      "lookahead": false,
+      "lookahead_detail": "No look-ahead under preferred rule. Using incomplete bar (open_time == floor_minute(t)) would be look-ahead \u2014 count=0."
+    },
+    "F_L3_NOT_oracle_no_EXPIRATION_VALUE": {
+      "pass": true,
+      "summary": "L3 rows labeled external_predictor_NOT_oracle_NOT_CF_BRTI; layer=L3. EXPIRATION_VALUE not used in feature join (PM-001 field inventory-only).",
+      "L3_is_oracle": false,
+      "EXPIRATION_VALUE_in_join": false
+    },
+    "G_decision_times_in_L3_window": {
+      "pass": true,
+      "summary": "All rem=300 decision_times for scored headlines land inside L3 coverage (2026-09-04T00:00:00Z open \u2192 2026-09-11T23:59:59.999Z last close)."
+    }
+  },
+  "verdict": {
+    "recommended_verdict": "CONDITIONAL",
+    "verdict_scope": "join_only",
+    "rationale": "Join-only: K present on all scored rows with OPEN_TIME<=t; S_t always within 90s (lag=1ms on this PM-003 :00 slice) via close_time_ms<=decision_time_ms. No look-ahead. CONDITIONAL (not CLEARED) because L3 is external_predictor_NOT_oracle and is NOT CF BRTI / settlement oracle \u2014 S_t is spot proxy [A], not CF TWAP. No EXPIRATION_VALUE in feature join. Static dump: [V] snapshot / [A] no revision feed for FLOOR_STRIKE.",
+    "all_pairable": true,
+    "any_missing": false,
+    "any_lookahead": false,
+    "k_revision_observed": false,
+    "pm001_revision_feed_present": false,
+    "L3_NOT_oracle_caveat": true,
+    "L3_NOT_CF_caveat": true,
+    "EXPIRATION_VALUE_in_feature_join": false
+  },
+  "recommended_verdict": "CONDITIONAL",
+  "paths": {
+    "script": "/workspace/lab/data/DATA-PROV-L3-001/provenance/clock_audit_W2E_STRIKE_L3_JOIN.py",
+    "json": "/workspace/lab/data/DATA-PROV-L3-001/provenance/CLOCK_AUDIT_W2E_STRIKE_L3_JOIN.json",
+    "md": "/workspace/lab/data/DATA-PROV-L3-001/provenance/CLOCK_AUDIT_W2E_STRIKE_L3_JOIN.md"
+  }
+}

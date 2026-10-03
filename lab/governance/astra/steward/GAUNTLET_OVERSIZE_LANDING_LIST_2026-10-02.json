@@ -1,0 +1,458 @@
+{
+ "schema": "steward.gauntlet_oversize_landing_list.v1",
+ "generated_at": "2026-10-02T18:56:05-04:00",
+ "generated_by": "The Steward (KALSHI); inputs only, no repo writes",
+ "authority": "Conductor daytime GO 2026-10-02 (same terms as bc-8ad60892): one real-checkout cloud agent lands the set; source of truth = box bytes pinned by sha256",
+ "source_log": {
+  "path": "lab/governance/astra/steward/GAUNTLET_SYNC_2026-10-02.log",
+  "sha256_at_build": "a5fe5f706bda9695727a5bffc3f108293e9d7195580f79c52580b5f9000b191a",
+  "run_id": "sync-20261002-1840"
+ },
+ "target": {
+  "repo": "17thgreen/GrokBot---The-GauntletV2-",
+  "branch": "main",
+  "checked_against_head": "a6af24204cf2b64280f5c51cdee57f4dcbb1e30f"
+ },
+ "bundles": [
+  {
+   "tar": "/workspace/steward_gauntlet_oversize_20261001/oversize_bundle_2026-10-02.tar.gz",
+   "tar_sha256": "26f0fd5b55cc6957fc8b273688c94df3ff0f4e19768e612c0511d2a83219caf8",
+   "tar_bytes": 422626,
+   "bundle": "main: DEFERRED_OVERSIZE set of sync-20261002-1840",
+   "counts": {
+    "candidates": 46,
+    "included": 37,
+    "excluded_or_held": 9,
+    "included_bytes": 2103664
+   },
+   "modifies_existing_on_main": [],
+   "entries": [
+    {
+     "path": "lab/data/DATA-PROV-PM-001/provenance/CLOCK_AUDIT_REPORT.md",
+     "size": 12385,
+     "sha256": "1637684eab4d2ceeeda0bd0fc52bd8f1ee5e1f20d9c7242aae68cb1d56378be5",
+     "blob": "3ef9c7b80c02fceb4ff2e78048f8b7ea463d3ea1",
+     "on_main": "new",
+     "source": "run-sync-20261002-1840"
+    },
+    {
+     "path": "lab/governance/astra/SCOUT_PERPS_STALE_QUOTE_SCREEN_2026-09-24.md",
+     "size": 16332,
+     "sha256": "773e5abee36f6aae51dc49d0e8bab08f7e800a040b06754e47f5d02b3bda7e43",
+     "blob": "4d65f2d2f5426b1ce902c093c951a1e6890c304d",
+     "on_main": "new",
+     "source": "run-sync-20261002-1840"
+    },
+    {
+     "path": "lab/governance/astra/briefs/R3_DEEP_RESEARCH_EXTERNAL_CANDIDATES_2026-09-22.md",
+     "size": 13379,
+     "sha256": "54555240599a114ad8419d589b36eeb9326f44864ae55014d6bfa58d0f4dd4d1",
+     "blob": "15f02f12bb774f7128c849edc40b8c32166ae393",
+     "on_main": "new",
+     "source": "run-sync-20261002-1840"
+    },
+    {
+     "path": "lab/governance/astra/cemetery/CEM-ASTRA-20260924-005_EVIDENCE_SHA256SUMS.txt",
+     "size": 16766,
+     "sha256": "dcd93c52f7a40d0d87d9cd8b38f28014c4d97ccb0599f5973105e4cad7266b16",
+     "blob": "10ca5301707793b3850302b2533b3a3a8c36ded6",
+     "on_main": "new",
+     "source": "run-sync-20261002-1840"
+    },
+    {
+     "path": "lab/governance/astra/charters/DEEP_RESEARCH_MASTER_BRIEF_v1_1_2026-09-24.md",
+     "size": 22363,
+     "sha256": "02272754b01da5b65edd837545e485f4fd4dff2903a7ae1f52d9cb5e616fec5d",
+     "blob": "00846e6439cef96b3446d86d61936ef92dffffcf",
+     "on_main": "new",
+     "source": "run-sync-20261002-1840"
+    },
+    {
+     "path": "lab/governance/astra/charters/DEEP_RESEARCH_MASTER_BRIEF_v1_2026-09-24.md",
+     "size": 21734,
+     "sha256": "6a02cb468a4b6c600fc3a16078a216a6095321c6bc92c24b2a7aca58f149daa8",
+     "blob": "afbfc02381f31bb2b033c6ca04f1e518c6783cf0",
+     "on_main": "new",
+     "source": "run-sync-20261002-1840"
+    },
+    {
+     "path": "lab/governance/astra/packets/ADVERSARY_CARD01_NH002H_LEAKAGE_CHECK_2026-09-24.md",
+     "size": 17967,
+     "sha256": "9be7f027a79af1807f9ac0579efffc63465aec5f66af4625976b8b24801691fb",
+     "blob": "d3fb4bd5203449abc38ab558ac0cfba9ed078f9b",
+     "on_main": "new",
+     "source": "run-sync-20261002-1840"
+    },
+    {
+     "path": "lab/governance/astra/packets/ADVERSARY_DEAD_CARD_OVERLAP_EDGE_RESEARCH_2026-09-24.md",
+     "size": 14526,
+     "sha256": "b434220493c8dfae34c123786153ad038ae3cb2832272254a2e97673f7e87fdd",
+     "blob": "ee3dda56c09c33a07a292544bc5b147c7caa4156",
+     "on_main": "new",
+     "source": "run-sync-20261002-1840"
+    },
+    {
+     "path": "lab/governance/astra/packets/ARCHIVIST_CONDUCTOR_RULINGS_RECORD_2026-09-24.md",
+     "size": 22904,
+     "sha256": "17f31d8f016a4f51f4b1c27406daa7b0da24e0ab0ef762f7dee2e8554d3a9fa3",
+     "blob": "a212ed9c6e8f4e72abf260b5be1324efbe3507b7",
+     "on_main": "new",
+     "source": "run-sync-20261002-1840"
+    },
+    {
+     "path": "lab/governance/astra/packets/ATP_KXATPMATCH_SETTLED_RESOLUTION_JOIN_HARNESS_FREEZE_2026-09-24.md",
+     "size": 14498,
+     "sha256": "dc9fcb326a97ce24267ed96438bf403687bc9aef6b79dccef3483d0e4cdeeb69",
+     "blob": "aa0fd8dacf018e3d2683b311381ebb7317128c93",
+     "on_main": "new",
+     "source": "run-sync-20261002-1840"
+    },
+    {
+     "path": "lab/governance/astra/packets/CARD01_EXP2_CENSUS_GATECOUNT_FREEZE_KERNEL_2026-09-24.md",
+     "size": 19489,
+     "sha256": "7087eb45ea8f2af0667f1aa427b674f50f6aa041ba12d3bfde9e22ac676751d8",
+     "blob": "f0e5ff75c1b103d5bb2eb3b0d80008d6e7b4accb",
+     "on_main": "new",
+     "source": "run-sync-20261002-1840"
+    },
+    {
+     "path": "lab/governance/astra/packets/CARD01_HOUSE_ONLY_PROSPECTIVE_FREEZE_2026-09-24.md",
+     "size": 24988,
+     "sha256": "c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59",
+     "blob": "cc4020ca6012ffae2f208851f3dee95d20ff8261",
+     "on_main": "new",
+     "source": "run-sync-20261002-1840"
+    },
+    {
+     "path": "lab/governance/astra/packets/CARD01_HOUSE_ONLY_PROSPECTIVE_FREEZE_2026-09-24_AMENDMENT_B.md",
+     "size": 16998,
+     "sha256": "ee6af37cef95f1e468d28e5b06750caaca8b1706ec11ed5cf5cdce460524c2c6",
+     "blob": "07c78e52987f441301f15d20b547427944c5533f",
+     "on_main": "new",
+     "source": "run-sync-20261002-1840"
+    },
+    {
+     "path": "lab/governance/astra/packets/CARD01_NEGLECTED_HYBRID_DECISION_PACKET_2026-09-24.md",
+     "size": 19633,
+     "sha256": "c0c1aa66f104e3f102228a7a8e16f205977afbee63928f30a6954ec46707a82c",
+     "blob": "e1bd1d15da68504439619834c7e2a549819e2a51",
+     "on_main": "new",
+     "source": "run-sync-20261002-1840"
+    },
+    {
+     "path": "lab/governance/astra/packets/CARD02_STATION_WEATHER_NOWCAST_FREEZE_KERNEL_2026-09-24.md",
+     "size": 21250,
+     "sha256": "6b36dacb84f92524b18c3799c50c5818ee44fee89ac1743ceafb1092cd4c7e48",
+     "blob": "c6167dae823066b48dd1def0bc7301e108056c7d",
+     "on_main": "new",
+     "source": "run-sync-20261002-1840"
+    },
+    {
+     "path": "lab/governance/astra/packets/EXAMINER_SCORECARD_Q6S5_KXMLBSPREAD_GAME_PHASE_SETTLED_TAPE_PR62_2026-10-01.md",
+     "size": 15790,
+     "sha256": "00c3da8d20a74d8baad8236eb94c43ca6a7d7cc681ad4b308a89884613a2d5ca",
+     "blob": "7a535ee2f04fee81ae934365d54a02083403404e",
+     "on_main": "new",
+     "source": "run-sync-20261002-1840"
+    },
+    {
+     "path": "lab/governance/astra/packets/EXAMINER_SCORECARD_WX_FL_KXHIGH_SETTLED_TAPE_PR63_2026-10-01.md",
+     "size": 13457,
+     "sha256": "81f5a9b0169f866fa34e0faa84e4c8e0aa3df41a7cdbf70115c04188d6b6fdf2",
+     "blob": "4afe13543fedfba1cb33fbb66341f30978c7abd6",
+     "on_main": "new",
+     "source": "run-sync-20261002-1840"
+    },
+    {
+     "path": "lab/governance/astra/packets/Q6S1_KXATPMATCH_INVENTORY_REPROOF_FREEZE_2026-09-25.md",
+     "size": 14499,
+     "sha256": "d86f7a402ea63fb132d80480f844a954fe9061a27b9b6bed125f9785ae64640e",
+     "blob": "aafd478b5725dbe0c7765e9aff0b8860ba4a9b7b",
+     "on_main": "new",
+     "source": "run-sync-20261002-1840"
+    },
+    {
+     "path": "lab/governance/astra/packets/Q6S5_KXMLBSPREAD_FL_BAND_SETTLED_TAPE_FREEZE_2026-09-29.md",
+     "size": 24386,
+     "sha256": "fb6540f52ed5f819ccf6e80bf0cf7eb6d951e065416b9d550fead0c6d06043fa",
+     "blob": "cd261a80044a88e6b677d57fdbb1c55d869e0281",
+     "on_main": "new",
+     "source": "run-sync-20261002-1840"
+    },
+    {
+     "path": "lab/governance/astra/packets/Q6S5_KXMLBSPREAD_STRATEGY_FILL_FREEZE_2026-09-25.md",
+     "size": 22983,
+     "sha256": "9f50ba19694083c774bbe2a6cff491d1a2f81ed3a6f9cc21a3641a938c84955d",
+     "blob": "bcaacd8dbf16d660ab95a803e64ede1b4593279c",
+     "on_main": "new",
+     "source": "run-sync-20261002-1840"
+    },
+    {
+     "path": "lab/governance/astra/packets/VARIANTS_HOLDOUT_MAKER_NULL_FEASIBILITY_NOTE_2026-10-02.md",
+     "size": 21906,
+     "sha256": "75fac6140d1aa906aef210dec1d3390afaa7876bfa15e4e9cf7e0fb4a4de5f2a",
+     "blob": "f85cdabdea9908c34033d7a96038f48bf369f43a",
+     "on_main": "new",
+     "source": "run-sync-20261002-1840"
+    },
+    {
+     "path": "lab/governance/astra/packets/VARIANTS_HOLDOUT_PREREG_ADDENDUM_Q6S5_KXMLBSPREAD_UNTOUCHED_CAPTURE_2026-10-01.md",
+     "size": 22921,
+     "sha256": "370dc31df17191446013b6cebb52d44ee8346f47d2f5b543a1c73049ba52c063",
+     "blob": "36152c324a39d91791661d2908484092bdc45832",
+     "on_main": "new",
+     "source": "run-sync-20261002-1840"
+    },
+    {
+     "path": "lab/governance/astra/packets/VARIANTS_Q6S5_KXMLBSPREAD_STRATEGY_FILL_PR60_SCORABILITY_FREEZE_2026-10-02.md",
+     "size": 46352,
+     "sha256": "213ee6dd33f292c8041977b0b8d7566da9412fd3debe0597643c500dc1e42db4",
+     "blob": "815ec017a2a488016f2264afd0f785233bab2295",
+     "on_main": "new",
+     "source": "run-sync-20261002-1840"
+    },
+    {
+     "path": "lab/governance/astra/registry/FEE_ACCOUNT_MANIFEST_v0_DRAFT_2026-09-24.json",
+     "size": 15126,
+     "sha256": "aa7658764061912073b8d9fc1f2ae03fc970fa382dca1c49335944be650552ba",
+     "blob": "bf200c9762f03fe84b0a358aa4c70e225a21bc1d",
+     "on_main": "new",
+     "source": "run-sync-20261002-1840"
+    },
+    {
+     "path": "lab/governance/astra/registry/PACKET_INDEX.md.bak-20260924",
+     "size": 13158,
+     "sha256": "5f21a548591327a7b53e99689e1eea53003197d39814bf1ff007b36602b094d2",
+     "blob": "eed3a616c9682282cf98ff8eadb7586e4b4dd87c",
+     "on_main": "new",
+     "source": "run-sync-20261002-1840"
+    },
+    {
+     "path": "lab/governance/astra/registry/RESULTS_LANDING_SHA256SUMS_2026-09-24.txt",
+     "size": 21361,
+     "sha256": "ab17ad934d5902002a7c62facffddc370a544ac50f50ccab4e2dd0f0ff72fd19",
+     "blob": "626e88d15d77aad9547d60006215bb213b348968",
+     "on_main": "new",
+     "source": "run-sync-20261002-1840"
+    },
+    {
+     "path": "lab/governance/astra/registry/STATUS_2026-09-24.md",
+     "size": 20588,
+     "sha256": "bed8e99f68c3abc9823a98c2aeca6fecb776f198d5099bc449a436c1ac179a2a",
+     "blob": "2cef957f24da697f39be08cd5043db3db89c72c4",
+     "on_main": "new",
+     "source": "run-sync-20261002-1840"
+    },
+    {
+     "path": "lab/governance/astra/reports/DESK_REPORT_FACTS_2026-09-23_1445ET.md",
+     "size": 15261,
+     "sha256": "33fee699f1bba1db9f96e70426c0884c434e6c8c726750d9f8244f9950df6bd2",
+     "blob": "d23e51ba157f1152c0e82beac3fed33f1f3cceb0",
+     "on_main": "new",
+     "source": "run-sync-20261002-1840"
+    },
+    {
+     "path": "lab/governance/astra/steward/GAUNTLET_SYNC_ROUTINE_PROMPT_v2.md",
+     "size": 12548,
+     "sha256": "bb0a90e567c44be76928759b3d6aa20b8effd1beff9a8663f4a8c1e688ed7a66",
+     "blob": "d8112dac3a6b50bf5d26548e6f3ab79e64d9e559",
+     "on_main": "new",
+     "source": "run-sync-20261002-1840"
+    },
+    {
+     "path": "lab/governance/astra/steward/GAUNTLET_SYNC_ROUTINE_PROMPT_v3.1.md",
+     "size": 26732,
+     "sha256": "df2f54a65ad1d2a0611e446d4bd6cac0df098402a54b838d35ac3fef1aa52997",
+     "blob": "265de19f233d6cd738a10836968aab322ad9a840",
+     "on_main": "new",
+     "source": "run-sync-20261002-1840"
+    },
+    {
+     "path": "lab/governance/astra/steward/GAUNTLET_SYNC_ROUTINE_PROMPT_v3.md",
+     "size": 14623,
+     "sha256": "cc0a17895d32a2e3ca97bce915849a4405c402dcdd0f514c3d97665f53484ed2",
+     "blob": "8d88e946d8266515dc0022755cca8b98fb40f47a",
+     "on_main": "new",
+     "source": "run-sync-20261002-1840"
+    },
+    {
+     "path": "lab/governance/astra/steward/HYGIENE_2026-10-01.md",
+     "size": 23968,
+     "sha256": "ba87179df57f4e692e1d9f7e0796dce1589ac01ccd78f6bdf3cc559fbcd3b7c9",
+     "blob": "a00014fea2681d629e3512e3f872ddd56b231f67",
+     "on_main": "new",
+     "source": "run-sync-20261002-1840"
+    },
+    {
+     "path": "lab/governance/astra/steward/LOSS_INVENTORY_2026-10-01.json",
+     "size": 1403067,
+     "sha256": "feb29c29a9d2b5e5f7c2ab85ac0a4785620f0e0df76a022a67ed40df54e6e2d1",
+     "blob": "fa4f85eee881de22822aae8e9fa7dd7053443f58",
+     "on_main": "new",
+     "source": "run-sync-20261002-1840"
+    },
+    {
+     "path": "lab/governance/astra/steward/STEWARD_CONDUCTOR_RULINGS_EXEC_2026-10-01.json",
+     "size": 25270,
+     "sha256": "433ba206a2961d56801b95551ae67ed6403da7cb5c1f83e6df9cf32ba7a262ac",
+     "blob": "b93c58fedc3238dbb173538a29a60f6f9d0f2cfb",
+     "on_main": "new",
+     "source": "run-sync-20261002-1840"
+    },
+    {
+     "path": "lab/governance/astra/steward/STEWARD_CONDUCTOR_RULINGS_EXEC_2026-10-01.md",
+     "size": 23305,
+     "sha256": "133302a440281647f7589f29dad54882928c3d43253e77cf9bef78dbb6f5d578",
+     "blob": "138cc52e81201959da9f67d9f6dd353fcbc82ee0",
+     "on_main": "new",
+     "source": "run-sync-20261002-1840"
+    },
+    {
+     "path": "lab/governance/astra/templates/EXAMINER_KALSHI_SCORECARD_TEMPLATE_v1.2.md",
+     "size": 12484,
+     "sha256": "ad1dd2834652b8e9be331ddf2f3ec900ea587efb042251fde6452532b2e36394",
+     "blob": "e9b885a18f7a58b3c2d3dbce3add4e820d8fed48",
+     "on_main": "new",
+     "source": "run-sync-20261002-1840"
+    },
+    {
+     "path": "lab/governance/astra/templates/EXAMINER_KALSHI_SCORECARD_TEMPLATE_v1.json",
+     "size": 18667,
+     "sha256": "c30e0f40e0efb7d1254798a7f8fed8a9d47ffee0397260b3502155dd5823f739",
+     "blob": "a2d2b277be9e847d707b6884ec1378d0c422eaaa",
+     "on_main": "new",
+     "source": "run-sync-20261002-1840"
+    }
+   ],
+   "excluded": [
+    {
+     "path": "lab/governance/astra/_prev/3f893cbfbc020fc6735b8557d3e7950745ea43c7c6564d59e3f79d3ac6d03fe0.SCOUT_PERPS_STALE_QUOTE_SCREEN_2026-09-24.md",
+     "size": 14602,
+     "sha256": "3f893cbfbc020fc6735b8557d3e7950745ea43c7c6564d59e3f79d3ac6d03fe0",
+     "reason": "HELD:prev-copy-box-only (2026-10-01 ruling: _prev/ copies are box-only)"
+    },
+    {
+     "path": "lab/governance/astra/_prev/c15326583e96dcfa986e10e963ca1238320fa295a8c53cc13e248a9735adbafb.SCOUT_PERPS_STALE_QUOTE_SCREEN_2026-09-24.md",
+     "size": 16243,
+     "sha256": "c15326583e96dcfa986e10e963ca1238320fa295a8c53cc13e248a9735adbafb",
+     "reason": "HELD:prev-copy-box-only (2026-10-01 ruling: _prev/ copies are box-only)"
+    },
+    {
+     "path": "lab/governance/astra/packets/ARCHIVIST_SOURCE_GATE_ELECTINDEX_CARD01_2026-09-24.md",
+     "size": 18917,
+     "sha256": "fb29ae5c94e357b0d4d6058d3c99a06697239542a61856005c058d4893a61310",
+     "reason": "HELD:electindex-in-path (v3.1 allows governance .md hash-only notes; last night's builder refused; Conductor to decide)"
+    },
+    {
+     "path": "lab/governance/astra/reports/charts_2026-09-23/01_q7_arms_pnl.png",
+     "size": 67903,
+     "sha256": "66aa570cedf7f99d222bbbc97423bac072c520abb365f8cdbca7ba3900f42e08",
+     "reason": "non-utf8/binary"
+    },
+    {
+     "path": "lab/governance/astra/reports/charts_2026-09-23/02_q7_bd_retention.png",
+     "size": 57274,
+     "sha256": "ebeab59527f01c12e07ee25908977bc5994c7c562e5efffa0d92830e787ccbf0",
+     "reason": "non-utf8/binary"
+    },
+    {
+     "path": "lab/governance/astra/reports/charts_2026-09-23/03_capital_scoreboard.png",
+     "size": 65650,
+     "sha256": "f097afa4dca986603e4780b4159bfb031112bcb9b2188f06036eb2c0de19cd9c",
+     "reason": "non-utf8/binary"
+    },
+    {
+     "path": "lab/governance/astra/reports/charts_2026-09-23/04_harness_conveyor.png",
+     "size": 72605,
+     "sha256": "d60cbbfc23b4b64db3293f8188ac5db0c8be5d91f2475bd96b3a93778fc4e749",
+     "reason": "non-utf8/binary"
+    },
+    {
+     "path": "lab/governance/astra/reports/charts_2026-09-23/05_q7_all_stresses.png",
+     "size": 46645,
+     "sha256": "06ef699b99c2060100c60c2d85c7648290fc57bc86b9117c65d1e1715ffff564",
+     "reason": "non-utf8/binary"
+    },
+    {
+     "path": "lab/governance/astra/research/KALSHI_EDGE_RESEARCH_2026-09-24.pdf",
+     "size": 124157,
+     "sha256": "7e55bc260526aa5088ee31f74475851219ab2cd7f19fdd2f0dd5e9f998c8b45e",
+     "reason": "non-utf8/binary"
+    }
+   ]
+  },
+  {
+   "tar": "/workspace/steward_gauntlet_oversize_20261001/oversize_bundle_2026-10-02_supplement.tar.gz",
+   "tar_sha256": "efe5573868ec8c460cc3a78879333d70b6eec93cf79b3f1f144ab56a7daea8e3",
+   "tar_bytes": 21905,
+   "bundle": "supplement: 7 in-scope provenance JSONs deferred by earlier runs, omitted by 1840",
+   "counts": {
+    "candidates": 7,
+    "included": 7,
+    "excluded_or_held": 0,
+    "included_bytes": 127841
+   },
+   "modifies_existing_on_main": [],
+   "entries": [
+    {
+     "path": "lab/data/DATA-PROV-CB-001/provenance/CLOCK_AUDIT_CB001_PM003_JOIN.json",
+     "size": 16653,
+     "sha256": "c0b1ae3e3988b9dafe57111d0d085dd667e5e134c33c2af6aeba74b3fb4ed366",
+     "blob": "61f7d4121e3a827ebd6fa109dc3489a40dee49b5",
+     "on_main": "new",
+     "source": "steward-supplement (logged DEFERRED_OVERSIZE by sync-20261002-1645; omitted by 1840 scope variance)"
+    },
+    {
+     "path": "lab/data/DATA-PROV-CF-001/provenance/CLOCK_AUDIT_W2A_CF_T14_JOIN.json",
+     "size": 23912,
+     "sha256": "d228a9df5578aefa7fb7fc394b92a7d8a63df507a22f594f15d45aece812dce2",
+     "blob": "a2ea6b0e422e58b5005d65d3e3f563ded9342786",
+     "on_main": "new",
+     "source": "steward-supplement (logged DEFERRED_OVERSIZE by sync-20261002-1645; omitted by 1840 scope variance)"
+    },
+    {
+     "path": "lab/data/DATA-PROV-FUNDING-001/provenance/CLOCK_AUDIT_REPORT.json",
+     "size": 22457,
+     "sha256": "a8722ecb3122c50c0f4cf2e5962fd29c7ba01f411fabeb6139306fcd7683e8c7",
+     "blob": "f2ab7afe6c3b427f8726aabd8c33fb7c4a397750",
+     "on_main": "new",
+     "source": "steward-supplement (logged DEFERRED_OVERSIZE by sync-20261002-1645; omitted by 1840 scope variance)"
+    },
+    {
+     "path": "lab/data/DATA-PROV-L3-001/provenance/CLOCK_AUDIT_W2E_STRIKE_L3_JOIN.json",
+     "size": 14520,
+     "sha256": "2d3a9a4a6206a43512f5adffd562826428e6fd05887c2ce177d494ba1d53805c",
+     "blob": "b64364e6ce3866ee382141e21ead8e17a5aaacac",
+     "on_main": "new",
+     "source": "steward-supplement (logged DEFERRED_OVERSIZE by sync-20261002-1645; omitted by 1840 scope variance)"
+    },
+    {
+     "path": "lab/data/DATA-PROV-PM-004/provenance/CLOCK_AUDIT_PM004_L3002_JOIN.json",
+     "size": 14278,
+     "sha256": "1acb2904c549ecdd71ecc234a40a904e188027a2592fca1aff45d99eb6700cdf",
+     "blob": "82d1786645d8e89db3b3422a44b234fa95636b36",
+     "on_main": "new",
+     "source": "steward-supplement (logged DEFERRED_OVERSIZE by sync-20261002-1645; omitted by 1840 scope variance)"
+    },
+    {
+     "path": "lab/data/DATA-PROV-PM-005/provenance/CLOCK_AUDIT_W2B_INCUMBENT_AT_OBS.json",
+     "size": 18584,
+     "sha256": "7c3daadd965064992858d355cd9972b27cd99a5c1569308a06c7ee55de07e2a8",
+     "blob": "43add65b8079ab53fdb4549d8d13746d54838b79",
+     "on_main": "new",
+     "source": "steward-supplement (logged DEFERRED_OVERSIZE by sync-20261002-1645; omitted by 1840 scope variance)"
+    },
+    {
+     "path": "lab/data/DATA-PROV-PM-005/provenance/CLOCK_AUDIT_W2B_POLY_T5_JOIN.json",
+     "size": 17437,
+     "sha256": "39701062f81978b1c51f3a8362a45c51f016984a4086f31aba8a6f70fd2f94f0",
+     "blob": "5d48a2150dd0e6711f3da4b5b14e546b18591c42",
+     "on_main": "new",
+     "source": "steward-supplement (logged DEFERRED_OVERSIZE by sync-20261002-1645; omitted by 1840 scope variance)"
+    }
+   ],
+   "excluded": []
+  }
+ ],
+ "launch_note": "Do not launch from this file alone; Conductor launches. Land main bundle; supplement optional. Each tar root carries LANDING_LIST.json and SHA256SUMS.txt."
+}

@@ -1,0 +1,62 @@
+{
+  "id": "FEE-ACCT-MANIFEST-v0-DRAFT-20260924-ADDENDUM-02",
+  "parent_sha256": "aa7658764061912073b8d9fc1f2ae03fc970fa382dca1c49335944be650552ba",
+  "parent_file": "registry/FEE_ACCOUNT_MANIFEST_v0_DRAFT_2026-09-24.json",
+  "status": "DRAFT_NOT_ADOPTED",
+  "gap": "MEMBER_TYPE_OPEN",
+  "fee_terms_status": "STAMPED_FROM_SCOUT",
+  "recorded_by": "Archivist",
+  "recorded_at": "2026-09-24T23:47:00-04:00",
+  "authority": {
+    "conductor_kick": "packets/CONDUCTOR_KICK_ARCHIVIST_HOUSE_FEE_ADDENDUM_02_2026-09-24.json",
+    "conductor_kick_sha256": "0a5adcddc702af3e505e6c8b5dddacec44c93568e17b07da0267bfec49f93511",
+    "scout_brief": "SCOUT_HOUSE_FEE_SOURCE_2026-09-24.md",
+    "scout_brief_sha256": "02fb1de12c573c2330899562cd832b48bd024a1c9f0e3886f23e1be83751b8e8",
+    "prior_index_receipt_sha256": "ae12a636d33441cac9d3ec3ee563010e7125d82d5c4cf3885a306527aa8da171",
+    "nudge_at_et": "2026-09-24 23:44 ET"
+  },
+  "finding_verified": "R1-P1 feebook @22371178 (kalshi_feebook_lab_20260922/series_fee_table.stub.json) has no House overrides (0 matches for 'house'); resolve_terms() returns 'default_unknown_series', i.e. taker 0.07 * p*(1-p) with M=1. Scout published schedule agrees — House is NOT a carve-out.",
+  "house_fee_terms": {
+    "taker_rate": 0.07,
+    "maker_rate": 0.0175,
+    "maker_default_M": 0,
+    "fee_type": "quadratic",
+    "fee_multiplier": 1,
+    "formula_taker": "round_up(M x 0.07 x C x P x (1-P))",
+    "formula_maker": "round_up(M x 0.0175 x C x P x (1-P))",
+    "cap": "none beyond centicent rounding",
+    "effective_date": "2026-07-07",
+    "pdf_url": "https://kalshi.com/docs/kalshi-fee-schedule.pdf",
+    "pdf_sha256": "c326a69f596a11e8f8be2620402d39a8d4823920c21cc97c93a114d862699601",
+    "pdf_bytes": 281129,
+    "scout_brief_sha256": "02fb1de12c573c2330899562cd832b48bd024a1c9f0e3886f23e1be83751b8e8",
+    "scout_packet": "packets/scout_house_fee_2026-09-24/",
+    "aligns_r1_p1_default": true,
+    "house_carve_out": false
+  },
+  "member_type": null,
+  "member_type_status": "OPEN",
+  "member_type_note": "Logan/Conductor only — Archivist refuses to invent.",
+  "series_affected": {
+    "cite": "SCOUT_HOUSE_FEE_SOURCE_2026-09-24.md + packets/scout_house_fee_2026-09-24/raw/kalshi/HOUSE_and_KXHOUSE_tickers.txt",
+    "summary": "KXHOUSERACE + HOUSE*/KXHOUSE* (100 tickers listed in Scout packet); all sampled fee_type=quadratic fee_multiplier=1; absent from Non-Standard Fees"
+  },
+  "gap_cleared": ["HOUSE_FEE_MISSING"],
+  "until_filled": {
+    "fee_terms": "STAMPED — HOUSE_FEE_MISSING cleared; Card 01 fee fallback (FEE_FALLBACK_DEFAULT_0.07 as unsourced gap) no longer applies as an open sourcing gap; published terms match that same 0.07 quadratic default.",
+    "member_type": "OPEN — remains a Conductor/Logan decision.",
+    "card01_after_cost_KEEP": "NOT claimed unblocked. Fee terms stamped and HOUSE_FEE_MISSING cleared; member_type still OPEN; Card 01 after-cost KEEP still requires Conductor member_type resolution + any remaining gates. Archivist does not claim KEEP."
+  },
+  "prev_bytes": {
+    "path": "registry/_prev/eec516fc8ed8ea09634b24842c7ae4cf55fb8f5b40a81e50418213424139f7f9.FEE_ACCOUNT_MANIFEST_v0_DRAFT_2026-09-24_ADDENDUM_02.json",
+    "sha256": "eec516fc8ed8ea09634b24842c7ae4cf55fb8f5b40a81e50418213424139f7f9",
+    "rule": "RULE-FROZEN-EDIT-PREV-BYTES-001"
+  },
+  "refuse": [
+    "invent member_type",
+    "claim ADOPTED",
+    "claim Card 01 after-cost KEEP unblocked",
+    "claim Examiner SCORED",
+    "live orders"
+  ]
+}

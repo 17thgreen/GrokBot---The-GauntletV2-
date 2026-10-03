@@ -1,0 +1,23 @@
+{
+  "stamp": "2026-09-14T2152Z",
+  "last_closed_end": "2026-09-14T21:45:00Z",
+  "closed_15m_both": {
+    "BTC": 102,
+    "ETH": 102,
+    "total": 204
+  },
+  "cb_first": {
+    "BTC": "2026-09-14T01:52:00+00:00",
+    "ETH": "2026-09-14T01:52:00+00:00"
+  },
+  "cb_align": "2026-09-14T02:00:00+00:00",
+  "triple_tape_overlap_15m_per_asset": 79,
+  "triple_detail": {
+    "BTC": 79,
+    "ETH": 79
+  },
+  "pm8_window_count": {
+    "BTC": 84,
+    "ETH": 84
+  }
+}

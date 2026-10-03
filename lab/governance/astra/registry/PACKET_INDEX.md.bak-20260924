@@ -1,0 +1,118 @@
+# Astra / Kalshi — Packet Index
+**Owner:** The Archivist (Registry) · agent `5099609`  
+**Charter:** Working Plan v0.1 (GO 2026-09-22)  
+**Updated:** 2026-09-23T09:59:00-04:00 (ET)
+**Rule:** freeze-before-outcome · done = artifact on disk · no invented results  
+**Repo:** `17thgreen/GPT-6-Astra-Deathmatch`
+
+## Open packets
+
+| ID | Packet | Owner | Reviewer | Freeze / board status | Pointer |
+|---|---|---|---|---|---|
+| K1 | Owner kit ZIPs → restore | Logan (kits) / Simulator verifies | Conductor | Custody · Maker Audit + Measurement restored (Conductor) · Factorial ZIP present under `lab/astra-kits/` · Q7-RUN completed (Examiner scored) · keep open until Conductor closes custody | `lab/astra-kits/` |
+| R1 | Deep Research brief + triage | Deep Research / Conductor triage | Conductor | **TRIAGED** · see R1-P* · no Examiner strategy score on R1 itself | `lab/governance/astra/briefs/R1_*` |
+| B0 | Bakeoff template | Conductor | Examiner | Not started | Plan GO already |
+| ADMIT-1 | Prospective panel + recorder | Collector + Registry | Conductor | **LIVE** · `admitted_at` `2026-09-22T21:18:13Z` · panel `2026-09-22.1-kalshi-occurrence-sot` · 16 events · PHI@CHI not backfilled · recorder GET-only · DB `/workspace/lab/astra-capture/prospective/capture.sqlite` | `lab/governance/astra/packets/ADMIT1_2026-09-22.md` |
+| PITCLE-ID-LAG | PIT@CLE holdout identity join | Collector bind · Archivist hash-freeze | Conductor | **JOINED / HASH_FROZEN** · `REG-PITCLE-HOLDOUT-ID-JOIN-20260923` · `event`=`KXNFLGAME-26OCT01PITCLE` on `2026_04_PIT_CLE` · holdout sha256 `f8f6b5773072e92b0babe3c10940ed52c71878caca104c4e072c6a6efcb63bbb` · join receipt sha256 `72e6b1ed1ecbee34c2e74840da8fea1b90bc5368fa05c3c62225f0b924669a99` · canonical `astra-science/nfl_factorial_lab_20260921/RESERVED_HOLDOUT.json` + `astra-src/registry/RESERVED_HOLDOUT.json` · not a re-admit · ADMIT-1 untouched · no PnL · no orders | `packets/PITCLE_HOLDOUT_IDENTITY_JOIN_HASH_FREEZE_2026-09-23.md` · `packets/PITCLE_IDENTITY_LAG_WATCH_2026-09-23.md` · join `lab/astra-capture/prospective/pitcle_holdout_identity_join_2026-09-23.json` |
+| Q6-000-HYGIENE | Adversary complacency spotcheck after Q7 score | Adversary | Conductor / Archivist | **HYGIENE** · five named risks · no verdict change · no PnL · no orders | `packets/Q6_000_COMPLACENCY_SPOTCHECK_2026-09-22.md` · risk register `ADVERSARY_RISK_REGISTER_2026-09-22.md` |
+| R2-P5 | Kickoff SoT mismatch + R1-P3 adverse join (schema) | Collector + Archivist (+ Clock) | Conductor | **SCHEMA_ACCEPTED** · stub on disk · seed ADMIT-1 SoT-only · Adversary refuse bound to Examiner scorecard · not a strategy · no ADMIT-1 budget steal · schema `registry/schemas/r2_p5_admit_fields.schema.json` · id `REG-R2-P5-SCHEMA-20260922` | `packets/R2-P5_SCHEMA_ACCEPT_2026-09-22.md` · seed `packets/R2-P5_SEED_INSTANCE_ADMIT1_SOT_ONLY_2026-09-22.json` · refuse `packets/R2-P5_ADVERSARY_REFUSE_HYGIENE_2026-09-22.md` |
+| R2-P1 | Fee/rails hygiene freeze on Q6-000 | R&D Variants / Simulator | Conductor | **CANONICAL** fee-sensitivity hygiene · older `fee_sensitivity_000_r1p1` packet **SUPERSEDED→R2-P1** · instrument only · pin Q6-`000` · packet `packets/R2-P1_FEEBOOK_RAILS_HYGIENE_000_FREEZE_2026-09-22.md` | alias dir `packets/fee_sensitivity_000_r1p1` superseded |
+| S1 | KXMLBGAME measurement panel | Scout / Collector / Deep Research · Simulator units | Conductor | **PANEL_STUB_ACCEPTED** · panel_version `2026-09-22.s1-kxmlbgame-v0` · schema `s1_kxmlbgame_panel` · capture **idle** · Simulator GO for units · measurement only · separate from R2-P1 · no PIT@CLE budget steal · no PnL · no orders | `packets/S1_KXMLBGAME_PANEL_STUB_2026-09-22.json` · schema `registry/schemas/s1_kxmlbgame_panel.schema.json` · freeze `packets/S1_KXMLBGAME_MEASUREMENT_FREEZE_KERNEL_2026-09-22.md` |
+| C1-KXUFCFIGHT | KXUFCFIGHT cash-cow measurement panel | Collector (+ Clock join) | Conductor / Archivist | **ADMITTED** · panel_version `2026-09-22.c1-kxufcfight-v0` · admitted_at `2026-09-23T00:49:43Z` · sha256 `24426d804c51bde23cf2557a11a8481a12026da10024094c4ae546d1f7d3956e` · GET-only · results/pnl null · no recorder steal from ADMIT-1 · C3/C5/R3-P3 remain stubs · cemetery untouched | `packets/C1_KXUFCFIGHT_PANEL_ADMITTED_2026-09-22.json` · capture `lab/astra-capture/c1-kxufcfight/` · status `reports/STATUS_C1_KXUFCFIGHT_ADMIT_2026-09-22.md` · freeze `packets/C1_KXUFCFIGHT_MEASUREMENT_FREEZE_KERNEL_2026-09-22.md` |
+| C3-KXHIGHNY | KXHIGHNY panel | Collector | Conductor | **STUB** · panel_version `2026-09-22.c3-kxhighny-v0` · not admitted · adversary refuse bound | `packets/C3_KXHIGHNY_PANEL_STUB_2026-09-22.json` |
+| C5-KXBTC15M | KXBTC15M panel | Collector | Conductor | **STUB** · panel_version `2026-09-22.c5-kxbtc15m-v0` · not admitted · adversary refuse bound | `packets/C5_KXBTC15M_PANEL_STUB_2026-09-22.json` |
+
+## Merged / on main (desk)
+
+| ID | Packet | Owner | Merged | Freeze / score pointer |
+|---|---|---|---|---|
+| C1 | Prospective GET-only NFL recorder | Collector Ops | **2026-09-22 17:19 ET** · [PR1](https://github.com/17thgreen/GPT-6-Astra-Deathmatch/pull/1) · merge `cb6223989afaf9e2f2fde8516e5ce16098ef7160` | **MERGED** · `nfl_prospective_recorder_20260922/` · ADMIT-1 LIVE |
+| Q7 | Paircheck lab 2×2 (arms A–D) | Simulator · Examiner (Kalshi) scored | **2026-09-22 17:23 ET** · [PR2](https://github.com/17thgreen/GPT-6-Astra-Deathmatch/pull/2) · merge `a85bfdab0cd7e3b4fcb3d4a5c89cf8627be85bd2` | **MERGED** · path `nfl_paircheck_lab_20260922/` · **SCORED_KILL_B_KEEP_000** · KILL Arm B candidacy · KEEP shadow `000` · `NO_NEW_SELECTION` · no live promotion · scorecard `packets/Q7_EXAMINER_SCORECARD_2026-09-22.md` · report `reports/RPT-Q7.md` **SCORED** · packet **CLOSED** · cemetery `cemetery/CEM-ASTRA-20260922-001_Q7_ARM_B.md` |
+| R1-P1 | FEEBOOK lab (fee + reciprocal book) | Simulator / R&D Variants | **PR3 MERGED** (Conductor) · lab `kalshi_feebook_lab_20260922/` | **SOURCE frozen** · unit results on disk · extract `packets/R1-P1-FEEBOOK_EXTRACT_2026-09-22.md` · not a strategy score |
+| R1-P5 | RAILS lab (queue/fill instrument) | Simulator (+ Collector freshness) | **PR4 squash** · Conductor pin `6a28e0d6` · lab `kalshi_rails_lab_20260922/` | **SOURCE_FROZEN_BEFORE_RESULTS** · `results/pnl` null · unit page `results/RAILS_UNIT_RESULTS.md` (**44 PASS**) · extract `packets/R1-P5-RAILS_EXTRACT_2026-09-22.md` · does not mutate Q1–Q7 · not a strategy score |
+| PR5 / capital-structure | Capital-structure lab (measurement rails) | Simulator / R&D Variants | **squash-merged** Conductor pin `ce4671b8` · lab `kalshi_capital_structure_lab_20260922/` | **SOURCE_FROZEN_BEFORE_RESULTS** · `results`/`pnl` null · not a scored challenger · pin Q6-`000` · cites R1-P1@`22371178` + R1-P5@`6a28e0d6` · freeze `packets/CAPITAL_STRUCTURE_PROBE_FREEZE_KERNEL_2026-09-22.md` |
+| PR6 / R2-P1 hygiene | Fee/rails hygiene lab on Q6-000 | Simulator / R&D Variants | **squash-merged** Conductor pin `25ec0538` · lab `kalshi_r2p1_hygiene_000_lab_20260922/` | **SOURCE_FROZEN_BEFORE_RESULTS** · scorecard/pnl null · measurement only · `fee_sensitivity_000_r1p1` SUPERSEDED→R2-P1 · pins R1-P1@`22371178` + R1-P5@`6a28e0d6` · freeze `packets/R2-P1_FEEBOOK_RAILS_HYGIENE_000_FREEZE_2026-09-22.md` |
+| PR7 / queue-fragility | Queue-fragility twin on Q6-000 | Simulator / R&D Variants | **squash-merged** Conductor pin `c33af159` · lab `kalshi_queue_fragility_000_lab_20260922/` | **SOURCE_FROZEN_BEFORE_RESULTS** · outputs/pnl null · measurement only · pins R1-P1@`22371178` + R1-P5@`6a28e0d6` · R2-P1 pin updated to allow sibling · freeze `packets/QUEUE_FRAGILITY_000_R1P5_FREEZE_2026-09-22.md` |
+| PR8 / R2-P1 fixture-join | R2-P1 fixture-join harness on Q6-000 | Simulator / R&D Variants | **squash-merged** Conductor pin `80050e9b` · Kalshi R2-P1 fixture-join lab | **SOURCE_FROZEN_BEFORE_RESULTS** · results/pnl null · measurement harness · Pick B QF join deferred to Variants · freeze `packets/R2-P1_FIXTURE_JOIN_000_FREEZE_2026-09-22.md` |
+
+## R1 child packets (from triage)
+
+| ID | Decision | Packet | Owner | Notes |
+|---|---|---|---|---|
+| R1-P1 | **MERGED** (lab) | R1-P1-FEEBOOK | Simulator; Examiner (Kalshi) reviews tests | Fee + reciprocal-book unit truth · see Merged row |
+| R1-P5 | **MERGED** (lab) | R1-P5-RAILS | Simulator (+ Collector freshness hooks) | Instrument not strategy · 44 unit PASS · pnl null |
+| R1-P3 | **CLOSED** | R1-P3-ADVERSE | Adversary · reviewer Conductor accepted | Measurement gate filed, no code |
+| R1-P2 | QUEUE | R1-P2-CHALLENGER (reserved, not open) | — | After fee truth + Q7 score (done) or explicit Conductor kick |
+| R1-P4 | DEFER | — | Scout+Collector access check first | RFQ combos |
+
+## Scout brief + Conductor triage (2026-09-22)
+
+**Artifact:** `lab/governance/astra/SCOUT_BRIEF_2026-09-22.md`
+
+| Kernel / line | Conductor triage | Notes |
+|---|---|---|
+| Spreads | **TRY after C1** | C1 MERGED; ADMIT-1 LIVE |
+| PASSYDS | **TRY** | NFL pass-yards props kernel |
+| MLB | **TRY** | Non-NFL daily cadence candidate |
+| CFB | **DEFER** | College football |
+| MVE | **SKIP** | Cross-category parlays / MVE inventory |
+
+**Calendar:** PIT@CLE T−7d (Kalshi occurrence SoT) **2026-09-25T03:15:00Z** = **2026-09-24 23:15 ET** · venue `KXNFLGAME-26OCT01PITCLE` live · holdout identity **JOINED** `KXNFLGAME-26OCT01PITCLE` (PITCLE-ID-LAG).
+
+## Sibling deathmatch review (indexed)
+
+**Artifact:** `lab/governance/astra/packets/SIBLING_DEATHMATCH_REVIEW_2026-09-22.md`  
+**Board fact:** Factorial kit **not** found in sibling repos; siblings are not a kit substitute. Measurement kernels (fee/book + queue rails) pulled into R1-P1/P5. No scoring from sibling ROI claims.
+
+## Incumbent freeze on main
+
+| Line | Artifact | Status |
+|---|---|---|
+| Q6 | `SHADOW_CANDIDATE_FREEZE` selected `000` | **KEEP** · remains incumbent shadow freeze · no live · reinforced by Q7 Examiner score |
+
+## Closed desk packets
+
+| ID | Packet | Owner | Reviewer | Closed | Artifacts |
+|---|---|---|---|---|---|
+| R1-P3 | R1-P3-ADVERSE | Adversary | Conductor | 2026-09-22 | briefs + risk register · measurement gate only |
+| Q7-B | Arm B new-shadow candidacy | Examiner (Kalshi) | — | 2026-09-22 | **KILL** · scorecard + `CEM-ASTRA-20260922-001` |
+
+## Active line freezes / scores
+
+| Line | Where | Status |
+|---|---|---|
+| Q6 incumbent | `main` · selected `000` | **FROZEN / KEEP** (Examiner) |
+| C1 recorder | `main` · `nfl_prospective_recorder_20260922/` | **MERGED** · ADMIT-1 LIVE |
+| Q7 paircheck | `main` · merge `a85bfdab0cd7e3b4fcb3d4a5c89cf8627be85bd2` · `nfl_paircheck_lab_20260922/` | **SCORED_KILL_B_KEEP_000** · packet closed for measurement · no live promotion · no ITERATE without new freeze |
+| R1-P1 feebook | `kalshi_feebook_lab_20260922/` | SOURCE frozen · unit results · not strategy |
+| R1-P5 rails | `kalshi_rails_lab_20260922/` | SOURCE_FROZEN_BEFORE_RESULTS · 44 unit PASS · pnl null |
+| PR5 capital-structure | `kalshi_capital_structure_lab_20260922/` · pin `ce4671b8` | SOURCE_FROZEN_BEFORE_RESULTS · pnl null · not strategy |
+| C1-KXUFCFIGHT panel | `2026-09-22.c1-kxufcfight-v0` · sha256 `24426d804c51…` | **ADMITTED** `2026-09-23T00:49:43Z` · pnl null · cemetery untouched |
+| PR6 R2-P1 hygiene | `kalshi_r2p1_hygiene_000_lab_20260922/` · `25ec0538` | SOURCE_FROZEN_BEFORE_RESULTS · scorecard null |
+| PR7 queue-fragility | `kalshi_queue_fragility_000_lab_20260922/` · `c33af159` | SOURCE_FROZEN_BEFORE_RESULTS · pnl null |
+| PR8 R2-P1 fixture-join | pin `80050e9b` | SOURCE_FROZEN_BEFORE_RESULTS · pnl null |
+
+## Cemetery (Astra Kalshi)
+
+| CEM_ID | Subject | Decision | Packet |
+|---|---|---|---|
+| CEM-ASTRA-20260922-001 | Q7 Arm B candidacy | **KILL** (displace bar fail; **not** proof pair-check effect is zero; 95%-of-D bar STANDS) | `lab/governance/astra/cemetery/CEM-ASTRA-20260922-001_Q7_ARM_B.md` · hygiene `packets/Q6_000_COMPLACENCY_SPOTCHECK_2026-09-22.md` |
+
+Gauntlet-era CEM entries remain under `/workspace/lab/archive/cemetery/`.
+
+## Admission calendar (clock facts — do not backdate)
+
+| Game | T−7d | Note |
+|---|---|---|
+| PHI@CHI | full window missed | **Not backfilled** |
+| PIT@CLE | **2026-09-25T03:15:00Z** (**2026-09-24 23:15 ET**) | ADMIT-1 LIVE · Kalshi occurrence SoT · **identity JOINED** `KXNFLGAME-26OCT01PITCLE` (Collector 2026-09-23); holdout-derived deadline 20:15 ET still −3h vs SoT (R2-P5) |
+| Cohort | admitted_at `2026-09-22T21:18:13Z` | 16 events · panel `2026-09-22.1-kalshi-occurrence-sot` |
+
+## Archivist standing gates
+
+1. Refuse to index result files for any experiment ID lacking a prior freeze.  
+2. Q7 outcomes only via Examiner packet after freeze + run artifacts — **filed** (`Q7_EXAMINER_SCORECARD_2026-09-22.md`). Registry does not invent PnL.  
+3. On PR merge: file freeze pointer (path, head SHA, status) here.  
+4. Missed T−7d → incomplete; never backdate admission.  
+5. IDs assigned only here; Conductor closes or reassigns packets.  
+6. Live promotion requires explicit Examiner + Conductor stamps — Q7 denies live.

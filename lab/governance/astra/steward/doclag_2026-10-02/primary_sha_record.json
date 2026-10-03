@@ -1,0 +1,20 @@
+[
+ {
+  "path": "README.md",
+  "old_sha256": "8a40c2123f4306908c9afae623592390cdc9ac5b3efddcd01b08470fc6efd18a",
+  "new_sha256": "a4e97325cc42d856b91cdaa618c6ea45f99668e94d7af5c55394e498cd519cc5",
+  "prev_copy": null
+ },
+ {
+  "path": "docs/EXPERIMENT_REGISTRY.md",
+  "old_sha256": "8ee066c3f13fe4677b9a4f7b753a57ada43d8aa81229f2ec3c83af16c1a1e30f",
+  "new_sha256": "d1d01784ddb50629a6842f0f9055e22f087c48c28eb43ba537e135f5f47660a6",
+  "prev_copy": "docs/_prev/8ee066c3f13fe4677b9a4f7b753a57ada43d8aa81229f2ec3c83af16c1a1e30f.EXPERIMENT_REGISTRY.md"
+ },
+ {
+  "path": "kalshi_q6s5_kxmlbspread_strategy_fill_scorability_lab_20261002/EXAMINER_HOLD_Q6S5_PR60_SCORABILITY_PRE_PR_2026-10-02.json",
+  "old_sha256": "ffab465a62587587b8630a994414cb1d7cd74741d56c935a81e803c2037ef6a2",
+  "new_sha256": "cf9ce7ca7c8bc677f70388e63cde75c49aa9a5afcdd70cc459fef451214e4880",
+  "prev_copy": "kalshi_q6s5_kxmlbspread_strategy_fill_scorability_lab_20261002/_prev/ffab465a62587587b8630a994414cb1d7cd74741d56c935a81e803c2037ef6a2.EXAMINER_HOLD_Q6S5_PR60_SCORABILITY_PRE_PR_2026-10-02.json"
+ }
+]

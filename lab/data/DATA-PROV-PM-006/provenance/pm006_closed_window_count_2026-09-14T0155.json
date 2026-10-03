@@ -1,0 +1,25 @@
+{
+  "stamp": "2026-09-14T01:55Z",
+  "closed_15m": {
+    "BTC": 22,
+    "ETH": 22,
+    "total": 44
+  },
+  "closed_5m": {
+    "BTC": 66,
+    "ETH": 66,
+    "total": 132
+  },
+  "open_slugs": [
+    "btc-updown-15m-1789350300",
+    "btc-updown-15m-1789351200",
+    "btc-updown-5m-1789350900",
+    "btc-updown-5m-1789351200",
+    "eth-updown-15m-1789350300",
+    "eth-updown-15m-1789351200",
+    "eth-updown-5m-1789350900",
+    "eth-updown-5m-1789351200"
+  ],
+  "kept_rows": 66051,
+  "failures": 0
+}

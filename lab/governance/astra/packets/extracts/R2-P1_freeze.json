@@ -1,0 +1,30 @@
+{
+  "id": "R2-P1",
+  "status": "FROZEN",
+  "admit": "Conductor R2 triage ADMIT now",
+  "packet": "packets/R2-P1_FEEBOOK_RAILS_HYGIENE_000_FREEZE_2026-09-22.md",
+  "packet_sha256": "ddcd4427f67fb0ed8d12a7a6a49aabea3b25b356bcb64a7d84d5c4590d08b563",
+  "bundle": "packets/R2-P1_FEEBOOK_RAILS_HYGIENE_000/",
+  "empty_results": "packets/R2-P1_FEEBOOK_RAILS_HYGIENE_000/results.json",
+  "outputs": [
+    "fee_delta_vs_inherited_model",
+    "freshness_gap_sec",
+    "queue_bin_mismatch_rate"
+  ],
+  "strategy_pointer": "Q6-000",
+  "fee_source": "kalshi_feebook_lab_20260922@22371178cb2663250b4762f328069571c48cb551",
+  "rails_source": "kalshi_rails_lab_20260922@6a28e0d6254327ea4e6451c781bec56215ac6cac",
+  "shadow_freeze_sha256": "b55ff36cb161c824a3d1b490795c8ac6891f01489456f61da311ac863366af48",
+  "tape_manifest_sha256": "375ea6e2c9125a411d5444a88115213542d5b19c874d73a2bed0b9355fd6277d",
+  "forbid_inherited_q7_fee_literals": true,
+  "no_signal_retune": true,
+  "pnl": null,
+  "results": null,
+  "supersedes": "fee_sensitivity_000_r1p1",
+  "cite": [
+    "briefs/R2_DEEP_RESEARCH_2026-09-22.md#R2-P1",
+    "briefs/R2_PROPOSALS_2026-09-22.json",
+    "briefs/R2_CONDUCTOR_TRIAGE_2026-09-22.md"
+  ],
+  "frozen_at": "2026-09-22T22:58:42.402280+00:00"
+}
