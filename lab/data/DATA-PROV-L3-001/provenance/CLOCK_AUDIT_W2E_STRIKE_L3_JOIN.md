@@ -90,7 +90,7 @@ knowable_bar = argmax { bar in L3 | bar.close_time_ms <= decision_time_ms }; S_t
 ### E_knowability
 - **pass:** True
 - K_knowable=True; S_t_knowable=True; lookahead=False
-- K: Yes if frozen at OPEN and OPEN<=t. Certified OPEN<=t on all scored; static dump [V]; no revision feed [A].
+- K: Yes if frozen at OPEN and OPEN<=t. Certified OPEN<=t on all scored; static dump [V]/ no revision feed [A].
 - S_t: Yes: completed bar close_time_ms <= t; lag always 1ms <= 90s.
 - Look-ahead: No look-ahead under preferred rule. Using incomplete bar (open_time == floor_minute(t)) would be look-ahead — count=0.
 
@@ -105,7 +105,7 @@ knowable_bar = argmax { bar in L3 | bar.close_time_ms <= decision_time_ms }; S_t
 ## Knowability answers
 
 - **K knowable at t?** **True**
-  - Yes if frozen at OPEN and OPEN<=t. Certified OPEN<=t on all scored; static dump [V]; no revision feed [A].
+  - Yes if frozen at OPEN and OPEN<=t. Certified OPEN<=t on all scored; static dump [V]/ no revision feed [A].
 - **S_t knowable at t?** **True**
   - Yes: completed bar close_time_ms <= t; lag always 1ms <= 90s.
 - **Look-ahead?** **False**
