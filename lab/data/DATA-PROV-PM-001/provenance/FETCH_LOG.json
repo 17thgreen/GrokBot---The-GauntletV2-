@@ -1,0 +1,15 @@
+{
+  "fetched_at_utc": "2026-09-11T20:45:58Z",
+  "method": "urllib public GET",
+  "kalshi_base": "https://api.elections.kalshi.com/trade-api/v2",
+  "gamma_base": "https://gamma-api.polymarket.com",
+  "window_days": 7,
+  "counts": {
+    "kalshi_rows": 1328,
+    "polymarket_rows": 2496,
+    "combined": 3824,
+    "kalshi_resolved_yes_no": 1328,
+    "poly_resolved_yes_no": 2496
+  },
+  "total_bytes": 38475204
+}
