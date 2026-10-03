@@ -1,0 +1,255 @@
+{
+  "audit_id": "CLOCK_AUDIT_PM007_T3_JOIN",
+  "data_id": "DATA-PROV-PM-007",
+  "wave": "WAVE_008 / W2-D",
+  "cell": "rem=180 (T-3m) Kalshi 15m mid",
+  "audited_at_utc": "2026-09-13T21:08:30Z",
+  "auditor": "clock_audit_PM007_T3_JOIN.py",
+  "scope": {
+    "alpha": false,
+    "examiner_delta": false,
+    "feature": false,
+    "ready": false,
+    "trade": false,
+    "role": "independent rem=180 mid JOIN / tape audit from PM-003 raw candles",
+    "new_fetch": false
+  },
+  "sources": {
+    "universe": "/workspace/lab/data/DATA-PROV-PM-003/provenance/remaining_universe.ndjson",
+    "raw_candles": "/workspace/lab/data/DATA-PROV-PM-003/raw/kalshi_candles",
+    "claimed_checkpoints": "/workspace/lab/data/DATA-PROV-PM-007/derived/checkpoints.ndjson",
+    "claimed_coverage": "/workspace/lab/data/DATA-PROV-PM-007/derived/contract_coverage.ndjson",
+    "pm003_checkpoints": "/workspace/lab/data/DATA-PROV-PM-003/derived/checkpoints.ndjson",
+    "fetch_summary": "/workspace/lab/data/DATA-PROV-PM-007/provenance/FETCH_SUMMARY.json",
+    "extract_script_intent_only": "/workspace/lab/data/DATA-PROV-PM-007/provenance/extract_pm007.py"
+  },
+  "universe": {
+    "n": 1208,
+    "n_btc": 604,
+    "n_eth": 604,
+    "expect": {
+      "btc": 604,
+      "eth": 604,
+      "total": 1208
+    }
+  },
+  "independent_rebuild": {
+    "n_candle_present": 1208,
+    "n_mid_ok": 1208,
+    "n_btc_mid": 604,
+    "n_eth_mid": 604,
+    "n_missing_candle": 0,
+    "n_mid_rule_fails": 0,
+    "n_missing_raw_file": 0
+  },
+  "claimed": {
+    "n_checkpoints": 1208,
+    "n_btc": 604,
+    "n_eth": 604,
+    "methods": {
+      "mid": 1208
+    },
+    "rems": {
+      "180": 1208
+    }
+  },
+  "compare_vs_claimed": {
+    "n_field_matches": 1208,
+    "n_field_mismatches": 0,
+    "n_claimed_but_rebuild_fail": 0,
+    "n_rebuild_ok_not_in_claimed": 0,
+    "mismatches_sample": [],
+    "claimed_but_rebuild_fail_sample": [],
+    "compare_fields": [
+      "decision_time",
+      "yes_bid",
+      "yes_ask",
+      "implied_p",
+      "implied_p_method",
+      "open_time",
+      "close_time",
+      "asset",
+      "time_remaining_sec"
+    ]
+  },
+  "certify": {
+    "A_candle": {
+      "pass": true,
+      "n_candle_present": 1208,
+      "n_missing_candle": 0,
+      "n_missing_file": 0,
+      "rule": "end_period_ts == unix(CLOSE_TIME)-180 present for every universe contract"
+    },
+    "B_mid_rule": {
+      "pass": true,
+      "n_mid_ok": 1208,
+      "n_btc_mid": 604,
+      "n_eth_mid": 604,
+      "n_mid_rule_fails": 0,
+      "rule": "bid>0 AND ask>0 AND bid<=ask; method=mid; implied_p=round((bid+ask)/2,6)"
+    },
+    "C_no_last_as_mid": {
+      "pass": true,
+      "n_last_as_mid_leaks": 0,
+      "n_method_not_mid": 0,
+      "n_invalid_bid_ask_claiming_mid": 0,
+      "leaks_sample": [],
+      "rule": "last never substitutes for mid; method must be mid; bid/ask must satisfy mid rule"
+    },
+    "D_pairing": {
+      "pass": true,
+      "missing_vs_pm003": 0,
+      "extra_vs_pm003": 0,
+      "dup_claimed_keys": 0,
+      "n_uni_btc": 604,
+      "n_uni_eth": 604,
+      "n_claimed": 1208,
+      "rule": "exact (asset, OPEN_TIME, CLOSE_TIME) / ticker vs PM-003 remaining_universe"
+    },
+    "E_coverage": {
+      "pass": true,
+      "independent_btc": 604,
+      "independent_eth": 604,
+      "claimed_btc": 604,
+      "claimed_eth": 604,
+      "claim": "604/604",
+      "cov_mid_ok_rows": 1208,
+      "cov_candle_rows": 1208
+    },
+    "F_lookahead_knowability": {
+      "pass": true,
+      "n_obs_time_eq_decision_time": 1208,
+      "n_end_period_ts_eq_decision_unix": 1208,
+      "n_obs_lag_sec_0": 1208,
+      "n_obs_lag_nonzero": 0,
+      "n_decision_time_arith_ok": 1208,
+      "n_decision_time_arith_bad": 0,
+      "n_on_minute": 1208,
+      "n_decision_time_ends_00Z": 1208,
+      "knowability_class": "on-boundary candle close at end_period_ts; obs_lag_sec=0; same class as CB-001 / W2-A if lag=0 on-boundary",
+      "live_probe_partial_V": {
+        "n_http_200": 2,
+        "n_http_429": 2,
+        "n_rem180_confirmed": 2,
+        "note": "partial live confirmation only; primary is historical PM-003 candle tape"
+      },
+      "rule": "decision_time=close-180; candle end_period_ts==decision_time; no future candle"
+    },
+    "G_forbidden": {
+      "pass": true,
+      "details": {
+        "examiner_delta_in_checkpoints": false,
+        "poly_venue_rows": 0,
+        "pm002_parent_refs": 0,
+        "interpolation_flags": 0,
+        "time_remaining_not_180": 0,
+        "parent_dataset_not_pm003": 0
+      },
+      "pm003_rem_distribution": {
+        "0": 1208,
+        "60": 1208,
+        "300": 1208,
+        "600": 1208,
+        "840": 1208
+      },
+      "pm003_checkpoint_n": 6040,
+      "pm003_already_has_rem180": false,
+      "rule": "no Examiner, no Poly, no PM-002 union, no interpolation from other rems; rem=180 is NEW cell from same raw tape"
+    }
+  },
+  "samples": [
+    {
+      "ticker": "KXBTC15M-26SEP111630-30",
+      "asset": "BTC",
+      "open_time": "2026-09-11T20:15:00Z",
+      "close_time": "2026-09-11T20:30:00Z",
+      "decision_time": "2026-09-11T20:27:00Z",
+      "end_period_ts": 1789158420,
+      "yes_bid": 0.18,
+      "yes_ask": 0.19,
+      "last": 0.19,
+      "implied_p": 0.185,
+      "implied_p_method": "mid",
+      "obs_time": "2026-09-11T20:27:00Z",
+      "obs_lag_sec": 0
+    },
+    {
+      "ticker": "KXBTC15M-26SEP111615-15",
+      "asset": "BTC",
+      "open_time": "2026-09-11T20:00:00Z",
+      "close_time": "2026-09-11T20:15:00Z",
+      "decision_time": "2026-09-11T20:12:00Z",
+      "end_period_ts": 1789157520,
+      "yes_bid": 0.991,
+      "yes_ask": 0.992,
+      "last": 0.992,
+      "implied_p": 0.9915,
+      "implied_p_method": "mid",
+      "obs_time": "2026-09-11T20:12:00Z",
+      "obs_lag_sec": 0
+    },
+    {
+      "ticker": "KXBTC15M-26SEP111600-00",
+      "asset": "BTC",
+      "open_time": "2026-09-11T19:45:00Z",
+      "close_time": "2026-09-11T20:00:00Z",
+      "decision_time": "2026-09-11T19:57:00Z",
+      "end_period_ts": 1789156620,
+      "yes_bid": 0.902,
+      "yes_ask": 0.905,
+      "last": 0.902,
+      "implied_p": 0.9035,
+      "implied_p_method": "mid",
+      "obs_time": "2026-09-11T19:57:00Z",
+      "obs_lag_sec": 0
+    },
+    {
+      "ticker": "KXETH15M-26SEP111630-30",
+      "asset": "ETH",
+      "open_time": "2026-09-11T20:15:00Z",
+      "close_time": "2026-09-11T20:30:00Z",
+      "decision_time": "2026-09-11T20:27:00Z",
+      "end_period_ts": 1789158420,
+      "yes_bid": 0.006,
+      "yes_ask": 0.007,
+      "last": 0.007,
+      "implied_p": 0.0065,
+      "implied_p_method": "mid",
+      "obs_time": "2026-09-11T20:27:00Z",
+      "obs_lag_sec": 0
+    },
+    {
+      "ticker": "KXETH15M-26SEP111615-15",
+      "asset": "ETH",
+      "open_time": "2026-09-11T20:00:00Z",
+      "close_time": "2026-09-11T20:15:00Z",
+      "decision_time": "2026-09-11T20:12:00Z",
+      "end_period_ts": 1789157520,
+      "yes_bid": 0.99,
+      "yes_ask": 0.995,
+      "last": 0.991,
+      "implied_p": 0.9925,
+      "implied_p_method": "mid",
+      "obs_time": "2026-09-11T20:12:00Z",
+      "obs_lag_sec": 0
+    }
+  ],
+  "caveats": [
+    "Knowability: candle close at end_period_ts is on-boundary (obs_lag_sec=0). Same class as CB-001 / W2-A lag=0 on-boundary \u2014 treat as knowable-at-t with on-minute boundary semantics; not a future candle.",
+    "Live probe evidence in FETCH: partial [V] only (2\u00d7200 rem180 confirmed, 2\u00d7429). Primary evidence is historical PM-003 tape.",
+    "PM-003 derived checkpoints lack rem=180 by design (840/600/300/60/0 only); PM-007 is a new rem cell re-extracted from the same official 1m candle tape."
+  ],
+  "blockers": [],
+  "recommended_verdict": "CLEARED",
+  "verdict_rationale": "Independent rebuild matches claimed 1208/1208 rem=180 mid rows on all compare fields; mid rule clean (no last-as-mid); pairing exact vs PM-003 (missing=0, extra=0); obs_lag_sec=0 on-boundary knowability (CB-001 / W2-A class); PM-003 lacked rem=180 by design \u2014 new cell from same raw tape; no Examiner/Poly/PM-002/interpolation. Live probe partial [V] only (2\u00d7200 + 2\u00d7429) \u2014 documented caveat, not a blocker; primary is historical PM-003 candle tape.",
+  "state": {
+    "not_feature": true,
+    "not_ready": true,
+    "not_examiner": true,
+    "trade_forbidden": true,
+    "wave_008_w2d_waits_on": [
+      "CLEARED",
+      "CONDITIONAL"
+    ]
+  }
+}

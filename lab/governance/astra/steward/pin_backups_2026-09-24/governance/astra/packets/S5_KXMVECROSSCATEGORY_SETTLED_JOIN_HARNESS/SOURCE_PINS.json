@@ -1,0 +1,20 @@
+{
+  "lab_dir": "kalshi_s5_kxmvecrosscategory_settled_join_lab_20260923/",
+  "feature_family": "S5-RJ",
+  "packet_id": "S5-KXMVECROSSCATEGORY-SETTLED-RESOLUTION-JOIN-HARNESS",
+  "declared_at_et": "2026-09-23T17:33:00-04:00",
+  "freeze_sha256": "cd264a4d41ef055d1cbca80a5dbe6756746211537fb24799dca9dde8980cb799",
+  "scout_reget_sha256": "33db60a50f2e7746315f4603b9f78a9260145cb49d0250e141471de46f4df9e3",
+  "scout_summary_sha256": "3bc4aa5f44d7d31295dfd25f7bac3a3e39463c237315e8228c3fcf434d08419a",
+  "panel_stub_sha256": "4918b820d454c5f997ea100917859f7e9467d92933bed1bc8a55c81ab8ce5b8e",
+  "settled_reget_capture_sha256": "91111f20586a1b684e430baa0e8b62a3fffc7d510de99e43bab7d213dfeb26da",
+  "maximize_pin_sha256": "1e071f2cebdc18e198901e33af49387a751ecc1fe85bd14a0cb09a1f3ff6416f",
+  "examiner_hold_sha256": "3bce25f0dacb43f93bafe2229839bece190ff889b3fdf00a21dc1aac583b0ff7",
+  "feebook_pin": "22371178cb2663250b4762f328069571c48cb551",
+  "rails_pin": "6a28e0d6254327ea4e6451c781bec56215ac6cac",
+  "results": null,
+  "pnl": null,
+  "admitted_at": null,
+  "prior_r2p3_rj_pr46_main": "b2c1639a77f62114572fd41182f8a3c5ef70cad1",
+  "prior_r2p3_rj_accept_sha256": "e5218cf2511607211ec1d825a9dad36abaee3d9cfda24488524c3d6bcbe3a565"
+}

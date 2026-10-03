@@ -1,0 +1,298 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "astra.registry.s4_kxncaafgame_panel.v0",
+  "title": "S4 KXNCAAFGAME football OOS measurement panel stub (GET-only)",
+  "description": "Panel design stub for S4-KXNCAAFGAME-MEAS. Football OOS vs Q6-000 (not more KXNFLGAME capacity). Not a strategy. Cite packets/S4_KXNCAAFGAME_MEASUREMENT_FREEZE_KERNEL_2026-09-22.md; packets/scout_s4_kxncaafgame/FROZEN_EXPERIMENT.json. Does not steal ADMIT-1 / PIT@CLE / S1 / R2-P3 / S5 poll budget. No live orders. results/pnl/volume null. Fee via R1-P1 feebook only \u2014 forbid Q7/Q6 fee literals.",
+  "packet": "S4-KXNCAAFGAME-MEAS",
+  "status": "PANEL_SCHEMA_STUB_SEED",
+  "stubbed_at_utc": "2026-09-22T23:49:34Z",
+  "panel_version_const": "2026-09-22.s4-kxncaafgame-v0",
+  "freeze_cite": "lab/governance/astra/packets/S4_KXNCAAFGAME_MEASUREMENT_FREEZE_KERNEL_2026-09-22.md",
+  "freeze_packet_sha256": "9e6556c150c726b679ac8393f1f5338cf983489259b0f34cdedf221c030be795",
+  "binds": {
+    "fee": "R1-P1 kalshi_feebook_lab_20260922 @22371178cb2663250b4762f328069571c48cb551",
+    "rails": "R1-P5 kalshi_rails_lab_20260922 @6a28e0d6254327ea4e6451c781bec56215ac6cac",
+    "fee_formula_id": "astra.r1p1.feebook.claude_order_level_ceil.v1",
+    "fee_shape_via_feebook": "maker_fees/1 (series fee_type=quadratic_with_maker_fees fee_multiplier=1 \u2014 never hardcode Q7/Q6 0.0175/0.07)",
+    "forbid_inherited_q7_fee_literals": true,
+    "no_000_retune": true,
+    "orthogonal_to_kxnflgame_mm": true
+  },
+  "type": "object",
+  "required": [
+    "schema_id",
+    "panel_version",
+    "series_ticker",
+    "purpose",
+    "admitted_at",
+    "kickoff_sot",
+    "binds",
+    "capture",
+    "events",
+    "results",
+    "pnl"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "astra.registry.s4_kxncaafgame_panel.v0"
+    },
+    "panel_version": {
+      "const": "2026-09-22.s4-kxncaafgame-v0"
+    },
+    "series_ticker": {
+      "const": "KXNCAAFGAME"
+    },
+    "purpose": {
+      "const": "measurement_gate"
+    },
+    "cohort_kind": {
+      "type": "string"
+    },
+    "admitted_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "null until Collector runs admit.py after Clock join + Conductor greenlight; stub stays null. Do not hand-fill. Honor refuse past T\u22127d / no backfill."
+    },
+    "kickoff_sot": {
+      "type": "string",
+      "const": "kalshi_occurrence_datetime",
+      "description": "Kickoff SoT = Kalshi occurrence_datetime (market-level on live GET). Do not invent. Do not mix NFL holdout +3h clocks."
+    },
+    "occurrence_source": {
+      "type": "string",
+      "enum": [
+        "kalshi_public_get",
+        "scout_packet",
+        "assumed_et"
+      ]
+    },
+    "binds": {
+      "type": "object",
+      "required": [
+        "fee_lab_sha",
+        "rails_lab_sha",
+        "fee_formula_id",
+        "forbid_inherited_q7_fee_literals"
+      ],
+      "properties": {
+        "fee_lab_sha": {
+          "const": "22371178cb2663250b4762f328069571c48cb551"
+        },
+        "rails_lab_sha": {
+          "const": "6a28e0d6254327ea4e6451c781bec56215ac6cac"
+        },
+        "fee_formula_id": {
+          "const": "astra.r1p1.feebook.claude_order_level_ceil.v1"
+        },
+        "forbid_inherited_q7_fee_literals": {
+          "const": true
+        },
+        "no_000_retune": {
+          "const": true
+        }
+      }
+    },
+    "capture": {
+      "type": "object",
+      "required": [
+        "mode",
+        "budget_isolation",
+        "schedule"
+      ],
+      "properties": {
+        "mode": {
+          "const": "GET_only_public"
+        },
+        "host_allowlist": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "routes_allowlist": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "budget_isolation": {
+          "type": "object",
+          "required": [
+            "separate_from_admit1",
+            "no_pit_cle_poll_steal",
+            "no_s1_poll_steal",
+            "no_r2p3_poll_steal",
+            "no_s5_poll_steal"
+          ],
+          "properties": {
+            "separate_from_admit1": {
+              "const": true
+            },
+            "no_pit_cle_poll_steal": {
+              "const": true
+            },
+            "no_s1_poll_steal": {
+              "const": true
+            },
+            "no_r2p3_poll_steal": {
+              "const": true
+            },
+            "no_s5_poll_steal": {
+              "const": true
+            },
+            "recorder_pid_namespace": {
+              "type": "string"
+            },
+            "db_path": {
+              "type": "string"
+            }
+          }
+        },
+        "schedule": {
+          "type": "object",
+          "properties": {
+            "priority": {
+              "type": "string"
+            },
+            "start_rule": {
+              "type": "string"
+            }
+          }
+        },
+        "sample_interval_sec": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        }
+      }
+    },
+    "events": {
+      "type": "array",
+      "description": "Seeded from live public GET for bounded next-Saturday (ticker 26SEP26) cohort; admitted_at stays null. Live admit.py may REFUSE_PAST_TMINUS7D \u2014 no backfill.",
+      "minItems": 0,
+      "items": {
+        "$ref": "#/$defs/event_row"
+      }
+    },
+    "results": {
+      "type": "null"
+    },
+    "pnl": {
+      "type": "null"
+    },
+    "volume": {
+      "type": [
+        "null"
+      ],
+      "description": "Absent/null \u2014 never copy scout/live OI/vol into panel as admitted facts"
+    }
+  },
+  "$defs": {
+    "event_row": {
+      "type": "object",
+      "required": [
+        "event_ticker",
+        "series_ticker",
+        "kalshi_occurrence_datetime",
+        "window_clock_source",
+        "t_minus_7d_utc",
+        "sot_pin",
+        "panel_version"
+      ],
+      "properties": {
+        "event_ticker": {
+          "type": "string"
+        },
+        "series_ticker": {
+          "const": "KXNCAAFGAME"
+        },
+        "game_id": {
+          "type": "string"
+        },
+        "market_tickers": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "YES/NO market tickers from nested live GET"
+        },
+        "market_count": {
+          "type": "integer"
+        },
+        "holdout_kickoff_utc": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "kalshi_occurrence_datetime": {
+          "type": "string",
+          "description": "From Kalshi public GET market occurrence_datetime (SoT)"
+        },
+        "delta_kickoff_sec": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "window_clock_source": {
+          "type": "string",
+          "enum": [
+            "kalshi_occurrence",
+            "holdout_mixed",
+            "unknown"
+          ]
+        },
+        "t_minus_7d_utc": {
+          "type": "string",
+          "description": "occurrence \u2212 7d real UTC; admit.py refuses if already past at stamp time \u2014 no backfill"
+        },
+        "sot_pin": {
+          "type": "string"
+        },
+        "panel_version": {
+          "const": "2026-09-22.s4-kxncaafgame-v0"
+        },
+        "occurrence_source": {
+          "type": "string",
+          "enum": [
+            "kalshi_public_get",
+            "scout_packet",
+            "assumed_et"
+          ]
+        },
+        "volume_fp": {
+          "type": "null"
+        },
+        "volume_24h_fp": {
+          "type": "null"
+        },
+        "open_interest_fp": {
+          "type": "null"
+        }
+      }
+    }
+  },
+  "measurement_objects_at_sample": [
+    "reciprocal_book (bid_YES, bid_NO, ask_YES=1-bid_NO, ask_NO=1-bid_YES, spread_YES)",
+    "fee_channel via R1-P1 order_fee only (maker_fees/1 via feebook \u2014 no Q7/Q6 literals)",
+    "rails labels: content_fresh_flag, maker_credit_floor_zero_refuse, queue_attribution_bin",
+    "timing shape: minutes_to_occurrence_datetime; volume_fp / open_interest_fp as raw API only at sample time (never invent)",
+    "adverse mid markout 1m/5m/15m pre-settlement (Simulator harness later)",
+    "OOS contrast vs 000: fee+queue honesty metrics only \u2014 no 000 parameter change"
+  ],
+  "does_not_modify": [
+    "ADMIT-1 prospective recorder runtime / capture.sqlite / poll budget",
+    "lab/astra-capture/prospective/",
+    "S1 KXMLBGAME capture slot / poll",
+    "R2-P3 prop-slate capture slot / poll",
+    "S5 KXMVECROSSCATEGORY capture slots / polls",
+    "Q6-000 signal / retune",
+    "Q7 paircheck",
+    "KXNFLGAME MM capacity",
+    "capital-structure arms"
+  ]
+}

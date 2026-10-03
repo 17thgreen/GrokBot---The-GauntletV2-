@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "astra.registry.c1_kxufcfight_panel.v0",
+  "title": "C1 KXUFCFIGHT fee+queue honesty bakeoff panel stub (GET-only)",
+  "description": "Bounded UFC fight-card panel for fee+queue honesty bakeoff vs 000 under shared $5k measurement label. Not a strategy. No live orders. results/pnl/volume null. Bind R1-P1 + R1-P5. No Q6-000 retune.",
+  "packet": "C1-KXUFCFIGHT-MEAS",
+  "status": "PANEL_SCHEMA_STUB_SEED",
+  "stubbed_at_utc": "2026-09-23T00:33:00Z",
+  "panel_version_const": "2026-09-22.c1-kxufcfight-v0",
+  "freeze_cite": "lab/governance/astra/packets/C1_KXUFCFIGHT_MEASUREMENT_FREEZE_KERNEL_2026-09-22.md",
+  "freeze_packet_sha256": "a191c9b3f71030445d1d32684feb6dc1bf09abb7e09403d5dbdf1927eafc63c9",
+  "binds": {
+    "fee": "R1-P1 kalshi_feebook_lab_20260922 @22371178cb2663250b4762f328069571c48cb551",
+    "rails": "R1-P5 kalshi_rails_lab_20260922 @6a28e0d6254327ea4e6451c781bec56215ac6cac",
+    "fee_type_live": "quadratic / 1",
+    "no_000_retune": true,
+    "bakeoff_5k_label_only": true
+  },
+  "type": "object",
+  "required": [
+    "schema_id",
+    "panel_version",
+    "series_ticker",
+    "purpose",
+    "admitted_at",
+    "binds",
+    "capture",
+    "events",
+    "markets",
+    "results",
+    "pnl"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "astra.registry.c1_kxufcfight_panel.v0"
+    },
+    "panel_version": {
+      "const": "2026-09-22.c1-kxufcfight-v0"
+    },
+    "series_ticker": {
+      "const": "KXUFCFIGHT"
+    },
+    "purpose": {
+      "const": "measurement_gate"
+    },
+    "admitted_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "null until admit.py after Clock join + Conductor greenlight; do not hand-fill"
+    },
+    "binds": {
+      "type": "object"
+    },
+    "capture": {
+      "type": "object"
+    },
+    "events": {
+      "type": "array"
+    },
+    "markets": {
+      "type": "array"
+    },
+    "measurement_objects": {
+      "type": "object"
+    },
+    "results": {
+      "type": "null"
+    },
+    "pnl": {
+      "type": "null"
+    },
+    "volume": {
+      "type": "null"
+    }
+  }
+}

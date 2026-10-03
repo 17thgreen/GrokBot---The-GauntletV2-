@@ -1,0 +1,107 @@
+{
+  "DATA_ID": "DATA-PROV-PM-004",
+  "as_of_utc": "2026-09-13T18:45:22Z",
+  "finished_at_utc": "2026-09-13T18:46:21Z",
+  "cutoff_open_time_exclusive": "2026-09-11T20:15:00Z",
+  "cutoff_note": "OPEN after DATA-PROV-PM-003 end (strict > 2026-09-11T20:15Z)",
+  "query_method": {
+    "base": "https://api.elections.kalshi.com/trade-api/v2",
+    "endpoint": "GET /markets",
+    "params": "series_ticker in {KXBTC15M,KXETH15M}; status in {open,settled,closed}; limit=200; cursor pagination",
+    "auth": "none_public",
+    "filter": "open_time > 2026-09-11T20:15:00Z",
+    "dedupe": "by ticker across status queries",
+    "trades_placed": 0,
+    "cf_benchmarks": false,
+    "kalshi_trade_api_key": false
+  },
+  "counts": {
+    "n_btc": 185,
+    "n_eth": 186,
+    "n_total": 371,
+    "n_resolved": 369,
+    "n_still_open": 1,
+    "n_closed_unsettled": 1,
+    "n_not_yet_resolved": 2,
+    "status_class_counts": {
+      "resolved": 369,
+      "closed_unsettled": 1,
+      "still_open": 1
+    },
+    "classification_note": "still_open = Kalshi status active|open; resolved = finalized/settled or result yes/no; closed_unsettled = status closed without result"
+  },
+  "open_time_range": {
+    "first_open_utc": "2026-09-11T20:30:00Z",
+    "last_open_utc": "2026-09-13T18:45:00Z"
+  },
+  "api_errors": [],
+  "n429": 1,
+  "raw_dir": "raw/kalshi_markets",
+  "universe_ndjson": "provenance/universe_after_cutoff.ndjson",
+  "binance_vision_l3_002_listing": {
+    "method": "HTTP HEAD only (no zip download)",
+    "base": "https://data.binance.vision/data/spot/daily/klines/{SYM}/1m/",
+    "dates": [
+      "2026-09-12",
+      "2026-09-13"
+    ],
+    "symbols": [
+      "BTCUSDT",
+      "ETHUSDT"
+    ],
+    "checks": [
+      {
+        "symbol": "BTCUSDT",
+        "date": "2026-09-12",
+        "url": "https://data.binance.vision/data/spot/daily/klines/BTCUSDT/1m/BTCUSDT-1m-2026-09-12.zip",
+        "http": 200,
+        "content_length": "63357",
+        "content_type": "application/zip",
+        "error": null,
+        "listable": true
+      },
+      {
+        "symbol": "BTCUSDT",
+        "date": "2026-09-13",
+        "url": "https://data.binance.vision/data/spot/daily/klines/BTCUSDT/1m/BTCUSDT-1m-2026-09-13.zip",
+        "http": 404,
+        "content_length": null,
+        "content_type": "application/xml",
+        "error": "HTTP 404",
+        "listable": false
+      },
+      {
+        "symbol": "ETHUSDT",
+        "date": "2026-09-12",
+        "url": "https://data.binance.vision/data/spot/daily/klines/ETHUSDT/1m/ETHUSDT-1m-2026-09-12.zip",
+        "http": 200,
+        "content_length": "63684",
+        "content_type": "application/zip",
+        "error": null,
+        "listable": true
+      },
+      {
+        "symbol": "ETHUSDT",
+        "date": "2026-09-13",
+        "url": "https://data.binance.vision/data/spot/daily/klines/ETHUSDT/1m/ETHUSDT-1m-2026-09-13.zip",
+        "http": 404,
+        "content_length": null,
+        "content_type": "application/xml",
+        "error": "HTTP 404",
+        "listable": false
+      }
+    ],
+    "note": "Sep-11 historically 404 at L3-001 fetch time; listing here is availability probe only",
+    "summary": {
+      "2026-09-12": "listable HTTP 200 for BTCUSDT and ETHUSDT (~63KB zips); download not performed",
+      "2026-09-13": "NOT listable yet (HTTP 404 both symbols) \u2014 expected for in-progress UTC day; same pattern as L3-001 Sep-11"
+    }
+  },
+  "notes": [
+    "Cutoff exclusive: open_time > 2026-09-11T20:15:00Z (PM-003 last included that open).",
+    "BTC n=185 vs ETH n=186: at as-of, ETH had an active 18:45Z window; BTC's matching active window was not returned by status=open (only prior 18:30Z closed_unsettled).",
+    "One 429 on KXETH15M settled page 2; recovered after backoff.",
+    "Candle/candlestick fetch NOT started; listing pages only under raw/kalshi_markets.",
+    "No Trade API key, no CF Benchmarks, no trades, no Clock, no Examiner."
+  ]
+}

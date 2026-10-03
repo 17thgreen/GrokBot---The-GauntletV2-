@@ -1,0 +1,234 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "astra.registry.s1_kxmlbgame_panel.v0",
+  "title": "S1 KXMLBGAME measurement panel stub (GET-only)",
+  "description": "Panel design stub for S1-KXMLBGAME-MEAS. Not a strategy. Cite packets/S1_KXMLBGAME_MEASUREMENT_FREEZE_KERNEL_2026-09-22.md; packets/scout_s1_kxmlbgame/FROZEN_EXPERIMENT.json. Does not steal ADMIT-1 / PIT@CLE poll budget. No live orders. results/pnl null.",
+  "packet": "S1-KXMLBGAME-MEAS",
+  "status": "PANEL_SCHEMA_STUB",
+  "stubbed_at_utc": "2026-09-22T23:02:43Z",
+  "panel_version_const": "2026-09-22.s1-kxmlbgame-v0",
+  "binds": {
+    "fee": "R1-P1 kalshi_feebook_lab_20260922 @22371178cb2663250b4762f328069571c48cb551",
+    "rails": "R1-P5 kalshi_rails_lab_20260922 @6a28e0d6254327ea4e6451c781bec56215ac6cac",
+    "fee_formula_id": "astra.r1p1.feebook.claude_order_level_ceil.v1",
+    "freeze_packet_sha256": "58a0c20182a075ba339629f94451fb65b7876d635ecdd51338d1c2dd852279c5",
+    "forbid_inherited_q7_fee_literals": true
+  },
+  "type": "object",
+  "required": [
+    "schema_id",
+    "panel_version",
+    "series_ticker",
+    "purpose",
+    "admitted_at",
+    "kickoff_sot",
+    "binds",
+    "capture",
+    "events",
+    "results",
+    "pnl"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "astra.registry.s1_kxmlbgame_panel.v0"
+    },
+    "panel_version": {
+      "const": "2026-09-22.s1-kxmlbgame-v0"
+    },
+    "series_ticker": {
+      "const": "KXMLBGAME"
+    },
+    "purpose": {
+      "const": "measurement_gate"
+    },
+    "cohort_kind": {
+      "type": "string"
+    },
+    "admitted_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "null until Collector admits a live same-day/next-day slate; stub stays null"
+    },
+    "kickoff_sot": {
+      "type": "string",
+      "const": "kalshi_occurrence_datetime",
+      "description": "Do not mix NFL holdout +3h clocks into MLB windows"
+    },
+    "binds": {
+      "type": "object",
+      "required": [
+        "fee_lab_sha",
+        "rails_lab_sha",
+        "fee_formula_id"
+      ],
+      "properties": {
+        "fee_lab_sha": {
+          "const": "22371178cb2663250b4762f328069571c48cb551"
+        },
+        "rails_lab_sha": {
+          "const": "6a28e0d6254327ea4e6451c781bec56215ac6cac"
+        },
+        "fee_formula_id": {
+          "const": "astra.r1p1.feebook.claude_order_level_ceil.v1"
+        },
+        "forbid_inherited_q7_fee_literals": {
+          "const": true
+        }
+      }
+    },
+    "capture": {
+      "type": "object",
+      "required": [
+        "mode",
+        "budget_isolation",
+        "schedule"
+      ],
+      "properties": {
+        "mode": {
+          "const": "GET_only_public"
+        },
+        "host_allowlist": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "routes_allowlist": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "budget_isolation": {
+          "type": "object",
+          "required": [
+            "separate_from_admit1",
+            "no_pit_cle_poll_steal"
+          ],
+          "properties": {
+            "separate_from_admit1": {
+              "const": true
+            },
+            "no_pit_cle_poll_steal": {
+              "const": true
+            },
+            "recorder_pid_namespace": {
+              "type": "string"
+            },
+            "db_path": {
+              "type": "string"
+            }
+          }
+        },
+        "schedule": {
+          "type": "object",
+          "properties": {
+            "priority": {
+              "type": "string"
+            },
+            "start_rule": {
+              "type": "string"
+            }
+          }
+        },
+        "sample_interval_sec": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        }
+      }
+    },
+    "events": {
+      "type": "array",
+      "description": "Empty in stub; filled only on future admit of bounded same-day/next-day slate (no backfill)",
+      "items": {
+        "$ref": "#/$defs/event_row"
+      }
+    },
+    "results": {
+      "type": "null"
+    },
+    "pnl": {
+      "type": "null"
+    }
+  },
+  "$defs": {
+    "event_row": {
+      "type": "object",
+      "required": [
+        "event_ticker",
+        "series_ticker",
+        "kalshi_occurrence_datetime",
+        "window_clock_source",
+        "sot_pin"
+      ],
+      "properties": {
+        "event_ticker": {
+          "type": "string"
+        },
+        "series_ticker": {
+          "const": "KXMLBGAME"
+        },
+        "market_tickers": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "YES/NO market tickers when nested listing resolved"
+        },
+        "holdout_kickoff_utc": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "kalshi_occurrence_datetime": {
+          "type": "string"
+        },
+        "delta_kickoff_sec": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "window_clock_source": {
+          "type": "string",
+          "enum": [
+            "kalshi_occurrence",
+            "holdout_mixed",
+            "unknown"
+          ]
+        },
+        "t_minus_7d_utc": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Optional for daily MLB; NFL-style T-7d not required for first S1 cohort"
+        },
+        "sot_pin": {
+          "type": "string"
+        },
+        "panel_version": {
+          "const": "2026-09-22.s1-kxmlbgame-v0"
+        }
+      }
+    }
+  },
+  "measurement_objects_at_sample": [
+    "reciprocal_book (bid_YES, bid_NO, ask_YES=1-bid_NO, ask_NO=1-bid_YES, spread_YES)",
+    "fee_channel via R1-P1 order_fee only (no Q7 literals)",
+    "rails labels: content_fresh_flag, maker_credit_floor_zero_refuse, queue_attribution_bin",
+    "timing shape: minutes_to_occurrence_or_close; volume_fp / open_interest_fp as raw API only",
+    "adverse mid markout 1m/5m/15m pre-settlement (Simulator harness later)"
+  ],
+  "does_not_modify": [
+    "ADMIT-1 prospective recorder runtime / capture.sqlite / poll budget",
+    "Q6-000 signal",
+    "Q7 paircheck",
+    "capital-structure arms"
+  ]
+}

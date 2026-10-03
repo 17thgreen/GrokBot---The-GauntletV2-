@@ -1,0 +1,379 @@
+{
+  "template_id": "EXAMINER_KALSHI_SCORECARD_TEMPLATE",
+  "template_version": "v1",
+  "revision_date_et": "2026-09-24",
+  "authored_by": "Examiner (Kalshi), Astra desk",
+  "commissioned_by": "Conductor 2026-09-24 19:30 ET (CONDUCTOR_ROUTING_KALSHI_EDGE_RESEARCH_2026-09-24.md step 0)",
+  "supersedes": {
+    "template": "implicit v0 (no explicit template file existed)",
+    "path": null,
+    "derived_from_stubs": [
+      "lab/governance/astra/packets/EXAMINER_SCORECARD_STUB_C1_KXUFCFIGHT_SETTLED_JOIN_HARNESS_2026-09-24.md",
+      "lab/governance/astra/packets/EXAMINER_ACK_C1_RJ_PR49_STUB_READY_NOT_SCORED_2026-09-24.json",
+      "lab/governance/astra/packets/EXAMINER_SCORECARD_Q7_B_REHAB_P1_TAPE_WALK_KILL_2026-09-23.md",
+      "lab/governance/astra/packets/EXAMINER_ACK_Q7_B_REHAB_P1_TAPE_WALK_KILL_2026-09-23.json",
+      "lab/governance/astra/packets/EXAMINER_SCORECARD_STUBS_S1_S4_S5_R2P3_2026-09-22.json"
+    ]
+  },
+  "changelog": [
+    "v0 (implicit): shape used by EXAMINER_SCORECARD_STUB_* / EXAMINER_ACK_* / EXAMINER_SCORECARD_* stamps 2026-09-22..24 (verdict, stub_ready, scored, promote, pins/digests, score_gate, refuse, etc.).",
+    "v1 (2026-09-24): codifies v0 shape unchanged; adds common_scorecard (11 metrics, all null), controls (market_only/simple_model/no_trade, per packet, null), fee_regime (standing feebook pin + Archivist fee/account-version manifest placeholder, pending), proposed_optional (listed only), common_scorecard_rules. No existing stamp modified."
+  ],
+  "applies_to": "new Kalshi Examiner scorecards/stubs/ACKs stamped after this revision; existing stamps are not retro-edited",
+  "existing_stamps_untouched": true,
+  "research_source": {
+    "path": "lab/governance/astra/research/KALSHI_EDGE_RESEARCH_2026-09-24.pdf",
+    "pages": "15-16",
+    "note": "Research, not a profit claim (PDF footer)."
+  },
+  "scorecard": {
+    "id": null,
+    "seat": "Examiner (Kalshi)",
+    "desk": "Astra",
+    "packet": null,
+    "feature_family": null,
+    "status": null,
+    "status_enum": [
+      "NOT_SCORED",
+      "SCORED",
+      "HOLD_PRE_PR",
+      "SUPERSEDED"
+    ],
+    "verdict": null,
+    "verdict_enum": [
+      "KEEP",
+      "ITERATE",
+      "KILL",
+      "READY_NOT_SCORED",
+      "HOLD",
+      "NOT_SCORED"
+    ],
+    "stub_ready": null,
+    "scored": false,
+    "promote": false,
+    "live_promotion": false,
+    "counted_as_experiment_pnl": false,
+    "admit_alone_neq_score": true,
+    "units_neq_score": true,
+    "selection_status": null,
+    "selection_reason": null,
+    "fallback_shadow_candidate": null,
+    "supersedes_hold": null,
+    "supersedes_hold_sha256": null,
+    "supersedes_hold_path": null,
+    "supersedes_stub": null,
+    "pr": {
+      "number": null,
+      "merged": null,
+      "main": null,
+      "head_sha_pre_merge": null,
+      "base_pre_merge": null,
+      "merge_method": null,
+      "merged_at_et": null,
+      "lab": null,
+      "units_ok": null,
+      "arms": [],
+      "arm_values": {},
+      "url": null
+    },
+    "main_pin": null,
+    "lab": null,
+    "parent_source_pins": null,
+    "accept_sha256": null,
+    "merge_packet_sha256": null,
+    "freeze_sha256": null,
+    "pins": {
+      "<pin_name>": {
+        "path": null,
+        "sha256": null
+      }
+    },
+    "digest_verify": {
+      "<pin_name>": null,
+      "match_all": null,
+      "method": null
+    },
+    "source_pins_copies": {
+      "blob": null,
+      "sha256": null,
+      "copies_match": null,
+      "paths": [],
+      "digest_all_match_claimed": null
+    },
+    "positive_control": null,
+    "arms": [],
+    "arm_values": {},
+    "metrics": {
+      "_note": "packet-specific metrics (e.g. results, pnl, settled_join_n); null until measured"
+    },
+    "metrics_null": [],
+    "metrics_fill_policy": "null_until_panel_and_units_examiner_ready",
+    "bar_table": null,
+    "pnl_by_scenario": null,
+    "score_gate": [],
+    "refuse": [],
+    "refuse_binds": [
+      "astra.r1p1.feebook.claude_order_level_ceil.v1"
+    ],
+    "does_not_ungate": [],
+    "orthogonal_to": [],
+    "evidence_tags": [],
+    "corpse_route": null,
+    "doc_nits_non_blocking": [],
+    "cite": [],
+    "stub_path": null,
+    "ready_packet_path": null,
+    "merge_stamp": null,
+    "canonical_ready_packet": null,
+    "canonical_ready_sha256": null,
+    "conductor_route": null,
+    "stamped_at_et": null
+  },
+  "fee_regime": {
+    "feebook_formula_id": "astra.r1p1.feebook.claude_order_level_ceil.v1",
+    "feebook_formula_id_status": "standing pin (R1-P1); required for fee-honest claims",
+    "fee_account_version_manifest": {
+      "path": null,
+      "sha256": null,
+      "manifest_id": null,
+      "status": "pending",
+      "owner": "Archivist",
+      "note": "Placeholder only. Archivist is drafting; contents and formula ids NOT assumed. Examiner consumes once filed and pinned."
+    }
+  },
+  "common_scorecard": {
+    "_block_note": "All values null until measured on a frozen packet. Name list per p16 'The common scorecard': \"Track net P&L with and without rewards; calibration; fill rate; adverse selection after fills; feasible versus requested size; unresolved inventory; capital-hours; drawdown; and event concentration.\" Definitions quoted from p15-16; where p15-16 gives no formula, formula='pending_definition' (not invented).",
+    "net_pnl_without_rewards": {
+      "value": null,
+      "unit": "USD",
+      "unit_status": "from_pdf ('net dollars', p15 headline)",
+      "definition": "p15 'Separate the profit sources': \"Report trading P&L excluding rewards, exchange rewards actually earned, fees, inventory liquidation or settlement, and capital cost.\" p15 'Binary expected value': \"expected net value per contract is q - p - net fees - other costs\" (q conditional on info AND on our order filling); \"Exit-based strategies must model realized entry and exit cash flows instead of replacing them with terminal payoff.\"",
+      "definition_status": "partial_from_pdf (components named; no realized-P&L formula given)",
+      "formula": "pending_definition",
+      "source_ref": "KALSHI_EDGE_RESEARCH_2026-09-24.pdf p15-16",
+      "measured": false,
+      "feebook_formula_id_required": "astra.r1p1.feebook.claude_order_level_ceil.v1",
+      "feebook_formula_id_rule": "fee-honest claims require the standing R1-P1 feebook formula_id pin",
+      "fee_account_version_manifest_ref": "fee_regime.fee_account_version_manifest (Archivist; pending)",
+      "fee_honest": null,
+      "fee_components_source": null,
+      "fee_components_source_note": "p15 'Fees must be versioned': \"Prefer actual recorded fee components.\"; \"The repo's older cent-ceiling convention requires a version-and-account reconciliation, not an assumption that one formula covers every historical and current trade.\""
+    },
+    "net_pnl_with_rewards": {
+      "value": null,
+      "unit": "USD",
+      "unit_status": "from_pdf ('net dollars', p15 headline)",
+      "definition": "p15/p16: \"net P&L with and without rewards\"; rewards component = \"exchange rewards actually earned\" (not an ideal estimate). p15: \"Do not hide a negative forecasting strategy inside a positive subsidy.\"",
+      "definition_status": "partial_from_pdf (no explicit formula; composition = net_pnl_without_rewards + rewards_actually_earned is NOT asserted here)",
+      "formula": "pending_definition",
+      "source_ref": "KALSHI_EDGE_RESEARCH_2026-09-24.pdf p15-16",
+      "measured": false,
+      "feebook_formula_id_required": "astra.r1p1.feebook.claude_order_level_ceil.v1",
+      "feebook_formula_id_rule": "fee-honest claims require the standing R1-P1 feebook formula_id pin",
+      "fee_account_version_manifest_ref": "fee_regime.fee_account_version_manifest (Archivist; pending)"
+    },
+    "rewards_actually_earned": {
+      "value": null,
+      "unit": "USD",
+      "unit_status": "implied_by_pdf ('cash received')",
+      "definition": "p15: \"exchange rewards actually earned\" ... \"do not count an ideal reward estimate as cash received.\"",
+      "definition_status": "partial_from_pdf (cash received, not estimate; no computation method given)",
+      "formula": "pending_definition",
+      "source_ref": "KALSHI_EDGE_RESEARCH_2026-09-24.pdf p15-16",
+      "measured": false,
+      "source_of_record": null,
+      "estimate_not_admissible": true
+    },
+    "calibration": {
+      "value": null,
+      "unit": "pending_definition",
+      "unit_status": "pending_definition",
+      "definition": "Named in p16 common-scorecard list only; no definition, method or unit on p15-16.",
+      "definition_status": "pending_definition",
+      "formula": "pending_definition",
+      "source_ref": "KALSHI_EDGE_RESEARCH_2026-09-24.pdf p15-16",
+      "measured": false,
+      "context_outside_p15_16": "p5: \"Weight forecasts using past out-of-sample calibration\"; p9: \"Estimate calibration by family, horizon, price, liquidity and maker/taker side.\" (context only; not a p15-16 definition)"
+    },
+    "fill_rate": {
+      "value": null,
+      "unit": "pending_definition",
+      "unit_status": "pending_definition",
+      "definition": "Named in p16 list only; no definition/denominator/unit on p15-16.",
+      "definition_status": "pending_definition",
+      "formula": "pending_definition",
+      "source_ref": "KALSHI_EDGE_RESEARCH_2026-09-24.pdf p15-16",
+      "measured": false
+    },
+    "adverse_selection_after_fills": {
+      "value": null,
+      "unit": "pending_definition",
+      "unit_status": "pending_definition",
+      "definition": "p15: \"q must be the probability conditional on the information and the fact that our order fills. A maker's unconditional forecast can be right while its filled orders are systematically bad.\" No measurement horizon or formula on p15-16.",
+      "definition_status": "partial_from_pdf (concept only; horizon/formula pending_definition)",
+      "formula": "pending_definition",
+      "source_ref": "KALSHI_EDGE_RESEARCH_2026-09-24.pdf p15-16",
+      "measured": false,
+      "context_outside_p15_16": "p9 reject rule: \"selected fills lose more than unselected quotes\" (context only)"
+    },
+    "feasible_vs_requested_size": {
+      "value": null,
+      "unit": "pending_definition",
+      "unit_status": "pending_definition",
+      "definition": "p15 'Capacity is a first-class output': \"record executable dollars per day ... A 20% return on $5 of available depth is a curiosity ... A quote can disappear, and consuming it changes the opportunity.\" p15: \"competing bots must share cash, queue and exit depth.\" No ratio/formula given.",
+      "definition_status": "partial_from_pdf (concept only; formula pending_definition)",
+      "formula": "pending_definition",
+      "source_ref": "KALSHI_EDGE_RESEARCH_2026-09-24.pdf p15-16",
+      "measured": false,
+      "feasible": null,
+      "requested": null
+    },
+    "unresolved_inventory": {
+      "value": null,
+      "unit": "pending_definition",
+      "unit_status": "pending_definition",
+      "definition": "p15: profit source \"inventory liquidation or settlement\" reported separately. No definition of 'unresolved' (count vs. mark vs. exposure) on p15-16.",
+      "definition_status": "partial_from_pdf (concept only; unit/formula pending_definition)",
+      "formula": "pending_definition",
+      "source_ref": "KALSHI_EDGE_RESEARCH_2026-09-24.pdf p15-16",
+      "measured": false
+    },
+    "capital_hours": {
+      "value": null,
+      "unit": "capital-hour",
+      "unit_status": "from_pdf (name only; exact dimension pending_definition)",
+      "definition": "p15 headline: \"Optimize risk-adjusted net dollars per constrained capital-hour\"; p15: \"For each candidate record ... capital-hours\". No formula (what capital, which clock) on p15-16.",
+      "definition_status": "partial_from_pdf (unit named; formula pending_definition)",
+      "formula": "pending_definition",
+      "source_ref": "KALSHI_EDGE_RESEARCH_2026-09-24.pdf p15-16",
+      "measured": false
+    },
+    "drawdown": {
+      "value": null,
+      "unit": "pending_definition",
+      "unit_status": "pending_definition",
+      "definition": "p15: \"stress drawdown\" (capacity record). p16 list: \"drawdown\". No formula/window on p15-16.",
+      "definition_status": "partial_from_pdf (named as stress drawdown; formula pending_definition)",
+      "formula": "pending_definition",
+      "source_ref": "KALSHI_EDGE_RESEARCH_2026-09-24.pdf p15-16",
+      "measured": false,
+      "stress_scenario_ref": null
+    },
+    "event_concentration": {
+      "value": null,
+      "unit": "pending_definition",
+      "unit_status": "pending_definition",
+      "definition": "p15: \"Contracts on one election, game, weather system or crypto price path share risk. Event-cluster uncertainty matters more than the raw number of fills or timestamps.\" p16: result must survive \"without dependence on one exceptional event.\" No concentration statistic given.",
+      "definition_status": "partial_from_pdf (concept only; statistic pending_definition)",
+      "formula": "pending_definition",
+      "source_ref": "KALSHI_EDGE_RESEARCH_2026-09-24.pdf p15-16",
+      "measured": false,
+      "event_cluster_key": null
+    }
+  },
+  "controls": {
+    "_block_note": "Controls apply per packet. Each is null / not-applicable until that packet's freeze declares it. p16: \"Compare with market-only, simple-model and no-trade controls where relevant.\" p15-16 give no further definition of each control.",
+    "market_only": {
+      "applies": null,
+      "result": null,
+      "declared_in_freeze": null,
+      "definition_status": "pending_definition (p15-16 names only)",
+      "note": "null until packet freeze declares applicability; context p5 (card 01): \"market-only, model-only and hybrid baselines\" and \"Reject if its gains disappear against market-only\" (context only).",
+      "source_ref": "KALSHI_EDGE_RESEARCH_2026-09-24.pdf p15-16"
+    },
+    "simple_model": {
+      "applies": null,
+      "result": null,
+      "declared_in_freeze": null,
+      "definition_status": "pending_definition (p15-16 names only)",
+      "note": "null until packet freeze declares applicability; which simple model is packet-specific and must be frozen, never chosen after peek.",
+      "source_ref": "KALSHI_EDGE_RESEARCH_2026-09-24.pdf p15-16"
+    },
+    "no_trade": {
+      "applies": null,
+      "result": null,
+      "declared_in_freeze": null,
+      "definition_status": "pending_definition (p15-16 names only)",
+      "note": "null until packet freeze declares applicability; context p9: \"Compare equal-risk maker, taker and abstention policies\" (context only).",
+      "source_ref": "KALSHI_EDGE_RESEARCH_2026-09-24.pdf p15-16"
+    }
+  },
+  "proposed_optional": {
+    "_block_note": "Extra items on p15-16 NOT in the Conductor list. Listed only; not adopted as scored fields. Null. Adoption requires Conductor decision.",
+    "uncertainty_by_event_or_day": {
+      "value": null,
+      "quote": "p16: \"Report uncertainty by event or day\""
+    },
+    "sensitivity_worse_queues_latency_costs": {
+      "value": null,
+      "quote": "p16: \"sensitivity to worse queues, latency and costs\""
+    },
+    "executable_dollars_per_day": {
+      "value": null,
+      "quote": "p15: \"record executable dollars per day\""
+    },
+    "independent_opportunities": {
+      "value": null,
+      "quote": "p15: \"independent opportunities\""
+    },
+    "correlation_with_existing_positions": {
+      "value": null,
+      "quote": "p15: \"correlation with existing positions\""
+    },
+    "fees_reported_separately": {
+      "value": null,
+      "quote": "p15: profit sources incl. \"fees\""
+    },
+    "capital_cost": {
+      "value": null,
+      "quote": "p15: profit sources incl. \"capital cost\""
+    },
+    "inventory_liquidation_or_settlement_pnl": {
+      "value": null,
+      "quote": "p15: \"inventory liquidation or settlement\""
+    },
+    "risk_adjusted_net_dollars_per_capital_hour": {
+      "value": null,
+      "quote": "p15 headline objective"
+    },
+    "study_label": {
+      "value": null,
+      "allowed_per_pdf": [
+        "unit-only",
+        "synthetic",
+        "historical replay",
+        "prospective shadow",
+        "live"
+      ],
+      "quote": "p16: \"Mark each study as unit-only, synthetic, historical replay, prospective shadow or live.\"",
+      "owner_note": "Archivist labeling task per Conductor routing"
+    },
+    "attempted_variants_log": {
+      "value": null,
+      "quote": "p16: \"Limit candidate variants; log every attempted variant.\""
+    },
+    "period_separation": {
+      "value": null,
+      "quote": "p16: \"Separate discovery, tuning and untouched evaluation periods.\""
+    },
+    "preregistration_checklist": {
+      "value": null,
+      "quote": "p16: \"Freeze the market universe, exclusions, receipt-time information set, fee regime, order timing, sizing, fill model, stopping rules and evaluation metrics before the test.\""
+    },
+    "single_event_dependence": {
+      "value": null,
+      "quote": "p16: \"survives reasonable stress without dependence on one exceptional event\""
+    }
+  },
+  "common_scorecard_rules": [
+    "All common_scorecard values are null and measured=false until measured on a frozen packet with artifacts.",
+    "Never back-fill any common_scorecard or control field from scout N, unit-test counts, fixtures, admit flags, or estimates.",
+    "Definitions marked pending_definition must not be given an Examiner-invented formula; a packet freeze (or a later Conductor-ratified template revision) must declare it before scoring.",
+    "net_pnl_with_rewards and net_pnl_without_rewards are always reported side by side; neither is omitted when the other is reported.",
+    "Rewards-inclusive P&L never substitutes for without-rewards P&L in a KEEP decision unless the packet freeze declares it. Basis p15: \"Do not hide a negative forecasting strategy inside a positive subsidy. Likewise, do not count an ideal reward estimate as cash received.\" Even when declared, both remain reported.",
+    "rewards_actually_earned counts only rewards actually earned/received; ideal/estimated rewards are inadmissible (p15).",
+    "Fee-honest P&L claims require feebook formula_id astra.r1p1.feebook.claude_order_level_ceil.v1 (standing R1-P1 pin) and, once filed, a pinned Archivist fee/account-version manifest; until the manifest is filed, its reference stays null/pending and no manifest contents or formula ids are assumed.",
+    "Controls (market_only, simple_model, no_trade) are per packet; applies/result stay null (not applicable) until the packet freeze declares them.",
+    "Template revision only: adding fields here does not re-score, re-open, or alter any existing stamped verdict."
+  ]
+}

@@ -1,0 +1,251 @@
+{
+  "manifest_id": "FEE-ACCT-MANIFEST-v0-DRAFT-20260924",
+  "status": "DRAFT_NOT_ADOPTED",
+  "owner": "The Archivist (Registry)",
+  "drafted_at_et": "2026-09-24T19:45:00-04:00",
+  "purpose": "Common fee/account-version manifest every sim/scorer should cite (Conductor step-0, routing packet CONDUCTOR_ROUTING_KALSHI_EDGE_RESEARCH_2026-09-24.md). Records only.",
+  "hard_rules": [
+    "No past result is recomputed under this manifest.",
+    "No value is filled that is not quoted from a source; missing values are null + flag.",
+    "Adoption requires Conductor + Examiner stamps; until then status stays DRAFT_NOT_ADOPTED."
+  ],
+  "sources": [
+    {
+      "id": "SRC-REPORT",
+      "path": "lab/governance/astra/research/KALSHI_EDGE_RESEARCH_2026-09-24.txt",
+      "sha256": "e0223a39dcb1336fef2ad572d4fcfc7770ceb55ee69496bb59438a40dec990c3",
+      "pdf_sha256": "7e55bc260526aa5088ee31f74475851219ab2cd7f19fdd2f0dd5e9f998c8b45e",
+      "tag": "[V]"
+    },
+    {
+      "id": "SRC-REPORT-S19",
+      "text": "Kalshi Fee Schedule, effective July 7, 2026. Downloaded 12-page schedule; market multipliers and fee versions matter.",
+      "where": "lab/governance/astra/research/KALSHI_EDGE_RESEARCH_2026-09-24.txt line 866",
+      "tag": "[V] citation text only; PDF bytes not on disk"
+    },
+    {
+      "id": "SRC-REPORT-S20",
+      "text": "Kalshi API, Fee Rounding. Current official member-type precision, fee components and accumulator mechanics.",
+      "where": "lab/governance/astra/research/KALSHI_EDGE_RESEARCH_2026-09-24.txt line 872",
+      "tag": "[V] citation text only"
+    },
+    {
+      "id": "SRC-FEEBOOK-STUB",
+      "path": "lab/astra-science/kalshi_feebook_lab_20260922/series_fee_table.stub.json",
+      "sha256": "600d56beda64c2edd9af2c9d220398ff1a7158dba140603a42f7cb7f95212384",
+      "tag": "[V]"
+    },
+    {
+      "id": "SRC-FEEBOOK-GENERAL-TABLE",
+      "path": "lab/astra-science/kalshi_feebook_lab_20260922/kalshi_general_fee_table.json",
+      "sha256": "a259eaf5b74ace93960e0990b7d89fd417a1e992ab9656393ed32890476d434e",
+      "tag": "[V]"
+    },
+    {
+      "id": "SRC-FEEBOOK-UNIT-RESULTS",
+      "path": "lab/astra-science/kalshi_feebook_lab_20260922/results/FEEBOOK_UNIT_RESULTS.md",
+      "sha256": "3e8d5fdf596c62c4768007927275a155d962cbbce2832ee2132fb14ac67ef330",
+      "tag": "[V]"
+    },
+    {
+      "id": "SRC-FEEBOOK-PY",
+      "path": "lab/astra-science/kalshi_feebook_lab_20260922/feebook.py",
+      "sha256": "eaf5aac7126efcd574c972fa77438c4118d44d50acafa17c504bdd48768bebe7",
+      "tag": "[V]"
+    }
+  ],
+  "a_july7_2026_schedule": {
+    "schedule_effective": "2026-07-07",
+    "schedule_url": "https://kalshi.com/docs/kalshi-fee-schedule.pdf",
+    "schedule_retrieved": "2026-09-22 (per SRC-FEEBOOK-STUB pdf.retrieved)",
+    "schedule_pdf_on_disk": false,
+    "formula_shape": {
+      "value": "quadratic: rate x M x contracts x p x (1-p) (as coded in feebook / replay_v2)",
+      "tag": "[V] code; PDF text not on disk to quote"
+    },
+    "taker_rate": {
+      "value": "0.07",
+      "source": "SRC-FEEBOOK-STUB rates.taker; SRC-FEEBOOK-GENERAL-TABLE rate",
+      "quote": "\"rates\": {\"taker\": \"0.07\", \"maker\": \"0.0175\"}",
+      "tag": "[V] on disk (transcription of the PDF by R1-P1, not the PDF itself)"
+    },
+    "maker_rate": {
+      "value": "0.0175",
+      "source": "SRC-FEEBOOK-STUB rates.maker",
+      "quote": "\"maker\": \"0.0175\"",
+      "tag": "[V] on disk"
+    },
+    "standard_multiplier_M": {
+      "value": "1",
+      "source": "SRC-FEEBOOK-STUB default.M; SRC-FEEBOOK-GENERAL-TABLE M",
+      "quote": "Research default only. M is 1 and maker fees are enabled.",
+      "tag": "[V] on disk (research default, not a live schedule lookup)"
+    },
+    "maker_multiplier_default_per_pdf_prose": {
+      "value": "0",
+      "source": "SRC-FEEBOOK-STUB note; SRC-FEEBOOK-UNIT-RESULTS",
+      "quote": "The July 7, 2026 fee-schedule PDF prose says the maker multiplier defaults to 0. The KXNFLGAME row on that PDF lists maker and taker multipliers of 1, which this default matches.",
+      "tag": "[V] quoted second-hand from PDF by R1-P1",
+      "flag": "CONFLICT_STUB_M1_MAKER_ENABLED_VS_PDF_PROSE_MAKER_DEFAULT_0"
+    },
+    "KXNFLGAME_multipliers": {
+      "maker": "1",
+      "taker": "1",
+      "source": "SRC-FEEBOOK-STUB note (quote above)",
+      "tag": "[V] second-hand"
+    },
+    "report_statements": [
+      {
+        "line": "654-655",
+        "quote": "The July 7 event-contract schedule gives model formulas with market multipliers; maker fees are not universally zero. Illustrative unrounded standard-multiplier taker cost at 50c is 1.75c."
+      },
+      {
+        "line": "226-227",
+        "quote": "under an illustrative standard 1.75c taker fee"
+      },
+      {
+        "line": "405-406",
+        "quote": "At the illustrative standard taker multiplier, its unrounded fee is 0.3325c"
+      },
+      {
+        "line": "625-626",
+        "quote": "illustrative standard taker fees total about 3.4965c"
+      }
+    ],
+    "report_numeric_multiplier": {
+      "value": null,
+      "flag": "NOT_IN_SOURCE",
+      "note": "The report never states the numeric multiplier or rate; it gives only illustrative fee amounts. [I] 1.75c at 50c is consistent with rate 0.07 at M=1 (0.07 x 0.5 x 0.5); not a sourced multiplier."
+    },
+    "per_series_multipliers_other_than_default_and_KXNFLGAME": {
+      "value": null,
+      "flag": "NOT_ON_DISK",
+      "note": "No transcription of the non-standard series table exists (stub overrides map is empty on purpose). AMS-008 (git object, research/all-market-structure-20260924@cba057e6) records KXMSCOTTON/KXTEENCLOTHADS 'currently report quadratic fees with multiplier 1' from the API; research-branch evidence, not adopted here."
+    },
+    "per_contract_cap": {
+      "value": null,
+      "flag": "NOT_SOURCED_TO_SCHEDULE",
+      "note": "SRC-FEEBOOK-STUB carries per_contract_cap \"0.035\" disabled; FEEBOOK_UNIT_RESULTS calls it 'the Claude optional flag'. Not attributed to the July 7 schedule."
+    },
+    "fee_version_ids_in_schedule": {
+      "value": null,
+      "flag": "NOT_ON_DISK"
+    }
+  },
+  "b_member_type_rounding_precision": {
+    "direct_member_balance_precision": {
+      "value": "0.0001",
+      "unit": "USD",
+      "quote": "API documentation distinguishes direct-member balance precision of $0.0001 from non-direct precision of $0.01 and describes per-order rounding accumulators.",
+      "source": "lab/governance/astra/research/KALSHI_EDGE_RESEARCH_2026-09-24.txt lines 655-657 [S20]",
+      "tag": "[V] report"
+    },
+    "non_direct_member_balance_precision": {
+      "value": "0.01",
+      "unit": "USD",
+      "source": "same quote",
+      "tag": "[V] report"
+    },
+    "per_order_rounding_accumulator": {
+      "value": "described (mechanics not transcribed)",
+      "source": "same quote",
+      "tag": "[V] report; mechanics [U]"
+    },
+    "pdf_centicent_statement": {
+      "quote": "The July 7, 2026 fee-schedule PDF says rounding makes fee plus position cost land on a centicent. The general taker table matches ceiling the fee itself to one cent.",
+      "source": "SRC-FEEBOOK-UNIT-RESULTS lines 33-35",
+      "tag": "[V] second-hand"
+    },
+    "account_member_type": {
+      "value": null,
+      "flag": "UNKNOWN",
+      "tag": "[U]",
+      "note": "No on-disk record of whether the lab account is a direct or non-direct member."
+    },
+    "account_fee_tier_or_private_terms": {
+      "value": null,
+      "flag": "UNKNOWN",
+      "tag": "[U]"
+    }
+  },
+  "c_harness_conventions": {
+    "CONV-A_order_level_cent_ceiling": {
+      "definition": "Examiner formula astra.r1p1.feebook.claude_order_level_ceil.v1: order fee = rate x M x C x p x (1-p), ceiled to $0.01 per order (round_up=True); partials may pass round_up=False (raw). feebook.py also defines round_up_to_centicent (line 66) but EXAMINER path uses round_up_to_cent (lines 48-53).",
+      "origin": "lab/astra-science/kalshi_feebook_lab_20260922/feebook.py (CENT line 14, round_up_to_cent lines 48-53, order_fee line 133)",
+      "harnesses": [
+        "lab/astra-science/kalshi_feebook_lab_20260922/feebook.py",
+        "lab/astra-science/kalshi_rails_lab_20260922/rails.py (maker_quote_credit line 101 round_up=True; role_pnl line 354: 'Taker fee is ceiled. Maker fee is the unrounded comparator.')",
+        "lab/astra-science/kalshi_capital_structure_lab_20260922/ (imports feebook)",
+        "main@34a2720218b4f4f2d6dd0cbde6334ee672a3684b:kalshi_queue_fragility_000_lab_20260922/ (imports feebook)",
+        "main@34a2720218b4f4f2d6dd0cbde6334ee672a3684b:kalshi_examiner_fee_queue_honesty_000_lab_20260922/ (via hygiene fee_delta examiner side)",
+        "main@34a2720218b4f4f2d6dd0cbde6334ee672a3684b:kalshi_r3_p1_fee_cost_lab_20260922/fee_cost.py",
+        "main@34a2720218b4f4f2d6dd0cbde6334ee672a3684b:kalshi_r3_p4_l2_shape_lab_20260922/shape.py",
+        "main@34a2720218b4f4f2d6dd0cbde6334ee672a3684b:kalshi_c1_kxufcfight_lab_20260922/bakeoff.py",
+        "main@34a2720218b4f4f2d6dd0cbde6334ee672a3684b:kalshi_c1_kxufcfight_honesty_lab_20260922/orchestrator.py",
+        "main@34a2720218b4f4f2d6dd0cbde6334ee672a3684b:kalshi_c1_empty_ob_lab_20260923/orchestrator.py",
+        "main@34a2720218b4f4f2d6dd0cbde6334ee672a3684b:kalshi_c3_kxhighny_bordering_lab_20260923/",
+        "main@34a2720218b4f4f2d6dd0cbde6334ee672a3684b:kalshi_c5_kxbtc15m_honesty_lab_20260923/",
+        "main@34a2720218b4f4f2d6dd0cbde6334ee672a3684b:kalshi_c2_kxnhlgame_feequue_lab_20260923/orchestrator.py (probe_examiner_fee line 597-601: order_fee('taker','1','0.50',round_up=True))",
+        "main@34a2720218b4f4f2d6dd0cbde6334ee672a3684b:kalshi_c4_kxcpi_feequue_lab_20260923/orchestrator.py",
+        "main@34a2720218b4f4f2d6dd0cbde6334ee672a3684b:kalshi_atp_kxatpmatch_feequue_lab_20260923/orchestrator.py",
+        "main@34a2720218b4f4f2d6dd0cbde6334ee672a3684b:kalshi_eth_kxeth15m_feequue_lab_20260923/orchestrator.py",
+        "main@34a2720218b4f4f2d6dd0cbde6334ee672a3684b:kalshi_s4_ncaaf_feequue_lab_20260923/orchestrator.py",
+        "main@34a2720218b4f4f2d6dd0cbde6334ee672a3684b:kalshi_r2p3_prop_ladder_lab_20260923/",
+        "main@34a2720218b4f4f2d6dd0cbde6334ee672a3684b:kalshi_r2p5_sot_id_lab_20260923/orchestrator.py (asserts EXAMINER_FORMULA_ID == 'astra.r1p1.feebook.claude_order_level_ceil.v1', line 552)",
+        "main@34a2720218b4f4f2d6dd0cbde6334ee672a3684b:kalshi_r3p3_fl_maker_taker_lab_20260923/",
+        "main@34a2720218b4f4f2d6dd0cbde6334ee672a3684b:kalshi_r3p4_l2_cat_lab_20260923/",
+        "main@34a2720218b4f4f2d6dd0cbde6334ee672a3684b:kalshi_r3p4_l2_sf_lab_20260923/",
+        "main@34a2720218b4f4f2d6dd0cbde6334ee672a3684b:kalshi_s5_mve_filllegs_lab_20260923/",
+        "main@34a2720218b4f4f2d6dd0cbde6334ee672a3684b:kalshi_soft_blended_reserves_000_lab_20260923/soft_policy.py",
+        "main@34a2720218b4f4f2d6dd0cbde6334ee672a3684b:kalshi_cap_sr_effects_000_lab_20260923/effects_path.py (via soft_policy)",
+        "main@34a2720218b4f4f2d6dd0cbde6334ee672a3684b:kalshi_r3_p2_queue_position_lab_20260923/ingest.py (single feebook reference)"
+      ],
+      "tag": "[V] grep of box files + read-only raw fetch of main@34a27202 (saved /workspace/archivist_step0/main_py/, main_py_fee_grep.txt)"
+    },
+    "CONV-B_nfl_replay_v2_fixed_point": {
+      "definition": "nominal fee = coefficient x q x p x (1-p) ceiled to $0.000001; cash aligned to balance precision $0.0001 with per-order rounding accumulator / rebate. Coefficients maker .0175, taker .07.",
+      "origin": "lab/astra-science/maker_replay_round2/replay_v2.py (precision line 17; nominal fee line 25; coefficients lines 48-49)",
+      "harnesses": [
+        "lab/astra-science/maker_replay_round2/replay_v2.py",
+        "lab/astra-science/nfl_queue_lab_20260921/replay_v2.py",
+        "lab/astra-science/nfl_timing_lab_20260921/replay_v2.py",
+        "lab/astra-science/nfl_completion_lab_20260921/replay_v2.py",
+        "lab/astra-science/nfl_adaptive_lab_20260921/replay_v2.py",
+        "lab/astra-science/nfl_factorial_lab_20260921/replay_v2.py",
+        "verify_results.py in nfl_adaptive / nfl_completion / nfl_factorial / nfl_queue / nfl_timing labs (fee refs present; nfl_paircheck verify_results.py has none)",
+        "lab/astra-science/nfl_paircheck_lab_20260922/run_experiment.py line 11 'from replay_v2 import Config' (Q7)",
+        "lab/astra-science/nfl_q7_rehab_p1_cadence_20260923/ and nfl_q7_rehab_p2_rank_sizing_20260923/ (run_tape_walk.py line 65 / run_experiment.py line 21 'from replay_v2 import Config' [V]; feebook referenced in cadence_policy.py / rank_sizing_policy.py for scorecard classification + pin [I])",
+        "research branches q7-paired-price / q8-joint-routing / m2-continuation cite fixed-point fees and .0175/.07 coefficients [I]"
+      ],
+      "results_produced": "Q6 incumbent 000, Q7 (SCORED_KILL_B_KEEP_000), Q7-B rehab P1 (KILL) P&L were produced under CONV-B, not CONV-A. [V code path; I attribution]",
+      "tag": "[V]"
+    },
+    "MIXED_dual_channel": {
+      "harness": "lab/astra-science/kalshi_r2p1_hygiene_000_lab_20260922/hygiene.py",
+      "definition": "inherited_order_fee (line 147, MICRO_CENT line 45, BALANCE_PRECISION 0.0001 line 46) reproduces CONV-B ('Q6 fixed-point fee'); fee_delta (line 190) = examiner CONV-A minus inherited CONV-B ('round_up follows the feebook pin: true is the order-level cent ceiling').",
+      "tag": "[V]"
+    },
+    "NO_FEE_CODE": {
+      "harnesses": [
+        "settled-resolution join (RJ) labs (C1/C3/C5/NHL/S4/R2P3/R3P3/S5/C4-RJ) - pins feebook sha only or no fee arithmetic [V grep]",
+        "nfl_prospective_recorder_20260922 and C1 capture (GET-only recorders)"
+      ]
+    },
+    "report_claim_vs_code": {
+      "flag": "CONFLICT",
+      "note": "Report line 657 says 'The repo's older cent-ceiling convention'; on disk the P&L-producing NFL replay family uses CONV-B ($0.0001 balance precision + accumulator), while the cent ceiling (CONV-A) is the Examiner measurement-harness channel. Both recorded; neither edited."
+    }
+  },
+  "d_reconciliation": {
+    "flag": "RECONCILIATION_REQUIRED",
+    "items": [
+      "CONV-A (order-level $0.01 ceiling) vs July 7 2026 schedule rounding per member type (direct $0.0001 / non-direct $0.01) [S20].",
+      "CONV-B ($0.0001 balance precision + accumulator) matches the direct-member precision only if the account is a direct member \u2014 account member type UNKNOWN.",
+      "Maker multiplier: stub M=1 maker-enabled vs PDF prose maker default 0 (series-dependent).",
+      "Per-series multipliers other than default/KXNFLGAME: not on disk.",
+      "Fee version at trade time for historical tapes: not recorded per trade; report advises 'Prefer actual recorded fee components.' (line 659)."
+    ],
+    "no_recompute": "No existing result (Q6, Q7, Q7-B P1, R3-P2, AMS, NH, harness stubs) is recomputed under this manifest. Existing numbers stay as recorded with their original convention."
+  },
+  "cite_as": "FEE-ACCT-MANIFEST-v0-DRAFT-20260924 + sha256 of this file (listed in packets/ARCHIVIST_STEP0_RECORD_REPAIR_2026-09-24.md; a file cannot contain its own hash)"
+}

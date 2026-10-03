@@ -1,0 +1,455 @@
+{
+ "packet": "STEWARD_CONDUCTOR_RULINGS_EXEC_2026-10-01",
+ "author": "The Steward \"KALSHI\"",
+ "generated_at_et": "2026-10-01T19:05:15-04:00",
+ "source_report": "lab/governance/astra/steward/HYGIENE_2026-10-01.md",
+ "ruling1": {
+  "status": "DONE",
+  "preserve_dir": "/workspace/steward_astra_science_preserve_20261001",
+  "artifacts_sha256": {
+   "astra_science_dirty_133_20261001.tar": "f91ecb6840cd76b69d00354debd54499abd960c7ac724128bcc6e7e2faeec737",
+   "astra_science_local_branches_20261001.bundle": "9e39de38442a01840edd3d0f525d8c58c1bbc2b8ffaa5139fda475048ebe0f59",
+   "git_status_porcelain_v1_uall.txt": "62a25e0e0993d6260b0ac04bf5874356b5f2503539c25ae33fb76be95e19cf26",
+   "git_status_porcelain_v1.txt": "2d147b9520349d95e816d62444f543da303b60abe936ad65b4548c3bfc6a3bb8",
+   "git_diff.patch": "febaf3e0055cf185119a71a7bfcca2eddfd7344233cddd5efc99135bfc9675eb",
+   "git_diff_cached.patch": "b84072fe9f9c5333cb0727693920e1b22624ffb1d1ab4666a573af7638aa3439",
+   "file_list_uall.txt": "fdb20494d0cda226c5a91b94131dc26ce4b871142081b99d84c636bf0334e2bb",
+   "originals_sha256.txt": "7bfa5944df8a038997097dea78285504700f97cd0b2e154d75b5ba9e097b6513",
+   "symlinks.txt": "b0c3f91312a955becf376861a2a1de4975e02fc0690d17efaa188bcea4958b5b",
+   "tar_listing.txt": "f3e6d55f4b8c4850d63b31a35528b10e42e711ea4e40b71a7c1fdc5c3114b467",
+   "HEAD_before.txt": "d2f4ab4f965707d1b142344fc8e85f55c014ed8c2a25200cc92ebc7ace3c6b8c",
+   "git_branches_before.txt": "546cf7d57edf0ebffdaf4d5905e5fc4743f95b8b4370237e9a8a791ab351b7f3",
+   "TAR_VERIFY_RESULT.txt": "122f5f034a04383fbb8220e01a2a2c313eae0c1c160b893e68e1415f5c8d1998"
+  },
+  "frozen_prev_record_sha256": "9b0d2e89aa6938ea3e71c66a7cb1533e98a3526c0749a29a53e2d7f76332761f",
+  "tar_verify": "404/404 regular files sha256 OK; 8/8 symlinks OK",
+  "head_before": "cb6223989afaf9e2f2fde8516e5ce16098ef7160",
+  "head_after": "12e760f5bd3b622d8f0d70a74c28655464e2b93c",
+  "status_after": "clean (porcelain 0)",
+  "porcelain_before": 133,
+  "porcelain_uall_before": 412,
+  "frozen_prev": [
+   {
+    "path": "lab/astra-science/kalshi_r2p1_hygiene_000_lab_20260922/FROZEN_EXPERIMENT.json",
+    "old_sha256": "4fda93528d9d2fba3d88107503a09e16e0b844f7d9ef93d0b724823077ca7069",
+    "new_sha256": "f38ed9a2316d6da2ff3d5a1b13536aecc0984d82a83f18fc1d74163e30534e79",
+    "prev_copy": "lab/astra-science/kalshi_r2p1_hygiene_000_lab_20260922/_prev/4fda93528d9d2fba3d88107503a09e16e0b844f7d9ef93d0b724823077ca7069.FROZEN_EXPERIMENT.json",
+    "reason": "Ruling 1 resync of stale box clone to main 12e760f5 (Conductor GO 2026-10-01); main is reference"
+   },
+   {
+    "path": "lab/astra-science/nfl_adaptive_lab_20260921/RESERVED_HOLDOUT.json",
+    "old_sha256": "f8f6b5773072e92b0babe3c10940ed52c71878caca104c4e072c6a6efcb63bbb",
+    "new_sha256": "74507e1a4371d69bc79ea2369f9bff030a74f51ee80c8072ba9c0f5345d377ca",
+    "prev_copy": "lab/astra-science/nfl_adaptive_lab_20260921/_prev/f8f6b5773072e92b0babe3c10940ed52c71878caca104c4e072c6a6efcb63bbb.RESERVED_HOLDOUT.json",
+    "reason": "Ruling 1 resync of stale box clone to main 12e760f5 (Conductor GO 2026-10-01); main is reference"
+   },
+   {
+    "path": "lab/astra-science/nfl_factorial_lab_20260921/RESERVED_HOLDOUT.json",
+    "old_sha256": "f8f6b5773072e92b0babe3c10940ed52c71878caca104c4e072c6a6efcb63bbb",
+    "new_sha256": "74507e1a4371d69bc79ea2369f9bff030a74f51ee80c8072ba9c0f5345d377ca",
+    "prev_copy": "lab/astra-science/nfl_factorial_lab_20260921/_prev/f8f6b5773072e92b0babe3c10940ed52c71878caca104c4e072c6a6efcb63bbb.RESERVED_HOLDOUT.json",
+    "reason": "Ruling 1 resync of stale box clone to main 12e760f5 (Conductor GO 2026-10-01); main is reference"
+   },
+   {
+    "path": "lab/astra-science/nfl_timing_lab_20260921/collector/RESERVED_HOLDOUT.json",
+    "old_sha256": "f8f6b5773072e92b0babe3c10940ed52c71878caca104c4e072c6a6efcb63bbb",
+    "new_sha256": "74507e1a4371d69bc79ea2369f9bff030a74f51ee80c8072ba9c0f5345d377ca",
+    "prev_copy": "lab/astra-science/nfl_timing_lab_20260921/collector/_prev/f8f6b5773072e92b0babe3c10940ed52c71878caca104c4e072c6a6efcb63bbb.RESERVED_HOLDOUT.json",
+    "reason": "Ruling 1 resync of stale box clone to main 12e760f5 (Conductor GO 2026-10-01); main is reference"
+   },
+   {
+    "path": "lab/astra-science/kalshi_atp_kxatpmatch_settled_join_lab_20260924/FROZEN_EXPERIMENT.json",
+    "old_sha256": "802b40b308724ae0980da123843d6a0655d087af2f162b3cc3a0f66d25e1d690",
+    "new_sha256": "382009b93b561f21e5942cf0aa5cfbc8ee21821ad4b89db66468bfbe7ad094dc",
+    "prev_copy": "lab/astra-science/kalshi_atp_kxatpmatch_settled_join_lab_20260924/_prev/802b40b308724ae0980da123843d6a0655d087af2f162b3cc3a0f66d25e1d690.FROZEN_EXPERIMENT.json",
+    "reason": "Ruling 1 resync of stale box clone to main 12e760f5 (Conductor GO 2026-10-01); main is reference"
+   },
+   {
+    "path": "lab/astra-science/kalshi_atp_kxatpmatch_settled_join_lab_20260924/SOURCE_PINS.json",
+    "old_sha256": "4de33473fd9bab9133ab30e55c7cfc409ee9c92b26d92a1b7ac237a587319a60",
+    "new_sha256": "509e2cf29c701de29a63b8c3cad06a3a405ac30b1677cc04c680c91d65ceddd9",
+    "prev_copy": "lab/astra-science/kalshi_atp_kxatpmatch_settled_join_lab_20260924/_prev/4de33473fd9bab9133ab30e55c7cfc409ee9c92b26d92a1b7ac237a587319a60.SOURCE_PINS.json",
+    "reason": "Ruling 1 resync of stale box clone to main 12e760f5 (Conductor GO 2026-10-01); main is reference"
+   },
+   {
+    "path": "lab/astra-science/kalshi_c1_kxufcfight_settled_join_lab_20260923/DIGESTS.txt",
+    "old_sha256": "e11b6542aa83fce54cc51de8e5cb772cf5a0d9d1e20d6f5f9bc4c87db4aaefa6",
+    "new_sha256": "8d56ef645efb61059190fd21217e631bc04c33bc8df34254a401a025a920ac4d",
+    "prev_copy": "lab/astra-science/kalshi_c1_kxufcfight_settled_join_lab_20260923/_prev/e11b6542aa83fce54cc51de8e5cb772cf5a0d9d1e20d6f5f9bc4c87db4aaefa6.DIGESTS.txt",
+    "reason": "Ruling 1 resync of stale box clone to main 12e760f5 (Conductor GO 2026-10-01); main is reference"
+   },
+   {
+    "path": "lab/astra-science/kalshi_c1_kxufcfight_settled_join_lab_20260923/FROZEN_EXPERIMENT.json",
+    "old_sha256": "e7398807644e6eab92d2660ddf64a9ced4ebd64a2721ec200e1496834e8bb916",
+    "new_sha256": "c544ab919a04cc46334711d71b5d96f0023ea079c15f95f4c40eaea1b9f27db1",
+    "prev_copy": "lab/astra-science/kalshi_c1_kxufcfight_settled_join_lab_20260923/_prev/e7398807644e6eab92d2660ddf64a9ced4ebd64a2721ec200e1496834e8bb916.FROZEN_EXPERIMENT.json",
+    "reason": "Ruling 1 resync of stale box clone to main 12e760f5 (Conductor GO 2026-10-01); main is reference"
+   },
+   {
+    "path": "lab/astra-science/kalshi_c4_kxcpi_settled_join_lab_20260924/FROZEN_EXPERIMENT.json",
+    "old_sha256": "b72465d809ccd208588ce13baa8749b8f5d1eedfb82abef47d261d84939b067f",
+    "new_sha256": "968a46e3733bc17e58c223ccc71525e5090ff7a1204b7c2222de4353a3940191",
+    "prev_copy": "lab/astra-science/kalshi_c4_kxcpi_settled_join_lab_20260924/_prev/b72465d809ccd208588ce13baa8749b8f5d1eedfb82abef47d261d84939b067f.FROZEN_EXPERIMENT.json",
+    "reason": "Ruling 1 resync of stale box clone to main 12e760f5 (Conductor GO 2026-10-01); main is reference"
+   },
+   {
+    "path": "lab/astra-science/kalshi_c4_kxcpi_settled_join_lab_20260924/SOURCE_PINS.json",
+    "old_sha256": "21df2532fd0c016ca17bd4b12e8e0eab06c18e05a2f2955e3fbe6004333c80ca",
+    "new_sha256": "bcd27e06f57f0e6b617ce318fb6d42da8c9b0a526816fbc4e41cef07a875154c",
+    "prev_copy": "lab/astra-science/kalshi_c4_kxcpi_settled_join_lab_20260924/_prev/21df2532fd0c016ca17bd4b12e8e0eab06c18e05a2f2955e3fbe6004333c80ca.SOURCE_PINS.json",
+    "reason": "Ruling 1 resync of stale box clone to main 12e760f5 (Conductor GO 2026-10-01); main is reference"
+   },
+   {
+    "path": "lab/astra-science/kalshi_kxncaafgame_settled_join_lab_20260923/DIGESTS.txt",
+    "old_sha256": "41255a229e8e36a51f2706182cdeda5f995829053ea4e6935a7ec29815dbfd28",
+    "new_sha256": "d37a288ca0bd7d5209213461c15c48f3292afc36d55a6fc6946602a137e0ba6f",
+    "prev_copy": "lab/astra-science/kalshi_kxncaafgame_settled_join_lab_20260923/_prev/41255a229e8e36a51f2706182cdeda5f995829053ea4e6935a7ec29815dbfd28.DIGESTS.txt",
+    "reason": "Ruling 1 resync of stale box clone to main 12e760f5 (Conductor GO 2026-10-01); main is reference"
+   },
+   {
+    "path": "lab/astra-science/kalshi_kxnhlgame_settled_join_lab_20260923/DIGESTS.txt",
+    "old_sha256": "0f4ee56644a4757c3391411fdbba8e745a1817a167f25315d6031b1446323c98",
+    "new_sha256": "53db62add001a4f9beb21922ed4002394bce037a34d4d7d6c3c85a8e4c5df104",
+    "prev_copy": "lab/astra-science/kalshi_kxnhlgame_settled_join_lab_20260923/_prev/0f4ee56644a4757c3391411fdbba8e745a1817a167f25315d6031b1446323c98.DIGESTS.txt",
+    "reason": "Ruling 1 resync of stale box clone to main 12e760f5 (Conductor GO 2026-10-01); main is reference"
+   },
+   {
+    "path": "lab/astra-science/kalshi_c4_kxcpi_settled_join_lab_20260924/README.md",
+    "old_sha256": "748e59cd7c14313443916196b528afd904cba5065725b2ab5edd286de2223c0d",
+    "new_sha256": "07a7ef310b1a78f7f2a2a6da3758d4f5786e1699bab09550dcb2ea6c2935991b",
+    "prev_copy": "lab/astra-science/kalshi_c4_kxcpi_settled_join_lab_20260924/_prev/748e59cd7c14313443916196b528afd904cba5065725b2ab5edd286de2223c0d.README.md",
+    "reason": "Ruling 1/2: README realigned by reset to main 12e760f5; _prev restored from verified tar (sha matches originals_sha256.txt) at 19:04 ET"
+   },
+   {
+    "path": "lab/astra-science/kalshi_atp_kxatpmatch_settled_join_lab_20260924/README.md",
+    "old_sha256": "39f555bf1e560a5da3a42cff204431abcd707cbe2471888ba28e70824917c2f8",
+    "new_sha256": "a37834ea27c56aa1d3568657815df992c15cdf4b22c27abaa7fa25f5c4f72b36",
+    "prev_copy": "lab/astra-science/kalshi_atp_kxatpmatch_settled_join_lab_20260924/_prev/39f555bf1e560a5da3a42cff204431abcd707cbe2471888ba28e70824917c2f8.README.md",
+    "reason": "Ruling 1/2: README realigned by reset to main 12e760f5; _prev restored from verified tar (sha matches originals_sha256.txt) at 19:04 ET"
+   }
+  ],
+  "docs_drift_resolved": true
+ },
+ "ruling2": {
+  "status": "REALIGNED_TO_MAIN",
+  "pr": null,
+  "reason": "No Conductor ACCEPT pins box bytes; C4 MERGE PR50 pins main SOURCE_PINS bcd27e06",
+  "table": [
+   {
+    "box_path": "astra-science/kalshi_c4_kxcpi_settled_join_lab_20260924/SOURCE_PINS.json",
+    "box_sha256": "21df2532fd0c016c\u2026(1290B, blob f1f5f2b4)",
+    "main_sha256": "bcd27e06f57f0e6b\u2026(11080B, blob 38cfacb1)",
+    "accept_pin": "CONDUCTOR_MERGE_C4\u2026PR50 `source_pins_sha256`=bcd27e06 (=main). C4 ACCEPT 8a86ae6b pins freeze/scout/seed/panel/settled/hold/maximize only, not SOURCE_PINS. Main EXPERIMENT_SPEC + EXAMINER_READY call 21df2532 the superseded pre-harness desk declaration.",
+    "action": "realigned -> main (ruling-1 reset); _prev saved"
+   },
+   {
+    "box_path": "astra-science/kalshi_c4_kxcpi_settled_join_lab_20260924/FROZEN_EXPERIMENT.json",
+    "box_sha256": "b72465d809ccd208\u2026(1486B)",
+    "main_sha256": "968a46e3733bc17e\u2026(1375B) at root; b72465d8 also on main at lab/astra-science/ mirror + scout dir",
+    "accept_pin": "none in ACCEPT/MERGE (b72465d8 is pinned inside main SOURCE_PINS as the scout_c4 freeze-bundle copy, which is untouched)",
+    "action": "realigned -> main root bytes (ruling-1 reset); _prev saved"
+   },
+   {
+    "box_path": "astra-science/kalshi_c4_kxcpi_settled_join_lab_20260924/README.md",
+    "box_sha256": "748e59cd7c143134\u2026(400B)",
+    "main_sha256": "07a7ef310b1a78f7\u2026(1440B); 748e59cd on main mirror",
+    "accept_pin": "none",
+    "action": "realigned (reset); _prev saved"
+   },
+   {
+    "box_path": "astra-science/kalshi_atp_kxatpmatch_settled_join_lab_20260924/SOURCE_PINS.json",
+    "box_sha256": "4de33473fd9bab91\u2026(1910B, blob bf1a9b5c)",
+    "main_sha256": "509e2cf29c701de2\u2026(15537B, blob 0ddd23fb)",
+    "accept_pin": "none: ATP ACCEPT e42d7583 pins freeze dc9fcb32, maximize 70020baf, ping a666102d, bundle 531d3b41; MERGE PR54 pins accept/freeze/maximize/template. Main EXPERIMENT_SPEC calls 4de33473 the pre-harness declaration.",
+    "action": "realigned (reset); _prev saved"
+   },
+   {
+    "box_path": "astra-science/kalshi_atp_kxatpmatch_settled_join_lab_20260924/FROZEN_EXPERIMENT.json",
+    "box_sha256": "802b40b308724ae0\u2026(8062B)",
+    "main_sha256": "382009b93b561f21\u2026(8209B); 802b40b3 on main mirror/scout",
+    "accept_pin": "none",
+    "action": "realigned (reset); _prev saved"
+   },
+   {
+    "box_path": "astra-science/kalshi_atp_kxatpmatch_settled_join_lab_20260924/README.md",
+    "box_sha256": "39f555bf1e560a5d\u2026(606B)",
+    "main_sha256": "a37834ea27c56aa1\u2026(2379B); 39f555bf on main mirror",
+    "accept_pin": "none",
+    "action": "realigned (reset); _prev saved"
+   },
+   {
+    "box_path": "governance/astra/packets/C4_KXCPI_SETTLED_JOIN_HARNESS/SOURCE_PINS.json",
+    "box_sha256": "21df2532fd0c016c\u2026",
+    "main_sha256": "bcd27e06f57f0e6b\u2026 (main packets/C4_\u2026/SOURCE_PINS.json)",
+    "accept_pin": "MERGE PR50 pins main bytes",
+    "action": "realigned in place; _prev/21df2532\u2026.SOURCE_PINS.json"
+   },
+   {
+    "box_path": "governance/astra/packets/C4_KXCPI_SETTLED_JOIN_HARNESS/FROZEN_EXPERIMENT.json",
+    "box_sha256": "b72465d809ccd208\u2026",
+    "main_sha256": "968a46e3733bc17e\u2026",
+    "accept_pin": "none",
+    "action": "realigned in place; _prev/b72465d8\u2026.FROZEN_EXPERIMENT.json"
+   },
+   {
+    "box_path": "governance/astra/packets/ATP_KXATPMATCH_SETTLED_JOIN_HARNESS/SOURCE_PINS.json",
+    "box_sha256": "4de33473fd9bab91\u2026",
+    "main_sha256": "509e2cf29c701de2\u2026",
+    "accept_pin": "none",
+    "action": "realigned in place; _prev/4de33473\u2026.SOURCE_PINS.json"
+   },
+   {
+    "box_path": "governance/astra/packets/ATP_KXATPMATCH_SETTLED_JOIN_HARNESS/FROZEN_EXPERIMENT.json",
+    "box_sha256": "802b40b308724ae0\u2026",
+    "main_sha256": "382009b93b561f21\u2026",
+    "accept_pin": "none",
+    "action": "realigned in place; _prev/802b40b3\u2026.FROZEN_EXPERIMENT.json"
+   },
+   {
+    "box_path": "governance/astra/packets/{C4,ATP}_\u2026_HARNESS/README.md",
+    "box_sha256": "(absent on box)",
+    "main_sha256": "07a7ef31\u2026 / a37834ea\u2026",
+    "accept_pin": "\u2014",
+    "action": "no action (missing on box, not divergent)"
+   }
+  ],
+  "packet_dir_realign": [
+   {
+    "path": "lab/governance/astra/packets/C4_KXCPI_SETTLED_JOIN_HARNESS/SOURCE_PINS.json",
+    "old_sha256": "21df2532fd0c016ca17bd4b12e8e0eab06c18e05a2f2955e3fbe6004333c80ca",
+    "old_bytes": 1290,
+    "new_sha256": "bcd27e06f57f0e6b617ce318fb6d42da8c9b0a526816fbc4e41cef07a875154c",
+    "new_bytes": 11080,
+    "new_source": "main 12e760f5:packets/C4_KXCPI_SETTLED_JOIN_HARNESS/SOURCE_PINS.json",
+    "prev_copy": "lab/governance/astra/packets/C4_KXCPI_SETTLED_JOIN_HARNESS/_prev/21df2532fd0c016ca17bd4b12e8e0eab06c18e05a2f2955e3fbe6004333c80ca.SOURCE_PINS.json",
+    "edited_at_et": "2026-10-01T18:59 (first pass)",
+    "reason": "Ruling 2 (Conductor 2026-10-01): main is reference; no Conductor ACCEPT pins the box bytes. Box bytes = pre-harness desk declaration / scout freeze-bundle copy, superseded by merged harness (C4 PR50, ATP PR54)."
+   },
+   {
+    "path": "lab/governance/astra/packets/C4_KXCPI_SETTLED_JOIN_HARNESS/FROZEN_EXPERIMENT.json",
+    "old_sha256": "b72465d809ccd208588ce13baa8749b8f5d1eedfb82abef47d261d84939b067f",
+    "old_bytes": 1486,
+    "new_sha256": "968a46e3733bc17e58c223ccc71525e5090ff7a1204b7c2222de4353a3940191",
+    "new_bytes": 1375,
+    "new_source": "main 12e760f5:packets/C4_KXCPI_SETTLED_JOIN_HARNESS/FROZEN_EXPERIMENT.json",
+    "prev_copy": "lab/governance/astra/packets/C4_KXCPI_SETTLED_JOIN_HARNESS/_prev/b72465d809ccd208588ce13baa8749b8f5d1eedfb82abef47d261d84939b067f.FROZEN_EXPERIMENT.json",
+    "edited_at_et": "2026-10-01T18:59 (first pass)",
+    "reason": "Ruling 2 (Conductor 2026-10-01): main is reference; no Conductor ACCEPT pins the box bytes. Box bytes = pre-harness desk declaration / scout freeze-bundle copy, superseded by merged harness (C4 PR50, ATP PR54)."
+   },
+   {
+    "path": "lab/governance/astra/packets/ATP_KXATPMATCH_SETTLED_JOIN_HARNESS/SOURCE_PINS.json",
+    "old_sha256": "4de33473fd9bab9133ab30e55c7cfc409ee9c92b26d92a1b7ac237a587319a60",
+    "old_bytes": 1910,
+    "new_sha256": "509e2cf29c701de29a63b8c3cad06a3a405ac30b1677cc04c680c91d65ceddd9",
+    "new_bytes": 15537,
+    "new_source": "main 12e760f5:packets/ATP_KXATPMATCH_SETTLED_JOIN_HARNESS/SOURCE_PINS.json",
+    "prev_copy": "lab/governance/astra/packets/ATP_KXATPMATCH_SETTLED_JOIN_HARNESS/_prev/4de33473fd9bab9133ab30e55c7cfc409ee9c92b26d92a1b7ac237a587319a60.SOURCE_PINS.json",
+    "edited_at_et": "2026-10-01T18:59:30-04:00",
+    "reason": "Ruling 2 (Conductor 2026-10-01): main is reference; no Conductor ACCEPT pins the box bytes. Box bytes = pre-harness desk declaration / scout freeze-bundle copy, superseded by merged harness (C4 PR50, ATP PR54)."
+   },
+   {
+    "path": "lab/governance/astra/packets/ATP_KXATPMATCH_SETTLED_JOIN_HARNESS/FROZEN_EXPERIMENT.json",
+    "old_sha256": "802b40b308724ae0980da123843d6a0655d087af2f162b3cc3a0f66d25e1d690",
+    "old_bytes": 8062,
+    "new_sha256": "382009b93b561f21e5942cf0aa5cfbc8ee21821ad4b89db66468bfbe7ad094dc",
+    "new_bytes": 8209,
+    "new_source": "main 12e760f5:packets/ATP_KXATPMATCH_SETTLED_JOIN_HARNESS/FROZEN_EXPERIMENT.json",
+    "prev_copy": "lab/governance/astra/packets/ATP_KXATPMATCH_SETTLED_JOIN_HARNESS/_prev/802b40b308724ae0980da123843d6a0655d087af2f162b3cc3a0f66d25e1d690.FROZEN_EXPERIMENT.json",
+    "edited_at_et": "2026-10-01T18:59:30-04:00",
+    "reason": "Ruling 2 (Conductor 2026-10-01): main is reference; no Conductor ACCEPT pins the box bytes. Box bytes = pre-harness desk declaration / scout freeze-bundle copy, superseded by merged harness (C4 PR50, ATP PR54)."
+   }
+  ]
+ },
+ "ruling3": {
+  "status": "VERIFIED_NOT_EXECUTED",
+  "blocker": "No CloudAgent tool available in this session; repo writes must go through a cloud agent",
+  "eligible_for_delete": [
+   {
+    "branch": "cursor/amendment-b-hash-register-extract-9af5",
+    "tip": "a91f2389b594198ba63389101c98027f97179922",
+    "pr": 56,
+    "pr_state": "merged",
+    "evidence": "tip == refs/pull/56/head (GitHub-retained); PR merged; no open PR on branch"
+   },
+   {
+    "branch": "cursor/atp-kxatpmatch-feequue-harness-cb69",
+    "tip": "c1df03e021f910a5bb3af809ca842b2bf2b96f57",
+    "pr": 35,
+    "pr_state": "closed_unmerged",
+    "evidence": "tip == refs/pull/35/head (GitHub-retained); PR closed; no open PR on branch"
+   },
+   {
+    "branch": "cursor/atp-kxatpmatch-measure-hardening-infra-94b4",
+    "tip": "38eefc93683a9d8b84b76027b8273da800323fa6",
+    "pr": 57,
+    "pr_state": "merged",
+    "evidence": "tip == refs/pull/57/head (GitHub-retained); PR merged; no open PR on branch"
+   },
+   {
+    "branch": "cursor/atp-rj-kxatpmatch-join-harness-2149",
+    "tip": "f499ee3062283f7b60b1622f982c39c5fb94aeb5",
+    "pr": 54,
+    "pr_state": "merged",
+    "evidence": "tip == refs/pull/54/head (GitHub-retained); PR merged; no open PR on branch"
+   },
+   {
+    "branch": "cursor/c1-kxufcfight-meas-scaffold-63a7",
+    "tip": "fc246f12a859a3bc01e18c54be028d555fe29a69",
+    "pr": 17,
+    "pr_state": "closed_unmerged",
+    "evidence": "tip == refs/pull/17/head (GitHub-retained); PR closed; no open PR on branch"
+   },
+   {
+    "branch": "cursor/c3-kxhighny-meas-scaffold-aa1e",
+    "tip": "07b6df8e277fa7880ddb3aee0435e9c658a9340f",
+    "pr": 16,
+    "pr_state": "closed_unmerged",
+    "evidence": "tip == refs/pull/16/head (GitHub-retained); PR closed; no open PR on branch"
+   },
+   {
+    "branch": "cursor/nhl-kxnhlgame-settled-join-d697",
+    "tip": "515e5474d923c935f6626982955b7cb10b2ed4e8",
+    "pr": 43,
+    "pr_state": "closed_unmerged",
+    "evidence": "tip == refs/pull/43/head (GitHub-retained); PR closed; no open PR on branch"
+   },
+   {
+    "branch": "cursor/q6s1-kxatpmatch-inventory-reproof-4016",
+    "tip": "e709b98a09148ab3aaa92c6a7ad1da31f8c61f7c",
+    "pr": 59,
+    "pr_state": "merged",
+    "evidence": "tip == refs/pull/59/head (GitHub-retained); PR merged; no open PR on branch"
+   },
+   {
+    "branch": "cursor/q6s5-kxmlbspread-feequue-harness-281e",
+    "tip": "f8409201594a5774e14b33b9a07dc3858d90dcaa",
+    "pr": 58,
+    "pr_state": "merged",
+    "evidence": "tip == refs/pull/58/head (GitHub-retained); PR merged; no open PR on branch"
+   },
+   {
+    "branch": "cursor/q6s5-strategy-fill-path-90d3",
+    "tip": "f8264ad793674df14593d383dde5844c08f153e9",
+    "pr": 60,
+    "pr_state": "merged",
+    "evidence": "tip == refs/pull/60/head (GitHub-retained); PR merged; no open PR on branch"
+   },
+   {
+    "branch": "cursor/q7-reconciliation-memo-bd6a",
+    "tip": "9ca0cc1532d33cbe7020740f787442a016c07eea",
+    "pr": 51,
+    "pr_state": "merged",
+    "evidence": "tip == refs/pull/51/head (GitHub-retained); PR merged; no open PR on branch"
+   },
+   {
+    "branch": "cursor/r3-p3-fl-maker-taker-scaffold-af29",
+    "tip": "1332fad5dbe1a8ef87a08f7bd73a26ae4cc34826",
+    "pr": 15,
+    "pr_state": "closed_unmerged",
+    "evidence": "tip == refs/pull/15/head (GitHub-retained); PR closed; no open PR on branch"
+   },
+   {
+    "branch": "cursor/ready-not-scored-status-docs-3be0",
+    "tip": "fa9a01d31070695d451ecbabcadfc8eaa7658278",
+    "pr": 53,
+    "pr_state": "merged",
+    "evidence": "tip == refs/pull/53/head (GitHub-retained); PR merged; no open PR on branch"
+   },
+   {
+    "branch": "cursor/tier-a-results-q7-r3p2-3be0",
+    "tip": "0cbe603c4d832c0ab06e1202986332aeb6d36a08",
+    "pr": 55,
+    "pr_state": "merged",
+    "evidence": "tip == refs/pull/55/head (GitHub-retained); PR merged; no open PR on branch"
+   }
+  ],
+  "skipped": [
+   {
+    "branch": "cursor/r2p1-fixture-join-q6-000-ede3",
+    "tip": "7224ad882431238659142e8eb2199f36dacba812",
+    "pr": 8,
+    "pr_head": "9a0acafbe20696acc18d35c6287ce179c7b5c16d",
+    "reason": "tip 7224ad88 != PR8 head 9a0acafb; 2 commits (c6bb876 \"Move the Q6-000 fixture join into the hygiene lab\", 7224ad8 \"Record the one-lab fixture-join unit timing\", 2026-09-22 19:43:03 ET, Cursor Agent) not in main and not reachable from any refs/pull/*/head -> NOT recoverable; HOLD"
+   }
+  ],
+  "research_hold": [
+   {
+    "branch": "research/all-market-structure-20260924",
+    "sha": "cba057e62b3162bbf5cab17f4e2fee532a209ddc",
+    "author": "17thgreen <130828095+17thgreen@users.noreply.github.com>",
+    "date_et": "2026-09-24 02:21:28 ET",
+    "message": "Report original gap strategy windows, capacity and $5,000 sensitivity",
+    "ahead_main": 39,
+    "behind_main": 12
+   },
+   {
+    "branch": "research/neglected-hybrid-20260924",
+    "sha": "2253c03cd86eb5515325f1d91b43bdcbea7a902c",
+    "author": "17thgreen <130828095+17thgreen@users.noreply.github.com>",
+    "date_et": "2026-09-24 01:31:47 ET",
+    "message": "Preserve original CSV line endings for byte-exact offline reproduction",
+    "ahead_main": 6,
+    "behind_main": 12
+   },
+   {
+    "branch": "research/m2-continuation",
+    "sha": "f44574e8f318920cc8fdf87c9c3d35c18bca2107",
+    "author": "17thgreen <130828095+17thgreen@users.noreply.github.com>",
+    "date_et": "2026-09-22 15:33:05 ET",
+    "message": "Freeze M4 tested source, exact cohorts and retained capture blockers before outcomes",
+    "ahead_main": 20,
+    "behind_main": 55
+   },
+   {
+    "branch": "research/q8-joint-routing",
+    "sha": "d7079b6fece902e6e4603114a1d9ed5ef5a246c5",
+    "author": "17thgreen <130828095+17thgreen@users.noreply.github.com>",
+    "date_et": "2026-09-22 13:51:39 ET",
+    "message": "Freeze eight-game NCAAF/WNBA cohort and bounded capture before tape download",
+    "ahead_main": 12,
+    "behind_main": 55
+   },
+   {
+    "branch": "research/q7-paired-price",
+    "sha": "01c726ae9244d801d359e00df67d6a71f4012669",
+    "author": "17thgreen <130828095+17thgreen@users.noreply.github.com>",
+    "date_et": "2026-09-21 14:29:16 ET",
+    "message": "Record verified Q7 results and freeze simpler guarded router",
+    "ahead_main": 3,
+    "behind_main": 55
+   }
+  ],
+  "delete_branch_on_merge": "untouched",
+  "fleet": "main only; 0 open PRs",
+  "gauntletv2_branches": [
+   "main",
+   "cursor/lab-sync-remaining-inventory-f89f (PR #1 head; keep)"
+  ]
+ },
+ "ruling4": {
+  "status": "DIAGNOSED_NO_CHANGE",
+  "root_cause": "No working write path for the outstanding payload: box git/gh unauthenticated [V]; MCP inline ceiling ~27KB vs 10 deferred run_*.py 27-41KB still missing on GauntletV2 [V/I]; staged manifest points at /tmp paths wiped by 2026-09-27 rehydrate [V]; possible stale MCP server name user-Github vs user-GitHub-xai [H]; common-mode routine failure ~17:45 ET today [I]; routine error text not visible on box [U]",
+  "last_success": "61e284fb 2026-09-22 18:09:45 ET",
+  "pr1": {
+   "state": "open",
+   "draft": true,
+   "head": "1eb0176689be41ba9411e0fd5238c431b330868c",
+   "head_ref": "cursor/lab-sync-remaining-inventory-f89f",
+   "base": "main",
+   "base_sha_in_pr": "99accb4a",
+   "merge_base": "f62bb11e",
+   "behind_main": 121,
+   "ahead": 1,
+   "files": 1,
+   "mergeable_state": "clean"
+  }
+ },
+ "leakage": {
+  "result": "NONE",
+  "details": "0 private/electindex paths on main, 60 PR refs, all fetched refs, GauntletV2 main+PR1; 0 blob overlap of 31 private files with 2503 ref blobs; nothing pushed"
+ },
+ "blockers": [
+  "R3 deletions: no CloudAgent tool",
+  "R4: routine error text needed; prompt change owned by routine owner"
+ ]
+}

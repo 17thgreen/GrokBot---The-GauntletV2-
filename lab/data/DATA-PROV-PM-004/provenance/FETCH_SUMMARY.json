@@ -1,0 +1,108 @@
+{
+  "DATA_ID": "DATA-PROV-PM-004",
+  "fetched_at_utc": "2026-09-13T18:48:36Z",
+  "finished_at_utc": "2026-09-13T19:06:59Z",
+  "partial": false,
+  "stop_reason": "complete",
+  "parent_window": "after DATA-PROV-PM-003 end 2026-09-11T20:15Z",
+  "auth": "none_public",
+  "trades_placed": 0,
+  "kalshi_trade_api_key": false,
+  "cf_benchmarks": false,
+  "method": "batch_GET_/markets/candlesticks",
+  "batch_size": 50,
+  "sleep_between_batches_sec": 25.0,
+  "universe_resolved_expected": 369,
+  "universe_resolved_actual": 369,
+  "n_429": 25,
+  "n_resumed": 0,
+  "n_batches": 11,
+  "inventory_as_of_utc": "2026-09-13T18:45:22Z",
+  "totals": {
+    "contracts_attempted": 369,
+    "checkpoint_rows": 1845,
+    "kalshi": {
+      "n_attempted": 369,
+      "n_http_ok": 369,
+      "n_ge1_intra": 369,
+      "hit_rate_ge1_intra": 1.0,
+      "mean_intra_points": 15.0,
+      "mean_checkpoints_hit": 5.0
+    },
+    "by_asset": {
+      "BTC": {
+        "n_attempted": 184,
+        "n_http_ok": 184,
+        "n_ge1_intra": 184,
+        "hit_rate_ge1_intra": 1.0,
+        "mean_intra_points": 15.0,
+        "mean_checkpoints_hit": 5.0
+      },
+      "ETH": {
+        "n_attempted": 185,
+        "n_http_ok": 185,
+        "n_ge1_intra": 185,
+        "hit_rate_ge1_intra": 1.0,
+        "mean_intra_points": 15.0,
+        "mean_checkpoints_hit": 5.0
+      }
+    }
+  },
+  "remainder_not_attempted": {
+    "BTC": 0,
+    "ETH": 0,
+    "total": 0,
+    "tickers": []
+  },
+  "checkpoint_hit_table": [
+    {
+      "time_remaining_sec": 840,
+      "attempted": 369,
+      "hit": 369,
+      "hit_rate": 1.0
+    },
+    {
+      "time_remaining_sec": 600,
+      "attempted": 369,
+      "hit": 369,
+      "hit_rate": 1.0
+    },
+    {
+      "time_remaining_sec": 300,
+      "attempted": 369,
+      "hit": 369,
+      "hit_rate": 1.0
+    },
+    {
+      "time_remaining_sec": 60,
+      "attempted": 369,
+      "hit": 369,
+      "hit_rate": 1.0
+    },
+    {
+      "time_remaining_sec": 0,
+      "attempted": 369,
+      "hit": 369,
+      "hit_rate": 1.0
+    }
+  ],
+  "checkpoints_15m": [
+    840,
+    600,
+    300,
+    60,
+    0
+  ],
+  "construction": {
+    "kalshi": "1m candlestick yes_bid.close / yes_ask.close / price.close at end_period_ts == CLOSE-remaining; implied_p=mid if bid>0 and ask>0 else last",
+    "endpoint": "GET /markets/candlesticks?market_tickers&start_ts&end_ts&period_interval=1 (batch up to 50)",
+    "forbidden": "LAST_PRICE_DOLLARS, OUTCOME_PRICES, post-CLOSE prints, interpolation, invented bids, Poly, Trade API key, CF ticks"
+  },
+  "skipped_non_resolved": {
+    "still_open": 1,
+    "closed_unsettled": 1,
+    "note": "from inventory; candle fetch targets CLASS=resolved only"
+  },
+  "candles_fetched": true,
+  "phase": "candle_fetch"
+}

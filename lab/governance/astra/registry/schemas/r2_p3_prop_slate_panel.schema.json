@@ -1,0 +1,361 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "astra.registry.r2_p3_prop_slate_panel.v0",
+  "title": "R2-P3 NFL prop slate measurement panel stub (GET-only T−)",
+  "description": "Panel design stub for R2-P3 ADMIT-NEXT prop slate (KXNFLPASSYDS kernel + RECYDS/RSHYDS siblings; LAC@BUF + BAL@DAL). Not a strategy. Cite the frozen measurement kernel at /workspace/lab/governance/astra/packets/R2-P3_KXNFLPASSYDS_MEASUREMENT_FREEZE_KERNEL_2026-09-22.md. Public GET ticker resolution is recorded separately; rate-limit fallback retains scout tickers. Aligns R2-P5 kickoff SoT fields. Does not steal ADMIT-1 / PIT@CLE poll budget. No live orders. results/pnl/volume null. ATL@GB excluded.",
+  "packet": "R2-P3-KXNFLPASSYDS-MEAS",
+  "status": "PANEL_SCHEMA_STUB_SEED",
+  "stubbed_at_utc": "2026-09-22T23:42:45Z",
+  "panel_version_const": "2026-09-22.r2-p3-prop-slate-v0",
+  "scout_cite": "/workspace/lab/governance/astra/packets/scout_r2p3_kxnflpassyds/FROZEN_EXPERIMENT.json",
+  "binds": {
+    "fee": "R1-P1 kalshi_feebook_lab_20260922 @22371178cb2663250b4762f328069571c48cb551",
+    "rails": "R1-P5 kalshi_rails_lab_20260922 @6a28e0d6254327ea4e6451c781bec56215ac6cac",
+    "fee_formula_id": "astra.r1p1.feebook.claude_order_level_ceil.v1",
+    "forbid_inherited_q7_fee_literals": true,
+    "r2_p5_kickoff_fields": "astra.registry.r2_p5_admit_fields.v1"
+  },
+  "type": "object",
+  "required": [
+    "schema_id",
+    "panel_version",
+    "purpose",
+    "admitted_at",
+    "kickoff_sot",
+    "binds",
+    "capture",
+    "events",
+    "results",
+    "pnl",
+    "packet_id",
+    "freeze_cite",
+    "freeze_packet_sha256"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "astra.registry.r2_p3_prop_slate_panel.v0"
+    },
+    "panel_version": {
+      "const": "2026-09-22.r2-p3-prop-slate-v0"
+    },
+    "series_tickers": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "enum": [
+          "KXNFLPASSYDS",
+          "KXNFLRECYDS",
+          "KXNFLRSHYDS"
+        ]
+      },
+      "description": "Multi-series prop slate; not a single const like S1 KXMLBGAME"
+    },
+    "purpose": {
+      "const": "measurement_gate"
+    },
+    "cohort_kind": {
+      "type": "string"
+    },
+    "admitted_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "null until Collector runs admit.py after Clock join + Conductor greenlight; stub stays null. Do not hand-fill."
+    },
+    "kickoff_sot": {
+      "type": "string",
+      "const": "kalshi_occurrence_datetime",
+      "description": "Kickoff SoT = Kalshi occurrence_datetime (scout packet / public GET). Do not invent."
+    },
+    "occurrence_source": {
+      "type": "string",
+      "enum": [
+        "scout_packet",
+        "kalshi_public_get",
+        "assumed_et"
+      ],
+      "description": "Kalshi public GET when confirmed; scout_packet is retained when GET is rate-limited/unavailable."
+    },
+    "binds": {
+      "type": "object",
+      "required": [
+        "fee_lab_sha",
+        "rails_lab_sha",
+        "fee_formula_id"
+      ],
+      "properties": {
+        "fee_lab_sha": {
+          "const": "22371178cb2663250b4762f328069571c48cb551"
+        },
+        "rails_lab_sha": {
+          "const": "6a28e0d6254327ea4e6451c781bec56215ac6cac"
+        },
+        "fee_formula_id": {
+          "const": "astra.r1p1.feebook.claude_order_level_ceil.v1"
+        },
+        "forbid_inherited_q7_fee_literals": {
+          "const": true
+        }
+      }
+    },
+    "capture": {
+      "type": "object",
+      "required": [
+        "mode",
+        "budget_isolation",
+        "schedule"
+      ],
+      "properties": {
+        "mode": {
+          "const": "GET_only_public"
+        },
+        "host_allowlist": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "routes_allowlist": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "budget_isolation": {
+          "type": "object",
+          "required": [
+            "separate_from_admit1",
+            "no_pit_cle_poll_steal"
+          ],
+          "properties": {
+            "separate_from_admit1": {
+              "const": true
+            },
+            "no_pit_cle_poll_steal": {
+              "const": true
+            },
+            "recorder_pid_namespace": {
+              "type": "string"
+            },
+            "db_path": {
+              "type": "string"
+            }
+          }
+        },
+        "schedule": {
+          "type": "object",
+          "properties": {
+            "priority": {
+              "type": "string"
+            },
+            "start_rule": {
+              "type": "string"
+            }
+          }
+        },
+        "sample_interval_sec": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        }
+      }
+    },
+    "events": {
+      "type": "array",
+      "description": "Six rows for the LACBUF/BALDAL slate; live API confirmation is recorded in live_resolution and does not alter null admit/volume fields.",
+      "minItems": 0,
+      "maxItems": 6,
+      "items": {
+        "$ref": "#/$defs/event_row"
+      }
+    },
+    "admit_gate_notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "results": {
+      "type": "null"
+    },
+    "pnl": {
+      "type": "null"
+    },
+    "volume": {
+      "type": [
+        "null"
+      ],
+      "description": "Absent/null — never copy scout OI/vol into panel as admitted facts"
+    },
+    "packet_id": {
+      "const": "R2-P3-KXNFLPASSYDS-MEAS"
+    },
+    "freeze_cite": {
+      "const": "/workspace/lab/governance/astra/packets/R2-P3_KXNFLPASSYDS_MEASUREMENT_FREEZE_KERNEL_2026-09-22.md"
+    },
+    "freeze_packet_sha256": {
+      "const": "a30108f658359590e170c73ea00d1a1f0852d5751cb15c9f2a9c6389f4dd3eaa"
+    },
+    "freeze_delta": {
+      "type": "string"
+    },
+    "live_resolution": {
+      "type": "object",
+      "description": "GET-only public resolution record; does not promote 429 responses to live confirmation.",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "host": {
+          "type": "string"
+        },
+        "method": {
+          "type": "string"
+        },
+        "series_order_and_minimum_wait_sec": {
+          "type": "array"
+        },
+        "requests": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "live_confirmed": {
+          "type": "boolean"
+        },
+        "retained_scout_event_tickers": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "occurrence_source": {
+          "type": "string"
+        },
+        "raw_volume_obtained": {
+          "type": "boolean"
+        },
+        "panel_volume_rule": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "event_row": {
+      "type": "object",
+      "required": [
+        "event_ticker",
+        "series_ticker",
+        "game_id",
+        "kalshi_occurrence_datetime",
+        "window_clock_source",
+        "t_minus_7d_utc",
+        "sot_pin",
+        "panel_version"
+      ],
+      "properties": {
+        "event_ticker": {
+          "type": "string"
+        },
+        "series_ticker": {
+          "type": "string",
+          "enum": [
+            "KXNFLPASSYDS",
+            "KXNFLRECYDS",
+            "KXNFLRSHYDS"
+          ]
+        },
+        "game_id": {
+          "type": "string",
+          "enum": [
+            "LACBUF",
+            "BALDAL"
+          ]
+        },
+        "market_tickers": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Optional nested listing; empty until admit-time resolve"
+        },
+        "holdout_kickoff_utc": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "kalshi_occurrence_datetime": {
+          "type": "string",
+          "description": "From scout packet Kalshi occurrence_datetime (preferred over assumed ET)"
+        },
+        "delta_kickoff_sec": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "window_clock_source": {
+          "type": "string",
+          "enum": [
+            "kalshi_occurrence",
+            "holdout_mixed",
+            "unknown"
+          ]
+        },
+        "t_minus_7d_utc": {
+          "type": "string",
+          "description": "occurrence − 7d real UTC; admit.py refuses if already past at stamp time — no backfill"
+        },
+        "sot_pin": {
+          "type": "string",
+          "description": "Must equal kalshi_occurrence_datetime that drove windows"
+        },
+        "panel_version": {
+          "const": "2026-09-22.r2-p3-prop-slate-v0"
+        },
+        "occurrence_source": {
+          "type": "string",
+          "enum": [
+            "scout_packet",
+            "kalshi_public_get",
+            "assumed_et"
+          ]
+        },
+        "volume_fp": {
+          "type": "null"
+        },
+        "volume_24h_fp": {
+          "type": "null"
+        },
+        "open_interest_fp": {
+          "type": "null"
+        }
+      }
+    }
+  },
+  "excluded_events": [
+    "KXNFLPASSYDS-26SEP24ATLGB",
+    "KXNFLRECYDS-26SEP24ATLGB",
+    "KXNFLRSHYDS-26SEP24ATLGB"
+  ],
+  "measurement_objects_at_sample": [
+    "reciprocal_book (bid_YES, bid_NO, ask_YES=1-bid_NO, ask_NO=1-bid_YES, spread_YES)",
+    "fee_channel via R1-P1 order_fee only (no Q7 literals)",
+    "rails labels: content_fresh_flag, maker_credit_floor_zero_refuse, queue_attribution_bin",
+    "timing shape: minutes_to_occurrence_or_close; volume_fp / open_interest_fp as raw API only at sample time (never invent)",
+    "ladder microstructure across PASSYDS/RECYDS/RSHYDS strikes"
+  ],
+  "does_not_modify": [
+    "ADMIT-1 prospective recorder runtime / capture.sqlite / poll budget",
+    "ADMIT-1 prospective_panel_admitted.json / record.pid",
+    "Q6-000 signal",
+    "Q7 paircheck",
+    "capital-structure arms"
+  ]
+}

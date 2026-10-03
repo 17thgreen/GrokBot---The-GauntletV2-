@@ -1,0 +1,532 @@
+{
+  "AUDIT_ID": "CLOCK_AUDIT_CB001_PM003_JOIN",
+  "LABEL": "DATA-PROV-CB-001",
+  "AUDITED_AT_UTC": "2026-09-13T20:51:23.593424+00:00",
+  "ORDER": "/workspace/lab/governance/CLOCK_ORDER_CB001_PM003_JOIN_2026-09-13.md",
+  "SPEC": "/workspace/lab/data/DATA-PROV-CB-001/provenance/SPEC.md",
+  "TRADE": "FORBIDDEN",
+  "SCOPE": "join_inventory_only",
+  "NOT": [
+    "Feature",
+    "READY",
+    "alpha",
+    "Examiner_scores",
+    "p_t",
+    "Binance_fill",
+    "CF_BRTI_fill",
+    "L3_fill"
+  ],
+  "sources": {
+    "pm003": "/workspace/lab/data/DATA-PROV-PM-003/derived/checkpoints.ndjson",
+    "btc_csv": "/workspace/lab/data/DATA-PROV-CB-001/raw/BTC-USD_1m.csv",
+    "eth_csv": "/workspace/lab/data/DATA-PROV-CB-001/raw/ETH-USD_1m.csv",
+    "claim_join": "/workspace/lab/data/DATA-PROV-CB-001/derived/pm003_cb_join.ndjson",
+    "claim_coverage": "/workspace/lab/data/DATA-PROV-CB-001/derived/pm003_cb_join_coverage.json",
+    "join_script_intent_only": "/workspace/lab/data/DATA-PROV-CB-001/provenance/join_pm003_cb.py",
+    "fetch_summary": "/workspace/lab/data/DATA-PROV-CB-001/provenance/FETCH_SUMMARY.json",
+    "new_network_fetch": false
+  },
+  "join_rule": {
+    "cb_close_t": "Coinbase 1m close whose bar_end <= decision_time; bar_end=candle_start+60s",
+    "cb_close_tm1": "prior completed 1m close (bar immediately before cb_close_t)",
+    "v_CB": "(cb_close_t - cb_close_tm1) / cb_close_tm1",
+    "m_t": "same-row PM-003 implied_p; timestamp=decision_time",
+    "incomplete_current_minute": "missing"
+  },
+  "raw_density": {
+    "BTC-USD": {
+      "n_expected_in_window": 10140,
+      "n_bars_in_window": 10140,
+      "n_missing_in_window": 0,
+      "missing_sample": [],
+      "n_unique_bars_file": 10142,
+      "n_extra_outside_window": 2,
+      "extra_sample": [
+        "2026-09-04T19:59:00Z",
+        "2026-09-11T21:00:00Z"
+      ]
+    },
+    "ETH-USD": {
+      "n_expected_in_window": 10140,
+      "n_bars_in_window": 10140,
+      "n_missing_in_window": 0,
+      "missing_sample": [],
+      "n_unique_bars_file": 10142,
+      "n_extra_outside_window": 2,
+      "extra_sample": [
+        "2026-09-04T19:59:00Z",
+        "2026-09-11T21:00:00Z"
+      ]
+    }
+  },
+  "pm003": {
+    "rows_total": 6040,
+    "rows_with_decision_time": 6040,
+    "decision_times_on_exact_minute": 6040,
+    "implied_p_method_counts": {
+      "mid": 5330,
+      "last": 709,
+      "null": 1
+    }
+  },
+  "independent_rebuild": {
+    "n_rows": 6040,
+    "close_ok": 6040,
+    "velocity_ok": 6040,
+    "missing_close": 0,
+    "lookahead_count": 0,
+    "incomplete_minute_used": 0,
+    "on_minute_coincidence_eq": 6040,
+    "bar_end_lt_decision": 0,
+    "lag_sec_histogram": {
+      "0": 6040
+    },
+    "lag_sec_unique": [
+      0
+    ],
+    "strict_prior_minute": {
+      "rule": "bar_end < decision_time (bar_end <= decision_time - 1s)",
+      "close_ok": 6040,
+      "velocity_ok": 6040,
+      "coverage_delta_vs_spec": {
+        "close": 0,
+        "velocity": 0
+      }
+    }
+  },
+  "claim_vs_rebuild": {
+    "claim_join_rows": 6040,
+    "claim_coverage_join_rows": 6040,
+    "claim_headline": "6040/6040",
+    "independent_close_ok": 6040,
+    "independent_velocity_ok": 6040,
+    "n_field_match_rows": 6040,
+    "n_mismatch_rows": 0,
+    "n_absent_in_claim": 0,
+    "n_absent_in_rebuild": 0,
+    "mismatch_field_counts": {},
+    "mismatch_samples": []
+  },
+  "by_asset": {
+    "BTC": {
+      "n": 3020,
+      "close_ok": 3020,
+      "velocity_ok": 3020,
+      "on_minute_eq": 3020,
+      "strict_close_ok": 3020
+    },
+    "ETH": {
+      "n": 3020,
+      "close_ok": 3020,
+      "velocity_ok": 3020,
+      "on_minute_eq": 3020,
+      "strict_close_ok": 3020
+    }
+  },
+  "by_asset_rem": [
+    {
+      "asset": "BTC",
+      "rem": "T-14m",
+      "n_pm003": 604,
+      "close_ok": 604,
+      "velocity_ok": 604,
+      "missing_close": 0,
+      "missing_prior_only": 0,
+      "close_coverage": 1.0,
+      "velocity_coverage": 1.0,
+      "on_minute_eq": 604,
+      "bar_end_lt": 0,
+      "lookahead": 0,
+      "strict_close_ok": 604,
+      "strict_velocity_ok": 604,
+      "strict_close_coverage": 1.0
+    },
+    {
+      "asset": "BTC",
+      "rem": "T-10m",
+      "n_pm003": 604,
+      "close_ok": 604,
+      "velocity_ok": 604,
+      "missing_close": 0,
+      "missing_prior_only": 0,
+      "close_coverage": 1.0,
+      "velocity_coverage": 1.0,
+      "on_minute_eq": 604,
+      "bar_end_lt": 0,
+      "lookahead": 0,
+      "strict_close_ok": 604,
+      "strict_velocity_ok": 604,
+      "strict_close_coverage": 1.0
+    },
+    {
+      "asset": "BTC",
+      "rem": "T-5m",
+      "n_pm003": 604,
+      "close_ok": 604,
+      "velocity_ok": 604,
+      "missing_close": 0,
+      "missing_prior_only": 0,
+      "close_coverage": 1.0,
+      "velocity_coverage": 1.0,
+      "on_minute_eq": 604,
+      "bar_end_lt": 0,
+      "lookahead": 0,
+      "strict_close_ok": 604,
+      "strict_velocity_ok": 604,
+      "strict_close_coverage": 1.0
+    },
+    {
+      "asset": "BTC",
+      "rem": "T-1m",
+      "n_pm003": 604,
+      "close_ok": 604,
+      "velocity_ok": 604,
+      "missing_close": 0,
+      "missing_prior_only": 0,
+      "close_coverage": 1.0,
+      "velocity_coverage": 1.0,
+      "on_minute_eq": 604,
+      "bar_end_lt": 0,
+      "lookahead": 0,
+      "strict_close_ok": 604,
+      "strict_velocity_ok": 604,
+      "strict_close_coverage": 1.0
+    },
+    {
+      "asset": "BTC",
+      "rem": "T-0",
+      "n_pm003": 604,
+      "close_ok": 604,
+      "velocity_ok": 604,
+      "missing_close": 0,
+      "missing_prior_only": 0,
+      "close_coverage": 1.0,
+      "velocity_coverage": 1.0,
+      "on_minute_eq": 604,
+      "bar_end_lt": 0,
+      "lookahead": 0,
+      "strict_close_ok": 604,
+      "strict_velocity_ok": 604,
+      "strict_close_coverage": 1.0
+    },
+    {
+      "asset": "ETH",
+      "rem": "T-14m",
+      "n_pm003": 604,
+      "close_ok": 604,
+      "velocity_ok": 604,
+      "missing_close": 0,
+      "missing_prior_only": 0,
+      "close_coverage": 1.0,
+      "velocity_coverage": 1.0,
+      "on_minute_eq": 604,
+      "bar_end_lt": 0,
+      "lookahead": 0,
+      "strict_close_ok": 604,
+      "strict_velocity_ok": 604,
+      "strict_close_coverage": 1.0
+    },
+    {
+      "asset": "ETH",
+      "rem": "T-10m",
+      "n_pm003": 604,
+      "close_ok": 604,
+      "velocity_ok": 604,
+      "missing_close": 0,
+      "missing_prior_only": 0,
+      "close_coverage": 1.0,
+      "velocity_coverage": 1.0,
+      "on_minute_eq": 604,
+      "bar_end_lt": 0,
+      "lookahead": 0,
+      "strict_close_ok": 604,
+      "strict_velocity_ok": 604,
+      "strict_close_coverage": 1.0
+    },
+    {
+      "asset": "ETH",
+      "rem": "T-5m",
+      "n_pm003": 604,
+      "close_ok": 604,
+      "velocity_ok": 604,
+      "missing_close": 0,
+      "missing_prior_only": 0,
+      "close_coverage": 1.0,
+      "velocity_coverage": 1.0,
+      "on_minute_eq": 604,
+      "bar_end_lt": 0,
+      "lookahead": 0,
+      "strict_close_ok": 604,
+      "strict_velocity_ok": 604,
+      "strict_close_coverage": 1.0
+    },
+    {
+      "asset": "ETH",
+      "rem": "T-1m",
+      "n_pm003": 604,
+      "close_ok": 604,
+      "velocity_ok": 604,
+      "missing_close": 0,
+      "missing_prior_only": 0,
+      "close_coverage": 1.0,
+      "velocity_coverage": 1.0,
+      "on_minute_eq": 604,
+      "bar_end_lt": 0,
+      "lookahead": 0,
+      "strict_close_ok": 604,
+      "strict_velocity_ok": 604,
+      "strict_close_coverage": 1.0
+    },
+    {
+      "asset": "ETH",
+      "rem": "T-0",
+      "n_pm003": 604,
+      "close_ok": 604,
+      "velocity_ok": 604,
+      "missing_close": 0,
+      "missing_prior_only": 0,
+      "close_coverage": 1.0,
+      "velocity_coverage": 1.0,
+      "on_minute_eq": 604,
+      "bar_end_lt": 0,
+      "lookahead": 0,
+      "strict_close_ok": 604,
+      "strict_velocity_ok": 604,
+      "strict_close_coverage": 1.0
+    }
+  ],
+  "certify": {
+    "A": {
+      "name": "A_cb_close",
+      "pass": true,
+      "detail": "Completed bar only (bar_end <= decision_time); no incomplete-minute close used. close_ok=6040/6040; incomplete_used=0.",
+      "caveat": "ALL joins have bar_end == decision_time (on-minute coincidence). SPEC allows <= ; exchange candle close availability at the exact second the minute ends is not proven from this tape alone \u2014 knowability caveat (cf. W2-A incomplete-second)."
+    },
+    "B": {
+      "name": "B_prior",
+      "pass": true,
+      "detail": "Prior completed bar (start_t-60) present for velocity. velocity_ok=6040; missing_prior_only=0."
+    },
+    "C": {
+      "name": "C_velocity",
+      "pass": true,
+      "detail": "v_CB=(cb_close_t - cb_close_tm1)/cb_close_tm1; knowable only if both closes exist. velocity_ok=6040/6040.",
+      "caveat": "ALL joins have bar_end == decision_time (on-minute coincidence). SPEC allows <= ; exchange candle close availability at the exact second the minute ends is not proven from this tape alone \u2014 knowability caveat (cf. W2-A incomplete-second)."
+    },
+    "D": {
+      "name": "D_m",
+      "pass": true,
+      "detail": "m_t = same-row PM-003 implied_p at decision_time (inventory; method mix retained). method_counts={'mid': 5330, 'last': 709, 'null': 1}.",
+      "note": "Not all rows are mid; mid vs last counted \u2014 join attaches CB velocity to every rem row."
+    },
+    "E": {
+      "name": "E_coverage",
+      "pass": true,
+      "detail": "Independent N close_ok=6040/6040; velocity_ok=6040/6040; claim join_rows=6040; 100% field match vs claim=6040; mismatches=0.",
+      "by_asset_rem": [
+        {
+          "asset": "BTC",
+          "rem": "T-14m",
+          "n_pm003": 604,
+          "close_ok": 604,
+          "velocity_ok": 604,
+          "missing_close": 0,
+          "missing_prior_only": 0,
+          "close_coverage": 1.0,
+          "velocity_coverage": 1.0,
+          "on_minute_eq": 604,
+          "bar_end_lt": 0,
+          "lookahead": 0,
+          "strict_close_ok": 604,
+          "strict_velocity_ok": 604,
+          "strict_close_coverage": 1.0
+        },
+        {
+          "asset": "BTC",
+          "rem": "T-10m",
+          "n_pm003": 604,
+          "close_ok": 604,
+          "velocity_ok": 604,
+          "missing_close": 0,
+          "missing_prior_only": 0,
+          "close_coverage": 1.0,
+          "velocity_coverage": 1.0,
+          "on_minute_eq": 604,
+          "bar_end_lt": 0,
+          "lookahead": 0,
+          "strict_close_ok": 604,
+          "strict_velocity_ok": 604,
+          "strict_close_coverage": 1.0
+        },
+        {
+          "asset": "BTC",
+          "rem": "T-5m",
+          "n_pm003": 604,
+          "close_ok": 604,
+          "velocity_ok": 604,
+          "missing_close": 0,
+          "missing_prior_only": 0,
+          "close_coverage": 1.0,
+          "velocity_coverage": 1.0,
+          "on_minute_eq": 604,
+          "bar_end_lt": 0,
+          "lookahead": 0,
+          "strict_close_ok": 604,
+          "strict_velocity_ok": 604,
+          "strict_close_coverage": 1.0
+        },
+        {
+          "asset": "BTC",
+          "rem": "T-1m",
+          "n_pm003": 604,
+          "close_ok": 604,
+          "velocity_ok": 604,
+          "missing_close": 0,
+          "missing_prior_only": 0,
+          "close_coverage": 1.0,
+          "velocity_coverage": 1.0,
+          "on_minute_eq": 604,
+          "bar_end_lt": 0,
+          "lookahead": 0,
+          "strict_close_ok": 604,
+          "strict_velocity_ok": 604,
+          "strict_close_coverage": 1.0
+        },
+        {
+          "asset": "BTC",
+          "rem": "T-0",
+          "n_pm003": 604,
+          "close_ok": 604,
+          "velocity_ok": 604,
+          "missing_close": 0,
+          "missing_prior_only": 0,
+          "close_coverage": 1.0,
+          "velocity_coverage": 1.0,
+          "on_minute_eq": 604,
+          "bar_end_lt": 0,
+          "lookahead": 0,
+          "strict_close_ok": 604,
+          "strict_velocity_ok": 604,
+          "strict_close_coverage": 1.0
+        },
+        {
+          "asset": "ETH",
+          "rem": "T-14m",
+          "n_pm003": 604,
+          "close_ok": 604,
+          "velocity_ok": 604,
+          "missing_close": 0,
+          "missing_prior_only": 0,
+          "close_coverage": 1.0,
+          "velocity_coverage": 1.0,
+          "on_minute_eq": 604,
+          "bar_end_lt": 0,
+          "lookahead": 0,
+          "strict_close_ok": 604,
+          "strict_velocity_ok": 604,
+          "strict_close_coverage": 1.0
+        },
+        {
+          "asset": "ETH",
+          "rem": "T-10m",
+          "n_pm003": 604,
+          "close_ok": 604,
+          "velocity_ok": 604,
+          "missing_close": 0,
+          "missing_prior_only": 0,
+          "close_coverage": 1.0,
+          "velocity_coverage": 1.0,
+          "on_minute_eq": 604,
+          "bar_end_lt": 0,
+          "lookahead": 0,
+          "strict_close_ok": 604,
+          "strict_velocity_ok": 604,
+          "strict_close_coverage": 1.0
+        },
+        {
+          "asset": "ETH",
+          "rem": "T-5m",
+          "n_pm003": 604,
+          "close_ok": 604,
+          "velocity_ok": 604,
+          "missing_close": 0,
+          "missing_prior_only": 0,
+          "close_coverage": 1.0,
+          "velocity_coverage": 1.0,
+          "on_minute_eq": 604,
+          "bar_end_lt": 0,
+          "lookahead": 0,
+          "strict_close_ok": 604,
+          "strict_velocity_ok": 604,
+          "strict_close_coverage": 1.0
+        },
+        {
+          "asset": "ETH",
+          "rem": "T-1m",
+          "n_pm003": 604,
+          "close_ok": 604,
+          "velocity_ok": 604,
+          "missing_close": 0,
+          "missing_prior_only": 0,
+          "close_coverage": 1.0,
+          "velocity_coverage": 1.0,
+          "on_minute_eq": 604,
+          "bar_end_lt": 0,
+          "lookahead": 0,
+          "strict_close_ok": 604,
+          "strict_velocity_ok": 604,
+          "strict_close_coverage": 1.0
+        },
+        {
+          "asset": "ETH",
+          "rem": "T-0",
+          "n_pm003": 604,
+          "close_ok": 604,
+          "velocity_ok": 604,
+          "missing_close": 0,
+          "missing_prior_only": 0,
+          "close_coverage": 1.0,
+          "velocity_coverage": 1.0,
+          "on_minute_eq": 604,
+          "bar_end_lt": 0,
+          "lookahead": 0,
+          "strict_close_ok": 604,
+          "strict_velocity_ok": 604,
+          "strict_close_coverage": 1.0
+        }
+      ]
+    },
+    "F": {
+      "name": "F_lookahead",
+      "pass": true,
+      "detail": "bar_end > decision_time count=0."
+    },
+    "G": {
+      "name": "G_forbidden",
+      "pass": true,
+      "detail": "No Binance/CF/BRTI/L3 fill; raw source = DATA-PROV-CB-001 CSV only; v_CB not treated as forecast; no Examiner scores / no p_t in this audit."
+    }
+  },
+  "knowability_caveat": {
+    "name": "on_minute_coincidence",
+    "present": true,
+    "n_bar_end_eq_decision_time": 6040,
+    "n_bar_end_lt_decision_time": 0,
+    "lag_sec_all": 0,
+    "note": "Kalshi decision_times are exact minute boundaries (\u2026:00Z). SPEC allows bar_end <= decision_time, so the bar that ends at t is selected. Whether that Coinbase candle close is knowable-at-t at the exact second the minute ends (exchange close availability / publication lag) is NOT established by this inventory tape. Similar class to W2-A incomplete-second issue. Do NOT silently CLEARED."
+  },
+  "VERDICT": "CONDITIONAL",
+  "VERDICT_SCOPE": "join_only",
+  "QUALITY_STATUS": "JOIN_CERTIFIED_WITH_ON_MINUTE_CAVEAT",
+  "rationale": "Independent rebuild matches claim 6040/6040, 0 lookahead, completed-bar SPEC (bar_end <= t) sound and dense. CONDITIONAL (not CLEARED) because EVERY join uses bar_end == decision_time (lag=0 on-minute coincidence): candle close knowability at the exact minute boundary is not proven from the 1m tape alone \u2014 same class of caveat as W2-A incomplete-second. Strict-prior alt (bar_end < t) also dense 6040/6040; do not silently switch policy.",
+  "blockers": [
+    "On-minute coincidence: 6040/6040 joins use bar_end == decision_time (lag=0). Candle-close knowability at exact minute boundary unresolved \u2014 document before Feature/Examiner treat v_CB as knowable-at-t without caveat.",
+    "Strict-prior alt also 6040/6040 dense; policy choice (SPEC <= vs strict <) must be explicit \u2014 do not silent-switch."
+  ],
+  "artifacts": {
+    "script": "/workspace/lab/data/DATA-PROV-CB-001/provenance/clock_audit_CB001_PM003_JOIN.py",
+    "json": "/workspace/lab/data/DATA-PROV-CB-001/provenance/CLOCK_AUDIT_CB001_PM003_JOIN.json",
+    "md": "/workspace/lab/data/DATA-PROV-CB-001/provenance/CLOCK_AUDIT_CB001_PM003_JOIN.md",
+    "verdict": "/workspace/lab/data/DATA-PROV-CB-001/provenance/DATA_VERDICT_CB001_PM003_JOIN.md"
+  }
+}

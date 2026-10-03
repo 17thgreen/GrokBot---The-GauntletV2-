@@ -1,0 +1,98 @@
+{
+  "DATA_ID": "DATA-PROV-PM-003",
+  "fetched_at_utc": "2026-09-11T21:57:04Z",
+  "finished_at_utc": "2026-09-11T22:50:09Z",
+  "partial": false,
+  "stop_reason": "complete",
+  "parent": "DATA-PROV-PM-001",
+  "sibling_excluded": "DATA-PROV-PM-002",
+  "auth": "none_public",
+  "trades_placed": 0,
+  "method": "batch_GET_/markets/candlesticks",
+  "batch_size": 50,
+  "sleep_between_batches_sec": 25.0,
+  "universe_remaining_expected": 1208,
+  "universe_remaining_actual": 1208,
+  "n_429": 62,
+  "n_resumed": 52,
+  "n_batches": 37,
+  "totals": {
+    "contracts_attempted": 1208,
+    "checkpoint_rows": 6040,
+    "kalshi": {
+      "n_attempted": 1208,
+      "n_http_ok": 1208,
+      "n_ge1_intra": 1208,
+      "hit_rate_ge1_intra": 1.0,
+      "mean_intra_points": 15.0,
+      "mean_checkpoints_hit": 5.0
+    },
+    "by_asset": {
+      "BTC": {
+        "n_attempted": 604,
+        "n_http_ok": 604,
+        "n_ge1_intra": 604,
+        "hit_rate_ge1_intra": 1.0,
+        "mean_intra_points": 15.0,
+        "mean_checkpoints_hit": 5.0
+      },
+      "ETH": {
+        "n_attempted": 604,
+        "n_http_ok": 604,
+        "n_ge1_intra": 604,
+        "hit_rate_ge1_intra": 1.0,
+        "mean_intra_points": 15.0,
+        "mean_checkpoints_hit": 5.0
+      }
+    }
+  },
+  "remainder_not_attempted": {
+    "BTC": 0,
+    "ETH": 0,
+    "total": 0
+  },
+  "checkpoint_hit_table": [
+    {
+      "time_remaining_sec": 840,
+      "attempted": 1208,
+      "hit": 1208,
+      "hit_rate": 1.0
+    },
+    {
+      "time_remaining_sec": 600,
+      "attempted": 1208,
+      "hit": 1208,
+      "hit_rate": 1.0
+    },
+    {
+      "time_remaining_sec": 300,
+      "attempted": 1208,
+      "hit": 1208,
+      "hit_rate": 1.0
+    },
+    {
+      "time_remaining_sec": 60,
+      "attempted": 1208,
+      "hit": 1208,
+      "hit_rate": 1.0
+    },
+    {
+      "time_remaining_sec": 0,
+      "attempted": 1208,
+      "hit": 1208,
+      "hit_rate": 1.0
+    }
+  ],
+  "checkpoints_15m": [
+    840,
+    600,
+    300,
+    60,
+    0
+  ],
+  "construction": {
+    "kalshi": "1m candlestick yes_bid.close / yes_ask.close / price.close at end_period_ts == CLOSE-remaining; implied_p=mid if bid>0 and ask>0 else last",
+    "endpoint": "GET /markets/candlesticks?market_tickers&start_ts&end_ts&period_interval=1 (batch up to 100)",
+    "forbidden": "LAST_PRICE_DOLLARS, OUTCOME_PRICES, post-CLOSE prints, interpolation, invented bids, Poly"
+  }
+}

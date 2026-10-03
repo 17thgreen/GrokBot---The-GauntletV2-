@@ -1,0 +1,16 @@
+{
+  "lab_dir": "kalshi_c5_kxbtc15m_settled_join_lab_20260923/",
+  "feature_family": "C5-RJ",
+  "packet_id": "C5-KXBTC15M-SETTLED-RESOLUTION-JOIN-HARNESS",
+  "declared_at_et": "2026-09-23T15:18:00-04:00",
+  "freeze_sha256": "7f4b36eca39d43ee7403628c2e525d5980fa40bcfc906550c7f00bb06ffd4f21",
+  "scout_reget_sha256": "7be17c44aef31abf7a0ab94938d0289f8766670ddacefdec566735818e044796",
+  "scout_summary_sha256": "b39c919809f709bcb81ff10a3d983b266bc7a1303c0de502c7c20be726415198",
+  "panel_stub_sha256": "60f613e8d775b66b9044ad31d2faf77bba84176f214a7bce599aa7a65b6905f8",
+  "settled_reget_capture_sha256": "319d6d3e394089fd21fefbfaa52c58166e78c2d781077a3f876331d2c54de617",
+  "feebook_pin": "22371178cb2663250b4762f328069571c48cb551",
+  "rails_pin": "6a28e0d6254327ea4e6451c781bec56215ac6cac",
+  "results": null,
+  "pnl": null,
+  "admitted_at": null
+}

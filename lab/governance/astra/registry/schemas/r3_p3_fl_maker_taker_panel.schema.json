@@ -1,0 +1,150 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "astra.registry.r3_p3_fl_maker_taker_panel.v0",
+  "title": "R3-P3 FL maker/taker + 10\u00a2 bands panel stub (GET-only)",
+  "description": "Settled public trades + resolution panel seed for Maker/Taker and favorite\u2013longshot 10\u00a2 bands. Prefer C3 weather. Refuse Lee-Ready. No live orders. results/pnl/volume null. Measurement objects null until Examiner. Collector does not compute ROI.",
+  "packet": "R3-P3-FL-MAKER-TAKER",
+  "status": "PANEL_SCHEMA_STUB_SEED",
+  "stubbed_at_utc": "2026-09-23T00:19:20Z",
+  "panel_version_const": "2026-09-22.r3-p3-fl-maker-taker-v0",
+  "freeze_cite": "lab/governance/astra/packets/R3-P3_FL_MAKER_TAKER_BANDS_FREEZE_KERNEL_2026-09-22.md",
+  "freeze_packet_sha256": "0ed697149136acb3aa840aeeb79d11c8f6ef80f37ce4dd692a3cb690212206a7",
+  "binds": {
+    "fee": "R1-P1 kalshi_feebook_lab_20260922 @22371178cb2663250b4762f328069571c48cb551",
+    "rails": "R1-P5 kalshi_rails_lab_20260922 @6a28e0d6254327ea4e6451c781bec56215ac6cac",
+    "bands": "10\u00a2 pre-registered before outcome join",
+    "no_lee_ready": true,
+    "no_000_retune": true
+  },
+  "type": "object",
+  "required": [
+    "schema_id",
+    "panel_version",
+    "purpose",
+    "admitted_at",
+    "binds",
+    "capture",
+    "events",
+    "markets",
+    "bands_registry",
+    "measurement_objects",
+    "results",
+    "pnl"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "astra.registry.r3_p3_fl_maker_taker_panel.v0"
+    },
+    "panel_version": {
+      "const": "2026-09-22.r3-p3-fl-maker-taker-v0"
+    },
+    "purpose": {
+      "const": "measurement_gate"
+    },
+    "admitted_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "null until admit.py after Clock join + Conductor greenlight; do not hand-fill"
+    },
+    "binds": {
+      "type": "object",
+      "required": [
+        "fee_lab_sha",
+        "no_lee_ready",
+        "bands_pre_registered_before_outcome_join"
+      ],
+      "properties": {
+        "fee_lab_sha": {
+          "const": "22371178cb2663250b4762f328069571c48cb551"
+        },
+        "rails_lab_sha": {
+          "const": "6a28e0d6254327ea4e6451c781bec56215ac6cac"
+        },
+        "no_lee_ready": {
+          "const": true
+        },
+        "bands_pre_registered_before_outcome_join": {
+          "const": true
+        },
+        "forbid_inherited_q7_fee_literals": {
+          "const": true
+        },
+        "no_000_retune": {
+          "const": true
+        }
+      }
+    },
+    "capture": {
+      "type": "object",
+      "required": [
+        "mode",
+        "budget_isolation"
+      ],
+      "properties": {
+        "mode": {
+          "const": "GET_only_public"
+        },
+        "budget_isolation": {
+          "type": "object",
+          "required": [
+            "separate_from_admit1",
+            "no_recorder_steal_admit1"
+          ],
+          "properties": {
+            "separate_from_admit1": {
+              "const": true
+            },
+            "no_recorder_steal_admit1": {
+              "const": true
+            }
+          }
+        }
+      }
+    },
+    "events": {
+      "type": "array"
+    },
+    "markets": {
+      "type": "array"
+    },
+    "trades_sample": {
+      "type": "array"
+    },
+    "bands_registry": {
+      "type": "object"
+    },
+    "taker_field_map": {
+      "type": "object"
+    },
+    "measurement_objects": {
+      "type": "object",
+      "required": [
+        "MZ_mincer_zarnowitz",
+        "post_fee_ROI_by_10c_band",
+        "maker_vs_taker_slice"
+      ],
+      "properties": {
+        "MZ_mincer_zarnowitz": {
+          "type": "object"
+        },
+        "post_fee_ROI_by_10c_band": {
+          "type": "object"
+        },
+        "maker_vs_taker_slice": {
+          "type": "object"
+        }
+      }
+    },
+    "results": {
+      "type": "null"
+    },
+    "pnl": {
+      "type": "null"
+    },
+    "volume": {
+      "type": "null"
+    }
+  }
+}

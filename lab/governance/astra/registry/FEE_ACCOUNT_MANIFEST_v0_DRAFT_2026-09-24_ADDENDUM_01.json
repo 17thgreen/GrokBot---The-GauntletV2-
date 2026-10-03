@@ -1,0 +1,32 @@
+{
+  "addendum_id": "FEE-ACCT-MANIFEST-v0-DRAFT-20260924-ADDENDUM-01",
+  "parent_manifest": "registry/FEE_ACCOUNT_MANIFEST_v0_DRAFT_2026-09-24.json",
+  "parent_sha256": "aa7658764061912073b8d9fc1f2ae03fc970fa382dca1c49335944be650552ba",
+  "status": "DRAFT_NOT_ADOPTED",
+  "recorded_by": "The Archivist (Registry)",
+  "recorded_at_et": "2026-09-24T19:50:45-04:00",
+  "source": "Conductor follow-up rulings 2026-09-24",
+  "member_type": {
+    "status": "UNKNOWN",
+    "resolver": "Market Scout (checking)"
+  },
+  "examiner_net_pnl_reporting_until_resolved": {
+    "mode": "SENSITIVITY_BOTH_PRECISIONS",
+    "precisions_usd": [
+      0.0001,
+      0.01
+    ],
+    "labels": [
+      "direct-member $0.0001",
+      "non-direct $0.01"
+    ],
+    "canonical": null
+  },
+  "simulator_stress": {
+    "subject": "Q6-000 KEEP",
+    "type": "cost-convention stress",
+    "retune": false,
+    "outputs_seen_by_archivist": false
+  },
+  "past_results_recomputed": false
+}

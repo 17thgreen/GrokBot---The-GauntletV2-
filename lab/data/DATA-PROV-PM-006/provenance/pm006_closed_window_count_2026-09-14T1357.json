@@ -1,0 +1,32 @@
+{
+  "stamp": "2026-09-14T13:57Z",
+  "closed_15m": {
+    "BTC": 70,
+    "ETH": 70,
+    "total": 140,
+    "median_both": {
+      "BTC": 702.5,
+      "ETH": 674.5
+    },
+    "min_both": {
+      "BTC": 59,
+      "ETH": 12
+    }
+  },
+  "closed_5m": {
+    "BTC": 210,
+    "ETH": 210,
+    "total": 420
+  },
+  "open_slugs": [
+    "btc-updown-15m-1789393500",
+    "btc-updown-15m-1789394400",
+    "btc-updown-5m-1789394100",
+    "btc-updown-5m-1789394400",
+    "eth-updown-15m-1789393500",
+    "eth-updown-15m-1789394400",
+    "eth-updown-5m-1789394100",
+    "eth-updown-5m-1789394400"
+  ],
+  "n_slugs_with_both": 568
+}

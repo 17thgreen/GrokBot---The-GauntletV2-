@@ -1,0 +1,22 @@
+{
+  "data_id": "DATA-PROV-PM-006",
+  "hunt": "historical_bid_ask",
+  "window_utc": {"start": "2026-09-04T00:00:00Z", "end": "2026-09-11T23:59:00Z", "start_ts": 1788480000, "end_ts": 1789171140},
+  "reference_token_id": "11862021886282096742243011293088924092955028730250907544249148111484298656607",
+  "reference_slug": "btc-updown-15m-1788877800",
+  "probed_at_utc": "2026-09-13T20:25:00Z",
+  "verdict": "BLOCKED",
+  "probes": [
+    {"url": "https://clob.polymarket.com/orderbook-history?asset_id=<hist>&startTs=1788480000&endTs=1789171140&limit=10", "http": 200, "note": "{\"count\":0,\"data\":[]}"},
+    {"url": "https://clob.polymarket.com/orderbook-history?token_id=<hist>&...", "http": 400, "note": "either market or asset_id must be provided"},
+    {"url": "https://clob.polymarket.com/book?token_id=<hist>", "http": 404, "note": "No orderbook exists for the requested token id"},
+    {"url": "https://clob.polymarket.com/midpoint?token_id=<hist>", "http": 404, "note": "No orderbook exists"},
+    {"url": "https://clob.polymarket.com/prices-history?market=<hist>&fidelity=1", "http": 200, "note": "last-trade {t,p} only — NOT bid/ask"},
+    {"url": "https://clob.polymarket.com/orderbook-history live token recent window", "http": 200, "note": "{\"count\":0,\"data\":[]} even for live"},
+    {"url": "https://data-api.polymarket.com/orderbook", "http": 404},
+    {"url": "https://data-api.polymarket.com/books", "http": 404},
+    {"url": "https://r2.pmxt.dev/2026-09-04/", "http": 404},
+    {"url": "https://r2v2.pmxt.dev/orderbook/2026-09-04.parquet", "http": 404},
+    {"url": "https://huggingface.co/api/datasets/Joseph3222/polymarket-orderbook/tree/main/orderbook_1min", "http": 200, "note": "partitions end date=2026-08-10; zero 2026-09 paths"}
+  ]
+}

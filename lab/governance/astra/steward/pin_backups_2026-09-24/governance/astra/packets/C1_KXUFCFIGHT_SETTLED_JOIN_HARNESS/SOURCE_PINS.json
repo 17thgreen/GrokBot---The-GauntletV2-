@@ -1,0 +1,20 @@
+{
+  "lab_dir": "kalshi_c1_kxufcfight_settled_join_lab_20260923/",
+  "feature_family": "C1-RJ",
+  "packet_id": "C1-KXUFCFIGHT-SETTLED-RESOLUTION-JOIN-HARNESS",
+  "declared_at_et": "2026-09-23T17:53:00-04:00",
+  "freeze_sha256": "3ea3362ad3c16951369d5f90497ec6079213dd54e5556340c4d3738744126cf1",
+  "scout_reget_sha256": "1175029927603a957a2ae2b1fcf1b59bb244118c1e090e53bf8278f4614a686f",
+  "scout_summary_sha256": "b3e62f5902e5cf536d2635fdaee4613093ce0f397c26b3186b25d9c6eb742600",
+  "panel_stub_sha256": "24426d804c51bde23cf2557a11a8481a12026da10024094c4ae546d1f7d3956e",
+  "settled_reget_capture_sha256": "77457212b2427b9ef29499a6619cabf0b43955a569419acbb1abd468e2e79a23",
+  "maximize_pin_sha256": "6fad9acbff410b36432c7f20f6d19adce37ee9703b9e42a7b0ba9e059f3990df",
+  "examiner_hold_sha256": "7ceb4bedf6a3e132ae410992851eb977e6cbdf85a337949d223be4bdb5de8a0b",
+  "feebook_pin": "22371178cb2663250b4762f328069571c48cb551",
+  "rails_pin": "6a28e0d6254327ea4e6451c781bec56215ac6cac",
+  "results": null,
+  "pnl": null,
+  "admitted_at": null,
+  "prior_s5_rj_pr48_main": "fec05e8cf7c11f1c975ab791fda64f896d40d1cd",
+  "prior_s5_rj_accept_sha256": "495675175589c08122bc57375dd8e7d00aea9f4a154df3aff086b015a2513a8c"
+}

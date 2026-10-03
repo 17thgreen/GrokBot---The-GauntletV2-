@@ -1,0 +1,458 @@
+{
+  "AUDIT_ID": "CLOCK_AUDIT_W2B_INCUMBENT_AT_OBS",
+  "FEATURE": "DRAFT-FEAT-20260913-004",
+  "GATE": "DRAFT-ABST-20260913-004",
+  "WAVE": "W2-B / Wave 006 leftover after WAVE_008_CLOSE",
+  "DATA_IDS": [
+    "DATA-PROV-PM-003",
+    "DATA-PROV-PM-001",
+    "DATA-PROV-PM-005"
+  ],
+  "SIBLING_NOT_UNIONED": "DATA-PROV-PM-002",
+  "audited_at_utc": "2026-09-13T21:59:29.698467+00:00",
+  "auditor": "Clock",
+  "new_fetch": false,
+  "policy": {
+    "no_alpha": true,
+    "no_examiner_delta": true,
+    "no_invented_mid": true,
+    "no_decision_time_mid_as_m_L": true,
+    "no_interpolation": true,
+    "no_PM002_union": true,
+    "no_venue_pool": true,
+    "trade_forbidden": true,
+    "feature_stays_NEEDS_DATA": true,
+    "this_alone_does_not_authorize_Examiner": true,
+    "last_as_mid_must_be_0": true
+  },
+  "sources": {
+    "pm003_checkpoints": "/workspace/lab/data/DATA-PROV-PM-003/derived/checkpoints.ndjson",
+    "pm003_candles_dir": "/workspace/lab/data/DATA-PROV-PM-003/raw/kalshi_candles",
+    "pm001_kalshi": "/workspace/lab/data/DATA-PROV-PM-001/normalized/kalshi_15m_btc_eth_resolved.ndjson",
+    "pm005_checkpoints": "/workspace/lab/data/DATA-PROV-PM-005/derived/checkpoints.ndjson",
+    "pm005_coverage": "/workspace/lab/data/DATA-PROV-PM-005/derived/contract_coverage.ndjson",
+    "pm005_prints": "/workspace/lab/data/DATA-PROV-PM-005/derived/poly_15m_last_prints.ndjson",
+    "fetch_summary": "/workspace/lab/data/DATA-PROV-PM-005/provenance/FETCH_SUMMARY.json",
+    "inventory": "/workspace/lab/data/DATA-PROV-PM-005/provenance/INVENTORY.md",
+    "prior_wave005_audit_json": "/workspace/lab/data/DATA-PROV-PM-005/provenance/CLOCK_AUDIT_W2B_POLY_T5_JOIN.json",
+    "prior_wave005_audit_md": "/workspace/lab/data/DATA-PROV-PM-005/provenance/CLOCK_AUDIT_W2B_POLY_T5_JOIN.md",
+    "prior_wave005_verdict": "/workspace/lab/data/DATA-PROV-PM-005/provenance/DATA_VERDICT_W2B_POLY_T5_JOIN.md",
+    "prior_wave005_script": "/workspace/lab/data/DATA-PROV-PM-005/provenance/clock_audit_W2B_POLY_T5_JOIN.py",
+    "feature_card": "/workspace/lab/archive/features/DRAFT-FEAT-20260913-004-W2B-poly-last.md",
+    "gate_card": "/workspace/lab/archive/features/DRAFT-ABST-20260913-004-W2B-xvenue.md",
+    "clock_order": "/workspace/lab/governance/CLOCK_ORDER_W2B_INCUMBENT_AT_OBS_2026-09-13.md",
+    "script": "/workspace/lab/data/DATA-PROV-PM-005/provenance/clock_audit_W2B_INCUMBENT_AT_OBS.py"
+  },
+  "exact_join_formula": "On Wave 005 T-5m pairable set (Kalshi rem=300 mid scored \u00d7 Poly last OC twin): L = Poly last obs_time; last_L = Poly last (method=last; bid/ask null); m_L = Kalshi official 1m mid at L from raw candlesticks (PM-003), same (asset, OPEN, CLOSE) via PM-001. CANDLE_RULE=completed_bar_at_L_end_period_ts_le_L: m_L is the mid of the latest completed Kalshi 1m candlestick for the OC-twin ticker whose end_period_ts (bar CLOSE) is <= unix(L) and strictly after OPEN and <= CLOSE; mid=(yes_bid.close+yes_ask.close)/2 only when bid>0, ask>0, bid<=ask \u2014 no last fallback, no interpolation, no decision_time bar. FORBIDDEN: use decision_time Kalshi mid as m_L; invent Poly mid from last; interpolate; Examiner \u0394; Feature READY.",
+  "candle_rule_id": "completed_bar_at_L_end_period_ts_le_L",
+  "candle_rule_sentence": "m_L is the mid of the latest completed Kalshi 1m candlestick for the OC-twin ticker whose end_period_ts (bar CLOSE) is <= unix(L) and strictly after OPEN and <= CLOSE; mid=(yes_bid.close+yes_ask.close)/2 only when bid>0, ask>0, bid<=ask \u2014 no last fallback, no interpolation, no decision_time bar.",
+  "deterministic_pick_rule": "Wave 005 pairable pick unchanged: among PM-005 rem=300 last rows with obs_time<=decision_time sharing (asset, open_time, close_time), max obs_time, ties by contract_id ascending. Then m_L from completed-bar-at-L on that row's L.",
+  "pm001_meta": {
+    "n_rows": 1328,
+    "n_unique_contract_id": 1328,
+    "n_unique_venue_native_id": 1328,
+    "n_unique_oc_keys": 1328,
+    "status_counts": {
+      "RESOLVED": 1328
+    },
+    "resolution_counts": {
+      "YES": 660,
+      "NO": 668
+    },
+    "one_row_per_contract": true
+  },
+  "pm005_index_meta": {
+    "n_rem300_last_rows": 551,
+    "n_unique_oc_keys": 551,
+    "n_multi_row_oc_keys": 0,
+    "multi_row_oc_example": [],
+    "rem_counts": {
+      "840": 548,
+      "600": 551,
+      "300": 551,
+      "60": 551,
+      "0": 551
+    },
+    "method_counts": {
+      "last": 2752
+    },
+    "role_counts": {
+      "dark": 1099,
+      "headline": 551,
+      "captured": 1102
+    },
+    "rem300_by_asset": {
+      "BTC": 276,
+      "ETH": 275
+    },
+    "bid_ask_nonnull_rem300": 0,
+    "method_not_last_rem300_skipped": 0,
+    "pm002_mentions_in_checkpoints": 0,
+    "paired_kalshi_dataset_counts": {
+      "DATA-PROV-PM-003": 551
+    },
+    "parent_dataset_counts": {
+      "DATA-PROV-PM-001": 551
+    }
+  },
+  "inventory_crosscheck": {
+    "inventory_claim_pairing_N_rem300_last": {
+      "BTC": 276,
+      "ETH": 275
+    },
+    "measured_PM005_rem300_last_by_asset": {
+      "BTC": 276,
+      "ETH": 275
+    },
+    "BTC_match_276": true,
+    "ETH_match_275": true,
+    "inventory_claim_empty_histories": 2,
+    "measured_empty_histories": 2,
+    "empty_by_asset": {
+      "BTC": 1,
+      "ETH": 1
+    },
+    "empty_match_2": true,
+    "coverage_ok": 551,
+    "pm002_mentions_in_checkpoints": 0,
+    "no_PM002_union": true,
+    "paired_kalshi_dataset_counts": {
+      "DATA-PROV-PM-003": 551
+    },
+    "parent_dataset_counts": {
+      "DATA-PROV-PM-001": 551
+    },
+    "n_multi_row_oc_keys": 0,
+    "bid_ask_nonnull_rem300": 0,
+    "n_kalshi_candle_files": 1208,
+    "n_kalshi_candle_files_expected": 1208,
+    "candle_files_match_1208": true,
+    "prior_wave005_pairable_claim": {
+      "BTC": 254,
+      "ETH": 240
+    },
+    "wave005_pairable_BTC_match": true,
+    "wave005_pairable_BTC_measured": 254,
+    "wave005_pairable_ETH_match": true,
+    "wave005_pairable_ETH_measured": 240
+  },
+  "headlines": [
+    {
+      "id": "headline_BTC_T5m",
+      "cell": "KALSHI|15m|BTC|T-5m|mid@L",
+      "asset": "BTC",
+      "rem": 300,
+      "t_minus": "T-5m",
+      "role": "headline",
+      "n_candidates_at_rem": 604,
+      "scored_exclude_breakdown": {
+        "non_mid_at_rem_dropped": 0,
+        "near_deg_scored_dropped": 35,
+        "void_disputed_scored_dropped": 0,
+        "missing_m_t_implied_p_null": 0
+      },
+      "N_scored": 569,
+      "N_with_exact_OC_twin_in_PM005": 254,
+      "N_wave005_pairable": 254,
+      "N_pairable_with_m_L": 254,
+      "N_miss_pairing": 315,
+      "N_miss_L": 0,
+      "N_miss_m_decision_time": 0,
+      "N_miss_m_L": 0,
+      "N_lookahead_obs_gt_t_discarded": 0,
+      "N_pm001_join_miss": 0,
+      "N_bid_ask_nonnull_on_twins": 0,
+      "N_method_not_last_on_twins": 0,
+      "N_last_as_mid": 0,
+      "N_used_decision_time_bar_as_m_L": 0,
+      "N_m_L_numerically_equals_decision_mid": 10,
+      "N_candle_file_miss": 0,
+      "N_no_completed_bar_at_L": 0,
+      "N_mid_rule_fail_bid_ask": 0,
+      "missing_reasons": {
+        "missing_pairing_no_poly_oc_twin": 315
+      },
+      "obs_lag_sec_stats_wave005_pairable": {
+        "n": 254,
+        "min_sec": 23.0,
+        "max_sec": 103.0,
+        "mean_sec": 44.2007874015748,
+        "median_sec": 45.0,
+        "p90_sec": 47.0,
+        "p99_sec": 50.0
+      },
+      "obs_lag_sec_stats_with_m_L": {
+        "n": 254,
+        "min_sec": 23.0,
+        "max_sec": 103.0,
+        "mean_sec": 44.2007874015748,
+        "median_sec": 45.0,
+        "p90_sec": 47.0,
+        "p99_sec": 50.0
+      },
+      "L_minus_bar_end_sec_stats": {
+        "n": 254,
+        "min_sec": 10.0,
+        "max_sec": 37.0,
+        "mean_sec": 16.03543307086614,
+        "median_sec": 15.0,
+        "p90_sec": 17.0,
+        "p99_sec": 31.47
+      },
+      "candle_rule_id": "completed_bar_at_L_end_period_ts_le_L",
+      "candle_rule_sentence": "m_L is the mid of the latest completed Kalshi 1m candlestick for the OC-twin ticker whose end_period_ts (bar CLOSE) is <= unix(L) and strictly after OPEN and <= CLOSE; mid=(yes_bid.close+yes_ask.close)/2 only when bid>0, ask>0, bid<=ask \u2014 no last fallback, no interpolation, no decision_time bar.",
+      "deterministic_pick_rule": "Wave 005 pairable pick unchanged: among PM-005 rem=300 last rows with obs_time<=decision_time sharing (asset, open_time, close_time), max obs_time, ties by contract_id ascending. Then m_L from completed-bar-at-L on that row's L.",
+      "samples_ok": [
+        {
+          "kalshi_contract_id": "PROV-KALSHI-KXBTC15M-26SEP111630-30",
+          "kalshi_ticker": "KXBTC15M-26SEP111630-30",
+          "poly_contract_id": "PROV-POLYGLOBAL-btc-updown-15m-1789157700",
+          "decision_time": "2026-09-11T20:25:00Z",
+          "L_obs_time": "2026-09-11T20:24:15Z",
+          "obs_lag_sec": 45.0,
+          "m_decision_time": 0.325,
+          "m_L": 0.275,
+          "m_L_bar_end": "2026-09-11T20:24:00Z",
+          "m_L_yes_bid": 0.27,
+          "m_L_yes_ask": 0.28,
+          "last_L": 0.255,
+          "open_time": "2026-09-11T20:15:00Z",
+          "close_time": "2026-09-11T20:30:00Z",
+          "implied_p_method_poly": "last",
+          "yes_bid_poly": null,
+          "yes_ask_poly": null,
+          "used_last_as_mid": false,
+          "used_decision_time_bar": false
+        },
+        {
+          "kalshi_contract_id": "PROV-KALSHI-KXBTC15M-26SEP111615-15",
+          "kalshi_ticker": "KXBTC15M-26SEP111615-15",
+          "poly_contract_id": "PROV-POLYGLOBAL-btc-updown-15m-1789156800",
+          "decision_time": "2026-09-11T20:10:00Z",
+          "L_obs_time": "2026-09-11T20:09:14Z",
+          "obs_lag_sec": 46.0,
+          "m_decision_time": 0.895,
+          "m_L": 0.9235,
+          "m_L_bar_end": "2026-09-11T20:09:00Z",
+          "m_L_yes_bid": 0.923,
+          "m_L_yes_ask": 0.924,
+          "last_L": 0.925,
+          "open_time": "2026-09-11T20:00:00Z",
+          "close_time": "2026-09-11T20:15:00Z",
+          "implied_p_method_poly": "last",
+          "yes_bid_poly": null,
+          "yes_ask_poly": null,
+          "used_last_as_mid": false,
+          "used_decision_time_bar": false
+        },
+        {
+          "kalshi_contract_id": "PROV-KALSHI-KXBTC15M-26SEP111600-00",
+          "kalshi_ticker": "KXBTC15M-26SEP111600-00",
+          "poly_contract_id": "PROV-POLYGLOBAL-btc-updown-15m-1789155900",
+          "decision_time": "2026-09-11T19:55:00Z",
+          "L_obs_time": "2026-09-11T19:54:14Z",
+          "obs_lag_sec": 46.0,
+          "m_decision_time": 0.795,
+          "m_L": 0.565,
+          "m_L_bar_end": "2026-09-11T19:54:00Z",
+          "m_L_yes_bid": 0.56,
+          "m_L_yes_ask": 0.57,
+          "last_L": 0.575,
+          "open_time": "2026-09-11T19:45:00Z",
+          "close_time": "2026-09-11T20:00:00Z",
+          "implied_p_method_poly": "last",
+          "yes_bid_poly": null,
+          "yes_ask_poly": null,
+          "used_last_as_mid": false,
+          "used_decision_time_bar": false
+        }
+      ],
+      "samples_missing": [],
+      "miss_m_L_samples": []
+    },
+    {
+      "id": "headline_ETH_T5m",
+      "cell": "KALSHI|15m|ETH|T-5m|mid@L",
+      "asset": "ETH",
+      "rem": 300,
+      "t_minus": "T-5m",
+      "role": "headline",
+      "n_candidates_at_rem": 604,
+      "scored_exclude_breakdown": {
+        "non_mid_at_rem_dropped": 0,
+        "near_deg_scored_dropped": 59,
+        "void_disputed_scored_dropped": 0,
+        "missing_m_t_implied_p_null": 0
+      },
+      "N_scored": 545,
+      "N_with_exact_OC_twin_in_PM005": 240,
+      "N_wave005_pairable": 240,
+      "N_pairable_with_m_L": 240,
+      "N_miss_pairing": 305,
+      "N_miss_L": 0,
+      "N_miss_m_decision_time": 0,
+      "N_miss_m_L": 0,
+      "N_lookahead_obs_gt_t_discarded": 0,
+      "N_pm001_join_miss": 0,
+      "N_bid_ask_nonnull_on_twins": 0,
+      "N_method_not_last_on_twins": 0,
+      "N_last_as_mid": 0,
+      "N_used_decision_time_bar_as_m_L": 0,
+      "N_m_L_numerically_equals_decision_mid": 6,
+      "N_candle_file_miss": 0,
+      "N_no_completed_bar_at_L": 0,
+      "N_mid_rule_fail_bid_ask": 0,
+      "missing_reasons": {
+        "missing_pairing_no_poly_oc_twin": 305
+      },
+      "obs_lag_sec_stats_wave005_pairable": {
+        "n": 240,
+        "min_sec": 23.0,
+        "max_sec": 103.0,
+        "mean_sec": 44.18333333333333,
+        "median_sec": 45.0,
+        "p90_sec": 47.0,
+        "p99_sec": 50.609999999999985
+      },
+      "obs_lag_sec_stats_with_m_L": {
+        "n": 240,
+        "min_sec": 23.0,
+        "max_sec": 103.0,
+        "mean_sec": 44.18333333333333,
+        "median_sec": 45.0,
+        "p90_sec": 47.0,
+        "p99_sec": 50.609999999999985
+      },
+      "L_minus_bar_end_sec_stats": {
+        "n": 240,
+        "min_sec": 9.0,
+        "max_sec": 37.0,
+        "mean_sec": 16.066666666666666,
+        "median_sec": 15.0,
+        "p90_sec": 18.0,
+        "p99_sec": 31.609999999999985
+      },
+      "candle_rule_id": "completed_bar_at_L_end_period_ts_le_L",
+      "candle_rule_sentence": "m_L is the mid of the latest completed Kalshi 1m candlestick for the OC-twin ticker whose end_period_ts (bar CLOSE) is <= unix(L) and strictly after OPEN and <= CLOSE; mid=(yes_bid.close+yes_ask.close)/2 only when bid>0, ask>0, bid<=ask \u2014 no last fallback, no interpolation, no decision_time bar.",
+      "deterministic_pick_rule": "Wave 005 pairable pick unchanged: among PM-005 rem=300 last rows with obs_time<=decision_time sharing (asset, open_time, close_time), max obs_time, ties by contract_id ascending. Then m_L from completed-bar-at-L on that row's L.",
+      "samples_ok": [
+        {
+          "kalshi_contract_id": "PROV-KALSHI-KXETH15M-26SEP111630-30",
+          "kalshi_ticker": "KXETH15M-26SEP111630-30",
+          "poly_contract_id": "PROV-POLYGLOBAL-eth-updown-15m-1789157700",
+          "decision_time": "2026-09-11T20:25:00Z",
+          "L_obs_time": "2026-09-11T20:24:16Z",
+          "obs_lag_sec": 44.0,
+          "m_decision_time": 0.052,
+          "m_L": 0.0515,
+          "m_L_bar_end": "2026-09-11T20:24:00Z",
+          "m_L_yes_bid": 0.051,
+          "m_L_yes_ask": 0.052,
+          "last_L": 0.03,
+          "open_time": "2026-09-11T20:15:00Z",
+          "close_time": "2026-09-11T20:30:00Z",
+          "implied_p_method_poly": "last",
+          "yes_bid_poly": null,
+          "yes_ask_poly": null,
+          "used_last_as_mid": false,
+          "used_decision_time_bar": false
+        },
+        {
+          "kalshi_contract_id": "PROV-KALSHI-KXETH15M-26SEP111615-15",
+          "kalshi_ticker": "KXETH15M-26SEP111615-15",
+          "poly_contract_id": "PROV-POLYGLOBAL-eth-updown-15m-1789156800",
+          "decision_time": "2026-09-11T20:10:00Z",
+          "L_obs_time": "2026-09-11T20:09:14Z",
+          "obs_lag_sec": 46.0,
+          "m_decision_time": 0.835,
+          "m_L": 0.875,
+          "m_L_bar_end": "2026-09-11T20:09:00Z",
+          "m_L_yes_bid": 0.87,
+          "m_L_yes_ask": 0.88,
+          "last_L": 0.905,
+          "open_time": "2026-09-11T20:00:00Z",
+          "close_time": "2026-09-11T20:15:00Z",
+          "implied_p_method_poly": "last",
+          "yes_bid_poly": null,
+          "yes_ask_poly": null,
+          "used_last_as_mid": false,
+          "used_decision_time_bar": false
+        },
+        {
+          "kalshi_contract_id": "PROV-KALSHI-KXETH15M-26SEP111600-00",
+          "kalshi_ticker": "KXETH15M-26SEP111600-00",
+          "poly_contract_id": "PROV-POLYGLOBAL-eth-updown-15m-1789155900",
+          "decision_time": "2026-09-11T19:55:00Z",
+          "L_obs_time": "2026-09-11T19:54:14Z",
+          "obs_lag_sec": 46.0,
+          "m_decision_time": 0.285,
+          "m_L": 0.205,
+          "m_L_bar_end": "2026-09-11T19:54:00Z",
+          "m_L_yes_bid": 0.2,
+          "m_L_yes_ask": 0.21,
+          "last_L": 0.165,
+          "open_time": "2026-09-11T19:45:00Z",
+          "close_time": "2026-09-11T20:00:00Z",
+          "implied_p_method_poly": "last",
+          "yes_bid_poly": null,
+          "yes_ask_poly": null,
+          "used_last_as_mid": false,
+          "used_decision_time_bar": false
+        }
+      ],
+      "samples_missing": [],
+      "miss_m_L_samples": []
+    }
+  ],
+  "certifications": {
+    "A_m_L": {
+      "pass": true,
+      "summary": "m_L from completed_bar_at_L_end_period_ts_le_L on official yes bid/ask closes; no last-as-mid; no decision_time bar. BTC with_m_L=254/254 miss_m_L=0, ETH with_m_L=240/240 miss_m_L=0"
+    },
+    "B_L": {
+      "pass": true,
+      "summary": "Poly last_L is method=last only; yes_bid/yes_ask null; not invented mid; obs_time<=decision_time."
+    },
+    "C_pairing": {
+      "pass": true,
+      "summary": "Exact (asset, OPEN_TIME, CLOSE_TIME) OC twin Kalshi\u2194Poly; no PM-002 union; candle ticker = PM-001 VENUE_NATIVE_ID.",
+      "match_key": "(asset, OPEN_TIME, CLOSE_TIME)"
+    },
+    "D_scored_row": {
+      "pass": true,
+      "summary": "Wave 005 T-5m pairable universe: KALSHI 15m rem=300 mid scored with TEST-007 hygiene, then Poly last OC twin."
+    },
+    "E_coverage": {
+      "pass": true,
+      "summary": "Inventory rem300 last BTC/ETH match; candle files 1208/1208; BTC wave005=254 with_m_L=254; ETH wave005=240 with_m_L=240"
+    },
+    "F_knowability": {
+      "pass": true,
+      "summary": "Completed-bar at L (end_period_ts<=L) \u2014 no future bar; Poly obs_time<=decision_time; lag documented. last_as_mid=0."
+    },
+    "G_forbidden": {
+      "pass": true,
+      "summary": "No invented Poly mid; no decision_time mid as m_L; no interpolation; no Examiner/READY from this alone; trade forbidden."
+    }
+  },
+  "verdict": {
+    "recommended_verdict": "CONDITIONAL",
+    "verdict_scope": "join_only_incumbent_at_obs",
+    "rationale": "Incumbent-at-obs join works under caveats: Poly last lagged vs decision_time (obs_lag_sec documented; 45s-stale last \u2260 same-t); candle rule completed_bar_at_L_end_period_ts_le_L: completed bar at L; m_L \u2260 decision_time mid by construction; last \u2260 mid (Poly bid/ask null; last-as-mid=0); fail-closed on miss candle / mid-rule; Feature door stays NEEDS_DATA \u2014 join verdict alone does not READY/Examiner.",
+    "wave005_pairable_reproduced": true,
+    "all_wave005_have_m_L": true,
+    "any_m_L": true,
+    "lag_documented": true,
+    "last_as_mid_count": 0,
+    "decision_time_bar_as_m_L_count": 0,
+    "lookahead_discarded_count": 0,
+    "lookahead_baked_into_pairable": false,
+    "pm002_union": false,
+    "candle_files_ok": true,
+    "feature_stays_NEEDS_DATA": true,
+    "examiner_authorized_by_this_alone": false,
+    "poly_mid_BLOCKED": true,
+    "decision_time_mid_not_used_as_m_L": true
+  },
+  "blockers": []
+}

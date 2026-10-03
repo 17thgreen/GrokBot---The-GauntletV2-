@@ -1,0 +1,46 @@
+[
+ {
+  "path": "lab/governance/astra/packets/C4_KXCPI_SETTLED_JOIN_HARNESS/SOURCE_PINS.json",
+  "old_sha256": "21df2532fd0c016ca17bd4b12e8e0eab06c18e05a2f2955e3fbe6004333c80ca",
+  "old_bytes": 1290,
+  "new_sha256": "bcd27e06f57f0e6b617ce318fb6d42da8c9b0a526816fbc4e41cef07a875154c",
+  "new_bytes": 11080,
+  "new_source": "main 12e760f5:packets/C4_KXCPI_SETTLED_JOIN_HARNESS/SOURCE_PINS.json",
+  "prev_copy": "lab/governance/astra/packets/C4_KXCPI_SETTLED_JOIN_HARNESS/_prev/21df2532fd0c016ca17bd4b12e8e0eab06c18e05a2f2955e3fbe6004333c80ca.SOURCE_PINS.json",
+  "edited_at_et": "2026-10-01T18:59 (first pass)",
+  "reason": "Ruling 2 (Conductor 2026-10-01): main is reference; no Conductor ACCEPT pins the box bytes. Box bytes = pre-harness desk declaration / scout freeze-bundle copy, superseded by merged harness (C4 PR50, ATP PR54)."
+ },
+ {
+  "path": "lab/governance/astra/packets/C4_KXCPI_SETTLED_JOIN_HARNESS/FROZEN_EXPERIMENT.json",
+  "old_sha256": "b72465d809ccd208588ce13baa8749b8f5d1eedfb82abef47d261d84939b067f",
+  "old_bytes": 1486,
+  "new_sha256": "968a46e3733bc17e58c223ccc71525e5090ff7a1204b7c2222de4353a3940191",
+  "new_bytes": 1375,
+  "new_source": "main 12e760f5:packets/C4_KXCPI_SETTLED_JOIN_HARNESS/FROZEN_EXPERIMENT.json",
+  "prev_copy": "lab/governance/astra/packets/C4_KXCPI_SETTLED_JOIN_HARNESS/_prev/b72465d809ccd208588ce13baa8749b8f5d1eedfb82abef47d261d84939b067f.FROZEN_EXPERIMENT.json",
+  "edited_at_et": "2026-10-01T18:59 (first pass)",
+  "reason": "Ruling 2 (Conductor 2026-10-01): main is reference; no Conductor ACCEPT pins the box bytes. Box bytes = pre-harness desk declaration / scout freeze-bundle copy, superseded by merged harness (C4 PR50, ATP PR54)."
+ },
+ {
+  "path": "lab/governance/astra/packets/ATP_KXATPMATCH_SETTLED_JOIN_HARNESS/SOURCE_PINS.json",
+  "old_sha256": "4de33473fd9bab9133ab30e55c7cfc409ee9c92b26d92a1b7ac237a587319a60",
+  "old_bytes": 1910,
+  "new_sha256": "509e2cf29c701de29a63b8c3cad06a3a405ac30b1677cc04c680c91d65ceddd9",
+  "new_bytes": 15537,
+  "new_source": "main 12e760f5:packets/ATP_KXATPMATCH_SETTLED_JOIN_HARNESS/SOURCE_PINS.json",
+  "prev_copy": "lab/governance/astra/packets/ATP_KXATPMATCH_SETTLED_JOIN_HARNESS/_prev/4de33473fd9bab9133ab30e55c7cfc409ee9c92b26d92a1b7ac237a587319a60.SOURCE_PINS.json",
+  "edited_at_et": "2026-10-01T18:59:30-04:00",
+  "reason": "Ruling 2 (Conductor 2026-10-01): main is reference; no Conductor ACCEPT pins the box bytes. Box bytes = pre-harness desk declaration / scout freeze-bundle copy, superseded by merged harness (C4 PR50, ATP PR54)."
+ },
+ {
+  "path": "lab/governance/astra/packets/ATP_KXATPMATCH_SETTLED_JOIN_HARNESS/FROZEN_EXPERIMENT.json",
+  "old_sha256": "802b40b308724ae0980da123843d6a0655d087af2f162b3cc3a0f66d25e1d690",
+  "old_bytes": 8062,
+  "new_sha256": "382009b93b561f21e5942cf0aa5cfbc8ee21821ad4b89db66468bfbe7ad094dc",
+  "new_bytes": 8209,
+  "new_source": "main 12e760f5:packets/ATP_KXATPMATCH_SETTLED_JOIN_HARNESS/FROZEN_EXPERIMENT.json",
+  "prev_copy": "lab/governance/astra/packets/ATP_KXATPMATCH_SETTLED_JOIN_HARNESS/_prev/802b40b308724ae0980da123843d6a0655d087af2f162b3cc3a0f66d25e1d690.FROZEN_EXPERIMENT.json",
+  "edited_at_et": "2026-10-01T18:59:30-04:00",
+  "reason": "Ruling 2 (Conductor 2026-10-01): main is reference; no Conductor ACCEPT pins the box bytes. Box bytes = pre-harness desk declaration / scout freeze-bundle copy, superseded by merged harness (C4 PR50, ATP PR54)."
+ }
+]

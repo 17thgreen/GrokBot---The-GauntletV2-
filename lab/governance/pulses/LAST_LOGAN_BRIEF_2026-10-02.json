@@ -1,0 +1,12 @@
+{
+  "note": "Conductor stamp for hourly pulse trigger (e). Read this before flagging (e).",
+  "last_logan_status_et": "2026-10-03 08:48 ET",
+  "content": "First daytime pulse after quiet. Scoreboard unchanged (Q6-000 KEEP +6.90%). Crypto captures healthy overnight. Weather silence ends 09:10 ET \u2014 Collector r2d armed; card03/holdout still gated. Gauntlet BAD_ON_MAIN CB-002 capture_status quarantined (Steward). No new Examiner SCORED since PR64.",
+  "rule": "Trigger (e) fires only if >=3h since last_logan_status_et AND (daytime) one-paragraph scoreboard is due, or something material changed. Unchanged scoreboard alone is not a reason to message Logan in the evening.",
+  "r2d_oneshot": "ARMED in Collector seat (routine weather-r2d-morning-probe-relaunch, fires 09:10 ET Oct 3, self-deletes). Not in Conductor automation_status; do NOT create a duplicate.",
+  "written_by": "Conductor 2026-10-03 08:48 ET",
+  "wake_parent": true,
+  "wake_triggers": [
+    "e"
+  ]
+}

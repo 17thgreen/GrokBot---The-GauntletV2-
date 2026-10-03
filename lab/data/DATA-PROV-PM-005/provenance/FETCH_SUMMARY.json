@@ -1,0 +1,110 @@
+{
+  "DATA_ID": "DATA-PROV-PM-005",
+  "fetched_at_utc": "2026-09-13T19:45:02Z",
+  "finished_at_utc": "2026-09-13T19:50:38Z",
+  "parent_labels": "DATA-PROV-PM-001",
+  "paired_incumbent": "DATA-PROV-PM-003",
+  "sibling_not_unioned": "DATA-PROV-PM-002",
+  "auth": "none_public",
+  "trades_placed": 0,
+  "method": "GET clob.polymarket.com/prices-history fidelity=1; last print obs_time<=decision_time",
+  "pairing_rule": "exact (asset, OPEN_TIME, CLOSE_TIME) vs PM-003 Kalshi 15m",
+  "universe": {
+    "pairable_pm001_poly15_exact_oc_pm003": 553,
+    "by_asset": {
+      "BTC": 277,
+      "ETH": 276
+    },
+    "kalshi_oc_keys_pm003": 1208
+  },
+  "this_run": {
+    "n_attempted_new": 553,
+    "n_http_ok": 553,
+    "n_ge1_intra": 551,
+    "n_empty_history": 2,
+    "n_fail": 0,
+    "n_resumed_from_raw": 0
+  },
+  "totals_derived": {
+    "contracts_in_coverage": 553,
+    "contracts_ok_ge1": 551,
+    "checkpoint_rows": 2752,
+    "by_asset_ok": {
+      "BTC": 276,
+      "ETH": 275
+    }
+  },
+  "pairing_N_rem300_last": {
+    "BTC": 276,
+    "ETH": 275,
+    "note": "each row is a Poly last-print at rem=300 with exact OC twin in PM-003; not unioned with PM-002",
+    "target_N_per_headline": 80,
+    "BTC_meets_80": true,
+    "ETH_meets_80": true
+  },
+  "checkpoint_hit_table": [
+    {
+      "time_remaining_sec": 840,
+      "role": "dark",
+      "n_total": 548,
+      "by_asset": {
+        "BTC": 274,
+        "ETH": 274
+      }
+    },
+    {
+      "time_remaining_sec": 600,
+      "role": "dark",
+      "n_total": 551,
+      "by_asset": {
+        "BTC": 276,
+        "ETH": 275
+      }
+    },
+    {
+      "time_remaining_sec": 300,
+      "role": "headline",
+      "n_total": 551,
+      "by_asset": {
+        "BTC": 276,
+        "ETH": 275
+      }
+    },
+    {
+      "time_remaining_sec": 60,
+      "role": "captured",
+      "n_total": 551,
+      "by_asset": {
+        "BTC": 276,
+        "ETH": 275
+      }
+    },
+    {
+      "time_remaining_sec": 0,
+      "role": "captured",
+      "n_total": 551,
+      "by_asset": {
+        "BTC": 276,
+        "ETH": 275
+      }
+    }
+  ],
+  "construction": {
+    "polymarket": "CLOB prices-history last print p with OPEN<=t<=decision_time<=CLOSE; yes_bid/yes_ask=null; implied_p=last",
+    "forbidden": "invented mid, bid/ask, PM-002\u222aPM-003 silent union, pooling, Trade API, CF, orders"
+  },
+  "blockers_sample": [],
+  "blocker_count": 0,
+  "paths": {
+    "raw": "/workspace/lab/data/DATA-PROV-PM-005/raw/poly_prices",
+    "checkpoints": "/workspace/lab/data/DATA-PROV-PM-005/derived/checkpoints.ndjson",
+    "coverage": "/workspace/lab/data/DATA-PROV-PM-005/derived/contract_coverage.ndjson",
+    "normalized_table": "/workspace/lab/data/DATA-PROV-PM-005/derived/poly_15m_last_prints.ndjson",
+    "inventory": "/workspace/lab/data/DATA-PROV-PM-005/provenance/INVENTORY.md"
+  },
+  "pre_fetch_pm002_pairing_N_rem300": {
+    "BTC": 26,
+    "ETH": 26,
+    "note": "PM-002 alone; insufficient"
+  }
+}

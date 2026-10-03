@@ -1,0 +1,59 @@
+[
+  {
+    "url": "https://api.elections.kalshi.com/trade-api/v2/series/KXETH15M/markets/KXETH15M-26SEP111630-30/candlesticks?start_ts=1789157700&end_ts=1789158600&period_interval=1",
+    "ticker": "KXETH15M-26SEP111630-30",
+    "series": "KXETH15M",
+    "open_time": "2026-09-11T20:15:00Z",
+    "close_time": "2026-09-11T20:30:00Z",
+    "probed_at_utc": "2026-09-13T21:01:44Z",
+    "http": 429,
+    "error": "{\"error\":{\"code\":\"too_many_requests\",\"message\":\"too many requests\"}}",
+    "n_candles": null,
+    "rem180_present": null,
+    "yes_bid": null,
+    "yes_ask": null,
+    "mid": null
+  },
+  {
+    "url": "https://api.elections.kalshi.com/trade-api/v2/series/KXBTC15M/markets/KXBTC15M-26SEP111630-30/candlesticks?start_ts=1789157700&end_ts=1789158600&period_interval=1",
+    "ticker": "KXBTC15M-26SEP111630-30",
+    "series": "KXBTC15M",
+    "open_time": "2026-09-11T20:15:00Z",
+    "close_time": "2026-09-11T20:30:00Z",
+    "probed_at_utc": "2026-09-13T21:01:52Z",
+    "http": 429,
+    "error": "{\"error\":{\"code\":\"too_many_requests\",\"message\":\"too many requests\"}}",
+    "n_candles": null,
+    "rem180_present": null,
+    "yes_bid": null,
+    "yes_ask": null,
+    "mid": null
+  },
+  {
+    "url": "https://api.elections.kalshi.com/trade-api/v2/series/KXBTC15M/markets/KXBTC15M-26SEP041700-00/candlesticks?start_ts=1788554700&end_ts=1788555600&period_interval=1",
+    "ticker": "KXBTC15M-26SEP041700-00",
+    "series": "KXBTC15M",
+    "open_time": "2026-09-04T20:45:00Z",
+    "close_time": "2026-09-04T21:00:00Z",
+    "probed_at_utc": "2026-09-13T21:02:09Z",
+    "http": 200,
+    "error": null,
+    "n_candles": 15,
+    "rem180_present": true,
+    "yes_bid": 0.57,
+    "yes_ask": 0.58,
+    "mid": 0.575
+  },
+  {
+    "url": "https://api.elections.kalshi.com/trade-api/v2/series/KXETH15M/markets/KXETH15M-26SEP041700-00/candlesticks?start_ts=1788554700&end_ts=1788555600&period_interval=1",
+    "ticker": "KXETH15M-26SEP041700-00",
+    "series": "KXETH15M",
+    "probed_at_utc": "2026-09-13T21:02:48Z",
+    "http": 200,
+    "n_candles": 15,
+    "rem180_present": true,
+    "yes_bid": 0.18,
+    "yes_ask": 0.19,
+    "mid": 0.185
+  }
+]

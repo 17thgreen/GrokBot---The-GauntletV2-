@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "astra.registry.c5_kxbtc15m_panel.v0",
+  "title": "C5 KXBTC15M rolling 15m fee/queue honesty stress panel stub (GET-only)",
+  "description": "Bounded rolling BTC 15-minute up/down panel for fee/queue honesty stress under extreme turnover. NOT live crypto trading. No bacchus/kxeth15m strategy port. results/pnl/volume null. Bind R1-P1 + R1-P5. No Q6-000 retune.",
+  "packet": "C5-KXBTC15M-MEAS",
+  "status": "PANEL_SCHEMA_STUB_SEED",
+  "stubbed_at_utc": "2026-09-23T00:39:30Z",
+  "panel_version_const": "2026-09-22.c5-kxbtc15m-v0",
+  "freeze_cite": "lab/governance/astra/packets/C5_KXBTC15M_MEASUREMENT_FREEZE_KERNEL_2026-09-22.md",
+  "freeze_packet_sha256": "4d1b72a38603de181e71f80b3cc6515b170a2bffe11f8770dac1296373e50263",
+  "binds": {
+    "fee": "R1-P1 kalshi_feebook_lab_20260922 @22371178cb2663250b4762f328069571c48cb551",
+    "rails": "R1-P5 kalshi_rails_lab_20260922 @6a28e0d6254327ea4e6451c781bec56215ac6cac",
+    "fee_type_live": "quadratic / 1",
+    "no_000_retune": true,
+    "no_live_crypto_trading": true
+  },
+  "type": "object",
+  "required": [
+    "schema_id",
+    "panel_version",
+    "series_ticker",
+    "purpose",
+    "admitted_at",
+    "binds",
+    "capture",
+    "events",
+    "markets",
+    "results",
+    "pnl"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "astra.registry.c5_kxbtc15m_panel.v0"
+    },
+    "panel_version": {
+      "const": "2026-09-22.c5-kxbtc15m-v0"
+    },
+    "series_ticker": {
+      "const": "KXBTC15M"
+    },
+    "purpose": {
+      "const": "measurement_gate"
+    },
+    "admitted_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "null until admit.py after Clock join + Conductor greenlight; do not hand-fill; no silent expired-window backfill"
+    },
+    "binds": {
+      "type": "object"
+    },
+    "capture": {
+      "type": "object"
+    },
+    "events": {
+      "type": "array"
+    },
+    "markets": {
+      "type": "array"
+    },
+    "measurement_objects": {
+      "type": "object"
+    },
+    "results": {
+      "type": "null"
+    },
+    "pnl": {
+      "type": "null"
+    },
+    "volume": {
+      "type": "null"
+    }
+  }
+}

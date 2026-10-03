@@ -1,0 +1,211 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "astra.registry.r3_p4_l2_shape_panel.v0",
+  "title": "R3-P4 L2 longshot half-spread + depth shape panel stub (GET-only)",
+  "description": "Panel design stub for R3-P4-L2-SHAPE-SF1-SF2. Stratified sports vs non-sports public L2. Ports Dubach SF1/SF2 shape algebra to Kalshi bids-only books. Not a strategy. Cite packets/R3-P4_L2_SHAPE_LONGSHOT_DEPTH_FREEZE_KERNEL_2026-09-22.md. Does not steal ADMIT-1 / PIT@CLE / C1 poll budget. HOLD R3-P3. No live orders. results/pnl/volume null. Raw depth only when GET succeeds. SF1/SF2 values null until Simulator/Examiner.",
+  "packet": "R3-P4-L2-SHAPE-SF1-SF2",
+  "status": "PANEL_SCHEMA_STUB_SEED",
+  "stubbed_at_utc": "2026-09-23T00:06:20Z",
+  "panel_version_const": "2026-09-22.r3-p4-l2-shape-v0",
+  "freeze_cite": "lab/governance/astra/packets/R3-P4_L2_SHAPE_LONGSHOT_DEPTH_FREEZE_KERNEL_2026-09-22.md",
+  "freeze_packet_sha256": "4a4e7cc61efcb436955c566edc7a2681603a014725bc79047f9d825392064528",
+  "binds": {
+    "fee": "R1-P1 kalshi_feebook_lab_20260922 @22371178cb2663250b4762f328069571c48cb551",
+    "rails": "R1-P5 kalshi_rails_lab_20260922 @6a28e0d6254327ea4e6451c781bec56215ac6cac",
+    "fee_formula_id": "astra.r1p1.feebook.claude_order_level_ceil.v1",
+    "reciprocal_book": "ask_YES=1-best_NO_bid etc.",
+    "content_fresh_flag_required": true,
+    "forbid_inherited_q7_fee_literals": true,
+    "no_000_retune": true,
+    "no_lee_ready": true
+  },
+  "type": "object",
+  "required": [
+    "schema_id",
+    "panel_version",
+    "purpose",
+    "admitted_at",
+    "binds",
+    "capture",
+    "events",
+    "markets",
+    "measurement_objects",
+    "results",
+    "pnl"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "astra.registry.r3_p4_l2_shape_panel.v0"
+    },
+    "panel_version": {
+      "const": "2026-09-22.r3-p4-l2-shape-v0"
+    },
+    "purpose": {
+      "const": "measurement_gate"
+    },
+    "cohort_kind": {
+      "type": "string"
+    },
+    "admitted_at": {
+      "type": ["string", "null"],
+      "description": "null until Collector runs admit.py after Clock join + Conductor greenlight; stub stays null. Do not hand-fill."
+    },
+    "binds": {
+      "type": "object",
+      "required": [
+        "fee_lab_sha",
+        "rails_lab_sha",
+        "fee_formula_id",
+        "forbid_inherited_q7_fee_literals"
+      ],
+      "properties": {
+        "fee_lab_sha": {
+          "const": "22371178cb2663250b4762f328069571c48cb551"
+        },
+        "rails_lab_sha": {
+          "const": "6a28e0d6254327ea4e6451c781bec56215ac6cac"
+        },
+        "fee_formula_id": {
+          "const": "astra.r1p1.feebook.claude_order_level_ceil.v1"
+        },
+        "forbid_inherited_q7_fee_literals": {
+          "const": true
+        }
+      }
+    },
+    "capture": {
+      "type": "object",
+      "required": ["mode", "budget_isolation", "schedule"],
+      "properties": {
+        "mode": {
+          "const": "GET_only_public"
+        },
+        "host_allowlist": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "budget_isolation": {
+          "type": "object",
+          "required": ["separate_from_admit1", "no_pit_cle_poll_steal"],
+          "properties": {
+            "separate_from_admit1": { "const": true },
+            "no_pit_cle_poll_steal": { "const": true },
+            "hold_r3_p3_crawl": { "const": true }
+          }
+        },
+        "schedule": { "type": "object" }
+      }
+    },
+    "events": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/event_row" }
+    },
+    "markets": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/market_row" }
+    },
+    "measurement_objects": {
+      "type": "object",
+      "required": [
+        "SF1_half_spread_bps_by_mid_decile",
+        "SF2_l1_top10_depth_share_kl_vs_uniform",
+        "category_slice"
+      ],
+      "properties": {
+        "SF1_half_spread_bps_by_mid_decile": {
+          "type": "object",
+          "description": "Schema present; values null until Simulator/Examiner"
+        },
+        "SF2_l1_top10_depth_share_kl_vs_uniform": {
+          "type": "object",
+          "description": "Schema present; values null until Simulator/Examiner"
+        },
+        "category_slice": {
+          "type": "object"
+        }
+      }
+    },
+    "results": { "type": "null" },
+    "pnl": { "type": "null" },
+    "volume": { "type": "null" }
+  },
+  "$defs": {
+    "event_row": {
+      "type": "object",
+      "required": ["event_ticker", "series_ticker", "admitted_at", "panel_version", "category_slice"],
+      "properties": {
+        "event_ticker": { "type": "string" },
+        "series_ticker": { "type": "string" },
+        "category_slice": { "type": "string", "enum": ["sports", "non_sports"] },
+        "market_tickers": { "type": "array", "items": { "type": "string" } },
+        "admitted_at": { "type": ["string", "null"] },
+        "volume_fp": { "type": ["number", "string", "null"] },
+        "open_interest_fp": { "type": ["number", "string", "null"] },
+        "panel_version": { "const": "2026-09-22.r3-p4-l2-shape-v0" }
+      }
+    },
+    "market_row": {
+      "type": "object",
+      "required": [
+        "market_ticker",
+        "event_ticker",
+        "series_ticker",
+        "category_slice",
+        "admitted_at",
+        "panel_version",
+        "content_fresh_flag"
+      ],
+      "properties": {
+        "market_ticker": { "type": "string" },
+        "event_ticker": { "type": "string" },
+        "series_ticker": { "type": "string" },
+        "category_slice": { "type": "string", "enum": ["sports", "non_sports"] },
+        "admitted_at": { "type": ["string", "null"] },
+        "panel_version": { "const": "2026-09-22.r3-p4-l2-shape-v0" },
+        "content_fresh_flag": {
+          "type": "boolean",
+          "description": "Required R1-P5 rails field. Seed snapshots use judge_freshness(previous=None) => initial/true when orderbook payload present."
+        },
+        "content_fresh_reason": { "type": ["string", "null"] },
+        "raw_orderbook": {
+          "type": ["object", "null"],
+          "description": "Raw depth only when GET /markets/{ticker}/orderbook succeeds; else null. Do not invent."
+        },
+        "reciprocal_tob": {
+          "type": ["object", "null"],
+          "description": "R1-P1 reciprocal asks/spreads from bids-only book when raw OB present."
+        },
+        "half_spread_bps": {
+          "type": ["number", "null"],
+          "description": "SF1 leaf — null until Simulator"
+        },
+        "l2_shape": {
+          "type": ["object", "null"],
+          "description": "SF2 leaf — null until Simulator"
+        },
+        "volume_fp": { "type": ["number", "string", "null"] },
+        "open_interest_fp": { "type": ["number", "string", "null"] }
+      }
+    }
+  },
+  "measurement_objects_at_sample": [
+    "SF1: median half-spread bps of mid by mid-price decile (null until Simulator/Examiner)",
+    "SF2: L1/top-10 depth share + KL vs uniform 1/10 (null until Simulator/Examiner)",
+    "category slice: sports vs non-sports (no 000 knobs)",
+    "R1-P1 reciprocal TOB from raw bids-only orderbook when GET succeeds",
+    "R1-P5 content_fresh_flag required on every market row",
+    "raw API volume_fp / open_interest_fp stay null in stub — zeros not promoted"
+  ],
+  "does_not_modify": [
+    "ADMIT-1 prospective/ recorder runtime / capture.sqlite / poll budget",
+    "C1 / PIT@CLE poll budget",
+    "Q6-000 signal / 000 retune",
+    "R3-P3 FL bands crawl (HOLD)",
+    "S1 / S4 / S5 / R2-P3 panels"
+  ],
+  "out_of_scope": [
+    "Lee-Ready",
+    "live orders / signed trading host",
+    "invented depth / volume / OI / results / pnl"
+  ]
+}

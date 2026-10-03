@@ -1,0 +1,271 @@
+{
+  "schema": "steward.gauntlet_oversize_landing_list.v1",
+  "generated_at": "2026-10-01T20:57:15-04:00",
+  "generated_by": "The Steward (KALSHI); inputs only, no repo writes",
+  "authority": "Conductor GO 2026-10-01: one real-checkout cloud agent lands the deferred oversize set; source of truth = box bytes pinned by sha256",
+  "source_log": {
+    "path": "lab/governance/astra/steward/GAUNTLET_SYNC_2026-10-01.log",
+    "sha256": "0a87fa4740b1f92a69b284ad406a6fa49f08e5171d45f199285ecf4eba1ad27c",
+    "run_id": "sync-20261001-2046",
+    "deferred_oversize_logged": 46
+  },
+  "target": {
+    "repo": "17thgreen/GrokBot---The-GauntletV2-",
+    "branch": "main",
+    "checked_against_head": "516f498ea77f909365af8559a60245046f2cd2c3"
+  },
+  "source_root": "/workspace (repo path lab/X == box /workspace/lab/X)",
+  "checks": [
+    "sha256 re-hash equals log",
+    "UTF-8 text, no NUL",
+    "inside v2 sync scope",
+    "never-push path rules",
+    "secret-pattern scan (v2 patterns + PEM body + key/token query params + RPC URLs + .secrets paths)",
+    "not already byte-identical (git blob) on GauntletV2 main"
+  ],
+  "counts": {
+    "included": 46,
+    "excluded": 0,
+    "included_bytes": 6485331
+  },
+  "modifies_existing_on_main": [
+    "lab/archive/INDEX.md",
+    "lab/archive/tests/TEST-20260910-001-EDGE-20260910-001.json",
+    "lab/archive/tests/TEST-20260910-002-EDGE-20260910-003.json",
+    "lab/archive/tests/TEST-20260910-003-EDGE-20260910-004.json",
+    "lab/governance/astra/registry/PACKET_INDEX.md"
+  ],
+  "entries": [
+    {
+      "path": "lab/archive/INDEX.md",
+      "size": 36197,
+      "sha256": "68afc60ec92a368493240861ef90f8ea91f442b6f428fae9b326269faf1ef283"
+    },
+    {
+      "path": "lab/archive/datasets/DATA-PROV-PM-002.CHECKSUMS.sha256",
+      "size": 28369,
+      "sha256": "cdbe77646512575fb6b6cd20f75492f7709b8a1147cdaffd4ad398939e11293e"
+    },
+    {
+      "path": "lab/archive/tests/TEST-20260910-001-EDGE-20260910-001.json",
+      "size": 186598,
+      "sha256": "05b360199a30f160680c756e94ed7f306e076161ff0bd584e68c6443e98e6eb5"
+    },
+    {
+      "path": "lab/archive/tests/TEST-20260910-002-EDGE-20260910-003.json",
+      "size": 71612,
+      "sha256": "08aed389f5917b7340e8924902f63bbbcf986b06c68c7897a2c0294e988764ac"
+    },
+    {
+      "path": "lab/archive/tests/TEST-20260910-003-EDGE-20260910-004.json",
+      "size": 36001,
+      "sha256": "498a4d6eea520ac56614e2804ebb05b0f4f528cdd3ff133276048fa5feccd509"
+    },
+    {
+      "path": "lab/archive/tests/TEST-20260911-006-PM002-MARKET-BASELINE.json",
+      "size": 115642,
+      "sha256": "a513e67faeb3fb5a566b9c13b245c31093abae03faaf3eb8dc066789db832c5f"
+    },
+    {
+      "path": "lab/archive/tests/TEST-20260911-007-PM003-MARKET-BASELINE.json",
+      "size": 218107,
+      "sha256": "480a7f3c539d5636830d895d416cf04a5d27a6b25767237b8b144528b20d1e87"
+    },
+    {
+      "path": "lab/archive/tests/TEST-20260912-001-F3-INCREMENTAL.json",
+      "size": 641184,
+      "sha256": "b777572ef8469a4e346c6d7f7baa2b99b71c96c3076a3e5645d6ae046ab307d9"
+    },
+    {
+      "path": "lab/archive/tests/TEST-20260912-002-F1-INCREMENTAL.json",
+      "size": 1093867,
+      "sha256": "e9fa8bc6176a560753665c91c4534d1a918c63a050c8edeeb959399f36e9a6de"
+    },
+    {
+      "path": "lab/archive/tests/TEST-20260913-002-W2C-INCREMENTAL.json",
+      "size": 522562,
+      "sha256": "c1237d666b2fbb4ee58dd5d71adb14f2e24d73e4162e7c34d1fc4805068fcc61"
+    },
+    {
+      "path": "lab/archive/tests/TEST-20260913-003-W2E-INCREMENTAL.json",
+      "size": 220188,
+      "sha256": "e8403419ab0feb0a9ac75adcb08c7b3cf66e6dedd769b7040651f61c642ba144"
+    },
+    {
+      "path": "lab/archive/tests/TEST-20260913-004-W2A-INCREMENTAL.json",
+      "size": 496146,
+      "sha256": "547d552aeec0c5bdd78755bb3f0206ff9e0f91d23b7b9112a0cd72c38b80ff99"
+    },
+    {
+      "path": "lab/archive/tests/TEST-20260913-005-CBVEL-INCREMENTAL.json",
+      "size": 210153,
+      "sha256": "2b406858fd796bc0ecf2f1dcb103f636599d479b52ddcbda41e28f52b42c17c8"
+    },
+    {
+      "path": "lab/archive/tests/TEST-20260913-006-W2D-IVRV-INCREMENTAL.json",
+      "size": 489375,
+      "sha256": "39bfc7ab2db22c0edc9f796d0a7c8f9cea90301c94ff53b4631554e04a146a7a"
+    },
+    {
+      "path": "lab/archive/tests/TEST-20260913-007-W2B-LAST-AT-L-INCREMENTAL.json",
+      "size": 212111,
+      "sha256": "d88430fe421b0782b6177b013998ed16da42b7019de93df6c6e9d1f3e5bdfbc9"
+    },
+    {
+      "path": "lab/archive/tests/TEST-20260914-001-F4-WICK-INCREMENTAL.json",
+      "size": 165248,
+      "sha256": "2b58442857df21a5d55a54f9a89bbfa72ef432c77433434eee4ec8327c4e770a"
+    },
+    {
+      "path": "lab/data/DATA-PROV-001/provenance/CLOCK_AUDIT_REPORT.json",
+      "size": 34151,
+      "sha256": "a18124c89623341e0ce502037621837a3e24dc86bd13a6d57549675a53160d91"
+    },
+    {
+      "path": "lab/data/DATA-PROV-CF-001/provenance/fetch_meta.json",
+      "size": 64244,
+      "sha256": "f482b2228410935fb6e53161f7297ad5c8a70a9cd53a1c656f9ba95d675e5792"
+    },
+    {
+      "path": "lab/data/DATA-PROV-L3-001/provenance/CLOCK_AUDIT_REPORT.json",
+      "size": 30638,
+      "sha256": "320c112005d7fe99cd68c7ec2139b28de1833b2510785b4cdca628e1fe998f86"
+    },
+    {
+      "path": "lab/data/DATA-PROV-OI-001/provenance/CLOCK_AUDIT_REPORT.json",
+      "size": 176641,
+      "sha256": "ee84248ea0e4153df7ecfebd190687c4a45b8f10df5d484363c2e68ee71f4b7c"
+    },
+    {
+      "path": "lab/data/DATA-PROV-PM-001/provenance/CLOCK_AUDIT_REPORT.json",
+      "size": 45057,
+      "sha256": "1586953c698e0905bcb8ec9b48968ca08c3744f0655039a2d3bb113ccec0dba4"
+    },
+    {
+      "path": "lab/data/DATA-PROV-PM-002/provenance/CLOCK_AUDIT_REPORT.json",
+      "size": 37581,
+      "sha256": "f5b54d2265c70e22fbd2763fd68986bc2d536adeeccfb8dbc3e3543aef8bd5b0"
+    },
+    {
+      "path": "lab/data/DATA-PROV-PM-003/provenance/CLOCK_AUDIT_REPORT.json",
+      "size": 34565,
+      "sha256": "236a5e05cb0916352dbc5e8ebe37ad11ca67d3fa75d508dbf1742a3aee58370c"
+    },
+    {
+      "path": "lab/data/DATA-PROV-TRADES-001/provenance/CLOCK_AUDIT_REPORT.json",
+      "size": 116465,
+      "sha256": "17b7ecdd02fbd51bffd76bfe21fcc23345ea451848d21da1527873763060c0e7"
+    },
+    {
+      "path": "lab/governance/astra/SCOUT_CARD06_OPEN_WINDOW_CENSUS_2026-09-24.md",
+      "size": 34690,
+      "sha256": "b79f4011849e7603dcbb6b1d452bd21d7cba3e3bd1c01f4d301f650294f53bfc"
+    },
+    {
+      "path": "lab/governance/astra/packets/Q6S5_KXMLBSPREAD_GAME_PHASE_SETTLED_TAPE_FREEZE_2026-10-01.md",
+      "size": 27569,
+      "sha256": "5beba803f3f6d33410409acc23ad3b782be62dc8829a0f54584e1da8ac18575a"
+    },
+    {
+      "path": "lab/governance/astra/packets/WX_FL_KXHIGH_SETTLED_TAPE_FREEZE_2026-10-01.md",
+      "size": 31392,
+      "sha256": "aec5b760f8539ea9f30aa1c3601534dccf78a62ee2026cb939842656e3c20e0f"
+    },
+    {
+      "path": "lab/governance/astra/registry/PACKET_INDEX.md",
+      "size": 82906,
+      "sha256": "b2549971d38afe209d84f2dcd8cab6ead7968438ac6f24bf2a28cc46a03b7125"
+    },
+    {
+      "path": "lab/governance/astra/registry/RESULTS_LANDING_MANIFEST_2026-09-24.json",
+      "size": 121966,
+      "sha256": "fcbbdddfcecf3248648a4f941f0e252cd20bf0db673cf91b0b2cc2f8212137cf"
+    },
+    {
+      "path": "lab/governance/astra/registry/RESULTS_LANDING_MANIFEST_2026-09-24.md",
+      "size": 46294,
+      "sha256": "421b68f44743a83120e8f3b7749c39617cba4ae5ecefe171df87afcc3522477b"
+    },
+    {
+      "path": "lab/governance/astra/registry/RESULTS_LANDING_TIER_A_SHA256SUMS_2026-09-24.txt",
+      "size": 33839,
+      "sha256": "89662fa6bc939092fb68468c025ea136c213d6a7f3c037045126f7d03596d36b"
+    },
+    {
+      "path": "lab/governance/astra/registry/STUDY_CLASS_LABELS_2026-09-24.md",
+      "size": 34461,
+      "sha256": "8f36bf10ff45dab31011d1e61dfb951fff1021ad7104aa6cef5f874d2f09e8c6"
+    },
+    {
+      "path": "lab/governance/astra/research/KALSHI_EDGE_RESEARCH_2026-09-24.txt",
+      "size": 48760,
+      "sha256": "e0223a39dcb1336fef2ad572d4fcfc7770ceb55ee69496bb59438a40dec990c3"
+    },
+    {
+      "path": "lab/governance/astra/steward/HYGIENE_2026-09-24.md",
+      "size": 315255,
+      "sha256": "a4ff6724498e1ba85850ee5264ac7cb1ce3b7ec929178f6be83ee77ee7a032ec"
+    },
+    {
+      "path": "lab/governance/astra/templates/EXAMINER_KALSHI_SCORECARD_TEMPLATE_v1.1.json",
+      "size": 35105,
+      "sha256": "4042e4f63bdba98faca8fe2f741556dc79260cffbc28d293dc834ba40fa29ffd"
+    },
+    {
+      "path": "lab/governance/astra/templates/EXAMINER_KALSHI_SCORECARD_TEMPLATE_v1.2.json",
+      "size": 38172,
+      "sha256": "56bcf6269a42031d9d90496e9a65c2292321aed2165033f6fb44ff8cc4d6b1cc"
+    },
+    {
+      "path": "lab/harness/examiner/src/run_cbvel_incremental.py",
+      "size": 36910,
+      "sha256": "28b3ff59b57f22efdd6f5b318dd772e46bf6409a27a16061a3674fe7b8680926"
+    },
+    {
+      "path": "lab/harness/examiner/src/run_edge004.py",
+      "size": 28410,
+      "sha256": "d08929350bcbab26e74d47bcbfad53c4d0221be682d8825ddd8ff2ec2802b30b"
+    },
+    {
+      "path": "lab/harness/examiner/src/run_f1_incremental.py",
+      "size": 40747,
+      "sha256": "33b2edfaef67e0d1643401a54c9a9e58563fe6de5e712dd650fd473bfc7e4bf4"
+    },
+    {
+      "path": "lab/harness/examiner/src/run_f3_incremental.py",
+      "size": 27221,
+      "sha256": "d6cdc66cad7a106a2858ead47ad8c68d538da3bf31e21d69265979fb96597956"
+    },
+    {
+      "path": "lab/harness/examiner/src/run_f4_wick_incremental.py",
+      "size": 35512,
+      "sha256": "50e65492455e680744568d69a7deb9554f6f327390c5e1d20276976aa2d6db96"
+    },
+    {
+      "path": "lab/harness/examiner/src/run_w2a_incremental.py",
+      "size": 39339,
+      "sha256": "bce0b9db50f9ea4c0e8ef1c8c58848826e109faf443f56ef48ebc19aa7b821b4"
+    },
+    {
+      "path": "lab/harness/examiner/src/run_w2b_last_at_l_incremental.py",
+      "size": 41276,
+      "sha256": "93b24a4fcb0bc113ee20c61f71397b1c9ac62e49e35f7e0700a6b1280dc95b89"
+    },
+    {
+      "path": "lab/harness/examiner/src/run_w2c_incremental.py",
+      "size": 28134,
+      "sha256": "6eca911fb71a4a7e04903363d5c0d61c7f6a8e95208f47f1bdd7eaca698552bd"
+    },
+    {
+      "path": "lab/harness/examiner/src/run_w2d_ivrv_incremental.py",
+      "size": 38922,
+      "sha256": "1a9d2460b1ae4b6a956e452ad4136e84abc006efbcf897d24829a63b84e9f254"
+    },
+    {
+      "path": "lab/harness/examiner/src/run_w2e_incremental.py",
+      "size": 35749,
+      "sha256": "8c58b22728588fd5ad2d03aa17c79f754927a6735b58b90183ce30b435ec7394"
+    }
+  ],
+  "excluded": []
+}

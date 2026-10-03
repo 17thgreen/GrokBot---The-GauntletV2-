@@ -1,0 +1,597 @@
+{
+  "AUDIT_ID": "CLOCK_AUDIT_W2A_CF_T14_JOIN",
+  "FEATURE": "DRAFT-FEAT-20260913-003",
+  "GATE": "DRAFT-ABST-20260913-003",
+  "WAVE": "W2-A / Wave 004",
+  "DATA_IDS": [
+    "DATA-PROV-PM-003",
+    "DATA-PROV-PM-001",
+    "DATA-PROV-CF-001"
+  ],
+  "audited_at_utc": "2026-09-13T19:36:29.235808+00:00",
+  "auditor": "Clock",
+  "new_fetch": false,
+  "policy": {
+    "no_alpha": true,
+    "no_examiner_delta": true,
+    "no_Binance": true,
+    "no_invented_prints": true,
+    "EXPIRATION_VALUE_audit_only_never_feature": true,
+    "not_close_minute_CLEARED_path": true,
+    "no_T_minus_1_mid": true,
+    "trade_forbidden": true
+  },
+  "sources": {
+    "checkpoints": "/workspace/lab/data/DATA-PROV-PM-003/derived/checkpoints.ndjson",
+    "pm001_kalshi": "/workspace/lab/data/DATA-PROV-PM-001/normalized/kalshi_15m_btc_eth_resolved.ndjson",
+    "cf_hour_raw": "/workspace/lab/data/DATA-PROV-CF-001/raw",
+    "feature_card": "/workspace/lab/archive/features/DRAFT-FEAT-20260913-003-W2A-cf-mid-basis.md",
+    "gate_card": "/workspace/lab/archive/features/DRAFT-ABST-20260913-003-W2A-uncertainty.md",
+    "prior_cf_verdict": "/workspace/lab/data/DATA-PROV-CF-001/provenance/DATA_VERDICT_DATA-PROV-CF-001.md",
+    "clock_order": "/workspace/lab/governance/CLOCK_ORDER_W2A_CF_T14_JOIN_2026-09-13.md",
+    "script": "/workspace/lab/data/DATA-PROV-CF-001/provenance/clock_audit_W2A_CF_T14_JOIN.py",
+    "forbidden_close_minute_not_used": "/workspace/lab/data/DATA-PROV-CF-001/derived/close_minute_1hz.ndjson",
+    "forbidden_pre_close_not_used": "/workspace/lab/data/DATA-PROV-CF-001/derived/pre_close_last.ndjson"
+  },
+  "exact_join_formula": "cf_t = last-in-second CF print from DATA-PROV-CF-001 HOUR tape (BRTI if BTC else ETHUSD_RTI); s = floor(decision_time_ms/1000); among prints with floor(time/1000)==s AND time<=decision_time_ms, take max(time) print's value; require exists. K = PM-001.FLOOR_STRIKE by contract_id; require present AND OPEN_TIME<=decision_time. m_t = same-row PM-003 mid; mid timestamp = decision_time. rem=840. Fail-closed if any missing. NOT close-minute CLEARED extractor; NOT Binance; NOT EXPIRATION_VALUE; NOT T-1 mid.",
+  "near_deg": {
+    "lo": 0.02,
+    "hi": 0.98
+  },
+  "rem": 840,
+  "pm001_meta": {
+    "n_rows": 1328,
+    "n_unique_contract_id": 1328,
+    "n_unique_venue_native_id": 1328,
+    "n_null_FLOOR_STRIKE": 0,
+    "status_counts": {
+      "RESOLVED": 1328
+    },
+    "resolution_counts": {
+      "YES": 660,
+      "NO": 668
+    },
+    "one_row_per_contract": true,
+    "revision_feed_present": false,
+    "revision_policy_tag": "[V] static dump snapshot \u2014 one FLOOR_STRIKE per CONTRACT_ID; [A] no post-OPEN revision feed in this dump (cannot observe revisions).",
+    "EXPIRATION_VALUE_note": "Field present on PM-001 rows for audit inventory only; FORBIDDEN in feature join / p_t construction / cf join key.",
+    "n_null_EXPIRATION_VALUE": 0
+  },
+  "headlines": [
+    {
+      "id": "headline_BTC_T14m",
+      "cell": "KALSHI|15m|BTC|T-14m|mid",
+      "asset": "BTC",
+      "index": "BRTI",
+      "rem": 840,
+      "t_minus": "T-14m",
+      "role": "headline",
+      "n_candidates_at_rem": 604,
+      "scored_exclude_breakdown": {
+        "non_mid_at_rem_dropped": 0,
+        "near_deg_scored_dropped": 0,
+        "void_disputed_scored_dropped": 0,
+        "missing_same_t_mid_dropped": 0
+      },
+      "N_scored": 604,
+      "N_on_second_boundary": 604,
+      "N_obs_time_ne_decision_time": 0,
+      "N_pairable": 604,
+      "N_with_cf_K_m_pairable_A": 604,
+      "N_with_cf_K_m_pairable_B": 604,
+      "N_missing_cf_A": 0,
+      "N_missing_cf_B": 0,
+      "N_missing_K": 0,
+      "N_missing_m": 0,
+      "N_missing_either_A": 0,
+      "N_missing_either_B": 0,
+      "missing_reasons_A": {},
+      "missing_reasons_B": {},
+      "K_cert": {
+        "n_FLOOR_STRIKE_present": 604,
+        "n_FLOOR_STRIKE_null": 0,
+        "n_OPEN_TIME_le_decision_time": 604,
+        "n_OPEN_TIME_gt_decision_time": 0,
+        "n_pm001_join_miss": 0,
+        "join_keys": [
+          "contract_id->CONTRACT_ID",
+          "venue_native_id->VENUE_NATIVE_ID"
+        ],
+        "knowable_at_t": true,
+        "revision_evidence": "[V] snapshot \u2014 single FLOOR_STRIKE per contract in static dump; [A] no revision feed \u2014 cannot certify absence of post-OPEN revision beyond dump contents.",
+        "fail_closed_if_missing": true,
+        "tags": [
+          "V_snapshot",
+          "A_no_revision_feed"
+        ]
+      },
+      "m_t_cert": {
+        "rule": "same-row PM-003 mid; decision_time present; implied_p present",
+        "n_m_ok": 604,
+        "n_obs_time_ne_decision_time": 0,
+        "knowable_at_t": true,
+        "fail_closed_if_missing": true,
+        "T_minus_1_substitute_used": false
+      },
+      "cf_t_cert_A": {
+        "rule": "order-literal: s=floor(t/1000); last print in s with time<=t from hour tape {index}_HOUR_*.json",
+        "n_cf_ok": 604,
+        "n_missing": 0,
+        "n_lookahead": 0,
+        "lag_stats_ms": {
+          "n": 604,
+          "min_ms": 0,
+          "max_ms": 0,
+          "median_ms": 0.0,
+          "unique_lags_ms": [
+            0
+          ]
+        },
+        "print_time_ms_mod_1000_counts": {
+          "0": 604
+        },
+        "knowable_at_t": true,
+        "lookahead": false,
+        "incomplete_second_note": "All scored decision_times land on second boundaries (t%1000==0). A therefore selects prints with time==t (ms mod 0) \u2014 the first print of unix second s, before second s is complete under CF-001 lock rule (slot locked iff (s+1)*1000 <= now_ms). Order forbids treating incomplete current second as complete.",
+        "source_path_pattern": "/workspace/lab/data/DATA-PROV-CF-001/raw/BRTI_HOUR_YYYY-MM-DDTHH.json",
+        "used_close_minute_derived": false,
+        "fail_closed_if_missing": true
+      },
+      "cf_t_cert_B": {
+        "rule": "completed-second safe: if t%1000==0 use last-in-second of s-1 (fully elapsed); else same as A",
+        "n_cf_ok": 604,
+        "n_missing": 0,
+        "n_lookahead": 0,
+        "lag_stats_ms": {
+          "n": 604,
+          "min_ms": 200,
+          "max_ms": 200,
+          "median_ms": 200.0,
+          "unique_lags_ms": [
+            200
+          ]
+        },
+        "knowable_at_t": true,
+        "lookahead": false,
+        "primary_for_pairable_counts": false,
+        "note": "Measured for knowability caveat only; primary pairable counts use A as ordered. Do not silently switch Feature join to B without documenting."
+      },
+      "incomplete_second_comparison": {
+        "N_on_second_boundary": 604,
+        "all_on_second_boundary": true,
+        "A_pairable_cf_only": 604,
+        "B_pairable_cf_only": 604,
+        "A_holes_solely_from_on_second": false,
+        "B_denser_than_A": false,
+        "A_and_B_both_complete": true,
+        "caveat": "A has zero holes but uses incomplete-second boundary prints (lag=0, print at exact t). B also complete (lag\u2248200ms from s-1). Stamp CONDITIONAL knowability caveat; do not silently switch to B."
+      },
+      "hour_tape_load": {
+        "index": "BRTI",
+        "n_hours_loaded": 167,
+        "n_hours_missing": 0,
+        "missing_hours": [],
+        "n_needed_unix_seconds": 1208,
+        "hour_holes_affecting_rows": 0
+      },
+      "close_window_check": {
+        "n_decision_before_close_start": 604,
+        "n_decision_ge_close_start": 0,
+        "n_close_time_miss": 0,
+        "all_before_close_start": true,
+        "note": "rem=840 should imply decision_time_ms < close_start_ms by construction"
+      },
+      "forbidden_paths": {
+        "used_close_minute_1hz_ndjson_for_join_values": false,
+        "used_pre_close_last_for_join_values": false,
+        "used_Binance": false,
+        "used_EXPIRATION_VALUE_as_feature_or_join_key": false,
+        "used_T_minus_1_mid_substitute": false,
+        "invented_CF_prints": false
+      },
+      "samples_ok": [
+        {
+          "contract_id": "PROV-KALSHI-KXBTC15M-26SEP111630-30",
+          "decision_time": "2026-09-11T20:16:00Z",
+          "decision_time_ms": 1789157760000,
+          "FLOOR_STRIKE": 77446.67,
+          "OPEN_TIME": "2026-09-11T20:15:00Z",
+          "cf_t_A": 77431.43,
+          "cf_print_time_ms_A": 1789157760000,
+          "lag_ms_A": 0,
+          "cf_t_B": 77431.67,
+          "cf_print_time_ms_B": 1789157759800,
+          "lag_ms_B": 200,
+          "implied_p_m_t": 0.435,
+          "index": "BRTI",
+          "hour_file": "BRTI_HOUR_2026-09-11T20.json"
+        },
+        {
+          "contract_id": "PROV-KALSHI-KXBTC15M-26SEP111615-15",
+          "decision_time": "2026-09-11T20:01:00Z",
+          "decision_time_ms": 1789156860000,
+          "FLOOR_STRIKE": 77306.16,
+          "OPEN_TIME": "2026-09-11T20:00:00Z",
+          "cf_t_A": 77266.21,
+          "cf_print_time_ms_A": 1789156860000,
+          "lag_ms_A": 0,
+          "cf_t_B": 77266.05,
+          "cf_print_time_ms_B": 1789156859800,
+          "lag_ms_B": 200,
+          "implied_p_m_t": 0.375,
+          "index": "BRTI",
+          "hour_file": "BRTI_HOUR_2026-09-11T20.json"
+        },
+        {
+          "contract_id": "PROV-KALSHI-KXBTC15M-26SEP111600-00",
+          "decision_time": "2026-09-11T19:46:00Z",
+          "decision_time_ms": 1789155960000,
+          "FLOOR_STRIKE": 77271.95,
+          "OPEN_TIME": "2026-09-11T19:45:00Z",
+          "cf_t_A": 77277.86,
+          "cf_print_time_ms_A": 1789155960000,
+          "lag_ms_A": 0,
+          "cf_t_B": 77278.07,
+          "cf_print_time_ms_B": 1789155959800,
+          "lag_ms_B": 200,
+          "implied_p_m_t": 0.495,
+          "index": "BRTI",
+          "hour_file": "BRTI_HOUR_2026-09-11T19.json"
+        }
+      ],
+      "samples_missing": [],
+      "samples_A_vs_B": [
+        {
+          "decision_time": "2026-09-11T20:16:00Z",
+          "t_ms": 1789157760000,
+          "on_second_boundary": true,
+          "cf_A_time": 1789157760000,
+          "cf_A_val": 77431.43,
+          "lag_A": 0,
+          "cf_B_time": 1789157759800,
+          "cf_B_val": 77431.67,
+          "lag_B": 200
+        },
+        {
+          "decision_time": "2026-09-11T20:01:00Z",
+          "t_ms": 1789156860000,
+          "on_second_boundary": true,
+          "cf_A_time": 1789156860000,
+          "cf_A_val": 77266.21,
+          "lag_A": 0,
+          "cf_B_time": 1789156859800,
+          "cf_B_val": 77266.05,
+          "lag_B": 200
+        },
+        {
+          "decision_time": "2026-09-11T19:46:00Z",
+          "t_ms": 1789155960000,
+          "on_second_boundary": true,
+          "cf_A_time": 1789155960000,
+          "cf_A_val": 77277.86,
+          "lag_A": 0,
+          "cf_B_time": 1789155959800,
+          "cf_B_val": 77278.07,
+          "lag_B": 200
+        }
+      ]
+    },
+    {
+      "id": "headline_ETH_T14m",
+      "cell": "KALSHI|15m|ETH|T-14m|mid",
+      "asset": "ETH",
+      "index": "ETHUSD_RTI",
+      "rem": 840,
+      "t_minus": "T-14m",
+      "role": "headline",
+      "n_candidates_at_rem": 604,
+      "scored_exclude_breakdown": {
+        "non_mid_at_rem_dropped": 0,
+        "near_deg_scored_dropped": 0,
+        "void_disputed_scored_dropped": 0,
+        "missing_same_t_mid_dropped": 0
+      },
+      "N_scored": 604,
+      "N_on_second_boundary": 604,
+      "N_obs_time_ne_decision_time": 0,
+      "N_pairable": 604,
+      "N_with_cf_K_m_pairable_A": 604,
+      "N_with_cf_K_m_pairable_B": 604,
+      "N_missing_cf_A": 0,
+      "N_missing_cf_B": 0,
+      "N_missing_K": 0,
+      "N_missing_m": 0,
+      "N_missing_either_A": 0,
+      "N_missing_either_B": 0,
+      "missing_reasons_A": {},
+      "missing_reasons_B": {},
+      "K_cert": {
+        "n_FLOOR_STRIKE_present": 604,
+        "n_FLOOR_STRIKE_null": 0,
+        "n_OPEN_TIME_le_decision_time": 604,
+        "n_OPEN_TIME_gt_decision_time": 0,
+        "n_pm001_join_miss": 0,
+        "join_keys": [
+          "contract_id->CONTRACT_ID",
+          "venue_native_id->VENUE_NATIVE_ID"
+        ],
+        "knowable_at_t": true,
+        "revision_evidence": "[V] snapshot \u2014 single FLOOR_STRIKE per contract in static dump; [A] no revision feed \u2014 cannot certify absence of post-OPEN revision beyond dump contents.",
+        "fail_closed_if_missing": true,
+        "tags": [
+          "V_snapshot",
+          "A_no_revision_feed"
+        ]
+      },
+      "m_t_cert": {
+        "rule": "same-row PM-003 mid; decision_time present; implied_p present",
+        "n_m_ok": 604,
+        "n_obs_time_ne_decision_time": 0,
+        "knowable_at_t": true,
+        "fail_closed_if_missing": true,
+        "T_minus_1_substitute_used": false
+      },
+      "cf_t_cert_A": {
+        "rule": "order-literal: s=floor(t/1000); last print in s with time<=t from hour tape {index}_HOUR_*.json",
+        "n_cf_ok": 604,
+        "n_missing": 0,
+        "n_lookahead": 0,
+        "lag_stats_ms": {
+          "n": 604,
+          "min_ms": 0,
+          "max_ms": 0,
+          "median_ms": 0.0,
+          "unique_lags_ms": [
+            0
+          ]
+        },
+        "print_time_ms_mod_1000_counts": {
+          "0": 604
+        },
+        "knowable_at_t": true,
+        "lookahead": false,
+        "incomplete_second_note": "All scored decision_times land on second boundaries (t%1000==0). A therefore selects prints with time==t (ms mod 0) \u2014 the first print of unix second s, before second s is complete under CF-001 lock rule (slot locked iff (s+1)*1000 <= now_ms). Order forbids treating incomplete current second as complete.",
+        "source_path_pattern": "/workspace/lab/data/DATA-PROV-CF-001/raw/ETHUSD_RTI_HOUR_YYYY-MM-DDTHH.json",
+        "used_close_minute_derived": false,
+        "fail_closed_if_missing": true
+      },
+      "cf_t_cert_B": {
+        "rule": "completed-second safe: if t%1000==0 use last-in-second of s-1 (fully elapsed); else same as A",
+        "n_cf_ok": 604,
+        "n_missing": 0,
+        "n_lookahead": 0,
+        "lag_stats_ms": {
+          "n": 604,
+          "min_ms": 200,
+          "max_ms": 200,
+          "median_ms": 200.0,
+          "unique_lags_ms": [
+            200
+          ]
+        },
+        "knowable_at_t": true,
+        "lookahead": false,
+        "primary_for_pairable_counts": false,
+        "note": "Measured for knowability caveat only; primary pairable counts use A as ordered. Do not silently switch Feature join to B without documenting."
+      },
+      "incomplete_second_comparison": {
+        "N_on_second_boundary": 604,
+        "all_on_second_boundary": true,
+        "A_pairable_cf_only": 604,
+        "B_pairable_cf_only": 604,
+        "A_holes_solely_from_on_second": false,
+        "B_denser_than_A": false,
+        "A_and_B_both_complete": true,
+        "caveat": "A has zero holes but uses incomplete-second boundary prints (lag=0, print at exact t). B also complete (lag\u2248200ms from s-1). Stamp CONDITIONAL knowability caveat; do not silently switch to B."
+      },
+      "hour_tape_load": {
+        "index": "ETHUSD_RTI",
+        "n_hours_loaded": 167,
+        "n_hours_missing": 0,
+        "missing_hours": [],
+        "n_needed_unix_seconds": 1208,
+        "hour_holes_affecting_rows": 0
+      },
+      "close_window_check": {
+        "n_decision_before_close_start": 604,
+        "n_decision_ge_close_start": 0,
+        "n_close_time_miss": 0,
+        "all_before_close_start": true,
+        "note": "rem=840 should imply decision_time_ms < close_start_ms by construction"
+      },
+      "forbidden_paths": {
+        "used_close_minute_1hz_ndjson_for_join_values": false,
+        "used_pre_close_last_for_join_values": false,
+        "used_Binance": false,
+        "used_EXPIRATION_VALUE_as_feature_or_join_key": false,
+        "used_T_minus_1_mid_substitute": false,
+        "invented_CF_prints": false
+      },
+      "samples_ok": [
+        {
+          "contract_id": "PROV-KALSHI-KXETH15M-26SEP111630-30",
+          "decision_time": "2026-09-11T20:16:00Z",
+          "decision_time_ms": 1789157760000,
+          "FLOOR_STRIKE": 2544.97,
+          "OPEN_TIME": "2026-09-11T20:15:00Z",
+          "cf_t_A": 2543.82,
+          "cf_print_time_ms_A": 1789157760000,
+          "lag_ms_A": 0,
+          "cf_t_B": 2543.82,
+          "cf_print_time_ms_B": 1789157759800,
+          "lag_ms_B": 200,
+          "implied_p_m_t": 0.405,
+          "index": "ETHUSD_RTI",
+          "hour_file": "ETHUSD_RTI_HOUR_2026-09-11T20.json"
+        },
+        {
+          "contract_id": "PROV-KALSHI-KXETH15M-26SEP111615-15",
+          "decision_time": "2026-09-11T20:01:00Z",
+          "decision_time_ms": 1789156860000,
+          "FLOOR_STRIKE": 2539.72,
+          "OPEN_TIME": "2026-09-11T20:00:00Z",
+          "cf_t_A": 2539.13,
+          "cf_print_time_ms_A": 1789156860000,
+          "lag_ms_A": 0,
+          "cf_t_B": 2539.15,
+          "cf_print_time_ms_B": 1789156859800,
+          "lag_ms_B": 200,
+          "implied_p_m_t": 0.465,
+          "index": "ETHUSD_RTI",
+          "hour_file": "ETHUSD_RTI_HOUR_2026-09-11T20.json"
+        },
+        {
+          "contract_id": "PROV-KALSHI-KXETH15M-26SEP111600-00",
+          "decision_time": "2026-09-11T19:46:00Z",
+          "decision_time_ms": 1789155960000,
+          "FLOOR_STRIKE": 2542.85,
+          "OPEN_TIME": "2026-09-11T19:45:00Z",
+          "cf_t_A": 2542.43,
+          "cf_print_time_ms_A": 1789155960000,
+          "lag_ms_A": 0,
+          "cf_t_B": 2542.43,
+          "cf_print_time_ms_B": 1789155959800,
+          "lag_ms_B": 200,
+          "implied_p_m_t": 0.47,
+          "index": "ETHUSD_RTI",
+          "hour_file": "ETHUSD_RTI_HOUR_2026-09-11T19.json"
+        }
+      ],
+      "samples_missing": [],
+      "samples_A_vs_B": [
+        {
+          "decision_time": "2026-09-11T20:16:00Z",
+          "t_ms": 1789157760000,
+          "on_second_boundary": true,
+          "cf_A_time": 1789157760000,
+          "cf_A_val": 2543.82,
+          "lag_A": 0,
+          "cf_B_time": 1789157759800,
+          "cf_B_val": 2543.82,
+          "lag_B": 200
+        },
+        {
+          "decision_time": "2026-09-11T20:01:00Z",
+          "t_ms": 1789156860000,
+          "on_second_boundary": true,
+          "cf_A_time": 1789156860000,
+          "cf_A_val": 2539.13,
+          "lag_A": 0,
+          "cf_B_time": 1789156859800,
+          "cf_B_val": 2539.15,
+          "lag_B": 200
+        },
+        {
+          "decision_time": "2026-09-11T19:46:00Z",
+          "t_ms": 1789155960000,
+          "on_second_boundary": true,
+          "cf_A_time": 1789155960000,
+          "cf_A_val": 2542.43,
+          "lag_A": 0,
+          "cf_B_time": 1789155959800,
+          "cf_B_val": 2542.43,
+          "lag_B": 200
+        }
+      ]
+    }
+  ],
+  "certifications": {
+    "A_cf": {
+      "pass": true,
+      "summary": "cf_t = last-in-second from DATA-PROV-CF-001 hour tape (BRTI/ETHUSD_RTI); print.time <= decision_time_ms on all scored (A); no look-ahead; not close-minute path. Incomplete-second caveat: all t on-second; A uses ms=0 print of unfinished s. B (s-1) also complete \u2014 documented, not silently adopted.",
+      "lookahead": false,
+      "used_close_minute_path": false,
+      "primary_rule": "A_order_literal"
+    },
+    "B_K": {
+      "pass": true,
+      "summary": "K = FLOOR_STRIKE from PM-001 by contract_id. Present + OPEN_TIME<=t on all scored. [V] static dump snapshot \u2014 one FLOOR_STRIKE per CONTRACT_ID; [A] no post-OPEN revision feed in this dump (cannot observe revisions). Tags: [V] snapshot, [A] no revision feed.",
+      "tags": [
+        "V_snapshot",
+        "A_no_revision_feed"
+      ]
+    },
+    "C_m": {
+      "pass": true,
+      "summary": "m_t = same-row PM-003 mid; decision_time present; implied_p present. No T\u22121 mid substitute."
+    },
+    "D_scored_row": {
+      "pass": true,
+      "summary": "Scored: rem=840, venue=KALSHI, window=15m, implied_p_method==mid, not near-deg (\u22640.02/\u22650.98), VOID/DISPUTED excluded, same-t mid required (TEST-007-style). See per-headline exclude breakdown."
+    },
+    "E_coverage": {
+      "pass": true,
+      "summary": "Per headline (primary A): {'KALSHI|15m|BTC|T-14m|mid': {'N_scored': 604, 'N_pairable_A': 604, 'N_pairable_B': 604, 'N_missing_cf_A': 0, 'N_missing_cf_B': 0, 'N_missing_K': 0, 'N_missing_m': 0, 'N_missing_either_A': 0}, 'KALSHI|15m|ETH|T-14m|mid': {'N_scored': 604, 'N_pairable_A': 604, 'N_pairable_B': 604, 'N_missing_cf_A': 0, 'N_missing_cf_B': 0, 'N_missing_K': 0, 'N_missing_m': 0, 'N_missing_either_A': 0}}",
+      "per_headline": {
+        "KALSHI|15m|BTC|T-14m|mid": {
+          "N_scored": 604,
+          "N_pairable_A": 604,
+          "N_pairable_B": 604,
+          "N_missing_cf_A": 0,
+          "N_missing_cf_B": 0,
+          "N_missing_K": 0,
+          "N_missing_m": 0,
+          "N_missing_either_A": 0
+        },
+        "KALSHI|15m|ETH|T-14m|mid": {
+          "N_scored": 604,
+          "N_pairable_A": 604,
+          "N_pairable_B": 604,
+          "N_missing_cf_A": 0,
+          "N_missing_cf_B": 0,
+          "N_missing_K": 0,
+          "N_missing_m": 0,
+          "N_missing_either_A": 0
+        }
+      }
+    },
+    "F_knowability": {
+      "pass": true,
+      "cf_A_knowable": true,
+      "cf_detail": "Yes under A (print exists, time<=t). Caveat: incomplete-second boundary on all rows \u2014 A is not completed-second 1Hz.",
+      "K_knowable": true,
+      "K_detail": "Yes if frozen at OPEN and OPEN<=t. Certified OPEN<=t; static dump [V] / no revision feed [A].",
+      "m_knowable": true,
+      "m_detail": "Yes: same-row mid at decision_time.",
+      "lookahead": false,
+      "lookahead_detail": "No look-ahead: chosen print.time <= decision_time_ms always (A and B).",
+      "incomplete_second_caveat": true,
+      "incomplete_second_detail": "All decision_times on-second; A lag=0 (print at t); B lag=200ms (s-1). Both dense. CONDITIONAL caveat \u2014 do not treat A as completed second."
+    },
+    "G_forbidden_paths": {
+      "pass": true,
+      "summary": "Unused for join values: close_minute_1hz.ndjson, pre_close_last, Binance, EXPIRATION_VALUE as feature/join key, T\u22121 mid, invented prints. EXPIRATION_VALUE inventoried on PM-001 only.",
+      "close_minute_used": false,
+      "Binance_used": false,
+      "EXPIRATION_VALUE_in_join": false,
+      "T_minus_1_used": false,
+      "invented_prints": false
+    }
+  },
+  "verdict": {
+    "recommended_verdict": "CONDITIONAL",
+    "verdict_scope": "join_only",
+    "rationale": "Join-only: hour-tape last-in-second (A) pairs on all scored rows with K present (OPEN_TIME<=t) and same-t m_t; no look-ahead (print.time<=t); forbidden paths unused. CONDITIONAL (not CLEARED) because: (1) all decision_times are on-second boundaries and A selects the ms=0 print of the *incomplete* current second \u2014 order forbids treating incomplete current second as complete; B (completed-second safe, s-1) is also dense (document, do not silently switch); (2) FLOOR_STRIKE is [V] snapshot / [A] no revision feed; (3) prior CF-001 CLEARED is close-minute F2 path only \u2014 this T-14m hour-tape join is a distinct path (READY \u2260 CLEARED for F2 reuse).",
+    "all_pairable_A": true,
+    "any_missing_A": false,
+    "any_lookahead": false,
+    "any_wrong_path": false,
+    "incomplete_second_caveat": true,
+    "A_and_B_both_complete": true,
+    "k_revision_feed_present": false,
+    "prior_CF001_CLEARED_is_close_minute_only": true,
+    "this_join_is_hour_tape_T14m": true,
+    "EXPIRATION_VALUE_in_feature_join": false,
+    "Binance_used": false,
+    "close_minute_extractor_used": false,
+    "T_minus_1_mid_used": false,
+    "invented_prints": false
+  },
+  "recommended_verdict": "CONDITIONAL",
+  "paths": {
+    "script": "/workspace/lab/data/DATA-PROV-CF-001/provenance/clock_audit_W2A_CF_T14_JOIN.py",
+    "json": "/workspace/lab/data/DATA-PROV-CF-001/provenance/CLOCK_AUDIT_W2A_CF_T14_JOIN.json",
+    "md": "/workspace/lab/data/DATA-PROV-CF-001/provenance/CLOCK_AUDIT_W2A_CF_T14_JOIN.md",
+    "verdict_draft": "/workspace/lab/data/DATA-PROV-CF-001/provenance/DATA_VERDICT_W2A_CF_T14_JOIN.md"
+  }
+}

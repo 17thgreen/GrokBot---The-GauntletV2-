@@ -1,0 +1,85 @@
+{
+  "id": "STEP0_HEAD_PINS_2026-09-24_R2",
+  "supersedes": null,
+  "prior_snapshot_kept": {
+    "path": "registry/STEP0_HEAD_PINS_2026-09-24.json",
+    "sha256": "4c7d2a3e746c138d04b45fa5ad793fd8f5a325debb68b5ffc61aec2cb24ddfe4",
+    "main_at_prior": "34a2720218b4f4f2d6dd0cbde6334ee672a3684b (PR49)",
+    "status": "KEPT AS-IS (snapshot)"
+  },
+  "seat": "The Archivist (Registry)",
+  "authority": "Conductor ruling (e), 2026-09-24",
+  "repo": "17thgreen/GPT-6-Astra-Deathmatch",
+  "method": "GitHub connector READ-ONLY: list_commits(sha=main, per_page=3) at ~19:48 ET and (per_page=2) at ~19:58 ET; list_branches(per_page=100, single page) at ~19:57 ET. No writes.",
+  "queried_at_et": "2026-09-24T19:54:43-04:00",
+  "main": {
+    "requested_short": "37ad5b7b",
+    "full_sha": "37ad5b7b366c10dcdf278c2325611e6f426a62c6",
+    "resolution": "RESOLVED",
+    "message_first_line": "infra(ADMIT-1): 3s throttle between per-game metadata calls (#52)",
+    "commit_date_utc": "2026-09-24T23:46:28Z",
+    "commit_date_et": "2026-09-24T19:46:28-04:00",
+    "parent_observed": "959c3f2beaec5f999b4852c428a3c4cdae1e9603 (PR50 C4-RJ, 19:43:06 ET), whose predecessor is 34a27202 (PR49)",
+    "still_head": false,
+    "head_now": {
+      "full_sha": "eb4a4a9477011d7d75573bb55c04ea6f81fe0a89",
+      "message_first_line": "Add a read-only Q7 reconciliation memo. (#51)",
+      "commit_date_utc": "2026-09-24T23:52:59Z",
+      "commit_date_et": "2026-09-24T19:52:59-04:00",
+      "parent_observed": "37ad5b7b366c10dcdf278c2325611e6f426a62c6",
+      "note": "Main advanced past the requested pin during this session (PR51 squash). Both recorded; the requested pin 37ad5b7b is the R2 snapshot value, eb4a4a94 is the observed head at query time."
+    }
+  },
+  "research_heads": [
+    {
+      "branch": "research/q7-paired-price",
+      "expected": "01c726ae9244d801d359e00df67d6a71f4012669",
+      "head_now": "01c726ae9244d801d359e00df67d6a71f4012669",
+      "still_head": true,
+      "step0_value": "01c726ae9244d801d359e00df67d6a71f4012669",
+      "resolution": "UNCHANGED_SINCE_STEP0"
+    },
+    {
+      "branch": "research/q8-joint-routing",
+      "expected": "d7079b6fece902e6e4603114a1d9ed5ef5a246c5",
+      "head_now": "d7079b6fece902e6e4603114a1d9ed5ef5a246c5",
+      "still_head": true,
+      "step0_value": "d7079b6fece902e6e4603114a1d9ed5ef5a246c5",
+      "resolution": "UNCHANGED_SINCE_STEP0"
+    },
+    {
+      "branch": "research/m2-continuation",
+      "expected": "f44574e8f318920cc8fdf87c9c3d35c18bca2107",
+      "head_now": "f44574e8f318920cc8fdf87c9c3d35c18bca2107",
+      "still_head": true,
+      "step0_value": "f44574e8f318920cc8fdf87c9c3d35c18bca2107",
+      "resolution": "UNCHANGED_SINCE_STEP0"
+    },
+    {
+      "branch": "research/all-market-structure-20260924",
+      "expected": "cba057e62b3162bbf5cab17f4e2fee532a209ddc",
+      "head_now": "cba057e62b3162bbf5cab17f4e2fee532a209ddc",
+      "still_head": true,
+      "step0_value": "cba057e62b3162bbf5cab17f4e2fee532a209ddc",
+      "resolution": "UNCHANGED_SINCE_STEP0"
+    }
+  ],
+  "extra_heads_observed": [
+    {
+      "branch": "research/neglected-hybrid-20260924",
+      "head_now": "2253c03cd86eb5515325f1d91b43bdcbea7a902c",
+      "still_head": true
+    },
+    {
+      "branch": "cursor/q7-reconciliation-memo-bd6a",
+      "head_now": "9ca0cc1532d33cbe7020740f787442a016c07eea",
+      "note": "PR51 head (merged as eb4a4a94)"
+    }
+  ],
+  "report_pin_note": "all-market-structure report pin a59c9e331dcfcd71c957e753bc4fd2460df403c0 remains NOT head (head cba057e6, unchanged since step-0).",
+  "evidence_tags": {
+    "V": "verified on GitHub read-only",
+    "I": "inferred",
+    "U": "unknown"
+  }
+}

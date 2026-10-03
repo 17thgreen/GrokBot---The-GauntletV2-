@@ -1,0 +1,16 @@
+# REPAIR — GV2 BAD_ON_MAIN CLOCK_AUDIT_W2E_STRIKE_L3_JOIN.md (2026-10-03)
+- **STATUS: REPAIRED (2026-10-03 04:54 ET).** Steward launched cloud agent bc-fe5c08d0-3efa-559e-b50b-49a96976ef75 under Conductor GO (~04:49 ET, reconfirmed ~04:53 ET). It used a real checkout and a base64 payload (sha256 37d7fb10…2932), passed pre-commit checks (7445 B; sha256 4def2af4…507c; blob 792d9169), and made a normal fast-forward push [V]
+- Trigger: RUN_END sync-20261003-0445 bad_on_main=2 (this path plus CB-002 capture_status.json); landed in batch 2, commit 386be3a221dc9268df6040cf9e377ca893ca518d (04:48:46 ET), got blob 6780d1c46323f62e5beb998fcbc2f60da8d12d4a [V]
+- Path: lab/data/DATA-PROV-L3-001/provenance/CLOCK_AUDIT_W2E_STRIKE_L3_JOIN.md
+- Source: box file, 7,445 B, mtime 2026-10-01 22:50:32 ET, sha256 4def2af43706ef0d9581b6725b9d04f66f6ef4b0b2ee4a4b4a4b8e93dab0507c, blob 792d9169b35ffed005caba16d27244c67cfe93de (re-verified with git hash-object 04:50 ET) [V]
+- Bad blob fetched raw at 386be3a2: 7,445 B, git hash-object 6780d1c46323f62e5beb998fcbc2f60da8d12d4a [V]
+- Diff vs bad blob: same length; exactly 2 bytes differ (offsets 4977 and 5746, "/" -> ";"), on 2 lines (93 and 108) [V]:
+  - box  `… static dump [V]/ no revision feed [A].`
+  - main `… static dump [V]; no revision feed [A].`
+- Classification: **punctuation retype normalization**: the `[V]/ ` separator became `[V]; ` [V]. Most likely the inline retype "tidied" it [I]. **Not** the CF_T14 class: no heading/bullet change, no blank line dropped, and the line count is unchanged [V]. Same root cause class as CF_T14 and AMD-20260911-PM-002 (+1 B): content retyped inline drifts. All three files contain Markdown headings (this one 18, CF_T14 yes, AMD 4) [V]
+- Leakage scan of the payload: no evidence_private / source_probe_electindex / ElectIndex / secret-pattern hits [V]
+- Repair payload (box): /workspace/steward_restore_20261001/l3_repair_payload.b64 (sha256 37d7fb10d92e92909164535d868625d7dade2cdedf888de9a5fc9be9091b2932; decodes to the 4def2af4… / 792d9169… bytes) [V]
+- Cloud-agent prompt (box): /workspace/steward_restore_20261001/l3_repair_CLOUDAGENT_PROMPT.md (sha256 cf71be5f3d55ae46ed9f906ea659b71476285ba3478cf3a000477ce6cc368867; payload embedded and also attachable; real checkout, verify size/sha256/blob before commit, 1 file, normal push, rebase-retry and never force, ls-tree check after) [V]
+- Repair: cloud agent bc-fe5c08d0-3efa-559e-b50b-49a96976ef75, real checkout, byte-exact write, 1 file only [V]
+- Commit: 06d048675b5374066b18d404868e6470ee77bacb (parent 386be3a221dc9268df6040cf9e377ca893ca518d; push 386be3a..06d0486; signature verified) [V]
+- Steward independent check via GitHub connector (04:55 ET): commit files = 1 (the target, +2/-2: `;` restored to `/` on lines 93 and 108); main contents API blob = 792d9169b35ffed005caba16d27244c67cfe93de, size 7445 [V]
