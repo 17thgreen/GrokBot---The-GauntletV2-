@@ -1,1 +1,299 @@
-PLACEHOLDER
+{
+  "AUDIT_ID": "CLOCK_AUDIT_CB001_PM007_JOIN",
+  "LABEL": "DATA-PROV-CB-001",
+  "JOIN_PEER": "DATA-PROV-PM-007",
+  "AUDITED_AT_UTC": "2026-09-13T21:20:59.672848+00:00",
+  "ORDER": "/workspace/lab/governance/CLOCK_ORDER_CB001_PM007_JOIN_2026-09-13.md",
+  "POLICY_LOCK_B": "/workspace/lab/governance/CBVEL_ON_MINUTE_POLICY_2026-09-13.md",
+  "PRIOR_CB_PM003_VERDICT_NOT_COVERAGE": "/workspace/lab/data/DATA-PROV-CB-001/provenance/DATA_VERDICT_CB001_PM003_JOIN.md",
+  "PM007_TAPE_VERDICT": "/workspace/lab/data/DATA-PROV-PM-007/provenance/DATA_VERDICT_PM007_T3_JOIN.md",
+  "TRADE": "FORBIDDEN",
+  "SCOPE": "join_inventory_only",
+  "WAVE": "008 / W2-D / DRAFT-FEAT-20260913-006",
+  "FEATURE_LOCK": "B: bar_end < decision_time",
+  "POLICY_A": "bar_end <= decision_time \u2014 caveat count ONLY, not Feature-scored",
+  "NOT": [
+    "Feature",
+    "READY",
+    "alpha",
+    "Examiner_scores",
+    "p_t",
+    "Binance_fill",
+    "CF_BRTI_fill",
+    "L3_fill",
+    "PM003_join_reuse_as_rem180_proof"
+  ],
+  "sources": {
+    "pm007": "/workspace/lab/data/DATA-PROV-PM-007/derived/checkpoints.ndjson",
+    "btc_csv": "/workspace/lab/data/DATA-PROV-CB-001/raw/BTC-USD_1m.csv",
+    "eth_csv": "/workspace/lab/data/DATA-PROV-CB-001/raw/ETH-USD_1m.csv",
+    "claim_join": "/workspace/lab/data/DATA-PROV-CB-001/derived/pm007_cb_join.ndjson",
+    "claim_coverage": "/workspace/lab/data/DATA-PROV-CB-001/derived/pm007_cb_join_coverage.json",
+    "join_script_intent_only": "/workspace/lab/data/DATA-PROV-CB-001/provenance/join_pm007_cb.py",
+    "new_network_fetch": false
+  },
+  "join_rule_B": {
+    "decision_time": "PM-007 row decision_time (CLOSE\u2212180)",
+    "product": "BTC-USD if BTC else ETH-USD",
+    "bar": "last CB-001 1m candle with bar_end < decision_time (STRICT <)",
+    "prior": "immediately previous completed 1m (bar_end = bar.bar_end - 60)",
+    "v_CB": "(bar.close - prior.close) / prior.close",
+    "m_t": "PM-007 same-row mid; require implied_p_method == mid",
+    "incomplete_current_minute": "missing (fail-closed)"
+  },
+  "join_rule_A_caveat_only": {
+    "bar": "last CB-001 1m with bar_end <= decision_time",
+    "scoring": "caveat count only \u2014 do NOT Feature-score"
+  },
+  "raw_density": {
+    "BTC-USD": {
+      "n_expected_in_window": 10140,
+      "n_bars_in_window": 10140,
+      "n_missing_in_window": 0,
+      "missing_sample": [],
+      "n_unique_bars_file": 10142,
+      "n_extra_outside_window": 2,
+      "extra_sample": [
+        "2026-09-04T19:59:00Z",
+        "2026-09-11T21:00:00Z"
+      ]
+    },
+    "ETH-USD": {
+      "n_expected_in_window": 10140,
+      "n_bars_in_window": 10140,
+      "n_missing_in_window": 0,
+      "missing_sample": [],
+      "n_unique_bars_file": 10142,
+      "n_extra_outside_window": 2,
+      "extra_sample": [
+        "2026-09-04T19:59:00Z",
+        "2026-09-11T21:00:00Z"
+      ]
+    }
+  },
+  "pm007": {
+    "rows_total": 1208,
+    "rows_with_decision_time": 1208,
+    "decision_times_on_exact_minute": 1208,
+    "time_remaining_sec_counts": {
+      "180": 1208
+    },
+    "implied_p_method_counts": {
+      "mid": 1208
+    }
+  },
+  "independent_rebuild_B": {
+    "n_rows": 1208,
+    "close_ok": 1208,
+    "velocity_ok": 1208,
+    "missing_close": 0,
+    "lookahead_bar_end_ge_t": 0,
+    "bar_end_eq_t": 0,
+    "bar_end_lt_t": 1208,
+    "lag_sec_histogram": {
+      "60": 1208
+    },
+    "lag_sec_unique": [
+      60
+    ],
+    "B_silently_equals_A_on_minute": 0
+  },
+  "policy_A_caveat_counts": {
+    "close_ok": 1208,
+    "velocity_ok": 1208,
+    "on_minute_bar_end_eq_t": 1208,
+    "lookahead_bar_end_gt_t": 0,
+    "lag_sec_histogram": {
+      "0": 1208
+    },
+    "lag_sec_unique": [
+      0
+    ],
+    "note": "NOT Feature-scored; caveat count only"
+  },
+  "claim_vs_rebuild": {
+    "claim_join_rows": 1208,
+    "claim_coverage_join_rows": 1208,
+    "claim_headline": "1208/1208",
+    "independent_B_close_ok": 1208,
+    "independent_B_velocity_ok": 1208,
+    "n_field_match_rows": 1208,
+    "n_mismatch_rows": 0,
+    "n_absent_in_claim": 0,
+    "n_absent_in_rebuild": 0,
+    "mismatch_field_counts": {},
+    "mismatch_samples": [],
+    "compare_fields": [
+      "cb_close_t<->cb_close_t",
+      "cb_close_tm1<->cb_close_t_minus_1m",
+      "v_CB<->v_CB",
+      "cb_bar_start_iso<->cb_bar_start_iso",
+      "cb_bar_end_iso<->cb_bar_end_iso",
+      "velocity_knowable_at_t<->velocity_knowable_at_t",
+      "policy_A_bar_end_iso<->policy_A_bar_end_iso",
+      "policy_A_on_minute<->policy_A_on_minute"
+    ]
+  },
+  "by_asset": {
+    "BTC": {
+      "n": 604,
+      "B_close_ok": 604,
+      "B_velocity_ok": 604,
+      "A_on_minute": 604,
+      "B_lookahead": 0
+    },
+    "ETH": {
+      "n": 604,
+      "B_close_ok": 604,
+      "B_velocity_ok": 604,
+      "A_on_minute": 604,
+      "B_lookahead": 0
+    }
+  },
+  "by_asset_rem": [
+    {
+      "asset": "BTC",
+      "rem": "T-3m",
+      "n_pm007": 604,
+      "B_close_ok": 604,
+      "B_velocity_ok": 604,
+      "B_missing_close": 0,
+      "B_missing_prior_only": 0,
+      "B_lookahead": 0,
+      "B_bar_end_eq_t": 0,
+      "B_bar_end_lt_t": 604,
+      "B_close_coverage": 1.0,
+      "B_velocity_coverage": 1.0,
+      "A_close_ok": 604,
+      "A_velocity_ok": 604,
+      "A_on_minute": 604,
+      "A_lookahead": 0,
+      "mid_ok": 604,
+      "non_mid": 0
+    },
+    {
+      "asset": "ETH",
+      "rem": "T-3m",
+      "n_pm007": 604,
+      "B_close_ok": 604,
+      "B_velocity_ok": 604,
+      "B_missing_close": 0,
+      "B_missing_prior_only": 0,
+      "B_lookahead": 0,
+      "B_bar_end_eq_t": 0,
+      "B_bar_end_lt_t": 604,
+      "B_close_coverage": 1.0,
+      "B_velocity_coverage": 1.0,
+      "A_close_ok": 604,
+      "A_velocity_ok": 604,
+      "A_on_minute": 604,
+      "A_lookahead": 0,
+      "mid_ok": 604,
+      "non_mid": 0
+    }
+  ],
+  "certify": {
+    "A": {
+      "name": "A_cb_close_B",
+      "pass": true,
+      "detail": "Feature lock B: last CB-001 1m with bar_end < decision_time. B_close_ok=1208/1208; B_bar_end_lt_t=1208; B_bar_end_eq_t=0 (must be 0); B_lookahead(bar_end>=t)=0."
+    },
+    "B": {
+      "name": "B_prior",
+      "pass": true,
+      "detail": "Prior completed bar (bar_end_B - 60) present for velocity under lock B. B_velocity_ok=1208; missing_prior_only=0."
+    },
+    "C": {
+      "name": "C_velocity",
+      "pass": true,
+      "detail": "v_CB=(bar.close - prior.close)/prior.close under lock B; knowable iff both closes exist. B_velocity_ok=1208/1208."
+    },
+    "D": {
+      "name": "D_m",
+      "pass": true,
+      "detail": "m_t = same-row PM-007 mid; require implied_p_method == mid. mid_ok=1208/1208; non_mid=0; method_counts={'mid': 1208}."
+    },
+    "E": {
+      "name": "E_coverage",
+      "pass": true,
+      "detail": "Independent B close_ok=1208/1208; B velocity_ok=1208/1208; claim join_rows=1208; 100% field match vs claim=1208; mismatches=0; rem=180 only=1208.",
+      "by_asset": [
+        {
+          "asset": "BTC",
+          "rem": "T-3m",
+          "n_pm007": 604,
+          "B_close_ok": 604,
+          "B_velocity_ok": 604,
+          "B_missing_close": 0,
+          "B_missing_prior_only": 0,
+          "B_lookahead": 0,
+          "B_bar_end_eq_t": 0,
+          "B_bar_end_lt_t": 604,
+          "B_close_coverage": 1.0,
+          "B_velocity_coverage": 1.0,
+          "A_close_ok": 604,
+          "A_velocity_ok": 604,
+          "A_on_minute": 604,
+          "A_lookahead": 0,
+          "mid_ok": 604,
+          "non_mid": 0
+        },
+        {
+          "asset": "ETH",
+          "rem": "T-3m",
+          "n_pm007": 604,
+          "B_close_ok": 604,
+          "B_velocity_ok": 604,
+          "B_missing_close": 0,
+          "B_missing_prior_only": 0,
+          "B_lookahead": 0,
+          "B_bar_end_eq_t": 0,
+          "B_bar_end_lt_t": 604,
+          "B_close_coverage": 1.0,
+          "B_velocity_coverage": 1.0,
+          "A_close_ok": 604,
+          "A_velocity_ok": 604,
+          "A_on_minute": 604,
+          "A_lookahead": 0,
+          "mid_ok": 604,
+          "non_mid": 0
+        }
+      ],
+      "note": "PM-003 join does NOT cover rem=180 \u2014 this audit is independent."
+    },
+    "F": {
+      "name": "F_lookahead",
+      "pass": true,
+      "detail": "Under B: bar_end >= t count=0; bar_end == t count=0; B_silently_equals_A_on_minute=0. (Policy A lookahead bar_end > t = 0 \u2014 caveat count only.)"
+    },
+    "G": {
+      "name": "G_forbidden",
+      "pass": true,
+      "detail": "No Binance/CF/BRTI/L3 fill; raw source = DATA-PROV-CB-001 CSV only; no PM-003-join reuse as proof of rem=180 coverage; v_CB not treated as forecast; no Examiner scores / no p_t / no alpha; Trade FORBIDDEN; Not Feature; Not READY."
+    }
+  },
+  "caveats": [
+    {
+      "name": "policy_A_on_minute_caveat_count_only",
+      "n_decision_time_exact_minute": 1208,
+      "n_A_bar_end_eq_decision_time": 1208,
+      "n_B_bar_end_eq_decision_time": 0,
+      "note": "Policy A (bar_end <= t) selects bar_end == t for every on-minute decision_time. That is a caveat COUNT only \u2014 Feature lock is B (bar_end < t), which never uses the on-boundary bar. Do not Feature-score A. Do not silently switch from B to A."
+    },
+    {
+      "name": "pm003_join_does_not_cover_rem_180",
+      "note": "Prior CB\u00d7PM003 CONDITIONAL verdict covers rem 840/600/300/60/0 only. This rem=180 join is rebuilt independently; do not invent coverage from PM-003."
+    }
+  ],
+  "VERDICT": "CLEARED",
+  "VERDICT_SCOPE": "join_only",
+  "QUALITY_STATUS": "JOIN_CLEARED_LOCK_B",
+  "rationale": "Independent rebuild under Feature lock B (bar_end < decision_time) matches claim 1208/1208, 0 lookahead, dense BTC/ETH, B never uses bar_end==t (lag typically 60s when t on-minute). Policy A on-minute coincidence (1208/1208) noted as caveat-count only \u2014 not Feature-scored. PM-003 join does not cover rem=180; this audit is independent from CB raw CSV + PM-007 checkpoints.",
+  "blockers": [],
+  "artifacts": {
+    "script": "/workspace/lab/data/DATA-PROV-CB-001/provenance/clock_audit_CB001_PM007_JOIN.py",
+    "json": "/workspace/lab/data/DATA-PROV-CB-001/provenance/CLOCK_AUDIT_CB001_PM007_JOIN.json",
+    "md": "/workspace/lab/data/DATA-PROV-CB-001/provenance/CLOCK_AUDIT_CB001_PM007_JOIN.md",
+    "verdict": "/workspace/lab/data/DATA-PROV-CB-001/provenance/DATA_VERDICT_CB001_PM007_JOIN.md"
+  }
+}
