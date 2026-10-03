@@ -1,0 +1,21 @@
+{
+  "phase": "extend_120_120_minus_proto_overlap",
+  "kalshi_additional": {
+    "n_attempted": 100,
+    "n_http_ok": 98,
+    "n_ge1_intra": 98,
+    "hit_rate_ge1_intra": 0.98,
+    "mean_intra_points": 14.7,
+    "mean_checkpoints_hit": 4.9
+  },
+  "polymarket_additional": {
+    "n_attempted": 100,
+    "n_http_ok": 100,
+    "n_ge1_intra": 100,
+    "hit_rate_ge1_intra": 1.0,
+    "mean_intra_points": 10.0,
+    "mean_checkpoints_hit": 4.5
+  },
+  "n_kalshi_additional": 100,
+  "n_poly_additional": 100
+}
