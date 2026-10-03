@@ -1,0 +1,25 @@
+{
+  "data_id": "DATA-PROV-CB-002",
+  "mode": "FORWARD_CAPTURE_ONLY",
+  "updated_at": "2026-10-03T08:46:28.649Z",
+  "pid": 365427,
+  "state": "running",
+  "kept_bars": 2404,
+  "failures": 41,
+  "poll_s": 30.0,
+  "products": [
+    "BTC-USD",
+    "ETH-USD"
+  ],
+  "seen_bar_starts": {
+    "BTC-USD": 22447,
+    "ETH-USD": 22447
+  },
+  "last_sample": {
+    "product": "ETH-USD",
+    "time_iso": "2026-10-03T08:45:00Z",
+    "close": 2682.29,
+    "local_receipt_time": "2026-10-03T08:46:28.349Z"
+  },
+  "note": "Completed 1m bars only. Public Exchange API. Not Clock. Not Examiner. Trade FORBIDDEN."
+}
