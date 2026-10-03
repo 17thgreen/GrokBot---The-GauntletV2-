@@ -1,0 +1,8 @@
+{
+  "status": "SUPERSEDED",
+  "superseded_by": "R2-P1",
+  "see": "packets/R2-P1_FEEBOOK_RAILS_HYGIENE_000_FREEZE_2026-09-22.md",
+  "canonical_sha256": "ddcd4427f67fb0ed8d12a7a6a49aabea3b25b356bcb64a7d84d5c4590d08b563",
+  "do_not_implement": true,
+  "superseded_at": "2026-09-22T22:59:24.143631+00:00"
+}

@@ -1,0 +1,14 @@
+{
+  "symbol": "ETHUSDT",
+  "n_bars": 476821,
+  "n_filled": 475175,
+  "w_trade_ms": 60000,
+  "l_size": 2000,
+  "k_sub": 3,
+  "p_size": 0.95,
+  "placebo_seed": 20260911,
+  "holdout_start_ms": 1752505500000,
+  "derived_tag": "[A]",
+  "days_streamed": 1657,
+  "max_days": null
+}
