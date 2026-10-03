@@ -1,0 +1,317 @@
+{
+  "audit_id": "CLOCK_AUDIT_W2C_SIBLING_JOIN",
+  "feature_draft": "DRAFT-FEAT-20260913-001",
+  "gate_draft": "DRAFT-ABST-20260913-001",
+  "wave": "W2-C",
+  "audited_at_utc": "2026-09-13T19:11:39.112154+00:00",
+  "auditor": "clock_audit_W2C_SIBLING_JOIN.py",
+  "scope": {
+    "alpha": false,
+    "examiner_delta_scores": false,
+    "cf": false,
+    "l3": false,
+    "expiration_value_as_feature": false,
+    "role": "sibling-asset mid JOIN integrity + knowability (fail-closed)"
+  },
+  "sources": {
+    "checkpoints": "/workspace/lab/data/DATA-PROV-PM-003/derived/checkpoints.ndjson",
+    "contract_coverage": "/workspace/lab/data/DATA-PROV-PM-003/derived/contract_coverage.ndjson",
+    "pm001_labels": "/workspace/lab/data/DATA-PROV-PM-001/normalized/kalshi_15m_btc_eth_resolved.ndjson",
+    "feature_card": "/workspace/lab/archive/features/DRAFT-FEAT-20260913-001-W2C-sibling-mid.md",
+    "gate_card": "/workspace/lab/archive/features/DRAFT-ABST-20260913-001-W2C-bad-cal.md",
+    "prior_clock": "PM-003 mid CLEARED at rem 840/600/300 with excludes",
+    "new_fetch": false
+  },
+  "join_spec": {
+    "pair_by": [
+      "OPEN_TIME",
+      "CLOSE_TIME",
+      "time_remaining_sec"
+    ],
+    "assets": "BTC\u2194ETH",
+    "implied_p_method": "mid",
+    "no_last_fallback": true,
+    "no_future_rem": true,
+    "near_deg_drop": [
+      0.02,
+      0.98
+    ],
+    "void_disputed_sibling": "missing",
+    "expiration_value_in_join": false,
+    "fail_closed": "missing sibling \u2192 own mid (p_t := m_t)",
+    "test007_excludes_on_scored": [
+      "mid-only",
+      "drop near-deg",
+      "no last-fallback"
+    ]
+  },
+  "integrity": {
+    "n_checkpoints": 6040,
+    "n_coverage": 1208,
+    "n_pm001": 1328,
+    "n_enriched": 6040,
+    "missing_coverage_for_ckpt": 0,
+    "missing_pm001_for_ckpt": 0,
+    "open_close_cov_vs_pm001_mismatch": 0,
+    "elapsed_decision_time_check": {
+      "n_ok": 2416,
+      "n_bad": 0,
+      "rule": "decision_time == open_time + (900 - rem) for rem in {840,600}"
+    }
+  },
+  "universe_open_close": {
+    "n_btc_unique_open_close": 604,
+    "n_eth_unique_open_close": 604,
+    "n_shared_windows": 604,
+    "n_btc_without_eth_twin": 0,
+    "n_eth_without_btc_twin": 0,
+    "btc_only_sample": [],
+    "eth_only_sample": []
+  },
+  "cells": {
+    "headline_A": {
+      "id": "headline_A",
+      "cell": "KALSHI|15m|ETH|T-14m|mid",
+      "scored_asset": "ETH",
+      "sibling_asset": "BTC",
+      "rem": 840,
+      "t_minus": "T-14m",
+      "role": "headline",
+      "card_dark": false,
+      "n_scored_after_test007_excludes": 604,
+      "n_with_pairable_sibling": 604,
+      "n_missing_sibling_fail_closed": 0,
+      "n_sibling_present_but_excluded_method_or_near_deg": 0,
+      "scored_exclude_breakdown": {
+        "non_mid_at_rem_dropped": 0,
+        "near_deg_scored_dropped": 0,
+        "void_disputed_scored_dropped": 0
+      },
+      "missing_reasons": {},
+      "decision_time_equality": {
+        "n_paired_dt_equal": 604,
+        "n_paired_dt_unequal": 0,
+        "all_equal_when_paired": true
+      },
+      "no_lookahead_checks": {
+        "n_paired_rem_equal": 604,
+        "n_paired_rem_unequal": 0,
+        "n_future_window_pairing": 0,
+        "n_lookahead_violations": 0,
+        "pass": true
+      },
+      "sample_paired": [
+        {
+          "scored_contract_id": "PROV-KALSHI-KXETH15M-26SEP111630-30",
+          "sibling_contract_id": "PROV-KALSHI-KXBTC15M-26SEP111630-30",
+          "open_time": "2026-09-11T20:15:00Z",
+          "close_time": "2026-09-11T20:30:00Z",
+          "scored_decision_time": "2026-09-11T20:16:00Z",
+          "sibling_decision_time": "2026-09-11T20:16:00Z",
+          "scored_rem": 840,
+          "sibling_rem": 840,
+          "scored_implied_p": 0.405,
+          "sibling_implied_p": 0.435,
+          "scored_method": "mid",
+          "sibling_method": "mid"
+        },
+        {
+          "scored_contract_id": "PROV-KALSHI-KXETH15M-26SEP111615-15",
+          "sibling_contract_id": "PROV-KALSHI-KXBTC15M-26SEP111615-15",
+          "open_time": "2026-09-11T20:00:00Z",
+          "close_time": "2026-09-11T20:15:00Z",
+          "scored_decision_time": "2026-09-11T20:01:00Z",
+          "sibling_decision_time": "2026-09-11T20:01:00Z",
+          "scored_rem": 840,
+          "sibling_rem": 840,
+          "scored_implied_p": 0.465,
+          "sibling_implied_p": 0.375,
+          "scored_method": "mid",
+          "sibling_method": "mid"
+        },
+        {
+          "scored_contract_id": "PROV-KALSHI-KXETH15M-26SEP111600-00",
+          "sibling_contract_id": "PROV-KALSHI-KXBTC15M-26SEP111600-00",
+          "open_time": "2026-09-11T19:45:00Z",
+          "close_time": "2026-09-11T20:00:00Z",
+          "scored_decision_time": "2026-09-11T19:46:00Z",
+          "sibling_decision_time": "2026-09-11T19:46:00Z",
+          "scored_rem": 840,
+          "sibling_rem": 840,
+          "scored_implied_p": 0.47,
+          "sibling_implied_p": 0.495,
+          "scored_method": "mid",
+          "sibling_method": "mid"
+        }
+      ],
+      "sample_missing": [],
+      "fail_closed_rule": "if sibling missing or excluded \u2192 own mid (p_t := m_t); no speak"
+    },
+    "headline_B": {
+      "id": "headline_B",
+      "cell": "KALSHI|15m|BTC|T-10m|mid",
+      "scored_asset": "BTC",
+      "sibling_asset": "ETH",
+      "rem": 600,
+      "t_minus": "T-10m",
+      "role": "headline",
+      "card_dark": false,
+      "n_scored_after_test007_excludes": 604,
+      "n_with_pairable_sibling": 604,
+      "n_missing_sibling_fail_closed": 0,
+      "n_sibling_present_but_excluded_method_or_near_deg": 0,
+      "scored_exclude_breakdown": {
+        "non_mid_at_rem_dropped": 0,
+        "near_deg_scored_dropped": 0,
+        "void_disputed_scored_dropped": 0
+      },
+      "missing_reasons": {},
+      "decision_time_equality": {
+        "n_paired_dt_equal": 604,
+        "n_paired_dt_unequal": 0,
+        "all_equal_when_paired": true
+      },
+      "no_lookahead_checks": {
+        "n_paired_rem_equal": 604,
+        "n_paired_rem_unequal": 0,
+        "n_future_window_pairing": 0,
+        "n_lookahead_violations": 0,
+        "pass": true
+      },
+      "sample_paired": [
+        {
+          "scored_contract_id": "PROV-KALSHI-KXBTC15M-26SEP111630-30",
+          "sibling_contract_id": "PROV-KALSHI-KXETH15M-26SEP111630-30",
+          "open_time": "2026-09-11T20:15:00Z",
+          "close_time": "2026-09-11T20:30:00Z",
+          "scored_decision_time": "2026-09-11T20:20:00Z",
+          "sibling_decision_time": "2026-09-11T20:20:00Z",
+          "scored_rem": 600,
+          "sibling_rem": 600,
+          "scored_implied_p": 0.205,
+          "sibling_implied_p": 0.115,
+          "scored_method": "mid",
+          "sibling_method": "mid"
+        },
+        {
+          "scored_contract_id": "PROV-KALSHI-KXBTC15M-26SEP111615-15",
+          "sibling_contract_id": "PROV-KALSHI-KXETH15M-26SEP111615-15",
+          "open_time": "2026-09-11T20:00:00Z",
+          "close_time": "2026-09-11T20:15:00Z",
+          "scored_decision_time": "2026-09-11T20:05:00Z",
+          "sibling_decision_time": "2026-09-11T20:05:00Z",
+          "scored_rem": 600,
+          "sibling_rem": 600,
+          "scored_implied_p": 0.845,
+          "sibling_implied_p": 0.83,
+          "scored_method": "mid",
+          "sibling_method": "mid"
+        },
+        {
+          "scored_contract_id": "PROV-KALSHI-KXBTC15M-26SEP111600-00",
+          "sibling_contract_id": "PROV-KALSHI-KXETH15M-26SEP111600-00",
+          "open_time": "2026-09-11T19:45:00Z",
+          "close_time": "2026-09-11T20:00:00Z",
+          "scored_decision_time": "2026-09-11T19:50:00Z",
+          "sibling_decision_time": "2026-09-11T19:50:00Z",
+          "scored_rem": 600,
+          "sibling_rem": 600,
+          "scored_implied_p": 0.575,
+          "sibling_implied_p": 0.325,
+          "scored_method": "mid",
+          "sibling_method": "mid"
+        }
+      ],
+      "sample_missing": [],
+      "fail_closed_rule": "if sibling missing or excluded \u2192 own mid (p_t := m_t); no speak"
+    },
+    "annex_BTC_T14m": {
+      "id": "annex_BTC_T14m",
+      "cell": "KALSHI|15m|BTC|T-14m|mid",
+      "scored_asset": "BTC",
+      "sibling_asset": "ETH",
+      "rem": 840,
+      "t_minus": "T-14m",
+      "role": "annex_coverage_only",
+      "card_dark": true,
+      "note": "Feature card DARK on annex; coverage measured only",
+      "n_scored_after_test007_excludes": 604,
+      "n_with_pairable_sibling": 604,
+      "n_missing_sibling_fail_closed": 0,
+      "n_sibling_present_but_excluded_method_or_near_deg": 0,
+      "scored_exclude_breakdown": {
+        "non_mid_at_rem_dropped": 0,
+        "near_deg_scored_dropped": 0,
+        "void_disputed_scored_dropped": 0
+      },
+      "missing_reasons": {},
+      "decision_time_equality": {
+        "n_paired_dt_equal": 604,
+        "n_paired_dt_unequal": 0,
+        "all_equal_when_paired": true
+      },
+      "no_lookahead_checks": {
+        "n_paired_rem_equal": 604,
+        "n_paired_rem_unequal": 0,
+        "n_future_window_pairing": 0,
+        "n_lookahead_violations": 0,
+        "pass": true
+      },
+      "sample_paired": [
+        {
+          "scored_contract_id": "PROV-KALSHI-KXBTC15M-26SEP111630-30",
+          "sibling_contract_id": "PROV-KALSHI-KXETH15M-26SEP111630-30",
+          "open_time": "2026-09-11T20:15:00Z",
+          "close_time": "2026-09-11T20:30:00Z",
+          "scored_decision_time": "2026-09-11T20:16:00Z",
+          "sibling_decision_time": "2026-09-11T20:16:00Z",
+          "scored_rem": 840,
+          "sibling_rem": 840,
+          "scored_implied_p": 0.435,
+          "sibling_implied_p": 0.405,
+          "scored_method": "mid",
+          "sibling_method": "mid"
+        },
+        {
+          "scored_contract_id": "PROV-KALSHI-KXBTC15M-26SEP111615-15",
+          "sibling_contract_id": "PROV-KALSHI-KXETH15M-26SEP111615-15",
+          "open_time": "2026-09-11T20:00:00Z",
+          "close_time": "2026-09-11T20:15:00Z",
+          "scored_decision_time": "2026-09-11T20:01:00Z",
+          "sibling_decision_time": "2026-09-11T20:01:00Z",
+          "scored_rem": 840,
+          "sibling_rem": 840,
+          "scored_implied_p": 0.375,
+          "sibling_implied_p": 0.465,
+          "scored_method": "mid",
+          "sibling_method": "mid"
+        },
+        {
+          "scored_contract_id": "PROV-KALSHI-KXBTC15M-26SEP111600-00",
+          "sibling_contract_id": "PROV-KALSHI-KXETH15M-26SEP111600-00",
+          "open_time": "2026-09-11T19:45:00Z",
+          "close_time": "2026-09-11T20:00:00Z",
+          "scored_decision_time": "2026-09-11T19:46:00Z",
+          "sibling_decision_time": "2026-09-11T19:46:00Z",
+          "scored_rem": 840,
+          "sibling_rem": 840,
+          "scored_implied_p": 0.495,
+          "sibling_implied_p": 0.47,
+          "scored_method": "mid",
+          "sibling_method": "mid"
+        }
+      ],
+      "sample_missing": [],
+      "fail_closed_rule": "if sibling missing or excluded \u2192 own mid (p_t := m_t); no speak"
+    }
+  },
+  "knowability": {
+    "knowable_at_t": true,
+    "rule": "Sibling m*_t is the opposite-asset PM-003 checkpoint mid at the same OPEN_TIME/CLOSE_TIME window and same time_remaining_sec / decision_time as the scored row. Cell identity and mid are L1 observables at t; pairing key is contemporaneous (no future rem, no later window).",
+    "look_ahead": false,
+    "look_ahead_rule": "Look-ahead would require sibling rem < scored rem, sibling decision_time > scored decision_time, or sibling from a later OPEN/CLOSE window. Audit requires sibling rem == scored rem AND sibling decision_time == scored decision_time AND same OPEN/CLOSE."
+  },
+  "recommended_verdict": "CLEARED",
+  "verdict_scope": "join_only",
+  "verdict_reason": "Join-only CLEARED: every scored headline/annex row after TEST-007-style excludes has a same-OPEN/CLOSE same-rem mid sibling with equal decision_time; no look-ahead; fail-closed rule defined but unused (0 missing). Shared BTC\u2194ETH windows = 604/604. No EXPIRATION_VALUE in join. Not an alpha verdict."
+}
