@@ -1,12 +1,20 @@
 {
   "note": "Conductor stamp for hourly pulse. Read this before flagging (e).",
-  "last_logan_status_et": "2026-10-03 12:46 ET",
-  "content": "Q6-000 KEEP still leads at +6.90% on the $5k pool; no new Examiner score since PR64. Crypto captures healthy and still writing (LIQ 1464 / PM-006 217843 / CB-002 3364); PM-008 held on purpose. Weather still stopped after the morning 429 \u2014 silence until 15:10 ET, then Collector dual-200 \u2192 clear \u2192 r2e; card03 and holdout wait behind that. Gauntlet sync stays paused for Steward repair. No Logan credential/spend block; no live orders.",
+  "last_logan_status_et": "2026-10-03 17:54 ET",
+  "content": "New Examiner score: EXT-K1 (legging-risk audit on Q6-000) came back DESCRIPTIVE \u2014 no evidence that legs held against consensus mark out worse than with-consensus legs (gross and net CIs include zero). Q6-000 KEEP still leads at +6.90% on the $5k pool; this score does not promote or kill it. Crypto captures healthy (LIQ 1547 / PM-006 248179 / CB-002 3982); PM-008 held on purpose. Weather still CLOSED on box-IP after the last 429 \u2014 card03/holdout stay held; not re-raising the (b)/(c) widget. Next in-team: Adversary on EXT-K2 draft PR67, then Variants freeze EXT-K3 injury-window on box data. No live orders.",
   "rule": "Trigger (e) fires only if >=3h since last_logan_status_et AND (daytime) one-paragraph scoreboard is due, or something material changed. Unchanged scoreboard alone is not a reason to message Logan in the evening.",
-  "written_by": "Conductor 2026-10-03 12:46 ET",
+  "written_by": "Conductor 2026-10-03 17:54 ET",
   "wake_parent": true,
   "wake_triggers": [
-    "e_3h_strategy_brief"
+    "a_new_scorecard",
+    "d_logan_blocker_no_rewidget"
   ],
-  "silence_until_et": "2026-10-03 15:10 ET"
+  "box_ip_kalshi": "CLOSED",
+  "do_not_rewidget_egress": true,
+  "new_score": {
+    "id": "EXT-K1 PR66",
+    "verdict": "DESCRIPTIVE",
+    "promote": false,
+    "q6000_keep_unchanged": true
+  }
 }

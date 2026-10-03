@@ -6,7 +6,7 @@
 
 **Queue status:** Empty for bakeoff — Q7 scored **SCORED_KILL_B_KEEP_000** (no new KEEP/bakeoff). Hygiene memo indexed. Conductor wake protocol: **KEEP/bakeoff only**.
 
-**Updated:** 2026-09-24T20:08:57-04:00 (Adversary: Card 01 NH-002-H leakage/circularity check linked below). Prior: 2026-09-24T19:50:00-04:00 (Edge Research dead-card overlap + Refiner extension overfit-check protocol).
+**Updated:** 2026-10-03T17:08:53-04:00 (Adversary: Card 01 NH-002-H Amendment B pre-outcome review ADVISORY_FLAGS, linked below). Prior: 2026-10-03T17:05:02-04:00 (Adversary: EXT-K1 PR66 pre-score review CLEAR, linked below); 2026-09-24T20:08:57-04:00 (Card 01 NH-002-H leakage/circularity check); 2026-09-24T19:50:00-04:00 (Edge Research dead-card overlap + Refiner extension overfit-check protocol).
 
 ---
 
@@ -128,6 +128,14 @@ Adversary filed short refuse-bind memos on freezes Conductor put live. Measureme
 ## Card 01 NH-002-H leakage check (2026-09-24 ~20:09 ET)
 
 - `packets/ADVERSARY_CARD01_NH002H_LEAKAGE_CHECK_2026-09-24.md`: ElectIndex INDEPENDENT (documentary; code unaudited); w grid [V] pre-price; universe price-independent by reproduction, 'no price viewed' claim [A]; one-draw handled (state bootstrap + recentering, scoped to this cycle); 6 advisory flags (fee pin default for House series, ElectIndex model drift, unanchored timestamps, recentering not pinned, legacy-series attrition, gate (c) text). Advisory only; Q6-`000` unchanged.
+
+## EXT-K1 pre-score review (2026-10-03 ~17:05 ET)
+
+- 2026-10-03: `packets/ADVERSARY_EXT_K1_PRESCORE_REVIEW_2026-10-03.md`: **CLEAR** (Examiner may score in DESCRIPTIVE/ITERATE/INCONCLUSIVE). PR66 main@09b56273. No blocking fixes; 9 tracked advisories (T01 end-to-end rebuild, INVARIANCE R33 flags, empty-bucket→INCONCLUSIVE, overround/T11, gate share vs Shin twin, fee account-class pin, registry outcome-exposure note). Advisory only; Q6-`000` unchanged.
+
+## Card 01 NH-002-H Amendment B review (2026-10-03 ~17:08 ET)
+
+- 2026-10-03: `packets/ADVERSARY_CARD01_AMENDMENT_B_REVIEW_2026-10-03.md`: **ADVISORY_FLAGS** (Amendment B ee6af37c / script 049368f9 verified; M_f + Bernoulli-MLE recentering well-defined, deterministic, shift recovery exact on toys). 11 pre-outcome fixes: REJECT(b) not complement of PASS(ii); fee-BLOCKED verdict cap; ElectIndex capture stalled since 09-26; fee provenance not enforced in code; swing-stress fragility/defect rule; unpinned input builder; MANIFEST 16f96d3d bytes missing. Advisory only; Q6-`000` unchanged.
 
 ## What I will / will not do on promote
 

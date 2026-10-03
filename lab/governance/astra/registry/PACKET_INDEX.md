@@ -861,3 +861,152 @@ Exceptions (append-only notes; no row above is rewritten):
 | path | sha256 |
 |---|---|
 | `packets/ARCHIVIST_INDEX_BACKLOG_2026-09-25_to_2026-10-02.md` | `0e479b7f74584724200f9d61954868373a8cf7f5942db21461a2b380028ec638` |
+
+### Appended 2026-10-03 ~17:25 ET (Archivist): KALSHI batch 2026-10-03 (items A–J) + Card 01 register repin
+| path | sha256 |
+|---|---|
+| `packets/CONDUCTOR_ACCEPT_COLLECTOR_ADMIT1_POST_RUN_NOTE_2026-10-02.json` (ACCEPT of post-run note 9a2870db; burst profile = ADMIT spec; run 19 170 rows ABORTED_SUPERSEDED) | `6e4922d685e1d0ce6b0c6655f21cc2a9c586f0c5407db4ae23db752410293884` |
+| `astra-capture/weather-nowcast/KALSHI_429_STOP` (current; recreated by r2e 429 15:17:30 ET) | `e55d6094a801131728399cefe08a1e23850f6d734c00030f625b817ccc1019ba` |
+| `astra-capture/weather-nowcast/_prev/a41d074e3c0792d7870cf4158936103e5d129bac3447c8c674a80f130b529399.KALSHI_429_STOP` (r2d clear) | `a41d074e3c0792d7870cf4158936103e5d129bac3447c8c674a80f130b529399` |
+| `astra-capture/weather-nowcast/_prev/abed68e79a21eab1ebf721c3ac41be99d95c61cb0676780ac0c240376ba5ba09.KALSHI_429_STOP` (r2d relaunch 429 09:20:46 ET; r2e clear) | `abed68e79a21eab1ebf721c3ac41be99d95c61cb0676780ac0c240376ba5ba09` |
+| `astra-capture/weather-nowcast/_prev/e55d6094a801131728399cefe08a1e23850f6d734c00030f625b817ccc1019ba.KALSHI_429_STOP` (copy of current) | `e55d6094a801131728399cefe08a1e23850f6d734c00030f625b817ccc1019ba` |
+| `astra-capture/weather-nowcast/PROBE_R2C_2026-10-03.json` | `e69561d3718570aea642334c3874d4fa8e4f3f6baec8be0ae509217e42fda19d` |
+| `astra-capture/weather-nowcast/STOP_R2D_AFTER_RELAUNCH_429_2026-10-03.json` | `c9341de0bc51f0a184c708b7f4bc3e040c8590ae0b727f9ed6ce6274f33d9306` |
+| `astra-capture/weather-nowcast/archive_r2d_20261003.sqlite` (ABORTED, pre_since 0; EXCLUDED) | `f58f421d8553fd9b13bd3a627dd906f934db17aa83c798b12c57d297562d5be8` |
+| `astra-capture/weather-nowcast/launch_r2e.sh` | `c168ca1d9c3d14f7350263bf22514a1baf390a670ce1f276030ce9da0137f812` |
+| `astra-capture/weather-nowcast/PROBE_R2E_2026-10-03.json` | `fe615c47fbe12694de7a20f7aafd106901378f05d5bb2af9fbe10fa1292ce813` |
+| `astra-capture/weather-nowcast/STOP_R2E_AFTER_RELAUNCH_429_2026-10-03.json` (LAST box-IP attempt) | `b33ada1c68ba7572a0ff88c9cfb710cf56bb8cc12818bf1b5a1d18162ff4b1b0` |
+| `astra-capture/weather-nowcast/archive_r2e_20261003.sqlite` (post-run; ABORTED; EXCLUDED like r2b/r2d) | `181977c23e658647f6610d1ce455c66634ef345bcbd1ff2a960ca077498bbb94` |
+| pin weather archive.sqlite frozen (reconfirmed) | `974ce4b5339b010ee28819f35f365693bfc55dd337ab0d7a192aff668714f60f` |
+| pin launch_r2d.sh unchanged (reconfirmed) | `af0f4db3f578e75db5f1b1336b14cc0a8453daf0d51fcee856567d0fc961acc0` |
+| `packets/VARIANTS_EXT_K1_Q6000_LEGGING_RISK_AUDIT_FREEZE_2026-10-03.md` (AWAITING Conductor ACCEPT per brief; DESCRIPTIVE/ITERATE/INCONCLUSIVE; dev-grade 31 games) | `5c40fb9d03a924e40577a81f262231701e331c98922f60f6dc7ab65a2dbed6d3` |
+| `packets/VARIANTS_EXT_K1_Q6000_LEGGING_RISK_AUDIT_FREEZE_2026-10-03.json` | `be3e88336389bc62c40413785e6ffb4a572e1dbd006d7cf3dfbc962f8184efaa` |
+| `packets/EXT_K1_LEGGING_AUDIT/MANIFEST.sha256` (9/9 OK) | `5e8f79063f132fe2db97ad3ecff5fea463d429f167abed09c58398a87fcadf01` |
+| `/workspace/EXT_K1_authentic_pins_2026-10-03.tgz` (38 files; parts 3fd70f7b + 1f8b2ac1; PARTS a92df01d) | `0f8f529733bfd1ccb01b36f312cdc20865cc2811c04dcd3c812d50c67295db38` |
+| `packets/CONDUCTOR_RULING_SCOUT_EXTERNAL_HUNT_2026-10-03.json` (issued_et 16:10 vs mtime 16:06:39 ET: clerical, Conductor-confirmed) | `870895a58e80fd1442d0ce97e42df02426bf7e38f64dcd091efc6fbf26b74ebf` |
+| `governance/astra/SCOUT_EXTERNAL_HUNT_2026-10-03.md` (scout brief; prev bfb1b7f3 in `_prev/`) | `13e442892d27466f3ee3082509a47ac9706c7f3448aa079de798bec8cb1a1dfb` |
+| `packets/VARIANTS_EXT_K2_OPTIMISM_TAX_DEPENDENCE_STRESS_FREEZE_2026-10-03.md` (AWAITING Conductor ACCEPT per brief) | `d69a4f627cb420b59bbc961b072d28242faeb9d21d5d29b9f90a77f6825acbce` |
+| `packets/VARIANTS_EXT_K2_OPTIMISM_TAX_DEPENDENCE_STRESS_FREEZE_2026-10-03.json` | `025a01a121e5b3a64a0b683a8030f9cbd1681f132365dadb419377d09d71ff6c` |
+| `packets/EXT_K2_OPTIMISM_TAX/MANIFEST.sha256` (11/11 OK) | `3478b4058681992109142bcde3ff87bd91c7e523092ba367d96d18afae693fe5` |
+| `/workspace/EXT_K2_authentic_pins_2026-10-03.tgz` (cloud bundle; 0 Becker bytes) | `963f7663a74527db38479bbf4a253870bd5dc6f99c8f85b70750d3600c65907f` |
+| `astra-capture/external/ext_k2_becker_boxonly_2026-10-03/BECKER_BOXONLY_PIN_MANIFEST.json` (license [U]; box-only) | `fd5e10531f488f30baf05e2dd6f17c8f8823603ecbae457170dbbde66126fb95` |
+| `packets/CONDUCTOR_COMMISSION_EXT_K2_2026-10-03.json` | `1f2c7f68396131d65ef31e492355c2937a9a0a91fb6cdf67c7d66e220f0b51f5` |
+| `packets/CLOCK_PROVENANCE_BECKER_ARCHIVE_2026-10-03.md` (embedded support) | `e7424a130e95b72d288d567ef75b00804672b29b15bd93889aafb0722fd84d80` |
+| `packets/CLOCK_PROVENANCE_BECKER_ARCHIVE_2026-10-03.json` (embedded support) | `dc54e3dae4bbeeffc0e1c792bd769a2d63daee02a974dbff03d04da8780eebc3` |
+| `packets/ADVERSARY_EXT_K1_PRESCORE_REVIEW_2026-10-03.md` (verdict CLEAR) | `676ba2faf0d877fa2f06dc4f2b247b9c7541188c0f9c7de17a622e6502eac130` |
+| `governance/astra/ADVERSARY_RISK_REGISTER_2026-09-22.md` (30eb735a → 537408cc → 1aecfd36) | `1aecfd366f8f9024be0f1393903812439a448ea5bf5585e4d21616874b1beab9` |
+| `governance/astra/_prev/30eb735a5926206b19547151b4cf8bd331761efe4590eceb19441894c70e275e.ADVERSARY_RISK_REGISTER_2026-09-22.md` | `30eb735a5926206b19547151b4cf8bd331761efe4590eceb19441894c70e275e` |
+| `packets/ADVERSARY_CARD01_AMENDMENT_B_REVIEW_2026-10-03.md` (ADVISORY_FLAGS) | `271ec099481ca35a57e4605b28abeff78d2660b6fd2657044666d45bcb728f01` |
+| `packets/card01_hybrid_forecast/MANIFEST.md` (current; prior 16f96d3d UNVERIFIED_BYTES_MISSING per AF-9 ruling) | `f22df25bdebd300bfa51f557c940270212475edce6371b2ccaefb4204ce9e427` |
+| `packets/CARD01_HOUSE_ONLY_PROSPECTIVE_FREEZE_2026-09-24_AMENDMENT_C.md` (**PENDING**, not accepted, per brief; answers 271ec099; parent B ee6af37c reconfirmed) | `cc75f09614ad285756fd7cb7f7a5c2ce4e711b5adb98102c2dd043ccfc1af0f0` |
+| `packets/CARD01_NEGLECTED_HYBRID_DECISION_PACKET_2026-09-24.md` CANONICAL (was c0c1aa66; docs-only edit verified by diff; REPIN of L337) | `d66c9eaf2988bf081fea3096d7052c20def651e813ec29f13906a626effe81ef` |
+| `packets/_prev/c0c1aa66f104e3f102228a7a8e16f205977afbee63928f30a6954ec46707a82c.CARD01_NEGLECTED_HYBRID_DECISION_PACKET_2026-09-24.md` | `c0c1aa66f104e3f102228a7a8e16f205977afbee63928f30a6954ec46707a82c` |
+| `packets/_prev/ebdaea019fc119d29f96bd04095d64eb60d99ade1a3206d441b94b422431ef25.CARD01_NEGLECTED_HYBRID_DECISION_PACKET_2026-09-24.md` (transient; superseded) | `ebdaea019fc119d29f96bd04095d64eb60d99ade1a3206d441b94b422431ef25` |
+| `packets/card01_hybrid_forecast/FROZEN_EXPERIMENT.json` (repinned in place: decision_packet_sha256_current c0c1aa66 → d66c9eaf; was 44cb582f) | `8b716ef0ee2ed2daa5f533681ea6e4c77767094fd95e611b681f9f2807ef855c` |
+| `packets/card01_hybrid_forecast/_prev/44cb582fd6f4612574d1a0b58b2d4f24cdf421eddc61e32a681663bf1b16c910.FROZEN_EXPERIMENT.json` | `44cb582fd6f4612574d1a0b58b2d4f24cdf421eddc61e32a681663bf1b16c910` |
+| `packets/card01_hybrid_forecast/LEDGER_2026-09-24.md` (repin row RP1 appended; was d8ddfda7) | `ee9d12f75756cebd95e162bccc6ed50eecabff880bf40e7e555df4dcbbca1414` |
+| `packets/card01_hybrid_forecast/_prev/d8ddfda72bdc6aaedd5627c78da99d6f360c48746b16c662d7ae3263a3d14fe1.LEDGER_2026-09-24.md` | `d8ddfda72bdc6aaedd5627c78da99d6f360c48746b16c662d7ae3263a3d14fe1` |
+| `astra-capture/card01-nh002-house/ELECTINDEX_GAP_2026-09-27_to_2026-10-03_UNMONITORED.json` (UNMONITORED; never backfill) | `38d36b73336d2031204f79dae700f9f79d29eeb490863f491ea6b35dc215b221` |
+| `astra-capture/card01-nh002-house/ELECTINDEX_CAPTURE_RESTORE_2026-10-03.md` | `9cdca1301f4dc40846834fea3a92dacfe389790b604b0a966a1e9ed82e8134d9` |
+| `astra-capture/card01-nh002-house/METHODOLOGY_CHANGED_2026-10-03.flag.json` | `3e585f84fa5ba2c56748af6a02f539f61a45cac865a33035a2afe63efcc4da6e` |
+| `astra-capture/card01-nh002-house/_prev/41d67d400c75630f33f21c8e2b1810dc7a138f6d2be65e33d7e43dfb8aac86b3.run_daily.py` (runner of the 2026-10-03 17:13 ET capture; live file now 4f0854e5, MISMATCH, not indexed as conforming) | `41d67d400c75630f33f21c8e2b1810dc7a138f6d2be65e33d7e43dfb8aac86b3` |
+| `(private) evidence_private/electindex/card01-nh002-house/2026-10-03/races_summary.csv` | `4713b5c44ca5f6db6080a55e0843210d953a45ba53e727408c9e4d93eb82fdf9` |
+| `(private) evidence_private/electindex/methodology/2026-10-03.html` | `255acb38163549a5ad0709e859f0f1e8a81b6ac506931241658c1e6e7fef0a31` |
+| `(private) evidence_private/electindex/methodology_asset/2026-09-26_to_2026-10-03_eifc-info.js.diff` | `efb53b1f07202c78589a95632e267d57b423c434f0dacf55ee8f1943c198ea3f` |
+| `(private) evidence_private/electindex/methodology_asset/2026-10-03_eifc-info.js` (methodology regime **R1**, first seen 2026-10-03T21:13:06Z; R0 = caaff53e) | `82b09d7c845c9d04c23d30e2a27441aaaf66606c98558e618a34db7201ac66cd` |
+
+Exceptions and notes (append-only; no row above is rewritten):
+- MISMATCH: `astra-capture/card01-nh002-house/run_daily.py` cited 41d67d40 vs disk `4f0854e56265e10b2505a9f371260caa6eaddb57726244a4435e1a424a54d5c8` (edited 17:15:37 ET; re-adds the README GET, which conflicts with the ruling OPTIONAL_NOT_CAPTURED; endpoint is within the Amendment 03 pin). Old bytes are in `_prev`. A Conductor/Archivist decision is needed.
+- MISSING: risk register intermediate `537408cc` has no `_prev` (register not frozen; recorded, no rule breach).
+- UNVERIFIED_BYTES_MISSING (AF-9, Conductor ruling, index file, low materiality): `packets/card01_hybrid_forecast/MANIFEST.md` prior `16f96d3d4e11e3e17eb0a76a8e4cdcbe097773d8b34cdaf50faf9c0de85b7d18` → current f22df25b.
+- RESOLVED (per Conductor via dispatcher [I]): `steward/STEWARD_CONDUCTOR_RULINGS_EXEC_2026-10-01.md` is current at 133302a4. The 7e389f32 bytes are unrestorable and that is accepted. The 7 lost Examiner scratch outputs (PR61 ×2, PR62 ×2, PR63 ×3) are accepted. This closes the 2026-10-02 MISMATCH and MISSING-scratch exceptions above as RESOLVED_ACCEPTED.
+- RESOLVED: the ACCEPTED status of 9a2870db is now [V] via 6e4922d6, which closes the 2026-10-02 [I] note.
+- REPIN of L337: the decision packet c0c1aa66 → d66c9eaf. The earlier rows that pin c0c1aa66 (L337 and other seats' packets) pin the pre-edit bytes, which are preserved in `packets/_prev/`. LEDGER_HASH_REGISTER_EXTRACT (Steward point-in-time public anchor, 03f9c193) was not repinned.
+- ElectIndex: scheduler pid 453207 is gone (ps rc 1) and `electindex_scheduler.sh` is RETIRED, not restarted. The capture now runs as a server-side daily routine at 20:17 UTC. Gap 2026-09-27..2026-10-03 is UNMONITORED and gap snapshots are regime UNATTRIBUTED. The change time is unattributable: after the last R0 capture on 2026-09-26, and no later than 2026-10-03T21:13:06Z. Server Last-Modified 10-02 13:36 ET is [U] and is not the boundary. Card 01 stays frozen, and Amendment B (b) sensitivity rows (i)/(ii) apply at decision. The README fetch is OPTIONAL_NOT_CAPTURED from 2026-10-03. The Monday terms/robots check is kept.
+- Seen, not indexed: Conductor ACCEPTs on disk for EXT-K1 (`02129007…`), EXT-K2 (`d76779e1…`) and Card01 Amendment C (`2225c3fa…`). They conflict with the brief's AWAITING/PENDING status and are held for confirmation.
+- Scoreboard unchanged: Q6-000 / Arm D KEEP +$345.24 / +6.90%; no new KEEP.
+
+| path | sha256 |
+|---|---|
+| `packets/ARCHIVIST_INDEX_BATCH_2026-10-03.md` | `dabc41ff55cdec5629dcc306769862b276e0e80d0d3fa3756c40181fbfb17b1a` |
+
+### Appended 2026-10-03 ~17:23 ET (Archivist): corrections per Archivist rulings + related-packet batch (append-only; no earlier row rewritten)
+
+| path | sha256 |
+|---|---|
+| `packets/CONDUCTOR_ACCEPT_EXT_K1_FREEZE_2026-10-03.json` **ACCEPTED** (issued 16:16:49 ET; pins freeze 5c40fb9d OK, json be3e8833, manifest 5e8f7906, bundle 0f8f5297 OK) | `021290077cbbed277455145d2e56e1335f6ae331d56c2ad79d4d85b405559397` |
+| `packets/CONDUCTOR_ACCEPT_EXT_K2_FREEZE_2026-10-03.json` **ACCEPTED** (issued 16:50:38 ET; pins freeze d69a4f62 OK, json 025a01a1, manifest 3478b405, cloud 963f7663, becker fd5e1053 OK) | `d76779e1a309388e6bc7f401a2c992a3be2015ae81ba910b8f5655fb10472fc0` |
+| `packets/CONDUCTOR_ACCEPT_CARD01_AMENDMENT_C_2026-10-03.json` **ACCEPTED** (issued 17:14:08 ET; pins amendment cc75f096 OK, Amendment B ee6af37c, adversary 271ec099, script 049368f9 OK) | `2225c3fa0bea7c58cad59f52476f9fbe69e1d6fa813114a7557c748126dd2b1a` |
+| `astra-capture/card01-nh002-house/run_daily.py` **CURRENT runner** (README re-add accepted; authority [I] Conductor msg 2026-10-03 17:09 ET, no packet at ruling; endpoint check PASS, 6/6 pinned) | `4f0854e56265e10b2505a9f371260caa6eaddb57726244a4435e1a424a54d5c8` |
+| `packets/CONDUCTOR_KICK_ADVERSARY_EXT_K1_PR66_DESCRIPTIVE_2026-10-03.json` | `113c111ad6e1bc02d0ff413945f5364038bf8cc4d4128be542a7ac3ed4beab7b` |
+| `packets/CONDUCTOR_KICK_COLLECTOR_WEATHER_R2E_GATE_2026-10-03.json` | `18ed1592ff92d302d198bae25a962ca84ffd5c9bff3fe0dbaac586b5f414c046` |
+| `packets/CONDUCTOR_KICK_SCOUT_EXTERNAL_HUNT_WHILE_BOX_IP_CLOSED_2026-10-03.json` | `9c583e82aec1c5d622f222875c19c1edc5f4c11de4908fe32f503494aa7f60c9` |
+| `packets/CONDUCTOR_KICK_VARIANTS_CLOUD_EXT_K2_LAUNCH_2026-10-03.json` | `c8e4ff43f86cdb0f04d08f0e89cbed68c657fc637ccae40ac6ad9a02773f4292` |
+| `packets/CONDUCTOR_MERGE_PR66_EXT_K1_2026-10-03.json` | `9de0933b8ec8ade5cbb89d5372116fb76048e30007af1b8f0e09f17fbae28deb` |
+| `packets/CONDUCTOR_PIN_GV2_SYNC_V3_2_REV5_2026-10-03.json` | `c2bb096113a62cfb84c9574437b2a9d957921fd6266d8ea7f4b1f977298c6157` |
+| `packets/CONDUCTOR_PIN_GV2_SYNC_V3_2_REV6_2026-10-03.json` | `9f30783437172fd3c6ebeee9a535bd0c0089f07fbe54725f1b4024b1eaf9cb34` |
+| `packets/CONDUCTOR_RULING_EXT_K1_N6_UNDEFINED_DELTA_2026-10-03.json` | `0b68c4bf218e7f85fa8af760ebcf5424d4e77262e62a5d71c43e9a5d2b929291` |
+| `packets/CONDUCTOR_RULING_GV2_SYNC_PAUSE_AFTER_1050_DRIFT_2026-10-03.json` | `f195d558e3e1aace911ac191f7ab778d761e1e174d575f4210e4b62cef474467` |
+| `packets/CONDUCTOR_RULING_WEATHER_BOX_IP_CLOSED_AFTER_R2E_429_2026-10-03.json` | `dd1d70396472a72fce2bad5233ba0190f5df4c14568d9b7746bf282ef892b2dc` |
+| `packets/CONDUCTOR_RULING_WEATHER_SILENCE_AFTER_R2D_429_2026-10-03.json` | `8c90e6577559001a9c7b41bf17f14a6fe2058bd9c93af02e10f2dc36d0a08414` |
+| `packets/CONDUCTOR_SUPERSEDE_PAUSE_GV2_SYNC_2026-10-03.json` | `e69d1de87871ea58611122e87fb8f13bacd56bc7e191acff2e05b794984ac12b` |
+| `packets/MAXIMIZE_PIN_2026-10-02_2050ET.json` | `465fcc79ff467251340f582c6fe48a02574dce327184fc950435e5643d251ee8` |
+| `packets/MAXIMIZE_PIN_2026-10-02_2050ET.md` | `f155239046891b2e6435fa634efaefc979717357201057f2021a4578a894a14b` |
+| `packets/MAXIMIZE_PIN_2026-10-02_2150ET.json` | `6b9bfbbeabf73908d2fc9e8d4fe53a414d67a3f8811ff34f356cf3d5b9755a3e` |
+| `packets/MAXIMIZE_PIN_2026-10-02_2150ET.md` | `bbfd929159e6e3dcab3f084f8e31b22790e5a59edfa9dbca7275b2241f604181` |
+| `packets/MAXIMIZE_PIN_2026-10-03_0848ET.json` | `064d6ca81b405ed6c8a46868ee0742ae235a128b113b0c43abdfa1f1501d438b` |
+| `packets/MAXIMIZE_PIN_2026-10-03_0848ET.md` | `89f709b0596ccfdfafc0d54a9d9ec9d6dd688467c72eaffec60f5d53786a417d` |
+| `packets/MAXIMIZE_PIN_2026-10-03_0946ET.json` | `fa96ef06463e11c55f8e0b5205f4f34159ae6cc6ae2a9293df34942909f679ce` |
+| `packets/MAXIMIZE_PIN_2026-10-03_0946ET.md` | `0d672912a81dbf72b2ea58b653720b824d99c2782987011f64dbd9672dac9432` |
+| `packets/MAXIMIZE_PIN_2026-10-03_1055ET.json` | `6db6b4eef15cb9326fe94b1d2299252d36f9bcabdc261220f9c422181e3777c5` |
+| `packets/MAXIMIZE_PIN_2026-10-03_1055ET.md` | `b0ea1c71c1dab72dd47308e95103a6ca4ddbda99135d4951b4f627187fe95074` |
+| `packets/MAXIMIZE_PIN_2026-10-03_1145ET.json` | `8a4e2d0a5511e12416a2158a746112ba010f08a57d36e900e8a47978fa1f724c` |
+| `packets/MAXIMIZE_PIN_2026-10-03_1145ET.md` | `64fd51c04e153a3d0c6dcb73914acdb22d65ecafa53712c329ca434ba8f94163` |
+| `packets/MAXIMIZE_PIN_2026-10-03_1246ET.json` | `258a957efa10bcf53e4cbf0fb24a2088d3cbe2531259cc7fbcaac4de7a05e683` |
+| `packets/MAXIMIZE_PIN_2026-10-03_1246ET.md` | `71de4e3b27acc552c870da77460b18428e2473e979e68e87e40dc5d85b5f6f78` |
+| `packets/MAXIMIZE_PIN_2026-10-03_1351ET.json` | `49606cb4b436b1b842d603ab24b5fa23e31bc5431c5a57af6358abd5bce38097` |
+| `packets/MAXIMIZE_PIN_2026-10-03_1351ET.md` | `f90fafb8efaadbe5daa3a860b6390ce19756217f9436b5c7f3ec64d13828e4d6` |
+| `packets/MAXIMIZE_PIN_2026-10-03_1453ET.json` | `ef299576c93e439fcf5f224098a647f4d35d9847d56a6b3ba95ef262b18d0b7a` |
+| `packets/MAXIMIZE_PIN_2026-10-03_1453ET.md` | `a82d523bc364f892043753ae572eedcc2e3fe901e908c031c2b5d6c92db4307a` |
+| `packets/MAXIMIZE_PIN_2026-10-03_1551ET.json` | `ccf32b36ddb9487adcbe0b172d976abb5261b0c95a08fe516088e9138e8a25f7` |
+| `packets/MAXIMIZE_PIN_2026-10-03_1551ET.md` | `f48e1e77b4fa455eef36fdd6f5720545878207623ce37b73c01c5870ab9db632` |
+| `packets/MAXIMIZE_PIN_2026-10-03_1655ET.json` | `079fb999af49f39bb2848678ab64aa465888a5e18065d3859edd780d3fb24176` |
+| `packets/MAXIMIZE_PIN_2026-10-03_1655ET.md` | `7dba2e3c2cc7370849dd356ab0ef03492d9c1173bf8c39115ef3ee61c4e6cc91` |
+| `packets/MERGE_GV2_PR2_COMBINED_BYTE_EXACT_2026-10-03.json` | `10a3c5634f5980cda52614c63e42fbb5769fa2c93dfed195ff74594b8f8dbc21` |
+| `packets/MERGE_GV2_PR3_DELETE_STATUS_JSON_2026-10-03.json` | `62890c50f8add9dcd941e5374bb6778c49307024c0332f8f1e48f65c774f1324` |
+
+Correction rows (each supersedes the earlier note it names; the earlier rows stay as written):
+- CORRECTION (round-1 note "Seen, not indexed: Conductor ACCEPTs…"): EXT-K1 `02129007…`, EXT-K2 `d76779e1…` and Card01 Amendment C `2225c3fa…` → **ACCEPTED** [V]. The Archivist ruled them real Conductor stamps that were issued before the FYIs (the brief was stale). Embedded pins match the indexed shas 5c40fb9d / d69a4f62 / cc75f096. 0 mismatch.
+- CORRECTION (round-1 MISMATCH on run_daily.py): `4f0854e5…` is the **CURRENT** runner, authority **[I]** (Conductor message 2026-10-03 17:09 ET; no packet on disk at ruling). `41d67d40…` (preserved at `_prev/`, self-hash OK) is the runner that made the 2026-10-03 17:13 ET capture. MISMATCH → RESOLVED by ruling.
+- CORRECTION (round-1 ElectIndex note "README fetch is OPTIONAL_NOT_CAPTURED from 10-03"): OPTIONAL_NOT_CAPTURED applies **only to the 2026-10-03 capture**. README capture resumes from the next daily run under its own `METHODOLOGY_CHANGED_README` flag. Endpoint set of 4f0854e5 = forecasts/, eifc-info.js, README and races_summary.csv on raw.githubusercontent.com ElectIndex/26_us_forecast_data, terms-of-service (Mon), robots.txt (Mon). No `-L`. Kalshi hosts refused.
+- NOTE (FROZEN_EXPERIMENT `8b716ef0…`): the `decision_packet_lineage` list still ends at c0c1aa66 and is left as is. **The current pin is the `decision_packet_sha256_current` field = d66c9eaf.** The file was not edited again.
+- Related-packet batch: 36 rows above, 36 [V] / 0 MISMATCH / 0 MISSING. Embedded pins resolve, including GV2 commits b361017c / 785c99ff / c19b9232 / 25f23a24, PR66 merge 09b56273, and oversize bundles 5cd0595c / efe55738. The v3.2 prompt frozen-edit chain 4efc4caa → fce33b3b → 5d1889f6 has `_prev` OK. Clerical issued-vs-mtime skews (≤3 min) are recorded in the receipt §C4. Duplicate skipped: `CONDUCTOR_RULING_SCOUT_EXTERNAL_HUNT_2026-10-03.json` 870895a5 (already indexed).
+- Seen, not indexed (after ruling; outside scope): `CONDUCTOR_RULING_ELECTINDEX_README_READD_2026-10-03.json` `20605d1a…` (17:20:33 ET; agrees with the run_daily correction), Examiner EXT-K1 READY `49011265…`, SCORE `0e5b1060…` (DESCRIPTIVE), SCORECARD `b5e08bf8…`, and `CONDUCTOR_ACCEPT_EXAMINER_SCORE_EXT_K1_2026-10-03.json` `530cca94…` (DESCRIPTIVE; no change to Q6-000 KEEP).
+- Receipt `packets/ARCHIVIST_INDEX_BATCH_2026-10-03.md`: pre-correction `dabc41ff…` → post-correction (Corrections section appended) row below.
+- Scoreboard unchanged: Q6-000 / Arm D KEEP +$345.24 / +6.90%. No new KEEP, KILL or CEM.
+
+| path | sha256 |
+|---|---|
+| `packets/ARCHIVIST_INDEX_BATCH_2026-10-03.md` (post-correction; was dabc41ff) | `e19d217888499cebbbed0c6a9075f890e3edf85bf8815efbf6a9768d02ded468` |
+
+### Appended 2026-10-03 ~17:25 ET (Archivist): run_daily authority upgrade + EXT-K1 score chain (append-only; no earlier row rewritten)
+
+| path | sha256 |
+|---|---|
+| `packets/CONDUCTOR_RULING_ELECTINDEX_README_READD_2026-10-03.json` (issued 17:20:33 ET; runner_current 4f0854e5, capture 41d67d40 in _prev; Adversary R1 display-only, Card01 stays frozen) | `20605d1afbab593876a6d7114d8dbb23ba6b412561a9f6b06f5c7641995d9a22` |
+| `packets/EXAMINER_READY_NOT_SCORED_EXT_K1_Q6000_LEGGING_AUDIT_PR66_2026-10-03.json` | `490112654a87699ea33bc60a60c05954428ecc41d0a31ac54556e89e3971b00f` |
+| `packets/EXAMINER_SCORE_EXT_K1_Q6000_LEGGING_AUDIT_PR66_2026-10-03.json` (verdict DESCRIPTIVE) | `0e5b10605798b45d69fde326e06fa1b9be52642dd4c64b28f79657b4d68edd5b` |
+| `packets/EXAMINER_SCORECARD_EXT_K1_Q6000_LEGGING_AUDIT_PR66_2026-10-03.md` | `b5e08bf8088a973c0f9919834b03593d8dc850cb9d875ba352fd9d9bec9a5958` |
+| `packets/CONDUCTOR_ACCEPT_EXAMINER_SCORE_EXT_K1_2026-10-03.json` (DESCRIPTIVE; "no change to Q6-000 KEEP; no gate adoption") | `530cca949ba4246602c853467bce5a7450be57e8e2815dba1590235d4e6a0fd5` |
+| `/workspace/v66/REPORT.md` (EXT-K1 run record per ACCEPT_SCORE; Variants box verify PASS-with-notes) | `f3552b58d571be2147024e94e666831e036cb11f199214c53d0c6750b978c4d0` |
+
+Correction rows and notes:
+- CORRECTION (previous section's run_daily.py CURRENT row, authority [I]): authority of `astra-capture/card01-nh002-house/run_daily.py` `4f0854e5…` → **[V]**, citing `packets/CONDUCTOR_RULING_ELECTINDEX_README_READD_2026-10-03.json` `20605d1a…`. Its message time is given as "17:1x EDT", consistent with the 17:09 ET cited in run_daily line 4.
+- Adversary R1 ruling, verbatim from 20605d1a: "Adversary: R0 caaff53e -> R1 82b09d7c display-only; named seats outside 92-race universe; Card01 stays frozen; gap labeled CHANGED_IN_GAP".
+- CORRECTION (previous section's "Seen, not indexed" note for 20605d1a / 49011265 / 0e5b1060 / b5e08bf8 / 530cca94): these are now indexed above. 6 rows, 6 [V] / 0 MISMATCH / 0 MISSING; all embedded pins resolve (receipt §D2). No frozen edits, no `_prev` needed.
+- Cross-ref: `packets/ADVERSARY_EXT_K1_PRESCORE_REVIEW_2026-10-03.md` `676ba2fa…` (CLEAR) was already indexed; it re-hashes OK. No duplicate row.
+- EXT-K1 PR66 = DESCRIPTIVE (not a KEEP or KILL; no CEM). Scoreboard unchanged: Q6-000 / Arm D KEEP +$345.24 / +6.90%.
+
+| path | sha256 |
+|---|---|
+| `packets/ARCHIVIST_INDEX_BATCH_2026-10-03.md` (post-section-D; was e19d2178) | `7dc1d6b97aa92b1e8338be914f19e6c9a97d44e151ccf9aa207787285837b05d` |
