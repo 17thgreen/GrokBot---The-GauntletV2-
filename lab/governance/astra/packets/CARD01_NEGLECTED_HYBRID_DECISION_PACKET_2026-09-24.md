@@ -9,6 +9,7 @@
 - Freeze (**filed**): `packets/CARD01_HOUSE_ONLY_PROSPECTIVE_FREEZE_2026-09-24.md`
 **Amendment A (mapping correction, pre-outcome):** `packets/CARD01_HOUSE_ONLY_PROSPECTIVE_FREEZE_2026-09-24_AMENDMENT_A.md`
 **Amendment B (pre-outcome; Adversary/Archivist/Conductor items a–e):** `packets/CARD01_HOUSE_ONLY_PROSPECTIVE_FREEZE_2026-09-24_AMENDMENT_B.md` (sha256 `ee6af37cef95f1e468d28e5b06750caaca8b1706ec11ed5cf5cdce460524c2c6`)
+**Amendment C (pre-outcome, docs-only; pins Adversary AF-1/2/5/6/7/10/11; `AWAITING_CONDUCTOR_ACCEPT`):** `packets/CARD01_HOUSE_ONLY_PROSPECTIVE_FREEZE_2026-09-24_AMENDMENT_C.md` (sha256 `cc75f09614ad285756fd7cb7f7a5c2ce4e711b5adb98102c2dd043ccfc1af0f0`)
 **SUPERSEDED_DRAFT:** no down-ballot freeze had been written before the course correction, so there was nothing to mark.
 
 ---
@@ -202,3 +203,7 @@ Versions before `58c44c4f` (drafting between 19:5x and ~20:03 ET) were not hash-
   - (2) Added this Changelog section (including the corrected lineage).
   - Intermediate bytes `cbc0cb8a…` existed briefly after the changelog was first written and before the Amendment B hash was added to the pointer line; they are superseded by this hash.
   - **No number, rule, threshold, universe, weight, knob, recommendation or result changed.**
+- **2026-10-03 17:12 ET (21:12Z): next version** (pre-edit bytes `c0c1aa66f104e3f102228a7a8e16f205977afbee63928f30a6954ec46707a82c` saved byte-exact at `packets/_prev/c0c1aa66f104e3f102228a7a8e16f205977afbee63928f30a6954ec46707a82c.CARD01_NEGLECTED_HYBRID_DECISION_PACKET_2026-09-24.md` under RULE-FROZEN-EDIT-PREV-BYTES-001; new sha256 is recorded outside this file, since a file cannot contain its own hash). Two changes:
+  - (1) Added the Amendment C pointer line under the Amendment B line (with Amendment C sha256 `cc75f096…f0f0`, status `AWAITING_CONDUCTOR_ACCEPT`).
+  - (2) Added this changelog entry. (A transient intermediate `ebdaea01…`, with a wrong timestamp in this entry, existed for under a minute; its bytes are kept at `packets/_prev/ebdaea01…` and it is superseded.)
+  - **No number, rule, threshold, universe, weight, knob, recommendation or result changed** in this file. The rule pins themselves live only in Amendment C.

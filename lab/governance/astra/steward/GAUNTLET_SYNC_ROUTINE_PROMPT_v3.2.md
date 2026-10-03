@@ -1,10 +1,11 @@
-# GauntletV2 repo sync, routine prompt (v3.2 rev5)
+# GauntletV2 repo sync, routine prompt (v3.2 rev6)
 
 Author: The Steward. v3 written 2026-10-01 22:55 ET; v3.1 written 2026-10-02 ~03:20 ET after the second placeholder-corruption incident (run `sync-20261002-0248`), revised ~03:30 ET per Conductor (no in-run retries, absolute write cutoff, live-schema-only encoding exception) before pinning. Conductor installs and pins this prompt. The Steward does not edit the routine.
 v3 replaces v2 in full. v2 (sha256 `bb0a90e567c44be76928759b3d6aa20b8effd1beff9a8663f4a8c1e688ed7a66`) was reconstructed from the Steward's own record while the box was re-hydrating. The box copy then came back byte-identical (sha256 verified 23:21 ET), so the base is confirmed. v3 = v2 + changes (a)–(e) from Conductor's 2026-10-01 incident ruling, marked **[v3]**.
 v3.1 = v3 (sha256 `cc0a17895d32a2e3ca97bce915849a4405c402dcdd0f514c3d97665f53484ed2`) + changes marked **[v3.1]**: the inline-content rule, the pre-call self-check, BAD_ON_MAIN (with cross-run quarantine), a 12 KB inline cap, an absolute write cutoff, and **no in-run repair or retry of any kind**.
 v3.2 = v3.1 (sha256 `df2f54a65ad1d2a0611e446d4bd6cac0df098402a54b838d35ac3fef1aa52997`) + changes marked **[v3.2]**, accepted in principle by Conductor (2026-10-02 19:14 ET ruling on STEWARD_SYNC_ANALYSIS_2026-10-02): a fixed gate order (compare with main, then binary, then size), one fixed classifier embedded in this file, timestamped RUN_START/RUN_END, never_push globs for live/state files, an explicit box-only never_push list (including `**/ARCHIVIST_ELECTINDEX_*`, Conductor ~19:20 ET), and DEFERRED_LIVE. Per Conductor's 2026-10-03 ~04:53 ET ruling, v3.2 also requires (a) **every `*.md` to be byte-exact only** (`DEFERRED_MD_BYTE_EXACT`; never pushed inline) and (b) never-push paths already on main to be logged `SKIPPED_NEVER_PUSH_ON_MAIN` (never BAD_ON_MAIN, never an alert), with stale register entries `RETIRED`. Per Conductor's 2026-10-03 ~04:57 ET ruling, the whole `steward/LOSS_INVENTORY_2026-10-01*` family is box-only. Changes marked **[v3.2 OPTIONAL]** are Steward additions that Conductor may strip before pinning. Proposed by the Steward 2026-10-02 ~19:30 ET; Conductor installs and pins.
 **[rev5] v3.2 rev5** (Conductor ask 2026-10-03 ~10:58 ET, after run `sync-20261003-1050` FAILED with 3 BAD_ON_MAIN and Conductor PAUSED v3.1): **this routine never writes to the repo.** It classifies, logs, reports and writes one landing manifest per run. Every landing goes through one combined byte-exact real-checkout PR that Conductor arranges, verifies and merges (§7). Text marked **[rev5]** overrides any earlier v3.1/v3.2 text it contradicts. The v3.1 inline-write rules (old §7.1–7.5), the 30-file cap, the 420 s write cutoff and the post-write blob compare are retired.
+**[rev6] v3.2 rev6** (Conductor accepted in principle 2026-10-03 ~15:07 ET): rev5 (sha256 `fce33b3b7ebf891a0a295d3a4cd601761e1af2167d144a00284bd4449fb6eaa6`) plus one never-push glob, `**/*status.json` (case-insensitive), minus any path Conductor has ruled pushable (none as of 2026-10-03). Trigger: `lab/governance/pulses/GV2_SYNC_ROUTINE_STATUS.json`, a routine status note outside `lab/data`, was `READY_FOR_BYTE_EXACT_PR` under rev5 and had to be dropped by hand from combined PR #2. Everything else in rev5 is unchanged.
 It is written to you, the routine, for every future run.
 
 ---
@@ -135,9 +136,9 @@ G4 and G5 need the remote tree (§4 step 1) and the classifier output (§4.1). R
 
 1. **Extract** the code block between the exact lines `# >>> CLASSIFIER v3.2 BEGIN` and `# <<< CLASSIFIER v3.2 END` (both included) from this prompt file, with this command and no other method:
    `python3 -c "import sys;L=open(sys.argv[1],encoding='utf-8').read().split('\n');s=L.index('# >>> CLASSIFIER v3.2 BEGIN');e=L.index('# <<< CLASSIFIER v3.2 END');open(sys.argv[2],'w',encoding='utf-8').write('\n'.join(L[s:e+1])+'\n')" /workspace/lab/governance/astra/steward/GAUNTLET_SYNC_ROUTINE_PROMPT_v3.2.md /workspace/gauntlet_sync_work/classify_v3_2.py`
-2. **Check** `sha256sum /workspace/gauntlet_sync_work/classify_v3_2.py` equals **`d68e5591dc2f9601400542f320f3c1b852988d821a42bfa6b4f57656d22afeee`** **[rev5]**. If it differs, or the classifier exits non-zero, outcome = **`CLASSIFIER_MISMATCH`**: write the log `RUN_START` and `RUN_END` only, alert Conductor (§10), end.
+2. **Check** `sha256sum /workspace/gauntlet_sync_work/classify_v3_2.py` equals **`21ed95774bbb4b20be6a4a51b29bafb92b6bd5f25d16409af56839af753d2185`** **[rev6]**. If it differs, or the classifier exits non-zero, outcome = **`CLASSIFIER_MISMATCH`**: write the log `RUN_START` and `RUN_END` only, alert Conductor (§10), end.
 3. **[rev5] Run** `python3 /workspace/gauntlet_sync_work/classify_v3_2.py <t0_epoch> /workspace/gauntlet_sync_work/classified_<run_id>.json /workspace/gauntlet_sync_work/quarantine.txt <prev> /workspace/gauntlet_sync_work` after the tree fetch (§4 step 1) and the BAD_ON_MAIN register build (§1 step 5). It reads `/workspace/lab` and the cache tree only, writes `classified_<run_id>.json` and the landing manifest (§7.2), and prints one summary line.
-   - `<prev>` is the newest `/workspace/gauntlet_sync_work/classified_<run_id>.json` from an earlier run whose `RUN_END` has `outcome=SUCCESS_CLASSIFIED` and whose `summary.classifier` is `v3.2r5`. If there is none (the first rev5 run), pass `-`.
+   - `<prev>` is the newest `/workspace/gauntlet_sync_work/classified_<run_id>.json` from an earlier run whose `RUN_END` has `outcome=SUCCESS_CLASSIFIED` and whose `summary.classifier` is `v3.2r5` or **[rev6]** `v3.2r6` (same row format). If there is none, pass `-`.
 4. **Output:**
    - `summary`: `in_scope_total`, `in_sync`, `skipped_never_push`, `skipped_never_push_on_main`, `bad_on_main_open`, `bad_on_main_new`, `deferred_live`, `ready_for_pr`, `ready_md`, `ready_s`, `ready_m`, `ready_l`, `ready_xl`, `missing_on_box`, `main_lab_files`, `main_head`, `manifest_path`, `manifest_sha256`, `manifest_rows`.
    - `missing_on_box`: paths.
@@ -153,7 +154,7 @@ G4 and G5 need the remote tree (§4 step 1) and the classifier output (§4.1). R
 
 ```python
 # >>> CLASSIFIER v3.2 BEGIN
-# GauntletV2 sync classifier, fixed for prompt v3.2 rev5. Do not edit, re-implement or re-type.
+# GauntletV2 sync classifier, fixed for prompt v3.2 rev6. Do not edit, re-implement or re-type.
 # Usage: python3 classify_v3_2.py <t0_epoch> <out_json> <quarantine_paths_file> <prev_classified_json or -> <manifest_dir>
 # Read-only on /workspace/lab and the cache tree. Writes only <out_json> and the landing manifest
 # <manifest_dir>/GV2_LANDING_MANIFEST_<t0 ET, YYYYMMDDTHHMMSS-hhmm>.json (box-only, never pushed).
@@ -205,6 +206,7 @@ PATH_RULES = [  # (rule name, regex on repo path); first match wins
     ("box-only:landing-manifest", r"(^|/)GV2_LANDING_MANIFEST_[^/]*$"),
     ("electindex-probe", r"/source_probe_electindex/"),
     ("live:status-json", r"^lab/data/.+/provenance/[^/]*status\.json$"),
+    ("live:status-json-any", r"status\.json$"),   # rev6: **/*status.json, case-insensitive
     ("live:progress-json", r"(^|/)progress\.json$"),
     ("live:pid", r"\.pid$"),
     ("live:lock", r"\.lock$"),
@@ -217,6 +219,9 @@ PATH_RULES = [  # (rule name, regex on repo path); first match wins
     ("data-prov-raw", r"/DATA-PROV-[^/]*/(raw|slices|sealed)/"),
     ("astra-science", r"^lab/astra-science/"),
 ]
+# rev6: *status.json paths Conductor has ruled pushable (exempt from live:status-json-any only).
+# None found in CONDUCTOR_RULING_*/CONDUCTOR_PIN_* packets or the steward rulings exec file (2026-10-03).
+STATUS_JSON_PUSHABLE = frozenset()
 SECRET = [
     ("private-key", rb"-----BEGIN[^\n]*PRIVATE KEY"),
     ("kalshi-access-key", rb"KALSHI-ACCESS-KEY\s*[:=]?\s*['\"]?[A-Za-z0-9\-]{8,}"),
@@ -231,7 +236,9 @@ def never_push(rp):
     if rp in BOX_ONLY:
         return BOX_ONLY[rp]
     for name, rx in PATH_RULES:
-        if re.search(rx, rp, re.I if name in ("secret-file", "raw-ext") else 0):
+        if name == "live:status-json-any" and rp in STATUS_JSON_PUSHABLE:
+            continue
+        if re.search(rx, rp, re.I if name in ("secret-file", "raw-ext", "live:status-json-any") else 0):
             return name
     if "electindex" in rp.lower() and not (rp.startswith("lab/governance/") and rp.endswith(".md")):
         return "electindex"
@@ -320,7 +327,7 @@ def main():
     mrows = [{k: r[k] for k in ("path", "size", "sha256", "blob", "main_blob", "state", "label", "size_class", "ext")}
              for r in rows if r["label"] in MANIFEST_LABELS]
     mname = "GV2_LANDING_MANIFEST_%s.json" % t0_et.strftime("%Y%m%dT%H%M%S%z")
-    manifest = {"manifest": "gv2-landing-manifest/1", "classifier": "v3.2r5",
+    manifest = {"manifest": "gv2-landing-manifest/1", "classifier": "v3.2r6",
                 "classifier_sha256": hashlib.sha256(open(__file__, "rb").read()).hexdigest(),
                 "t0_epoch": t0, "t0_et": t0_et.isoformat(), "main_head": head,
                 "repo": "17thgreen/GrokBot---The-GauntletV2-", "branch": "main",
@@ -328,7 +335,7 @@ def main():
     mbytes = (json.dumps(manifest, indent=1, sort_keys=True) + "\n").encode("utf-8")
     mpath = os.path.join(mdir, mname)
     open(mpath, "wb").write(mbytes)
-    summary = {"classifier": "v3.2r5", "t0_epoch": t0, "main_head": head, "in_scope_total": len(rows),
+    summary = {"classifier": "v3.2r6", "t0_epoch": t0, "main_head": head, "in_scope_total": len(rows),
                "in_sync": c["IN_SYNC"], "skipped_never_push": c["SKIPPED_NEVER_PUSH"],
                "skipped_never_push_on_main": c["SKIPPED_NEVER_PUSH_ON_MAIN"],
                "bad_on_main_open": c["BAD_ON_MAIN_OPEN"], "bad_on_main_new": c["BAD_ON_MAIN_NEW"],
@@ -416,6 +423,7 @@ Why this order:
      - `lab/governance/astra/steward/LOSS_INVENTORY_2026-10-01*` (glob `steward/LOSS_INVENTORY_2026-10-01*`): every sibling, including `LOSS_INVENTORY_2026-10-01.md`, `LOSS_INVENTORY_2026-10-01_AMEND1.json` and `LOSS_INVENTORY_2026-10-01_AMEND1.md`, and any later file with that prefix (Conductor ruling 2026-10-03 ~04:57 ET)
    - **[v3.2] Live and state files** (rewritten by running processes; content is meaningless off the box and races the precheck):
      - `lab/data/**/provenance/*status.json`: covers `capture_status.json` (CB-002, LIQ-001, PM-006 rewrite theirs every 20–40 s; PM-008) and `pull_status.json` (PM-009)
+     - **[rev6]** `**/*status.json`, case-insensitive (rule `live:status-json-any`): every other status file anywhere in scope, for example `lab/governance/pulses/GV2_SYNC_ROUTINE_STATUS.json`. Exception: a path listed in the classifier's `STATUS_JSON_PUSHABLE` (Conductor-ruled pushable). That list is empty as of 2026-10-03; adding a path needs a new prompt version.
      - `**/progress.json`
      - `**/*.pid`, `**/*.lock`, `**/.locks/**`: process and lock state
      - `**/*heartbeat*`
@@ -459,7 +467,7 @@ When unsure, refuse.
 ### 7.2 The landing manifest
 - **Written by the classifier** (§4.1), never by hand: `/workspace/gauntlet_sync_work/GV2_LANDING_MANIFEST_<YYYYMMDDTHHMMSS±hhmm>.json`, where the timestamp is `t0` in America/New_York (example: `GV2_LANDING_MANIFEST_20261003T124000-0400.json`).
 - **Box-only and never pushed:** it lives outside `/workspace/lab` (so it is out of §5 scope), and `**/GV2_LANDING_MANIFEST_*` is a §6 gate 1 never-push rule in case a copy is ever placed under `lab/`.
-- **Content:** UTF-8 JSON with sorted keys: `manifest` (`gv2-landing-manifest/1`), `classifier` (`v3.2r5`), `classifier_sha256`, `t0_epoch`, `t0_et`, `main_head`, `repo`, `branch`, `rows_total`, and `rows`. Rows are sorted by path, one per file that needs to land: every `READY_FOR_BYTE_EXACT_PR`, `BAD_ON_MAIN_OPEN` and `BAD_ON_MAIN_NEW` row, with `path size sha256 blob main_blob state label size_class ext`. `blob` is the box git blob sha the landed file must have; `main_blob` is what main had at `t0` (`null` if absent).
+- **Content:** UTF-8 JSON with sorted keys: `manifest` (`gv2-landing-manifest/1`), `classifier` (**[rev6]** `v3.2r6`), `classifier_sha256`, `t0_epoch`, `t0_et`, `main_head`, `repo`, `branch`, `rows_total`, and `rows`. Rows are sorted by path, one per file that needs to land: every `READY_FOR_BYTE_EXACT_PR`, `BAD_ON_MAIN_OPEN` and `BAD_ON_MAIN_NEW` row, with `path size sha256 blob main_blob state label size_class ext`. `blob` is the box git blob sha the landed file must have; `main_blob` is what main had at `t0` (`null` if absent).
 - It holds no mtimes, so for the same `t0`, box and main its bytes are identical (deterministic).
 - **Valid manifest:** only a manifest whose sha256 appears in a `SUCCESS_CLASSIFIED` `RUN_END` line (§8) may feed a PR. Older manifests are history; do not delete them.
 
@@ -570,3 +578,6 @@ On ABORTED_BOX_INCOMPLETE or a prompt-gate stop, write **no** log (§1, §3).
   - `sync-20261003-0445`: BAD_ON_MAIN L3 `.md` (repaired `06d04867`) and CB-002 `capture_status.json` (STALE_LIVE_ACCEPTED; RETIRED under v3.2).
   - `sync-20261003-1050`: `outcome=FAILED landed=0 bad_on_main=3`, main `76883e2c`. The new BAD_ON_MAIN paths were PM-003 `CLOCK_AUDIT_REPORT.md` (placeholder) and `CLOCK_AUDIT_W2C_SIBLING_JOIN.json` (static `.json` retype). Conductor paused v3.1 at 10:58 ET and arranged an external byte-exact repair of both.
   - The rev5 classifier, run against a 04:58 ET snapshot as `<prev>` and main `76883e2c` with an empty register, labels exactly those two PM-003 paths `BAD_ON_MAIN_NEW` and nothing else.
+- **[rev6, informational] 2026-10-03:**
+  - The first rev5 run, `sync-20261003-1444`, was `SUCCESS_CLASSIFIED` with `manifest_rows=522`. Combined byte-exact PR #2 landed 521 of those rows and was squash-merged as `c19b9232`. `GV2_SYNC_ROUTINE_STATUS.json` was held out by hand, which is the case rev6 now covers.
+  - CB-002 `capture_status.json` and PM-009 `pull_status.json` are still on main at `c19b9232` (`SKIPPED_NEVER_PUSH_ON_MAIN`). Their removal is a separate Conductor-GO'd deletion PR.
