@@ -1,3 +1,4 @@
+**Redaction header — Conductor ruling 3bff01cd (`CONDUCTOR_RULING_GV2_EXPOSURE_AND_CARD01_BUILDER_2026-10-03.md`):** ElectIndex values were redacted forward-only. The original is kept on the box only, sha256 `c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59`.
 # CARD 01: House-only prospective confirmation (NH-002-H): FREEZE, 2026-09-24 (ET)
 
 **Packet ID:** CARD01-NH002-HOUSE-PROSPECTIVE
@@ -56,98 +57,98 @@ On untouched 2026 House races, test whether a fixed 50/50 blend of an admitted e
 
 | # | 2026 race (ElectIndex code) | Kalshi event (expected) | State | ElectIndex dem_prob at freeze snapshot (%) | Same district label as a 2024 set? |
 |---|---|---|---|---:|---|
-| 1 | AL-02 | `KXHOUSERACE-AL02-26` | AL | 45.8 | no |
-| 2 | AR-02 | `KXHOUSERACE-AR02-26` | AR | 30.2 | no |
-| 3 | AZ-01 | `KXHOUSERACE-AZ01-26` | AZ | 77.4 | YES (label only; different election/term) |
-| 4 | AZ-02 | `KXHOUSERACE-AZ02-26` | AZ | 60.0 | no |
-| 5 | AZ-05 | `KXHOUSERACE-AZ05-26` | AZ | 12.3 | no |
-| 6 | AZ-06 | `KXHOUSERACE-AZ06-26` | AZ | 76.6 | YES (label only; different election/term) |
-| 7 | AZ-08 | `KXHOUSERACE-AZ08-26` | AZ | 19.9 | no |
-| 8 | CA-22 | `KXHOUSERACE-CA22-26` | CA | 80.7 | YES (label only; different election/term) |
-| 9 | CA-48 | `KXHOUSERACE-CA48-26` | CA | 88.5 | no |
-| 10 | CO-03 | `KXHOUSERACE-CO03-26` | CO | 53.9 | no |
-| 11 | CO-04 | `KXHOUSERACE-CO04-26` | CO | 37.3 | no |
-| 12 | CO-05 | `KXHOUSERACE-CO05-26` | CO | 29.2 | no |
-| 13 | CO-08 | `KXHOUSERACE-CO08-26` | CO | 79.4 | YES (label only; different election/term) |
-| 14 | FL-02 | `KXHOUSERACE-FL02-26` | FL | 20.7 | no |
-| 15 | FL-04 | `KXHOUSERACE-FL04-26` | FL | 23.6 | no |
-| 16 | FL-07 | `KXHOUSERACE-FL07-26` | FL | 55.3 | no |
-| 17 | FL-08 | `KXHOUSERACE-FL08-26` | FL | 20.4 | no |
-| 18 | FL-09 | `KXHOUSERACE-FL09-26` | FL | 57.5 | no |
-| 19 | FL-11 | `KXHOUSERACE-FL11-26` | FL | 27.6 | no |
-| 20 | FL-12 | `KXHOUSERACE-FL12-26` | FL | 13.7 | no |
-| 21 | FL-13 | `KXHOUSERACE-FL13-26` | FL | 35.1 | no |
-| 22 | FL-14 | `KXHOUSERACE-FL14-26` | FL | 81.4 | no |
-| 23 | FL-16 | `KXHOUSERACE-FL16-26` | FL | 39.2 | no |
-| 24 | FL-18 | `KXHOUSERACE-FL18-26` | FL | 16.3 | no |
-| 25 | FL-22 | `KXHOUSERACE-FL22-26` | FL | 62.3 | no |
-| 26 | FL-25 | `KXHOUSERACE-FL25-26` | FL | 83.4 | no |
-| 27 | FL-26 | `KXHOUSERACE-FL26-26` | FL | 18.0 | no |
-| 28 | FL-27 | `KXHOUSERACE-FL27-26` | FL | 34.1 | no |
-| 29 | GA-01 | `KXHOUSERACE-GA01-26` | GA | 21.0 | no |
-| 30 | GA-11 | `KXHOUSERACE-GA11-26` | GA | 11.6 | no |
-| 31 | GA-12 | `KXHOUSERACE-GA12-26` | GA | 12.9 | no |
-| 32 | IA-02 | `KXHOUSERACE-IA02-26` | IA | 68.4 | no |
-| 33 | IA-03 | `KXHOUSERACE-IA03-26` | IA | 78.0 | YES (label only; different election/term) |
-| 34 | KY-06 | `KXHOUSERACE-KY06-26` | KY | 28.9 | no |
-| 35 | ME-02 | `KXHOUSERACE-ME02-26` | ME | 34.9 | YES (label only; different election/term) |
-| 36 | MI-01 | `KXHOUSERACE-MI01-26` | MI | 12.4 | no |
-| 37 | MI-04 | `KXHOUSERACE-MI04-26` | MI | 47.5 | no |
-| 38 | MI-07 | `KXHOUSERACE-MI07-26` | MI | 65.0 | YES (label only; different election/term) |
-| 39 | MI-10 | `KXHOUSERACE-MI10-26` | MI | 66.1 | no |
-| 40 | MN-01 | `KXHOUSERACE-MN01-26` | MN | 29.2 | no |
-| 41 | MN-08 | `KXHOUSERACE-MN08-26` | MN | 17.2 | no |
-| 42 | MO-02 | `KXHOUSERACE-MO02-26` | MO | 23.7 | no |
-| 43 | MT-01 | `KXHOUSERACE-MT01-26` | MT | 34.9 | no |
-| 44 | NC-01 | `KXHOUSERACE-NC01-26` | NC | 71.6 | YES (label only; different election/term) |
-| 45 | NC-03 | `KXHOUSERACE-NC03-26` | NC | 28.1 | no |
-| 46 | NC-05 | `KXHOUSERACE-NC05-26` | NC | 18.4 | no |
-| 47 | NC-06 | `KXHOUSERACE-NC06-26` | NC | 12.0 | no |
-| 48 | NC-07 | `KXHOUSERACE-NC07-26` | NC | 18.4 | no |
-| 49 | NC-09 | `KXHOUSERACE-NC09-26` | NC | 18.2 | no |
-| 50 | NC-11 | `KXHOUSERACE-NC11-26` | NC | 42.5 | no |
-| 51 | NC-13 | `KXHOUSERACE-NC13-26` | NC | 12.5 | no |
-| 52 | NC-14 | `KXHOUSERACE-NC14-26` | NC | 12.2 | no |
-| 53 | NE-01 | `KXHOUSERACE-NE01-26` | NE | 19.6 | no |
-| 54 | NE-02 | `KXHOUSERACE-NE02-26` | NE | 87.3 | YES (label only; different election/term) |
-| 55 | NH-01 | `KXHOUSERACE-NH01-26` | NH | 77.1 | no |
-| 56 | NJ-02 | `KXHOUSERACE-NJ02-26` | NJ | 22.4 | no |
-| 57 | NJ-07 | `KXHOUSERACE-NJ07-26` | NJ | 76.4 | no |
-| 58 | NV-02 | `KXHOUSERACE-NV02-26` | NV | 41.6 | no |
-| 59 | NY-01 | `KXHOUSERACE-NY01-26` | NY | 39.9 | no |
-| 60 | NY-02 | `KXHOUSERACE-NY02-26` | NY | 15.8 | no |
-| 61 | NY-17 | `KXHOUSERACE-NY17-26` | NY | 71.0 | no |
-| 62 | NY-21 | `KXHOUSERACE-NY21-26` | NY | 14.3 | no |
-| 63 | OH-07 | `KXHOUSERACE-OH07-26` | OH | 48.1 | no |
-| 64 | OH-08 | `KXHOUSERACE-OH08-26` | OH | 23.4 | no |
-| 65 | OH-09 | `KXHOUSERACE-OH09-26` | OH | 88.5 | no |
-| 66 | OH-10 | `KXHOUSERACE-OH10-26` | OH | 22.5 | no |
-| 67 | OH-15 | `KXHOUSERACE-OH15-26` | OH | 38.7 | no |
-| 68 | PA-01 | `KXHOUSERACE-PA01-26` | PA | 46.5 | no |
-| 69 | PA-07 | `KXHOUSERACE-PA07-26` | PA | 71.4 | YES (label only; different election/term) |
-| 70 | PA-08 | `KXHOUSERACE-PA08-26` | PA | 61.4 | YES (label only; different election/term) |
-| 71 | PA-10 | `KXHOUSERACE-PA10-26` | PA | 86.1 | YES (label only; different election/term) |
-| 72 | SC-01 | `KXHOUSERACE-SC01-26` | SC | 41.7 | no |
-| 73 | SC-02 | `KXHOUSERACE-SC02-26` | SC | 15.6 | no |
-| 74 | TN-05 | `KXHOUSERACE-TN05-26` | TN | 14.9 | no |
-| 75 | TN-09 | `KXHOUSERACE-TN09-26` | TN | 20.5 | no |
-| 76 | TX-02 | `KXHOUSERACE-TX02-26` | TX | 12.7 | no |
-| 77 | TX-09 | `KXHOUSERACE-TX09-26` | TX | 29.2 | no |
-| 78 | TX-10 | `KXHOUSERACE-TX10-26` | TX | 11.1 | no |
-| 79 | TX-15 | `KXHOUSERACE-TX15-26` | TX | 57.4 | no |
-| 80 | TX-21 | `KXHOUSERACE-TX21-26` | TX | 12.8 | no |
-| 81 | TX-22 | `KXHOUSERACE-TX22-26` | TX | 11.2 | no |
-| 82 | TX-23 | `KXHOUSERACE-TX23-26` | TX | 45.4 | no |
-| 83 | TX-24 | `KXHOUSERACE-TX24-26` | TX | 11.9 | no |
-| 84 | TX-32 | `KXHOUSERACE-TX32-26` | TX | 23.6 | no |
-| 85 | TX-34 | `KXHOUSERACE-TX34-26` | TX | 88.4 | no |
-| 86 | TX-35 | `KXHOUSERACE-TX35-26` | TX | 62.3 | no |
-| 87 | VA-01 | `KXHOUSERACE-VA01-26` | VA | 37.9 | no |
-| 88 | VA-02 | `KXHOUSERACE-VA02-26` | VA | 74.5 | no |
-| 89 | VA-05 | `KXHOUSERACE-VA05-26` | VA | 33.1 | no |
-| 90 | WA-03 | `KXHOUSERACE-WA03-26` | WA | 82.2 | YES (label only; different election/term) |
-| 91 | WI-01 | `KXHOUSERACE-WI01-26` | WI | 37.4 | no |
-| 92 | WI-03 | `KXHOUSERACE-WI03-26` | WI | 75.5 | no |
+| 1 | AL-02 | `KXHOUSERACE-AL02-26` | AL | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | no |
+| 2 | AR-02 | `KXHOUSERACE-AR02-26` | AR | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | no |
+| 3 | AZ-01 | `KXHOUSERACE-AZ01-26` | AZ | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | YES (label only; different election/term) |
+| 4 | AZ-02 | `KXHOUSERACE-AZ02-26` | AZ | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | no |
+| 5 | AZ-05 | `KXHOUSERACE-AZ05-26` | AZ | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | no |
+| 6 | AZ-06 | `KXHOUSERACE-AZ06-26` | AZ | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | YES (label only; different election/term) |
+| 7 | AZ-08 | `KXHOUSERACE-AZ08-26` | AZ | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | no |
+| 8 | CA-22 | `KXHOUSERACE-CA22-26` | CA | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | YES (label only; different election/term) |
+| 9 | CA-48 | `KXHOUSERACE-CA48-26` | CA | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | no |
+| 10 | CO-03 | `KXHOUSERACE-CO03-26` | CO | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | no |
+| 11 | CO-04 | `KXHOUSERACE-CO04-26` | CO | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | no |
+| 12 | CO-05 | `KXHOUSERACE-CO05-26` | CO | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | no |
+| 13 | CO-08 | `KXHOUSERACE-CO08-26` | CO | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | YES (label only; different election/term) |
+| 14 | FL-02 | `KXHOUSERACE-FL02-26` | FL | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | no |
+| 15 | FL-04 | `KXHOUSERACE-FL04-26` | FL | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | no |
+| 16 | FL-07 | `KXHOUSERACE-FL07-26` | FL | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | no |
+| 17 | FL-08 | `KXHOUSERACE-FL08-26` | FL | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | no |
+| 18 | FL-09 | `KXHOUSERACE-FL09-26` | FL | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | no |
+| 19 | FL-11 | `KXHOUSERACE-FL11-26` | FL | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | no |
+| 20 | FL-12 | `KXHOUSERACE-FL12-26` | FL | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | no |
+| 21 | FL-13 | `KXHOUSERACE-FL13-26` | FL | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | no |
+| 22 | FL-14 | `KXHOUSERACE-FL14-26` | FL | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | no |
+| 23 | FL-16 | `KXHOUSERACE-FL16-26` | FL | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | no |
+| 24 | FL-18 | `KXHOUSERACE-FL18-26` | FL | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | no |
+| 25 | FL-22 | `KXHOUSERACE-FL22-26` | FL | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | no |
+| 26 | FL-25 | `KXHOUSERACE-FL25-26` | FL | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | no |
+| 27 | FL-26 | `KXHOUSERACE-FL26-26` | FL | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | no |
+| 28 | FL-27 | `KXHOUSERACE-FL27-26` | FL | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | no |
+| 29 | GA-01 | `KXHOUSERACE-GA01-26` | GA | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | no |
+| 30 | GA-11 | `KXHOUSERACE-GA11-26` | GA | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | no |
+| 31 | GA-12 | `KXHOUSERACE-GA12-26` | GA | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | no |
+| 32 | IA-02 | `KXHOUSERACE-IA02-26` | IA | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | no |
+| 33 | IA-03 | `KXHOUSERACE-IA03-26` | IA | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | YES (label only; different election/term) |
+| 34 | KY-06 | `KXHOUSERACE-KY06-26` | KY | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | no |
+| 35 | ME-02 | `KXHOUSERACE-ME02-26` | ME | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | YES (label only; different election/term) |
+| 36 | MI-01 | `KXHOUSERACE-MI01-26` | MI | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | no |
+| 37 | MI-04 | `KXHOUSERACE-MI04-26` | MI | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | no |
+| 38 | MI-07 | `KXHOUSERACE-MI07-26` | MI | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | YES (label only; different election/term) |
+| 39 | MI-10 | `KXHOUSERACE-MI10-26` | MI | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | no |
+| 40 | MN-01 | `KXHOUSERACE-MN01-26` | MN | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | no |
+| 41 | MN-08 | `KXHOUSERACE-MN08-26` | MN | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | no |
+| 42 | MO-02 | `KXHOUSERACE-MO02-26` | MO | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | no |
+| 43 | MT-01 | `KXHOUSERACE-MT01-26` | MT | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | no |
+| 44 | NC-01 | `KXHOUSERACE-NC01-26` | NC | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | YES (label only; different election/term) |
+| 45 | NC-03 | `KXHOUSERACE-NC03-26` | NC | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | no |
+| 46 | NC-05 | `KXHOUSERACE-NC05-26` | NC | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | no |
+| 47 | NC-06 | `KXHOUSERACE-NC06-26` | NC | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | no |
+| 48 | NC-07 | `KXHOUSERACE-NC07-26` | NC | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | no |
+| 49 | NC-09 | `KXHOUSERACE-NC09-26` | NC | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | no |
+| 50 | NC-11 | `KXHOUSERACE-NC11-26` | NC | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | no |
+| 51 | NC-13 | `KXHOUSERACE-NC13-26` | NC | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | no |
+| 52 | NC-14 | `KXHOUSERACE-NC14-26` | NC | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | no |
+| 53 | NE-01 | `KXHOUSERACE-NE01-26` | NE | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | no |
+| 54 | NE-02 | `KXHOUSERACE-NE02-26` | NE | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | YES (label only; different election/term) |
+| 55 | NH-01 | `KXHOUSERACE-NH01-26` | NH | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | no |
+| 56 | NJ-02 | `KXHOUSERACE-NJ02-26` | NJ | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | no |
+| 57 | NJ-07 | `KXHOUSERACE-NJ07-26` | NJ | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | no |
+| 58 | NV-02 | `KXHOUSERACE-NV02-26` | NV | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | no |
+| 59 | NY-01 | `KXHOUSERACE-NY01-26` | NY | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | no |
+| 60 | NY-02 | `KXHOUSERACE-NY02-26` | NY | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | no |
+| 61 | NY-17 | `KXHOUSERACE-NY17-26` | NY | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | no |
+| 62 | NY-21 | `KXHOUSERACE-NY21-26` | NY | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | no |
+| 63 | OH-07 | `KXHOUSERACE-OH07-26` | OH | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | no |
+| 64 | OH-08 | `KXHOUSERACE-OH08-26` | OH | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | no |
+| 65 | OH-09 | `KXHOUSERACE-OH09-26` | OH | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | no |
+| 66 | OH-10 | `KXHOUSERACE-OH10-26` | OH | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | no |
+| 67 | OH-15 | `KXHOUSERACE-OH15-26` | OH | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | no |
+| 68 | PA-01 | `KXHOUSERACE-PA01-26` | PA | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | no |
+| 69 | PA-07 | `KXHOUSERACE-PA07-26` | PA | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | YES (label only; different election/term) |
+| 70 | PA-08 | `KXHOUSERACE-PA08-26` | PA | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | YES (label only; different election/term) |
+| 71 | PA-10 | `KXHOUSERACE-PA10-26` | PA | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | YES (label only; different election/term) |
+| 72 | SC-01 | `KXHOUSERACE-SC01-26` | SC | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | no |
+| 73 | SC-02 | `KXHOUSERACE-SC02-26` | SC | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | no |
+| 74 | TN-05 | `KXHOUSERACE-TN05-26` | TN | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | no |
+| 75 | TN-09 | `KXHOUSERACE-TN09-26` | TN | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | no |
+| 76 | TX-02 | `KXHOUSERACE-TX02-26` | TX | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | no |
+| 77 | TX-09 | `KXHOUSERACE-TX09-26` | TX | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | no |
+| 78 | TX-10 | `KXHOUSERACE-TX10-26` | TX | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | no |
+| 79 | TX-15 | `KXHOUSERACE-TX15-26` | TX | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | no |
+| 80 | TX-21 | `KXHOUSERACE-TX21-26` | TX | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | no |
+| 81 | TX-22 | `KXHOUSERACE-TX22-26` | TX | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | no |
+| 82 | TX-23 | `KXHOUSERACE-TX23-26` | TX | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | no |
+| 83 | TX-24 | `KXHOUSERACE-TX24-26` | TX | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | no |
+| 84 | TX-32 | `KXHOUSERACE-TX32-26` | TX | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | no |
+| 85 | TX-34 | `KXHOUSERACE-TX34-26` | TX | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | no |
+| 86 | TX-35 | `KXHOUSERACE-TX35-26` | TX | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | no |
+| 87 | VA-01 | `KXHOUSERACE-VA01-26` | VA | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | no |
+| 88 | VA-02 | `KXHOUSERACE-VA02-26` | VA | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | no |
+| 89 | VA-05 | `KXHOUSERACE-VA05-26` | VA | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | no |
+| 90 | WA-03 | `KXHOUSERACE-WA03-26` | WA | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | YES (label only; different election/term) |
+| 91 | WI-01 | `KXHOUSERACE-WI01-26` | WI | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | no |
+| 92 | WI-03 | `KXHOUSERACE-WI03-26` | WI | [REDACTED: ElectIndex ToS re-gate; box copy sha256 c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59] | no |
 ## 4. Knob (exactly one): blend weight `w` on the external forecast
 
 p_hybrid = w · p_ElectIndex + (1 − w) · p_mid, where p_mid is the Kalshi `-D` contract YES bid/ask midpoint at the decision snapshot.
@@ -288,7 +289,7 @@ No other weight will be considered.
 - (c) The gain exists only against the mid, not against executable prices: the hypothetical taker P&L at ask is ≤ 0, or ≤ 0 under the one-tick-worse stress.
 - (d) Top-1 race share of positive P&L is > 50%, or dropping the best two winners leaves ≤ $0 (the NH-001 check).
 
-## 10. Collector ask (GET-only; lands under `/workspace/lab/astra-capture/card01-nh002-house/`)
+## 10. Collector ask (GET-only; lands under `[REDACTED: private box path]`)
 
 1. ElectIndex `output/races_summary.csv`, pulled daily from now until 2026-11-03, with receipt time and sha256. Raw bytes only.
 2. `KXHOUSERACE` open-markets full pagination, weekly. Record `rules_primary` for all universe `-D` contracts.
