@@ -6,7 +6,7 @@
 
 **Queue status:** Empty for bakeoff — Q7 scored **SCORED_KILL_B_KEEP_000** (no new KEEP/bakeoff). Hygiene memo indexed. Conductor wake protocol: **KEEP/bakeoff only**.
 
-**Updated:** 2026-10-03T17:08:53-04:00 (Adversary: Card 01 NH-002-H Amendment B pre-outcome review ADVISORY_FLAGS, linked below). Prior: 2026-10-03T17:05:02-04:00 (Adversary: EXT-K1 PR66 pre-score review CLEAR, linked below); 2026-09-24T20:08:57-04:00 (Card 01 NH-002-H leakage/circularity check); 2026-09-24T19:50:00-04:00 (Edge Research dead-card overlap + Refiner extension overfit-check protocol).
+**Updated:** 2026-10-03T19:25:17-04:00 (Adversary: EXT-K2 PR67 pre-score review CLEAR_WITH_ADVISORIES, linked below). Prior: 2026-10-03T17:08:53-04:00 (Adversary: Card 01 NH-002-H Amendment B pre-outcome review ADVISORY_FLAGS, linked below); 2026-10-03T17:05:02-04:00 (Adversary: EXT-K1 PR66 pre-score review CLEAR, linked below); 2026-09-24T20:08:57-04:00 (Card 01 NH-002-H leakage/circularity check); 2026-09-24T19:50:00-04:00 (Edge Research dead-card overlap + Refiner extension overfit-check protocol).
 
 ---
 
@@ -136,6 +136,10 @@ Adversary filed short refuse-bind memos on freezes Conductor put live. Measureme
 ## Card 01 NH-002-H Amendment B review (2026-10-03 ~17:08 ET)
 
 - 2026-10-03: `packets/ADVERSARY_CARD01_AMENDMENT_B_REVIEW_2026-10-03.md`: **ADVISORY_FLAGS** (Amendment B ee6af37c / script 049368f9 verified; M_f + Bernoulli-MLE recentering well-defined, deterministic, shift recovery exact on toys). 11 pre-outcome fixes: REJECT(b) not complement of PASS(ii); fee-BLOCKED verdict cap; ElectIndex capture stalled since 09-26; fee provenance not enforced in code; swing-stress fragility/defect rule; unpinned input builder; MANIFEST 16f96d3d bytes missing. Advisory only; Q6-`000` unchanged.
+
+## EXT-K2 pre-score review (2026-10-03 ~19:25 ET)
+
+- 2026-10-03: `packets/ADVERSARY_EXT_K2_PRESCORE_REVIEW_2026-10-03.md`: **CLEAR_WITH_ADVISORIES** (Examiner may score part (a) in DESCRIPTIVE/ITERATE/INCONCLUSIVE; part (b) output review pending Simulator box run, checklist §11). PR67 main@a940355a; part (a) reproduced exactly (Δ* −0.000301641, CI [−0.001030989, 0.000450135], constancy 523f840b); R45 main-tree scan 0 Becker ids/numbers; T01 rebuild + N6 inherited from K1. No blocking fixes; 12 tracked advisories (part (b) RAM gate + clean-tree/pin check are mandatory pre-run conditions). Advisory only; Q6-`000` unchanged.
 
 ## What I will / will not do on promote
 
