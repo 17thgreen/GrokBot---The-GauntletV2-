@@ -1,0 +1,13 @@
+# CONDUCTOR MERGE — PR #68 EXT-K1 follow-up + K2 A6 test scan
+- Time: 2026-10-03 19:52 EDT
+- Squash pinned to head 08d5b8c7b11581751d4d5fb472dd05f35ad1a42a. New main 813025a0d02a271208f1607c001a10519bb7cc8c (parent a940355a). The merged tree is identical to head.
+- Variants re-verify: /workspace/v68/REPORT_08d5b8c7.md (4ceb05c7); earlier report 34e39569.
+- Conductor independent [V]:
+  - fast-forward chain checked (a940355a and 0dc940c3 are ancestors of head);
+  - K2 becker_pipeline has zero diff vs a940355a, so the Simulator part (b) pin stays valid;
+  - the only K2 non-test change is results_a/UNIT_RESULTS.md (test-count stamp);
+  - outside the lab dirs, only docs/EXPERIMENT_REGISTRY.md changed (4 changed lines);
+  - in K1 INVARIANCE.json no existing key changed or was removed; added keys are IN_SAMPLE_DEV, HYPOTHETICAL_REPLAY_FILLS, DEV_GRADE_REUSED_31_GAME_COHORT, cached_test_scope, end_to_end_rebuild;
+  - no other results files changed.
+- No verdict or number change: K1 DESCRIPTIVE, net -0.000373 [-0.000577, 0.000188]; K2(a) DESCRIPTIVE.
+- Next: Variants starts the card01 Amendment C code cloud (AF-4/5/7/8/11, note fb4e5bc0, INCONCLUSIVE_DEGENERATE_BLOCK per 86baa504), then K3.

@@ -1,0 +1,119 @@
+{
+  "schema": "steward_hygiene_allowlist/v1",
+  "created_et": "2026-10-03 (Conductor ruling 18:52 ET)",
+  "created_by": "Repo Steward executor",
+  "repo": "17thgreen/GPT-6-Astra-Deathmatch",
+  "main_at_creation": "09b56273eb3b11ec3968e273a28767569e368561",
+  "box_root": "/workspace/lab/astra-capture",
+  "match_rule": "An entry suppresses a drift finding ONLY while the box blob (git hash-object --no-filters; null = absent on box) AND the main blob both equal the listed values. Any change to either side re-flags the path as NEW.",
+  "how_to_use": "Daily repo hygiene sweep: after computing box-vs-main blob diffs, report allowlisted matches as 'EXPECTED (allowlisted N)' and do not count them toward DIRTY. No on-box routine prompt or config for the hygiene sweep was found under governance/astra/steward/ as of 2026-10-03; the routine prompt must be pointed at this file for suppression to take effect.",
+  "explicitly_not_allowlisted": [
+    {
+      "path": "lab/astra-capture/c1-kxufcfight/panel_stub.json",
+      "box_blob": "5f0bb5414d4d9ae1771d0d4a68022b8dbecbb853",
+      "main_blob": "bcd839f6e0c610701b920809e3a24cac005e2719",
+      "note": "Box bytes are the ADMITTED panel (identical to main panel_admitted.json 5f0bb541, sha256 24426d80...); main panel_stub.json pins the pre-admit seed (sha256 2cc661d8...). Keep flagging for Examiner; do not touch."
+    }
+  ],
+  "entries": [
+    {
+      "path": "lab/astra-capture/c1-kxufcfight/README.md",
+      "box_path": "/workspace/lab/astra-capture/c1-kxufcfight/README.md",
+      "kind": "README_DRIFT",
+      "box_blob": "135ed2c80aa50b3a0812ac6901d7068b62194eed",
+      "main_blob": "a2d9a51d1d4b75219b9af5d2a7beb02dee59ea9f",
+      "reason": "Box runtime slot holds the original 2026-09-22 conductor-box seed README (absolute /workspace/... paths, PANEL_SCHEMA_STUB_SEED wording); main holds the repo-portable lab-authored rewrite from the 2026-09-23 harness PRs. Box blob never committed to main. Expected runtime-vs-repo drift; do not resync.",
+      "ruling": "Conductor ruling 2026-10-03 18:52 ET"
+    },
+    {
+      "path": "lab/astra-capture/c3-kxhighny/README.md",
+      "box_path": "/workspace/lab/astra-capture/c3-kxhighny/README.md",
+      "kind": "README_DRIFT",
+      "box_blob": "7d7a357b68221e30a1012e43793086301b4361f1",
+      "main_blob": "5e0868d2ddb9e2ccdc0e597c6989aae2db8bfc6a",
+      "reason": "Box runtime slot holds the original 2026-09-22 conductor-box seed README (absolute /workspace/... paths, PANEL_SCHEMA_STUB_SEED wording); main holds the repo-portable lab-authored rewrite from the 2026-09-23 harness PRs. Box blob never committed to main. Expected runtime-vs-repo drift; do not resync.",
+      "ruling": "Conductor ruling 2026-10-03 18:52 ET"
+    },
+    {
+      "path": "lab/astra-capture/c5-kxbtc15m/README.md",
+      "box_path": "/workspace/lab/astra-capture/c5-kxbtc15m/README.md",
+      "kind": "README_DRIFT",
+      "box_blob": "bb41d17422732ba89a8a30a7edd44a73e87ab649",
+      "main_blob": "a3a40b4c65addc40fca5ff8e7b4918fe89d0fb6a",
+      "reason": "Box runtime slot holds the original 2026-09-22 conductor-box seed README (absolute /workspace/... paths, PANEL_SCHEMA_STUB_SEED wording); main holds the repo-portable lab-authored rewrite from the 2026-09-23 harness PRs. Box blob never committed to main. Expected runtime-vs-repo drift; do not resync.",
+      "ruling": "Conductor ruling 2026-10-03 18:52 ET"
+    },
+    {
+      "path": "lab/astra-capture/r2-p3-prop-slate/README.md",
+      "box_path": "/workspace/lab/astra-capture/r2-p3-prop-slate/README.md",
+      "kind": "README_DRIFT",
+      "box_blob": "3f2e4568b7e8e6ae171f294d1fbecb376610db3d",
+      "main_blob": "e1137bdaf638272a940d8a8e7e9a2df23752f6c6",
+      "reason": "Box runtime slot holds the original 2026-09-22 conductor-box seed README (absolute /workspace/... paths, PANEL_SCHEMA_STUB_SEED wording); main holds the repo-portable lab-authored rewrite from the 2026-09-23 harness PRs. Box blob never committed to main. Expected runtime-vs-repo drift; do not resync.",
+      "ruling": "Conductor ruling 2026-10-03 18:52 ET"
+    },
+    {
+      "path": "lab/astra-capture/r3-p3-fl-maker-taker/README.md",
+      "box_path": "/workspace/lab/astra-capture/r3-p3-fl-maker-taker/README.md",
+      "kind": "README_DRIFT",
+      "box_blob": "19b1b0a1f3627142dd85cc99be66f080f4aa3403",
+      "main_blob": "a86135d890d586fa254ce427084c45abd77c4cd0",
+      "reason": "Box runtime slot holds the original 2026-09-22 conductor-box seed README (absolute /workspace/... paths, PANEL_SCHEMA_STUB_SEED wording); main holds the repo-portable lab-authored rewrite from the 2026-09-23 harness PRs. Box blob never committed to main. Expected runtime-vs-repo drift; do not resync.",
+      "ruling": "Conductor ruling 2026-10-03 18:52 ET"
+    },
+    {
+      "path": "lab/astra-capture/r3-p4-l2-shape/README.md",
+      "box_path": "/workspace/lab/astra-capture/r3-p4-l2-shape/README.md",
+      "kind": "README_DRIFT",
+      "box_blob": "04439f086c78668079211393626f9e5df468ec75",
+      "main_blob": "a829fe4fce8b241093f7dc5c30edb0dddef57bf1",
+      "reason": "Box runtime slot holds the original 2026-09-22 conductor-box seed README (absolute /workspace/... paths, PANEL_SCHEMA_STUB_SEED wording); main holds the repo-portable lab-authored rewrite from the 2026-09-23 harness PRs. Box blob never committed to main. Expected runtime-vs-repo drift; do not resync.",
+      "ruling": "Conductor ruling 2026-10-03 18:52 ET"
+    },
+    {
+      "path": "lab/astra-capture/s5-kxmvecrosscategory/README.md",
+      "box_path": "/workspace/lab/astra-capture/s5-kxmvecrosscategory/README.md",
+      "kind": "README_DRIFT",
+      "box_blob": "931aa4b18d7af877a097f93c323de05e840cbd08",
+      "main_blob": "d8c8254d234f52bb878f4acfc289257aa81ddbe5",
+      "reason": "Box runtime slot holds the original 2026-09-22 conductor-box seed README (absolute /workspace/... paths, PANEL_SCHEMA_STUB_SEED wording); main holds the repo-portable lab-authored rewrite from the 2026-09-23 harness PRs. Box blob never committed to main. Expected runtime-vs-repo drift; do not resync.",
+      "ruling": "Conductor ruling 2026-10-03 18:52 ET"
+    },
+    {
+      "path": "lab/astra-capture/c2-kxnhlgame/README.md",
+      "box_path": "/workspace/lab/astra-capture/c2-kxnhlgame/README.md",
+      "kind": "MAIN_ONLY",
+      "box_blob": null,
+      "main_blob": "f76e475c3153fb07a97976283bb54de5ddd89cc6",
+      "reason": "README authored in the repo for the NHL-FQ harness PR (677d5d4, 2026-09-23); the box runtime slot never had one. Expected main-only; do not copy into box slot.",
+      "ruling": "Conductor ruling 2026-10-03 18:52 ET"
+    },
+    {
+      "path": "lab/astra-capture/c4-kxcpi/README.md",
+      "box_path": "/workspace/lab/astra-capture/c4-kxcpi/README.md",
+      "kind": "MAIN_ONLY",
+      "box_blob": null,
+      "main_blob": "86f1528d073c356e7c2bc8fb0aacb9145d5882a4",
+      "reason": "README authored in the repo for the CPI-FQ harness PR (6e55a99, 2026-09-23); the box runtime slot never had one. Expected main-only; do not copy into box slot.",
+      "ruling": "Conductor ruling 2026-10-03 18:52 ET"
+    },
+    {
+      "path": "lab/astra-capture/eth-kxeth15m/README.md",
+      "box_path": "/workspace/lab/astra-capture/eth-kxeth15m/README.md",
+      "kind": "MAIN_ONLY",
+      "box_blob": null,
+      "main_blob": "42f004569a894f2e249d5cd6e1914fe6b7585ea0",
+      "reason": "README authored in the repo for the ETH-FQ harness PR (82bf7bb, 2026-09-23); the box runtime slot never had one. Expected main-only; do not copy into box slot.",
+      "ruling": "Conductor ruling 2026-10-03 18:52 ET"
+    },
+    {
+      "path": "lab/astra-capture/r3-p4-l2-shape/SEED_SUMMARY.json",
+      "box_path": "/workspace/lab/astra-capture/r3-p4-l2-shape/SEED_SUMMARY.json",
+      "kind": "MAIN_ONLY",
+      "box_blob": null,
+      "main_blob": "e6c9298328277082cc0c780871a7bfd19d04b73a",
+      "reason": "Imported to main (e54554f, 2026-09-23) from box packet governance/astra/packets/r3_p4_l2_shape/live_get_2026-09-22/SEED_SUMMARY.json (same blob e6c92983, sha256 e0d52811...); never placed in the box runtime slot. Expected main-only; do not copy into box slot.",
+      "ruling": "Conductor ruling 2026-10-03 18:52 ET"
+    }
+  ]
+}
